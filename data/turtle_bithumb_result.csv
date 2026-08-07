@@ -183,5 +183,5 @@ LIT,LIT,System1(단기),관심,False,False,True,3362.0,3450.0,3501.0,2776.0,0.98
 ELSA,ELSA,System1(단기),관심,False,False,True,74.99,76.2,82.29,62.3,0.926,4.63
 AZTEC,AZTEC,System1(단기),관심,False,False,True,19.71,19.77,21.7,19.29,0.911,0.94
 ROBO,ROBO,System1(단기),관심,False,False,True,19.42,20.98,21.21,14.76,0.989,1.81
-PRL,PRL,System1(단기),관심,False,False,True,390.0,396.0,392.0,249.0,1.01,31.85
-PRL,PRL,System2(중장기),관심,False,False,True,390.0,396.0,392.0,243.0,1.01,31.85
+PRL,PRL,System1(단기),확정,False,False,True,390.0,396.0,392.0,249.0,1.01,31.85
+PRL,PRL,System2(중장기),확정,False,False,True,390.0,396.0,392.0,243.0,1.01,31.85
