@@ -111,7 +111,7 @@ XAUT,XAUT,System2(중장기),관심,False,False,True,6082000.0,6093000.0,6521000
 PAXG,PAXG,System1(단기),관심,False,False,True,6073000.0,6073000.0,6087000.0,5712000.0,0.998,87600.0
 PAXG,PAXG,System2(중장기),관심,False,False,True,6073000.0,6073000.0,6510000.0,5712000.0,0.933,87600.0
 PUMPBTC,PUMPBTC,System1(단기),관심,False,False,True,14.41,14.85,15.67,12.2,0.948,0.91
-BTR,BTR,System1(단기),관심,False,False,True,32.01,32.13,32.44,24.03,0.99,2.08
+BTR,BTR,System1(단기),확정,False,False,True,32.01,32.13,32.44,24.03,0.99,2.08
 USD1,USD1,System1(단기),관심,False,False,True,1406.0,1406.0,1476.0,1405.0,0.953,23.35
 USD1,USD1,System2(중장기),관심,False,False,True,1406.0,1406.0,1533.0,1242.0,0.917,23.35
 SYRUP,SYRUP,System1(단기),청산,False,True,False,211.0,214.0,281.0,212.0,0.762,11.05
