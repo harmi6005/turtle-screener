@@ -34,7 +34,7 @@ BEL,BEL,System1(단기),관심,False,False,True,142.0,156.0,159.0,132.0,0.981,6.
 OBSR,OBSR,System1(단기),청산,False,True,False,0.37,0.44,0.8,0.37,0.546,0.06
 OBSR,OBSR,System2(중장기),청산,False,True,False,0.37,0.44,0.83,0.37,0.531,0.06
 SUSHI,SUSHI,System1(단기),관심,False,False,True,233.0,236.0,260.0,208.0,0.908,11.3
-CELR,CELR,System1(단기),관심,False,False,True,2.51,2.51,2.53,2.1,0.993,0.11
+CELR,CELR,System1(단기),확정,False,False,True,2.51,2.51,2.53,2.1,0.993,0.11
 CAKE,CAKE,System1(단기),관심,False,False,True,1944.0,1988.0,2121.0,1912.0,0.937,65.55
 BNT,BNT,System1(단기),관심,False,False,True,371.0,375.0,416.0,367.0,0.901,10.4
 AXS,AXS,System1(단기),관심,False,False,True,1256.0,1292.0,1391.0,1150.0,0.929,43.85
@@ -52,7 +52,7 @@ CTK,CTK,System1(단기),관심,False,False,True,146.0,146.0,161.0,125.0,0.907,8.
 SUN,SUN,System1(단기),관심,False,False,True,25.46,25.49,27.51,25.26,0.927,0.35
 SOL,SOL,System1(단기),관심,False,False,True,103100.0,104400.0,114900.0,101800.0,0.909,2795.0
 C98,C98,System1(단기),진입,True,False,False,21.16,22.07,19.43,15.56,1.136,1.01
-C98,C98,System2(중장기),관심,False,False,True,21.16,22.07,22.18,15.56,0.995,1.01
+C98,C98,System2(중장기),확정,False,False,True,21.16,22.07,22.18,15.56,0.995,1.01
 CRV,CRV,System1(단기),관심,False,False,True,303.0,308.0,337.0,283.0,0.914,12.45
 1INCH,1INCH,System1(단기),관심,False,False,True,117.0,118.0,128.0,113.0,0.922,4.9
 1INCH,1INCH,System2(중장기),관심,False,False,True,117.0,118.0,128.0,104.0,0.922,4.9
@@ -132,7 +132,7 @@ PAXG,PAXG,System1(단기),관심,False,False,True,6023000.0,6032000.0,6050000.0,
 PAXG,PAXG,System2(중장기),관심,False,False,True,6023000.0,6032000.0,6510000.0,5712000.0,0.927,90300.0
 XAUT,XAUT,System1(단기),관심,False,False,True,6039000.0,6039000.0,6240000.0,3490000.0,0.968,204750.0
 XAUT,XAUT,System2(중장기),관심,False,False,True,6039000.0,6039000.0,6521000.0,3490000.0,0.926,204750.0
-KMNO,KMNO,System1(단기),관심,False,False,True,28.12,33.52,28.5,24.88,1.176,1.45
+KMNO,KMNO,System1(단기),확정,False,False,True,28.12,33.52,28.5,24.88,1.176,1.45
 KMNO,KMNO,System2(중장기),관심,False,False,True,28.12,33.52,32.5,24.88,1.031,1.45
 PUMPBTC,PUMPBTC,System1(단기),관심,False,False,True,14.41,14.62,15.67,12.2,0.933,0.98
 SXT,SXT,System1(단기),관심,False,False,True,11.13,11.55,11.75,8.9,0.983,0.77
