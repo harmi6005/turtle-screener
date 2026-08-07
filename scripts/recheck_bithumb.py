@@ -29,7 +29,7 @@ def get_bithumb_daily_ohlc(coin, days=180):
 
 
 def recheck_one(row):
-    coin, system = row['code'], row['system']
+    coin, system, orig_signal = row['code'], row['system'], row['signal']
     sysconf = SYSTEMS.get(system)
     if not sysconf:
         return None
@@ -40,7 +40,10 @@ def recheck_one(row):
         res = check_turtle_breakout(df, sysconf['entry'], sysconf['exit'], WATCH_RATIO)
         if not res:
             return {'code': coin, 'name': coin, 'system': system, 'status': '데이터부족'}
-        status = '확정' if res['entry_signal'] else ('유지' if res['watch_signal'] else '탈락')
+        if orig_signal == '확정':
+            status = '확정이탈' if res['exit_signal'] else '확정유지'
+        else:
+            status = '확정' if res['entry_signal'] else ('유지' if res['watch_signal'] else '탈락')
         return {'code': coin, 'name': coin, 'system': system, 'status': status, **res}
     except Exception:
         return {'code': coin, 'name': coin, 'system': system, 'status': '오류'}
@@ -52,16 +55,16 @@ if __name__ == "__main__":
         sys.exit(0)
 
     prev_df = pd.read_csv(DATA_PATH)
-    watch_rows = prev_df[prev_df['signal'] == '관심'].to_dict('records')
-    print(f"관심코인 {len(watch_rows)}개 재확인 중...")
+    target_rows = prev_df[prev_df['signal'].isin(['관심', '확정'])].to_dict('records')
+    print(f"관심/확정 코인 {len(target_rows)}개 재확인 중...")
 
-    if not watch_rows:
-        print("현재 관심코인이 없습니다.")
+    if not target_rows:
+        print("현재 추적 중인 코인이 없습니다.")
         sys.exit(0)
 
     results = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(recheck_one, row): row for row in watch_rows}
+        futures = {executor.submit(recheck_one, row): row for row in target_rows}
         for future in as_completed(futures):
             r = future.result()
             if r:
@@ -69,17 +72,28 @@ if __name__ == "__main__":
 
     result_df = pd.DataFrame(results)
     confirm_df = result_df[result_df['status'] == '확정']
-    print(f"확정 {len(confirm_df)}개")
+    exit_df = result_df[result_df['status'] == '확정이탈']
+    print(f"확정 {len(confirm_df)}개 / 확정이탈 {len(exit_df)}개")
 
     for _, r in result_df.iterrows():
         mask = (prev_df['code'] == r['code']) & (prev_df['system'] == r['system'])
-        if r['status'] == '확정':
+        if r['status'] in ('확정', '확정유지'):
             prev_df.loc[mask, 'signal'] = '확정'
         elif r['status'] == '탈락':
             prev_df.loc[mask, 'signal'] = '탈락'
+        elif r['status'] == '확정이탈':
+            prev_df.loc[mask, 'signal'] = '확정이탈'
 
     prev_df.to_csv(DATA_PATH, index=False, encoding='utf-8-sig')
 
     if not confirm_df.empty:
-        lines = [f"- {r['name']} [{r['system']}] 종가 {r['close']}" for _, r in confirm_df.iterrows()]
-        notify_telegram("[빗썸] 확정 전환 코인!\n" + "\n".join(lines))
+        lines = [f"- {r['name']} [{r['system']}]\n"
+                 f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}"
+                 for _, r in confirm_df.iterrows()]
+        notify_telegram("[빗썸] 확정 전환 코인! (매수 검토)\n" + "\n".join(lines))
+
+    if not exit_df.empty:
+        lines = [f"- {r['name']} [{r['system']}]\n"
+                 f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
+                 for _, r in exit_df.iterrows()]
+        notify_telegram("[빗썸] 확정이탈 코인! (매도 검토)\n" + "\n".join(lines))
