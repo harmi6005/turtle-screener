@@ -1,0 +1,34 @@
+name: 미국 전체스캔
+
+on:
+  schedule:
+    # 매일 23:00 UTC(전날) = 08:00 KST
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 패키지 설치
+        run: pip install -r requirements.txt
+
+      - name: 미국 전체 스캔 실행
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scripts/full_scan_us.py
+
+      - name: 결과 커밋
+        run: |
+          git config user.name "turtle-bot"
+          git config user.email "turtle-bot@users.noreply.github.com"
+          git add data/turtle_us_result.csv
+          git diff --cached --quiet || git commit -m "미국 전체스캔 결과 업데이트"
+          git push
