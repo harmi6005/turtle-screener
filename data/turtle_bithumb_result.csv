@@ -28,7 +28,7 @@ ARPA,ARPA,System1(단기),관심,False,False,True,11.91,11.92,12.6,11.26,0.946,0
 COMP,COMP,System1(단기),관심,False,False,True,23910.0,23980.0,25650.0,22800.0,0.935,716.0
 MANA,MANA,System1(단기),관심,False,False,True,92.69,92.75,103.0,92.23,0.9,3.07
 SUSHI,SUSHI,System1(단기),관심,False,False,True,233.0,236.0,260.0,208.0,0.908,10.5
-PUNDIX,PUNDIX,System1(단기),관심,False,False,True,109.0,111.0,122.0,105.0,0.91,4.25
+PUNDIX,PUNDIX,System1(단기),탈락,False,False,True,109.0,111.0,122.0,105.0,0.91,4.25
 CELR,CELR,System1(단기),관심,False,False,True,2.48,2.48,2.54,2.1,0.978,0.11
 CAKE,CAKE,System1(단기),관심,False,False,True,1956.0,1976.0,2121.0,1912.0,0.932,64.85
 SIX,SIX,System1(단기),청산,False,True,False,5.92,6.48,7.44,6.02,0.87,0.27
@@ -73,7 +73,7 @@ AGLD,AGLD,System1(단기),관심,False,False,True,213.0,213.0,233.0,199.0,0.914,
 AR,AR,System1(단기),탈락,False,False,True,2501.0,2557.0,2827.0,2401.0,0.904,80.35
 EDU,EDU,System1(단기),관심,False,False,True,48.78,49.44,53.51,42.65,0.924,3.13
 EDU,EDU,System2(중장기),관심,False,False,True,48.78,49.44,53.51,41.21,0.924,3.13
-CYBER,CYBER,System1(단기),관심,False,False,True,434.0,448.0,495.0,420.0,0.905,13.9
+CYBER,CYBER,System1(단기),탈락,False,False,True,434.0,448.0,495.0,420.0,0.905,13.9
 BICO,BICO,System1(단기),확정,False,False,True,73.22,81.29,75.38,15.87,1.078,5.4
 GTC,GTC,System1(단기),관심,False,False,True,118.0,118.0,124.0,98.82,0.952,7.09
 GTC,GTC,System2(중장기),관심,False,False,True,118.0,118.0,130.0,93.98,0.908,7.09
@@ -131,8 +131,8 @@ ENSO,ENSO,System1(단기),관심,False,False,True,1411.0,1461.0,1450.0,1144.0,1.
 ENSO,ENSO,System2(중장기),관심,False,False,True,1411.0,1461.0,1450.0,1007.0,1.008,87.55
 SENT,SENT,System1(단기),관심,False,False,True,18.72,18.75,20.72,16.21,0.905,0.96
 MET,MET,System1(단기),탈락,False,False,True,235.0,240.0,262.0,186.0,0.916,20.15
-CYS,CYS,System1(단기),관심,False,False,True,1201.0,1371.0,1270.0,315.0,1.08,109.6
-CYS,CYS,System2(중장기),관심,False,False,True,1201.0,1371.0,1270.0,315.0,1.08,109.6
+CYS,CYS,System1(단기),확정,False,False,True,1201.0,1371.0,1270.0,315.0,1.08,109.6
+CYS,CYS,System2(중장기),확정,False,False,True,1201.0,1371.0,1270.0,315.0,1.08,109.6
 WET,WET,System1(단기),관심,False,False,True,95.29,95.29,104.0,90.5,0.916,5.15
 LIT,LIT,System1(단기),관심,False,False,True,3270.0,3440.0,3515.0,2776.0,0.979,230.45
 ELSA,ELSA,System1(단기),관심,False,False,True,77.66,78.3,82.29,62.3,0.952,4.6
