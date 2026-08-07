@@ -2,8 +2,14 @@ name: 빗썸 전체스캔
 
 on:
   schedule:
-    # 매일 15:30 UTC(전날) = 00:30 KST
+    # 00:30 KST = 15:30 UTC(전날)
     - cron: '30 15 * * *'
+    # 06:30 KST = 21:30 UTC(전날)
+    - cron: '30 21 * * *'
+    # 12:30 KST = 03:30 UTC
+    - cron: '30 3 * * *'
+    # 18:30 KST = 09:30 UTC
+    - cron: '30 9 * * *'
   workflow_dispatch:
 
 jobs:
