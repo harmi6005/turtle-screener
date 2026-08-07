@@ -15,11 +15,9 @@ DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_us_res
 
 
 def get_sp500_tickers():
-    url = 'https://en.wikipedia.org/wiki/List_of_S%26P_500_companies'
-    headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'}
-    res = requests.get(url, headers=headers, timeout=10)
-    table = pd.read_html(res.text)[0]
-    return table['Symbol'].str.replace('.', '-', regex=False).tolist()
+    url = 'https://raw.githubusercontent.com/datasets/s-and-p-500-companies/main/data/constituents.csv'
+    df = pd.read_csv(url)
+    return df['Symbol'].str.replace('.', '-', regex=False).tolist()
 
 
 def screen_us():
