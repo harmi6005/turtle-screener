@@ -2,7 +2,9 @@ name: 국내 전체스캔
 
 on:
   schedule:
-    # 매일 11:00 UTC = 20:00 KST
+    # 매일 04:00 UTC = 13:00 KST (장중 후반)
+    - cron: '0 4 * * *'
+    # 매일 11:00 UTC = 20:00 KST (마감 후)
     - cron: '0 11 * * *'
   workflow_dispatch:  # 수동 실행 버튼도 사용 가능
 
