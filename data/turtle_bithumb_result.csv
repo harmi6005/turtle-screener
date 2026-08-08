@@ -27,7 +27,7 @@ COMP,COMP,System1(단기),관심,False,False,True,23600.0,23980.0,25650.0,22800.
 AWE,AWE,System1(단기),관심,False,False,True,80.16,80.16,88.84,76.22,0.902,3.29
 MANA,MANA,System1(단기),관심,False,False,True,93.37,93.8,103.0,92.23,0.911,3.11
 SUSHI,SUSHI,System1(단기),관심,False,False,True,228.0,236.0,260.0,208.0,0.908,10.6
-CELR,CELR,System1(단기),관심,False,False,True,2.43,2.48,2.54,2.1,0.978,0.11
+CELR,CELR,System1(단기),확정,False,False,True,2.43,2.48,2.54,2.1,0.978,0.11
 CAKE,CAKE,System1(단기),관심,False,False,True,1959.0,1980.0,2121.0,1912.0,0.934,65.35
 USDS,USDS,System1(단기),청산,False,True,True,1406.0,1420.0,1492.0,1414.0,0.952,16.15
 USDS,USDS,System2(중장기),청산,False,True,True,1406.0,1420.0,1529.0,1414.0,0.929,16.15
