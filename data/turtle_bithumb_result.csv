@@ -73,7 +73,7 @@ EDU,EDU,System1(단기),관심,False,False,True,48.93,49.44,53.51,42.65,0.924,3.
 EDU,EDU,System2(중장기),관심,False,False,True,48.93,49.44,53.51,41.21,0.924,3.13
 WAXL,WAXL,System1(단기),청산,False,True,False,50.1,50.69,61.58,50.21,0.823,1.65
 WAXL,WAXL,System2(중장기),청산,False,True,False,50.1,50.69,80.0,50.21,0.634,1.65
-BICO,BICO,System1(단기),관심,False,False,True,74.59,81.29,75.38,15.87,1.078,5.4
+BICO,BICO,System1(단기),확정,False,False,True,74.59,81.29,75.38,15.87,1.078,5.4
 MNT,MNT,System1(단기),관심,False,False,True,585.0,587.0,633.0,560.0,0.927,11.75
 GTC,GTC,System1(단기),관심,False,False,True,117.0,118.0,124.0,98.82,0.952,7.09
 GTC,GTC,System2(중장기),관심,False,False,True,117.0,118.0,130.0,93.98,0.908,7.09
