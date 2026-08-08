@@ -98,7 +98,7 @@ EIGEN,EIGEN,System2(중장기),청산,False,True,False,242.0,246.0,471.0,244.0,0
 MORPHO,MORPHO,System1(단기),청산,False,True,False,2555.0,2582.0,3427.0,2580.0,0.753,162.3
 MORPHO,MORPHO,System2(중장기),청산,False,True,False,2555.0,2582.0,3427.0,2580.0,0.753,162.3
 AERO,AERO,System1(단기),관심,False,False,True,616.0,625.0,679.0,552.0,0.92,34.75
-XYO,XYO,System1(단기),관심,False,False,True,4.36,4.55,4.92,4.02,0.924,0.2
+XYO,XYO,System1(단기),탈락,False,False,True,4.36,4.55,4.92,4.02,0.924,0.2
 QKC,QKC,System1(단기),관심,False,False,True,2.79,2.79,2.97,2.59,0.939,0.11
 PLUME,PLUME,System1(단기),탈락,False,False,True,16.79,17.33,18.42,14.68,0.941,1.15
 PLUME,PLUME,System2(중장기),탈락,False,False,True,16.79,17.33,18.42,14.65,0.941,1.15
@@ -136,7 +136,7 @@ ENSO,ENSO,System1(단기),관심,False,False,True,1381.0,1461.0,1450.0,1144.0,1.
 ENSO,ENSO,System2(중장기),관심,False,False,True,1381.0,1461.0,1450.0,1007.0,1.008,89.0
 USDE,USDE,System1(단기),청산,False,True,True,1410.0,1417.0,1481.0,1412.0,0.957,11.9
 USDE,USDE,System2(중장기),청산,False,True,False,1410.0,1417.0,1580.0,1412.0,0.897,11.9
-SENT,SENT,System1(단기),관심,False,False,True,18.82,18.82,20.72,16.21,0.908,0.96
+SENT,SENT,System1(단기),탈락,False,False,True,18.82,18.82,20.72,16.21,0.908,0.96
 CYS,CYS,System1(단기),진입,True,False,False,1290.0,1371.0,1270.0,315.0,1.08,109.6
 CYS,CYS,System2(중장기),진입,True,False,False,1290.0,1371.0,1270.0,315.0,1.08,109.6
 WET,WET,System1(단기),관심,False,False,True,96.07,96.25,104.0,90.5,0.925,5.19
