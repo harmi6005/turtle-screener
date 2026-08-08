@@ -35,7 +35,7 @@ AXS,AXS,System1(단기),관심,False,False,True,1244.0,1261.0,1378.0,1150.0,0.91
 SIX,SIX,System1(단기),청산,False,True,False,5.92,6.48,7.44,6.02,0.87,0.27
 SIX,SIX,System2(중장기),청산,False,True,False,5.92,6.48,11.14,6.02,0.582,0.27
 ACH,ACH,System1(단기),청산,False,True,False,5.87,5.98,8.18,5.9,0.731,0.52
-DAO,DAO,System1(단기),관심,False,False,True,37.02,39.37,41.97,22.0,0.938,3.38
+DAO,DAO,System1(단기),탈락,False,False,True,37.02,39.37,41.97,22.0,0.938,3.38
 ALGO,ALGO,System1(단기),관심,False,False,True,125.0,126.0,132.0,108.0,0.955,5.2
 JST,JST,System1(단기),관심,False,False,True,147.0,148.0,152.0,138.0,0.974,4.0
 JST,JST,System2(중장기),관심,False,False,True,147.0,148.0,156.0,138.0,0.949,4.0
@@ -46,13 +46,13 @@ BNB,BNB,System1(단기),관심,False,False,True,833000.0,835500.0,899000.0,81150
 CTK,CTK,System1(단기),관심,False,False,True,147.0,148.0,161.0,125.0,0.919,8.6
 NFT,NFT,System1(단기),관심,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0
 SOL,SOL,System1(단기),관심,False,False,True,103600.0,104200.0,114900.0,101800.0,0.907,2760.0
-C98,C98,System1(단기),관심,False,False,True,23.59,25.61,25.78,15.56,0.993,1.32
-C98,C98,System2(중장기),관심,False,False,True,23.59,25.61,25.78,15.56,0.993,1.32
+C98,C98,System1(단기),탈락,False,False,True,23.59,25.61,25.78,15.56,0.993,1.32
+C98,C98,System2(중장기),탈락,False,False,True,23.59,25.61,25.78,15.56,0.993,1.32
 1INCH,1INCH,System1(단기),관심,False,False,True,117.0,118.0,128.0,113.0,0.922,4.85
 1INCH,1INCH,System2(중장기),관심,False,False,True,117.0,118.0,128.0,105.0,0.922,4.85
 GALA,GALA,System1(단기),청산,False,True,False,2.48,2.5,3.08,2.48,0.813,0.1
 GALA,GALA,System2(중장기),청산,False,True,False,2.48,2.5,4.2,2.48,0.595,0.1
-CSPR,CSPR,System1(단기),관심,False,False,True,2.74,3.19,3.0,2.34,1.063,0.29
+CSPR,CSPR,System1(단기),탈락,False,False,True,2.74,3.19,3.0,2.34,1.063,0.29
 AVAX,AVAX,System1(단기),관심,False,False,True,9055.0,9105.0,10010.0,8735.0,0.91,379.5
 TAVA,TAVA,System1(단기),청산,False,True,False,1.7,1.84,3.12,1.71,0.587,0.16
 TAVA,TAVA,System2(중장기),청산,False,True,False,1.7,1.84,5.39,1.71,0.34,0.16
@@ -67,7 +67,7 @@ RPL,RPL,System1(단기),청산,False,True,False,2110.0,2145.0,2870.0,2134.0,0.74
 RPL,RPL,System2(중장기),청산,False,True,False,2110.0,2145.0,4060.0,2134.0,0.528,105.05
 FRAX,FRAX,System1(단기),관심,False,False,True,422.0,428.0,451.0,336.0,0.949,23.2
 FRAX,FRAX,System2(중장기),관심,False,False,True,422.0,428.0,453.0,336.0,0.945,23.2
-MAV,MAV,System1(단기),관심,False,False,True,12.55,12.93,13.77,11.01,0.939,0.57
+MAV,MAV,System1(단기),탈락,False,False,True,12.55,12.93,13.77,11.01,0.939,0.57
 AGLD,AGLD,System1(단기),관심,False,False,True,211.0,213.0,233.0,199.0,0.914,11.65
 EDU,EDU,System1(단기),관심,False,False,True,48.93,49.44,53.51,42.65,0.924,3.13
 EDU,EDU,System2(중장기),관심,False,False,True,48.93,49.44,53.51,41.21,0.924,3.13
@@ -90,7 +90,7 @@ TAO,TAO,System1(단기),관심,False,False,True,271500.0,271500.0,292600.0,26500
 NEAR,NEAR,System1(단기),청산,False,True,False,2245.0,2289.0,2985.0,2258.0,0.767,108.3
 NEAR,NEAR,System2(중장기),청산,False,True,False,2245.0,2289.0,3842.0,2258.0,0.596,108.3
 ENA,ENA,System1(단기),관심,False,False,True,128.0,135.0,139.0,110.0,0.971,7.95
-ENA,ENA,System2(중장기),관심,False,False,True,128.0,135.0,148.0,110.0,0.912,7.95
+ENA,ENA,System2(중장기),탈락,False,False,True,128.0,135.0,148.0,110.0,0.912,7.95
 AVAIL,AVAIL,System1(단기),청산,False,True,False,2.95,3.07,4.41,3.01,0.696,0.24
 AVAIL,AVAIL,System2(중장기),청산,False,True,False,2.95,3.07,5.82,3.01,0.527,0.24
 EIGEN,EIGEN,System1(단기),청산,False,True,False,242.0,246.0,351.0,244.0,0.701,16.0
@@ -100,8 +100,8 @@ MORPHO,MORPHO,System2(중장기),청산,False,True,False,2555.0,2582.0,3427.0,25
 AERO,AERO,System1(단기),관심,False,False,True,616.0,625.0,679.0,552.0,0.92,34.75
 XYO,XYO,System1(단기),관심,False,False,True,4.36,4.55,4.92,4.02,0.924,0.2
 QKC,QKC,System1(단기),관심,False,False,True,2.79,2.79,2.97,2.59,0.939,0.11
-PLUME,PLUME,System1(단기),관심,False,False,True,16.79,17.33,18.42,14.68,0.941,1.15
-PLUME,PLUME,System2(중장기),관심,False,False,True,16.79,17.33,18.42,14.65,0.941,1.15
+PLUME,PLUME,System1(단기),탈락,False,False,True,16.79,17.33,18.42,14.68,0.941,1.15
+PLUME,PLUME,System2(중장기),탈락,False,False,True,16.79,17.33,18.42,14.65,0.941,1.15
 GNO,GNO,System1(단기),관심,False,False,True,149800.0,151100.0,165500.0,146000.0,0.913,4240.0
 GPS,GPS,System1(단기),관심,False,False,True,13.83,13.95,14.21,11.5,0.982,0.74
 KAITO,KAITO,System1(단기),청산,False,True,False,1140.0,1292.0,1960.0,1228.0,0.659,214.55
