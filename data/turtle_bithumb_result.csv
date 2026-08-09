@@ -26,7 +26,7 @@ ARPA,ARPA,System1(단기),관심,False,False,True,12.42,12.42,13.0,11.26,0.955,0
 YFI,YFI,System1(단기),관심,False,False,True,2879000.0,2879000.0,3137000.0,2776000.0,0.918,96550.0
 COMP,COMP,System1(단기),관심,False,False,True,23440.0,23440.0,25580.0,22820.0,0.916,640.5
 RSR,RSR,System1(단기),관심,False,False,True,1.77,1.77,1.93,1.7,0.917,0.08
-BEL,BEL,System1(단기),관심,False,False,True,155.0,155.0,156.0,132.0,0.994,6.75
+BEL,BEL,System1(단기),탈락,False,False,True,155.0,155.0,156.0,132.0,0.994,6.75
 AWE,AWE,System1(단기),관심,False,False,True,80.93,80.98,86.26,76.22,0.939,3.07
 MANA,MANA,System1(단기),관심,False,False,True,93.21,93.21,103.0,92.23,0.905,2.9
 SUSHI,SUSHI,System1(단기),관심,False,False,True,237.0,237.0,257.0,212.0,0.922,9.55
