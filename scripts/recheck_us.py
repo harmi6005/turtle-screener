@@ -8,7 +8,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import pandas as pd
 import yfinance as yf
 from datetime import datetime, timedelta
-from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram
+from common import SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_us_result.csv')
 
@@ -49,9 +49,12 @@ if __name__ == "__main__":
                 results.append({'code': code, 'name': code, 'system': system, 'status': '데이터부족'})
                 continue
             if orig_signal == '확정':
-                status = '확정이탈' if res['exit_signal'] else '확정유지'
-            else:
-                status = '확정' if res['entry_signal'] else ('유지' if res['watch_signal'] else '탈락')
+            status = '확정이탈' if res['exit_signal'] else '확정유지'
+        elif res['entry_signal']:
+            chase_ratio = (res['close'] - res['n_high']) / res['n_high']
+            status = '스킵(추격과다)' if chase_ratio > MAX_CHASE_RATIO else '확정'
+        else:
+            status = '유지' if res['watch_signal'] else '탈락'
             results.append({'code': code, 'name': code, 'system': system, 'status': status, **res})
         except Exception:
             results.append({'code': code, 'name': code, 'system': system, 'status': '오류'})
@@ -65,7 +68,7 @@ if __name__ == "__main__":
         mask = (prev_df['code'] == r['code']) & (prev_df['system'] == r['system'])
         if r['status'] in ('확정', '확정유지'):
             prev_df.loc[mask, 'signal'] = '확정'
-        elif r['status'] == '탈락':
+        elif r['status'] in ('탈락', '스킵(추격과다)'):
             prev_df.loc[mask, 'signal'] = '탈락'
         elif r['status'] == '확정이탈':
             prev_df.loc[mask, 'signal'] = '확정이탈'
