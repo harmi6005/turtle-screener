@@ -34,7 +34,7 @@ if __name__ == "__main__":
     data = yf.download(tickers, start=start, end=end, group_by='ticker',
                         auto_adjust=True, threads=True, progress=False)
 
-    for row in target_rows:
+for row in target_rows:
         code, system, orig_signal = row['code'], row['system'], row['signal']
         sysconf = SYSTEMS.get(system)
         if not sysconf:
@@ -49,12 +49,12 @@ if __name__ == "__main__":
                 results.append({'code': code, 'name': code, 'system': system, 'status': '데이터부족'})
                 continue
             if orig_signal == '확정':
-            status = '확정이탈' if res['exit_signal'] else '확정유지'
-        elif res['entry_signal']:
-            chase_ratio = (res['close'] - res['n_high']) / res['n_high']
-            status = '스킵(추격과다)' if chase_ratio > MAX_CHASE_RATIO else '확정'
-        else:
-            status = '유지' if res['watch_signal'] else '탈락'
+                status = '확정이탈' if res['exit_signal'] else '확정유지'
+            elif res['entry_signal']:
+                chase_ratio = (res['close'] - res['n_high']) / res['n_high']
+                status = '스킵(추격과다)' if chase_ratio > MAX_CHASE_RATIO else '확정'
+            else:
+                status = '유지' if res['watch_signal'] else '탈락'
             results.append({'code': code, 'name': code, 'system': system, 'status': status, **res})
         except Exception:
             results.append({'code': code, 'name': code, 'system': system, 'status': '오류'})
