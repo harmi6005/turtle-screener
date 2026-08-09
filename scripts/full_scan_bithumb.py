@@ -82,7 +82,7 @@ def screen_bithumb():
 
 
 if __name__ == "__main__":
-    df = screen_korea()
+    df = screen_bitthumb()
     print(f"\n[국내] 신호 종목 {len(df)}개 발견")
 
     # 기존에 재확인이 '확정'으로 추적 중이던 종목은 유지 (전체스캔이 덮어써서
