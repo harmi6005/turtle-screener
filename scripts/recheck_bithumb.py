@@ -76,9 +76,10 @@ if __name__ == "__main__":
     result_df = pd.DataFrame(results)
     confirm_df = result_df[result_df['status'] == '확정']
     exit_df = result_df[result_df['status'] == '확정이탈']
-    print(f"확정 {len(confirm_df)}개 / 확정이탈 {len(exit_df)}개")
+    skip_df = result_df[result_df['status'] == '스킵(추격과다)']
+    print(f"확정 {len(confirm_df)}개 / 확정이탈 {len(exit_df)}개 / 스킵(추격과다) {len(skip_df)}개")
 
-for _, r in result_df.iterrows():
+    for _, r in result_df.iterrows():
         mask = (prev_df['code'] == r['code']) & (prev_df['system'] == r['system'])
         if r['status'] in ('확정', '확정유지'):
             prev_df.loc[mask, 'signal'] = '확정'
