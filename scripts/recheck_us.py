@@ -34,7 +34,7 @@ if __name__ == "__main__":
     data = yf.download(tickers, start=start, end=end, group_by='ticker',
                         auto_adjust=True, threads=True, progress=False)
 
-for row in target_rows:
+    for row in target_rows:
         code, system, orig_signal = row['code'], row['system'], row['signal']
         sysconf = SYSTEMS.get(system)
         if not sysconf:
