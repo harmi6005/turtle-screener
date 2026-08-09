@@ -15,7 +15,7 @@ THETA,THETA,System1(단기),관심,False,False,True,194.0,194.0,205.0,175.0,0.94
 LINK,LINK,System1(단기),관심,False,False,True,11700.0,11720.0,12940.0,11380.0,0.906,349.5
 LINK,LINK,System2(중장기),관심,False,False,True,11700.0,11720.0,12940.0,11380.0,0.906,349.5
 VET,VET,System1(단기),관심,False,False,True,6.69,6.69,7.24,6.49,0.924,0.21
-BSV,BSV,System1(단기),관심,False,False,True,20620.0,20630.0,20650.0,17510.0,0.999,623.0
+BSV,BSV,System1(단기),확정,False,False,True,20620.0,20630.0,20650.0,17510.0,0.999,623.0
 BSV,BSV,System2(중장기),관심,False,False,True,20620.0,20630.0,22580.0,17420.0,0.914,623.0
 MTL,MTL,System1(단기),관심,False,False,True,300.0,300.0,332.0,284.0,0.904,11.3
 ANKR,ANKR,System1(단기),관심,False,False,True,5.01,5.08,5.48,4.6,0.928,0.14
@@ -60,7 +60,7 @@ JOE,JOE,System1(단기),진입,True,False,False,45.34,50.5,45.15,32.62,1.118,2.7
 JOE,JOE,System2(중장기),관심,False,False,True,45.34,50.5,49.85,32.62,1.013,2.76
 BTT,BTT,System1(단기),관심,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0
 AVAX,AVAX,System1(단기),관심,False,False,True,9170.0,9235.0,10010.0,8735.0,0.923,375.0
-SFP,SFP,System1(단기),관심,False,False,True,329.0,329.0,335.0,297.0,0.982,10.55
+SFP,SFP,System1(단기),탈락,False,False,True,329.0,329.0,335.0,297.0,0.982,10.55
 APT,APT,System1(단기),관심,False,False,True,842.0,842.0,927.0,785.0,0.908,30.45
 GRND,GRND,System1(단기),관심,False,False,True,15.34,17.38,18.68,12.0,0.93,1.32
 ROA,ROA,System1(단기),관심,False,False,True,4.7,4.7,5.13,4.5,0.916,0.19
@@ -102,8 +102,8 @@ QKC,QKC,System1(단기),관심,False,False,True,2.81,2.83,2.97,2.59,0.954,0.11
 SHELL,SHELL,System1(단기),관심,False,False,True,29.7,32.64,34.99,24.81,0.933,1.95
 PLUME,PLUME,System1(단기),관심,False,False,True,16.81,16.99,18.42,14.68,0.922,1.1
 PLUME,PLUME,System2(중장기),관심,False,False,True,16.81,16.99,18.42,14.68,0.922,1.1
-COOKIE,COOKIE,System1(단기),관심,False,False,True,17.88,18.14,19.74,10.46,0.919,1.53
-COOKIE,COOKIE,System2(중장기),관심,False,False,True,17.88,18.14,19.74,10.46,0.919,1.53
+COOKIE,COOKIE,System1(단기),탈락,False,False,True,17.88,18.14,19.74,10.46,0.919,1.53
+COOKIE,COOKIE,System2(중장기),탈락,False,False,True,17.88,18.14,19.74,10.46,0.919,1.53
 GNO,GNO,System1(단기),관심,False,False,True,149300.0,149300.0,165000.0,146000.0,0.905,3840.0
 GPS,GPS,System1(단기),관심,False,False,True,13.36,13.46,14.21,11.5,0.947,0.72
 BMT,BMT,System1(단기),진입,True,False,False,45.8,46.3,37.74,15.73,1.227,2.58
