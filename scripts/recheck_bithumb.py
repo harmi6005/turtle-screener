@@ -40,7 +40,7 @@ def recheck_one(row):
         res = check_turtle_breakout(df, sysconf['entry'], sysconf['exit'], WATCH_RATIO)
         if not res:
             return {'code': coin, 'name': coin, 'system': system, 'status': '데이터부족'}
-       if orig_signal == '확정':
+        if orig_signal == '확정':
             status = '확정이탈' if res['exit_signal'] else '확정유지'
         elif res['entry_signal']:
             chase_ratio = (res['close'] - res['n_high']) / res['n_high']
