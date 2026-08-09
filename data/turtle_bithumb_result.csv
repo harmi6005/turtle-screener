@@ -68,14 +68,14 @@ RPL,RPL,System2(중장기),청산,False,True,False,2110.0,2145.0,4060.0,2134.0,0
 FRAX,FRAX,System1(단기),관심,False,False,True,422.0,428.0,451.0,336.0,0.949,23.2
 FRAX,FRAX,System2(중장기),관심,False,False,True,422.0,428.0,453.0,336.0,0.945,23.2
 MAV,MAV,System1(단기),탈락,False,False,True,12.55,12.93,13.77,11.01,0.939,0.57
-AGLD,AGLD,System1(단기),관심,False,False,True,211.0,213.0,233.0,199.0,0.914,11.65
+AGLD,AGLD,System1(단기),확정,False,False,True,211.0,213.0,233.0,199.0,0.914,11.65
 EDU,EDU,System1(단기),관심,False,False,True,48.93,49.44,53.51,42.65,0.924,3.13
 EDU,EDU,System2(중장기),관심,False,False,True,48.93,49.44,53.51,41.21,0.924,3.13
 WAXL,WAXL,System1(단기),청산,False,True,False,50.1,50.69,61.58,50.21,0.823,1.65
 WAXL,WAXL,System2(중장기),청산,False,True,False,50.1,50.69,80.0,50.21,0.634,1.65
 BICO,BICO,System1(단기),확정,False,False,True,74.59,81.29,75.38,15.87,1.078,5.4
 MNT,MNT,System1(단기),관심,False,False,True,585.0,587.0,633.0,560.0,0.927,11.75
-GTC,GTC,System1(단기),관심,False,False,True,117.0,118.0,124.0,98.82,0.952,7.09
+GTC,GTC,System1(단기),확정,False,False,True,117.0,118.0,124.0,98.82,0.952,7.09
 GTC,GTC,System2(중장기),관심,False,False,True,117.0,118.0,130.0,93.98,0.908,7.09
 MAGIC,MAGIC,System1(단기),관심,False,False,True,57.15,57.76,63.66,54.22,0.907,2.19
 USDT,USDT,System1(단기),관심,False,False,True,1407.0,1408.0,1478.0,1404.0,0.953,11.6
@@ -120,8 +120,8 @@ NEWT,NEWT,System1(단기),청산,False,True,False,54.7,55.56,72.1,54.77,0.771,2.
 NEWT,NEWT,System2(중장기),청산,False,True,False,54.7,55.56,86.18,54.77,0.645,2.92
 OPEN,OPEN,System1(단기),관심,False,False,True,293.0,296.0,310.0,229.0,0.955,14.3
 IRYS,IRYS,System1(단기),관심,False,False,True,21.6,21.8,23.75,19.62,0.918,1.67
-XAN,XAN,System1(단기),관심,False,False,True,20.11,20.17,21.38,15.01,0.943,1.99
-XAN,XAN,System2(중장기),관심,False,False,True,20.11,20.17,21.38,14.67,0.943,1.99
+XAN,XAN,System1(단기),확정,False,False,True,20.11,20.17,21.38,15.01,0.943,1.99
+XAN,XAN,System2(중장기),확정,False,False,True,20.11,20.17,21.38,14.67,0.943,1.99
 POPCAT,POPCAT,System1(단기),관심,False,False,True,59.31,59.69,65.73,57.01,0.908,2.57
 LINEA,LINEA,System1(단기),청산,False,True,False,3.06,3.1,3.71,3.1,0.837,0.13
 LINEA,LINEA,System2(중장기),청산,False,True,False,3.06,3.1,4.5,3.1,0.689,0.13
