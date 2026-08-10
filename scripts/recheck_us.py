@@ -62,7 +62,8 @@ if __name__ == "__main__":
     result_df = pd.DataFrame(results)
     confirm_df = result_df[result_df['status'] == '확정'] if not result_df.empty else result_df
     exit_df = result_df[result_df['status'] == '확정이탈'] if not result_df.empty else result_df
-    print(f"확정 {len(confirm_df)}개 / 확정이탈 {len(exit_df)}개")
+    skip_df = result_df[result_df['status'] == '스킵(추격과다)'] if not result_df.empty else result_df
+    print(f"확정 {len(confirm_df)}개 / 확정이탈 {len(exit_df)}개 / 스킵(추격과다) {len(skip_df)}개")
 
     for _, r in result_df.iterrows():
         mask = (prev_df['code'] == r['code']) & (prev_df['system'] == r['system'])
@@ -77,12 +78,13 @@ if __name__ == "__main__":
 
     if not confirm_df.empty:
         lines = [f"- {r['name']} [{r['system']}]\n"
-                 f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}"
+                 f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
+                 f"  괴리율 {(r['close']-r['n_high'])/r['n_high']*100:.2f}%"
                  for _, r in confirm_df.iterrows()]
-        notify_telegram("[미국] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
+        notify_telegram("[미장] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
 
     if not exit_df.empty:
         lines = [f"- {r['name']} [{r['system']}]\n"
                  f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
                  for _, r in exit_df.iterrows()]
-        notify_telegram("[미국] 확정이탈 종목! (매도 검토)\n" + "\n".join(lines))
+        notify_telegram("[미장] 확정이탈 종목! (매도 검토)\n" + "\n".join(lines))
