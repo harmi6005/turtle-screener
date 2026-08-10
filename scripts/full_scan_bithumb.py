@@ -9,7 +9,7 @@ import time
 import requests
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram
+from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, build_watch_summary
 
 MAX_WORKERS = 10
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_bithumb_result.csv')
@@ -62,7 +62,7 @@ def fetch_and_check(coin):
 
 
 def screen_bithumb():
-    print("[빗썸] KRW 마켓 코인 목록 불러오는 중...")
+    print("[코인] KRW 마켓 코인 목록 불러오는 중...")
     coins = get_bithumb_krw_coins()
     print(f"총 {len(coins)}개 코인 병렬 조회 시작")
 
@@ -83,10 +83,8 @@ def screen_bithumb():
 
 if __name__ == "__main__":
     df = screen_bithumb()
-    print(f"\n[국내] 신호 종목 {len(df)}개 발견")
+    print(f"\n[코인] 신호 코인 {len(df)}개 발견")
 
-    # 기존에 재확인이 '확정'으로 추적 중이던 종목은 유지 (전체스캔이 덮어써서
-    # 청산 감시가 끊기지 않도록 보존)
     if os.path.exists(DATA_PATH):
         prev_df = pd.read_csv(DATA_PATH)
         confirmed_prev = prev_df[prev_df['signal'] == '확정']
@@ -96,7 +94,7 @@ if __name__ == "__main__":
                 lambda r: (r['code'], r['system']) in new_keys, axis=1)]
             if not keep_rows.empty:
                 df = pd.concat([df, keep_rows], ignore_index=True)
-                print(f"기존 확정 종목 {len(keep_rows)}개 보존")
+                print(f"기존 확정 코인 {len(keep_rows)}개 보존")
 
     os.makedirs(os.path.dirname(DATA_PATH), exist_ok=True)
     df.to_csv(DATA_PATH, index=False, encoding='utf-8-sig')
@@ -104,5 +102,11 @@ if __name__ == "__main__":
 
     entry_cnt = len(df[df['signal'] == '진입']) if not df.empty else 0
     watch_cnt = len(df[df['signal'] == '관심']) if not df.empty else 0
-    if entry_cnt > 0 or watch_cnt > 0:
-        notify_telegram(f"[국내 전체스캔 완료]\n진입 {entry_cnt}개 / 관심 {watch_cnt}개")
+
+    if entry_cnt > 0:
+        notify_telegram(f"[코인 전체스캔] 진입 신호 {entry_cnt}개 발견")
+
+    if watch_cnt > 0:
+        summary = build_watch_summary(df, "코인")
+        if summary:
+            notify_telegram(summary)
