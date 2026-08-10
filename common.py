@@ -65,13 +65,19 @@ def notify_telegram(message: str):
 
 def build_watch_summary(df, market_label, top_n=15):
     """관심종목 중 돌파(진입가)에 가장 가까운 상위 top_n개를 진입가 포함해서
-    텔레그램 메시지로 정리. 전체 개수도 같이 표시."""
+    텔레그램 메시지로 정리. 100%를 넘는 종목(장중 반짝 돌파 후 종가는 못 넘긴 케이스)은
+    제외하고, 진짜 돌파 임박(90~100% 구간)인 종목만 보여줌."""
     watch_df = df[df['signal'] == '관심']
     if watch_df.empty:
         return None
 
-    top = watch_df.sort_values('n_high_ratio', ascending=False).head(top_n)
-    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 (근접순 상위 {len(top)}개)"]
+    near_df = watch_df[(watch_df['n_high_ratio'] >= WATCH_RATIO) & (watch_df['n_high_ratio'] <= 1.0)]
+    if near_df.empty:
+        return None
+
+    top = near_df.sort_values('n_high_ratio', ascending=False).head(top_n)
+    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 "
+             f"(90~100% 구간, 상위 {len(top)}개)"]
     for _, r in top.iterrows():
         lines.append(
             f"- {r['name']}({r['code']}) [{r['system']}]\n"
