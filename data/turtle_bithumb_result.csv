@@ -27,7 +27,7 @@ AWE,AWE,System1(단기),관심,False,False,True,81.64,81.89,86.26,76.85,0.949,3.
 CBK,CBK,System1(단기),관심,False,False,True,234.0,237.0,262.0,223.0,0.905,9.85
 MANA,MANA,System1(단기),관심,False,False,True,93.72,93.72,103.0,92.69,0.91,2.88
 SUSHI,SUSHI,System1(단기),관심,False,False,True,234.0,241.0,257.0,213.0,0.938,10.1
-CELR,CELR,System1(단기),관심,False,False,True,2.73,2.73,2.8,2.2,0.975,0.12
+CELR,CELR,System1(단기),탈락,False,False,True,2.73,2.73,2.8,2.2,0.975,0.12
 BFC,BFC,System1(단기),청산,False,True,False,13.39,14.07,16.79,13.71,0.838,1.02
 BFC,BFC,System2(중장기),청산,False,True,False,13.39,14.07,22.62,13.71,0.622,1.02
 ALICE,ALICE,System1(단기),관심,False,False,True,175.0,175.0,190.0,159.0,0.921,8.15
