@@ -90,6 +90,7 @@ if __name__ == "__main__":
 
     if not exit_df.empty:
         lines = [f"- {r['name']}({r['code']}) [{r['system']}]\n"
-                 f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
-                 for _, r in exit_df.iterrows()]
-        notify_telegram("[국내] 확정이탈 종목! (매도 검토)\n" + "\n".join(lines))
+                 f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
+                 f"  괴리율 {(r['close']-r['n_high'])/r['n_high']*100:.2f}%"
+                 for _, r in confirm_df.iterrows()]
+        notify_telegram("[국장] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
