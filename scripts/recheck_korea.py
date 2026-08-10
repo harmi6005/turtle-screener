@@ -32,7 +32,10 @@ def recheck_one(row, start, end):
             status = '확정이탈' if res['exit_signal'] else '확정유지'
         elif res['entry_signal']:
             chase_ratio = (res['close'] - res['n_high']) / res['n_high']
-            status = '스킵(추격과다)' if chase_ratio > MAX_CHASE_RATIO else '확정'
+            if chase_ratio > MAX_CHASE_RATIO:
+                status = '스킵(추격과다)'
+            else:
+                status = '확정'
         else:
             status = '유지' if res['watch_signal'] else '탈락'
         return {'code': code, 'name': name, 'system': system, 'status': status, **res}
@@ -67,7 +70,9 @@ if __name__ == "__main__":
     result_df = pd.DataFrame(results)
     confirm_df = result_df[result_df['status'] == '확정']
     exit_df = result_df[result_df['status'] == '확정이탈']
+    skip_df = result_df[result_df['status'] == '스킵(추격과다)']
     print(f"확정 {len(confirm_df)}개 / 확정이탈 {len(exit_df)}개 / "
+          f"스킵(추격과다) {len(skip_df)}개 / "
           f"유지 {len(result_df[result_df['status']=='유지'])}개 / "
           f"탈락 {len(result_df[result_df['status']=='탈락'])}개")
 
@@ -84,13 +89,13 @@ if __name__ == "__main__":
 
     if not confirm_df.empty:
         lines = [f"- {r['name']}({r['code']}) [{r['system']}]\n"
-                 f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}"
-                 for _, r in confirm_df.iterrows()]
-        notify_telegram("[국내] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
-
-    if not exit_df.empty:
-        lines = [f"- {r['name']}({r['code']}) [{r['system']}]\n"
                  f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
                  f"  괴리율 {(r['close']-r['n_high'])/r['n_high']*100:.2f}%"
                  for _, r in confirm_df.iterrows()]
         notify_telegram("[국장] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
+
+    if not exit_df.empty:
+        lines = [f"- {r['name']}({r['code']}) [{r['system']}]\n"
+                 f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
+                 for _, r in exit_df.iterrows()]
+        notify_telegram("[국장] 확정이탈 종목! (매도 검토)\n" + "\n".join(lines))
