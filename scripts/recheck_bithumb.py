@@ -92,12 +92,13 @@ if __name__ == "__main__":
 
     if not confirm_df.empty:
         lines = [f"- {r['name']} [{r['system']}]\n"
-                 f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}"
+                 f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
+                 f"  괴리율 {(r['close']-r['n_high'])/r['n_high']*100:.2f}%"
                  for _, r in confirm_df.iterrows()]
-        notify_telegram("[빗썸] 확정 전환 코인! (매수 검토)\n" + "\n".join(lines))
+        notify_telegram("[코인] 확정 전환 코인! (매수 검토)\n" + "\n".join(lines))
 
     if not exit_df.empty:
         lines = [f"- {r['name']} [{r['system']}]\n"
                  f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
                  for _, r in exit_df.iterrows()]
-        notify_telegram("[빗썸] 확정이탈 코인! (매도 검토)\n" + "\n".join(lines))
+        notify_telegram("[코인] 확정이탈 코인! (매도 검토)\n" + "\n".join(lines))
