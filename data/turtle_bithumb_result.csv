@@ -133,7 +133,7 @@ GRASS,GRASS,System2(중장기),청산,False,True,False,409.0,421.0,893.0,414.0,0
 PUMPBTC,PUMPBTC,System1(단기),관심,False,False,True,15.46,16.0,15.87,12.44,1.008,0.93
 HAEDAL,HAEDAL,System1(단기),관심,False,False,True,24.24,24.82,26.75,20.32,0.928,1.26
 SXT,SXT,System1(단기),관심,False,False,True,10.48,11.4,11.55,8.9,0.987,0.75
-PROMPT,PROMPT,System1(단기),관심,False,False,True,31.87,32.63,32.0,27.19,1.02,1.76
+PROMPT,PROMPT,System1(단기),확정,False,False,True,31.87,32.63,32.0,27.19,1.02,1.76
 H,H,System1(단기),청산,False,True,False,7.21,25.28,49.4,21.35,0.512,7.69
 H,H,System2(중장기),청산,False,True,False,7.21,25.28,279.0,21.35,0.091,7.69
 FORT,FORT,System1(단기),관심,False,False,True,17.9,18.99,20.55,16.74,0.924,1.17
@@ -146,8 +146,8 @@ PUMP,PUMP,System2(중장기),관심,False,False,True,3.75,3.79,3.82,2.56,0.993,0
 IRYS,IRYS,System1(단기),관심,False,False,True,21.93,22.31,23.75,19.62,0.939,1.69
 TOWNS,TOWNS,System1(단기),관심,False,False,True,3.4,3.61,3.83,2.73,0.941,0.25
 TOWNS,TOWNS,System2(중장기),관심,False,False,True,3.4,3.61,3.83,2.73,0.941,0.25
-XAN,XAN,System1(단기),관심,False,False,True,28.56,28.77,28.88,15.69,0.996,2.3
-XAN,XAN,System2(중장기),관심,False,False,True,28.56,28.77,28.88,14.67,0.996,2.3
+XAN,XAN,System1(단기),탈락,False,False,True,28.56,28.77,28.88,15.69,0.996,2.3
+XAN,XAN,System2(중장기),탈락,False,False,True,28.56,28.77,28.88,14.67,0.996,2.3
 POPCAT,POPCAT,System1(단기),관심,False,False,True,63.14,63.86,65.73,58.95,0.972,2.63
 SAPIEN,SAPIEN,System1(단기),관심,False,False,True,114.0,116.0,128.0,108.0,0.906,6.0
 FF,FF,System1(단기),관심,False,False,True,88.75,89.62,99.48,88.19,0.901,3.98
