@@ -113,8 +113,8 @@ BIIB,BIIB,System1(단기),관심,False,False,True,207.94,208.31,218.59,199.4,0.9
 BIIB,BIIB,System2(중장기),관심,False,False,True,207.94,208.31,219.72,186.03,0.948,8.56
 BLK,BLK,System1(단기),관심,False,False,True,1136.39,1143.52,1150.3,1033.49,0.994,29.05
 BLK,BLK,System2(중장기),관심,False,False,True,1136.39,1143.52,1150.3,1015.97,0.994,29.05
-BX,BX,System1(단기),관심,False,False,True,137.13,138.5,139.87,123.0,0.99,4.58
-BX,BX,System2(중장기),관심,False,False,True,137.13,138.5,139.87,118.67,0.99,4.58
+BX,BX,System1(단기),확정,False,False,True,137.13,138.5,139.87,123.0,0.99,4.58
+BX,BX,System2(중장기),확정,False,False,True,137.13,138.5,139.87,118.67,0.99,4.58
 XYZ,XYZ,System1(단기),관심,False,False,True,79.0,80.04,86.75,75.98,0.923,2.92
 XYZ,XYZ,System2(중장기),관심,False,False,True,79.0,80.04,86.75,75.73,0.923,2.92
 BNY,BNY,System1(단기),관심,False,False,True,157.61,158.92,163.12,151.68,0.974,3.41
@@ -200,7 +200,7 @@ CL,CL,System2(중장기),관심,False,False,True,93.27,93.56,95.46,89.08,0.98,2.
 CMCSA,CMCSA,System1(단기),진입,True,False,False,25.36,25.5,25.2,21.28,1.012,0.89
 CMCSA,CMCSA,System2(중장기),관심,False,False,True,25.36,25.5,26.74,21.28,0.954,0.89
 FIX,FIX,System1(단기),관심,False,False,True,1694.55,1769.0,1879.99,1491.24,0.941,111.93
-COP,COP,System1(단기),관심,False,False,True,117.61,118.52,122.38,113.21,0.968,3.39
+COP,COP,System1(단기),확정,False,False,True,117.61,118.52,122.38,113.21,0.968,3.39
 COP,COP,System2(중장기),관심,False,False,True,117.61,118.52,126.0,107.61,0.941,3.39
 ED,ED,System1(단기),관심,False,False,True,107.98,108.69,115.2,106.12,0.944,2.32
 ED,ED,System2(중장기),관심,False,False,True,107.98,108.69,115.26,106.12,0.943,2.32
@@ -297,7 +297,7 @@ ES,ES,System1(단기),관심,False,False,True,72.33,72.93,76.57,70.71,0.952,1.63
 ES,ES,System2(중장기),관심,False,False,True,72.33,72.93,76.57,70.71,0.952,1.63
 EXC,EXC,System1(단기),관심,False,False,True,45.61,45.88,48.49,44.74,0.946,1.05
 EXC,EXC,System2(중장기),관심,False,False,True,45.61,45.88,48.54,44.74,0.945,1.05
-EXE,EXE,System1(단기),관심,False,False,True,92.84,93.82,95.51,88.1,0.982,2.58
+EXE,EXE,System1(단기),탈락,False,False,True,92.84,93.82,95.51,88.1,0.982,2.58
 EXE,EXE,System2(중장기),관심,False,False,True,92.84,93.82,100.95,84.99,0.929,2.58
 EXPE,EXPE,System1(단기),관심,False,False,True,310.68,314.79,331.31,258.25,0.95,12.7
 EXPE,EXPE,System2(중장기),관심,False,False,True,310.68,314.79,331.31,251.12,0.95,12.7
@@ -305,7 +305,7 @@ EXPD,EXPD,System1(단기),관심,False,False,True,178.71,181.0,187.74,164.35,0.9
 EXPD,EXPD,System2(중장기),관심,False,False,True,178.71,181.0,187.74,164.35,0.964,4.82
 EXR,EXR,System1(단기),관심,False,False,True,149.54,151.35,158.88,144.42,0.953,3.46
 EXR,EXR,System2(중장기),관심,False,False,True,149.54,151.35,158.88,142.58,0.953,3.46
-XOM,XOM,System1(단기),관심,False,False,True,153.04,153.67,159.07,149.09,0.966,3.85
+XOM,XOM,System1(단기),확정,False,False,True,153.04,153.67,159.07,149.09,0.966,3.85
 XOM,XOM,System2(중장기),관심,False,False,True,153.04,153.67,163.68,137.14,0.939,3.85
 FFIV,FFIV,System1(단기),관심,False,False,True,400.23,420.0,435.0,366.93,0.966,16.36
 FFIV,FFIV,System2(중장기),관심,False,False,True,400.23,420.0,435.0,366.93,0.966,16.36
@@ -502,8 +502,8 @@ MCD,MCD,System1(단기),관심,False,False,True,274.48,276.87,278.7,262.9,0.993,
 MCD,MCD,System2(중장기),관심,False,False,True,274.48,276.87,289.29,260.96,0.957,5.75
 MCK,MCK,System1(단기),관심,False,False,True,869.58,889.69,912.5,810.88,0.975,28.05
 MCK,MCK,System2(중장기),관심,False,False,True,869.58,889.69,912.5,790.57,0.975,28.05
-MDT,MDT,System1(단기),관심,False,False,True,87.16,87.19,88.98,82.41,0.98,2.29
-MDT,MDT,System2(중장기),관심,False,False,True,87.16,87.19,88.98,78.97,0.98,2.29
+MDT,MDT,System1(단기),확정,False,False,True,87.16,87.19,88.98,82.41,0.98,2.29
+MDT,MDT,System2(중장기),확정,False,False,True,87.16,87.19,88.98,78.97,0.98,2.29
 MRK,MRK,System1(단기),관심,False,False,True,128.58,128.75,135.05,126.22,0.953,3.35
 MRK,MRK,System2(중장기),관심,False,False,True,128.58,128.75,135.05,120.16,0.953,3.35
 MET,MET,System1(단기),관심,False,False,True,97.77,99.49,100.93,90.78,0.986,1.92
@@ -535,7 +535,7 @@ NDAQ,NDAQ,System1(단기),관심,False,False,True,94.59,96.04,96.87,90.84,0.991,
 NDAQ,NDAQ,System2(중장기),관심,False,False,True,94.59,96.04,96.87,87.35,0.991,2.37
 NTAP,NTAP,System1(단기),탈락,False,False,True,189.52,194.18,195.7,163.44,0.992,7.99
 NTAP,NTAP,System2(중장기),탈락,False,False,True,189.52,194.18,195.7,156.26,0.992,7.99
-NFLX,NFLX,System1(단기),관심,False,False,True,74.14,74.5,75.7,67.97,0.984,2.46
+NFLX,NFLX,System1(단기),확정,False,False,True,74.14,74.5,75.7,67.97,0.984,2.46
 NEM,NEM,System1(단기),진입,True,False,False,112.98,113.76,106.4,88.98,1.069,3.82
 NEM,NEM,System2(중장기),진입,True,False,False,112.98,113.76,112.18,88.75,1.014,3.82
 NWSA,NWSA,System1(단기),관심,False,False,True,28.52,29.53,30.88,26.35,0.956,0.88
