@@ -9,7 +9,7 @@ import pandas as pd
 import FinanceDataReader as fdr
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram
+from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, build_watch_summary
 
 MAX_WORKERS = 20
 MARKET = 'KRX'
@@ -43,7 +43,7 @@ def fetch_and_check(code_name, start, end):
 
 
 def screen_korea():
-    print(f"[국내] {MARKET} 종목 리스트 불러오는 중...")
+    print(f"[국장] {MARKET} 종목 리스트 불러오는 중...")
     listing = fdr.StockListing(MARKET)
     tickers = listing[['Code', 'Name']].values.tolist()
     print(f"총 {len(tickers)}개 종목 병렬 조회 시작")
@@ -68,7 +68,7 @@ def screen_korea():
 
 if __name__ == "__main__":
     df = screen_korea()
-    print(f"\n[국내] 신호 종목 {len(df)}개 발견")
+    print(f"\n[국장] 신호 종목 {len(df)}개 발견")
 
     # 기존에 재확인이 '확정'으로 추적 중이던 종목은 유지 (전체스캔이 덮어써서
     # 청산 감시가 끊기지 않도록 보존)
@@ -76,6 +76,7 @@ if __name__ == "__main__":
         prev_df = pd.read_csv(DATA_PATH)
         confirmed_prev = prev_df[prev_df['signal'] == '확정']
         if not confirmed_prev.empty:
+            key_cols = ['code', 'system']
             new_keys = set(zip(df['code'], df['system'])) if not df.empty else set()
             keep_rows = confirmed_prev[~confirmed_prev.apply(
                 lambda r: (r['code'], r['system']) in new_keys, axis=1)]
@@ -89,5 +90,11 @@ if __name__ == "__main__":
 
     entry_cnt = len(df[df['signal'] == '진입']) if not df.empty else 0
     watch_cnt = len(df[df['signal'] == '관심']) if not df.empty else 0
-    if entry_cnt > 0 or watch_cnt > 0:
-        notify_telegram(f"[국내 전체스캔 완료]\n진입 {entry_cnt}개 / 관심 {watch_cnt}개")
+
+    if entry_cnt > 0:
+        notify_telegram(f"[국장 전체스캔] 진입 신호 {entry_cnt}개 발견")
+
+    if watch_cnt > 0:
+        summary = build_watch_summary(df, "국장")
+        if summary:
+            notify_telegram(summary)
