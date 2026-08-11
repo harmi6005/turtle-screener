@@ -22,6 +22,10 @@ def is_us_market_open():
 
 
 if __name__ == "__main__":
+    if not is_us_market_open():
+        print("미국 장 시간이 아니라서 재확인을 건너뜁니다 (평일 09:30~16:00 ET).")
+        sys.exit(0)
+
     if not os.path.exists(DATA_PATH):
         print("직전 결과 파일이 없어요. full_scan_us.py를 먼저 실행해주세요.")
         sys.exit(0)
