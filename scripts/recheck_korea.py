@@ -7,12 +7,20 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 import pandas as pd
 import FinanceDataReader as fdr
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time as dtime
+from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram
 
 MAX_WORKERS = 20
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
+
+
+def is_korea_market_open():
+    now = datetime.now(ZoneInfo('Asia/Seoul'))
+    if now.weekday() >= 5:  # 5=토, 6=일
+        return False
+    return dtime(9, 0) <= now.time() <= dtime(15, 30)
 
 
 def recheck_one(row, start, end):
