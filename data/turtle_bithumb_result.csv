@@ -122,7 +122,7 @@ MNT,MNT,System1(단기),진입,True,False,False,633.0,639.0,629.0,560.0,1.016,13
 GTC,GTC,System1(단기),관심,False,False,True,119.0,123.0,129.0,102.0,0.953,7.88
 GTC,GTC,System2(중장기),관심,False,False,True,119.0,123.0,130.0,93.98,0.946,7.88
 TIA,TIA,System1(단기),청산,False,True,False,448.0,463.0,539.0,449.0,0.859,17.95
-ICP,ICP,System1(단기),관심,False,False,True,3212.0,3400.0,3270.0,2660.0,1.04,112.6
+ICP,ICP,System1(단기),확정,False,False,True,3212.0,3400.0,3270.0,2660.0,1.04,112.6
 NEO,NEO,System1(단기),청산,False,True,False,2484.0,2560.0,3019.0,2534.0,0.848,75.65
 NEO,NEO,System2(중장기),청산,False,True,False,2484.0,2560.0,3511.0,2532.0,0.729,75.65
 ARK,ARK,System1(단기),청산,False,True,False,129.0,132.0,154.0,130.0,0.857,5.95
@@ -189,7 +189,7 @@ HAEDAL,HAEDAL,System1(단기),관심,False,False,True,23.63,24.36,25.82,20.32,0.
 PROMPT,PROMPT,System1(단기),관심,False,False,True,31.42,32.05,33.28,27.19,0.963,1.83
 SXT,SXT,System1(단기),관심,False,False,True,10.87,11.13,11.55,9.53,0.964,0.75
 BTR,BTR,System1(단기),진입,True,False,False,42.34,46.18,38.79,25.72,1.191,3.46
-BTR,BTR,System2(중장기),관심,False,False,True,42.34,46.18,42.77,22.78,1.08,3.46
+BTR,BTR,System2(중장기),확정,False,False,True,42.34,46.18,42.77,22.78,1.08,3.46
 HOME,HOME,System1(단기),관심,False,False,True,12.54,17.2,16.09,7.6,1.069,2.23
 SOPH,SOPH,System1(단기),청산,False,True,False,5.21,5.64,7.75,5.35,0.728,0.25
 SOPH,SOPH,System2(중장기),청산,False,True,False,5.21,5.64,8.52,5.35,0.662,0.25
