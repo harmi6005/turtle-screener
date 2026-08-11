@@ -39,7 +39,7 @@ CBK,CBK,System1(단기),관심,False,False,True,238.0,238.0,262.0,223.0,0.908,9.
 MANA,MANA,System1(단기),관심,False,False,True,93.29,94.73,103.0,92.69,0.92,2.96
 SUSHI,SUSHI,System1(단기),관심,False,False,True,229.0,241.0,257.0,213.0,0.938,10.15
 PUNDIX,PUNDIX,System1(단기),관심,False,False,True,108.0,110.0,122.0,105.0,0.902,4.0
-CELR,CELR,System1(단기),관심,False,False,True,2.8,2.93,2.8,2.2,1.046,0.13
+CELR,CELR,System1(단기),탈락,False,False,True,2.8,2.93,2.8,2.2,1.046,0.13
 BFC,BFC,System1(단기),청산,False,True,False,13.69,14.07,16.79,13.71,0.838,1.02
 BFC,BFC,System2(중장기),청산,False,True,False,13.69,14.07,22.62,13.71,0.622,1.02
 ALICE,ALICE,System1(단기),관심,False,False,True,168.0,177.0,190.0,159.0,0.932,8.3
@@ -169,7 +169,7 @@ HAEDAL,HAEDAL,System1(단기),관심,False,False,True,23.75,24.36,25.82,20.32,0.
 PROMPT,PROMPT,System1(단기),관심,False,False,True,31.31,31.99,33.28,27.19,0.961,1.82
 SXT,SXT,System1(단기),관심,False,False,True,10.7,11.13,11.55,9.53,0.964,0.75
 BTR,BTR,System1(단기),진입,True,False,False,42.64,45.34,38.79,25.72,1.169,3.41
-BTR,BTR,System2(중장기),관심,False,False,True,42.64,45.34,42.77,22.78,1.06,3.41
+BTR,BTR,System2(중장기),탈락,False,False,True,42.64,45.34,42.77,22.78,1.06,3.41
 HOME,HOME,System1(단기),관심,False,False,True,12.75,17.2,16.09,7.6,1.069,2.23
 SPK,SPK,System1(단기),청산,False,True,False,20.08,20.56,26.12,20.17,0.787,0.86
 SPK,SPK,System2(중장기),청산,False,True,False,20.08,20.56,31.21,20.17,0.659,0.86
