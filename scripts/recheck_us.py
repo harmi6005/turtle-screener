@@ -7,10 +7,18 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 import pandas as pd
 import yfinance as yf
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, time as dtime
+from zoneinfo import ZoneInfo
 from common import SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_us_result.csv')
+
+
+def is_us_market_open():
+    now = datetime.now(ZoneInfo('America/New_York'))
+    if now.weekday() >= 5:  # 5=토, 6=일
+        return False
+    return dtime(9, 30) <= now.time() <= dtime(16, 0)
 
 
 if __name__ == "__main__":
