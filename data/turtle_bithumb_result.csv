@@ -200,8 +200,8 @@ ENSO,ENSO,System1(단기),관심,False,False,True,1413.0,1424.0,1461.0,1171.0,0.
 ENSO,ENSO,System2(중장기),관심,False,False,True,1413.0,1424.0,1461.0,1061.0,0.975,95.6
 YB,YB,System1(단기),관심,False,False,True,109.0,111.0,117.0,91.37,0.949,5.74
 SENT,SENT,System1(단기),관심,False,False,True,18.87,19.0,20.59,18.09,0.923,0.95
-CYS,CYS,System1(단기),관심,False,False,True,1860.0,1899.0,1950.0,397.0,0.974,204.55
-CYS,CYS,System2(중장기),관심,False,False,True,1860.0,1899.0,1950.0,315.0,0.974,204.55
+CYS,CYS,System1(단기),탈락,False,False,True,1860.0,1899.0,1950.0,397.0,0.974,204.55
+CYS,CYS,System2(중장기),탈락,False,False,True,1860.0,1899.0,1950.0,315.0,0.974,204.55
 EDGE,EDGE,System1(단기),관심,False,False,True,89.39,110.0,109.0,83.78,1.009,8.57
 WET,WET,System1(단기),관심,False,False,True,94.59,95.65,104.0,90.5,0.92,4.68
 LIT,LIT,System1(단기),관심,False,False,True,3451.0,3496.0,3515.0,2776.0,0.995,220.15
