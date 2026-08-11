@@ -52,6 +52,10 @@ def recheck_one(row, start, end):
 
 
 if __name__ == "__main__":
+    if not is_korea_market_open():
+        print("국내 장 시간이 아니라서 재확인을 건너뜁니다 (평일 09:00~15:30 KST).")
+        sys.exit(0)
+
     if not os.path.exists(DATA_PATH):
         print("직전 결과 파일이 없어요. full_scan_korea.py를 먼저 실행해주세요.")
         sys.exit(0)
