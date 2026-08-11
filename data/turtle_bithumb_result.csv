@@ -91,7 +91,7 @@ MOC,MOC,System1(단기),관심,False,False,True,23.8,23.95,26.4,23.24,0.907,0.74
 MNT,MNT,System1(단기),관심,False,False,True,628.0,634.0,629.0,560.0,1.008,13.4
 GTC,GTC,System1(단기),관심,False,False,True,120.0,122.0,129.0,102.0,0.946,7.83
 GTC,GTC,System2(중장기),관심,False,False,True,120.0,122.0,130.0,93.98,0.938,7.83
-ICP,ICP,System1(단기),관심,False,False,True,3178.0,3393.0,3270.0,2660.0,1.038,112.25
+ICP,ICP,System1(단기),탈락,False,False,True,3178.0,3393.0,3270.0,2660.0,1.038,112.25
 NEO,NEO,System1(단기),청산,False,True,False,2485.0,2560.0,3019.0,2534.0,0.848,75.65
 NEO,NEO,System2(중장기),청산,False,True,False,2485.0,2560.0,3511.0,2532.0,0.729,75.65
 YGG,YGG,System1(단기),관심,False,False,True,27.4,28.11,29.56,25.02,0.951,1.26
@@ -177,10 +177,10 @@ CYS,CYS,System1(단기),관심,False,False,True,1767.0,1800.0,1950.0,397.0,0.923
 CYS,CYS,System2(중장기),관심,False,False,True,1767.0,1800.0,1950.0,315.0,0.923,199.6
 WET,WET,System1(단기),관심,False,False,True,94.88,95.65,104.0,90.5,0.92,4.66
 LIT,LIT,System1(단기),관심,False,False,True,3317.0,3380.0,3515.0,2776.0,0.962,214.35
-ELSA,ELSA,System1(단기),관심,False,False,True,82.1,83.36,82.33,64.84,1.013,4.74
+ELSA,ELSA,System1(단기),탈락,False,False,True,82.1,83.36,82.33,64.84,1.013,4.74
 AZTEC,AZTEC,System1(단기),청산,False,True,False,18.62,18.79,21.7,18.7,0.866,0.75
 AZTEC,AZTEC,System2(중장기),청산,False,True,False,18.62,18.79,26.7,18.7,0.704,0.75
-PRL,PRL,System1(단기),관심,False,False,True,425.0,427.0,434.0,321.0,0.984,37.0
-PRL,PRL,System2(중장기),관심,False,False,True,425.0,427.0,434.0,243.0,0.984,37.0
+PRL,PRL,System1(단기),탈락,False,False,True,425.0,427.0,434.0,321.0,0.984,37.0
+PRL,PRL,System2(중장기),탈락,False,False,True,425.0,427.0,434.0,243.0,0.984,37.0
 BICO,BICO,System1(단기),확정,False,False,True,74.59,81.29,75.38,15.87,1.078,5.4
 BTR,BTR,System1(단기),확정,False,False,True,32.01,32.13,32.44,24.03,0.99,2.08
