@@ -88,7 +88,7 @@ EDU,EDU,System1(단기),관심,False,False,True,53.69,53.86,57.65,45.38,0.934,3.
 EDU,EDU,System2(중장기),관심,False,False,True,53.69,53.86,57.65,42.65,0.934,3.57
 PEPE,PEPE,System1(단기),관심,False,False,True,0.0,0.0,0.0,0.0,0.911,0.0
 MOC,MOC,System1(단기),관심,False,False,True,23.8,23.95,26.4,23.24,0.907,0.74
-MNT,MNT,System1(단기),관심,False,False,True,628.0,634.0,629.0,560.0,1.008,13.4
+MNT,MNT,System1(단기),확정,False,False,True,628.0,634.0,629.0,560.0,1.008,13.4
 GTC,GTC,System1(단기),관심,False,False,True,120.0,122.0,129.0,102.0,0.946,7.83
 GTC,GTC,System2(중장기),관심,False,False,True,120.0,122.0,130.0,93.98,0.938,7.83
 ICP,ICP,System1(단기),탈락,False,False,True,3178.0,3393.0,3270.0,2660.0,1.038,112.25
