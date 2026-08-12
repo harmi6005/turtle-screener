@@ -6,20 +6,23 @@
 
 매수 등록 (시장은 코드 형태로 자동 판별함 - 국내는 6자리 숫자, 나머지는
 빗썸 코인인지 확인 후 아니면 미국 종목으로 처리):
-  buy 코드 매수가 목표가
-    예) buy BTC 5000000 6000000
-        buy 005930 70000 80000
-        buy AAPL 220 250
+  buy 코드 매수가
+    예) buy BTC 5000000
+        buy 005930 70000
+        buy AAPL 220
 
-  등록하면 4자리 거래번호를 자동 발급하고, 손절가도 자동 계산해서 같이 알려줘요.
-  손절가 계산 방식: 터틀 트레이딩 오리지널 원칙 (진입가 - 2 x ATR)
-    ATR(Average True Range)은 최근 20일 변동성을 의미하고, 실시간으로 조회해서 계산해요.
-    즉 목표가와는 무관하게, 그 종목이 최근 실제로 얼마나 변동성이 컸는지로 손절폭을 정해요.
+  터틀 트레이딩 철학 그대로 "고정 목표가 없이, 오르는 동안은 최대한 들고 간다" 방식이에요.
+  - 손절가는 진입 시점 ATR(최근 20일 변동성) 기준으로 "진입가 - 2xATR"로 시작하고,
+    가격이 최고가를 경신할 때마다 "최고가 - 2xATR"로 계속 따라 올라가요 (트레일링 스탑).
+    즉 오르면 손절선도 같이 올라가서 수익을 지켜주고, 절대 내려가지는 않아요.
+  - 진입가 대비 ATR의 1배, 2배, 3배... 만큼 오를 때마다 "N배 수익 도달" 알림이 따로 와요
+    (이건 매도 신호가 아니라 그냥 진행 상황 알림이에요).
+  - 실제 매도 신호는 가격이 트레일링 손절선 아래로 떨어질 때만 옵니다.
 
-청산 종료:
+청산 종료 (직접 팔았을 때):
   sell 거래번호 [매도가]
-    예) sell 4821 6200000     (매도가 넣으면 손익률까지 계산)
-        sell 4821             (매도가 생략 가능)
+    예) sell 4821 6200000
+        sell 4821
 
 목록 조회:
   list
@@ -40,9 +43,10 @@ from common import notify_telegram, calc_atr
 HOLDINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 OFFSET_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'telegram_offset.txt')
 
-COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'target_price', 'stop_price', 'status']
+COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
+           'highest_price', 'stop_price', 'last_milestone', 'status']
 ATR_PERIOD = 20
-ATR_MULTIPLIER = 2  # 터틀 오리지널 원칙: 손절가 = 진입가 - 2 x ATR
+ATR_MULTIPLIER = 2  # 터틀 오리지널 원칙: 손절폭 = 2 x ATR
 
 
 def fmt_num(v):
@@ -154,18 +158,14 @@ def gen_trade_id(df):
 
 
 def handle_buy(args, df):
-    if len(args) < 3:
-        return df, "형식: buy 코드 매수가 목표가\n예) buy BTC 5000000 6000000"
+    if len(args) < 2:
+        return df, "형식: buy 코드 매수가\n예) buy BTC 5000000"
 
     code = args[0].upper()
     try:
         buy_price = float(args[1])
-        target_price = float(args[2])
     except ValueError:
-        return df, "매수가/목표가는 숫자로 입력해주세요."
-
-    if target_price <= buy_price:
-        return df, "목표가는 매수가보다 높아야 해요."
+        return df, "매수가는 숫자로 입력해주세요."
 
     market = detect_market(code)
 
@@ -176,19 +176,21 @@ def handle_buy(args, df):
 
     stop_price = buy_price - ATR_MULTIPLIER * atr
     if stop_price <= 0:
-        stop_price = buy_price * 0.1  # 극단적으로 음수/0이 되는 것 방지
+        stop_price = buy_price * 0.1
 
     trade_id = gen_trade_id(df)
     new_row = {'trade_id': trade_id, 'market': market, 'code': code,
-               'buy_price': buy_price, 'target_price': target_price,
-               'stop_price': round(stop_price, 4), 'status': 'active'}
+               'buy_price': buy_price, 'atr_entry': round(atr, 6),
+               'highest_price': buy_price, 'stop_price': round(stop_price, 4),
+               'last_milestone': 0, 'status': 'active'}
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
 
     return df, (f"등록 완료 (거래번호 {trade_id})\n"
                 f"{code} [{market}]\n"
-                f"매수가 {fmt_num(buy_price)} / 목표가 {fmt_num(target_price)}\n"
-                f"손절가(터틀원칙, 진입가-2xATR) {fmt_num(stop_price)} "
-                f"(ATR≈{fmt_num(atr)})")
+                f"매수가 {fmt_num(buy_price)}\n"
+                f"초기 손절가(진입가-2xATR) {fmt_num(stop_price)} (ATR≈{fmt_num(atr)})\n"
+                f"목표가 없이 트레일링 방식으로 추적합니다. "
+                f"오를 때마다 손절선도 같이 올라가고, ATR 배수 도달 시 알림 갈게요.")
 
 
 def handle_sell(args, df):
@@ -223,8 +225,8 @@ def handle_list(df):
     lines = ["현재 감시 중인 거래:"]
     for _, r in active.iterrows():
         lines.append(f"[{r['trade_id']}] {r['code']} [{r['market']}] "
-                      f"매수 {fmt_num(r['buy_price'])} / 목표 {fmt_num(r['target_price'])} / "
-                      f"손절 {fmt_num(r['stop_price'])}")
+                      f"매수 {fmt_num(r['buy_price'])} / 최고가 {fmt_num(r['highest_price'])} / "
+                      f"현재 손절선 {fmt_num(r['stop_price'])} / {r['last_milestone']}배 수익 도달")
     return "\n".join(lines)
 
 
