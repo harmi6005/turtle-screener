@@ -72,8 +72,8 @@ SUN,SUN,System2(중장기),관심,False,False,True,25.56,25.82,28.45,25.1,0.908,
 SOL,SOL,System1(단기),관심,False,False,True,107400.0,107900.0,114900.0,101800.0,0.939,2780.0
 1INCH,1INCH,System1(단기),관심,False,False,True,116.0,117.0,128.0,113.0,0.914,3.8
 1INCH,1INCH,System2(중장기),관심,False,False,True,116.0,117.0,128.0,113.0,0.914,3.8
-CRV,CRV,System1(단기),관심,False,False,True,374.0,380.0,380.0,283.0,1.0,17.05
-CRV,CRV,System2(중장기),관심,False,False,True,374.0,380.0,380.0,283.0,1.0,17.05
+CRV,CRV,System1(단기),탈락,False,False,True,374.0,380.0,380.0,283.0,1.0,17.05
+CRV,CRV,System2(중장기),탈락,False,False,True,374.0,380.0,380.0,283.0,1.0,17.05
 MINA,MINA,System1(단기),청산,False,True,False,54.34,55.45,73.11,55.09,0.758,2.1
 MINA,MINA,System2(중장기),청산,False,True,False,54.34,55.45,81.66,55.09,0.679,2.1
 GALA,GALA,System1(단기),청산,False,True,False,2.43,2.44,3.05,2.44,0.799,0.09
@@ -227,6 +227,6 @@ MEGA,MEGA,System1(단기),청산,False,True,False,46.3,47.8,65.23,47.36,0.733,3.
 MEGA,MEGA,System2(중장기),청산,False,True,False,46.3,47.8,104.0,47.36,0.46,3.22
 AI,AI,System1(단기),청산,False,True,False,28.77,29.29,41.98,29.27,0.698,2.14
 AI,AI,System2(중장기),청산,False,True,False,28.77,29.29,63.76,29.27,0.459,2.14
-PRL,PRL,System1(단기),관심,False,False,True,458.0,462.0,458.0,321.0,1.009,39.5
-PRL,PRL,System2(중장기),관심,False,False,True,458.0,462.0,458.0,243.0,1.009,39.5
+PRL,PRL,System1(단기),확정,False,False,True,458.0,462.0,458.0,321.0,1.009,39.5
+PRL,PRL,System2(중장기),확정,False,False,True,458.0,462.0,458.0,243.0,1.009,39.5
 BICO,BICO,System1(단기),확정,False,False,True,74.59,81.29,75.38,15.87,1.078,5.4
