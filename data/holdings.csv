@@ -1,2 +1,2 @@
-trade_id,market,code,buy_price,target_price,stop_price,status
+trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,last_milestone,status
 8801,COIN,XRP,1435.0,2120.0,750.0,closed_manual
