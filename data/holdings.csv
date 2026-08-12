@@ -1,1 +1,2 @@
 trade_id,market,code,buy_price,target_price,stop_price,status
+8801,COIN,XRP,1435.0,2120.0,750.0,active
