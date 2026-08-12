@@ -214,7 +214,7 @@ USD1,USD1,System1(단기),관심,False,False,True,1408.0,1410.0,1465.0,1382.0,0.
 USD1,USD1,System2(중장기),관심,False,False,True,1408.0,1410.0,1533.0,1242.0,0.92,24.6
 EUL,EUL,System1(단기),청산,False,True,False,1562.0,1666.0,4114.0,1577.0,0.405,452.25
 AVNT,AVNT,System1(단기),관심,False,False,True,129.0,134.0,139.0,112.0,0.964,6.05
-OPEN,OPEN,System1(단기),관심,False,False,True,302.0,303.0,310.0,250.0,0.977,17.1
+OPEN,OPEN,System1(단기),탈락,False,False,True,302.0,303.0,310.0,250.0,0.977,17.1
 PUMP,PUMP,System1(단기),관심,False,False,True,3.72,3.93,4.12,2.9,0.954,0.33
 PUMP,PUMP,System2(중장기),관심,False,False,True,3.72,3.93,4.12,2.56,0.954,0.33
 IRYS,IRYS,System1(단기),관심,False,False,True,22.45,23.2,23.75,19.62,0.977,1.85
