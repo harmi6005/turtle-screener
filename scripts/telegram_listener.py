@@ -12,8 +12,9 @@
         buy AAPL 220 250
 
   등록하면 4자리 거래번호를 자동 발급하고, 손절가도 자동 계산해서 같이 알려줘요.
-  손절가 계산 방식: 목표가까지의 상승폭(risk)만큼 매수가 밑으로 잡음 (손익비 1:1)
-    예) 매수 100 / 목표 120 이면 -> 상승폭 20 -> 손절가 = 100 - 20 = 80
+  손절가 계산 방식: 터틀 트레이딩 오리지널 원칙 (진입가 - 2 x ATR)
+    ATR(Average True Range)은 최근 20일 변동성을 의미하고, 실시간으로 조회해서 계산해요.
+    즉 목표가와는 무관하게, 그 종목이 최근 실제로 얼마나 변동성이 컸는지로 손절폭을 정해요.
 
 청산 종료:
   sell 거래번호 [매도가]
@@ -31,12 +32,17 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 import requests
 import pandas as pd
-from common import notify_telegram
+import FinanceDataReader as fdr
+import yfinance as yf
+from datetime import datetime, timedelta
+from common import notify_telegram, calc_atr
 
 HOLDINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 OFFSET_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'telegram_offset.txt')
 
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'target_price', 'stop_price', 'status']
+ATR_PERIOD = 20
+ATR_MULTIPLIER = 2  # 터틀 오리지널 원칙: 손절가 = 진입가 - 2 x ATR
 
 
 def fmt_num(v):
@@ -98,6 +104,47 @@ def detect_market(code):
     return 'US'
 
 
+def get_recent_ohlc(market, code, days=60):
+    """ATR 계산에 필요한 최근 OHLC 데이터를 가져온다."""
+    try:
+        if market == 'KR':
+            end = datetime.today()
+            start = end - timedelta(days=days)
+            df = fdr.DataReader(str(code).zfill(6), start, end)
+            return df if not df.empty else None
+
+        elif market == 'US':
+            df = yf.download(code, period=f'{days}d', auto_adjust=True, progress=False)
+            return df if not df.empty else None
+
+        elif market == 'COIN':
+            url = f"https://api.bithumb.com/public/candlestick/{code}_KRW/24h"
+            res = requests.get(url, timeout=10).json()
+            if res.get('status') != '0000':
+                return None
+            raw = res['data']
+            df = pd.DataFrame(raw, columns=['Time', 'Open', 'Close', 'High', 'Low', 'Volume'])
+            df['Time'] = pd.to_datetime(df['Time'], unit='ms')
+            df = df.set_index('Time')
+            for col in ['Open', 'Close', 'High', 'Low', 'Volume']:
+                df[col] = df[col].astype(float)
+            return df.tail(days)
+    except Exception:
+        return None
+    return None
+
+
+def get_atr(market, code, period=ATR_PERIOD):
+    df = get_recent_ohlc(market, code, days=period + 30)
+    if df is None or len(df) < period + 1:
+        return None
+    atr_series = calc_atr(df, period)
+    val = atr_series.iloc[-1]
+    if pd.isna(val):
+        return None
+    return float(val)
+
+
 def gen_trade_id(df):
     existing = set(df['trade_id'].astype(str)) if not df.empty else set()
     while True:
@@ -121,8 +168,15 @@ def handle_buy(args, df):
         return df, "목표가는 매수가보다 높아야 해요."
 
     market = detect_market(code)
-    risk = target_price - buy_price
-    stop_price = max(buy_price - risk, buy_price * 0.5)  # 손익비 1:1, 매수가 절반 밑으로는 안 내려가게 방어
+
+    atr = get_atr(market, code)
+    if atr is None:
+        return df, (f"{code}의 변동성(ATR) 데이터를 가져오지 못해서 등록에 실패했어요.\n"
+                     f"종목 코드가 맞는지 확인해주세요 (시장 판별: {market}).")
+
+    stop_price = buy_price - ATR_MULTIPLIER * atr
+    if stop_price <= 0:
+        stop_price = buy_price * 0.1  # 극단적으로 음수/0이 되는 것 방지
 
     trade_id = gen_trade_id(df)
     new_row = {'trade_id': trade_id, 'market': market, 'code': code,
@@ -133,7 +187,8 @@ def handle_buy(args, df):
     return df, (f"등록 완료 (거래번호 {trade_id})\n"
                 f"{code} [{market}]\n"
                 f"매수가 {fmt_num(buy_price)} / 목표가 {fmt_num(target_price)}\n"
-                f"손절가(자동계산, 손익비 1:1) {fmt_num(stop_price)}")
+                f"손절가(터틀원칙, 진입가-2xATR) {fmt_num(stop_price)} "
+                f"(ATR≈{fmt_num(atr)})")
 
 
 def handle_sell(args, df):
