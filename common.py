@@ -10,7 +10,7 @@ SYSTEMS = {
     'System2(중장기)': {'entry': 55, 'exit': 20},
 }
 WATCH_RATIO = 0.9
-MAX_CHASE_RATIO = 0.01  # 진입가 대비 현재가가 1% 넘게 벌어지면 추격매수로 간주해 스킵
+MAX_CHASE_RATIO = 0.005  # 진입가 대비 현재가가 0.5% 넘게 벌어지면 추격매수로 간주해 스킵
 
 
 def calc_atr(df, period=20):
