@@ -83,7 +83,7 @@ GALA,GALA,System2(중장기),청산,False,True,False,2.32,2.41,4.13,2.38,0.584,0
 ENS,ENS,System1(단기),청산,False,True,False,5750.0,5845.0,6790.0,5775.0,0.861,184.25
 ENS,ENS,System2(중장기),청산,False,True,False,5750.0,5845.0,8140.0,5775.0,0.718,184.25
 BTT,BTT,System1(단기),관심,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0
-CSPR,CSPR,System1(단기),관심,False,False,True,3.18,3.33,3.19,2.5,1.045,0.26
+CSPR,CSPR,System1(단기),탈락,False,False,True,3.18,3.33,3.19,2.5,1.045,0.26
 AVAX,AVAX,System1(단기),관심,False,False,True,9200.0,9245.0,10010.0,8630.0,0.924,406.0
 GMT,GMT,System1(단기),청산,False,True,False,9.14,9.25,10.82,9.22,0.855,0.37
 APE,APE,System1(단기),청산,False,True,False,174.0,177.0,235.0,176.0,0.753,8.45
@@ -205,7 +205,7 @@ PROVE,PROVE,System1(단기),청산,False,True,False,208.0,210.0,292.0,209.0,0.71
 PROVE,PROVE,System2(중장기),청산,False,True,False,208.0,210.0,325.0,209.0,0.646,11.3
 USD1,USD1,System1(단기),관심,False,False,True,1409.0,1416.0,1465.0,1382.0,0.967,24.4
 USD1,USD1,System2(중장기),관심,False,False,True,1409.0,1416.0,1533.0,1242.0,0.924,24.4
-AVNT,AVNT,System1(단기),관심,False,False,True,137.0,137.0,137.0,112.0,1.0,6.45
+AVNT,AVNT,System1(단기),탈락,False,False,True,137.0,137.0,137.0,112.0,1.0,6.45
 PUMP,PUMP,System1(단기),관심,False,False,True,3.9,3.98,4.12,2.9,0.966,0.33
 PUMP,PUMP,System2(중장기),관심,False,False,True,3.9,3.98,4.12,2.56,0.966,0.33
 IRYS,IRYS,System1(단기),관심,False,False,True,23.3,23.52,23.75,19.62,0.99,1.88
