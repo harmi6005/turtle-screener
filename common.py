@@ -63,10 +63,10 @@ def notify_telegram(message: str):
         print(f"텔레그램 알림 실패: {e}")
 
 
-def build_watch_summary(df, market_label, top_n=15):
-    """관심종목 중 돌파(진입가)에 가장 가까운 상위 top_n개를 진입가 포함해서
-    텔레그램 메시지로 정리. 100%를 넘는 종목(장중 반짝 돌파 후 종가는 못 넘긴 케이스)은
-    제외하고, 진짜 돌파 임박(90~100% 구간)인 종목만 보여줌."""
+def build_watch_summary(df, market_label):
+    """관심종목 중 돌파(진입가)에 근접한 종목 전체를 진입가 포함해서 텔레그램 메시지로 정리.
+    100%를 넘는 종목(장중 반짝 돌파 후 종가는 못 넘긴 케이스)은 제외하고,
+    진짜 돌파 임박(90~100% 구간)인 종목만 보여줌. 개수 제한 없이 전부 표시."""
     watch_df = df[df['signal'] == '관심']
     if watch_df.empty:
         return None
@@ -75,13 +75,31 @@ def build_watch_summary(df, market_label, top_n=15):
     if near_df.empty:
         return None
 
-    top = near_df.sort_values('n_high_ratio', ascending=False).head(top_n)
-    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 "
-             f"(90~100% 구간, 상위 {len(top)}개)"]
-    for _, r in top.iterrows():
+    near_df = near_df.sort_values('n_high_ratio', ascending=False)
+    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 (90~100% 구간)"]
+    for _, r in near_df.iterrows():
         lines.append(
             f"- {r['name']}({r['code']}) [{r['system']}]\n"
             f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} "
             f"({r['n_high_ratio']*100:.1f}%)"
         )
     return "\n".join(lines)
+
+
+def send_long_message(text, chunk_size=3500):
+    """텔레그램 메시지 길이 제한(4096자)에 걸리지 않도록, 긴 텍스트를 여러 메시지로
+    나눠서 순서대로 전송한다. 줄 단위로 잘라서 문장이 중간에 끊기지 않게 함."""
+    if not text:
+        return
+    lines = text.split("\n")
+    chunk = ""
+    for line in lines:
+        candidate = f"{chunk}\n{line}" if chunk else line
+        if len(candidate) > chunk_size:
+            if chunk:
+                notify_telegram(chunk)
+            chunk = line
+        else:
+            chunk = candidate
+    if chunk:
+        notify_telegram(chunk)
