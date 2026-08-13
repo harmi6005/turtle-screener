@@ -9,7 +9,7 @@ import time
 import requests
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, build_watch_summary
+from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, build_watch_summary, send_long_message
 
 MAX_WORKERS = 10
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_bithumb_result.csv')
@@ -109,4 +109,4 @@ if __name__ == "__main__":
     if watch_cnt > 0:
         summary = build_watch_summary(df, "코인")
         if summary:
-            notify_telegram(summary)
+            send_long_message(summary)
