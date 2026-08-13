@@ -59,7 +59,7 @@ BTT,BTT,System1(단기),관심,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0
 CSPR,CSPR,System1(단기),진입,True,False,False,3.35,3.39,3.33,2.56,1.017,0.26
 AVAX,AVAX,System1(단기),관심,False,False,True,9080.0,9155.0,10010.0,8630.0,0.915,383.5
 SFP,SFP,System1(단기),관심,False,False,True,329.0,329.0,348.0,300.0,0.945,12.2
-STAT,STAT,System1(단기),관심,False,False,True,45.25,47.56,46.69,29.11,1.019,4.02
+STAT,STAT,System1(단기),탈락,False,False,True,45.25,47.56,46.69,29.11,1.019,4.02
 ROA,ROA,System1(단기),관심,False,False,True,4.69,4.69,5.1,4.5,0.919,0.19
 RPL,RPL,System1(단기),청산,False,True,False,1907.0,1946.0,2509.0,1917.0,0.776,80.7
 RPL,RPL,System2(중장기),청산,False,True,False,1907.0,1946.0,4060.0,1917.0,0.479,80.7
@@ -152,7 +152,7 @@ SUPER,SUPER,System1(단기),관심,False,False,True,119.0,119.0,125.0,114.0,0.95
 IN,IN,System1(단기),청산,False,True,False,43.22,43.87,59.97,43.32,0.732,2.79
 IN,IN,System2(중장기),청산,False,True,False,43.22,43.87,371.0,43.32,0.118,2.79
 EDEN,EDEN,System1(단기),진입,True,False,False,78.0,79.21,68.29,52.75,1.16,6.63
-EDEN,EDEN,System2(중장기),관심,False,False,True,78.0,79.21,84.15,26.62,0.941,6.63
+EDEN,EDEN,System2(중장기),탈락,False,False,True,78.0,79.21,84.15,26.62,0.941,6.63
 ENSO,ENSO,System1(단기),청산,False,True,False,1131.0,1202.0,1461.0,1191.0,0.823,101.45
 USDE,USDE,System1(단기),관심,False,False,True,1415.0,1415.0,1470.0,1404.0,0.963,10.5
 USDE,USDE,System2(중장기),관심,False,False,True,1415.0,1415.0,1564.0,1404.0,0.905,10.5
