@@ -9,7 +9,7 @@ import pandas as pd
 import FinanceDataReader as fdr
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, build_watch_summary
+from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, build_watch_summary, send_long_message
 
 MAX_WORKERS = 20
 MARKET = 'KRX'
@@ -97,4 +97,4 @@ if __name__ == "__main__":
     if watch_cnt > 0:
         summary = build_watch_summary(df, "국장")
         if summary:
-            notify_telegram(summary)
+            send_long_message(summary)
