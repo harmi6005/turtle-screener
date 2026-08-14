@@ -66,7 +66,7 @@ def notify_telegram(message: str):
 def build_watch_summary(df, market_label):
     """관심종목 중 돌파(진입가)에 근접한 종목 전체를 진입가 포함해서 텔레그램 메시지로 정리.
     100%를 넘는 종목(장중 반짝 돌파 후 종가는 못 넘긴 케이스)은 제외하고,
-    진짜 돌파 임박 종목만 보여줌. 개수 제한 없이 전부 표시."""
+    진짜 돌파 임박(90~100% 구간)인 종목만 보여줌. 개수 제한 없이 전부 표시."""
     watch_df = df[df['signal'] == '관심']
     if watch_df.empty:
         return None
@@ -76,8 +76,7 @@ def build_watch_summary(df, market_label):
         return None
 
     near_df = near_df.sort_values('n_high_ratio', ascending=False)
-    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 "
-             f"({WATCH_RATIO*100:.0f}~100% 구간)"]
+    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 (90~100% 구간)"]
     for _, r in near_df.iterrows():
         lines.append(
             f"- {r['name']}({r['code']}) [{r['system']}]\n"
@@ -184,3 +183,16 @@ def record_trade_result(hist_df, code, system, direction, entry_price, exit_pric
                    'last_result': result, 'skip_active': False, 'skip_price': ''}
         hist_df = pd.concat([hist_df, pd.DataFrame([new_row])], ignore_index=True)
     return hist_df
+
+
+def pick_top_entry(df):
+    """'진입' 신호 종목 중 돌파 강도가 가장 강한 1개만 골라서 반환한다.
+    (터틀은 원래 후보 전부를 못 들어가니, 그 중 제일 강한 신호 하나만 추리는 용도)
+    돌파강도 = (종가 - N일최고가) / ATR  ->  ATR 대비 얼마나 강하게 뚫었는지
+    후보가 없으면 None을 반환한다."""
+    entry_df = df[df['signal'] == '진입'].copy()
+    if entry_df.empty:
+        return None
+    entry_df['strength'] = (entry_df['close'] - entry_df['n_high']) / entry_df['atr']
+    entry_df = entry_df.sort_values('strength', ascending=False)
+    return entry_df.iloc[0]
