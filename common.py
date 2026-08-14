@@ -9,7 +9,7 @@ SYSTEMS = {
     'System1(단기)': {'entry': 20, 'exit': 10},
     'System2(중장기)': {'entry': 55, 'exit': 20},
 }
-WATCH_RATIO = 0.9
+WATCH_RATIO = 0.99  # 당일 고가가 N일 최고가의 99% 이상이면 관심(돌파임박)
 MAX_CHASE_RATIO = 0.005  # 진입가 대비 현재가가 0.5% 넘게 벌어지면 추격매수로 간주해 스킵
 
 
@@ -66,7 +66,7 @@ def notify_telegram(message: str):
 def build_watch_summary(df, market_label):
     """관심종목 중 돌파(진입가)에 근접한 종목 전체를 진입가 포함해서 텔레그램 메시지로 정리.
     100%를 넘는 종목(장중 반짝 돌파 후 종가는 못 넘긴 케이스)은 제외하고,
-    진짜 돌파 임박(90~100% 구간)인 종목만 보여줌. 개수 제한 없이 전부 표시."""
+    진짜 돌파 임박 종목만 보여줌. 개수 제한 없이 전부 표시."""
     watch_df = df[df['signal'] == '관심']
     if watch_df.empty:
         return None
@@ -76,7 +76,8 @@ def build_watch_summary(df, market_label):
         return None
 
     near_df = near_df.sort_values('n_high_ratio', ascending=False)
-    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 (90~100% 구간)"]
+    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 "
+             f"({WATCH_RATIO*100:.0f}~100% 구간)"]
     for _, r in near_df.iterrows():
         lines.append(
             f"- {r['name']}({r['code']}) [{r['system']}]\n"
