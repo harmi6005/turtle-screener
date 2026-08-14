@@ -34,8 +34,11 @@ if __name__ == "__main__":
         sys.exit(0)
 
     prev_df = pd.read_csv(DATA_PATH)
+    if 'entry_price' not in prev_df = pd.read_csv(DATA_PATH)
     if 'entry_price' not in prev_df.columns:
-        prev_df['entry_price'] = ''
+        prev_df['entry_price'] = pd.Series([None] * len(prev_df), dtype=object)
+    else:
+        prev_df['entry_price'] = prev_df['entry_price'].astype(object)
 
     target_rows = prev_df[prev_df['signal'].isin(['관심', '확정'])].to_dict('records')
     print(f"관심/확정 종목 {len(target_rows)}개 재확인 중...")
