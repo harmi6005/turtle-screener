@@ -34,7 +34,6 @@ if __name__ == "__main__":
         sys.exit(0)
 
     prev_df = pd.read_csv(DATA_PATH)
-    if 'entry_price' not in prev_df = pd.read_csv(DATA_PATH)
     if 'entry_price' not in prev_df.columns:
         prev_df['entry_price'] = pd.Series([None] * len(prev_df), dtype=object)
     else:
