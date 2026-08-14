@@ -9,7 +9,8 @@ import requests
 import pandas as pd
 import yfinance as yf
 from datetime import datetime, timedelta
-from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, build_watch_summary, send_long_message
+from common import (SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram,
+                     build_watch_summary, send_long_message, pick_top_entry)
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_us_result.csv')
 
@@ -79,7 +80,14 @@ if __name__ == "__main__":
     watch_cnt = len(df[df['signal'] == '관심']) if not df.empty else 0
 
     if entry_cnt > 0:
-        notify_telegram(f"[미장 전체스캔] 진입 신호 {entry_cnt}개 발견")
+        top = pick_top_entry(df)
+        if top is not None:
+            notify_telegram(
+                f"[미장 전체스캔] 진입 신호 {entry_cnt}개 중 최강 1개 픽\n"
+                f"- {top['name']} [{top['system']}]\n"
+                f"  현재가 {top['close']} / 진입가(돌파) {top['n_high']} / 청산가(손절) {top['n_low']}\n"
+                f"  돌파강도(ATR배수) {top['strength']:.2f}"
+            )
 
     if watch_cnt > 0:
         summary = build_watch_summary(df, "미장")
