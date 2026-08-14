@@ -2,7 +2,7 @@
 SNT,SNT,System1(단기),청산,False,True,False,6.9,6.95,10.39,6.95,0.669,0.41,
 SNT,SNT,System2(중장기),청산,False,True,False,6.9,6.95,13.26,6.95,0.524,0.41,
 BSV,BSV,System1(단기),관심,False,False,True,21240.0,21380.0,21440.0,18020.0,0.997,764.0,
-AWE,AWE,System1(단기),관심,False,False,True,87.16,88.07,87.25,77.09,1.009,3.04,
+AWE,AWE,System1(단기),확정,False,False,True,87.16,88.07,87.25,77.09,1.009,3.04,87.5
 BFC,BFC,System1(단기),청산,False,True,False,12.93,13.23,16.74,13.0,0.79,1.0,
 BFC,BFC,System2(중장기),청산,False,True,False,12.93,13.23,22.62,13.0,0.585,1.0,
 ALICE,ALICE,System1(단기),진입,True,False,False,190.0,218.0,188.0,158.0,1.16,10.75,
