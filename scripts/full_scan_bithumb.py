@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""빗썸 KRW 마켓 전체 코인 스캔 (GitHub Actions에서 지정 시간에 자동 실행)"""
+"""빗썸 KRW 마켓 전체 코인 스캔 (GitHub Actions에서 지정 시간에 자동 실행)
+이미 진입가 대비 너무 많이 오른(0.5% 초과) 코인은 '진입'에서 제외합니다."""
 
 import sys
 import os
@@ -9,7 +10,7 @@ import time
 import requests
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from common import (SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram,
+from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      build_watch_summary, send_long_message, pick_top_entry)
 
 MAX_WORKERS = 10
@@ -51,6 +52,9 @@ def fetch_and_check(coin):
         if not res:
             continue
         if res['entry_signal']:
+            chase_ratio = (res['close'] - res['n_high']) / res['n_high']
+            if chase_ratio > MAX_CHASE_RATIO:
+                continue
             signal = '진입'
         elif res['exit_signal']:
             signal = '청산'
