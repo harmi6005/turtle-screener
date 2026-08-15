@@ -31,7 +31,7 @@ AKT,AKT,System1(단기),관심,False,False,True,767.0,787.0,785.0,658.0,1.003,51
 ONDO,ONDO,System1(단기),청산,False,True,False,457.0,464.0,609.0,458.0,0.762,27.85,
 ONDO,ONDO,System2(중장기),청산,False,True,False,457.0,464.0,616.0,458.0,0.753,27.85,
 RON,RON,System1(단기),관심,False,False,True,67.25,83.8,82.75,66.62,1.013,3.86,
-ETHFI,ETHFI,System1(단기),관심,False,False,True,623.0,640.0,634.0,495.0,1.009,34.75,
+ETHFI,ETHFI,System1(단기),확정,False,False,True,623.0,640.0,634.0,495.0,1.009,34.75,635.0
 AVAIL,AVAIL,System1(단기),청산,False,True,False,2.65,2.78,4.38,2.77,0.635,0.27,
 AVAIL,AVAIL,System2(중장기),청산,False,True,False,2.65,2.78,5.82,2.77,0.478,0.27,
 SKY,SKY,System1(단기),청산,False,True,False,71.86,73.45,86.29,73.0,0.851,2.21,
