@@ -109,13 +109,5 @@ if __name__ == "__main__":
         top = pick_top_entry(df)
         if top is not None:
             notify_telegram(
-                f"[국장 전체스캔] 진입 신호 {entry_cnt}개 중 최강 1개 픽\n"
-                f"- {top['name']}({top['code']}) [{top['system']}]\n"
-                f"  현재가 {top['close']} / 진입가(돌파) {top['n_high']} / 청산가(손절) {top['n_low']}\n"
-                f"  돌파강도(ATR배수) {top['strength']:.2f}"
-            )
-
-    if watch_cnt > 0:
-        summary = build_watch_summary(df, "국장")
-        if summary:
-            send_long_message(summary)
+                f"[국장 전체스캔] 진입 신호 {entry_cnt}개 중 최신 돌파 1개 픽\n"
+                f"- {top['name']}({top['code']}) [{
