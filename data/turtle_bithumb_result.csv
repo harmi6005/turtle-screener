@@ -4,7 +4,7 @@ SNT,SNT,System2(중장기),청산,False,True,False,6.64,6.95,13.26,6.95,0.524,0.
 LINK,LINK,System1(단기),진입,True,False,False,13400.0,13780.0,12940.0,11380.0,1.065,460.5,
 LINK,LINK,System2(중장기),진입,True,False,False,13400.0,13780.0,12940.0,11380.0,1.065,460.5,
 THETA,THETA,System1(단기),관심,False,False,True,203.0,210.0,204.0,178.0,1.029,7.9,
-BSV,BSV,System1(단기),관심,False,False,True,21400.0,21440.0,21440.0,18020.0,1.0,767.0,
+BSV,BSV,System1(단기),탈락,False,False,True,21400.0,21440.0,21440.0,18020.0,1.0,767.0,
 AWE,AWE,System1(단기),관심,False,False,True,86.0,88.07,87.25,77.09,1.009,3.04,
 ADP,ADP,System1(단기),관심,False,False,True,0.54,0.72,0.55,0.4,1.309,0.04,
 ALICE,ALICE,System1(단기),진입,True,False,False,191.0,257.0,188.0,158.0,1.367,12.7,
