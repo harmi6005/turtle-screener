@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """국내 주식 전체 스캔 (GitHub Actions에서 지정 시간에 자동 실행)
-코스피(KOSPI)만 대상으로 하고, 종가 기준 2만원~6만원 사이 종목만 스캔합니다.
-이미 진입가 대비 너무 많이 오른(0.5% 초과) 종목은 '진입'에서 제외합니다."""
+코스피(KOSPI)만 대상으로 하고, 종가 기준 2만원~6만원 사이 종목만 스캔합니다."""
 
 import sys
 import os
@@ -108,6 +107,23 @@ if __name__ == "__main__":
     if entry_cnt > 0:
         top = pick_top_entry(df)
         if top is not None:
-            notify_telegram(
-                f"[국장 전체스캔] 진입 신호 {entry_cnt}개 중 최신 돌파 1개 픽\n"
-                f"- {top['name']}({top['code']}) [{
+            t_name = top["name"]
+            t_code = top["code"]
+            t_system = top["system"]
+            t_close = top["close"]
+            t_n_high = top["n_high"]
+            t_n_low = top["n_low"]
+            t_excess = top["excess_ratio"] * 100
+            t_strength = top["strength"]
+            msg = ("[국장 전체스캔] 진입 신호 " + str(entry_cnt) + "개 중 최신 돌파 1개 픽\n"
+                   "- " + str(t_name) + "(" + str(t_code) + ") [" + str(t_system) + "]\n"
+                   "  현재가 " + str(t_close) + " / 진입가(돌파) " + str(t_n_high) +
+                   " / 청산가(손절) " + str(t_n_low) + "\n"
+                   "  초과율 " + format(t_excess, ".3f") + "% (돌파강도 ATR배수 " +
+                   format(t_strength, ".2f") + ")")
+            notify_telegram(msg)
+
+    if watch_cnt > 0:
+        summary = build_watch_summary(df, "국장")
+        if summary:
+            send_long_message(summary)
