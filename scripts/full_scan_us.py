@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""미국 주식(S&P500) 전체 스캔 (GitHub Actions에서 지정 시간에 자동 실행)"""
+"""미국 주식(S&P500) 전체 스캔 (GitHub Actions에서 지정 시간에 자동 실행)
+이미 진입가 대비 너무 많이 오른(0.5% 초과) 종목은 '진입'에서 제외합니다."""
 
 import sys
 import os
@@ -9,7 +10,7 @@ import requests
 import pandas as pd
 import yfinance as yf
 from datetime import datetime, timedelta
-from common import (SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram,
+from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      build_watch_summary, send_long_message, pick_top_entry)
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_us_result.csv')
@@ -43,6 +44,9 @@ def screen_us():
                 if not res:
                     continue
                 if res['entry_signal']:
+                    chase_ratio = (res['close'] - res['n_high']) / res['n_high']
+                    if chase_ratio > MAX_CHASE_RATIO:
+                        continue
                     signal = '진입'
                 elif res['exit_signal']:
                     signal = '청산'
