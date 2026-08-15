@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
-EL,EL,System1(단기),관심,False,False,True,1.74,1.99,1.83,1.46,1.088,0.12,
+EL,EL,System1(단기),탈락,False,False,True,1.74,1.99,1.83,1.46,1.088,0.12,
 AWE,AWE,System1(단기),관심,False,False,True,89.2,91.27,90.08,77.09,1.013,3.13,
 MVC,MVC,System1(단기),관심,False,False,True,1.67,1.72,1.73,1.5,0.995,0.06,
 GRACY,GRACY,System1(단기),청산,False,True,False,2.36,3.19,5.32,2.8,0.6,0.52,
