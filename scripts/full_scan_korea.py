@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 """국내 주식 전체 스캔 (GitHub Actions에서 지정 시간에 자동 실행)
-코스피(KOSPI)만 대상으로 하고, 종가 기준 2만원~6만원 사이 종목만 스캔합니다."""
+코스피(KOSPI)만 대상으로 하고, 종가 기준 2만원~6만원 사이 종목만 스캔합니다.
+이미 진입가 대비 너무 많이 오른(0.5% 초과) 종목은 '진입'에서 제외합니다."""
 
 import sys
 import os
@@ -10,7 +11,7 @@ import pandas as pd
 import FinanceDataReader as fdr
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, build_watch_summary, send_long_message, pick_top_entry
+from common import SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram, build_watch_summary, send_long_message, pick_top_entry
 
 MAX_WORKERS = 20
 MARKET = 'KOSPI'
@@ -34,6 +35,9 @@ def fetch_and_check(code_name, start, end):
         if not res:
             continue
         if res['entry_signal']:
+            chase_ratio = (res['close'] - res['n_high']) / res['n_high']
+            if chase_ratio > MAX_CHASE_RATIO:
+                continue  # 이미 너무 많이 오른 상태 -> 진입 후보에서 제외
             signal = '진입'
         elif res['exit_signal']:
             signal = '청산'
