@@ -1,12 +1,12 @@
 ﻿code,name,system,signal,entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
 THETA,THETA,System1(단기),탈락,False,False,True,193.0,210.0,204.0,178.0,1.029,7.9,
 BSV,BSV,System1(단기),탈락,False,False,True,21690.0,21690.0,21760.0,18070.0,0.997,767.0,
-EL,EL,System1(단기),관심,False,False,True,1.76,1.96,1.83,1.46,1.073,0.11,
+EL,EL,System1(단기),확정,False,False,True,1.76,1.96,1.83,1.46,1.073,0.11,1.83
 AWE,AWE,System1(단기),확정,False,False,True,88.87,90.09,90.08,77.09,1.0,3.07,90.27
 MVC,MVC,System1(단기),관심,False,False,True,1.57,1.72,1.73,1.5,0.995,0.06,
 NFT,NFT,System1(단기),관심,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System1(단기),관심,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
-CSPR,CSPR,System1(단기),관심,False,False,True,3.55,3.7,3.7,2.56,1.0,0.27,
+CSPR,CSPR,System1(단기),탈락,False,False,True,3.55,3.7,3.7,2.56,1.0,0.27,
 FITFI,FITFI,System1(단기),청산,False,True,False,0.17,0.21,0.4,0.18,0.53,0.06,
 FITFI,FITFI,System2(중장기),청산,False,True,False,0.17,0.21,0.72,0.18,0.291,0.06,
 HFT,HFT,System1(단기),청산,False,True,False,10.43,10.71,53.2,10.54,0.201,5.81,
