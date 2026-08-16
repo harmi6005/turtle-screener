@@ -1,31 +1,32 @@
 # -*- coding: utf-8 -*-
-"""텔레그램 채팅으로 buy/sell 명령만으로 보유종목을 추적하는 리스너
-(holdings_check.py 실행 직전에 같이 돌면서, 사용자가 보낸 명령어를 처리합니다)
+"""텔레그램 채팅으로 보유종목(buy/sell) 및 감시목록(watch/unwatch)을 관리하는 리스너
+(holdings_check.py, watchlist_check.py 실행 직전에 같이 돌면서 명령어를 처리합니다)
 
-=== 사용법 (텔레그램 채팅창에 그대로 입력, 최대 5분 내로 처리됨) ===
-
-매수 등록 (시장은 코드 형태로 자동 판별함 - 국내는 6자리 숫자, 나머지는
-빗썸 코인인지 확인 후 아니면 미국 종목으로 처리):
+=== 보유종목 (실제 매수한 것 추적) ===
   buy 코드 매수가
     예) buy BTC 5000000
-        buy 005930 70000
-        buy AAPL 220
+    -> 4자리 거래번호 발급, 손절가는 터틀원칙(진입가-2xATR)으로 자동계산
+       목표가 없이 트레일링 방식으로 추적 (오르면 손절선도 같이 올라감)
 
-  터틀 트레이딩 철학 그대로 "고정 목표가 없이, 오르는 동안은 최대한 들고 간다" 방식이에요.
-  - 손절가는 진입 시점 ATR(최근 20일 변동성) 기준으로 "진입가 - 2xATR"로 시작하고,
-    가격이 최고가를 경신할 때마다 "최고가 - 2xATR"로 계속 따라 올라가요 (트레일링 스탑).
-    즉 오르면 손절선도 같이 올라가서 수익을 지켜주고, 절대 내려가지는 않아요.
-  - 진입가 대비 ATR의 1배, 2배, 3배... 만큼 오를 때마다 "N배 수익 도달" 알림이 따로 와요
-    (이건 매도 신호가 아니라 그냥 진행 상황 알림이에요).
-  - 실제 매도 신호는 가격이 트레일링 손절선 아래로 떨어질 때만 옵니다.
-
-청산 종료 (직접 팔았을 때):
   sell 거래번호 [매도가]
     예) sell 4821 6200000
-        sell 4821
 
-목록 조회:
   list
+    현재 감시 중인 보유거래 목록
+
+=== 감시목록 (매수 여부와 상관없이 터틀 신호만 계속 지켜보고 싶은 종목) ===
+  watch 코드   (또는 그냥 "코드 추적" 이라고 보내도 동일하게 작동)
+    예) watch 005930
+        005930 추적
+    -> 가격범위 필터 등 상관없이, 이 종목만 따로 계속 감시.
+       관심/진입/청산 신호가 바뀔 때마다 알림.
+
+  unwatch 코드   (또는 "코드 추적해제")
+    예) unwatch 005930
+        005930 추적해제
+
+  watchlist   (또는 "추적목록")
+    현재 감시목록 확인
 """
 
 import sys
@@ -41,12 +42,14 @@ from datetime import datetime, timedelta
 from common import notify_telegram, calc_atr
 
 HOLDINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
+WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'watchlist.csv')
 OFFSET_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'telegram_offset.txt')
 
-COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
-           'highest_price', 'stop_price', 'last_milestone', 'status']
+HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
+                    'highest_price', 'stop_price', 'last_milestone', 'status']
+WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status']
 ATR_PERIOD = 20
-ATR_MULTIPLIER = 2  # 터틀 오리지널 원칙: 손절폭 = 2 x ATR
+ATR_MULTIPLIER = 2
 
 
 def fmt_num(v):
@@ -80,21 +83,6 @@ def save_offset(offset):
         f.write(str(offset))
 
 
-def load_holdings():
-    if os.path.exists(HOLDINGS_PATH):
-        df = pd.read_csv(HOLDINGS_PATH, dtype={'code': str, 'trade_id': str})
-        for col in COLUMNS:
-            if col not in df.columns:
-                df[col] = ''
-        return df[COLUMNS]
-    return pd.DataFrame(columns=COLUMNS)
-
-
-def save_holdings(df):
-    os.makedirs(os.path.dirname(HOLDINGS_PATH), exist_ok=True)
-    df.to_csv(HOLDINGS_PATH, index=False)
-
-
 def detect_market(code):
     if code.isdigit() and len(code) == 6:
         return 'KR'
@@ -106,6 +94,23 @@ def detect_market(code):
     except Exception:
         pass
     return 'US'
+
+
+# ===== 보유종목(holdings) =====
+
+def load_holdings():
+    if os.path.exists(HOLDINGS_PATH):
+        df = pd.read_csv(HOLDINGS_PATH, dtype={'code': str, 'trade_id': str})
+        for col in HOLDINGS_COLUMNS:
+            if col not in df.columns:
+                df[col] = ''
+        return df[HOLDINGS_COLUMNS]
+    return pd.DataFrame(columns=HOLDINGS_COLUMNS)
+
+
+def save_holdings(df):
+    os.makedirs(os.path.dirname(HOLDINGS_PATH), exist_ok=True)
+    df.to_csv(HOLDINGS_PATH, index=False)
 
 
 def get_recent_ohlc(market, code, days=60):
@@ -189,8 +194,7 @@ def handle_buy(args, df):
                 f"{code} [{market}]\n"
                 f"매수가 {fmt_num(buy_price)}\n"
                 f"초기 손절가(진입가-2xATR) {fmt_num(stop_price)} (ATR≈{fmt_num(atr)})\n"
-                f"목표가 없이 트레일링 방식으로 추적합니다. "
-                f"오를 때마다 손절선도 같이 올라가고, ATR 배수 도달 시 알림 갈게요.")
+                f"목표가 없이 트레일링 방식으로 추적합니다.")
 
 
 def handle_sell(args, df):
@@ -226,7 +230,59 @@ def handle_list(df):
     for _, r in active.iterrows():
         lines.append(f"[{r['trade_id']}] {r['code']} [{r['market']}] "
                       f"매수 {fmt_num(r['buy_price'])} / 최고가 {fmt_num(r['highest_price'])} / "
-                      f"현재 손절선 {fmt_num(r['stop_price'])} / {r['last_milestone']}배 수익 도달")
+                      f"손절선 {fmt_num(r['stop_price'])} / {r['last_milestone']}배 수익 도달")
+    return "\n".join(lines)
+
+
+# ===== 감시목록(watchlist) =====
+
+def load_watchlist():
+    if os.path.exists(WATCHLIST_PATH):
+        df = pd.read_csv(WATCHLIST_PATH, dtype={'code': str})
+        for col in WATCHLIST_COLUMNS:
+            if col not in df.columns:
+                df[col] = ''
+        return df[WATCHLIST_COLUMNS]
+    return pd.DataFrame(columns=WATCHLIST_COLUMNS)
+
+
+def save_watchlist(df):
+    os.makedirs(os.path.dirname(WATCHLIST_PATH), exist_ok=True)
+    df.to_csv(WATCHLIST_PATH, index=False)
+
+
+def handle_watch(args, wdf):
+    if not args:
+        return wdf, "형식: watch 코드\n예) watch 005930"
+    code = args[0].upper()
+
+    if (wdf['code'] == code).any():
+        return wdf, f"{code}는 이미 감시 중이에요."
+
+    market = detect_market(code)
+    new_row = {'code': code, 'market': market, 'sys1_status': '', 'sys2_status': ''}
+    wdf = pd.concat([wdf, pd.DataFrame([new_row])], ignore_index=True)
+    return wdf, f"감시 등록 완료: {code} [{market}]\n관심/진입/청산 신호가 바뀔 때마다 알림 드릴게요."
+
+
+def handle_unwatch(args, wdf):
+    if not args:
+        return wdf, "형식: unwatch 코드"
+    code = args[0].upper()
+    before = len(wdf)
+    wdf = wdf[wdf['code'] != code]
+    if len(wdf) == before:
+        return wdf, f"{code}는 감시목록에 없어요."
+    return wdf, f"{code} 감시를 해제했어요."
+
+
+def handle_watchlist(wdf):
+    if wdf.empty:
+        return "현재 감시목록이 비어있어요."
+    lines = ["현재 감시목록:"]
+    for _, r in wdf.iterrows():
+        lines.append(f"- {r['code']} [{r['market']}] "
+                      f"(System1: {r['sys1_status'] or '-'} / System2: {r['sys2_status'] or '-'})")
     return "\n".join(lines)
 
 
@@ -244,7 +300,10 @@ if __name__ == "__main__":
         sys.exit(0)
 
     df = load_holdings()
+    wdf = load_watchlist()
     last_id = offset
+    holdings_changed = False
+    watchlist_changed = False
 
     for upd in updates:
         last_id = upd['update_id'] + 1
@@ -260,14 +319,36 @@ if __name__ == "__main__":
         reply = None
         if cmd == 'buy':
             df, reply = handle_buy(args, df)
+            holdings_changed = True
         elif cmd == 'sell':
             df, reply = handle_sell(args, df)
+            holdings_changed = True
         elif cmd == 'list':
             reply = handle_list(df)
+        elif cmd == 'watch':
+            wdf, reply = handle_watch(args, wdf)
+            watchlist_changed = True
+        elif cmd == 'unwatch':
+            wdf, reply = handle_unwatch(args, wdf)
+            watchlist_changed = True
+        elif cmd == 'watchlist':
+            reply = handle_watchlist(wdf)
+        elif len(parts) == 2 and parts[1] == '추적':
+            # "종목코드 추적" 형태의 자연어 명령 지원
+            wdf, reply = handle_watch([parts[0]], wdf)
+            watchlist_changed = True
+        elif len(parts) == 2 and parts[1] in ('추적해제', '추적종료', '추적중지'):
+            wdf, reply = handle_unwatch([parts[0]], wdf)
+            watchlist_changed = True
+        elif text.strip() in ('추적목록', '감시목록'):
+            reply = handle_watchlist(wdf)
 
         if reply:
             notify_telegram(reply)
 
-    save_holdings(df)
+    if holdings_changed:
+        save_holdings(df)
+    if watchlist_changed:
+        save_watchlist(wdf)
     save_offset(last_id)
     print("명령어 처리 완료")
