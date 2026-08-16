@@ -3,7 +3,7 @@ BSV,BSV,System1(단기),확정,False,False,True,21610.0,21980.0,21760.0,18070.0,
 EL,EL,System1(단기),관심,False,False,True,1.61,2.0,1.83,1.46,1.093,0.12,
 UOS,UOS,System1(단기),청산,False,True,False,3.72,3.95,4.71,3.86,0.839,0.19,
 UOS,UOS,System2(중장기),청산,False,True,False,3.72,3.95,7.35,3.85,0.538,0.19,
-AWE,AWE,System1(단기),관심,False,False,True,89.6,91.27,90.08,77.09,1.013,3.13,
+AWE,AWE,System1(단기),확정,False,False,True,89.6,91.27,90.08,77.09,1.013,3.13,90.38
 MVC,MVC,System1(단기),관심,False,False,True,1.6,1.72,1.73,1.5,0.995,0.06,
 WIKEN,WIKEN,System1(단기),청산,False,True,False,0.45,0.69,1.14,0.63,0.604,0.11,
 WIKEN,WIKEN,System2(중장기),청산,False,True,False,0.45,0.69,2.57,0.63,0.267,0.11,
