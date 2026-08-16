@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
-BSV,BSV,System1(단기),관심,False,False,True,21610.0,21980.0,21760.0,18070.0,1.01,787.0,
+BSV,BSV,System1(단기),확정,False,False,True,21610.0,21980.0,21760.0,18070.0,1.01,787.0,21790.0
 EL,EL,System1(단기),관심,False,False,True,1.61,2.0,1.83,1.46,1.093,0.12,
 UOS,UOS,System1(단기),청산,False,True,False,3.72,3.95,4.71,3.86,0.839,0.19,
 UOS,UOS,System2(중장기),청산,False,True,False,3.72,3.95,7.35,3.85,0.538,0.19,
