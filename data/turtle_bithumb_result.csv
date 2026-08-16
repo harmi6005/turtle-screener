@@ -9,7 +9,7 @@ GRACY,GRACY,System2(중장기),청산,False,True,False,2.29,3.19,9.6,2.8,0.332,0
 WIKEN,WIKEN,System1(단기),청산,False,True,False,0.43,0.69,1.14,0.63,0.604,0.11,
 WIKEN,WIKEN,System2(중장기),청산,False,True,False,0.43,0.69,2.57,0.63,0.267,0.11,
 CELR,CELR,System1(단기),관심,False,False,True,2.91,3.04,2.97,2.34,1.025,0.15,
-ONG,ONG,System1(단기),관심,False,False,True,70.81,79.8,72.15,56.76,1.106,3.67,
+ONG,ONG,System1(단기),탈락,False,False,True,70.81,79.8,72.15,56.76,1.106,3.67,
 KAIA,KAIA,System1(단기),청산,False,True,False,34.69,35.77,44.06,35.3,0.812,1.82,
 KAIA,KAIA,System2(중장기),청산,False,True,False,34.69,35.77,57.79,35.3,0.619,1.82,
 JST,JST,System1(단기),관심,False,False,True,150.0,152.0,152.0,137.0,1.0,4.8,
