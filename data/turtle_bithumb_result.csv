@@ -19,8 +19,8 @@ HFT,HFT,System1(단기),청산,False,True,False,9.62,10.71,53.2,10.54,0.201,5.85
 HFT,HFT,System2(중장기),청산,False,True,False,9.62,10.71,53.2,9.65,0.201,5.85,
 FET,FET,System1(단기),청산,False,True,False,181.0,186.0,232.0,184.0,0.802,9.05,
 FET,FET,System2(중장기),청산,False,True,False,181.0,186.0,287.0,184.0,0.648,9.05,
-EDU,EDU,System1(단기),관심,False,False,True,58.01,58.08,58.48,45.77,0.993,3.24,
-EDU,EDU,System2(중장기),관심,False,False,True,58.01,58.08,58.48,42.65,0.993,3.24,
+EDU,EDU,System1(단기),확정,False,False,True,58.01,58.08,58.48,45.77,0.993,3.24,58.7
+EDU,EDU,System2(중장기),확정,False,False,True,58.01,58.08,58.48,42.65,0.993,3.24,58.7
 PYR,PYR,System1(단기),청산,False,True,False,70.22,75.53,136.0,72.65,0.555,16.11,
 PYR,PYR,System2(중장기),청산,False,True,False,70.22,75.53,308.0,72.65,0.245,16.11,
 ZTX,ZTX,System1(단기),청산,False,True,False,0.11,0.15,0.25,0.14,0.606,0.03,
