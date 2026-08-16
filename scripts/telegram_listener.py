@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""텔레그램 채팅으로 보유종목(buy/sell) 및 감시목록(watch/unwatch)을 관리하는 리스너
+"""텔레그램 채팅으로 보유종목(buy/sell) 및 감시목록(추적)을 관리하는 리스너
 (holdings_check.py, watchlist_check.py 실행 직전에 같이 돌면서 명령어를 처리합니다)
 
 === 보유종목 (실제 매수한 것 추적) ===
@@ -15,18 +15,17 @@
     현재 감시 중인 보유거래 목록
 
 === 감시목록 (매수 여부와 상관없이 터틀 신호만 계속 지켜보고 싶은 종목) ===
-  watch 코드   (또는 그냥 "코드 추적" 이라고 보내도 동일하게 작동)
-    예) watch 005930
-        005930 추적
+  코드 추적시작
+    예) 005930 추적시작
     -> 가격범위 필터 등 상관없이, 이 종목만 따로 계속 감시.
        관심/진입/청산 신호가 바뀔 때마다 알림.
 
-  unwatch 코드   (또는 "코드 추적해제")
-    예) unwatch 005930
-        005930 추적해제
+  코드 추적종료
+    예) 005930 추적종료
 
-  watchlist   (또는 "추적목록")
-    현재 감시목록 확인
+  추적확인
+    -> 지금 이 순간 실시간으로 다시 조회해서, 현재 감시 중인 종목들의
+       현재가/N일고가/N일저가 및 상태를 바로 분석해서 보여줌
 """
 
 import sys
@@ -39,7 +38,7 @@ import pandas as pd
 import FinanceDataReader as fdr
 import yfinance as yf
 from datetime import datetime, timedelta
-from common import notify_telegram, calc_atr
+from common import SYSTEMS, WATCH_RATIO, notify_telegram, send_long_message, calc_atr, check_turtle_breakout
 
 HOLDINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'watchlist.csv')
@@ -50,6 +49,10 @@ HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
 WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status']
 ATR_PERIOD = 20
 ATR_MULTIPLIER = 2
+
+START_WORDS = ('추적시작',)
+STOP_WORDS = ('추적종료', '추적해제', '추적중지')
+CHECK_WORDS = ('추적확인', '추적목록')
 
 
 def fmt_num(v):
@@ -96,25 +99,8 @@ def detect_market(code):
     return 'US'
 
 
-# ===== 보유종목(holdings) =====
-
-def load_holdings():
-    if os.path.exists(HOLDINGS_PATH):
-        df = pd.read_csv(HOLDINGS_PATH, dtype={'code': str, 'trade_id': str})
-        for col in HOLDINGS_COLUMNS:
-            if col not in df.columns:
-                df[col] = ''
-        return df[HOLDINGS_COLUMNS]
-    return pd.DataFrame(columns=HOLDINGS_COLUMNS)
-
-
-def save_holdings(df):
-    os.makedirs(os.path.dirname(HOLDINGS_PATH), exist_ok=True)
-    df.to_csv(HOLDINGS_PATH, index=False)
-
-
 def get_recent_ohlc(market, code, days=60):
-    """ATR 계산에 필요한 최근 OHLC 데이터를 가져온다."""
+    """ATR / 터틀판정에 필요한 최근 OHLC 데이터를 가져온다."""
     try:
         if market == 'KR':
             end = datetime.today()
@@ -160,6 +146,23 @@ def gen_trade_id(df):
         tid = f"{random.randint(0, 9999):04d}"
         if tid not in existing:
             return tid
+
+
+# ===== 보유종목(holdings) =====
+
+def load_holdings():
+    if os.path.exists(HOLDINGS_PATH):
+        df = pd.read_csv(HOLDINGS_PATH, dtype={'code': str, 'trade_id': str})
+        for col in HOLDINGS_COLUMNS:
+            if col not in df.columns:
+                df[col] = ''
+        return df[HOLDINGS_COLUMNS]
+    return pd.DataFrame(columns=HOLDINGS_COLUMNS)
+
+
+def save_holdings(df):
+    os.makedirs(os.path.dirname(HOLDINGS_PATH), exist_ok=True)
+    df.to_csv(HOLDINGS_PATH, index=False)
 
 
 def handle_buy(args, df):
@@ -234,7 +237,7 @@ def handle_list(df):
     return "\n".join(lines)
 
 
-# ===== 감시목록(watchlist) =====
+# ===== 감시목록(watchlist / 추적) =====
 
 def load_watchlist():
     if os.path.exists(WATCHLIST_PATH):
@@ -251,38 +254,58 @@ def save_watchlist(df):
     df.to_csv(WATCHLIST_PATH, index=False)
 
 
-def handle_watch(args, wdf):
-    if not args:
-        return wdf, "형식: watch 코드\n예) watch 005930"
-    code = args[0].upper()
-
+def handle_track_start(code, wdf):
+    code = code.upper()
     if (wdf['code'] == code).any():
-        return wdf, f"{code}는 이미 감시 중이에요."
+        return wdf, f"{code}는 이미 추적 중이에요."
 
     market = detect_market(code)
     new_row = {'code': code, 'market': market, 'sys1_status': '', 'sys2_status': ''}
     wdf = pd.concat([wdf, pd.DataFrame([new_row])], ignore_index=True)
-    return wdf, f"감시 등록 완료: {code} [{market}]\n관심/진입/청산 신호가 바뀔 때마다 알림 드릴게요."
+    return wdf, f"추적시작: {code} [{market}]\n관심/진입/청산 신호가 바뀔 때마다 알림 드릴게요."
 
 
-def handle_unwatch(args, wdf):
-    if not args:
-        return wdf, "형식: unwatch 코드"
-    code = args[0].upper()
+def handle_track_stop(code, wdf):
+    code = code.upper()
     before = len(wdf)
     wdf = wdf[wdf['code'] != code]
     if len(wdf) == before:
-        return wdf, f"{code}는 감시목록에 없어요."
-    return wdf, f"{code} 감시를 해제했어요."
+        return wdf, f"{code}는 추적 중이 아니에요."
+    return wdf, f"추적종료: {code}"
 
 
-def handle_watchlist(wdf):
+def handle_track_check(wdf):
+    """지금 이 순간 실시간으로 재조회해서 현재 상태를 분석해 보여준다."""
     if wdf.empty:
-        return "현재 감시목록이 비어있어요."
-    lines = ["현재 감시목록:"]
-    for _, r in wdf.iterrows():
-        lines.append(f"- {r['code']} [{r['market']}] "
-                      f"(System1: {r['sys1_status'] or '-'} / System2: {r['sys2_status'] or '-'})")
+        return "현재 추적 중인 종목이 없어요."
+
+    lines = [f"추적 중인 종목 {len(wdf)}개 실시간 분석:"]
+    for _, row in wdf.iterrows():
+        code, market = row['code'], row['market']
+        df = get_recent_ohlc(market, code, days=90)
+        if df is None:
+            lines.append(f"- {code} [{market}]: 데이터 조회 실패")
+            continue
+
+        lines.append(f"- {code} [{market}]")
+        for sys_name, sysconf in SYSTEMS.items():
+            res = check_turtle_breakout(df, sysconf['entry'], sysconf['exit'], WATCH_RATIO)
+            if not res:
+                lines.append(f"    {sys_name}: 데이터 부족")
+                continue
+            if res['entry_signal']:
+                status = '진입'
+            elif res['exit_signal']:
+                status = '청산'
+            elif res['watch_signal']:
+                status = '관심'
+            else:
+                status = '관찰중'
+            gap_pct = (res['close'] - res['n_high']) / res['n_high'] * 100
+            lines.append(
+                f"    {sys_name}: {status} | 현재가 {res['close']} / "
+                f"N일고가 {res['n_high']} ({gap_pct:+.2f}%) / N일저가 {res['n_low']}"
+            )
     return "\n".join(lines)
 
 
@@ -317,6 +340,8 @@ if __name__ == "__main__":
         args = parts[1:]
 
         reply = None
+        long_reply = None
+
         if cmd == 'buy':
             df, reply = handle_buy(args, df)
             holdings_changed = True
@@ -325,26 +350,19 @@ if __name__ == "__main__":
             holdings_changed = True
         elif cmd == 'list':
             reply = handle_list(df)
-        elif cmd == 'watch':
-            wdf, reply = handle_watch(args, wdf)
+        elif len(parts) == 2 and parts[1] in START_WORDS:
+            wdf, reply = handle_track_start(parts[0], wdf)
             watchlist_changed = True
-        elif cmd == 'unwatch':
-            wdf, reply = handle_unwatch(args, wdf)
+        elif len(parts) == 2 and parts[1] in STOP_WORDS:
+            wdf, reply = handle_track_stop(parts[0], wdf)
             watchlist_changed = True
-        elif cmd == 'watchlist':
-            reply = handle_watchlist(wdf)
-        elif len(parts) == 2 and parts[1] == '추적':
-            # "종목코드 추적" 형태의 자연어 명령 지원
-            wdf, reply = handle_watch([parts[0]], wdf)
-            watchlist_changed = True
-        elif len(parts) == 2 and parts[1] in ('추적해제', '추적종료', '추적중지'):
-            wdf, reply = handle_unwatch([parts[0]], wdf)
-            watchlist_changed = True
-        elif text.strip() in ('추적목록', '감시목록'):
-            reply = handle_watchlist(wdf)
+        elif text.strip() in CHECK_WORDS:
+            long_reply = handle_track_check(wdf)
 
         if reply:
             notify_telegram(reply)
+        if long_reply:
+            send_long_message(long_reply)
 
     if holdings_changed:
         save_holdings(df)
