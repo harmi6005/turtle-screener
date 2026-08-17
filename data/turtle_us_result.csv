@@ -71,7 +71,7 @@ EME,EME,System1(단기),확정,False,False,False,True,836.29,854.1,844.58,771.66
 EMR,EMR,System1(단기),관심,False,False,False,True,163.17,164.8,165.79,147.45,0.994,5.14,
 EMR,EMR,System2(중장기),관심,False,False,False,True,163.17,164.8,165.79,133.1,0.994,5.14,
 EQT,EQT,System1(단기),탈락,False,False,False,True,54.42,55.15,54.72,51.08,1.008,1.45,
-EQIX,EQIX,System1(단기),관심,False,False,False,True,1102.1,1105.94,1104.99,1003.52,1.001,32.12,
+EQIX,EQIX,System1(단기),확정,False,False,False,True,1102.1,1105.94,1104.99,1003.52,1.001,32.12,1106.71
 EXPE,EXPE,System1(단기),진입,True,True,False,False,332.69,333.24,331.31,287.16,1.006,13.3,
 EXPE,EXPE,System2(중장기),진입,True,True,False,False,332.69,333.24,331.31,251.12,1.006,13.3,
 EXPD,EXPD,System1(단기),확정,False,False,False,True,186.12,189.87,187.74,164.35,1.011,4.82,189.99
