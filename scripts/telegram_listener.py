@@ -1,65 +1,21 @@
 # -*- coding: utf-8 -*-
-"""텔레그램 채팅으로 보유종목(buy/sell) 및 감시목록(추적)을 관리하는 리스너
-(holdings_check.py, watchlist_check.py 실행 직전에 같이 돌면서 명령어를 처리합니다)
+"""텔레그램 폴링 리스너 (GitHub Actions에서 5분마다 자동 실행)
 
-=== 보유종목 (실제 매수한 것 추적) ===
-  buy 코드 매수가
-    예) buy BTC 5000000
-    -> 4자리 거래번호 발급, 손절가는 터틀원칙(진입가-2xATR)으로 자동계산
-       목표가 없이 트레일링 방식으로 추적 (오르면 손절선도 같이 올라감)
-
-  sell 거래번호 [매도가]
-    예) sell 4821 6200000
-
-  list
-    현재 감시 중인 보유거래 목록
-
-=== 감시목록 (매수 여부와 상관없이 터틀 신호만 계속 지켜보고 싶은 종목) ===
-  코드 추적시작
-    예) 005930 추적시작
-    -> 가격범위 필터 등 상관없이, 이 종목만 따로 계속 감시.
-       관심/진입/청산 신호가 바뀔 때마다 알림.
-
-  코드 추적종료
-    예) 005930 추적종료
-
-  추적확인
-    -> 지금 이 순간 실시간으로 다시 조회해서, 현재 감시 중인 종목들의
-       현재가/N일고가/N일저가 및 상태를 바로 분석해서 보여줌
+웹훅(webhook_handler.py)이 정상 작동 중이면 이 스크립트는 사실상 할 일이 없어요
+(텔레그램은 webhook이 설정되면 getUpdates가 항상 빈 값을 반환합니다).
+웹훅이 안 켜져 있거나 실패했을 때를 대비한 백업 경로로 그대로 둡니다.
 """
 
 import sys
 import os
-import random
+sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 import requests
-import pandas as pd
-import FinanceDataReader as fdr
-import yfinance as yf
-from datetime import datetime, timedelta
-from common import SYSTEMS, WATCH_RATIO, notify_telegram, send_long_message, calc_atr, check_turtle_breakout
+from common import notify_telegram, send_long_message
+from bot_commands import load_holdings, save_holdings, load_watchlist, save_watchlist, dispatch
 
-HOLDINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
-WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'watchlist.csv')
 OFFSET_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'telegram_offset.txt')
-
-HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
-                    'highest_price', 'stop_price', 'last_milestone', 'status']
-WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status']
-ATR_PERIOD = 20
-ATR_MULTIPLIER = 2
-
-START_WORDS = ('추적시작',)
-STOP_WORDS = ('추적종료', '추적해제', '추적중지')
-CHECK_WORDS = ('추적확인', '추적목록')
-
-
-def fmt_num(v):
-    v = float(v)
-    if v == int(v):
-        return f"{int(v):,}"
-    return f"{v:,.4f}".rstrip('0').rstrip('.')
 
 
 def get_updates(token, offset=None):
@@ -86,229 +42,6 @@ def save_offset(offset):
         f.write(str(offset))
 
 
-def detect_market(code):
-    if code.isdigit() and len(code) == 6:
-        return 'KR'
-    try:
-        url = f"https://api.bithumb.com/public/ticker/{code.upper()}_KRW"
-        res = requests.get(url, timeout=5).json()
-        if res.get('status') == '0000':
-            return 'COIN'
-    except Exception:
-        pass
-    return 'US'
-
-
-def get_recent_ohlc(market, code, days=60):
-    """ATR / 터틀판정에 필요한 최근 OHLC 데이터를 가져온다."""
-    try:
-        if market == 'KR':
-            end = datetime.today()
-            start = end - timedelta(days=days)
-            df = fdr.DataReader(str(code).zfill(6), start, end)
-            return df if not df.empty else None
-
-        elif market == 'US':
-            df = yf.download(code, period=f'{days}d', auto_adjust=True, progress=False)
-            return df if not df.empty else None
-
-        elif market == 'COIN':
-            url = f"https://api.bithumb.com/public/candlestick/{code}_KRW/24h"
-            res = requests.get(url, timeout=10).json()
-            if res.get('status') != '0000':
-                return None
-            raw = res['data']
-            df = pd.DataFrame(raw, columns=['Time', 'Open', 'Close', 'High', 'Low', 'Volume'])
-            df['Time'] = pd.to_datetime(df['Time'], unit='ms')
-            df = df.set_index('Time')
-            for col in ['Open', 'Close', 'High', 'Low', 'Volume']:
-                df[col] = df[col].astype(float)
-            return df.tail(days)
-    except Exception:
-        return None
-    return None
-
-
-def get_atr(market, code, period=ATR_PERIOD):
-    df = get_recent_ohlc(market, code, days=period + 30)
-    if df is None or len(df) < period + 1:
-        return None
-    atr_series = calc_atr(df, period)
-    val = atr_series.iloc[-1]
-    if pd.isna(val):
-        return None
-    return float(val)
-
-
-def gen_trade_id(df):
-    existing = set(df['trade_id'].astype(str)) if not df.empty else set()
-    while True:
-        tid = f"{random.randint(0, 9999):04d}"
-        if tid not in existing:
-            return tid
-
-
-# ===== 보유종목(holdings) =====
-
-def load_holdings():
-    if os.path.exists(HOLDINGS_PATH):
-        df = pd.read_csv(HOLDINGS_PATH, dtype={'code': str, 'trade_id': str})
-        for col in HOLDINGS_COLUMNS:
-            if col not in df.columns:
-                df[col] = ''
-        return df[HOLDINGS_COLUMNS]
-    return pd.DataFrame(columns=HOLDINGS_COLUMNS)
-
-
-def save_holdings(df):
-    os.makedirs(os.path.dirname(HOLDINGS_PATH), exist_ok=True)
-    df.to_csv(HOLDINGS_PATH, index=False)
-
-
-def handle_buy(args, df):
-    if len(args) < 2:
-        return df, "형식: buy 코드 매수가\n예) buy BTC 5000000"
-
-    code = args[0].upper()
-    try:
-        buy_price = float(args[1])
-    except ValueError:
-        return df, "매수가는 숫자로 입력해주세요."
-
-    market = detect_market(code)
-
-    atr = get_atr(market, code)
-    if atr is None:
-        return df, (f"{code}의 변동성(ATR) 데이터를 가져오지 못해서 등록에 실패했어요.\n"
-                     f"종목 코드가 맞는지 확인해주세요 (시장 판별: {market}).")
-
-    stop_price = buy_price - ATR_MULTIPLIER * atr
-    if stop_price <= 0:
-        stop_price = buy_price * 0.1
-
-    trade_id = gen_trade_id(df)
-    new_row = {'trade_id': trade_id, 'market': market, 'code': code,
-               'buy_price': buy_price, 'atr_entry': round(atr, 6),
-               'highest_price': buy_price, 'stop_price': round(stop_price, 4),
-               'last_milestone': 0, 'status': 'active'}
-    df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
-
-    return df, (f"등록 완료 (거래번호 {trade_id})\n"
-                f"{code} [{market}]\n"
-                f"매수가 {fmt_num(buy_price)}\n"
-                f"초기 손절가(진입가-2xATR) {fmt_num(stop_price)} (ATR≈{fmt_num(atr)})\n"
-                f"목표가 없이 트레일링 방식으로 추적합니다.")
-
-
-def handle_sell(args, df):
-    if not args:
-        return df, "형식: sell 거래번호 [매도가]\n예) sell 4821 6200000"
-
-    trade_id = args[0]
-    sell_price = args[1] if len(args) > 1 else None
-
-    mask = (df['trade_id'] == trade_id) & (df['status'] == 'active')
-    if not mask.any():
-        return df, f"거래번호 {trade_id}를 찾지 못했어요. list 로 확인해보세요."
-
-    row = df[mask].iloc[0]
-    extra = ""
-    if sell_price:
-        try:
-            sp = float(sell_price)
-            pnl = (sp - float(row['buy_price'])) / float(row['buy_price']) * 100
-            extra = f"\n매도가 {fmt_num(sp)} / 손익률 {pnl:+.2f}%"
-        except ValueError:
-            extra = "\n(매도가 형식이 숫자가 아니라 손익률 계산은 생략했어요)"
-
-    df.loc[mask, 'status'] = 'closed_manual'
-    return df, f"청산 완료 (거래번호 {trade_id}): {row['code']} [{row['market']}]{extra}"
-
-
-def handle_list(df):
-    active = df[df['status'] == 'active']
-    if active.empty:
-        return "현재 감시 중인 거래가 없어요."
-    lines = ["현재 감시 중인 거래:"]
-    for _, r in active.iterrows():
-        lines.append(f"[{r['trade_id']}] {r['code']} [{r['market']}] "
-                      f"매수 {fmt_num(r['buy_price'])} / 최고가 {fmt_num(r['highest_price'])} / "
-                      f"손절선 {fmt_num(r['stop_price'])} / {r['last_milestone']}배 수익 도달")
-    return "\n".join(lines)
-
-
-# ===== 감시목록(watchlist / 추적) =====
-
-def load_watchlist():
-    if os.path.exists(WATCHLIST_PATH):
-        df = pd.read_csv(WATCHLIST_PATH, dtype={'code': str})
-        for col in WATCHLIST_COLUMNS:
-            if col not in df.columns:
-                df[col] = ''
-        return df[WATCHLIST_COLUMNS]
-    return pd.DataFrame(columns=WATCHLIST_COLUMNS)
-
-
-def save_watchlist(df):
-    os.makedirs(os.path.dirname(WATCHLIST_PATH), exist_ok=True)
-    df.to_csv(WATCHLIST_PATH, index=False)
-
-
-def handle_track_start(code, wdf):
-    code = code.upper()
-    if (wdf['code'] == code).any():
-        return wdf, f"{code}는 이미 추적 중이에요."
-
-    market = detect_market(code)
-    new_row = {'code': code, 'market': market, 'sys1_status': '', 'sys2_status': ''}
-    wdf = pd.concat([wdf, pd.DataFrame([new_row])], ignore_index=True)
-    return wdf, f"추적시작: {code} [{market}]\n관심/진입/청산 신호가 바뀔 때마다 알림 드릴게요."
-
-
-def handle_track_stop(code, wdf):
-    code = code.upper()
-    before = len(wdf)
-    wdf = wdf[wdf['code'] != code]
-    if len(wdf) == before:
-        return wdf, f"{code}는 추적 중이 아니에요."
-    return wdf, f"추적종료: {code}"
-
-
-def handle_track_check(wdf):
-    """지금 이 순간 실시간으로 재조회해서 현재 상태를 분석해 보여준다."""
-    if wdf.empty:
-        return "현재 추적 중인 종목이 없어요."
-
-    lines = [f"추적 중인 종목 {len(wdf)}개 실시간 분석:"]
-    for _, row in wdf.iterrows():
-        code, market = row['code'], row['market']
-        df = get_recent_ohlc(market, code, days=90)
-        if df is None:
-            lines.append(f"- {code} [{market}]: 데이터 조회 실패")
-            continue
-
-        lines.append(f"- {code} [{market}]")
-        for sys_name, sysconf in SYSTEMS.items():
-            res = check_turtle_breakout(df, sysconf['entry'], sysconf['exit'], WATCH_RATIO)
-            if not res:
-                lines.append(f"    {sys_name}: 데이터 부족")
-                continue
-            if res['entry_signal']:
-                status = '진입'
-            elif res['exit_signal']:
-                status = '청산'
-            elif res['watch_signal']:
-                status = '관심'
-            else:
-                status = '관찰중'
-            gap_pct = (res['close'] - res['n_high']) / res['n_high'] * 100
-            lines.append(
-                f"    {sys_name}: {status} | 현재가 {res['close']} / "
-                f"N일고가 {res['n_high']} ({gap_pct:+.2f}%) / N일저가 {res['n_low']}"
-            )
-    return "\n".join(lines)
-
-
 if __name__ == "__main__":
     token = os.environ.get('TELEGRAM_BOT_TOKEN')
     chat_id = os.environ.get('TELEGRAM_CHAT_ID')
@@ -319,7 +52,7 @@ if __name__ == "__main__":
     offset = load_offset()
     updates = get_updates(token, offset)
     if not updates:
-        print("새 명령어 없음")
+        print("새 명령어 없음 (웹훅이 켜져 있으면 항상 이렇게 나오는 게 정상이에요)")
         sys.exit(0)
 
     df = load_holdings()
@@ -335,34 +68,15 @@ if __name__ == "__main__":
         if not text:
             continue
 
-        parts = text.split()
-        cmd = parts[0].lower().lstrip('/')
-        args = parts[1:]
-
-        reply = None
-        long_reply = None
-
-        if cmd == 'buy':
-            df, reply = handle_buy(args, df)
-            holdings_changed = True
-        elif cmd == 'sell':
-            df, reply = handle_sell(args, df)
-            holdings_changed = True
-        elif cmd == 'list':
-            reply = handle_list(df)
-        elif len(parts) == 2 and parts[1] in START_WORDS:
-            wdf, reply = handle_track_start(parts[0], wdf)
-            watchlist_changed = True
-        elif len(parts) == 2 and parts[1] in STOP_WORDS:
-            wdf, reply = handle_track_stop(parts[0], wdf)
-            watchlist_changed = True
-        elif text.strip() in CHECK_WORDS:
-            long_reply = handle_track_check(wdf)
+        df, wdf, reply, is_long, h_changed, w_changed = dispatch(text, df, wdf)
+        holdings_changed = holdings_changed or h_changed
+        watchlist_changed = watchlist_changed or w_changed
 
         if reply:
-            notify_telegram(reply)
-        if long_reply:
-            send_long_message(long_reply)
+            if is_long:
+                send_long_message(reply)
+            else:
+                notify_telegram(reply)
 
     if holdings_changed:
         save_holdings(df)
