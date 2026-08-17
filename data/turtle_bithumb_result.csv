@@ -33,7 +33,7 @@ APT,APT,System2(중장기),청산,False,False,True,False,729.0,760.0,1015.0,748.
 CELO,CELO,System1(단기),청산,False,False,True,False,83.57,85.38,94.97,83.95,0.899,3.13,
 FET,FET,System1(단기),청산,False,False,True,False,171.0,176.0,221.0,174.0,0.796,8.7,
 FET,FET,System2(중장기),청산,False,False,True,False,171.0,176.0,286.0,174.0,0.615,8.7,
-WLD,WLD,System1(단기),관심,False,False,False,True,501.0,525.0,502.0,415.0,1.046,27.7,
+WLD,WLD,System1(단기),확정,False,False,False,True,501.0,525.0,502.0,415.0,1.046,27.7,504.0
 ARKM,ARKM,System1(단기),청산,False,False,True,False,124.0,128.0,152.0,126.0,0.842,5.05,
 ARKM,ARKM,System2(중장기),청산,False,False,True,False,124.0,128.0,199.0,126.0,0.643,5.05,
 PYR,PYR,System1(단기),청산,False,False,True,False,58.39,68.88,136.0,61.1,0.506,16.24,
