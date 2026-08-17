@@ -9,7 +9,7 @@ WIKEN,WIKEN,System2(중장기),청산,False,True,False,0.27,0.44,2.57,0.37,0.172
 KAIA,KAIA,System1(단기),청산,False,True,False,33.4,34.78,40.37,34.33,0.862,1.75,
 KAIA,KAIA,System2(중장기),청산,False,True,False,33.4,34.78,57.79,34.33,0.602,1.75,
 ONG,ONG,System2(중장기),관심,False,False,True,83.22,92.0,92.09,56.76,0.999,4.64,
-JST,JST,System1(단기),관심,False,False,True,152.0,153.0,152.0,137.0,1.007,4.75,
+JST,JST,System1(단기),탈락,False,False,True,152.0,153.0,152.0,137.0,1.007,4.75,
 NFT,NFT,System1(단기),관심,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 DYDX,DYDX,System1(단기),청산,False,True,False,140.0,152.0,176.0,151.0,0.864,6.4,
 DYDX,DYDX,System2(중장기),청산,False,True,False,140.0,152.0,369.0,150.0,0.412,6.4,
