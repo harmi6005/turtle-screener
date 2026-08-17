@@ -43,7 +43,7 @@ def screen_us():
                 res = check_turtle_breakout(df, sysconf['entry'], sysconf['exit'], WATCH_RATIO)
                 if not res:
                     continue
-                if res['entry_signal']:
+                if res['fresh_entry_signal']:
                     chase_ratio = (res['close'] - res['n_high']) / res['n_high']
                     if chase_ratio > MAX_CHASE_RATIO:
                         continue
