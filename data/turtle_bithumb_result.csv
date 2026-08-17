@@ -7,7 +7,7 @@ WIKEN,WIKEN,System1(단기),청산,False,False,True,False,0.12,0.24,0.97,0.17,0.
 WIKEN,WIKEN,System2(중장기),청산,False,False,True,False,0.12,0.24,2.57,0.17,0.093,0.11,
 BFC,BFC,System1(단기),청산,False,False,True,False,12.18,12.48,16.74,12.24,0.746,0.97,
 BFC,BFC,System2(중장기),청산,False,False,True,False,12.18,12.48,22.62,12.24,0.552,0.97,
-POL,POL,System1(단기),관심,False,False,False,True,109.0,110.0,111.0,102.0,0.991,3.4,
+POL,POL,System1(단기),탈락,False,False,False,True,109.0,110.0,111.0,102.0,0.991,3.4,
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 FITFI,FITFI,System1(단기),청산,False,False,True,False,0.03,0.1,0.4,0.06,0.247,0.06,

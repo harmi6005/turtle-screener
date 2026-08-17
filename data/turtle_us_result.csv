@@ -54,8 +54,8 @@ CTSH,CTSH,System1(단기),탈락,False,False,False,True,58.79,60.09,59.82,52.21,
 CTSH,CTSH,System2(중장기),탈락,False,False,False,True,58.79,60.09,59.82,42.12,1.005,2.76,
 CMCSA,CMCSA,System1(단기),탈락,False,False,False,True,26.18,26.49,26.26,23.28,1.009,0.84,
 CMCSA,CMCSA,System2(중장기),탈락,False,False,False,True,26.18,26.49,26.74,21.28,0.991,0.84,
-COP,COP,System1(단기),관심,False,False,False,True,126.78,127.4,127.34,114.71,1.0,3.5,
-COP,COP,System2(중장기),관심,False,False,False,True,126.78,127.4,127.34,113.21,1.0,3.5,
+COP,COP,System1(단기),확정,False,False,False,True,126.78,127.4,127.34,114.71,1.0,3.5,127.57
+COP,COP,System2(중장기),확정,False,False,False,True,126.78,127.4,127.34,113.21,1.0,3.5,127.57
 CEG,CEG,System1(단기),관심,False,False,False,True,282.5,287.0,285.5,260.67,1.005,9.97,
 COO,COO,System1(단기),탈락,False,False,False,True,76.17,76.87,77.64,71.78,0.99,1.75,
 COO,COO,System2(중장기),탈락,False,False,False,True,76.17,76.87,77.64,68.37,0.99,1.75,
