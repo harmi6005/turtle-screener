@@ -71,7 +71,7 @@ if __name__ == "__main__":
 
             if orig_signal == '확정':
                 status = '확정이탈' if res['exit_signal'] else '확정유지'
-            elif res['entry_signal']:
+            elif res['fresh_entry_signal']:
                 chase_ratio = (res['close'] - res['n_high']) / res['n_high']
                 status = '스킵(추격과다)' if chase_ratio > MAX_CHASE_RATIO else '확정_candidate'
             else:
