@@ -138,7 +138,7 @@ NTAP,NTAP,System2(중장기),관심,False,False,False,True,207.08,208.09,209.06,
 NFLX,NFLX,System1(단기),관심,False,False,False,True,78.16,78.73,78.4,71.11,1.004,2.2,
 NEM,NEM,System1(단기),확정,False,False,False,True,117.76,119.17,120.19,91.85,0.992,3.93,120.6
 NEM,NEM,System2(중장기),확정,False,False,False,True,117.76,119.17,120.19,88.75,0.992,3.93,120.6
-NVDA,NVDA,System1(단기),관심,False,False,False,True,225.16,227.49,227.23,194.95,1.001,7.13,
+NVDA,NVDA,System1(단기),확정,False,False,False,True,225.16,227.49,227.23,194.95,1.001,7.13,227.84
 OMC,OMC,System1(단기),탈락,False,False,False,True,87.57,88.55,88.4,76.46,1.002,3.24,
 OMC,OMC,System2(중장기),탈락,False,False,False,True,87.57,88.55,88.4,76.46,1.002,3.24,
 OKE,OKE,System1(단기),진입,True,True,False,False,94.99,95.05,94.75,83.48,1.003,2.4,
