@@ -25,19 +25,28 @@ def calc_atr(df, period=20):
 
 
 def check_turtle_breakout(df, entry_period, exit_period, watch_ratio=0.9):
-    if len(df) < entry_period + 5:
+    if len(df) < entry_period + 6:
         return None
     df = df.copy()
     df['N_high'] = df['High'].rolling(entry_period).max().shift(1)
     df['N_low'] = df['Low'].rolling(exit_period).min().shift(1)
     df['ATR'] = calc_atr(df, 20)
     last = df.iloc[-1]
+    prev = df.iloc[-2]
+
     entry_signal = last['Close'] > last['N_high']
     exit_signal = last['Close'] < last['N_low']
     ratio = last['High'] / last['N_high'] if last['N_high'] else None
     watch_signal = bool(ratio is not None and ratio >= watch_ratio and not entry_signal)
+
+    # '최초 돌파' 여부: 어제는 조건을 못 채웠는데 오늘 처음 채운 경우만 True.
+    # 며칠째 연속으로 신고가를 갱신 중인(추세 지속) 종목은 여기서 걸러짐.
+    prev_entry_signal = bool(prev['Close'] > prev['N_high']) if pd.notna(prev['N_high']) else False
+    fresh_entry_signal = bool(entry_signal and not prev_entry_signal)
+
     return {
         'entry_signal': bool(entry_signal),
+        'fresh_entry_signal': fresh_entry_signal,
         'exit_signal': bool(exit_signal),
         'watch_signal': watch_signal,
         'close': round(last['Close'], 2),
