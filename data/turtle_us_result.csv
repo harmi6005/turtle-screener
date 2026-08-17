@@ -76,8 +76,8 @@ EXPE,EXPE,System1(단기),진입,True,True,False,False,332.69,333.24,331.31,287.
 EXPE,EXPE,System2(중장기),진입,True,True,False,False,332.69,333.24,331.31,251.12,1.006,13.3,
 EXPD,EXPD,System1(단기),확정,False,False,False,True,186.12,189.87,187.74,164.35,1.011,4.82,189.99
 EXPD,EXPD,System2(중장기),확정,False,False,False,True,186.12,189.87,187.74,164.35,1.011,4.82,189.99
-XOM,XOM,System1(단기),관심,False,False,False,True,160.1,161.26,161.67,149.09,0.997,3.82,
-XOM,XOM,System2(중장기),관심,False,False,False,True,160.1,161.26,161.67,146.23,0.997,3.82,
+XOM,XOM,System1(단기),확정,False,False,False,True,160.1,161.26,161.67,149.09,0.997,3.82,162.02
+XOM,XOM,System2(중장기),확정,False,False,False,True,160.1,161.26,161.67,146.23,0.997,3.82,162.02
 FDX,FDX,System1(단기),관심,False,False,False,True,334.64,341.69,340.25,306.91,1.004,7.3,
 FDX,FDX,System2(중장기),탈락,False,False,False,True,334.64,341.69,344.08,303.0,0.993,7.3,
 FOXA,FOXA,System2(중장기),확정,False,False,False,True,69.04,69.25,69.18,54.4,1.001,1.98,69.41
