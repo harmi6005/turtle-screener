@@ -1,0 +1,33 @@
+name: 텔레그램 실시간 명령 처리
+
+on:
+  repository_dispatch:
+    types: [telegram_message]
+
+jobs:
+  handle:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 패키지 설치
+        run: pip install -r requirements.txt
+
+      - name: 명령어 즉시 처리
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          MSG_TEXT: ${{ github.event.client_payload.text }}
+        run: python scripts/webhook_handler.py
+
+      - name: 결과 커밋
+        run: |
+          git config user.name "turtle-bot"
+          git config user.email "turtle-bot@users.noreply.github.com"
+          git add data/holdings.csv data/watchlist.csv
+          git diff --cached --quiet || git commit -m "실시간 명령 처리 결과"
+          git push
