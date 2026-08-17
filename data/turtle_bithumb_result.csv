@@ -47,9 +47,9 @@ BB,BB,System1(단기),청산,False,False,True,False,15.64,16.4,24.56,15.83,0.668
 BB,BB,System2(중장기),청산,False,False,True,False,15.64,16.4,34.02,15.83,0.482,1.27,
 ETHFI,ETHFI,System1(단기),관심,False,False,False,True,697.0,730.0,717.0,495.0,1.018,38.25,
 ETHFI,ETHFI,System2(중장기),관심,False,False,False,True,697.0,730.0,717.0,495.0,1.018,38.25,
-G,G,System1(단기),관심,False,False,False,True,5.32,5.55,5.4,4.85,1.028,0.27,
+G,G,System1(단기),확정,False,False,False,True,5.32,5.55,5.4,4.85,1.028,0.27,5.42
 SAFE,SAFE,System1(단기),청산,False,False,True,False,118.0,122.0,137.0,119.0,0.891,7.55,
-MORPHO,MORPHO,System1(단기),관심,False,False,False,True,2903.0,3079.0,2916.0,2550.0,1.056,115.45,
+MORPHO,MORPHO,System1(단기),탈락,False,False,False,True,2903.0,3079.0,2916.0,2550.0,1.056,115.45,
 ZRC,ZRC,System1(단기),청산,False,False,True,False,1.09,1.2,1.99,1.09,0.603,0.17,
 DATA,DATA,System1(단기),청산,False,False,True,False,257.0,269.0,364.0,263.0,0.739,14.05,
 DATA,DATA,System2(중장기),청산,False,False,True,False,257.0,269.0,644.0,263.0,0.418,14.05,

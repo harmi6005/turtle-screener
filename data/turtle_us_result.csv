@@ -67,7 +67,7 @@ CRWD,CRWD,System2(중장기),탈락,False,False,False,True,216.95,227.5,226.9,17
 DVN,DVN,System1(단기),확정,False,False,False,True,45.85,45.94,46.21,42.04,0.994,1.32,46.25
 DXCM,DXCM,System1(단기),탈락,False,False,False,True,89.75,91.96,91.62,79.5,1.004,3.01,
 DXCM,DXCM,System2(중장기),탈락,False,False,False,True,89.75,91.96,91.62,69.79,1.004,3.01,
-EME,EME,System1(단기),관심,False,False,False,True,836.29,854.1,844.58,771.66,1.011,34.23,
+EME,EME,System1(단기),확정,False,False,False,True,836.29,854.1,844.58,771.66,1.011,34.23,857.08
 EMR,EMR,System1(단기),관심,False,False,False,True,163.17,164.8,165.79,147.45,0.994,5.14,
 EMR,EMR,System2(중장기),관심,False,False,False,True,163.17,164.8,165.79,133.1,0.994,5.14,
 EQT,EQT,System1(단기),탈락,False,False,False,True,54.42,55.15,54.72,51.08,1.008,1.45,
@@ -122,7 +122,7 @@ LEN,LEN,System1(단기),탈락,False,False,False,True,86.83,87.79,88.41,81.95,0.
 LYV,LYV,System2(중장기),진입,True,True,False,False,188.46,189.25,188.1,174.82,1.006,4.19,
 LMT,LMT,System1(단기),관심,False,False,False,True,608.68,609.24,610.36,570.89,0.998,17.08,
 LMT,LMT,System2(중장기),관심,False,False,False,True,608.68,609.24,610.36,487.15,0.998,17.08,
-LITE,LITE,System1(단기),관심,False,False,False,True,926.14,957.9,966.6,671.0,0.991,83.4,
+LITE,LITE,System1(단기),탈락,False,False,False,True,926.14,957.9,966.6,671.0,0.991,83.4,
 MTB,MTB,System1(단기),관심,False,False,False,True,254.09,255.63,255.68,246.31,1.0,4.35,
 MTB,MTB,System2(중장기),관심,False,False,False,True,254.09,255.63,255.68,240.74,1.0,4.35,
 MPC,MPC,System1(단기),확정,False,False,False,True,355.42,360.1,357.2,290.36,1.008,11.57,360.78
@@ -136,8 +136,8 @@ NDAQ,NDAQ,System2(중장기),관심,False,False,False,True,97.02,97.9,97.73,87.9
 NTAP,NTAP,System1(단기),관심,False,False,False,True,207.08,208.09,209.06,174.04,0.995,7.46,
 NTAP,NTAP,System2(중장기),관심,False,False,False,True,207.08,208.09,209.06,156.26,0.995,7.46,
 NFLX,NFLX,System1(단기),관심,False,False,False,True,78.16,78.73,78.4,71.11,1.004,2.2,
-NEM,NEM,System1(단기),관심,False,False,False,True,117.76,119.17,120.19,91.85,0.992,3.93,
-NEM,NEM,System2(중장기),관심,False,False,False,True,117.76,119.17,120.19,88.75,0.992,3.93,
+NEM,NEM,System1(단기),확정,False,False,False,True,117.76,119.17,120.19,91.85,0.992,3.93,120.6
+NEM,NEM,System2(중장기),확정,False,False,False,True,117.76,119.17,120.19,88.75,0.992,3.93,120.6
 NVDA,NVDA,System1(단기),관심,False,False,False,True,225.16,227.49,227.23,194.95,1.001,7.13,
 OMC,OMC,System1(단기),탈락,False,False,False,True,87.57,88.55,88.4,76.46,1.002,3.24,
 OMC,OMC,System2(중장기),탈락,False,False,False,True,87.57,88.55,88.4,76.46,1.002,3.24,
@@ -178,8 +178,8 @@ TFC,TFC,System1(단기),확정,False,False,False,True,53.1,53.27,53.69,50.72,0.9
 TFC,TFC,System2(중장기),관심,False,False,False,True,53.1,53.27,53.69,50.04,0.992,0.96,
 USB,USB,System1(단기),확정,False,False,False,True,65.42,65.56,65.61,62.54,0.999,1.07,65.84
 USB,USB,System2(중장기),확정,False,False,False,True,65.42,65.56,65.61,62.12,0.999,1.07,65.84
-VLO,VLO,System1(단기),관심,False,False,False,True,341.67,346.09,343.73,291.46,1.007,11.7,
-VLO,VLO,System2(중장기),관심,False,False,False,True,341.67,346.09,343.73,291.46,1.007,11.7,
+VLO,VLO,System1(단기),확정,False,False,False,True,341.67,346.09,343.73,291.46,1.007,11.7,347.23
+VLO,VLO,System2(중장기),확정,False,False,False,True,341.67,346.09,343.73,291.46,1.007,11.7,347.23
 VEEV,VEEV,System1(단기),탈락,False,False,False,True,243.75,253.48,253.35,199.01,1.001,9.08,
 VEEV,VEEV,System2(중장기),탈락,False,False,False,True,243.75,253.48,253.35,179.25,1.001,9.08,
 VZ,VZ,System1(단기),탈락,False,False,False,True,48.48,48.61,49.01,45.09,0.992,1.26,
