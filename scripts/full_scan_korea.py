@@ -63,7 +63,7 @@ def screen_korea():
     print(f"총 {len(tickers)}개 종목 병렬 조회 시작")
 
     end = datetime.today()
-    start = end - timedelta(days=180)
+    start = end - timedelta(days=300)
 
     results = []
     done = 0
