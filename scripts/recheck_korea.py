@@ -80,7 +80,7 @@ if __name__ == "__main__":
         sys.exit(0)
 
     end = datetime.today()
-    start = end - timedelta(days=180)
+    start = end - timedelta(days=300)
 
     results = []
     with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
