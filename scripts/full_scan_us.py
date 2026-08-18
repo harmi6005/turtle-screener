@@ -28,7 +28,7 @@ def screen_us():
     print(f"총 {len(tickers)}개 종목 배치 다운로드 중...")
 
     end = datetime.today()
-    start = end - timedelta(days=180)
+    start = end - timedelta(days=300)
 
     results = []
     data = yf.download(tickers, start=start, end=end, group_by='ticker',
