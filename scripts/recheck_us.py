@@ -48,7 +48,7 @@ if __name__ == "__main__":
 
     tickers = list({r['code'] for r in target_rows})
     end = datetime.today()
-    start = end - timedelta(days=180)
+    start = end - timedelta(days=300)
 
     data = yf.download(tickers, start=start, end=end, group_by='ticker',
                         auto_adjust=True, threads=True, progress=False)
