@@ -229,7 +229,7 @@ def handle_track_check(wdf):
     lines = [f"추적 중인 종목 {len(wdf)}개 실시간 분석:"]
     for _, row in wdf.iterrows():
         code, market = row['code'], row['market']
-        df = get_recent_ohlc(market, code, days=90)
+        df = get_recent_ohlc(market, code, days=300)
         if df is None:
             lines.append(f"- {code} [{market}]: 데이터 조회 실패")
             continue
