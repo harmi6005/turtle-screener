@@ -17,7 +17,7 @@ ARK,ARK,System2(중장기),청산,False,False,True,False,120.0,123.0,222.0,122.0
 SC,SC,System1(단기),청산,False,False,True,False,0.63,0.65,0.76,0.64,0.856,0.02,
 SC,SC,System2(중장기),청산,False,False,True,False,0.63,0.65,1.27,0.64,0.513,0.02,
 MORPHO,MORPHO,System1(단기),관심,False,False,False,True,2993.0,3050.0,3079.0,2510.0,0.991,116.75,
-GNO,GNO,System1(단기),관심,False,False,False,True,150000.0,202900.0,154500.0,144700.0,1.313,5615.0,
+GNO,GNO,System1(단기),탈락,False,False,False,True,150000.0,202900.0,154500.0,144700.0,1.313,5615.0,
 VTHO,VTHO,System1(단기),청산,False,False,True,False,0.44,0.45,0.5,0.44,0.892,0.01,
 VTHO,VTHO,System2(중장기),청산,False,False,True,False,0.44,0.45,0.63,0.44,0.713,0.01,
 LA,LA,System1(단기),관심,False,False,False,True,80.36,84.9,84.54,64.82,1.004,6.73,
