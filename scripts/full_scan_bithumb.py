@@ -24,7 +24,7 @@ def get_bithumb_krw_coins():
     return [k for k in data.keys() if k != 'date']
 
 
-def get_bithumb_daily_ohlc(coin, days=180):
+def get_bithumb_daily_ohlc(coin, days=300):
     url = f"https://api.bithumb.com/public/candlestick/{coin}_KRW/24h"
     res = requests.get(url, timeout=10).json()
     if res.get('status') != '0000':
