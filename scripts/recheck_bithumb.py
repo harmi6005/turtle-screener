@@ -17,7 +17,7 @@ DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_bithum
 HIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'trade_history_bithumb.csv')
 
 
-def get_bithumb_daily_ohlc(coin, days=180):
+def get_bithumb_daily_ohlc(coin, days=300):
     url = f"https://api.bithumb.com/public/candlestick/{coin}_KRW/24h"
     res = requests.get(url, timeout=10).json()
     if res.get('status') != '0000':
