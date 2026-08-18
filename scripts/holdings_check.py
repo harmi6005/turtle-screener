@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 """보유종목 트레일링 손절 + ATR 배수 수익 알림 추적 (GitHub Actions에서 5분마다 자동 실행)
 
-telegram_listener.py 가 등록한 data/holdings.csv 의 거래(trade_id)들을 감시하다가,
+telegram_listener.py / webhook_handler.py 가 등록한 data/holdings.csv 의 거래(trade_id)들을
+감시하다가,
 - 오늘 최고가가 이전 최고가를 갱신하면 -> 손절선도 "새 최고가 - 2xATR"로 같이 올림 (트레일링)
 - 진입가 대비 ATR의 정수배(1배,2배,3배...)만큼 새로 오르면 -> "N배 수익 도달" 알림 (매도신호 아님)
 - 오늘 저가가 손절선 밑으로 떨어지면 -> "트레일링 손절 도달" 알림 (매도 검토)
@@ -28,6 +29,7 @@ from common import notify_telegram
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
            'highest_price', 'stop_price', 'last_milestone', 'status']
+NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price', 'last_milestone']
 ATR_MULTIPLIER = 2
 
 
@@ -106,7 +108,15 @@ if __name__ == "__main__":
     for col in COLUMNS:
         if col not in df.columns:
             df[col] = ''
-    df = df[COLUMNS]
+    df = df[COLUMNS].copy()
+
+    # ⚠️ 핵심 수정 부분: CSV를 읽으면 숫자 컬럼도 문자열(object/string) dtype으로
+    # 인식되는 경우가 있어서, 이후 df.at[idx, col] = float값 대입 시
+    # "Invalid value ... for dtype 'str'" 오류가 발생했음.
+    # 여기서 미리 숫자형으로 강제 변환해서 원천 차단.
+    for col in NUMERIC_COLUMNS:
+        df[col] = pd.to_numeric(df[col], errors='coerce')
+    df['last_milestone'] = df['last_milestone'].fillna(0)
 
     if df.empty:
         print("등록된 거래가 없습니다.")
@@ -137,7 +147,7 @@ if __name__ == "__main__":
         atr_entry = float(row['atr_entry'])
         highest_price = float(row['highest_price'])
         stop_price = float(row['stop_price'])
-        last_milestone = int(float(row['last_milestone'])) if str(row['last_milestone']) != '' else 0
+        last_milestone = int(row['last_milestone']) if pd.notna(row['last_milestone']) else 0
 
         # 1) 최고가 갱신 -> 트레일링 손절선 갱신 (내려가지는 않음)
         if ohlc['high'] > highest_price:
@@ -145,8 +155,8 @@ if __name__ == "__main__":
             new_stop = highest_price - ATR_MULTIPLIER * atr_entry
             if new_stop > stop_price:
                 stop_price = new_stop
-            df.at[idx, 'highest_price'] = highest_price
-            df.at[idx, 'stop_price'] = round(stop_price, 4)
+            df.at[idx, 'highest_price'] = float(highest_price)
+            df.at[idx, 'stop_price'] = round(float(stop_price), 4)
             changed = True
 
         # 2) ATR 배수 마일스톤 체크 (매도 신호 아님, 진행 알림)
@@ -160,7 +170,7 @@ if __name__ == "__main__":
                     f"매수가 {fmt_num(buy_price)} / 현재 최고가 {fmt_num(highest_price)}\n"
                     f"수익률 {profit_pct:+.2f}% / 현재 손절선 {fmt_num(stop_price)}"
                 )
-                df.at[idx, 'last_milestone'] = current_multiple
+                df.at[idx, 'last_milestone'] = int(current_multiple)
                 changed = True
                 print(f"거래 {trade_id}({code}) {current_multiple}배 마일스톤 알림 전송")
 
