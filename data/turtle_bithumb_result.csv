@@ -51,7 +51,7 @@ BFC,BFC,System2(중장기),청산,False,False,True,False,12.07,12.67,22.62,12.24
 SWAP,SWAP,System1(단기),청산,False,False,True,False,45.59,48.31,52.82,47.3,0.915,2.9,
 CHZ,CHZ,System1(단기),청산,False,False,True,False,16.53,17.17,19.69,16.92,0.872,0.66,
 CHZ,CHZ,System2(중장기),청산,False,False,True,False,16.53,17.17,30.32,16.92,0.566,0.66,
-POL,POL,System1(단기),관심,False,False,False,True,111.0,119.0,111.0,102.0,1.072,3.8,
+POL,POL,System1(단기),탈락,False,False,False,True,111.0,119.0,111.0,102.0,1.072,3.8,
 XLM,XLM,System1(단기),청산,False,False,True,False,218.0,224.0,255.0,221.0,0.878,7.3,
 XLM,XLM,System2(중장기),청산,False,False,True,False,218.0,224.0,325.0,221.0,0.689,7.3,
 KAIA,KAIA,System1(단기),청산,False,False,True,False,31.7,33.73,39.94,32.83,0.845,1.7,
