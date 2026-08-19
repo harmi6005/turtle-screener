@@ -1,4 +1,4 @@
 trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,last_milestone,status
 8801,COIN,XRP,1435.0,2120.0,750.0,,0.0,
 4540,KR,004890,35966.0,937.5,36050.0,34175.0,0.0,closed_manual
-0455,KR,004890,35966.0,937.5,36050.0,34175.0,0.0,active
+0455,KR,004890,35966.0,937.5,36800.0,34925.0,0.0,active
