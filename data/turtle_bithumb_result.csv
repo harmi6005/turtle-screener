@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
 QTUM,QTUM,System1(단기),관심,False,False,False,True,973.0,984.0,993.0,879.0,0.991,27.45,
 ETH,ETH,System2(중장기),진입,True,True,False,False,2883000.0,2904000.0,2875000.0,2613000.0,1.01,56200.0,
-LINK,LINK,System1(단기),관심,False,False,False,True,13740.0,13820.0,13780.0,11480.0,1.003,422.0,
-LINK,LINK,System2(중장기),관심,False,False,False,True,13740.0,13820.0,13780.0,11380.0,1.003,422.0,
+LINK,LINK,System1(단기),탈락,False,False,False,True,13740.0,13820.0,13780.0,11480.0,1.003,422.0,
+LINK,LINK,System2(중장기),탈락,False,False,False,True,13740.0,13820.0,13780.0,11380.0,1.003,422.0,
 MAPO,MAPO,System1(단기),청산,False,False,True,False,1.2,1.23,1.45,1.22,0.844,0.05,
 MAPO,MAPO,System2(중장기),청산,False,False,True,False,1.2,1.23,1.89,1.2,0.648,0.05,
 DOGE,DOGE,System1(단기),관심,False,False,False,True,101.0,102.0,103.0,97.11,0.99,2.62,
