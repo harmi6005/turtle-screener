@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
-ELF,ELF,System1(단기),관심,False,False,False,True,90.0,105.0,106.0,73.01,0.991,7.7,
+ELF,ELF,System1(단기),탈락,False,False,False,True,90.0,105.0,106.0,73.01,0.991,7.7,
 CVC,CVC,System1(단기),청산,False,False,True,False,22.85,23.22,29.78,22.89,0.78,1.03,
 CVC,CVC,System2(중장기),청산,False,False,True,False,22.85,23.22,41.1,22.89,0.565,1.03,
 VET,VET,System1(단기),청산,False,False,True,False,6.11,6.25,6.92,6.13,0.903,0.17,
