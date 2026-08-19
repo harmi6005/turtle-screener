@@ -25,7 +25,7 @@ NMR,NMR,System1(단기),청산,False,False,True,False,10750.0,11110.0,12680.0,10
 NMR,NMR,System2(중장기),청산,False,False,True,False,10750.0,11110.0,15500.0,10810.0,0.717,339.5,
 UOS,UOS,System1(단기),청산,False,False,True,False,3.46,3.54,4.34,3.5,0.815,0.17,
 UOS,UOS,System2(중장기),청산,False,False,True,False,3.46,3.54,6.8,3.5,0.52,0.17,
-CAKE,CAKE,System1(단기),관심,False,False,False,True,2119.0,2140.0,2121.0,1900.0,1.009,73.55,
+CAKE,CAKE,System1(단기),탈락,False,False,False,True,2119.0,2140.0,2121.0,1900.0,1.009,73.55,
 OGN,OGN,System1(단기),청산,False,False,True,False,21.74,22.59,26.85,22.17,0.841,1.2,
 SIX,SIX,System1(단기),청산,False,False,True,False,5.63,5.75,7.14,5.7,0.806,0.16,
 SIX,SIX,System2(중장기),청산,False,False,True,False,5.63,5.75,9.31,5.7,0.618,0.16,
