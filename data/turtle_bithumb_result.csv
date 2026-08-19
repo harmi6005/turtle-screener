@@ -20,7 +20,7 @@ XAUT,XAUT,System1(단기),관심,False,False,False,True,6173000.0,6178000.0,6233
 EPT,EPT,System1(단기),관심,False,False,False,True,0.45,0.5,0.5,0.42,1.003,0.03,
 USD1,USD1,System1(단기),청산,False,False,True,False,1379.0,1383.0,1446.0,1382.0,0.956,12.65,
 USD1,USD1,System2(중장기),청산,False,False,True,False,1379.0,1383.0,1533.0,1382.0,0.902,12.65,
-TREE,TREE,System1(단기),관심,False,False,False,True,57.69,65.0,60.59,45.15,1.073,3.68,
+TREE,TREE,System1(단기),탈락,False,False,False,True,57.69,65.0,60.59,45.15,1.073,3.68,
 PUMP,PUMP,System1(단기),관심,False,False,False,True,4.32,4.37,4.37,2.99,1.0,0.36,
 PUMP,PUMP,System2(중장기),관심,False,False,False,True,4.32,4.37,4.37,2.73,1.0,0.36,
 SUPER,SUPER,System1(단기),관심,False,False,False,True,124.0,124.0,125.0,116.0,0.992,3.25,
