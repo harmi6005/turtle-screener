@@ -11,8 +11,9 @@ telegram_listener.py / webhook_handler.py 가 등록한 data/holdings.csv 의 �
 
 [신규] 위 이벤트 알림과 별도로, 이번 실행에서 실제로 시세를 조회한 보유종목들의
 현재가/손익률/손절선 괴리율/현재 ATR 배수 진행상황을 모아 "보유종목 현황" 요약을
-매 실행마다(5분마다) 발송합니다. 국장/미장 종목은 해당 시장이 열려있을 때만, 코인은
-항상 포함됩니다 (기존 시장별 개장 체크 로직을 그대로 따름 -> 장 시간에만 자동 발송되는 효과).
+매 실행마다(5분마다) 발송합니다. 국장/미장 종목은 해당 시장이 "열려있을 때"만 포함되는데,
+장 시작 5분 전부터 이미 열린 것으로 간주해서 등록현황이 미리 뜨도록 했습니다
+(국장: 08:55 KST부터, 미장: 09:25 ET부터). 코인은 항상 포함됩니다.
 
 data/holdings.csv 컬럼:
   trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,last_milestone,status
@@ -39,6 +40,20 @@ NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price', 'las
 ATR_MULTIPLIER = 2
 STOP_GAP_WARN_PCT = 2.0  # 손절선까지 괴리율이 이 이하로 좁혀지면 "임박" 태그
 
+# 장 시작 몇 분 전부터 "장중"으로 간주해서 등록현황을 미리 보여줄지
+PRE_MARKET_BUFFER_MIN = 5
+
+KR_MARKET_OPEN = dtime(9, 0)
+KR_MARKET_CLOSE = dtime(15, 30)
+US_MARKET_OPEN = dtime(9, 30)
+US_MARKET_CLOSE = dtime(16, 0)
+
+
+def _shift_time_earlier(t, minutes):
+    """dtime 값에서 minutes만큼 뺀 dtime을 반환 (자정 넘어가는 경우는 이 서비스 특성상 불필요)."""
+    dummy = datetime(2000, 1, 1, t.hour, t.minute) - timedelta(minutes=minutes)
+    return dummy.time()
+
 
 def fmt_num(v):
     v = float(v)
@@ -51,14 +66,16 @@ def is_korea_market_open():
     now = datetime.now(ZoneInfo('Asia/Seoul'))
     if now.weekday() >= 5:
         return False
-    return dtime(9, 0) <= now.time() <= dtime(15, 30)
+    open_with_buffer = _shift_time_earlier(KR_MARKET_OPEN, PRE_MARKET_BUFFER_MIN)
+    return open_with_buffer <= now.time() <= KR_MARKET_CLOSE
 
 
 def is_us_market_open():
     now = datetime.now(ZoneInfo('America/New_York'))
     if now.weekday() >= 5:
         return False
-    return dtime(9, 30) <= now.time() <= dtime(16, 0)
+    open_with_buffer = _shift_time_earlier(US_MARKET_OPEN, PRE_MARKET_BUFFER_MIN)
+    return open_with_buffer <= now.time() <= US_MARKET_CLOSE
 
 
 def get_bithumb_daily_ohlc(coin, days=5):
@@ -76,7 +93,8 @@ def get_bithumb_daily_ohlc(coin, days=5):
 
 
 def get_latest_ohlc(market, code):
-    """시장별로 최근 캔들(오늘 포함)의 고가/저가/종가를 가져온다."""
+    """시장별로 최근 캔들(오늘 포함)의 고가/저가/종가를 가져온다.
+    장 시작 전(pre-market buffer 구간)에는 전일 종가 기준 데이터가 반환된다."""
     try:
         if market == 'KR':
             end = datetime.today()
@@ -236,8 +254,8 @@ if __name__ == "__main__":
     else:
         print("변경 사항 없음")
 
-    # 5) 보유종목 현황 요약 발송 (장 시간에만: KR/US는 개장중인 종목만 위에서 이미 필터링됨,
-    #    COIN은 항상 포함되므로 코인 보유 시에는 5분마다 계속 발송됨)
+    # 5) 보유종목 현황 요약 발송 (장 시작 5분 전부터 개장중 취급, 국장/미장은 위에서
+    #    이미 필터링됨, COIN은 항상 포함되므로 코인 보유 시에는 5분마다 계속 발송됨)
     if summary_lines:
         summary_msg = f"[보유종목 현황] {len(summary_lines)}건\n" + "\n".join(summary_lines)
         send_long_message(summary_msg)
