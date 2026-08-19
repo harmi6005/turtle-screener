@@ -46,8 +46,8 @@ CLX,CLX,System2(중장기),관심,False,False,False,True,105.55,107.85,107.45,91
 CME,CME,System1(단기),탈락,False,False,False,True,271.54,274.0,271.83,256.83,1.008,6.5,
 COHR,COHR,System1(단기),청산,False,False,True,False,306.43,329.44,391.37,309.19,0.842,35.3,
 CMCSA,CMCSA,System1(단기),탈락,False,False,False,True,26.2,26.28,26.49,24.33,0.992,0.86,
-CPRT,CPRT,System1(단기),관심,False,False,False,True,31.51,33.55,32.15,28.55,1.044,1.13,
-CPRT,CPRT,System2(중장기),관심,False,False,False,True,31.51,33.55,33.55,26.81,1.0,1.13,
+CPRT,CPRT,System1(단기),탈락,False,False,False,True,31.51,33.55,32.15,28.55,1.044,1.13,
+CPRT,CPRT,System2(중장기),확정,False,False,False,True,31.51,33.55,33.55,26.81,1.0,1.13,33.65
 CRH,CRH,System1(단기),청산,False,False,True,False,93.25,96.85,105.29,95.22,0.92,3.07,
 CRH,CRH,System2(중장기),청산,False,False,True,False,93.25,96.85,116.43,93.74,0.832,3.07,
 DRI,DRI,System1(단기),탈락,False,False,False,True,218.86,227.64,229.76,202.37,0.991,5.91,
@@ -87,8 +87,8 @@ HON,HON,System1(단기),청산,False,False,True,False,227.71,229.76,251.25,227.8
 IEX,IEX,System1(단기),탈락,False,False,False,True,234.16,242.73,243.8,232.19,0.996,6.02,
 IEX,IEX,System2(중장기),탈락,False,False,False,True,234.16,242.73,243.8,219.25,0.996,6.02,
 IR,IR,System1(단기),청산,False,False,True,False,80.77,82.34,91.76,81.82,0.897,2.75,
-ICE,ICE,System1(단기),관심,False,False,False,True,156.18,158.16,158.55,147.47,0.998,3.67,
-ICE,ICE,System2(중장기),관심,False,False,False,True,156.18,158.16,158.55,137.76,0.998,3.67,
+ICE,ICE,System1(단기),탈락,False,False,False,True,156.18,158.16,158.55,147.47,0.998,3.67,
+ICE,ICE,System2(중장기),확정,False,False,False,True,156.18,158.16,158.55,137.76,0.998,3.67,158.73
 IVZ,IVZ,System1(단기),관심,False,False,False,True,32.38,32.62,32.8,30.89,0.995,0.9,
 IVZ,IVZ,System2(중장기),관심,False,False,False,True,32.38,32.62,32.8,27.67,0.995,0.9,
 JPM,JPM,System1(단기),관심,False,False,False,True,363.25,363.57,366.5,353.33,0.992,5.86,
