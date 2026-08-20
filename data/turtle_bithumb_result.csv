@@ -18,7 +18,7 @@ MASK,MASK,System1(단기),관심,False,False,False,True,522.0,526.0,527.0,484.0,
 1INCH,1INCH,System1(단기),관심,False,False,False,True,120.0,121.0,122.0,114.0,0.992,2.25,
 BTT,BTT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 HBAR,HBAR,System1(단기),관심,False,False,False,True,101.0,101.0,102.0,91.13,0.99,2.67,
-FLR,FLR,System1(단기),관심,False,False,False,True,8.8,11.0,9.06,8.1,1.214,0.35,
+FLR,FLR,System1(단기),확정,False,False,False,True,8.8,11.0,9.06,8.1,1.214,0.35,9.07
 FLR,FLR,System2(중장기),관심,False,False,False,True,8.8,11.0,11.0,8.1,1.0,0.35,
 RPL,RPL,System1(단기),관심,False,False,False,True,2111.0,2277.0,2299.0,1848.0,0.99,91.95,
 FLOKI,FLOKI,System1(단기),진입,True,True,False,False,0.03,0.03,0.03,0.03,1.043,0.0,
