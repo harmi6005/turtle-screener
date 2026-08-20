@@ -1,14 +1,14 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
 QTUM,QTUM,System1(단기),진입,True,True,False,False,994.0,998.0,993.0,879.0,1.005,28.15,
-XRP,XRP,System1(단기),관심,False,False,False,True,1519.0,1552.0,1565.0,1392.0,0.992,37.8,
-THETA,THETA,System1(단기),관심,False,False,False,True,204.0,208.0,210.0,183.0,0.99,7.9,
+XRP,XRP,System1(단기),탈락,False,False,False,True,1519.0,1552.0,1565.0,1392.0,0.992,37.8,
+THETA,THETA,System1(단기),탈락,False,False,False,True,204.0,208.0,210.0,183.0,0.99,7.9,
 BSV,BSV,System1(단기),관심,False,False,False,True,21640.0,23000.0,21980.0,19780.0,1.046,898.0,
 BSV,BSV,System2(중장기),관심,False,False,False,True,21640.0,23000.0,22580.0,17510.0,1.019,898.0,
 COMP,COMP,System1(단기),관심,False,False,False,True,26130.0,26230.0,26210.0,22390.0,1.001,799.5,
 COMP,COMP,System2(중장기),관심,False,False,False,True,26130.0,26230.0,26360.0,22390.0,0.995,799.5,
 MAPO,MAPO,System1(단기),청산,False,False,True,False,1.21,1.23,1.45,1.22,0.844,0.06,
 BIOT,BIOT,System1(단기),청산,False,False,True,False,0.26,0.26,0.27,0.26,0.962,0.01,
-CAKE,CAKE,System2(중장기),관심,False,False,False,True,2187.0,2205.0,2220.0,1900.0,0.993,70.7,
+CAKE,CAKE,System2(중장기),확정,False,False,False,True,2187.0,2205.0,2220.0,1900.0,0.993,70.7,2225.0
 XTZ,XTZ,System1(단기),관심,False,False,False,True,297.0,301.0,302.0,268.0,0.997,9.9,
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 MASK,MASK,System1(단기),관심,False,False,False,True,518.0,525.0,527.0,484.0,0.996,14.6,
@@ -28,7 +28,7 @@ BB,BB,System1(단기),청산,False,False,True,False,12.6,15.99,23.28,14.78,0.687
 BB,BB,System2(중장기),청산,False,False,True,False,12.6,15.99,30.84,14.78,0.518,1.43,
 ETHFI,ETHFI,System1(단기),탈락,False,False,False,True,699.0,726.0,730.0,514.0,0.995,38.35,
 ETHFI,ETHFI,System2(중장기),탈락,False,False,False,True,699.0,726.0,730.0,495.0,0.995,38.35,
-SKY,SKY,System1(단기),관심,False,False,False,True,82.3,84.38,83.39,71.2,1.012,2.36,
+SKY,SKY,System1(단기),확정,False,False,False,True,82.3,84.38,83.39,71.2,1.012,2.36,83.77
 RAY,RAY,System1(단기),탈락,False,False,False,True,881.0,897.0,904.0,849.0,0.992,20.85,
 MORPHO,MORPHO,System1(단기),관심,False,False,False,True,2986.0,3083.0,3079.0,2510.0,1.001,135.0,
 DBR,DBR,System1(단기),관심,False,False,False,True,21.71,22.6,22.65,19.77,0.998,0.75,
