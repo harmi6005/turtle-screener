@@ -1,19 +1,26 @@
 # -*- coding: utf-8 -*-
-"""보유종목 트레일링 손절 + ATR 배수 수익 알림 추적 (GitHub Actions에서 5분마다 자동 실행)
+"""보유종목 트레일링 손절 + ATR 배수 수익 알림 + 5분마다 현황 요약
+(GitHub Actions에서 5분마다 자동 실행, cron-job.org 외부 크론으로 강제 트리거됨)
 
 telegram_listener.py / webhook_handler.py 가 등록한 data/holdings.csv 의 거래(trade_id)들을
 감시하다가,
-- 오늘 최고가가 이전 최고가를 갱신하면 -> 손절선도 "새 최고가 - 2xATR"로 같이 올림 (트레일링,
-  손절선은 절대 내려가지 않고 위로만 갱신됨)
+- 오늘 최고가가 이전 최고가를 갱신하면 -> 손절선도 "새 최고가 - 2xATR"로 같이 올림 (트레일링)
 - 진입가 대비 ATR의 정수배(1배,2배,3배...)만큼 새로 오르면 -> "N배 수익 도달" 알림 (매도신호 아님)
 - 오늘 저가가 손절선 밑으로 떨어지면 -> "트레일링 손절 도달" 알림 (매도 검토)
 한 번 손절 알림 간 거래는 상태가 바뀌어서 더 이상 반복 알림이 안 갑니다.
 
-[신규] 위 이벤트 알림과 별도로, 이번 실행에서 실제로 시세를 조회한 보유종목들의
-현재가/손익률/손절선 괴리율/현재 ATR 배수 진행상황을 모아 "보유종목 현황" 요약을
-매 실행마다(5분마다) 발송합니다. 국장/미장 종목은 해당 시장이 "열려있을 때"만 포함되는데,
-장 시작 5분 전부터 이미 열린 것으로 간주해서 등록현황이 미리 뜨도록 했습니다
-(국장: 08:55 KST부터, 미장: 09:25 ET부터). 코인은 항상 포함됩니다.
+추가로, 매 실행마다(5분마다) 이변이 없어도 활성 보유종목 전체의 현재 상태를
+"[보유종목 현황]" 요약으로 무조건 발송합니다. 국장/미장은 아래 개장시간
+버퍼(전후 5분씩)에 걸릴 때만 자연히 포함되고, 코인은 24시간 항상 포함됩니다.
+
+개장시간 버퍼:
+- 국장(KR): 08:55~15:35 KST (정규장 09:00~15:30 기준 앞뒤 5분씩)
+- 미장(US): 09:25~16:05 ET (정규장 09:30~16:00 기준 앞뒤 5분씩)
+- 개장 전 버퍼 시간대에는 시세 API가 아직 당일 데이터를 안 주기 때문에
+  전일 종가 기준으로 표시됨 (참고용, 실시간가 아님)
+- 마감 후 버퍼 시간대는 당일 최종 종가/고저가가 확정된 뒤의 마지막 확인
+  용도로, 장마감 시점에 딱 걸려서 그날의 마지막 현황 문자가 누락되는 것을
+  방지하기 위함 (개장 전 버퍼와 대칭으로 추가)
 
 data/holdings.csv 컬럼:
   trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,last_milestone,status
@@ -38,21 +45,10 @@ COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
            'highest_price', 'stop_price', 'last_milestone', 'status']
 NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price', 'last_milestone']
 ATR_MULTIPLIER = 2
-STOP_GAP_WARN_PCT = 2.0  # 손절선까지 괴리율이 이 이하로 좁혀지면 "임박" 태그
 
-# 장 시작 몇 분 전부터 "장중"으로 간주해서 등록현황을 미리 보여줄지
+# 개장 전/마감 후 버퍼 (분 단위, 대칭)
 PRE_MARKET_BUFFER_MIN = 5
-
-KR_MARKET_OPEN = dtime(9, 0)
-KR_MARKET_CLOSE = dtime(15, 30)
-US_MARKET_OPEN = dtime(9, 30)
-US_MARKET_CLOSE = dtime(16, 0)
-
-
-def _shift_time_earlier(t, minutes):
-    """dtime 값에서 minutes만큼 뺀 dtime을 반환 (자정 넘어가는 경우는 이 서비스 특성상 불필요)."""
-    dummy = datetime(2000, 1, 1, t.hour, t.minute) - timedelta(minutes=minutes)
-    return dummy.time()
+POST_MARKET_BUFFER_MIN = 5
 
 
 def fmt_num(v):
@@ -62,20 +58,30 @@ def fmt_num(v):
     return f"{v:,.4f}".rstrip('0').rstrip('.')
 
 
+def _in_buffered_window(now, open_t, close_t, pre_buffer_min, post_buffer_min):
+    """오늘 날짜 기준으로 open_t(개장)~close_t(마감) 앞뒤로 버퍼(분)를 준 시간대
+    안에 now가 포함되는지 확인한다."""
+    base_date = now.date()
+    window_start = datetime.combine(base_date, open_t) - timedelta(minutes=pre_buffer_min)
+    window_end = datetime.combine(base_date, close_t) + timedelta(minutes=post_buffer_min)
+    now_naive = datetime.combine(base_date, now.time())
+    return window_start <= now_naive <= window_end
+
+
 def is_korea_market_open():
     now = datetime.now(ZoneInfo('Asia/Seoul'))
     if now.weekday() >= 5:
         return False
-    open_with_buffer = _shift_time_earlier(KR_MARKET_OPEN, PRE_MARKET_BUFFER_MIN)
-    return open_with_buffer <= now.time() <= KR_MARKET_CLOSE
+    return _in_buffered_window(now, dtime(9, 0), dtime(15, 30),
+                                PRE_MARKET_BUFFER_MIN, POST_MARKET_BUFFER_MIN)
 
 
 def is_us_market_open():
     now = datetime.now(ZoneInfo('America/New_York'))
     if now.weekday() >= 5:
         return False
-    open_with_buffer = _shift_time_earlier(US_MARKET_OPEN, PRE_MARKET_BUFFER_MIN)
-    return open_with_buffer <= now.time() <= US_MARKET_CLOSE
+    return _in_buffered_window(now, dtime(9, 30), dtime(16, 0),
+                                PRE_MARKET_BUFFER_MIN, POST_MARKET_BUFFER_MIN)
 
 
 def get_bithumb_daily_ohlc(coin, days=5):
@@ -93,8 +99,7 @@ def get_bithumb_daily_ohlc(coin, days=5):
 
 
 def get_latest_ohlc(market, code):
-    """시장별로 최근 캔들(오늘 포함)의 고가/저가/종가를 가져온다.
-    장 시작 전(pre-market buffer 구간)에는 전일 종가 기준 데이터가 반환된다."""
+    """시장별로 최근 캔들(오늘 포함)의 고가/저가/종가를 가져온다."""
     try:
         if market == 'KR':
             end = datetime.today()
@@ -125,10 +130,13 @@ def get_latest_ohlc(market, code):
 
 
 def build_status_tag(current_price, stop_price):
+    """손절선까지 괴리율 기준으로 상태 태그를 부여한다."""
+    if stop_price is None or stop_price == 0:
+        return "🟢 정상"
     if current_price <= stop_price:
         return "⚠️ 손절선 이탈"
-    stop_gap_pct = (current_price - stop_price) / stop_price * 100
-    if stop_gap_pct <= STOP_GAP_WARN_PCT:
+    gap_pct = (current_price - stop_price) / stop_price * 100
+    if gap_pct <= 2.0:
         return "🔶 손절선 임박"
     return "🟢 정상"
 
@@ -144,7 +152,7 @@ if __name__ == "__main__":
             df[col] = ''
     df = df[COLUMNS].copy()
 
-    # 핵심 수정 부분: CSV를 읽으면 숫자 컬럼도 문자열(object/string) dtype으로
+    # ⚠️ 핵심 수정 부분: CSV를 읽으면 숫자 컬럼도 문자열(object/string) dtype으로
     # 인식되는 경우가 있어서, 이후 df.at[idx, col] = float값 대입 시
     # "Invalid value ... for dtype 'str'" 오류가 발생했음.
     # 여기서 미리 숫자형으로 강제 변환해서 원천 차단.
@@ -160,7 +168,7 @@ if __name__ == "__main__":
     us_open = is_us_market_open()
 
     changed = False
-    summary_lines = []  # 이번 실행에서 실제로 시세를 조회한 종목들의 현황 (5분마다 요약 발송용)
+    summary_lines = []
 
     for idx, row in df.iterrows():
         if row.get('status', 'active') != 'active':
@@ -185,7 +193,7 @@ if __name__ == "__main__":
         stop_price = float(row['stop_price'])
         last_milestone = int(row['last_milestone']) if pd.notna(row['last_milestone']) else 0
 
-        # 1) 최고가 갱신 -> 트레일링 손절선 갱신 (내려가지는 않고 위로만 자동 상향)
+        # 1) 최고가 갱신 -> 트레일링 손절선 갱신 (내려가지는 않음)
         if ohlc['high'] > highest_price:
             highest_price = ohlc['high']
             new_stop = highest_price - ATR_MULTIPLIER * atr_entry
@@ -195,11 +203,9 @@ if __name__ == "__main__":
             df.at[idx, 'stop_price'] = round(float(stop_price), 4)
             changed = True
 
-        # 2) ATR 배수 마일스톤 체크 (정수 배수를 새로 넘을 때만 별도 알림, 매도신호 아님)
-        current_multiple_float = 0.0
+        # 2) ATR 배수 마일스톤 체크 (매도 신호 아님, 진행 알림)
         if atr_entry > 0:
-            current_multiple_float = (highest_price - buy_price) / atr_entry
-            current_multiple = int(current_multiple_float)
+            current_multiple = int((highest_price - buy_price) // atr_entry)
             if current_multiple > last_milestone:
                 profit_pct = (highest_price - buy_price) / buy_price * 100
                 notify_telegram(
@@ -209,12 +215,13 @@ if __name__ == "__main__":
                     f"수익률 {profit_pct:+.2f}% / 현재 손절선 {fmt_num(stop_price)}"
                 )
                 df.at[idx, 'last_milestone'] = int(current_multiple)
+                last_milestone = current_multiple
                 changed = True
                 print(f"거래 {trade_id}({code}) {current_multiple}배 마일스톤 알림 전송")
 
         # 3) 트레일링 손절선 이탈 체크 (진짜 매도 신호)
-        stop_hit_this_run = False
-        if ohlc['low'] <= stop_price:
+        stop_hit = ohlc['low'] <= stop_price
+        if stop_hit:
             pnl_pct = (ohlc['close'] - buy_price) / buy_price * 100
             notify_telegram(
                 f"[{market}] 트레일링 손절 도달! (매도 검토)\n"
@@ -225,27 +232,23 @@ if __name__ == "__main__":
             )
             df.at[idx, 'status'] = 'stop_hit'
             changed = True
-            stop_hit_this_run = True
             print(f"거래 {trade_id}({code}) 트레일링 손절 도달 알림 전송")
         else:
             print(f"거래 {trade_id}({code}): 현재가 {ohlc['close']} "
                   f"(최고가 {highest_price} / 손절선 {stop_price}) - 감시 유지")
 
-        # 4) 5분마다 보유종목 현황 요약에 들어갈 한 줄 (손절도달로 종료된 건 요약에서 제외)
-        if not stop_hit_this_run:
-            current_price = float(ohlc['close'])
-            pnl_pct = (current_price - buy_price) / buy_price * 100
-            stop_gap_pct = (current_price - stop_price) / stop_price * 100
-            status_tag = build_status_tag(current_price, stop_price)
-            atr_line = (f"ATR배수 {current_multiple_float:+.2f}배 (직전 마일스톤 {last_milestone}배)"
-                        if atr_entry > 0 else "ATR배수 계산불가")
+        # 4) 5분마다 무조건 포함되는 현재 상태 요약용 라인 (손절 도달로 방금
+        # 종료된 거래는 요약에서 제외 - 위 알림으로 이미 충분히 안내됨)
+        if not stop_hit:
+            pnl_pct = (ohlc['close'] - buy_price) / buy_price * 100
+            gap_to_stop_pct = (ohlc['close'] - stop_price) / stop_price * 100 if stop_price else 0
+            atr_multiple = (highest_price - buy_price) / atr_entry if atr_entry > 0 else 0
+            status_tag = build_status_tag(ohlc['close'], stop_price)
             summary_lines.append(
                 f"- [{trade_id}] {code} [{market}] {status_tag}\n"
-                f"  현재가 {fmt_num(current_price)} / 매수가 {fmt_num(buy_price)} "
-                f"(손익 {pnl_pct:+.2f}%)\n"
-                f"  최고가 {fmt_num(highest_price)} / 손절선 {fmt_num(stop_price)} "
-                f"(괴리율 {stop_gap_pct:+.2f}%)\n"
-                f"  {atr_line}"
+                f"  현재가 {fmt_num(ohlc['close'])} / 매수가 {fmt_num(buy_price)} (손익 {pnl_pct:+.2f}%)\n"
+                f"  최고가 {fmt_num(highest_price)} / 손절선 {fmt_num(stop_price)} (괴리율 {gap_to_stop_pct:+.2f}%)\n"
+                f"  ATR배수 {atr_multiple:+.2f}배 (직전 마일스톤 {last_milestone}배)"
             )
 
     if changed:
@@ -254,11 +257,9 @@ if __name__ == "__main__":
     else:
         print("변경 사항 없음")
 
-    # 5) 보유종목 현황 요약 발송 (장 시작 5분 전부터 개장중 취급, 국장/미장은 위에서
-    #    이미 필터링됨, COIN은 항상 포함되므로 코인 보유 시에는 5분마다 계속 발송됨)
     if summary_lines:
-        summary_msg = f"[보유종목 현황] {len(summary_lines)}건\n" + "\n".join(summary_lines)
-        send_long_message(summary_msg)
-        print(f"보유종목 현황 요약 발송 완료 ({len(summary_lines)}건)")
+        header = f"[보유종목 현황] {len(summary_lines)}건"
+        send_long_message(header + "\n" + "\n".join(summary_lines))
     else:
-        print("이번 실행엔 조회된(장중) 보유종목이 없어 현황 요약을 보내지 않았습니다.")
+        print("이번 실행에서 포함할 활성 보유종목이 없어 현황 요약을 보내지 않았습니다.")
+
