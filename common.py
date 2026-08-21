@@ -196,13 +196,23 @@ def record_trade_result(hist_df, code, system, direction, entry_price, exit_pric
     return hist_df
 
 
-def pick_top_entry(df):
+def pick_top_entry(df, price_min=None, price_max=None):
     """'진입' 신호 종목 중 진입가를 가장 적게 초과한(=가장 신선하게 막 돌파한) 1개를
     골라서 반환한다. 터틀 원칙상 "얼마나 강하게 뚫었나"보다 "돌파 시점에 얼마나
     가깝게 붙어서 들어가는가"가 더 중요하므로, 초과율이 가장 작은 종목을 우선한다.
     (전체스캔 단계에서 이미 0.5% 초과분은 걸러지므로, 그 안에서 가장 신선한 것을 고름)
+
+    price_min / price_max가 주어지면, 최종 1픽은 그 가격범위 안에 있는 종목들
+    중에서만 고른다. (스캔 자체는 전체 유니버스로 하되, 최종 1픽 알림만
+    특정 가격대로 좁히고 싶을 때 사용 — 국내 스캔에서 2만~6만원 픽 유지 용도)
+    price_min/price_max를 안 넘기면(None) 기존과 동일하게 전체 후보 중에서 고른다.
+
     후보가 없으면 None을 반환한다."""
     entry_df = df[df['signal'] == '진입'].copy()
+    if price_min is not None:
+        entry_df = entry_df[entry_df['close'] >= price_min]
+    if price_max is not None:
+        entry_df = entry_df[entry_df['close'] <= price_max]
     if entry_df.empty:
         return None
     entry_df['excess_ratio'] = (entry_df['close'] - entry_df['n_high']) / entry_df['n_high']
