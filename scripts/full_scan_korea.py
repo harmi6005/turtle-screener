@@ -8,12 +8,19 @@
 단, "최강 1픽"(진입 신호 중 최종 알림으로 뽑는 1개)은 기존처럼 2만원~6만원
 가격대 안에 있는 종목 중에서만 고릅니다 (PICK_PRICE_MIN / PICK_PRICE_MAX).
 즉 스캔/관심종목 요약은 전체 유니버스 기준, 최종 1픽 알림만 가격대 제한.
+
+⚠️ KRX 데이터 소스 안정성 보강: fdr.StockListing('KOSPI')이 KRX 서버 쪽
+일시적인 응답 실패(ValueError: Failed to load data from ...)로 실패하는
+경우가 있어서, 재시도 로직을 추가했습니다. 재시도까지 다 실패하면 그냥
+에러로 죽지 않고 텔레그램으로 "스캔 실패" 알림을 보낸 뒤 조용히 종료합니다
+(다음 스케줄 실행 때 다시 시도됨).
 """
 
 import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
+import time
 import pandas as pd
 import FinanceDataReader as fdr
 from datetime import datetime, timedelta
@@ -28,6 +35,24 @@ PICK_PRICE_MIN = 20000
 PICK_PRICE_MAX = 60000
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
+
+LISTING_MAX_RETRIES = 3
+LISTING_RETRY_DELAY_SEC = 15
+
+
+def get_listing_with_retry(market, max_retries=LISTING_MAX_RETRIES, delay=LISTING_RETRY_DELAY_SEC):
+    """KRX 서버가 일시적으로 응답을 안 줄 때를 대비해 종목 목록 조회를 재시도한다.
+    max_retries번 시도해도 계속 실패하면 마지막 예외를 그대로 발생시킨다."""
+    last_err = None
+    for attempt in range(1, max_retries + 1):
+        try:
+            return fdr.StockListing(market)
+        except Exception as e:
+            last_err = e
+            print(f"  종목 목록 조회 실패 ({attempt}/{max_retries}): {e}")
+            if attempt < max_retries:
+                time.sleep(delay)
+    raise last_err
 
 
 def fetch_and_check(code_name, start, end):
@@ -61,7 +86,7 @@ def fetch_and_check(code_name, start, end):
 
 def screen_korea():
     print(f"[국장] {MARKET} 종목 리스트 불러오는 중...")
-    listing = fdr.StockListing(MARKET)
+    listing = get_listing_with_retry(MARKET)
     print(f"스캔 대상: {MARKET} 전체 {len(listing)}개 (가격 필터 없음)")
 
     tickers = listing[['Code', 'Name']].values.tolist()
@@ -86,7 +111,17 @@ def screen_korea():
 
 
 if __name__ == "__main__":
-    df, universe_cnt = screen_korea()
+    try:
+        df, universe_cnt = screen_korea()
+    except Exception as e:
+        print(f"[국장] 종목 목록 조회 최종 실패: {e}")
+        notify_telegram(
+            "[국장 전체스캔] 실패 - KRX 서버에서 종목 목록을 가져오지 못했습니다.\n"
+            f"오류: {e}\n"
+            "다음 스케줄에 자동으로 재시도됩니다."
+        )
+        sys.exit(0)
+
     print(f"\n[국장] 신호 종목 {len(df)}개 발견")
 
     # 기존에 재확인이 '확정'으로 추적 중이던 종목은 유지 (전체스캔이 덮어써서
