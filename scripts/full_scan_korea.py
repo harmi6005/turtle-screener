@@ -1,6 +1,14 @@
 # -*- coding: utf-8 -*-
 """국내 주식 전체 스캔 (GitHub Actions에서 지정 시간에 자동 실행)
-코스피(KOSPI)만 대상으로 하고, 종가 기준 2만원~6만원 사이 종목만 스캔합니다."""
+
+코스피(KOSPI) 전체 종목을 대상으로 스캔합니다 (가격 필터 없음 - 기존에는
+2만원~6만원으로 유니버스 자체를 좁혔으나, 사용자 요청으로 스캔 범위는 전체로
+확대했습니다).
+
+단, "최강 1픽"(진입 신호 중 최종 알림으로 뽑는 1개)은 기존처럼 2만원~6만원
+가격대 안에 있는 종목 중에서만 고릅니다 (PICK_PRICE_MIN / PICK_PRICE_MAX).
+즉 스캔/관심종목 요약은 전체 유니버스 기준, 최종 1픽 알림만 가격대 제한.
+"""
 
 import sys
 import os
@@ -14,8 +22,11 @@ from common import SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout,
 
 MAX_WORKERS = 20
 MARKET = 'KOSPI'
-PRICE_MIN = 20000
-PRICE_MAX = 60000
+
+# 최종 1픽에만 적용하는 가격 범위 (스캔 유니버스 자체는 더 이상 이 범위로 제한하지 않음)
+PICK_PRICE_MIN = 20000
+PICK_PRICE_MAX = 60000
+
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
 
 
@@ -51,13 +62,7 @@ def fetch_and_check(code_name, start, end):
 def screen_korea():
     print(f"[국장] {MARKET} 종목 리스트 불러오는 중...")
     listing = fdr.StockListing(MARKET)
-
-    before_cnt = len(listing)
-    if 'Close' in listing.columns:
-        listing = listing[(listing['Close'] >= PRICE_MIN) & (listing['Close'] <= PRICE_MAX)]
-        print(f"가격 필터 적용 ({PRICE_MIN:,}~{PRICE_MAX:,}원): {before_cnt}개 -> {len(listing)}개")
-    else:
-        print("가격 정보(Close 컬럼)를 찾지 못해서 가격 필터 없이 진행합니다.")
+    print(f"스캔 대상: {MARKET} 전체 {len(listing)}개 (가격 필터 없음)")
 
     tickers = listing[['Code', 'Name']].values.tolist()
     print(f"총 {len(tickers)}개 종목 병렬 조회 시작")
@@ -77,11 +82,11 @@ def screen_korea():
             if done % 300 == 0:
                 print(f"  ...{done}/{len(tickers)} 완료")
 
-    return pd.DataFrame(results)
+    return pd.DataFrame(results), len(tickers)
 
 
 if __name__ == "__main__":
-    df = screen_korea()
+    df, universe_cnt = screen_korea()
     print(f"\n[국장] 신호 종목 {len(df)}개 발견")
 
     # 기존에 재확인이 '확정'으로 추적 중이던 종목은 유지 (전체스캔이 덮어써서
@@ -105,7 +110,7 @@ if __name__ == "__main__":
     watch_cnt = len(df[df['signal'] == '관심']) if not df.empty else 0
 
     if entry_cnt > 0:
-        top = pick_top_entry(df)
+        top = pick_top_entry(df, price_min=PICK_PRICE_MIN, price_max=PICK_PRICE_MAX)
         if top is not None:
             t_name = top["name"]
             t_code = top["code"]
@@ -115,15 +120,30 @@ if __name__ == "__main__":
             t_n_low = top["n_low"]
             t_excess = top["excess_ratio"] * 100
             t_strength = top["strength"]
-            msg = ("[국장 전체스캔] 진입 신호 " + str(entry_cnt) + "개 중 최신 돌파 1개 픽\n"
+            msg = ("[국장 전체스캔] 진입 신호 " + str(entry_cnt) + "개 중 최신 돌파 1개 픽 "
+                   "(가격대 " + f"{PICK_PRICE_MIN:,}" + "~" + f"{PICK_PRICE_MAX:,}" + "원 한정)\n"
                    "- " + str(t_name) + "(" + str(t_code) + ") [" + str(t_system) + "]\n"
                    "  현재가 " + str(t_close) + " / 진입가(돌파) " + str(t_n_high) +
                    " / 청산가(손절) " + str(t_n_low) + "\n"
                    "  초과율 " + format(t_excess, ".3f") + "% (돌파강도 ATR배수 " +
                    format(t_strength, ".2f") + ")")
             notify_telegram(msg)
+        else:
+            # 진입 신호는 있지만 전부 1픽 가격범위(2만~6만원) 밖인 경우
+            notify_telegram(
+                "[국장 전체스캔] 진입 신호 " + str(entry_cnt) + "개 있으나 "
+                "1픽 가격범위(" + f"{PICK_PRICE_MIN:,}" + "~" + f"{PICK_PRICE_MAX:,}" +
+                "원) 안에는 해당 종목 없음"
+            )
 
     if watch_cnt > 0:
         summary = build_watch_summary(df, "국장")
         if summary:
             send_long_message(summary)
+
+    if entry_cnt == 0 and watch_cnt == 0:
+        notify_telegram(
+            f"[국장 전체스캔] 실행 완료 - 전체 {universe_cnt}개 종목 스캔, "
+            f"진입/관심 기준에 부합하는 종목 없음"
+        )
+
