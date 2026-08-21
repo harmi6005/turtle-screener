@@ -49,7 +49,7 @@ MOCA,MOCA,System1(단기),진입,True,True,False,False,11.58,11.68,11.56,9.88,1.
 BRETT,BRETT,System1(단기),진입,True,True,False,False,7.02,7.08,7.0,5.02,1.013,0.42,
 PCI,PCI,System1(단기),관심,False,False,False,True,52.08,53.3,52.3,46.68,1.019,1.5,
 GRAM,GRAM,System1(단기),관심,False,False,False,True,1940.0,2032.0,2024.0,1797.0,1.004,68.1,
-G,G,System1(단기),관심,False,False,False,True,5.72,5.8,5.72,4.85,1.013,0.29,
+G,G,System1(단기),탈락,False,False,False,True,5.72,5.8,5.72,4.85,1.013,0.29,
 LISTA,LISTA,System1(단기),관심,False,False,False,True,101.0,104.0,101.0,76.0,1.03,7.17,
 LISTA,LISTA,System2(중장기),관심,False,False,False,True,101.0,104.0,101.0,70.21,1.03,7.17,
 PONKE,PONKE,System2(중장기),관심,False,False,False,True,33.66,41.5,38.6,19.58,1.075,2.49,
