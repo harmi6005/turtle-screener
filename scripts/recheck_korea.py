@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
 """국내 관심종목 재확인 (GitHub Actions에서 5분마다 자동 실행)
 System1(단기)에는 터틀 휩쏘 필터가 적용됩니다 (직전 거래가 수익이었으면 다음
-신규 돌파는 건너뛰고, 2xATR만큼 더 유리하게 움직이면 그때 강제 진입)."""
+신규 돌파는 건너뛰고, 2xATR만큼 더 유리하게 움직이면 그때 강제 진입).
+
+확정 전환/확정이탈 종목이 하나도 없을 때도, 재확인이 실제로 실행됐다는 것을
+알 수 있도록 "전환종목 없음" 알림을 보냅니다."""
 
 import sys
 import os
@@ -154,3 +157,10 @@ if __name__ == "__main__":
                  f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
                  for _, r in exit_df.iterrows()]
         notify_telegram("[국장] 확정이탈 종목! (매도 검토)\n" + "\n".join(lines))
+
+    if confirm_df.empty and exit_df.empty:
+        notify_telegram(
+            f"[국장] 재확인 실행 완료 - 관심/확정 {len(target_rows)}개 대상, "
+            f"확정 전환/확정이탈 종목 없음"
+        )
+
