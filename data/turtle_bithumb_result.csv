@@ -39,7 +39,7 @@ AVAX,AVAX,System1(단기),탈락,False,False,False,True,9895.0,10040.0,9910.0,86
 HBAR,HBAR,System1(단기),탈락,False,False,False,True,101.0,103.0,102.0,91.13,1.01,2.73,
 GMX,GMX,System1(단기),관심,False,False,False,True,9460.0,9575.0,9655.0,8625.0,0.992,316.25,
 ARB,ARB,System1(단기),탈락,False,False,False,True,125.0,125.0,125.0,103.0,1.0,5.25,
-ACS,ACS,System1(단기),관심,False,False,False,True,0.19,0.2,0.19,0.16,1.045,0.01,
+ACS,ACS,System1(단기),확정,False,False,False,True,0.19,0.2,0.19,0.16,1.045,0.01,0.19
 CELO,CELO,System1(단기),탈락,False,False,False,True,89.27,96.84,93.17,80.04,1.039,3.45,
 S,S,System1(단기),관심,False,False,False,True,34.17,34.2,34.41,29.33,0.994,1.36,
 SUI,SUI,System1(단기),탈락,False,False,False,True,1009.0,1033.0,1015.0,896.0,1.018,33.5,
@@ -63,7 +63,7 @@ AERO,AERO,System1(단기),관심,False,False,False,True,653.0,670.0,666.0,553.0,
 ARDR,ARDR,System1(단기),관심,False,False,False,True,26.54,27.17,27.17,24.11,1.0,1.3,
 BERA,BERA,System1(단기),탈락,False,False,False,True,230.0,233.0,234.0,193.0,0.996,10.75,
 WCT,WCT,System1(단기),관심,False,False,False,True,51.69,52.36,52.7,44.9,0.994,2.51,
-XAUT,XAUT,System1(단기),관심,False,False,False,True,6213000.0,6215000.0,6233000.0,6046000.0,0.997,81750.0,
+XAUT,XAUT,System1(단기),확정,False,False,False,True,6213000.0,6215000.0,6233000.0,6046000.0,0.997,81750.0,6236000.0
 CUDIS,CUDIS,System1(단기),청산,False,False,True,False,3.89,4.09,5.03,3.9,0.813,0.46,
 POPCAT,POPCAT,System1(단기),관심,False,False,False,True,63.19,64.69,64.78,56.55,0.999,2.29,
 ASTER,ASTER,System1(단기),관심,False,False,False,True,914.0,926.0,930.0,822.0,0.996,20.05,
