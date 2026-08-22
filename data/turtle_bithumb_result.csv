@@ -21,7 +21,7 @@ WAVES,WAVES,System1(단기),관심,False,False,False,True,299.0,330.0,322.0,257.
 MTL,MTL,System1(단기),관심,False,False,False,True,320.0,339.0,320.0,251.0,1.059,13.6,
 BSV,BSV,System1(단기),관심,False,False,False,True,23170.0,25720.0,24250.0,19780.0,1.061,1135.5,
 BSV,BSV,System2(중장기),관심,False,False,False,True,23170.0,25720.0,24250.0,17730.0,1.061,1135.5,
-AMO,AMO,System1(단기),관심,False,False,False,True,0.32,0.33,0.32,0.28,1.019,0.01,
+AMO,AMO,System1(단기),탈락,False,False,False,True,0.32,0.33,0.32,0.28,1.019,0.01,
 TFUEL,TFUEL,System1(단기),관심,False,False,False,True,11.49,12.32,11.69,9.96,1.054,0.39,
 CHR,CHR,System1(단기),관심,False,False,False,True,20.57,22.18,21.13,17.56,1.05,1.07,
 XPR,XPR,System1(단기),관심,False,False,False,True,3.99,4.2,4.08,3.38,1.029,0.18,
