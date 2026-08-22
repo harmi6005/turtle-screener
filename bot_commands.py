@@ -20,12 +20,43 @@ HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
 WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status']
 ATR_PERIOD = 20
 ATR_MULTIPLIER = 2
-STOP_GAP_WARN_PCT = 2.0  # 손절선까지 괴리율이 이 이하로 좁혀지면 "임박" 태그
 
 START_WORDS = ('추적시작',)
 STOP_WORDS = ('추적종료', '추적해제', '추적중지')
 CHECK_WORDS = ('추적확인', '추적목록')
-HOLDING_CHECK_WORDS = ('보유종목확인', '보유확인')
+HELP_WORDS = ('명령어확인', '명령어 확인', '명령어', '도움말', 'help', '/help')
+
+HELP_TEXT = """사용 가능한 명령어 목록
+
+[보유종목 (holdings)]
+- buy 코드 매수가
+  예) buy BTC 5000000
+  시장 자동판별(KR 6자리숫자 / COIN 빗썸조회 / US 나머지)
+  손절가 = 매수가 - 2xATR 자동계산, 4자리 거래번호 발급
+
+- sell 거래번호 [매도가]
+  예) sell 4821 6200000
+  청산 처리. 매도가를 넣으면 손익률 자동계산
+
+- list
+  현재 보유 중인 거래 목록 (최고가/손절선/ATR배수 표시)
+  ※ 5분마다 자동으로도 "[보유종목 현황]" 요약이 옵니다 (장중/코인 상시)
+
+[집중추적종목 (watchlist)]
+- 코드 추적시작
+  예) 005930 추적시작
+  매수 여부, 가격범위와 무관하게 특정 종목만 계속 감시
+
+- 코드 추적종료  (추적해제 / 추적중지 도 동일)
+  예) 005930 추적종료
+
+- 추적확인  (추적목록 도 동일)
+  지금 이 순간 실시간으로 재조회해서 현재 상태 보여줌
+  ※ 5분마다 자동으로도 "[집중추적종목 현황]" 요약이 옵니다
+
+[기타]
+- 명령어 확인  (도움말 / help 도 동일)
+  이 도움말 표시"""
 
 
 def fmt_num(v):
@@ -186,49 +217,6 @@ def handle_list(df):
     return "\n".join(lines)
 
 
-def handle_holdings_check(df):
-    """보유종목을 지금 이 순간 실시간으로 재조회해서
-    현재가, 매수가 대비 손익률, 손절선까지의 괴리율(이격도)을 계산해 보여준다."""
-    active = df[df['status'] == 'active']
-    if active.empty:
-        return "현재 감시 중인 거래가 없어요."
-
-    lines = [f"보유종목 {len(active)}건 실시간 확인:"]
-    for _, r in active.iterrows():
-        trade_id, code, market = r['trade_id'], r['code'], r['market']
-        buy_price = float(r['buy_price'])
-        stop_price = float(r['stop_price'])
-        highest_price = float(r['highest_price'])
-
-        ohlc_df = get_recent_ohlc(market, code, days=10)
-        if ohlc_df is None or ohlc_df.empty:
-            lines.append(f"- [{trade_id}] {code} [{market}]: 실시간 조회 실패")
-            continue
-
-        current_price = float(ohlc_df['Close'].iloc[-1])
-
-        # 손절선 대비 괴리율: (+)면 손절선 위에서 여유 있음, (-)면 이미 이탈
-        stop_gap_pct = (current_price - stop_price) / stop_price * 100
-        # 매수가 대비 손익률
-        pnl_pct = (current_price - buy_price) / buy_price * 100
-
-        if current_price <= stop_price:
-            status_tag = "⚠️ 손절선 이탈"
-        elif stop_gap_pct <= STOP_GAP_WARN_PCT:
-            status_tag = "🔶 손절선 임박"
-        else:
-            status_tag = "🟢 정상"
-
-        lines.append(
-            f"- [{trade_id}] {code} [{market}] {status_tag}\n"
-            f"  현재가 {fmt_num(current_price)} / 매수가 {fmt_num(buy_price)} "
-            f"(손익 {pnl_pct:+.2f}%)\n"
-            f"  최고가 {fmt_num(highest_price)} / 손절선 {fmt_num(stop_price)} "
-            f"(괴리율 {stop_gap_pct:+.2f}%)"
-        )
-    return "\n".join(lines)
-
-
 # ===== 감시목록(watchlist / 추적) =====
 
 def load_watchlist():
@@ -301,6 +289,12 @@ def handle_track_check(wdf):
     return "\n".join(lines)
 
 
+# ===== 도움말 =====
+
+def handle_help():
+    return HELP_TEXT
+
+
 def dispatch(text, df, wdf):
     """명령어 텍스트 1개를 해석해서 처리한다.
     반환값: (df, wdf, reply_text_or_None, is_long_reply, holdings_changed, watchlist_changed)"""
@@ -317,7 +311,10 @@ def dispatch(text, df, wdf):
     holdings_changed = False
     watchlist_changed = False
 
-    if cmd == 'buy':
+    if text in HELP_WORDS or cmd in HELP_WORDS:
+        reply = handle_help()
+        is_long = True
+    elif cmd == 'buy':
         df, reply = handle_buy(args, df)
         holdings_changed = True
     elif cmd == 'sell':
@@ -325,9 +322,6 @@ def dispatch(text, df, wdf):
         holdings_changed = True
     elif cmd == 'list':
         reply = handle_list(df)
-    elif text in HOLDING_CHECK_WORDS:
-        reply = handle_holdings_check(df)
-        is_long = True
     elif len(parts) == 2 and parts[1] in START_WORDS:
         wdf, reply = handle_track_start(parts[0], wdf)
         watchlist_changed = True
