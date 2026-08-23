@@ -14,7 +14,7 @@ ZRO,ZRO,System1(단기),관심,False,False,False,True,1717.0,1742.0,1754.0,1051.
 ZRO,ZRO,System2(중장기),관심,False,False,False,True,1717.0,1742.0,1754.0,1028.0,0.993,106.4,
 EIGEN,EIGEN,System1(단기),관심,False,False,False,True,324.0,328.0,328.0,230.0,1.0,17.5,
 SKY,SKY,System1(단기),관심,False,False,False,True,93.18,93.68,94.58,71.2,0.99,3.15,
-VANA,VANA,System1(단기),관심,False,False,False,True,1416.0,1549.0,1440.0,1150.0,1.076,60.4,
+VANA,VANA,System1(단기),탈락,False,False,False,True,1416.0,1549.0,1440.0,1150.0,1.076,60.4,
 PAXG,PAXG,System1(단기),관심,False,False,False,True,6220000.0,6225000.0,6273000.0,5953000.0,0.992,97650.0,
 PAXG,PAXG,System2(중장기),관심,False,False,False,True,6220000.0,6225000.0,6273000.0,5712000.0,0.992,97650.0,
 XAUT,XAUT,System1(단기),관심,False,False,False,True,6292000.0,6293000.0,6333000.0,6046000.0,0.994,86150.0,
@@ -22,8 +22,8 @@ XAUT,XAUT,System2(중장기),관심,False,False,False,True,6292000.0,6293000.0,6
 XPL,XPL,System1(단기),관심,False,False,False,True,148.0,152.0,148.0,103.0,1.027,9.6,
 MON,MON,System1(단기),관심,False,False,False,True,39.91,41.9,42.0,27.92,0.998,2.2,
 MON,MON,System2(중장기),관심,False,False,False,True,39.91,41.9,42.0,27.92,0.998,2.2,
-LIT,LIT,System1(단기),관심,False,False,False,True,4474.0,4636.0,4645.0,3077.0,0.998,314.4,
-LIT,LIT,System2(중장기),관심,False,False,False,True,4474.0,4636.0,4645.0,2806.0,0.998,314.4,
+LIT,LIT,System1(단기),탈락,False,False,False,True,4474.0,4636.0,4645.0,3077.0,0.998,314.4,
+LIT,LIT,System2(중장기),탈락,False,False,False,True,4474.0,4636.0,4645.0,2806.0,0.998,314.4,
 SOL,SOL,System2(중장기),확정,False,False,False,True,128100.0,141100.0,128700.0,101800.0,1.096,4095.0,129100.0
 SONIC,SONIC,System1(단기),확정,False,False,False,True,28.5,30.81,28.81,23.8,1.069,1.39,28.89
 ENS,ENS,System2(중장기),확정,False,False,False,True,7020.0,7185.0,7175.0,5300.0,1.001,226.0,7195.0
