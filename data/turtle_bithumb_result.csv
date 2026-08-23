@@ -5,7 +5,7 @@ SIX,SIX,System1(단기),관심,False,False,False,True,6.14,6.67,6.48,5.58,1.03,0
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System2(중장기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
-TDROP,TDROP,System1(단기),관심,False,False,False,True,0.55,0.55,0.55,0.43,1.0,0.02,
+TDROP,TDROP,System1(단기),탈락,False,False,False,True,0.55,0.55,0.55,0.43,1.0,0.02,
 LM,LM,System1(단기),관심,False,False,False,True,0.66,0.7,0.7,0.57,1.006,0.03,
 CELO,CELO,System1(단기),관심,False,False,False,True,106.0,108.0,108.0,80.04,1.0,4.41,
 HUNT,HUNT,System1(단기),관심,False,False,False,True,120.0,120.0,121.0,102.0,0.992,4.7,
