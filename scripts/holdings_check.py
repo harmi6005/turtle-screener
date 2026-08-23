@@ -6,8 +6,14 @@ telegram_listener.py / webhook_handler.py 가 등록한 data/holdings.csv 의 �
 감시하다가,
 - 오늘 최고가가 이전 최고가를 갱신하면 -> 손절선도 "새 최고가 - 2xATR"로 같이 올림 (트레일링)
 - 진입가 대비 ATR의 정수배(1배,2배,3배...)만큼 새로 오르면 -> "N배 수익 도달" 알림 (매도신호 아님)
-- 오늘 저가가 손절선 밑으로 떨어지면 -> "트레일링 손절 도달" 알림 (매도 검토)
-한 번 손절 알림 간 거래는 상태가 바뀌어서 더 이상 반복 알림이 안 갑니다.
+- 오늘 저가가 손절선 밑으로 떨어지면 -> "트레일링 손절 도달" 알림 (매도 검토, 최초 1회만 발송)
+
+⚠️ 손절선 이탈 이후에도 감시를 멈추지 않습니다. 손절 알림은 최초 1회만
+보내고(반복 스팸 방지), 이후에는 사용자가 텔레그램으로 `sell 거래번호`를
+직접 보내서 수동 청산(status=closed_manual)하기 전까지 계속 5분마다
+"[보유종목 현황]" 요약에 "손절 확정 (매도 대기)" 상태로 포함되며 트레일링도
+계속 갱신됩니다. (예전에는 손절 이탈 즉시 status=stop_hit이 되면서 감시
+대상에서 완전히 빠져버리는 문제가 있었음 — 이번에 수정함)
 
 추가로, 매 실행마다(5분마다) 이변이 없어도 활성 보유종목 전체의 현재 상태를
 "[보유종목 현황]" 요약으로 무조건 발송합니다. 국장/미장은 아래 개장시간
@@ -25,7 +31,7 @@ telegram_listener.py / webhook_handler.py 가 등록한 data/holdings.csv 의 �
 data/holdings.csv 컬럼:
   trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,last_milestone,status
   market 값: KR(국내) / US(미국) / COIN(빗썸)
-  status 값: active(감시중) / stop_hit(손절도달) / closed_manual(수동청산)
+  status 값: active(감시중) / stop_hit(손절도달, 매도 대기중 - 계속 감시함) / closed_manual(수동청산, 감시종료)
 """
 
 import sys
@@ -171,8 +177,9 @@ if __name__ == "__main__":
     summary_lines = []
 
     for idx, row in df.iterrows():
-        if row.get('status', 'active') != 'active':
-            continue
+        current_status = row.get('status', 'active')
+        if current_status == 'closed_manual':
+            continue  # 사용자가 sell로 직접 청산한 거래만 감시 대상에서 제외
 
         market = row['market']
         if market == 'KR' and not kr_open:
@@ -192,8 +199,10 @@ if __name__ == "__main__":
         highest_price = float(row['highest_price'])
         stop_price = float(row['stop_price'])
         last_milestone = int(row['last_milestone']) if pd.notna(row['last_milestone']) else 0
+        already_stopped = (current_status == 'stop_hit')
 
         # 1) 최고가 갱신 -> 트레일링 손절선 갱신 (내려가지는 않음)
+        # 손절 이탈 이후(매도 대기중)에도 계속 갱신함 - sell 하기 전까지 감시를 멈추지 않음
         if ohlc['high'] > highest_price:
             highest_price = ohlc['high']
             new_stop = highest_price - ATR_MULTIPLIER * atr_entry
@@ -220,36 +229,45 @@ if __name__ == "__main__":
                 print(f"거래 {trade_id}({code}) {current_multiple}배 마일스톤 알림 전송")
 
         # 3) 트레일링 손절선 이탈 체크 (진짜 매도 신호)
-        stop_hit = ohlc['low'] <= stop_price
-        if stop_hit:
+        # 이미 손절 상태(stop_hit)였다면 알림은 최초 1회만 보내고, 이후엔
+        # 반복 알림 없이 계속 감시만 함 (sell 명령 전까지 매도 대기 상태 유지)
+        stop_condition = ohlc['low'] <= stop_price
+        newly_stopped = stop_condition and not already_stopped
+
+        if newly_stopped:
             pnl_pct = (ohlc['close'] - buy_price) / buy_price * 100
             notify_telegram(
                 f"[{market}] 트레일링 손절 도달! (매도 검토)\n"
                 f"거래번호 {trade_id} - {code}\n"
                 f"매수가 {fmt_num(buy_price)} / 최고가 {fmt_num(highest_price)} / "
                 f"손절선 {fmt_num(stop_price)} / 현재가 {fmt_num(ohlc['close'])}\n"
-                f"손익률 {pnl_pct:+.2f}%"
+                f"손익률 {pnl_pct:+.2f}%\n"
+                f"※ sell {trade_id} 명령으로 청산 전까지 계속 추적합니다."
             )
             df.at[idx, 'status'] = 'stop_hit'
             changed = True
-            print(f"거래 {trade_id}({code}) 트레일링 손절 도달 알림 전송")
+            print(f"거래 {trade_id}({code}) 트레일링 손절 최초 도달 알림 전송")
+        elif stop_condition and already_stopped:
+            print(f"거래 {trade_id}({code}): 손절 확정 상태 유지 중 (매도 대기, 반복 알림 생략)")
         else:
             print(f"거래 {trade_id}({code}): 현재가 {ohlc['close']} "
                   f"(최고가 {highest_price} / 손절선 {stop_price}) - 감시 유지")
 
-        # 4) 5분마다 무조건 포함되는 현재 상태 요약용 라인 (손절 도달로 방금
-        # 종료된 거래는 요약에서 제외 - 위 알림으로 이미 충분히 안내됨)
-        if not stop_hit:
-            pnl_pct = (ohlc['close'] - buy_price) / buy_price * 100
-            gap_to_stop_pct = (ohlc['close'] - stop_price) / stop_price * 100 if stop_price else 0
-            atr_multiple = (highest_price - buy_price) / atr_entry if atr_entry > 0 else 0
+        # 4) 5분마다 무조건 포함되는 현재 상태 요약용 라인
+        # 손절 확정 상태(stop_hit)도 sell 하기 전까지는 계속 요약에 포함시킴
+        pnl_pct = (ohlc['close'] - buy_price) / buy_price * 100
+        gap_to_stop_pct = (ohlc['close'] - stop_price) / stop_price * 100 if stop_price else 0
+        atr_multiple = (highest_price - buy_price) / atr_entry if atr_entry > 0 else 0
+        if newly_stopped or already_stopped:
+            status_tag = "🔴 손절 확정 (sell 명령 대기)"
+        else:
             status_tag = build_status_tag(ohlc['close'], stop_price)
-            summary_lines.append(
-                f"- [{trade_id}] {code} [{market}] {status_tag}\n"
-                f"  현재가 {fmt_num(ohlc['close'])} / 매수가 {fmt_num(buy_price)} (손익 {pnl_pct:+.2f}%)\n"
-                f"  최고가 {fmt_num(highest_price)} / 손절선 {fmt_num(stop_price)} (괴리율 {gap_to_stop_pct:+.2f}%)\n"
-                f"  ATR배수 {atr_multiple:+.2f}배 (직전 마일스톤 {last_milestone}배)"
-            )
+        summary_lines.append(
+            f"- [{trade_id}] {code} [{market}] {status_tag}\n"
+            f"  현재가 {fmt_num(ohlc['close'])} / 매수가 {fmt_num(buy_price)} (손익 {pnl_pct:+.2f}%)\n"
+            f"  최고가 {fmt_num(highest_price)} / 손절선 {fmt_num(stop_price)} (괴리율 {gap_to_stop_pct:+.2f}%)\n"
+            f"  ATR배수 {atr_multiple:+.2f}배 (직전 마일스톤 {last_milestone}배)"
+        )
 
     if changed:
         df.to_csv(DATA_PATH, index=False)
