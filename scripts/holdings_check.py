@@ -44,7 +44,7 @@ import FinanceDataReader as fdr
 import yfinance as yf
 from datetime import datetime, timedelta, time as dtime
 from zoneinfo import ZoneInfo
-from common import notify_telegram, send_long_message
+from common import notify_telegram, send_long_message, calc_atr
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
@@ -58,7 +58,12 @@ POST_MARKET_BUFFER_MIN = 5
 
 
 def fmt_num(v):
-    v = float(v)
+    try:
+        v = float(v)
+    except (TypeError, ValueError):
+        return "N/A"
+    if pd.isna(v):
+        return "N/A"
     if v == int(v):
         return f"{int(v):,}"
     return f"{v:,.4f}".rstrip('0').rstrip('.')
@@ -137,14 +142,39 @@ def get_latest_ohlc(market, code):
 
 def build_status_tag(current_price, stop_price):
     """손절선까지 괴리율 기준으로 상태 태그를 부여한다."""
-    if stop_price is None or stop_price == 0:
-        return "🟢 정상"
+    if stop_price is None or pd.isna(stop_price) or stop_price == 0:
+        return "🟡 손절가 미설정"
     if current_price <= stop_price:
         return "⚠️ 손절선 이탈"
     gap_pct = (current_price - stop_price) / stop_price * 100
     if gap_pct <= 2.0:
         return "🔶 손절선 임박"
     return "🟢 정상"
+
+
+def estimate_atr(market, code, period=20):
+    """holdings.csv에 atr_entry가 비어있는(NaN) 종목을 위한 ATR 재계산.
+    get_latest_ohlc는 최근 5~10일치만 가져와서 ATR(20일) 계산엔 부족하므로
+    별도로 더 긴 기간의 데이터를 조회한다."""
+    try:
+        if market == 'KR':
+            end = datetime.today()
+            start = end - timedelta(days=period + 30)
+            df = fdr.DataReader(str(code).zfill(6), start, end)
+        elif market == 'US':
+            df = yf.download(code, period=f'{period + 30}d', auto_adjust=True, progress=False)
+        elif market == 'COIN':
+            df = get_bithumb_daily_ohlc(code, days=period + 30)
+        else:
+            return None
+        if df is None or df.empty or len(df) < period + 1:
+            return None
+        atr_series = calc_atr(df, period)
+        val = atr_series.iloc[-1]
+        return None if pd.isna(val) else float(val)
+    except Exception as e:
+        print(f"  {code} ATR 재계산 실패: {e}")
+        return None
 
 
 if __name__ == "__main__":
@@ -169,6 +199,38 @@ if __name__ == "__main__":
     if df.empty:
         print("등록된 거래가 없습니다.")
         sys.exit(0)
+
+    # ⚠️ 데이터 보정: atr_entry / stop_price가 비어있는(NaN) 종목이 있으면
+    # (등록 당시 ATR 조회 실패, 수동 편집 등으로 값이 빠진 경우) 재계산해서
+    # CSV 자체를 복구한다. 이걸 안 하면 이후 fmt_num/트레일링 계산에서
+    # NaN 때문에 스크립트가 죽을 수 있음.
+    repaired = False
+    for idx, row in df.iterrows():
+        if row.get('status') == 'closed_manual':
+            continue
+
+        atr_entry = row['atr_entry']
+        stop_price = row['stop_price']
+        buy_price = row['buy_price']
+        highest_price = row['highest_price'] if not pd.isna(row['highest_price']) else buy_price
+
+        if pd.isna(atr_entry) or atr_entry <= 0:
+            new_atr = estimate_atr(row['market'], row['code'])
+            if new_atr is not None:
+                atr_entry = new_atr
+                df.at[idx, 'atr_entry'] = round(atr_entry, 6)
+                repaired = True
+                print(f"거래 {row['trade_id']}({row['code']}) ATR 값 재계산: {atr_entry}")
+
+        if pd.isna(stop_price) and not pd.isna(atr_entry) and atr_entry > 0:
+            new_stop = highest_price - ATR_MULTIPLIER * atr_entry
+            df.at[idx, 'stop_price'] = round(float(new_stop), 4)
+            repaired = True
+            print(f"거래 {row['trade_id']}({row['code']}) 손절가 재계산: {new_stop}")
+
+    if repaired:
+        df.to_csv(DATA_PATH, index=False)
+        print("holdings.csv 데이터 보정 완료 (누락된 ATR/손절가 재계산)")
 
     kr_open = is_korea_market_open()
     us_open = is_us_market_open()
@@ -195,25 +257,30 @@ if __name__ == "__main__":
         trade_id = row['trade_id']
         code = row['code']
         buy_price = float(row['buy_price'])
-        atr_entry = float(row['atr_entry'])
+        atr_entry = row['atr_entry']
+        atr_entry = float(atr_entry) if not pd.isna(atr_entry) else float('nan')
         highest_price = float(row['highest_price'])
-        stop_price = float(row['stop_price'])
+        stop_price = row['stop_price']
+        stop_price = float(stop_price) if not pd.isna(stop_price) else float('nan')
         last_milestone = int(row['last_milestone']) if pd.notna(row['last_milestone']) else 0
         already_stopped = (current_status == 'stop_hit')
 
         # 1) 최고가 갱신 -> 트레일링 손절선 갱신 (내려가지는 않음)
         # 손절 이탈 이후(매도 대기중)에도 계속 갱신함 - sell 하기 전까지 감시를 멈추지 않음
+        # ATR/손절가를 위 보정 단계에서도 못 구한 경우(데이터 조회 실패 등)는
+        # 트레일링 계산을 건너뛰고 감시만 계속한다 (죽지 않도록 방어).
         if ohlc['high'] > highest_price:
             highest_price = ohlc['high']
-            new_stop = highest_price - ATR_MULTIPLIER * atr_entry
-            if new_stop > stop_price:
-                stop_price = new_stop
+            if not pd.isna(atr_entry):
+                new_stop = highest_price - ATR_MULTIPLIER * atr_entry
+                if pd.isna(stop_price) or new_stop > stop_price:
+                    stop_price = new_stop
+                    df.at[idx, 'stop_price'] = round(float(stop_price), 4)
             df.at[idx, 'highest_price'] = float(highest_price)
-            df.at[idx, 'stop_price'] = round(float(stop_price), 4)
             changed = True
 
         # 2) ATR 배수 마일스톤 체크 (매도 신호 아님, 진행 알림)
-        if atr_entry > 0:
+        if not pd.isna(atr_entry) and atr_entry > 0:
             current_multiple = int((highest_price - buy_price) // atr_entry)
             if current_multiple > last_milestone:
                 profit_pct = (highest_price - buy_price) / buy_price * 100
@@ -231,7 +298,8 @@ if __name__ == "__main__":
         # 3) 트레일링 손절선 이탈 체크 (진짜 매도 신호)
         # 이미 손절 상태(stop_hit)였다면 알림은 최초 1회만 보내고, 이후엔
         # 반복 알림 없이 계속 감시만 함 (sell 명령 전까지 매도 대기 상태 유지)
-        stop_condition = ohlc['low'] <= stop_price
+        # 손절가를 아직 못 구한 경우(NaN)는 손절 판정 자체를 건너뛴다.
+        stop_condition = (not pd.isna(stop_price)) and (ohlc['low'] <= stop_price)
         newly_stopped = stop_condition and not already_stopped
 
         if newly_stopped:
@@ -251,13 +319,19 @@ if __name__ == "__main__":
             print(f"거래 {trade_id}({code}): 손절 확정 상태 유지 중 (매도 대기, 반복 알림 생략)")
         else:
             print(f"거래 {trade_id}({code}): 현재가 {ohlc['close']} "
-                  f"(최고가 {highest_price} / 손절선 {stop_price}) - 감시 유지")
+                  f"(최고가 {highest_price} / 손절선 {fmt_num(stop_price)}) - 감시 유지")
 
         # 4) 5분마다 무조건 포함되는 현재 상태 요약용 라인
         # 손절 확정 상태(stop_hit)도 sell 하기 전까지는 계속 요약에 포함시킴
         pnl_pct = (ohlc['close'] - buy_price) / buy_price * 100
-        gap_to_stop_pct = (ohlc['close'] - stop_price) / stop_price * 100 if stop_price else 0
-        atr_multiple = (highest_price - buy_price) / atr_entry if atr_entry > 0 else 0
+        if stop_price and not pd.isna(stop_price):
+            gap_to_stop_pct = (ohlc['close'] - stop_price) / stop_price * 100
+        else:
+            gap_to_stop_pct = 0.0
+        if atr_entry and not pd.isna(atr_entry) and atr_entry > 0:
+            atr_multiple = (highest_price - buy_price) / atr_entry
+        else:
+            atr_multiple = 0.0
         if newly_stopped or already_stopped:
             status_tag = "🔴 손절 확정 (sell 명령 대기)"
         else:
