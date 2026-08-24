@@ -113,6 +113,7 @@ if __name__ == "__main__":
 
     changed = False
     summary_lines = []
+    tracked_code_count = 0
 
     for idx, row in wdf.iterrows():
         market, code = row['market'], row['code']
@@ -125,8 +126,10 @@ if __name__ == "__main__":
         if df is None:
             print(f"{code}: 데이터 조회 실패")
             summary_lines.append(f"- {code} [{market}]: 데이터 조회 실패")
+            tracked_code_count += 1
             continue
 
+        tracked_code_count += 1
         code_lines = [f"- {code} [{market}]"]
         for sys_key, sys_name in [('sys1_status', 'System1(단기)'), ('sys2_status', 'System2(중장기)')]:
             sysconf = SYSTEMS[sys_name]
@@ -168,7 +171,7 @@ if __name__ == "__main__":
 
     # 3) 5분마다 무조건 발송되는 현재 상태 요약 (사용자 요청사항)
     if summary_lines:
-        header = f"[집중추적종목 현황] {len(summary_lines)}줄 (5분 자동 갱신)"
+        header = f"🎯 [집중추적종목 현황] {tracked_code_count}종목 (5분 자동 갱신)"
         send_long_message(header + "\n" + "\n".join(summary_lines))
     else:
         print("이번 실행에서 포함할 종목이 없어 요약을 보내지 않았습니다 (장마감/데이터없음 등).")
