@@ -16,7 +16,7 @@ NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System2(중장기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 TDROP,TDROP,System1(단기),관심,False,False,False,True,0.54,0.56,0.55,0.43,1.011,0.02,
-CRTS,CRTS,System1(단기),관심,False,False,False,True,0.06,0.07,0.06,0.05,1.085,0.0,
+CRTS,CRTS,System1(단기),확정,False,False,False,True,0.06,0.07,0.06,0.05,1.085,0.0,0.06
 LM,LM,System1(단기),관심,False,False,False,True,0.66,0.7,0.7,0.57,1.006,0.03,
 STX,STX,System1(단기),관심,False,False,False,True,325.0,334.0,332.0,165.0,1.006,15.55,
 STX,STX,System2(중장기),관심,False,False,False,True,325.0,334.0,332.0,165.0,1.006,15.55,
