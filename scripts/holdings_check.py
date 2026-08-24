@@ -48,8 +48,8 @@ from common import notify_telegram, send_long_message, calc_atr
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
-           'highest_price', 'stop_price', 'last_milestone', 'status']
-NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price', 'last_milestone']
+           'highest_price', 'stop_price', 'last_milestone', 'status', 'last_price']
+NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price', 'last_milestone', 'last_price']
 ATR_MULTIPLIER = 2
 
 # 개장 전/마감 후 버퍼 (분 단위, 대칭)
@@ -140,7 +140,18 @@ def get_latest_ohlc(market, code):
     return None
 
 
-def build_status_tag(current_price, stop_price):
+def build_trend_str(prev_price, current_price):
+    """직전 5분 알림 때 가격(prev_price) 대비 현재가(current_price)가 상승/하락/
+    보합인지 색깔로 표시한다 (국내 관례: 상승=빨강, 하락=파랑, 보합=노랑).
+    prev_price가 없으면(최초 알림) 🆕로 표시."""
+    if prev_price is None or pd.isna(prev_price):
+        return "🆕"
+    diff = current_price - prev_price
+    if diff > 0:
+        return f"🔴▲+{fmt_num(diff)}"
+    elif diff < 0:
+        return f"🔵▼{fmt_num(diff)}"
+    return "🟡➖보합"
     """손절선까지 괴리율 기준으로 상태 태그를 부여한다."""
     if stop_price is None or pd.isna(stop_price) or stop_price == 0:
         return "🟡 손절가 미설정"
@@ -336,9 +347,16 @@ if __name__ == "__main__":
             status_tag = "🔴 손절 확정 (sell 명령 대기)"
         else:
             status_tag = build_status_tag(ohlc['close'], stop_price)
+
+        # 직전 5분 알림 대비 상승/하락/보합 표시
+        prev_price = row['last_price'] if 'last_price' in row else None
+        trend_str = build_trend_str(prev_price, ohlc['close'])
+        df.at[idx, 'last_price'] = float(ohlc['close'])
+        changed = True
+
         summary_lines.append(
             f"- [{trade_id}] {code} [{market}] {status_tag}\n"
-            f"  현재가 {fmt_num(ohlc['close'])} / 매수가 {fmt_num(buy_price)} (손익 {pnl_pct:+.2f}%)\n"
+            f"  현재가 {fmt_num(ohlc['close'])} {trend_str} / 매수가 {fmt_num(buy_price)} (손익 {pnl_pct:+.2f}%)\n"
             f"  최고가 {fmt_num(highest_price)} / 손절선 {fmt_num(stop_price)} (괴리율 {gap_to_stop_pct:+.2f}%)\n"
             f"  ATR배수 {atr_multiple:+.2f}배 (직전 마일스톤 {last_milestone}배)"
         )
