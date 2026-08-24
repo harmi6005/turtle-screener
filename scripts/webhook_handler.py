@@ -4,6 +4,9 @@
 Cloudflare Worker가 텔레그램 메시지를 받으면 GitHub의 repository_dispatch API를
 호출하고, 그 안의 client_payload.text 값을 이 스크립트가 환경변수(MSG_TEXT)로
 받아서 즉시 처리합니다. 5분 폴링을 기다릴 필요 없이 몇 초 안에 처리돼요.
+
+한 메시지에 여러 줄로 명령어가 들어있으면(예: "sell 8801\\nsell 7634") 줄 단위로
+각각 처리합니다 (dispatch_lines 사용).
 """
 
 import sys
@@ -12,7 +15,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 from common import notify_telegram, send_long_message
-from bot_commands import load_holdings, save_holdings, load_watchlist, save_watchlist, dispatch
+from bot_commands import load_holdings, save_holdings, load_watchlist, save_watchlist, dispatch_lines
 
 if __name__ == "__main__":
     text = os.environ.get('MSG_TEXT', '').strip()
@@ -25,7 +28,7 @@ if __name__ == "__main__":
     df = load_holdings()
     wdf = load_watchlist()
 
-    df, wdf, reply, is_long, holdings_changed, watchlist_changed = dispatch(text, df, wdf)
+    df, wdf, reply, is_long, holdings_changed, watchlist_changed = dispatch_lines(text, df, wdf)
 
     if reply:
         if is_long:
