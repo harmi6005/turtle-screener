@@ -350,7 +350,7 @@ if __name__ == "__main__":
         print("변경 사항 없음")
 
     if summary_lines:
-        header = f"[보유종목 현황] {len(summary_lines)}건"
+        header = f"📦 [보유종목 현황] {len(summary_lines)}건 (5분 자동 갱신)"
         send_long_message(header + "\n" + "\n".join(summary_lines))
     else:
         print("이번 실행에서 포함할 활성 보유종목이 없어 현황 요약을 보내지 않았습니다.")
