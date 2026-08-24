@@ -187,7 +187,9 @@ def handle_sell(args, df):
     trade_id = args[0]
     sell_price = args[1] if len(args) > 1 else None
 
-    mask = (df['trade_id'] == trade_id) & (df['status'] == 'active')
+    # ⚠️ status == 'active'만 찾던 기존 로직 수정: 손절 확정(stop_hit) 상태인
+    # 거래도 sell로 청산할 수 있어야 함. 이미 수동청산된(closed_manual) 거래만 제외.
+    mask = (df['trade_id'] == trade_id) & (df['status'] != 'closed_manual')
     if not mask.any():
         return df, f"거래번호 {trade_id}를 찾지 못했어요. list 로 확인해보세요."
 
@@ -206,12 +208,13 @@ def handle_sell(args, df):
 
 
 def handle_list(df):
-    active = df[df['status'] == 'active']
+    active = df[df['status'] != 'closed_manual']
     if active.empty:
         return "현재 감시 중인 거래가 없어요."
     lines = ["현재 감시 중인 거래:"]
     for _, r in active.iterrows():
-        lines.append(f"[{r['trade_id']}] {r['code']} [{r['market']}] "
+        tag = " [손절확정/매도대기]" if r['status'] == 'stop_hit' else ""
+        lines.append(f"[{r['trade_id']}] {r['code']} [{r['market']}]{tag} "
                       f"매수 {fmt_num(r['buy_price'])} / 최고가 {fmt_num(r['highest_price'])} / "
                       f"손절선 {fmt_num(r['stop_price'])} / {r['last_milestone']}배 수익 도달")
     return "\n".join(lines)
@@ -333,3 +336,29 @@ def dispatch(text, df, wdf):
         is_long = True
 
     return df, wdf, reply, is_long, holdings_changed, watchlist_changed
+
+
+def dispatch_lines(text, df, wdf):
+    """한 메시지에 명령어가 여러 줄로 들어있을 때(예: 'sell 8801\\nsell 7634') 줄
+    단위로 각각 dispatch()에 넘겨서 순서대로 처리하고, 답장을 하나로 합쳐서
+    반환한다. 한 줄짜리 메시지는 기존과 동일하게 동작한다."""
+    lines = [ln for ln in text.split('\n') if ln.strip()]
+    if len(lines) <= 1:
+        return dispatch(text, df, wdf)
+
+    replies = []
+    is_long_any = False
+    holdings_changed_any = False
+    watchlist_changed_any = False
+
+    for line in lines:
+        df, wdf, reply, is_long, h_changed, w_changed = dispatch(line, df, wdf)
+        if reply:
+            replies.append(reply)
+        is_long_any = is_long_any or is_long
+        holdings_changed_any = holdings_changed_any or h_changed
+        watchlist_changed_any = watchlist_changed_any or w_changed
+
+    combined_reply = "\n\n".join(replies) if replies else None
+    is_long_final = is_long_any or len(replies) > 1
+    return df, wdf, combined_reply, is_long_final, holdings_changed_any, watchlist_changed_any
