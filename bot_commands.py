@@ -16,7 +16,7 @@ HOLDINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'holdings.csv')
 WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), 'data', 'watchlist.csv')
 
 HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
-                    'highest_price', 'stop_price', 'last_milestone', 'status']
+                    'highest_price', 'stop_price', 'last_milestone', 'status', 'last_price']
 WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status']
 ATR_PERIOD = 20
 ATR_MULTIPLIER = 2
@@ -170,7 +170,7 @@ def handle_buy(args, df):
     new_row = {'trade_id': trade_id, 'market': market, 'code': code,
                'buy_price': buy_price, 'atr_entry': round(atr, 6),
                'highest_price': buy_price, 'stop_price': round(stop_price, 4),
-               'last_milestone': 0, 'status': 'active'}
+               'last_milestone': 0, 'status': 'active', 'last_price': buy_price}
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
 
     return df, (f"등록 완료 (거래번호 {trade_id})\n"
