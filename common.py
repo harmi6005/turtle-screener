@@ -41,7 +41,6 @@ def check_turtle_breakout(df, entry_period, exit_period, watch_ratio=0.9):
 
     # '최초 돌파' 여부: 최근 entry_period(20일 또는 55일) 거래일 동안 단 한 번도
     # 돌파한 적이 없다가, 오늘 처음 돌파한 경우에만 True.
-    # (단순히 "어제만" 비교하는 게 아니라, 최근 N거래일 전체를 확인함)
     lookback = df['entry_signal_series'].iloc[-(entry_period + 1):-1]
     was_recently_breaking = bool(lookback.any()) if len(lookback) > 0 else False
     fresh_entry_signal = bool(entry_signal and not was_recently_breaking)
@@ -77,7 +76,7 @@ def notify_telegram(message: str):
 def build_watch_summary(df, market_label):
     """관심종목 중 돌파(진입가)에 근접한 종목 전체를 진입가 포함해서 텔레그램 메시지로 정리.
     100%를 넘는 종목(장중 반짝 돌파 후 종가는 못 넘긴 케이스)은 제외하고,
-    진짜 돌파 임박(90~100% 구간)인 종목만 보여줌. 개수 제한 없이 전부 표시."""
+    진짜 돌파 임박(99~100% 구간)인 종목만 보여줌. 개수 제한 없이 전부 표시."""
     watch_df = df[df['signal'] == '관심']
     if watch_df.empty:
         return None
@@ -87,7 +86,7 @@ def build_watch_summary(df, market_label):
         return None
 
     near_df = near_df.sort_values('n_high_ratio', ascending=False)
-    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 (90~100% 구간)"]
+    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 (99~100% 구간)"]
     for _, r in near_df.iterrows():
         lines.append(
             f"- {r['name']}({r['code']}) [{r['system']}]\n"
@@ -117,10 +116,6 @@ def send_long_message(text, chunk_size=3500):
 
 
 # ===== 휩쏘 필터 (System1 한정) =====
-# 터틀 원칙: 직전 거래(같은 종목/같은 System1)가 수익이었다면 다음 신규 돌파 신호는
-# 건너뛴다. 단, 건너뛴 진입가 대비 2xATR 만큼 더 유리한 방향으로 움직이면 그때는
-# 필터를 무시하고 강제 진입한다. 직전 거래가 손절이었다면 필터 없이 정상 진입한다.
-
 TRADE_HISTORY_COLUMNS = ['code', 'system', 'direction', 'last_result', 'skip_active', 'skip_price']
 
 
@@ -158,7 +153,6 @@ def check_whipsaw(hist_df, code, system, direction, breakout_price, current_pric
 
     skip_active = str(row.get('skip_active')) == 'True'
     if not skip_active:
-        # 이번이 첫 스킵 -> 기록만 남기고 이번 신호는 건너뜀
         hist_df.loc[mask, 'skip_active'] = True
         hist_df.loc[mask, 'skip_price'] = breakout_price
         return False, hist_df
@@ -196,26 +190,39 @@ def record_trade_result(hist_df, code, system, direction, entry_price, exit_pric
     return hist_df
 
 
-def pick_top_entry(df, price_min=None, price_max=None):
-    """'진입' 신호 종목 중 진입가를 가장 적게 초과한(=가장 신선하게 막 돌파한) 1개를
-    골라서 반환한다. 터틀 원칙상 "얼마나 강하게 뚫었나"보다 "돌파 시점에 얼마나
-    가깝게 붙어서 들어가는가"가 더 중요하므로, 초과율이 가장 작은 종목을 우선한다.
-    (전체스캔 단계에서 이미 0.5% 초과분은 걸러지므로, 그 안에서 가장 신선한 것을 고름)
+def pick_top_entry(df, price_min=None, price_max=None, top_n=1):
+    """'진입' 신호 종목 중 진입가를 가장 적게 초과한(=가장 신선하게 막 돌파한) 순서로
+    상위 top_n개를 골라 반환한다. 터틀 원칙상 "얼마나 강하게 뚫었나"보다 "돌파 시점에
+    얼마나 가깝게 붙어서 들어가는가"가 더 중요하므로, 초과율이 가장 작은 종목을 우선한다.
 
-    price_min / price_max가 주어지면, 최종 1픽은 그 가격범위 안에 있는 종목들
-    중에서만 고른다. (스캔 자체는 전체 유니버스로 하되, 최종 1픽 알림만
-    특정 가격대로 좁히고 싶을 때 사용 — 국내 스캔에서 2만~6만원 픽 유지 용도)
-    price_min/price_max를 안 넘기면(None) 기존과 동일하게 전체 후보 중에서 고른다.
+    price_min / price_max를 주면 최종 픽 선정 단계에서만 그 가격범위(종가 기준)
+    안의 종목으로 제한한다 (스캔 유니버스 자체는 건드리지 않음. None이면 해당 방향
+    제한 없음).
 
-    후보가 없으면 None을 반환한다."""
+    top_n=1(기본값)이면 기존 호출부와 호환되도록 pandas Series 1개(또는 후보가
+    없으면 None)를 반환한다. top_n>1이면 정렬된 DataFrame(빈 DataFrame일 수 있음)을
+    반환한다.
+    """
     entry_df = df[df['signal'] == '진입'].copy()
+
+    def _empty_result():
+        return None if top_n == 1 else entry_df.iloc[0:0]
+
+    if entry_df.empty:
+        return _empty_result()
+
     if price_min is not None:
         entry_df = entry_df[entry_df['close'] >= price_min]
     if price_max is not None:
         entry_df = entry_df[entry_df['close'] <= price_max]
+
     if entry_df.empty:
-        return None
+        return _empty_result()
+
     entry_df['excess_ratio'] = (entry_df['close'] - entry_df['n_high']) / entry_df['n_high']
     entry_df['strength'] = (entry_df['close'] - entry_df['n_high']) / entry_df['atr']  # 참고용 정보로 유지
     entry_df = entry_df.sort_values('excess_ratio', ascending=True)
-    return entry_df.iloc[0]
+
+    if top_n == 1:
+        return entry_df.iloc[0]
+    return entry_df.head(top_n)
