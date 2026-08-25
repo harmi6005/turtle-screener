@@ -146,6 +146,24 @@ def calc_atr_from_history(market, code, period=20):
         return None
 
 
+def get_kr_name_map(codes):
+    """국장 보유종목의 코드->이름 매핑을 한 번에 조회한다.
+    실패하거나 못 찾은 코드는 매핑에서 빠지고, 사용하는 쪽에서 코드만 표시하도록 fallback."""
+    if not codes:
+        return {}
+    try:
+        name_map = {}
+        for market in ('KOSPI', 'KOSDAQ', 'KONEX'):
+            listing = fdr.StockListing(market)
+            if 'Code' in listing.columns and 'Name' in listing.columns:
+                for _, r in listing[['Code', 'Name']].iterrows():
+                    name_map[str(r['Code']).zfill(6)] = r['Name']
+        return name_map
+    except Exception as e:
+        print(f"국장 종목명 조회 실패 (코드만 표시됩니다): {e}")
+        return {}
+
+
 def build_status_tag(close, stop_price):
     """손절선까지 괴리율 기준으로 상태 태그를 부여한다.
     - 현재가 <= 손절가: ⚠️ 손절선 이탈
@@ -220,6 +238,12 @@ if __name__ == "__main__":
 
     kr_open = is_korea_market_open()
     us_open = is_us_market_open()
+
+    kr_codes = [
+        str(r['code']).zfill(6) for _, r in df.iterrows()
+        if r['market'] == 'KR' and r.get('status') != 'closed_manual'
+    ]
+    kr_name_map = get_kr_name_map(kr_codes)
 
     summary_rows = []
 
@@ -317,8 +341,10 @@ if __name__ == "__main__":
         if not pd.isna(atr_entry) and atr_entry > 0 and not pd.isna(buy_price):
             atr_multiple_now = (df.at[idx, 'highest_price'] - buy_price) / atr_entry
 
+        display_name = kr_name_map.get(str(code).zfill(6)) if market == 'KR' else None
+
         summary_rows.append({
-            'trade_id': trade_id, 'market': market, 'code': code, 'tag': tag,
+            'trade_id': trade_id, 'market': market, 'code': code, 'name': display_name, 'tag': tag,
             'close': current_close, 'trend_tag': trend_tag,
             'buy_price': buy_price, 'pnl_pct': pnl_pct,
             'highest_price': df.at[idx, 'highest_price'], 'stop_price': cur_stop,
@@ -339,8 +365,9 @@ if __name__ == "__main__":
             pnl_txt = f"{r['pnl_pct']:+.2f}%" if r['pnl_pct'] is not None else "N/A"
             gap_txt = f"{r['gap_pct']:+.2f}%" if r['gap_pct'] is not None else "N/A"
             atr_txt = f"{r['atr_multiple_now']:+.2f}배" if r['atr_multiple_now'] is not None else "N/A"
+            code_display = f"{r['code']} {r['name']}" if r.get('name') else r['code']
             lines.append(
-                f"- [{r['trade_id']}] {r['code']} [{r['market']}] {r['tag']}\n"
+                f"- [{r['trade_id']}] {code_display} [{r['market']}] {r['tag']}\n"
                 f"  현재가 {fmt_num(r['close'])} {r['trend_tag']} / 매수가 {fmt_num(r['buy_price'])} (손익 {pnl_txt})\n"
                 f"  최고가 {fmt_num(r['highest_price'])} / 손절선 {fmt_num(r['stop_price'])} (괴리율 {gap_txt})\n"
                 f"  ATR배수 {atr_txt} (직전 마일스톤 {r['last_milestone']}배)"
