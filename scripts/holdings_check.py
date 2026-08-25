@@ -15,7 +15,7 @@ NameError 발생하던 문제 수정 + 전체 재작성):
   (📦 [보유종목 현황] N건 (5분 자동 갱신))
 - atr_entry / stop_price가 NaN인 종목은 실행 시작 시 자동 재계산해서 채워 넣음
 - fmt_num()은 NaN/None이 들어와도 죽지 않고 "N/A" 반환
-- 직전 알림 대비 현재가 등락을 🔴▲ / 🔵▼ / 🟡➖ / 🆕 로 표시 (last_price 컬럼 사용)
+- 매수가 대비 현재가 등락을 🔴▲ / 🔵▼ / 🟡➖ / 🆕 로 표시
 
 data/holdings.csv 컬럼:
   trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,
@@ -183,12 +183,12 @@ def build_status_tag(close, stop_price):
         return "⬜ 상태미확인"
 
 
-def build_trend_tag(current, last):
-    """직전 알림(last_price) 대비 등락 표시. 비교 대상이 없으면 🆕."""
-    if last is None or pd.isna(last):
+def build_trend_tag(current, base):
+    """기준가(매수가) 대비 등락 표시. 기준가가 없으면 🆕."""
+    if base is None or pd.isna(base):
         return "🆕"
     try:
-        diff = float(current) - float(last)
+        diff = float(current) - float(base)
     except (TypeError, ValueError):
         return "🆕"
     if diff > 0:
@@ -322,7 +322,7 @@ if __name__ == "__main__":
 
         # 요약용 정보 축적 (active / stop_hit 모두 포함)
         current_close = ohlc['close']
-        trend_tag = build_trend_tag(current_close, last_price)
+        trend_tag = build_trend_tag(current_close, buy_price)  # 매수가 기준 등락 표시
         if status == 'stop_hit':
             tag = "🔴 손절 확정 (sell 명령 대기)"
         else:
