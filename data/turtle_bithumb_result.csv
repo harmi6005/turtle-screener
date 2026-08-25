@@ -3,7 +3,7 @@ GLM,GLM,System1(단기),관심,False,False,False,True,151.0,152.0,153.0,119.0,0.
 NMR,NMR,System1(단기),관심,False,False,False,True,12610.0,12690.0,12800.0,10660.0,0.991,399.0,
 OBSR,OBSR,System1(단기),관심,False,False,False,True,0.55,0.62,0.61,0.36,1.017,0.05,
 MVC,MVC,System1(단기),관심,False,False,False,True,1.72,1.73,1.74,1.55,0.998,0.06,
-MAPO,MAPO,System1(단기),관심,False,False,False,True,1.43,1.45,1.44,1.14,1.008,0.06,
+MAPO,MAPO,System1(단기),확정,False,False,False,True,1.43,1.45,1.44,1.14,1.008,0.06,1.44
 BIOT,BIOT,System2(중장기),관심,False,False,False,True,0.33,0.35,0.34,0.26,1.052,0.01,
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
