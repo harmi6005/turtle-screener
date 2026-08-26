@@ -26,7 +26,7 @@ ZRO,ZRO,System2(중장기),관심,False,False,False,True,1663.0,1864.0,1754.0,10
 A8,A8,System1(단기),관심,False,False,False,True,7.29,7.33,7.32,5.43,1.002,0.5,
 KMNO,KMNO,System1(단기),관심,False,False,False,True,33.95,39.11,38.91,24.72,1.005,2.33,
 KMNO,KMNO,System2(중장기),관심,False,False,False,True,33.95,39.11,38.91,24.0,1.005,2.33,
-FORT,FORT,System1(단기),관심,False,False,False,True,19.93,19.93,19.99,16.7,0.997,0.9,
+FORT,FORT,System1(단기),탈락,False,False,False,True,19.93,19.93,19.99,16.7,0.997,0.9,
 SD,SD,System1(단기),관심,False,False,False,True,175.0,207.0,182.0,126.0,1.137,14.35,
 SD,SD,System2(중장기),관심,False,False,False,True,175.0,207.0,209.0,126.0,0.99,14.35,
 THQ,THQ,System1(단기),관심,False,False,False,True,14.81,18.2,16.21,13.04,1.123,1.3,
