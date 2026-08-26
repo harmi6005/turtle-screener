@@ -4,7 +4,7 @@ ANKR,ANKR,System1(단기),관심,False,False,False,True,5.54,5.65,5.7,4.59,0.991
 OBSR,OBSR,System1(단기),관심,False,False,False,True,0.52,0.62,0.61,0.36,1.017,0.05,
 UOS,UOS,System1(단기),확정,False,False,False,True,4.28,4.32,4.34,3.45,0.995,0.2,4.34
 NMR,NMR,System1(단기),관심,False,False,False,True,12410.0,12690.0,12800.0,10660.0,0.991,408.5,
-MVC,MVC,System1(단기),관심,False,False,False,True,1.72,1.74,1.74,1.55,1.002,0.06,
+MVC,MVC,System1(단기),확정,False,False,False,True,1.72,1.74,1.74,1.55,1.002,0.06,1.74
 MAPO,MAPO,System1(단기),탈락,False,False,False,True,1.42,1.45,1.44,1.14,1.008,0.06,
 BIOT,BIOT,System2(중장기),관심,False,False,False,True,0.32,0.35,0.34,0.26,1.052,0.01,
 POL,POL,System1(단기),관심,False,False,False,True,170.0,177.0,171.0,105.0,1.035,9.2,
@@ -15,8 +15,8 @@ BTT,BTT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System2(중장기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 JASMY,JASMY,System1(단기),관심,False,False,False,True,6.89,7.42,7.13,4.87,1.04,0.56,
 D,D,System1(단기),탈락,False,False,False,True,4.0,4.0,4.0,2.7,1.0,0.4,
-WNCG,WNCG,System1(단기),관심,False,False,False,True,6.18,6.77,6.3,5.11,1.075,0.35,
-LM,LM,System1(단기),관심,False,False,False,True,0.69,0.75,0.7,0.57,1.07,0.03,
+WNCG,WNCG,System1(단기),확정,False,False,False,True,6.18,6.77,6.3,5.11,1.075,0.35,6.31
+LM,LM,System1(단기),탈락,False,False,False,True,0.69,0.75,0.7,0.57,1.07,0.03,
 HFT,HFT,System1(단기),청산,False,False,True,False,8.4,8.49,53.2,8.4,0.16,3.58,
 HFT,HFT,System2(중장기),청산,False,False,True,False,8.4,8.49,53.2,8.4,0.16,3.58,
 CELO,CELO,System1(단기),관심,False,False,False,True,105.0,109.0,110.0,80.04,0.991,5.02,
