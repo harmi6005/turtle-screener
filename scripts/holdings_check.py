@@ -22,14 +22,17 @@ NameError 발생하던 문제 수정 + 전체 재작성):
 - 트레일링 라인 이탈 시, 그 라인이 매수가 이상이면 "익절 도달", 미만이면
   "손절 도달"로 구분해서 알림
 - 요약/이벤트 메시지에서 라인 이름을 상황에 맞게 "손절선"/"익절선"으로 자동 표시
-- 요약에 1차/2차 익절 참고가(매수가+1xATR / +2xATR) 표시
+- 요약에 1차/2차 익절 참고가(매수가+2xATR / +4xATR) 표시
   (⚠️ 실제 매도 트리거 아님. 터틀 시스템엔 목표가가 없고, 실제 매도 판단은
   위 트레일링 손절선/익절선 이탈 여부로만 함. 이건 어느 정도 왔는지 가늠하는
   참고용 기준선일 뿐)
+- 오리지널 터틀의 N일 최저가 청산 신호(System1=10일, System2=20일)도 ATR
+  트레일링과 별개로 계산해서 요약에 표시 + 최초 이탈 시 1회 참고 알림
+  (실제 자동 청산 트리거는 여전히 ATR 트레일링 라인 이탈 기준 하나뿐)
 
 data/holdings.csv 컬럼:
   trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,
-  last_milestone,status,last_price,breakeven_notified
+  last_milestone,status,last_price,breakeven_notified,exit10_notified,exit20_notified
   market 값: KR(국내) / US(미국) / COIN(빗썸)
   status 값: active(감시중) / stop_hit(손절확정, sell 대기) / closed_manual(수동청산)
 """
@@ -49,7 +52,7 @@ from common import notify_telegram, send_long_message, calc_atr, fetch_with_retr
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
            'highest_price', 'stop_price', 'last_milestone', 'status', 'last_price',
-           'breakeven_notified']
+           'breakeven_notified', 'exit10_notified', 'exit20_notified']
 NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price',
                     'last_milestone', 'last_price']
 ATR_MULTIPLIER = 2
@@ -103,30 +106,33 @@ def get_bithumb_daily_ohlc(coin, days=30):
 
 
 def get_latest_ohlc(market, code):
-    """시장별로 최근 캔들(오늘 포함)의 고가/저가/종가를 가져온다."""
+    """시장별로 최근 캔들(오늘 포함)의 고가/저가/종가와, 오리지널 터틀 청산 기준인
+    System1(10일)/System2(20일) 최저가도 함께 계산해서 반환한다.
+    N일 최저가 계산에 필요한 최소 데이터 확보를 위해 넉넉히 60일치를 조회한다."""
     try:
         if market == 'KR':
             end = datetime.today()
-            start = end - timedelta(days=10)
+            start = end - timedelta(days=60)
             df = fdr.DataReader(str(code).zfill(6), start, end)
-            if df.empty:
-                return None
-            last = df.iloc[-1]
-            return {'high': float(last['High']), 'low': float(last['Low']), 'close': float(last['Close'])}
-
         elif market == 'US':
-            data = yf.download(code, period='5d', auto_adjust=True, progress=False)
-            if data.empty:
-                return None
-            last = data.iloc[-1]
-            return {'high': float(last['High']), 'low': float(last['Low']), 'close': float(last['Close'])}
-
+            df = yf.download(code, period='60d', auto_adjust=True, progress=False)
         elif market == 'COIN':
-            df = get_bithumb_daily_ohlc(code, days=5)
-            if df is None or df.empty:
-                return None
-            last = df.iloc[-1]
-            return {'high': float(last['High']), 'low': float(last['Low']), 'close': float(last['Close'])}
+            df = get_bithumb_daily_ohlc(code, days=60)
+        else:
+            return None
+
+        if df is None or df.empty:
+            return None
+
+        last = df.iloc[-1]
+        low_10 = df['Low'].rolling(10).min().shift(1).iloc[-1] if len(df) >= 11 else None
+        low_20 = df['Low'].rolling(20).min().shift(1).iloc[-1] if len(df) >= 21 else None
+
+        return {
+            'high': float(last['High']), 'low': float(last['Low']), 'close': float(last['Close']),
+            'low_10': float(low_10) if low_10 is not None and not pd.isna(low_10) else None,
+            'low_20': float(low_20) if low_20 is not None and not pd.isna(low_20) else None,
+        }
     except Exception as e:
         print(f"  {code} 조회 실패: {e}")
         return None
@@ -365,6 +371,39 @@ if __name__ == "__main__":
                 changed = True
                 print(f"거래 {trade_id}({code}) 트레일링 손절 도달 알림 전송")
 
+        # 4) 오리지널 터틀 N일 최저가 청산 참고신호 (ATR 트레일링과는 별개의 오버레이)
+        # System1은 10일 최저가, System2는 20일 최저가 이탈 시 청산하는 게 오리지널
+        # 룰인데, 이 종목이 어느 시스템으로 진입했는지 holdings.csv엔 기록이 없으므로
+        # 두 기준을 모두 계산해서 같이 보여준다. status(active/stop_hit)와 무관하게
+        # 항상 체크하고, 각각 최초 이탈 시에만 1회 알림 (실제 자동 청산 트리거는 아님 —
+        # 실제 청산 판단은 여전히 ATR 트레일링 라인 이탈로만 처리됨).
+        exit10_notified = str(row.get('exit10_notified')) == 'True'
+        exit20_notified = str(row.get('exit20_notified')) == 'True'
+        low_10 = ohlc.get('low_10')
+        low_20 = ohlc.get('low_20')
+
+        if not exit10_notified and low_10 is not None and ohlc['close'] < low_10:
+            notify_telegram(
+                f"[{market}] 📉 System1(10일) 최저가 이탈 (오리지널 터틀 청산 참고신호)\n"
+                f"거래번호 {trade_id} - {code}\n"
+                f"현재가 {fmt_num(ohlc['close'])} / 10일 최저가 {fmt_num(low_10)}\n"
+                f"※ 참고용 신호이며, 실제 자동 청산은 ATR 트레일링 라인 이탈 기준으로만 처리됩니다."
+            )
+            df.at[idx, 'exit10_notified'] = True
+            exit10_notified = True
+            changed = True
+
+        if not exit20_notified and low_20 is not None and ohlc['close'] < low_20:
+            notify_telegram(
+                f"[{market}] 📉 System2(20일) 최저가 이탈 (오리지널 터틀 청산 참고신호)\n"
+                f"거래번호 {trade_id} - {code}\n"
+                f"현재가 {fmt_num(ohlc['close'])} / 20일 최저가 {fmt_num(low_20)}\n"
+                f"※ 참고용 신호이며, 실제 자동 청산은 ATR 트레일링 라인 이탈 기준으로만 처리됩니다."
+            )
+            df.at[idx, 'exit20_notified'] = True
+            exit20_notified = True
+            changed = True
+
         # 요약용 정보 축적 (active / stop_hit 모두 포함)
         current_close = ohlc['close']
         trend_tag = build_trend_tag(current_close, buy_price)  # 매수가 기준 등락 표시
@@ -405,6 +444,9 @@ if __name__ == "__main__":
             'line_label': line_label,
             'gap_pct': gap_pct, 'atr_multiple_now': atr_multiple_now,
             'last_milestone': last_milestone, 'tp1': tp1, 'tp2': tp2,
+            'low_10': low_10, 'low_20': low_20,
+            'exit10_hit': (low_10 is not None and current_close < low_10),
+            'exit20_hit': (low_20 is not None and current_close < low_20),
         })
 
         df.at[idx, 'last_price'] = float(current_close)
@@ -423,12 +465,17 @@ if __name__ == "__main__":
             code_display = f"{r['code']} {r['name']}" if r.get('name') else r['code']
             tp1_txt = fmt_num(r['tp1']) if r.get('tp1') is not None else "N/A"
             tp2_txt = fmt_num(r['tp2']) if r.get('tp2') is not None else "N/A"
+            low10_txt = fmt_num(r['low_10']) if r.get('low_10') is not None else "N/A"
+            low20_txt = fmt_num(r['low_20']) if r.get('low_20') is not None else "N/A"
+            exit10_mark = " ⚠️이탈" if r.get('exit10_hit') else ""
+            exit20_mark = " ⚠️이탈" if r.get('exit20_hit') else ""
             lines.append(
                 f"- [{r['trade_id']}] {code_display} [{r['market']}] {r['tag']}\n"
                 f"  현재가 {fmt_num(r['close'])} {r['trend_tag']} / 매수가 {fmt_num(r['buy_price'])} (손익 {pnl_txt})\n"
                 f"  최고가 {fmt_num(r['highest_price'])} / {r['line_label']} {fmt_num(r['stop_price'])} (괴리율 {gap_txt})\n"
                 f"  ATR배수 {atr_txt} (직전 마일스톤 {r['last_milestone']}배)\n"
-                f"  1차 익절참고가(2×ATR) {tp1_txt} / 2차 익절참고가(4×ATR) {tp2_txt}"
+                f"  1차 익절참고가(2×ATR) {tp1_txt} / 2차 익절참고가(4×ATR) {tp2_txt}\n"
+                f"  N일최저가청산참고: [1]10일 {low10_txt}{exit10_mark} / [2]20일 {low20_txt}{exit20_mark}"
             )
         send_long_message("\n".join(lines))
 
