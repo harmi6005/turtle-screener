@@ -22,6 +22,10 @@ NameError 발생하던 문제 수정 + 전체 재작성):
 - 트레일링 라인 이탈 시, 그 라인이 매수가 이상이면 "익절 도달", 미만이면
   "손절 도달"로 구분해서 알림
 - 요약/이벤트 메시지에서 라인 이름을 상황에 맞게 "손절선"/"익절선"으로 자동 표시
+- 요약에 1차/2차 익절 참고가(매수가+1xATR / +2xATR) 표시
+  (⚠️ 실제 매도 트리거 아님. 터틀 시스템엔 목표가가 없고, 실제 매도 판단은
+  위 트레일링 손절선/익절선 이탈 여부로만 함. 이건 어느 정도 왔는지 가늠하는
+  참고용 기준선일 뿐)
 
 data/holdings.csv 컬럼:
   trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,
@@ -383,6 +387,14 @@ if __name__ == "__main__":
         if not pd.isna(atr_entry) and atr_entry > 0 and not pd.isna(buy_price):
             atr_multiple_now = (df.at[idx, 'highest_price'] - buy_price) / atr_entry
 
+        # 1차/2차 익절 참고가 (매수가 + 2xATR / 4xATR, 진입시점 ATR 고정 기준)
+        # ⚠️ 실제 매도 트리거가 아니라 참고용 기준선. 실제 매도 판단은 트레일링
+        # 손절선(익절선) 이탈 여부로만 한다.
+        tp1 = tp2 = None
+        if not pd.isna(atr_entry) and not pd.isna(buy_price):
+            tp1 = buy_price + 2 * atr_entry
+            tp2 = buy_price + 4 * atr_entry
+
         display_name = kr_name_map.get(str(code).zfill(6)) if market == 'KR' else None
 
         summary_rows.append({
@@ -392,7 +404,7 @@ if __name__ == "__main__":
             'highest_price': df.at[idx, 'highest_price'], 'stop_price': cur_stop,
             'line_label': line_label,
             'gap_pct': gap_pct, 'atr_multiple_now': atr_multiple_now,
-            'last_milestone': last_milestone,
+            'last_milestone': last_milestone, 'tp1': tp1, 'tp2': tp2,
         })
 
         df.at[idx, 'last_price'] = float(current_close)
@@ -409,11 +421,14 @@ if __name__ == "__main__":
             gap_txt = f"{r['gap_pct']:+.2f}%" if r['gap_pct'] is not None else "N/A"
             atr_txt = f"{r['atr_multiple_now']:+.2f}배" if r['atr_multiple_now'] is not None else "N/A"
             code_display = f"{r['code']} {r['name']}" if r.get('name') else r['code']
+            tp1_txt = fmt_num(r['tp1']) if r.get('tp1') is not None else "N/A"
+            tp2_txt = fmt_num(r['tp2']) if r.get('tp2') is not None else "N/A"
             lines.append(
                 f"- [{r['trade_id']}] {code_display} [{r['market']}] {r['tag']}\n"
                 f"  현재가 {fmt_num(r['close'])} {r['trend_tag']} / 매수가 {fmt_num(r['buy_price'])} (손익 {pnl_txt})\n"
                 f"  최고가 {fmt_num(r['highest_price'])} / {r['line_label']} {fmt_num(r['stop_price'])} (괴리율 {gap_txt})\n"
-                f"  ATR배수 {atr_txt} (직전 마일스톤 {r['last_milestone']}배)"
+                f"  ATR배수 {atr_txt} (직전 마일스톤 {r['last_milestone']}배)\n"
+                f"  1차 익절참고가(2×ATR) {tp1_txt} / 2차 익절참고가(4×ATR) {tp2_txt}"
             )
         send_long_message("\n".join(lines))
 
