@@ -16,10 +16,16 @@ NameError 발생하던 문제 수정 + 전체 재작성):
 - atr_entry / stop_price가 NaN인 종목은 실행 시작 시 자동 재계산해서 채워 넣음
 - fmt_num()은 NaN/None이 들어와도 죽지 않고 "N/A" 반환
 - 매수가 대비 현재가 등락을 🔴▲ / 🔵▼ / 🟡➖ / 🆕 로 표시
+- 트레일링 라인이 매수가를 처음 넘어서는 순간 "익절선 확정" 1회 알림
+  (터틀 시스템엔 목표가가 없고, 이 라인이 손절선→익절선으로 성격이 바뀌는 게
+  사실상의 "익절 기준"임)
+- 트레일링 라인 이탈 시, 그 라인이 매수가 이상이면 "익절 도달", 미만이면
+  "손절 도달"로 구분해서 알림
+- 요약/이벤트 메시지에서 라인 이름을 상황에 맞게 "손절선"/"익절선"으로 자동 표시
 
 data/holdings.csv 컬럼:
   trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,
-  last_milestone,status,last_price
+  last_milestone,status,last_price,breakeven_notified
   market 값: KR(국내) / US(미국) / COIN(빗썸)
   status 값: active(감시중) / stop_hit(손절확정, sell 대기) / closed_manual(수동청산)
 """
@@ -34,11 +40,12 @@ import FinanceDataReader as fdr
 import yfinance as yf
 from datetime import datetime, timedelta, time as dtime
 from zoneinfo import ZoneInfo
-from common import notify_telegram, send_long_message, calc_atr
+from common import notify_telegram, send_long_message, calc_atr, fetch_with_retry
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
-           'highest_price', 'stop_price', 'last_milestone', 'status', 'last_price']
+           'highest_price', 'stop_price', 'last_milestone', 'status', 'last_price',
+           'breakeven_notified']
 NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price',
                     'last_milestone', 'last_price']
 ATR_MULTIPLIER = 2
@@ -148,36 +155,48 @@ def calc_atr_from_history(market, code, period=20):
 
 def get_kr_name_map(codes):
     """국장 보유종목의 코드->이름 매핑을 한 번에 조회한다.
+    시장별 리스트 조회는 공용 재시도 헬퍼(fetch_with_retry)를 사용 (15초 간격 최대 3회).
     실패하거나 못 찾은 코드는 매핑에서 빠지고, 사용하는 쪽에서 코드만 표시하도록 fallback."""
     if not codes:
         return {}
-    try:
-        name_map = {}
-        for market in ('KOSPI', 'KOSDAQ', 'KONEX'):
-            listing = fdr.StockListing(market)
-            if 'Code' in listing.columns and 'Name' in listing.columns:
-                for _, r in listing[['Code', 'Name']].iterrows():
-                    name_map[str(r['Code']).zfill(6)] = r['Name']
-        return name_map
-    except Exception as e:
-        print(f"국장 종목명 조회 실패 (코드만 표시됩니다): {e}")
-        return {}
+    name_map = {}
+    for market in ('KOSPI', 'KOSDAQ', 'KONEX'):
+        listing = fetch_with_retry(
+            lambda m=market: fdr.StockListing(m),
+            retry_count=3, wait_sec=15, label=f"{market} 종목명 리스트",
+        )
+        if listing is None:
+            continue  # 이 시장 이름 조회만 실패, 나머지는 계속 진행 (전체를 죽이지 않음)
+        if 'Code' in listing.columns and 'Name' in listing.columns:
+            for _, r in listing[['Code', 'Name']].iterrows():
+                name_map[str(r['Code']).zfill(6)] = r['Name']
+    return name_map
 
 
-def build_status_tag(close, stop_price):
-    """손절선까지 괴리율 기준으로 상태 태그를 부여한다.
-    - 현재가 <= 손절가: ⚠️ 손절선 이탈
-    - 괴리율 <= 2.0%: 🔶 손절선 임박
+def build_line_label(stop_price, buy_price):
+    """트레일링 라인이 지금 손절선 역할인지 익절선(손익확정) 역할인지 판정한다.
+    터틀 시스템엔 별도 목표가가 없고, 이 라인이 매수가를 넘어서는 순간부터
+    '더 이상 손해 볼 일 없는' 익절선으로 전환된다."""
+    if pd.isna(stop_price) or pd.isna(buy_price):
+        return "손절선"
+    return "익절선" if stop_price >= buy_price else "손절선"
+
+
+def build_status_tag(close, stop_price, buy_price=None):
+    """라인까지 괴리율 기준으로 상태 태그를 부여한다.
+    - 현재가 <= 라인: ⚠️ 손절선 이탈 / 🎯 익절선 이탈(라인이 매수가 이상이면)
+    - 괴리율 <= 2.0%: 🔶 손절선 임박 / 🔶 익절선 임박
     - 그 외: 🟢 정상
     """
     try:
         if close is None or stop_price is None or pd.isna(close) or pd.isna(stop_price) or stop_price == 0:
             return "⬜ 상태미확인"
+        label = build_line_label(stop_price, buy_price) if buy_price is not None else "손절선"
         if close <= stop_price:
-            return "⚠️ 손절선 이탈"
+            return "🎯 익절선 이탈" if label == "익절선" else "⚠️ 손절선 이탈"
         gap_pct = (close - stop_price) / stop_price * 100
         if gap_pct <= 2.0:
-            return "🔶 손절선 임박"
+            return f"🔶 {label} 임박"
         return "🟢 정상"
     except Exception:
         return "⬜ 상태미확인"
@@ -271,6 +290,8 @@ if __name__ == "__main__":
         stop_price = row['stop_price']
         last_milestone = int(row['last_milestone']) if pd.notna(row['last_milestone']) else 0
         last_price = row['last_price'] if not pd.isna(row['last_price']) else None
+        breakeven_notified = str(row.get('breakeven_notified')) == 'True'
+        stop_price_before_update = stop_price
 
         # active 상태에서만 트레일링/마일스톤/손절판정 진행
         # (stop_hit은 재판정 없이 감시만 계속 → 반복 손절알림 방지)
@@ -283,6 +304,23 @@ if __name__ == "__main__":
                     stop_price = new_stop
                 df.at[idx, 'highest_price'] = float(highest_price)
                 df.at[idx, 'stop_price'] = round(float(stop_price), 4)
+                changed = True
+
+            # 1-1) 트레일링 라인이 매수가를 처음 넘어서는 순간 = 익절선 확정 (1회 알림)
+            # 터틀 시스템엔 목표가가 없고, 이 라인이 매수가 위로 올라오는 순간부터
+            # "이탈해도 더 이상 손해가 아닌" 익절선으로 성격이 바뀐다.
+            cur_stop_val = df.at[idx, 'stop_price']
+            if (not breakeven_notified and not pd.isna(cur_stop_val) and not pd.isna(buy_price)
+                    and (pd.isna(stop_price_before_update) or stop_price_before_update < buy_price)
+                    and cur_stop_val >= buy_price):
+                notify_telegram(
+                    f"[{market}] 익절선 확정! (손익분기 돌파)\n"
+                    f"거래번호 {trade_id} - {code}\n"
+                    f"매수가 {fmt_num(buy_price)} / 현재 익절선(트레일링) {fmt_num(cur_stop_val)}\n"
+                    f"이제부터 이 선을 이탈해도 손해가 아닌 이익 확정 매도가 됩니다."
+                )
+                df.at[idx, 'breakeven_notified'] = True
+                breakeven_notified = True
                 changed = True
 
             # 2) ATR 배수 마일스톤 체크 (정수배 최초 도달시 1회, 매도신호 아님)
@@ -301,18 +339,21 @@ if __name__ == "__main__":
                     changed = True
                     print(f"거래 {trade_id}({code}) {current_multiple}배 마일스톤 알림 전송")
 
-            # 3) 트레일링 손절선 이탈 체크 (진짜 매도 신호, 최초 1회만 알림)
+            # 3) 트레일링 라인 이탈 체크 (진짜 매도 신호, 최초 1회만 알림)
+            # 라인이 매수가보다 위에 있으면 이건 손절이 아니라 '익절 확정' 매도임
             cur_stop = df.at[idx, 'stop_price']
             if not pd.isna(cur_stop) and ohlc['low'] <= cur_stop:
                 if not pd.isna(buy_price) and buy_price != 0:
                     pnl_txt = f"{(ohlc['close'] - buy_price) / buy_price * 100:+.2f}%"
                 else:
                     pnl_txt = "N/A"
+                line_label = build_line_label(cur_stop, buy_price)
+                exit_kind = "익절 도달! (이익 확정 매도 검토)" if line_label == "익절선" else "트레일링 손절 도달! (매도 검토)"
                 notify_telegram(
-                    f"[{market}] 트레일링 손절 도달! (매도 검토)\n"
+                    f"[{market}] {exit_kind}\n"
                     f"거래번호 {trade_id} - {code}\n"
                     f"매수가 {fmt_num(buy_price)} / 최고가 {fmt_num(df.at[idx, 'highest_price'])} / "
-                    f"손절선 {fmt_num(cur_stop)} / 현재가 {fmt_num(ohlc['close'])}\n"
+                    f"{line_label} {fmt_num(cur_stop)} / 현재가 {fmt_num(ohlc['close'])}\n"
                     f"손익률 {pnl_txt}"
                 )
                 df.at[idx, 'status'] = 'stop_hit'
@@ -323,13 +364,14 @@ if __name__ == "__main__":
         # 요약용 정보 축적 (active / stop_hit 모두 포함)
         current_close = ohlc['close']
         trend_tag = build_trend_tag(current_close, buy_price)  # 매수가 기준 등락 표시
+        cur_stop = df.at[idx, 'stop_price']
+        line_label = build_line_label(cur_stop, buy_price)
         if status == 'stop_hit':
-            tag = "🔴 손절 확정 (sell 명령 대기)"
+            tag = "🟢 익절 확정 (sell 명령 대기)" if line_label == "익절선" else "🔴 손절 확정 (sell 명령 대기)"
         else:
-            tag = build_status_tag(current_close, df.at[idx, 'stop_price'])
+            tag = build_status_tag(current_close, cur_stop, buy_price)
 
         gap_pct = None
-        cur_stop = df.at[idx, 'stop_price']
         if not pd.isna(cur_stop) and cur_stop != 0:
             gap_pct = (current_close - cur_stop) / cur_stop * 100
 
@@ -348,6 +390,7 @@ if __name__ == "__main__":
             'close': current_close, 'trend_tag': trend_tag,
             'buy_price': buy_price, 'pnl_pct': pnl_pct,
             'highest_price': df.at[idx, 'highest_price'], 'stop_price': cur_stop,
+            'line_label': line_label,
             'gap_pct': gap_pct, 'atr_multiple_now': atr_multiple_now,
             'last_milestone': last_milestone,
         })
@@ -369,7 +412,7 @@ if __name__ == "__main__":
             lines.append(
                 f"- [{r['trade_id']}] {code_display} [{r['market']}] {r['tag']}\n"
                 f"  현재가 {fmt_num(r['close'])} {r['trend_tag']} / 매수가 {fmt_num(r['buy_price'])} (손익 {pnl_txt})\n"
-                f"  최고가 {fmt_num(r['highest_price'])} / 손절선 {fmt_num(r['stop_price'])} (괴리율 {gap_txt})\n"
+                f"  최고가 {fmt_num(r['highest_price'])} / {r['line_label']} {fmt_num(r['stop_price'])} (괴리율 {gap_txt})\n"
                 f"  ATR배수 {atr_txt} (직전 마일스톤 {r['last_milestone']}배)"
             )
         send_long_message("\n".join(lines))
