@@ -2,6 +2,7 @@
 """터틀 트레이딩 공통 로직 (모든 스크립트가 공유)"""
 
 import os
+import time
 import pandas as pd
 import requests
 
@@ -113,6 +114,47 @@ def send_long_message(text, chunk_size=3500):
             chunk = candidate
     if chunk:
         notify_telegram(chunk)
+
+
+def fetch_with_retry(fetch_fn, is_valid_fn=None, retry_count=3, wait_sec=15, label=""):
+    """일시적 API/네트워크 오류에 대비한 공용 재시도 헬퍼.
+
+    fetch_fn: 인자 없이 호출 가능한 함수 (실제 조회 로직을 클로저/람다로 감싸서 전달)
+    is_valid_fn: 결과값을 받아 유효한지 판단하는 함수. 기본값은 None이 아니고
+                 비어있지 않으면(DataFrame.empty / len() 기준) 유효로 간주.
+    retry_count / wait_sec: 재시도 횟수와 간격(초)
+    label: 로그에 표시할 이름 (예: "KOSPI 종목 리스트")
+
+    성공하면 결과를 그대로 반환하고, 모두 실패하면 None을 반환한다.
+    (호출부는 None 여부로 실패를 판단해서 알림/스킵 처리를 하면 됨)
+    """
+    if is_valid_fn is None:
+        def is_valid_fn(x):
+            try:
+                if x is None:
+                    return False
+                if hasattr(x, 'empty'):
+                    return not x.empty
+                if hasattr(x, '__len__'):
+                    return len(x) > 0
+                return True
+            except Exception:
+                return x is not None
+
+    last_err = None
+    for attempt in range(1, retry_count + 1):
+        try:
+            result = fetch_fn()
+            if is_valid_fn(result):
+                return result
+            last_err = "빈 결과 반환"
+        except Exception as e:
+            last_err = str(e)
+        print(f"[재시도] {label} 조회 실패 ({attempt}/{retry_count}): {last_err}")
+        if attempt < retry_count:
+            time.sleep(wait_sec)
+    print(f"[재시도] {label} 최종 실패 ({retry_count}회 시도 모두 실패)")
+    return None
 
 
 # ===== 휩쏘 필터 (System1 한정) =====
