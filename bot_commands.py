@@ -29,7 +29,7 @@ WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), 'data', 'watchlist.csv'
 # 컬럼이 잘려나가는 사고가 남 - 실제로 last_price/breakeven_notified 누락 버그 발생했었음)
 HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
                     'highest_price', 'stop_price', 'last_milestone', 'status',
-                    'last_price', 'breakeven_notified']
+                    'last_price', 'breakeven_notified', 'exit10_notified', 'exit20_notified']
 WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status']
 ATR_PERIOD = 20
 ATR_MULTIPLIER = 2
@@ -177,7 +177,8 @@ def handle_buy(args, df):
                'buy_price': buy_price, 'atr_entry': round(atr, 6),
                'highest_price': buy_price, 'stop_price': round(stop_price, 4),
                'last_milestone': 0, 'status': 'active',
-               'last_price': buy_price, 'breakeven_notified': False}
+               'last_price': buy_price, 'breakeven_notified': False,
+               'exit10_notified': False, 'exit20_notified': False}
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
 
     return df, (f"등록 완료 (거래번호 {trade_id})\n"
