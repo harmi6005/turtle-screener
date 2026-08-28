@@ -17,7 +17,7 @@ SUNDOG,SUNDOG,System1(단기),관심,False,False,False,True,5.84,8.65,7.7,4.92,1
 SUNDOG,SUNDOG,System2(중장기),관심,False,False,False,True,5.84,8.65,7.94,4.92,1.09,0.82,
 XYO,XYO,System1(단기),관심,False,False,False,True,4.82,5.3,5.2,4.02,1.019,0.25,
 XYO,XYO,System2(중장기),관심,False,False,False,True,4.82,5.3,5.2,4.0,1.019,0.25,
-DKA,DKA,System1(단기),관심,False,False,False,True,4.83,6.5,5.02,4.1,1.295,0.3,
+DKA,DKA,System1(단기),확정,False,False,False,True,4.83,6.5,5.02,4.1,1.295,0.3,5.03
 AVL,AVL,System1(단기),관심,False,False,False,True,35.45,43.3,41.53,20.75,1.043,3.76,
 AVL,AVL,System2(중장기),관심,False,False,False,True,35.45,43.3,41.53,20.75,1.043,3.76,
 SOMI,SOMI,System1(단기),관심,False,False,False,True,160.0,166.0,165.0,124.0,1.006,10.0,
