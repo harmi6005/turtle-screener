@@ -11,8 +11,8 @@ EDU,EDU,System1(단기),관심,False,False,False,True,65.27,66.17,65.87,49.28,1.
 EDU,EDU,System2(중장기),관심,False,False,False,True,65.27,66.17,65.87,49.28,1.005,4.41,
 HUNT,HUNT,System1(단기),관심,False,False,False,True,119.0,122.0,123.0,102.0,0.992,4.85,
 KAVA,KAVA,System1(단기),관심,False,False,False,True,63.3,65.79,65.0,55.98,1.012,2.19,
-TURBO,TURBO,System1(단기),관심,False,False,False,True,1.54,1.58,1.54,1.05,1.029,0.11,
-TURBO,TURBO,System2(중장기),관심,False,False,False,True,1.54,1.58,1.54,1.05,1.029,0.11,
+TURBO,TURBO,System1(단기),탈락,False,False,False,True,1.54,1.58,1.54,1.05,1.029,0.11,
+TURBO,TURBO,System2(중장기),확정,False,False,False,True,1.54,1.58,1.54,1.05,1.029,0.11,1.54
 SUNDOG,SUNDOG,System1(단기),관심,False,False,False,True,5.84,8.65,7.7,4.92,1.124,0.82,
 SUNDOG,SUNDOG,System2(중장기),관심,False,False,False,True,5.84,8.65,7.94,4.92,1.09,0.82,
 XYO,XYO,System1(단기),관심,False,False,False,True,4.82,5.3,5.2,4.02,1.019,0.25,
