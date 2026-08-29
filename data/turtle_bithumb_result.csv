@@ -8,7 +8,7 @@ KAVA,KAVA,System1(단기),탈락,False,False,False,True,63.38,65.79,65.0,55.98,1
 SCR,SCR,System1(단기),탈락,False,False,False,True,33.13,34.27,34.56,27.27,0.992,2.5,
 INIT,INIT,System1(단기),관심,False,False,False,True,77.39,83.0,83.08,67.55,0.999,4.86,
 C,C,System1(단기),청산,False,False,True,False,85.59,87.5,102.0,85.81,0.858,6.54,
-SIGN,SIGN,System1(단기),관심,False,False,False,True,11.52,11.54,11.61,9.43,0.994,0.65,
+SIGN,SIGN,System1(단기),탈락,False,False,False,True,11.52,11.54,11.61,9.43,0.994,0.65,
 DOOD,DOOD,System1(단기),관심,False,False,False,True,1.86,2.1,2.11,1.63,0.994,0.14,
 ZKP,ZKP,System1(단기),관심,False,False,False,True,71.16,83.96,73.41,54.1,1.144,5.04,
 ZKP,ZKP,System2(중장기),관심,False,False,False,True,71.16,83.96,80.5,53.89,1.043,5.04,
