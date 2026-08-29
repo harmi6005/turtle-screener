@@ -41,7 +41,7 @@ SIGN,SIGN,System1(단기),관심,False,False,False,True,11.39,11.6,11.49,9.03,1.
 BTR,BTR,System1(단기),탈락,False,False,False,True,235.0,261.0,248.0,28.46,1.052,22.68,
 BTR,BTR,System2(중장기),탈락,False,False,False,True,235.0,261.0,248.0,28.25,1.052,22.68,
 HUMA,HUMA,System1(단기),청산,False,False,True,False,28.08,36.82,38.74,28.1,0.95,2.57,
-DEXE,DEXE,System1(단기),관심,False,False,False,True,3255.0,3747.0,3272.0,2500.0,1.145,241.8,
+DEXE,DEXE,System1(단기),탈락,False,False,False,True,3255.0,3747.0,3272.0,2500.0,1.145,241.8,
 SOMI,SOMI,System1(단기),관심,False,False,False,True,154.0,166.0,165.0,124.0,1.006,10.15,
 WET,WET,System1(단기),청산,False,False,True,False,81.45,84.81,108.0,83.53,0.785,5.26,
 WET,WET,System2(중장기),청산,False,False,True,False,81.45,84.81,108.0,83.53,0.785,5.26,
