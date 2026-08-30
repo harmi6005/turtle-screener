@@ -17,7 +17,7 @@ LISTA,LISTA,System1(단기),탈락,False,False,False,True,105.0,109.0,107.0,85.3
 LISTA,LISTA,System2(중장기),탈락,False,False,False,True,105.0,109.0,107.0,76.0,1.019,7.59,
 SCR,SCR,System1(단기),관심,False,False,False,True,31.87,38.64,34.56,27.27,1.118,2.75,
 INIT,INIT,System1(단기),관심,False,False,False,True,80.8,83.0,83.08,67.55,0.999,4.86,
-SXT,SXT,System1(단기),관심,False,False,False,True,11.87,12.06,12.15,9.4,0.993,0.75,
+SXT,SXT,System1(단기),확정,False,False,False,True,11.87,12.06,12.15,9.4,0.993,0.75,12.17
 DOOD,DOOD,System1(단기),관심,False,False,False,True,1.84,2.1,2.11,1.63,0.994,0.14,
 ZKP,ZKP,System2(중장기),관심,False,False,False,True,77.35,86.56,80.5,53.89,1.075,5.33,
 MBX,MBX,System1(단기),확정,False,False,False,True,41.27,54.45,45.56,28.2,1.195,4.25,45.75
