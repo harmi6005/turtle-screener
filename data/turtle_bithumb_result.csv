@@ -22,7 +22,7 @@ SCR,SCR,System1(단기),관심,False,False,False,True,32.26,38.64,34.56,27.27,1.
 INIT,INIT,System1(단기),관심,False,False,False,True,81.56,83.16,83.08,67.55,1.001,4.87,
 SXT,SXT,System1(단기),진입,True,True,False,False,12.21,12.26,12.15,9.4,1.009,0.76,
 DOOD,DOOD,System1(단기),관심,False,False,False,True,1.87,2.1,2.11,1.63,0.994,0.14,
-ZKP,ZKP,System2(중장기),관심,False,False,False,True,80.43,86.56,80.5,53.89,1.075,5.33,
+ZKP,ZKP,System2(중장기),탈락,False,False,False,True,80.43,86.56,80.5,53.89,1.075,5.33,
 MBX,MBX,System1(단기),확정,False,False,False,True,41.27,54.45,45.56,28.2,1.195,4.25,45.75
 MBX,MBX,System2(중장기),확정,False,False,False,True,41.27,54.45,45.56,11.35,1.195,4.25,45.75
 PUFFER,PUFFER,System1(단기),확정,False,False,False,True,22.71,24.41,23.0,16.22,1.061,1.7,23.06
