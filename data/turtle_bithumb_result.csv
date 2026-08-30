@@ -1,6 +1,6 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
-EL,EL,System1(단기),관심,False,False,False,True,2.1,2.4,2.21,1.45,1.083,0.19,
-EL,EL,System2(중장기),관심,False,False,False,True,2.1,2.4,2.21,1.44,1.083,0.19,
+EL,EL,System1(단기),탈락,False,False,False,True,2.1,2.4,2.21,1.45,1.083,0.19,
+EL,EL,System2(중장기),탈락,False,False,False,True,2.1,2.4,2.21,1.44,1.083,0.19,
 CKB,CKB,System2(중장기),진입,True,True,False,False,1.45,1.46,1.45,1.12,1.005,0.06,
 CELR,CELR,System1(단기),관심,False,False,False,True,3.34,3.5,3.41,2.73,1.025,0.2,
 CELR,CELR,System2(중장기),관심,False,False,False,True,3.34,3.5,3.41,2.65,1.025,0.2,
@@ -16,12 +16,12 @@ GMX,GMX,System2(중장기),관심,False,False,False,True,10620.0,11340.0,11300.0
 EDU,EDU,System1(단기),관심,False,False,False,True,66.11,68.81,68.03,49.82,1.011,4.34,
 EDU,EDU,System2(중장기),관심,False,False,False,True,66.11,68.81,68.03,49.28,1.011,4.34,
 MAGIC,MAGIC,System1(단기),진입,True,True,False,False,66.84,67.16,66.7,50.0,1.007,3.25,
-LISTA,LISTA,System1(단기),관심,False,False,False,True,104.0,115.0,107.0,85.31,1.075,7.89,
-LISTA,LISTA,System2(중장기),관심,False,False,False,True,104.0,115.0,107.0,76.0,1.075,7.89,
-SCR,SCR,System1(단기),관심,False,False,False,True,32.26,38.64,34.56,27.27,1.118,2.75,
+LISTA,LISTA,System1(단기),탈락,False,False,False,True,104.0,115.0,107.0,85.31,1.075,7.89,
+LISTA,LISTA,System2(중장기),탈락,False,False,False,True,104.0,115.0,107.0,76.0,1.075,7.89,
+SCR,SCR,System1(단기),탈락,False,False,False,True,32.26,38.64,34.56,27.27,1.118,2.75,
 INIT,INIT,System1(단기),관심,False,False,False,True,81.56,83.16,83.08,67.55,1.001,4.87,
 SXT,SXT,System1(단기),진입,True,True,False,False,12.21,12.26,12.15,9.4,1.009,0.76,
-DOOD,DOOD,System1(단기),관심,False,False,False,True,1.87,2.1,2.11,1.63,0.994,0.14,
+DOOD,DOOD,System1(단기),탈락,False,False,False,True,1.87,2.1,2.11,1.63,0.994,0.14,
 ZKP,ZKP,System2(중장기),탈락,False,False,False,True,80.43,86.56,80.5,53.89,1.075,5.33,
 MBX,MBX,System1(단기),확정,False,False,False,True,41.27,54.45,45.56,28.2,1.195,4.25,45.75
 MBX,MBX,System2(중장기),확정,False,False,False,True,41.27,54.45,45.56,11.35,1.195,4.25,45.75
