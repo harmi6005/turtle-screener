@@ -52,7 +52,7 @@ KAITO,KAITO,System1(단기),청산,False,False,True,False,414.0,431.0,962.0,418.
 C,C,System1(단기),청산,False,False,True,False,83.38,85.8,102.0,84.02,0.841,5.6,
 C,C,System2(중장기),청산,False,False,True,False,83.38,85.8,111.0,84.02,0.773,5.6,
 XAUT,XAUT,System1(단기),청산,False,False,True,False,6121000.0,6195000.0,6482000.0,6160000.0,0.956,92350.0,
-SIGN,SIGN,System1(단기),관심,False,False,False,True,11.78,12.5,12.07,9.61,1.036,0.7,
+SIGN,SIGN,System1(단기),탈락,False,False,False,True,11.78,12.5,12.07,9.61,1.036,0.7,
 HEMI,HEMI,System1(단기),탈락,False,False,False,True,20.92,22.07,21.71,9.41,1.017,3.27,
 HEMI,HEMI,System2(중장기),탈락,False,False,False,True,20.92,22.07,21.71,6.4,1.017,3.27,
 CUDIS,CUDIS,System1(단기),관심,False,False,False,True,4.99,7.08,6.29,3.88,1.126,0.69,
