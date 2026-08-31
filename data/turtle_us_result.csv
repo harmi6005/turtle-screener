@@ -66,8 +66,8 @@ EXE,EXE,System1(단기),탈락,False,False,False,True,98.16,99.43,98.32,92.63,1.
 EXE,EXE,System2(중장기),확정,False,False,False,True,98.16,99.43,98.32,89.98,1.011,2.41,99.45
 EXPD,EXPD,System1(단기),관심,False,False,False,True,190.97,192.28,191.79,185.02,1.003,4.63,
 EXPD,EXPD,System2(중장기),관심,False,False,False,True,190.97,192.28,191.79,165.77,1.003,4.63,
-FDS,FDS,System1(단기),관심,False,False,False,True,308.98,309.79,309.39,274.95,1.001,10.38,
-FDS,FDS,System2(중장기),관심,False,False,False,True,308.98,309.79,309.39,254.99,1.001,10.38,
+FDS,FDS,System1(단기),탈락,False,False,False,True,308.98,309.79,309.39,274.95,1.001,10.38,
+FDS,FDS,System2(중장기),탈락,False,False,False,True,308.98,309.79,309.39,254.99,1.001,10.38,
 FICO,FICO,System1(단기),탈락,False,False,False,True,1153.57,1177.0,1188.8,1060.0,0.99,46.89,
 FAST,FAST,System1(단기),청산,False,False,True,False,49.78,51.52,52.92,50.22,0.974,1.1,
 FERG,FERG,System1(단기),청산,False,False,True,False,228.49,234.68,266.84,231.23,0.879,7.65,
