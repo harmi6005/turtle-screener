@@ -22,7 +22,7 @@ CFG,CFG,System1(단기),청산,False,False,True,False,164.0,170.0,233.0,166.0,0.
 SKY,SKY,System1(단기),관심,False,False,False,True,97.01,98.1,97.84,82.93,1.003,3.94,
 SKY,SKY,System2(중장기),관심,False,False,False,True,97.01,98.1,97.84,71.2,1.003,3.94,
 INIT,INIT,System1(단기),관심,False,False,False,True,79.49,82.97,83.16,67.55,0.998,4.99,
-ERA,ERA,System1(단기),관심,False,False,False,True,88.72,105.0,95.89,74.72,1.095,6.1,
+ERA,ERA,System1(단기),확정,False,False,False,True,88.72,105.0,95.89,74.72,1.095,6.1,95.99
 FLOCK,FLOCK,System1(단기),관심,False,False,False,True,48.39,51.3,50.3,42.05,1.02,3.51,
 C,C,System1(단기),청산,False,False,True,False,83.89,85.8,102.0,84.02,0.841,5.44,
 C,C,System2(중장기),청산,False,False,True,False,83.89,85.8,111.0,84.02,0.773,5.44,
