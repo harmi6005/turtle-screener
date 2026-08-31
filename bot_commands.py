@@ -11,6 +11,10 @@ telegram_listener.py(폴링 방식, 5분마다)와 webhook_handler.py(웹훅 방
 - handle_list: stop_hit 상태 거래에 [손절/익절 확정, 매도대기] 태그 표시
 - 명령어확인/도움말 명령어 추가
 - dispatch_lines(): 한 메시지에 여러 줄 명령어가 와도 줄 단위로 각각 처리
+- ⚠️ 신규: "보유종목 초기화" 명령 추가 (holdings.csv 전체 삭제). 되돌릴 수 없는
+  파괴적 작업이라 2단계 확인 방식으로 구현함:
+  1) "보유종목 초기화" -> 현재 건수만 알려주고 실제로는 아무것도 안 지움
+  2) "보유종목 초기화 확인" -> 이때 비로소 전부 삭제
 """
 
 import os
@@ -38,6 +42,8 @@ START_WORDS = ('추적시작',)
 STOP_WORDS = ('추적종료', '추적해제', '추적중지')
 CHECK_WORDS = ('추적확인', '추적목록')
 HELP_WORDS = ('명령어확인', '명령어 확인', '도움말', 'help', '/help')
+RESET_WORD = '보유종목 초기화'
+RESET_CONFIRM_WORD = '보유종목 초기화 확인'
 
 HELP_TEXT = (
     "사용 가능한 명령어\n\n"
@@ -50,6 +56,10 @@ HELP_TEXT = (
     "  매도가를 넣으면 손익률 자동 계산\n\n"
     "list\n"
     "  현재 감시 중인 보유거래 목록\n\n"
+    "보유종목 초기화\n"
+    "  보유종목 전체 삭제 (되돌릴 수 없음, 2단계 확인 필요)\n"
+    "  1) '보유종목 초기화' 입력 -> 현재 건수 안내만 됨\n"
+    "  2) '보유종목 초기화 확인' 입력 -> 이때 실제로 전부 삭제\n\n"
     "코드 추적시작 / 코드 추적종료(추적해제/추적중지)\n"
     "  예) 005930 추적시작\n"
     "  매수 여부와 상관없이 특정 종목 신호만 계속 감시\n\n"
@@ -235,6 +245,26 @@ def handle_list(df):
     return "\n".join(lines)
 
 
+def handle_holdings_reset_request(df):
+    """1단계: 실제로 지우지 않고 현재 건수만 알려주며 확인을 요구한다."""
+    total = len(df)
+    if total == 0:
+        return "현재 보유종목이 없어서 초기화할 게 없어요."
+    active_cnt = len(df[df['status'] != 'closed_manual'])
+    return (f"현재 보유종목이 총 {total}건 있어요 (활성 {active_cnt}건 포함).\n"
+            f"⚠️ 전부 삭제되며 되돌릴 수 없어요.\n"
+            f"정말 초기화하려면 '{RESET_CONFIRM_WORD}'을(를) 다시 입력해주세요.")
+
+
+def handle_holdings_reset_confirm(df):
+    """2단계: 실제 삭제. holdings.csv를 빈 상태(헤더만)로 되돌린다."""
+    total = len(df)
+    if total == 0:
+        return df, "현재 보유종목이 없어서 초기화할 게 없어요."
+    new_df = pd.DataFrame(columns=HOLDINGS_COLUMNS)
+    return new_df, f"보유종목 {total}건을 전부 초기화했어요."
+
+
 # ===== 감시목록(watchlist / 추적) =====
 
 def load_watchlist():
@@ -316,6 +346,14 @@ def dispatch(text, df, wdf):
 
     if text in HELP_WORDS or text.lower() in HELP_WORDS:
         return df, wdf, HELP_TEXT, True, False, False
+
+    # ⚠️ 파괴적 명령이라 cmd 파싱 전에 전체 문장 그대로 먼저 매칭한다.
+    if text == RESET_CONFIRM_WORD:
+        df, reply = handle_holdings_reset_confirm(df)
+        return df, wdf, reply, False, True, False
+    if text == RESET_WORD:
+        reply = handle_holdings_reset_request(df)
+        return df, wdf, reply, False, False, False
 
     parts = text.split()
     cmd = parts[0].lower().lstrip('/')
