@@ -18,7 +18,7 @@ APT,APT,System2(중장기),청산,False,False,True,False,720.0,758.0,1040.0,724.
 BLUR,BLUR,System1(단기),관심,False,False,False,True,21.77,23.55,23.6,19.28,0.998,1.09,
 FLUX,FLUX,System1(단기),관심,False,False,False,True,67.15,73.41,68.33,55.87,1.074,3.6,
 FLUX,FLUX,System2(중장기),관심,False,False,False,True,67.15,73.41,71.63,53.31,1.025,3.6,
-WAXL,WAXL,System2(중장기),관심,False,False,False,True,63.23,69.19,66.65,47.67,1.038,3.8,
+WAXL,WAXL,System2(중장기),탈락,False,False,False,True,63.23,69.19,66.65,47.67,1.038,3.8,
 MNT,MNT,System1(단기),탈락,False,False,False,True,776.0,809.0,776.0,626.0,1.043,41.9,
 MNT,MNT,System2(중장기),탈락,False,False,False,True,776.0,809.0,776.0,593.0,1.043,41.9,
 TIA,TIA,System1(단기),청산,False,False,True,False,449.0,475.0,578.0,455.0,0.822,31.5,
