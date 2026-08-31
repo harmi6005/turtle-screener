@@ -42,8 +42,8 @@ FIX,FIX,System2(중장기),청산,False,False,True,False,1518.73,1611.01,2071.24
 CEG,CEG,System1(단기),탈락,False,False,False,True,276.75,284.19,286.56,264.82,0.992,9.39,
 CEG,CEG,System2(중장기),탈락,False,False,False,True,276.75,284.19,286.56,260.27,0.992,9.39,
 CTVA,CTVA,System1(단기),확정,False,False,False,True,83.9,84.13,84.6,75.46,0.994,2.12,84.75
-CRWD,CRWD,System1(단기),관심,False,False,False,True,218.4,228.69,229.08,181.24,0.998,11.37,
-CRWD,CRWD,System2(중장기),관심,False,False,False,True,218.4,228.69,229.08,181.24,0.998,11.37,
+CRWD,CRWD,System1(단기),탈락,False,False,False,True,218.4,228.69,229.08,181.24,0.998,11.37,
+CRWD,CRWD,System2(중장기),탈락,False,False,False,True,218.4,228.69,229.08,181.24,0.998,11.37,
 CSX,CSX,System1(단기),탈락,False,False,False,True,51.28,51.95,52.15,50.0,0.996,0.88,
 CMI,CMI,System1(단기),청산,False,False,True,False,564.85,580.24,658.56,566.49,0.881,19.57,
 CMI,CMI,System2(중장기),청산,False,False,True,False,564.85,580.24,735.02,566.49,0.789,19.57,
@@ -62,8 +62,8 @@ EFX,EFX,System2(중장기),탈락,False,False,False,True,194.35,197.9,196.45,171
 EL,EL,System1(단기),탈락,False,False,False,True,103.39,107.43,108.38,83.85,0.991,3.56,
 EL,EL,System2(중장기),탈락,False,False,False,True,103.39,107.43,108.38,83.13,0.991,3.56,
 EG,EG,System1(단기),탈락,False,False,False,True,377.61,381.99,380.85,362.58,1.003,7.22,
-EXE,EXE,System1(단기),관심,False,False,False,True,98.16,99.43,98.32,92.63,1.011,2.41,
-EXE,EXE,System2(중장기),관심,False,False,False,True,98.16,99.43,98.32,89.98,1.011,2.41,
+EXE,EXE,System1(단기),탈락,False,False,False,True,98.16,99.43,98.32,92.63,1.011,2.41,
+EXE,EXE,System2(중장기),확정,False,False,False,True,98.16,99.43,98.32,89.98,1.011,2.41,99.45
 EXPD,EXPD,System1(단기),관심,False,False,False,True,190.97,192.28,191.79,185.02,1.003,4.63,
 EXPD,EXPD,System2(중장기),관심,False,False,False,True,190.97,192.28,191.79,165.77,1.003,4.63,
 FDS,FDS,System1(단기),관심,False,False,False,True,308.98,309.79,309.39,274.95,1.001,10.38,
