@@ -56,7 +56,7 @@ CTSH,CTSH,System1(단기),관심,False,False,False,True,64.81,64.86,65.38,56.22,
 CTSH,CTSH,System2(중장기),관심,False,False,False,True,64.81,64.86,65.38,52.49,0.992,2.25,
 COO,COO,System1(단기),청산,False,False,True,False,69.81,70.75,78.11,70.66,0.906,1.51,
 COO,COO,System2(중장기),청산,False,False,True,False,69.81,70.75,78.11,70.66,0.906,1.51,
-CTVA,CTVA,System1(단기),관심,False,False,False,True,84.54,85.24,84.6,75.46,1.008,2.05,
+CTVA,CTVA,System1(단기),확정,False,False,False,True,84.54,85.24,84.6,75.46,1.008,2.05,84.66
 CMI,CMI,System1(단기),청산,False,False,True,False,560.98,570.0,658.56,561.47,0.866,19.07,
 CMI,CMI,System2(중장기),청산,False,False,True,False,560.98,570.0,735.02,561.47,0.775,19.07,
 DE,DE,System1(단기),관심,False,False,False,True,650.29,657.17,660.7,579.31,0.995,19.32,
