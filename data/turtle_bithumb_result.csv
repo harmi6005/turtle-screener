@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
-SNX,SNX,System1(단기),관심,False,False,False,True,348.0,419.0,397.0,292.0,1.055,32.35,
+SNX,SNX,System1(단기),탈락,False,False,False,True,348.0,419.0,397.0,292.0,1.055,32.35,
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BOBA,BOBA,System1(단기),관심,False,False,False,True,28.3,30.8,31.1,24.92,0.99,2.02,
 BTT,BTT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
