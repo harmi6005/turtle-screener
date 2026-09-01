@@ -7,8 +7,8 @@ ACN,ACN,System1(단기),탈락,False,False,False,True,189.76,191.46,191.9,169.75
 ACN,ACN,System2(중장기),탈락,False,False,False,True,189.76,191.46,191.9,157.76,0.998,7.3,
 ADBE,ADBE,System1(단기),관심,False,False,False,True,292.79,294.13,294.09,251.2,1.0,10.17,
 ADBE,ADBE,System2(중장기),관심,False,False,False,True,292.79,294.13,294.09,245.46,1.0,10.17,
-AES,AES,System1(단기),관심,False,False,False,True,14.74,14.76,14.79,14.7,0.998,0.05,
-AES,AES,System2(중장기),관심,False,False,False,True,14.74,14.76,14.79,14.67,0.998,0.05,
+AES,AES,System1(단기),확정,False,False,False,True,14.74,14.76,14.79,14.7,0.998,0.05,14.8
+AES,AES,System2(중장기),탈락,False,False,False,True,14.74,14.76,14.79,14.67,0.998,0.05,
 APD,APD,System1(단기),탈락,False,False,False,True,309.46,313.93,311.51,297.85,1.008,6.01,
 APD,APD,System2(중장기),탈락,False,False,False,True,309.46,313.93,314.87,288.0,0.997,6.01,
 ALLE,ALLE,System1(단기),청산,False,False,True,False,155.25,156.82,170.87,156.37,0.918,3.73,
