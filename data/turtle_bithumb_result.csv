@@ -64,7 +64,7 @@ HEMI,HEMI,System1(단기),관심,False,False,False,True,19.51,30.9,23.99,9.41,1.
 HEMI,HEMI,System2(중장기),관심,False,False,False,True,19.51,30.9,23.99,6.4,1.288,4.26,
 LA,LA,System1(단기),탈락,False,False,False,True,86.96,95.0,94.64,72.55,1.004,8.24,
 NEWT,NEWT,System1(단기),청산,False,False,True,False,55.48,56.59,64.02,55.5,0.884,3.29,
-SYRUP,SYRUP,System1(단기),관심,False,False,False,True,276.0,285.0,286.0,236.0,0.997,16.75,
+SYRUP,SYRUP,System1(단기),탈락,False,False,False,True,276.0,285.0,286.0,236.0,0.997,16.75,
 OPEN,OPEN,System1(단기),청산,False,False,True,False,169.0,184.0,294.0,176.0,0.626,16.0,
 OPEN,OPEN,System2(중장기),청산,False,False,True,False,169.0,184.0,330.0,176.0,0.558,16.0,
 HOLO,HOLO,System1(단기),청산,False,False,True,False,85.18,88.52,108.0,85.37,0.82,8.41,
