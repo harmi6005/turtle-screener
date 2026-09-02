@@ -336,4 +336,4 @@ ZBRA,ZBRA,System1(단기),청산,False,False,True,False,343.7,354.74,386.23,350.
 ZBH,ZBH,System1(단기),탈락,False,False,False,True,99.4,102.86,102.12,98.09,1.007,2.72,
 ZBH,ZBH,System2(중장기),탈락,False,False,False,True,99.4,102.86,102.12,94.28,1.007,2.72,
 BG,BG,System1(단기),확정,False,False,False,True,116.21,118.34,118.74,106.57,0.997,3.77,119.07
-IBKR,IBKR,System1(단기),확정,False,False,False,True,93.05,94.78,94.6,88.0,1.002,3.08,95.01
+IBKR,IBKR,System1(단기),확정이탈,False,False,False,True,93.05,94.78,94.6,88.0,1.002,3.08,95.01
