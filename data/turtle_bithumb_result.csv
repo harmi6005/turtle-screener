@@ -41,7 +41,7 @@ SKY,SKY,System1(단기),관심,False,False,False,True,96.51,101.0,98.2,86.72,1.0
 SKY,SKY,System2(중장기),관심,False,False,False,True,96.51,101.0,98.2,71.2,1.029,4.74,
 CARV,CARV,System1(단기),관심,False,False,False,True,48.41,53.01,50.63,42.44,1.047,2.69,
 CARV,CARV,System2(중장기),관심,False,False,False,True,48.41,53.01,52.2,39.46,1.016,2.69,
-SAFE,SAFE,System1(단기),관심,False,False,False,True,133.0,136.0,136.0,118.0,1.0,7.55,
+SAFE,SAFE,System1(단기),탈락,False,False,False,True,133.0,136.0,136.0,118.0,1.0,7.55,
 MOODENG,MOODENG,System1(단기),청산,False,False,True,False,53.14,55.18,72.88,53.33,0.757,4.98,
 DBR,DBR,System1(단기),청산,False,False,True,False,19.8,20.1,22.65,19.94,0.887,0.82,
 DBR,DBR,System2(중장기),청산,False,False,True,False,19.8,20.1,25.77,19.94,0.78,0.82,
