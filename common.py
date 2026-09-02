@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
-"""터틀 트레이딩 공통 로직 (모든 스크립트가 공유)"""
+"""터틀 트레이딩 공통 로직 (모든 스크립트가 공유)
+
+[2026-09-02 변경사항]
+- pick_top_entry(1개 선정) -> pick_top_entries(최대 10개 선정)로 교체
+- 선정 기준: 기존 "초과율 최솟값(가장 신선한 돌파)" -> "돌파강도(ATR배수) 최댓값(가장 강하게 뚫은 순)"
+- 선정 가격 조건: 최종 픽 대상은 종가 10,000원 이하 종목만 (국장/미장/코인 전체 공통 적용)
+"""
 
 import os
-import time
 import pandas as pd
 import requests
 
@@ -12,6 +17,12 @@ SYSTEMS = {
 }
 WATCH_RATIO = 0.99  # 당일 고가가 N일 최고가의 99% 이상이면 관심(돌파임박)
 MAX_CHASE_RATIO = 0.005  # 진입가 대비 현재가가 0.5% 넘게 벌어지면 추격매수로 간주해 스킵
+
+# ===== 최종 픽(알림) 설정 =====
+# 2026-09-02: 1픽 -> 10픽으로 확대, 가격조건은 10,000원 이하, 정렬기준은 돌파강도(ATR배수) 내림차순
+PICK_COUNT = 10
+PICK_PRICE_MAX = 10000
+PICK_PRICE_MIN = None  # 하한 없음 (필요시 숫자로 지정)
 
 
 def calc_atr(df, period=20):
@@ -42,6 +53,7 @@ def check_turtle_breakout(df, entry_period, exit_period, watch_ratio=0.9):
 
     # '최초 돌파' 여부: 최근 entry_period(20일 또는 55일) 거래일 동안 단 한 번도
     # 돌파한 적이 없다가, 오늘 처음 돌파한 경우에만 True.
+    # (단순히 "어제만" 비교하는 게 아니라, 최근 N거래일 전체를 확인함)
     lookback = df['entry_signal_series'].iloc[-(entry_period + 1):-1]
     was_recently_breaking = bool(lookback.any()) if len(lookback) > 0 else False
     fresh_entry_signal = bool(entry_signal and not was_recently_breaking)
@@ -77,7 +89,7 @@ def notify_telegram(message: str):
 def build_watch_summary(df, market_label):
     """관심종목 중 돌파(진입가)에 근접한 종목 전체를 진입가 포함해서 텔레그램 메시지로 정리.
     100%를 넘는 종목(장중 반짝 돌파 후 종가는 못 넘긴 케이스)은 제외하고,
-    진짜 돌파 임박(99~100% 구간)인 종목만 보여줌. 개수 제한 없이 전부 표시."""
+    진짜 돌파 임박(90~100% 구간)인 종목만 보여줌. 개수 제한 없이 전부 표시."""
     watch_df = df[df['signal'] == '관심']
     if watch_df.empty:
         return None
@@ -87,7 +99,7 @@ def build_watch_summary(df, market_label):
         return None
 
     near_df = near_df.sort_values('n_high_ratio', ascending=False)
-    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 (99~100% 구간)"]
+    lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 (90~100% 구간)"]
     for _, r in near_df.iterrows():
         lines.append(
             f"- {r['name']}({r['code']}) [{r['system']}]\n"
@@ -116,48 +128,11 @@ def send_long_message(text, chunk_size=3500):
         notify_telegram(chunk)
 
 
-def fetch_with_retry(fetch_fn, is_valid_fn=None, retry_count=3, wait_sec=15, label=""):
-    """일시적 API/네트워크 오류에 대비한 공용 재시도 헬퍼.
-
-    fetch_fn: 인자 없이 호출 가능한 함수 (실제 조회 로직을 클로저/람다로 감싸서 전달)
-    is_valid_fn: 결과값을 받아 유효한지 판단하는 함수. 기본값은 None이 아니고
-                 비어있지 않으면(DataFrame.empty / len() 기준) 유효로 간주.
-    retry_count / wait_sec: 재시도 횟수와 간격(초)
-    label: 로그에 표시할 이름 (예: "KOSPI 종목 리스트")
-
-    성공하면 결과를 그대로 반환하고, 모두 실패하면 None을 반환한다.
-    (호출부는 None 여부로 실패를 판단해서 알림/스킵 처리를 하면 됨)
-    """
-    if is_valid_fn is None:
-        def is_valid_fn(x):
-            try:
-                if x is None:
-                    return False
-                if hasattr(x, 'empty'):
-                    return not x.empty
-                if hasattr(x, '__len__'):
-                    return len(x) > 0
-                return True
-            except Exception:
-                return x is not None
-
-    last_err = None
-    for attempt in range(1, retry_count + 1):
-        try:
-            result = fetch_fn()
-            if is_valid_fn(result):
-                return result
-            last_err = "빈 결과 반환"
-        except Exception as e:
-            last_err = str(e)
-        print(f"[재시도] {label} 조회 실패 ({attempt}/{retry_count}): {last_err}")
-        if attempt < retry_count:
-            time.sleep(wait_sec)
-    print(f"[재시도] {label} 최종 실패 ({retry_count}회 시도 모두 실패)")
-    return None
-
-
 # ===== 휩쏘 필터 (System1 한정) =====
+# 터틀 원칙: 직전 거래(같은 종목/같은 System1)가 수익이었다면 다음 신규 돌파 신호는
+# 건너뛴다. 단, 건너뛴 진입가 대비 2xATR 만큼 더 유리한 방향으로 움직이면 그때는
+# 필터를 무시하고 강제 진입한다. 직전 거래가 손절이었다면 필터 없이 정상 진입한다.
+
 TRADE_HISTORY_COLUMNS = ['code', 'system', 'direction', 'last_result', 'skip_active', 'skip_price']
 
 
@@ -195,6 +170,7 @@ def check_whipsaw(hist_df, code, system, direction, breakout_price, current_pric
 
     skip_active = str(row.get('skip_active')) == 'True'
     if not skip_active:
+        # 이번이 첫 스킵 -> 기록만 남기고 이번 신호는 건너뜀
         hist_df.loc[mask, 'skip_active'] = True
         hist_df.loc[mask, 'skip_price'] = breakout_price
         return False, hist_df
@@ -232,39 +208,31 @@ def record_trade_result(hist_df, code, system, direction, entry_price, exit_pric
     return hist_df
 
 
-def pick_top_entry(df, price_min=None, price_max=None, top_n=1):
-    """'진입' 신호 종목 중 진입가를 가장 적게 초과한(=가장 신선하게 막 돌파한) 순서로
-    상위 top_n개를 골라 반환한다. 터틀 원칙상 "얼마나 강하게 뚫었나"보다 "돌파 시점에
-    얼마나 가깝게 붙어서 들어가는가"가 더 중요하므로, 초과율이 가장 작은 종목을 우선한다.
+def pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN):
+    """'진입' 신호 종목 중 가격 조건(price_min~price_max)을 만족하는 종목만 모아서,
+    돌파강도(ATR배수, strength)가 큰 순 = "가장 강하게 뚫은 순"으로 정렬한 뒤
+    상위 top_n개를 DataFrame으로 반환한다.
 
-    price_min / price_max를 주면 최종 픽 선정 단계에서만 그 가격범위(종가 기준)
-    안의 종목으로 제한한다 (스캔 유니버스 자체는 건드리지 않음. None이면 해당 방향
-    제한 없음).
+    [2026-09-02 변경] 기존에는 "초과율이 가장 작은(=가장 신선하게 막 돌파한) 1개"만
+    골랐으나(pick_top_entry), 이번 요청에 따라 "신호가 가장 강한 종목 위주로 여러 개"
+    보여주는 방식으로 교체함. price_max/price_min을 None으로 넘기면 해당 방향의
+    가격 제한 없이 동작한다.
 
-    top_n=1(기본값)이면 기존 호출부와 호환되도록 pandas Series 1개(또는 후보가
-    없으면 None)를 반환한다. top_n>1이면 정렬된 DataFrame(빈 DataFrame일 수 있음)을
-    반환한다.
+    후보가 없으면 빈 DataFrame을 반환한다 (columns는 df와 동일 + excess_ratio/strength).
     """
     entry_df = df[df['signal'] == '진입'].copy()
-
-    def _empty_result():
-        return None if top_n == 1 else entry_df.iloc[0:0]
-
     if entry_df.empty:
-        return _empty_result()
+        return entry_df
 
-    if price_min is not None:
-        entry_df = entry_df[entry_df['close'] >= price_min]
     if price_max is not None:
         entry_df = entry_df[entry_df['close'] <= price_max]
+    if price_min is not None:
+        entry_df = entry_df[entry_df['close'] >= price_min]
 
     if entry_df.empty:
-        return _empty_result()
+        return entry_df
 
     entry_df['excess_ratio'] = (entry_df['close'] - entry_df['n_high']) / entry_df['n_high']
-    entry_df['strength'] = (entry_df['close'] - entry_df['n_high']) / entry_df['atr']  # 참고용 정보로 유지
-    entry_df = entry_df.sort_values('excess_ratio', ascending=True)
-
-    if top_n == 1:
-        return entry_df.iloc[0]
+    entry_df['strength'] = (entry_df['close'] - entry_df['n_high']) / entry_df['atr']
+    entry_df = entry_df.sort_values('strength', ascending=False)
     return entry_df.head(top_n)
