@@ -1,6 +1,6 @@
 trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,last_milestone,status,last_price,breakeven_notified,exit10_notified,exit20_notified
 8801,COIN,XRP,1435.0,2120.0,2115.0,-2125.0,0.0,closed_manual,,,,
 4540,KR,004890,35966.0,937.5,36050.0,34175.0,0.0,closed_manual,,,,
-0455,KR,004890,35966.0,937.5,36950.0,35075.0,1.0,active,36000.0,,,
+0455,KR,004890,35966.0,937.5,36950.0,35075.0,1.0,active,35850.0,,,
 7634,COIN,BTC,107392000.0,2106800.0,108560000.0,104346400.0,0.0,closed_manual,,,,
-4893,KR,003300,18280.0,605.5,19170.0,17959.0,1.0,active,18490.0,,,
+4893,KR,003300,18280.0,605.5,19170.0,17959.0,1.0,active,18460.0,,,
