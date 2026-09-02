@@ -140,7 +140,7 @@ GNRC,GNRC,System1(단기),청산,False,False,True,False,181.42,184.24,226.0,183.
 GNRC,GNRC,System2(중장기),청산,False,False,True,False,181.42,184.24,296.44,183.0,0.622,8.95,
 GIS,GIS,System1(단기),탈락,False,False,False,True,41.09,42.2,41.93,37.68,1.006,1.07,
 GIS,GIS,System2(중장기),탈락,False,False,False,True,41.09,42.2,41.93,35.39,1.006,1.07,
-GDDY,GDDY,System1(단기),관심,False,False,False,True,100.55,102.39,101.99,94.02,1.004,3.96,
+GDDY,GDDY,System1(단기),확정,False,False,False,True,100.55,102.39,101.99,94.02,1.004,3.96,102.57
 HPE,HPE,System1(단기),청산,False,False,True,False,50.87,53.16,63.44,51.3,0.838,2.77,
 HLT,HLT,System1(단기),청산,False,False,True,False,311.99,319.0,335.65,314.95,0.95,6.99,
 HD,HD,System1(단기),청산,False,False,True,False,319.77,326.83,358.36,325.75,0.912,7.76,
