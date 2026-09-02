@@ -105,8 +105,8 @@ MNST,MNST,System2(중장기),청산,False,False,True,False,44.08,45.37,100.34,44
 MSI,MSI,System1(단기),관심,False,False,False,True,482.52,492.88,494.85,458.89,0.996,12.61,
 MSI,MSI,System2(중장기),관심,False,False,False,True,482.52,492.88,494.85,433.91,0.996,12.61,
 NDAQ,NDAQ,System1(단기),청산,False,False,True,False,95.58,97.54,100.97,95.82,0.966,1.93,
-NFLX,NFLX,System1(단기),관심,False,False,False,True,82.32,83.12,82.46,78.1,1.008,2.22,
-NFLX,NFLX,System2(중장기),관심,False,False,False,True,82.32,83.12,82.46,73.08,1.008,2.22,
+NFLX,NFLX,System1(단기),탈락,False,False,False,True,82.32,83.12,82.46,78.1,1.008,2.22,
+NFLX,NFLX,System2(중장기),확정,False,False,False,True,82.32,83.12,82.46,73.08,1.008,2.22,82.63
 NOC,NOC,System1(단기),청산,False,False,True,False,527.9,535.86,594.51,530.13,0.901,12.37,
 NOC,NOC,System2(중장기),청산,False,False,True,False,527.9,535.86,594.51,530.13,0.901,12.37,
 ORLY,ORLY,System1(단기),청산,False,False,True,False,86.58,88.14,94.12,87.19,0.937,1.9,
