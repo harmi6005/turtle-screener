@@ -1,17 +1,20 @@
 # -*- coding: utf-8 -*-
 """빗썸 KRW 마켓 전체 코인 스캔 (GitHub Actions에서 지정 시간에 자동 실행)
-이미 진입가 대비 너무 많이 오른(0.5% 초과) 코인은 '진입'에서 제외합니다."""
+이미 진입가 대비 너무 많이 오른(0.5% 초과) 코인은 '진입'에서 제외합니다.
+
+[2026-09-02 변경사항] 최종 픽을 1개 -> 최대 10개로 확대, 종가(원화) 10,000원 이하 +
+돌파강도(ATR배수) 큰 순으로 선정."""
 
 import sys
 import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-import time
 import requests
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
-                     build_watch_summary, send_long_message, pick_top_entry)
+                     build_watch_summary, send_long_message, pick_top_entries,
+                     PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN)
 
 MAX_WORKERS = 10
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_bithumb_result.csv')
@@ -86,6 +89,18 @@ def screen_bithumb():
     return pd.DataFrame(results)
 
 
+def build_pick_message(entry_cnt, top_df):
+    lines = [f"[코인 전체스캔] 진입 신호 {entry_cnt}개 중 {PICK_PRICE_MAX:,}원 이하 "
+             f"돌파강도 상위 {len(top_df)}픽"]
+    for i, (_, r) in enumerate(top_df.iterrows(), 1):
+        lines.append(
+            f"{i}. {r['name']} [{r['system']}]\n"
+            f"   현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
+            f"   돌파강도(ATR배수) {r['strength']:.2f} / 초과율 {r['excess_ratio']*100:.3f}%"
+        )
+    return "\n".join(lines)
+
+
 if __name__ == "__main__":
     df = screen_bithumb()
     print(f"\n[코인] 신호 코인 {len(df)}개 발견")
@@ -109,16 +124,18 @@ if __name__ == "__main__":
     watch_cnt = len(df[df['signal'] == '관심']) if not df.empty else 0
 
     if entry_cnt > 0:
-        top = pick_top_entry(df)
-        if top is not None:
-            notify_telegram(
-                f"[코인 전체스캔] 진입 신호 {entry_cnt}개 중 최신 돌파 1개 픽\n"
-                f"- {top['name']} [{top['system']}]\n"
-                f"  현재가 {top['close']} / 진입가(돌파) {top['n_high']} / 청산가(손절) {top['n_low']}\n"
-                f"  초과율 {top['excess_ratio']*100:.3f}% (돌파강도 ATR배수 {top['strength']:.2f})"
-            )
+        top_df = pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN)
+        if not top_df.empty:
+            send_long_message(build_pick_message(entry_cnt, top_df))
+        else:
+            notify_telegram(f"[코인 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
+                             f"{PICK_PRICE_MAX:,}원 이하 조건을 만족하는 종목이 없습니다.")
+    else:
+        notify_telegram("[코인 전체스캔] 실행 완료 - 부합 종목 없음")
 
     if watch_cnt > 0:
         summary = build_watch_summary(df, "코인")
         if summary:
             send_long_message(summary)
+    else:
+        notify_telegram("[코인 전체스캔] 관심종목 없음")
