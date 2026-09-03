@@ -73,7 +73,7 @@ EQIX,EQIX,System1(단기),청산,False,False,True,False,1019.24,1025.6,1103.95,1
 EQIX,EQIX,System2(중장기),청산,False,False,True,False,1019.24,1025.6,1118.65,1024.96,0.917,29.53,
 ESS,ESS,System1(단기),청산,False,False,True,False,277.29,280.02,294.72,278.78,0.95,5.01,
 ESS,ESS,System2(중장기),청산,False,False,True,False,277.29,280.02,303.35,278.78,0.923,5.01,
-EG,EG,System1(단기),관심,False,False,False,True,378.28,383.96,383.77,362.58,1.001,7.02,
+EG,EG,System1(단기),확정,False,False,False,True,378.28,383.96,383.77,362.58,1.001,7.02,384.7
 EXE,EXE,System1(단기),관심,False,False,False,True,99.32,100.11,100.13,93.74,1.0,2.25,
 EXE,EXE,System2(중장기),관심,False,False,False,True,99.32,100.11,100.13,89.98,1.0,2.25,
 FAST,FAST,System1(단기),청산,False,False,True,False,47.93,48.69,52.92,48.53,0.92,1.0,
