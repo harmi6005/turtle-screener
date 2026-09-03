@@ -39,7 +39,7 @@ CBRE,CBRE,System1(단기),청산,False,False,True,False,142.06,148.18,156.55,142
 CBRE,CBRE,System2(중장기),청산,False,False,True,False,142.06,148.18,156.55,142.99,0.947,4.44,
 CDW,CDW,System1(단기),탈락,False,False,False,True,148.67,153.76,154.15,130.1,0.997,5.89,
 CDW,CDW,System2(중장기),탈락,False,False,False,True,148.67,153.76,154.15,112.46,0.997,5.89,
-CNC,CNC,System1(단기),관심,False,False,False,True,67.34,67.89,68.38,63.42,0.993,2.15,
+CNC,CNC,System1(단기),탈락,False,False,False,True,67.34,67.89,68.38,63.42,0.993,2.15,
 CHTR,CHTR,System1(단기),탈락,False,False,False,True,158.97,159.87,159.29,144.82,1.004,7.43,
 CMG,CMG,System1(단기),진입,True,True,False,False,38.52,38.87,38.36,33.6,1.013,1.11,
 CMG,CMG,System2(중장기),관심,False,False,False,True,38.52,38.87,39.09,31.64,0.994,1.11,
