@@ -176,7 +176,7 @@ VZ,VZ,System2(중장기),관심,False,False,False,True,50.22,50.84,50.93,45.09,0
 GWW,GWW,System1(단기),청산,False,False,True,False,1284.85,1311.75,1337.96,1293.87,0.98,23.18,
 WBD,WBD,System1(단기),탈락,False,False,False,True,28.39,28.77,28.99,28.18,0.992,0.41,
 WBD,WBD,System2(중장기),탈락,False,False,False,True,28.39,28.77,28.99,25.58,0.992,0.41,
-WFC,WFC,System1(단기),관심,False,False,False,True,89.27,90.09,89.66,83.48,1.005,1.73,
-WFC,WFC,System2(중장기),관심,False,False,False,True,89.27,90.09,89.66,83.48,1.005,1.73,
+WFC,WFC,System1(단기),확정,False,False,False,True,89.27,90.09,89.66,83.48,1.005,1.73,90.1
+WFC,WFC,System2(중장기),탈락,False,False,False,True,89.27,90.09,89.66,83.48,1.005,1.73,
 WELL,WELL,System1(단기),관심,False,False,False,True,238.59,240.98,243.04,233.52,0.992,4.48,
 BG,BG,System1(단기),확정,False,False,False,True,116.21,118.34,118.74,106.57,0.997,3.77,119.07
