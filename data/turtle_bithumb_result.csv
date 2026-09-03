@@ -31,7 +31,7 @@ OPEN,OPEN,System2(중장기),청산,False,False,True,False,158.0,169.0,330.0,164
 HOLO,HOLO,System1(단기),청산,False,False,True,False,84.24,86.5,108.0,84.65,0.801,8.21,
 MON,MON,System1(단기),청산,False,False,True,False,34.22,35.23,44.06,34.64,0.8,3.17,
 RECALL,RECALL,System1(단기),청산,False,False,True,False,52.2,60.98,79.0,60.31,0.772,5.62,
-KITE,KITE,System1(단기),관심,False,False,False,True,188.0,197.0,190.0,148.0,1.037,13.0,
+KITE,KITE,System1(단기),탈락,False,False,False,True,188.0,197.0,190.0,148.0,1.037,13.0,
 CYS,CYS,System1(단기),청산,False,False,True,False,435.0,504.0,2554.0,453.0,0.197,306.8,
 CYS,CYS,System2(중장기),청산,False,False,True,False,435.0,504.0,2554.0,453.0,0.197,306.8,
 LIT,LIT,System1(단기),관심,False,False,False,True,5205.0,5355.0,5380.0,4371.0,0.995,458.0,
