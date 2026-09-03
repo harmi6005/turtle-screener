@@ -66,7 +66,7 @@ DG,DG,System1(단기),관심,False,False,False,True,130.89,134.12,132.5,117.51,1
 DG,DG,System2(중장기),관심,False,False,False,True,130.89,134.12,132.5,117.51,1.012,3.95,
 DOV,DOV,System1(단기),청산,False,False,True,False,188.9,191.1,214.0,189.3,0.893,3.8,
 DOV,DOV,System2(중장기),청산,False,False,True,False,188.9,191.1,233.03,189.3,0.82,3.8,
-ELV,ELV,System1(단기),관심,False,False,False,True,405.84,409.0,410.29,390.8,0.997,8.68,
+ELV,ELV,System1(단기),탈락,False,False,False,True,405.84,409.0,410.29,390.8,0.997,8.68,
 EQT,EQT,System1(단기),관심,False,False,False,True,55.75,55.98,56.47,52.57,0.991,1.35,
 EQT,EQT,System2(중장기),관심,False,False,False,True,55.75,55.98,56.47,51.08,0.991,1.35,
 EQIX,EQIX,System1(단기),청산,False,False,True,False,1019.24,1025.6,1103.95,1024.96,0.929,29.53,
