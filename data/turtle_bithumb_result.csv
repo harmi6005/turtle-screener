@@ -34,7 +34,7 @@ CYS,CYS,System1(단기),청산,False,False,True,False,402.0,504.0,2554.0,453.0,0
 CYS,CYS,System2(중장기),청산,False,False,True,False,402.0,504.0,2554.0,453.0,0.197,308.2,
 LIT,LIT,System1(단기),관심,False,False,False,True,5250.0,5390.0,5380.0,4371.0,1.002,459.75,
 LIT,LIT,System2(중장기),관심,False,False,False,True,5250.0,5390.0,5380.0,3077.0,1.002,459.75,
-EDGEX,EDGEX,System2(중장기),관심,False,False,False,True,669.0,753.0,715.0,381.0,1.053,52.55,
+EDGEX,EDGEX,System2(중장기),탈락,False,False,False,True,669.0,753.0,715.0,381.0,1.053,52.55,
 PRL,PRL,System1(단기),청산,False,False,True,False,181.0,193.0,654.0,192.0,0.295,54.85,
 PRL,PRL,System2(중장기),청산,False,False,True,False,181.0,193.0,654.0,192.0,0.295,54.85,
 RE,RE,System1(단기),청산,False,False,True,False,608.0,644.0,853.0,630.0,0.755,72.9,
