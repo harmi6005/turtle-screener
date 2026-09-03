@@ -14,7 +14,7 @@ STORJ,STORJ,System2(중장기),청산,False,False,True,False,65.53,74.39,216.0,6
 ARK,ARK,System1(단기),관심,False,False,False,True,155.0,167.0,165.0,144.0,1.012,8.55,
 HUNT,HUNT,System1(단기),탈락,False,False,False,True,123.0,127.0,123.0,113.0,1.033,5.45,
 HUNT,HUNT,System2(중장기),관심,False,False,False,True,123.0,127.0,125.0,102.0,1.016,5.45,
-KAVA,KAVA,System1(단기),관심,False,False,False,True,67.04,67.33,67.55,59.16,0.997,2.4,
+KAVA,KAVA,System1(단기),탈락,False,False,False,True,67.04,67.33,67.55,59.16,0.997,2.4,
 PYTH,PYTH,System1(단기),탈락,False,False,False,True,79.13,81.0,79.17,62.75,1.023,5.79,
 PYTH,PYTH,System2(중장기),탈락,False,False,False,True,79.13,81.0,79.17,52.52,1.023,5.79,
 POKT,POKT,System1(단기),관심,False,False,False,True,10.62,11.76,11.25,9.7,1.045,0.67,
