@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
 ABT,ABT,System1(단기),청산,False,False,True,False,108.59,111.99,117.34,108.68,0.954,2.57,
 ADBE,ADBE,System1(단기),관심,False,False,False,True,285.93,292.86,294.53,265.04,0.994,10.26,
 ADBE,ADBE,System2(중장기),관심,False,False,False,True,285.93,292.86,294.53,250.84,0.994,10.26,
@@ -68,8 +68,8 @@ CTVA,CTVA,System2(중장기),관심,False,False,False,True,88.38,90.87,90.78,74.
 CCI,CCI,System1(단기),진입,True,True,False,False,77.48,77.75,77.11,74.36,1.008,1.67,
 DE,DE,System1(단기),관심,False,False,False,True,686.66,705.88,700.64,586.48,1.007,20.52,
 DE,DE,System2(중장기),관심,False,False,False,True,686.66,705.88,700.64,579.31,1.007,20.52,
-DELL,DELL,System1(단기),관심,False,False,False,True,513.77,530.78,514.0,421.89,1.033,29.9,
-DELL,DELL,System2(중장기),관심,False,False,False,True,513.77,530.78,514.0,416.3,1.033,29.9,
+DELL,DELL,System1(단기),탈락,False,False,False,True,513.77,530.78,514.0,421.89,1.033,29.9,
+DELL,DELL,System2(중장기),탈락,False,False,False,True,513.77,530.78,514.0,416.3,1.033,29.9,
 DVN,DVN,System1(단기),관심,False,False,False,True,48.83,49.46,49.72,46.16,0.995,1.22,
 DVN,DVN,System2(중장기),관심,False,False,False,True,48.83,49.46,49.72,42.42,0.995,1.22,
 DG,DG,System1(단기),관심,False,False,False,True,131.16,133.76,134.13,117.51,0.997,3.98,
