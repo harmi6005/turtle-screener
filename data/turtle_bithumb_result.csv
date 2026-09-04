@@ -3,7 +3,7 @@ ELF,ELF,System1(단기),관심,False,False,False,True,98.52,132.0,133.0,87.01,0.
 ELF,ELF,System2(중장기),관심,False,False,False,True,98.52,132.0,133.0,73.01,0.992,18.56,
 ZRX,ZRX,System1(단기),관심,False,False,False,True,142.0,142.0,143.0,129.0,0.993,7.6,
 ZRX,ZRX,System2(중장기),관심,False,False,False,True,142.0,142.0,143.0,103.0,0.993,7.6,
-ENJ,ENJ,System1(단기),관심,False,False,False,True,39.41,39.5,39.72,32.7,0.994,2.16,
+ENJ,ENJ,System1(단기),탈락,False,False,False,True,39.41,39.5,39.72,32.7,0.994,2.16,
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BTT,BTT,System2(중장기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
