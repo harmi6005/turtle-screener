@@ -91,7 +91,7 @@ def screen_bithumb():
 
 def build_pick_message(entry_cnt, top_df):
     lines = [f"[코인 전체스캔] 진입 신호 {entry_cnt}개 중 {PICK_PRICE_MAX:,}원 이하 "
-             f"돌파강도 상위 {len(top_df)}픽"]
+             f"돌파강도 상위 {len(top_df)}픽 (최대 {PICK_COUNT}픽 중 {len(top_df)}개)"]
     for i, (_, r) in enumerate(top_df.iterrows(), 1):
         lines.append(
             f"{i}. {r['name']} [{r['system']}]\n"
@@ -124,8 +124,14 @@ if __name__ == "__main__":
     watch_cnt = len(df[df['signal'] == '관심']) if not df.empty else 0
 
     if entry_cnt > 0:
+        entry_only_df = df[df['signal'] == '진입']
+        price_ok_cnt = len(entry_only_df[entry_only_df['close'] <= PICK_PRICE_MAX]) if PICK_PRICE_MAX is not None else entry_cnt
+        print(f"[코인] 진입신호 {entry_cnt}개 중 {PICK_PRICE_MAX:,}원 이하 {price_ok_cnt}개 "
+              f"(이 중 최대 {PICK_COUNT}개까지 알림)")
+
         top_df = pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN)
         if not top_df.empty:
+            # 10개가 안 되더라도(1~9개) 있는 만큼 그대로 발송함
             send_long_message(build_pick_message(entry_cnt, top_df))
         else:
             notify_telegram(f"[코인 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
