@@ -8,6 +8,7 @@
 """
 
 import os
+import time
 import pandas as pd
 import requests
 
@@ -23,6 +24,35 @@ MAX_CHASE_RATIO = 0.005  # 진입가 대비 현재가가 0.5% 넘게 벌어지�
 PICK_COUNT = 10
 PICK_PRICE_MAX = 10000
 PICK_PRICE_MIN = None  # 하한 없음 (필요시 숫자로 지정)
+
+
+def fetch_with_retry(fn, retry_count=3, wait_sec=15, label="데이터"):
+    """임의의 콜러블 fn()을 최대 retry_count회 재시도하는 공용 헬퍼.
+    (2026-09 추가: holdings_check.py의 국장 종목명 리스트 조회 등, 외부 API/데이터
+    조회가 일시적으로 실패할 수 있는 모든 곳에서 재사용하기 위해 common.py로 분리함.
+    이 함수가 없어서 holdings_check.py의 import 자체가 실패해 5분 알림이 전부
+    끊겼던 사고가 있었음 -> 반드시 common.py에 존재해야 함.)
+
+    - fn()이 예외 없이 '참 값'(None/빈 값이 아닌 값)을 반환하면 즉시 그 값을 반환
+    - 예외가 나거나 결과가 없으면(None) 재시도, 재시도 사이 wait_sec초 대기
+    - 모든 시도가 실패하면 예외를 올리지 않고 None을 반환 (호출부가 계속 진행 가능)
+    """
+    for attempt in range(1, retry_count + 1):
+        try:
+            result = fn()
+        except Exception as e:
+            print(f"{label} 조회 실패 ({attempt}/{retry_count}): {e}")
+            result = None
+        else:
+            if result is not None:
+                return result
+            print(f"{label} 조회 결과 없음 ({attempt}/{retry_count})")
+
+        if attempt < retry_count:
+            time.sleep(wait_sec)
+
+    print(f"{label} 조회 최종 실패 ({retry_count}회 시도)")
+    return None
 
 
 def calc_atr(df, period=20):
