@@ -20,7 +20,7 @@ SYRUP,SYRUP,System1(단기),관심,False,False,False,True,289.0,316.0,311.0,236.
 SYRUP,SYRUP,System2(중장기),관심,False,False,False,True,289.0,316.0,311.0,219.0,1.016,20.45,
 CYS,CYS,System1(단기),청산,False,False,True,False,328.0,351.0,2554.0,333.0,0.137,186.65,
 CYS,CYS,System2(중장기),청산,False,False,True,False,328.0,351.0,2554.0,333.0,0.137,186.65,
-BREV,BREV,System1(단기),관심,False,False,False,True,107.0,107.0,108.0,95.12,0.991,5.39,
+BREV,BREV,System1(단기),탈락,False,False,False,True,107.0,107.0,108.0,95.12,0.991,5.39,
 ELSA,ELSA,System1(단기),진입,True,True,False,False,71.83,81.0,71.5,40.05,1.133,5.19,
 LIT,LIT,System1(단기),관심,False,False,False,True,6235.0,6700.0,6465.0,4371.0,1.036,525.9,
 LIT,LIT,System2(중장기),관심,False,False,False,True,6235.0,6700.0,6465.0,3129.0,1.036,525.9,
