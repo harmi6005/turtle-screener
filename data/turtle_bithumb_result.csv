@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
 ELF,ELF,System1(단기),관심,False,False,False,True,97.26,132.0,133.0,87.01,0.992,18.56,
 ELF,ELF,System2(중장기),관심,False,False,False,True,97.26,132.0,133.0,73.01,0.992,18.56,
-ZRX,ZRX,System1(단기),관심,False,False,False,True,142.0,142.0,143.0,129.0,0.993,7.6,
-ZRX,ZRX,System2(중장기),관심,False,False,False,True,142.0,142.0,143.0,103.0,0.993,7.6,
+ZRX,ZRX,System1(단기),탈락,False,False,False,True,142.0,142.0,143.0,129.0,0.993,7.6,
+ZRX,ZRX,System2(중장기),탈락,False,False,False,True,142.0,142.0,143.0,103.0,0.993,7.6,
 ENJ,ENJ,System1(단기),관심,False,False,False,True,37.81,42.72,39.72,32.7,1.076,2.33,
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 BNB,BNB,System1(단기),관심,False,False,False,True,992500.0,992500.0,998500.0,936000.0,0.994,29200.0,
