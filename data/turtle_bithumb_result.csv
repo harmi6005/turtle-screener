@@ -16,7 +16,7 @@ KAVA,KAVA,System1(단기),관심,False,False,False,True,69.12,69.63,69.62,61.61,
 KAVA,KAVA,System2(중장기),관심,False,False,False,True,69.12,69.63,69.62,55.98,1.0,2.72,
 NEAR,NEAR,System1(단기),관심,False,False,False,True,2967.0,3100.0,3128.0,2473.0,0.991,222.05,
 NEAR,NEAR,System2(중장기),관심,False,False,False,True,2967.0,3100.0,3128.0,2199.0,0.991,222.05,
-INIT,INIT,System2(중장기),관심,False,False,False,True,89.66,90.0,89.75,67.55,1.003,5.3,
+INIT,INIT,System2(중장기),확정,False,False,False,True,89.66,90.0,89.75,67.55,1.003,5.3,90.11
 THE,THE,System1(단기),관심,False,False,False,True,105.0,106.0,107.0,90.21,0.991,9.68,
 SOLV,SOLV,System2(중장기),관심,False,False,False,True,4.63,4.9,4.84,3.13,1.012,0.33,
 FLOCK,FLOCK,System1(단기),관심,False,False,False,True,84.91,88.42,88.54,43.04,0.999,8.61,
