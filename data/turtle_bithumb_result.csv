@@ -1,6 +1,6 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
-ZRX,ZRX,System1(단기),관심,False,False,False,True,143.0,146.0,144.0,129.0,1.014,7.8,
-ZRX,ZRX,System2(중장기),관심,False,False,False,True,143.0,146.0,144.0,103.0,1.014,7.8,
+ZRX,ZRX,System1(단기),탈락,False,False,False,True,143.0,146.0,144.0,129.0,1.014,7.8,
+ZRX,ZRX,System2(중장기),탈락,False,False,False,True,143.0,146.0,144.0,103.0,1.014,7.8,
 IOST,IOST,System2(중장기),확정,False,False,False,True,1.03,1.07,1.07,0.73,1.004,0.06,1.07
 CKB,CKB,System1(단기),관심,False,False,False,True,1.49,1.51,1.52,1.33,0.991,0.08,
 CKB,CKB,System2(중장기),관심,False,False,False,True,1.49,1.51,1.52,1.12,0.991,0.08,
