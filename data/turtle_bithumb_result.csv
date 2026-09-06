@@ -6,7 +6,7 @@ UMA,UMA,System1(단기),관심,False,False,False,True,531.0,550.0,549.0,487.0,1.
 NMR,NMR,System1(단기),관심,False,False,False,True,12710.0,15020.0,14460.0,11830.0,1.039,662.5,
 CAKE,CAKE,System1(단기),관심,False,False,False,True,3048.0,3114.0,3099.0,2307.0,1.005,162.2,
 CAKE,CAKE,System2(중장기),관심,False,False,False,True,3048.0,3114.0,3099.0,1900.0,1.005,162.2,
-ACH,ACH,System1(단기),관심,False,False,False,True,7.4,7.49,7.49,6.52,1.0,0.41,
+ACH,ACH,System1(단기),탈락,False,False,False,True,7.4,7.49,7.49,6.52,1.0,0.41,
 BNB,BNB,System1(단기),탈락,False,False,False,True,1051000.0,1065000.0,1052000.0,936000.0,1.012,34675.0,
 BNB,BNB,System2(중장기),탈락,False,False,False,True,1051000.0,1065000.0,1052000.0,838000.0,1.012,34675.0,
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
