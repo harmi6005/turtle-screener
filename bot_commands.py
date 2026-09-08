@@ -3,7 +3,15 @@
 telegram_listener.py(폴링 방식, 5분마다)와 webhook_handler.py(웹훅 방식, 즉시)가
 둘 다 이 모듈의 함수를 가져다 씁니다.
 
-이번 개정 사항:
+이번 개정 사항 (2026-09-04):
+- ⚠️ 신규: "국장알림중지/국장알림시작", "미장알림중지/미장알림시작",
+  "코인알림중지/코인알림시작" 명령 추가. data/alert_settings.csv에 저장되며,
+  full_scan_*.py / recheck_*.py가 이 파일을 읽어 텔레그램 발송 여부를 판단함
+  (스캔/재확인 자체는 꺼져 있어도 계속 돌고, 텔레그램 전송만 생략됨).
+- ⚠️ 신규: "알림상태확인" 명령 추가 - 국장/미장/코인 현재 켜짐/꺼짐 상태 조회.
+- 도움말(HELP_TEXT)에 위 명령어들 안내 추가.
+
+이전 개정 사항:
 - HOLDINGS_COLUMNS를 holdings_check.py와 동일하게 맞춤 (last_price, breakeven_notified
   누락 시 buy/sell/list 명령을 쓸 때마다 해당 컬럼이 통째로 사라지는 버그가 있었음)
 - handle_sell: status == 'active'만 찾던 것을 status != 'closed_manual'로 수정
@@ -11,7 +19,7 @@ telegram_listener.py(폴링 방식, 5분마다)와 webhook_handler.py(웹훅 방
 - handle_list: stop_hit 상태 거래에 [손절/익절 확정, 매도대기] 태그 표시
 - 명령어확인/도움말 명령어 추가
 - dispatch_lines(): 한 메시지에 여러 줄 명령어가 와도 줄 단위로 각각 처리
-- ⚠️ 신규: "보유종목 초기화" 명령 추가 (holdings.csv 전체 삭제). 되돌릴 수 없는
+- "보유종목 초기화" 명령 추가 (holdings.csv 전체 삭제). 되돌릴 수 없는
   파괴적 작업이라 2단계 확인 방식으로 구현함:
   1) "보유종목 초기화" -> 현재 건수만 알려주고 실제로는 아무것도 안 지움
   2) "보유종목 초기화 확인" -> 이때 비로소 전부 삭제
@@ -24,10 +32,13 @@ import pandas as pd
 import FinanceDataReader as fdr
 import yfinance as yf
 from datetime import datetime, timedelta
-from common import SYSTEMS, WATCH_RATIO, calc_atr, check_turtle_breakout
+from common import (SYSTEMS, WATCH_RATIO, calc_atr, check_turtle_breakout,
+                     ALERT_MARKETS, ALERT_MARKET_LABELS,
+                     load_alert_settings, set_market_alert)
 
 HOLDINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'holdings.csv')
 WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), 'data', 'watchlist.csv')
+ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'alert_settings.csv')
 
 # holdings_check.py 의 COLUMNS 와 반드시 동일하게 유지할 것 (하나만 고치면 다른 쪽에서
 # 컬럼이 잘려나가는 사고가 남 - 실제로 last_price/breakeven_notified 누락 버그 발생했었음)
@@ -44,6 +55,19 @@ CHECK_WORDS = ('추적확인', '추적목록')
 HELP_WORDS = ('명령어확인', '명령어 확인', '도움말', 'help', '/help')
 RESET_WORD = '보유종목 초기화'
 RESET_CONFIRM_WORD = '보유종목 초기화 확인'
+ALERT_STATUS_WORDS = ('알림상태확인', '알림상태')
+
+# market_key -> (중지 명령어, 시작 명령어)
+ALERT_TOGGLE_COMMANDS = {
+    'KR': ('국장알림중지', '국장알림시작'),
+    'US': ('미장알림중지', '미장알림시작'),
+    'COIN': ('코인알림중지', '코인알림시작'),
+}
+# 텍스트 -> (market_key, enabled) 역매핑 (dispatch에서 바로 조회용)
+ALERT_COMMAND_LOOKUP = {}
+for _market, (_stop_word, _start_word) in ALERT_TOGGLE_COMMANDS.items():
+    ALERT_COMMAND_LOOKUP[_stop_word] = (_market, False)
+    ALERT_COMMAND_LOOKUP[_start_word] = (_market, True)
 
 HELP_TEXT = (
     "사용 가능한 명령어\n\n"
@@ -65,6 +89,13 @@ HELP_TEXT = (
     "  매수 여부와 상관없이 특정 종목 신호만 계속 감시\n\n"
     "추적확인 (추적목록도 동일)\n"
     "  추적 중인 종목들을 지금 이 순간 실시간 재조회해서 보여줌\n\n"
+    "국장알림중지 / 국장알림시작\n"
+    "미장알림중지 / 미장알림시작\n"
+    "코인알림중지 / 코인알림시작\n"
+    "  해당 시장의 스캔/재확인/보유종목 알림 전체를 텔레그램으로만 안 보내도록\n"
+    "  끄고 켤 수 있음. 스캔 자체와 데이터 저장은 꺼져 있어도 계속 정상 진행됨.\n\n"
+    "알림상태확인 (알림상태도 동일)\n"
+    "  국장/미장/코인 알림이 지금 켜져 있는지 꺼져 있는지 조회\n\n"
     "명령어확인 (도움말/help도 동일)\n"
     "  이 도움말을 다시 보여줌"
 )
@@ -265,6 +296,28 @@ def handle_holdings_reset_confirm(df):
     return new_df, f"보유종목 {total}건을 전부 초기화했어요."
 
 
+# ===== 마켓별 알림 on/off =====
+
+def handle_alert_toggle(market, enabled):
+    """국장알림중지/시작 등 명령 처리. common.py의 set_market_alert가 파일 저장까지
+    전부 처리하므로 여기선 결과 메시지만 만들어 반환한다."""
+    label = ALERT_MARKET_LABELS.get(market, market)
+    set_market_alert(market, enabled, ALERT_SETTINGS_PATH)
+    if enabled:
+        return f"✅ [{label}] 알림을 다시 시작합니다."
+    return f"🔕 [{label}] 알림을 중지합니다. (스캔/재확인 자체는 계속 진행되고, 텔레그램 발송만 생략됩니다)"
+
+
+def handle_alert_status():
+    settings = load_alert_settings(ALERT_SETTINGS_PATH)
+    lines = ["📋 마켓별 알림 상태"]
+    for market in ALERT_MARKETS:
+        label = ALERT_MARKET_LABELS.get(market, market)
+        state = "🔔 켜짐" if settings.get(market, True) else "🔕 꺼짐"
+        lines.append(f"- {label}: {state}")
+    return "\n".join(lines)
+
+
 # ===== 감시목록(watchlist / 추적) =====
 
 def load_watchlist():
@@ -353,6 +406,16 @@ def dispatch(text, df, wdf):
         return df, wdf, reply, False, True, False
     if text == RESET_WORD:
         reply = handle_holdings_reset_request(df)
+        return df, wdf, reply, False, False, False
+
+    # 마켓별 알림 중지/시작 (국장알림중지 등) - 파일 저장까지 핸들러 안에서 끝남
+    if text in ALERT_COMMAND_LOOKUP:
+        market, enabled = ALERT_COMMAND_LOOKUP[text]
+        reply = handle_alert_toggle(market, enabled)
+        return df, wdf, reply, False, False, False
+
+    if text in ALERT_STATUS_WORDS:
+        reply = handle_alert_status()
         return df, wdf, reply, False, False, False
 
     parts = text.split()
