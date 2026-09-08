@@ -26,7 +26,7 @@ PEAQ,PEAQ,System2(중장기),관심,False,False,False,True,42.31,43.59,42.34,23.
 SOLV,SOLV,System1(단기),관심,False,False,False,True,6.01,6.55,6.28,3.78,1.044,0.44,
 SOLV,SOLV,System2(중장기),관심,False,False,False,True,6.01,6.55,6.28,3.16,1.044,0.44,
 WAL,WAL,System1(단기),관심,False,False,False,True,37.07,38.19,38.32,31.2,0.997,2.36,
-SOPH,SOPH,System2(중장기),관심,False,False,False,True,7.59,7.83,7.75,4.56,1.01,0.67,
+SOPH,SOPH,System2(중장기),탈락,False,False,False,True,7.59,7.83,7.75,4.56,1.01,0.67,
 2Z,2Z,System1(단기),청산,False,False,True,False,69.0,70.65,84.16,69.3,0.839,4.97,
 CC,CC,System1(단기),청산,False,False,True,False,143.0,147.0,178.0,145.0,0.826,10.3,
 VVV,VVV,System1(단기),관심,False,False,False,True,24860.0,25660.0,25520.0,21380.0,1.005,1982.5,
