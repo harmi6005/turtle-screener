@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 """빗썸 관심코인 재확인 (GitHub Actions에서 5분마다 자동 실행)
-System1(단기)에는 터틀 휩쏘 필터가 적용됩니다."""
+System1(단기)에는 터틀 휩쏘 필터가 적용됩니다.
+
+[2026-09-04 변경사항] "코인알림중지" 명령으로 알림을 꺼두면, 재확인(휩쏘필터
+포함) 자체는 계속 정상 진행하고 data/*.csv도 그대로 갱신하되, 텔레그램 발송
+(확정전환/확정이탈 알림)만 생략합니다."""
 
 import sys
 import os
@@ -10,11 +14,14 @@ import requests
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
-                     load_trade_history, save_trade_history, check_whipsaw, record_trade_result)
+                     load_trade_history, save_trade_history, check_whipsaw, record_trade_result,
+                     is_market_alert_enabled)
 
 MAX_WORKERS = 10
+MARKET_KEY = 'COIN'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_bithumb_result.csv')
 HIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'trade_history_bithumb.csv')
+ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
 
 
 def get_bithumb_daily_ohlc(coin, days=300):
@@ -59,6 +66,14 @@ def recheck_one(row):
 
 
 if __name__ == "__main__":
+    alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
+    if not alerts_enabled:
+        print("[코인] 알림 중지 상태입니다 - 재확인은 정상 진행하되 텔레그램 발송만 생략합니다.")
+
+    def notify(msg):
+        if alerts_enabled:
+            notify_telegram(msg)
+
     if not os.path.exists(DATA_PATH):
         print("직전 결과 파일이 없어요. full_scan_bithumb.py를 먼저 실행해주세요.")
         sys.exit(0)
@@ -138,10 +153,10 @@ if __name__ == "__main__":
                  f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
                  f"  괴리율 {(r['close']-r['n_high'])/r['n_high']*100:.2f}%"
                  for _, r in confirm_df.iterrows()]
-        notify_telegram("[코인] 확정 전환 코인! (매수 검토)\n" + "\n".join(lines))
+        notify("[코인] 확정 전환 코인! (매수 검토)\n" + "\n".join(lines))
 
     if not exit_df.empty:
         lines = [f"- {r['name']} [{r['system']}]\n"
                  f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
                  for _, r in exit_df.iterrows()]
-        notify_telegram("[코인] 확정이탈 코인! (매도 검토)\n" + "\n".join(lines))
+        notify("[코인] 확정이탈 코인! (매도 검토)\n" + "\n".join(lines))
