@@ -5,6 +5,15 @@
 - pick_top_entry(1개 선정) -> pick_top_entries(최대 10개 선정)로 교체
 - 선정 기준: 기존 "초과율 최솟값(가장 신선한 돌파)" -> "돌파강도(ATR배수) 최댓값(가장 강하게 뚫은 순)"
 - 선정 가격 조건: 최종 픽 대상은 종가 10,000원 이하 종목만 (국장/미장/코인 전체 공통 적용)
+
+[2026-09-04 변경사항]
+- ⚠️ 신규: 마켓별(국장/미장/코인) 알림 on/off 설정 기능 추가.
+  ALERT_MARKETS / ALERT_MARKET_LABELS / load_alert_settings / save_alert_settings /
+  set_market_alert / is_market_alert_enabled 를 이 파일에 정의함.
+  (이전 배포본에서 bot_commands.py와 recheck_*.py가 이 이름들을 import하도록
+  코드는 이미 고쳐져 있었는데 정작 common.py에는 구현이 빠져 있어서
+  "ImportError: cannot import name 'ALERT_MARKETS' from 'common'" 로
+  전체 워크플로우가 실패하던 문제를 해결함 -> 반드시 common.py에 존재해야 함)
 """
 
 import os
@@ -266,3 +275,69 @@ def pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=P
     entry_df['strength'] = (entry_df['close'] - entry_df['n_high']) / entry_df['atr']
     entry_df = entry_df.sort_values('strength', ascending=False)
     return entry_df.head(top_n)
+
+
+# ===== 마켓별 알림 on/off =====
+# bot_commands.py의 "국장알림중지/시작", "미장알림중지/시작", "코인알림중지/시작",
+# "알림상태확인" 명령과, recheck_*.py의 텔레그램 발송 여부 판단에서 사용됨.
+# data/alert_settings.csv 컬럼: market, enabled
+# 파일이 없거나 특정 마켓 값이 없으면 기본값은 "켜짐(True)"으로 취급한다.
+
+ALERT_MARKETS = ['KR', 'US', 'COIN']
+ALERT_MARKET_LABELS = {'KR': '국장', 'US': '미장', 'COIN': '코인'}
+
+ALERT_SETTINGS_COLUMNS = ['market', 'enabled']
+
+
+def load_alert_settings(path):
+    """market -> enabled(bool) 매핑을 반환한다.
+    파일이 없거나 값이 비어있는 마켓은 매핑에 포함하지 않으며(호출부에서
+    .get(market, True)로 기본값 True를 사용하도록 함), 값이 있으면 정확한
+    bool로 변환해서 반환한다."""
+    if not os.path.exists(path):
+        return {}
+    try:
+        df = pd.read_csv(path)
+    except Exception:
+        return {}
+
+    settings = {}
+    for _, r in df.iterrows():
+        market = r.get('market')
+        if market is None or (isinstance(market, float) and pd.isna(market)):
+            continue
+        enabled_raw = r.get('enabled')
+        if enabled_raw is None or (isinstance(enabled_raw, float) and pd.isna(enabled_raw)):
+            enabled = True
+        else:
+            # CSV로 저장/재로드 시 True/False가 문자열('True'/'False')로 올 수도 있고
+            # bool 그대로 올 수도 있어서 양쪽 다 안전하게 처리
+            enabled = str(enabled_raw).strip().lower() in ('true', '1', 'yes')
+        settings[str(market)] = enabled
+    return settings
+
+
+def save_alert_settings(settings, path):
+    """settings: {'KR': True, 'US': False, ...} 형태의 dict를 파일로 저장."""
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    rows = [{'market': k, 'enabled': v} for k, v in settings.items()]
+    df = pd.DataFrame(rows, columns=ALERT_SETTINGS_COLUMNS)
+    df.to_csv(path, index=False)
+
+
+def set_market_alert(market, enabled, path):
+    """특정 마켓의 알림 on/off를 설정하고 파일 저장까지 한 번에 처리한다.
+    (bot_commands.py의 handle_alert_toggle에서 호출)"""
+    settings = load_alert_settings(path)
+    # 다른 마켓들의 기존 상태(명시적으로 저장된 값)는 그대로 유지하고,
+    // 이 마켓 값만 갱신한다.
+    settings[market] = enabled
+    save_alert_settings(settings, path)
+    return settings
+
+
+def is_market_alert_enabled(market, path):
+    """recheck_*.py 등에서 '재확인 로직 자체는 계속 돌리되 텔레그램 발송만
+    생략할지'를 판단할 때 사용. 설정이 없으면 기본값 True(켜짐)."""
+    settings = load_alert_settings(path)
+    return settings.get(market, True)
