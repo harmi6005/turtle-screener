@@ -14,6 +14,11 @@
   코드는 이미 고쳐져 있었는데 정작 common.py에는 구현이 빠져 있어서
   "ImportError: cannot import name 'ALERT_MARKETS' from 'common'" 로
   전체 워크플로우가 실패하던 문제를 해결함 -> 반드시 common.py에 존재해야 함)
+
+[2026-09-08 변경사항]
+- 🐛 버그 수정: set_market_alert() 함수 안에 자바스크립트 스타일 주석(//)이
+  실수로 섞여 들어가 "SyntaxError: invalid syntax"로 전체 워크플로우가 죽던
+  문제 수정. 파이썬 주석은 반드시 #으로 시작해야 함.
 """
 
 import os
@@ -330,7 +335,7 @@ def set_market_alert(market, enabled, path):
     (bot_commands.py의 handle_alert_toggle에서 호출)"""
     settings = load_alert_settings(path)
     # 다른 마켓들의 기존 상태(명시적으로 저장된 값)는 그대로 유지하고,
-    // 이 마켓 값만 갱신한다.
+    # 이 마켓 값만 갱신한다.
     settings[market] = enabled
     save_alert_settings(settings, path)
     return settings
