@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 """미국 관심종목 재확인 (GitHub Actions에서 5분마다 자동 실행)
-System1(단기)에는 터틀 휩쏘 필터가 적용됩니다."""
+System1(단기)에는 터틀 휩쏘 필터가 적용됩니다.
+
+[2026-09-04 변경사항] "미장알림중지" 명령으로 알림을 꺼두면, 재확인(휩쏘필터
+포함) 자체는 계속 정상 진행하고 data/*.csv도 그대로 갱신하되, 텔레그램 발송
+(확정전환/확정이탈 알림)만 생략합니다."""
 
 import sys
 import os
@@ -11,10 +15,13 @@ import yfinance as yf
 from datetime import datetime, timedelta, time as dtime
 from zoneinfo import ZoneInfo
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
-                     load_trade_history, save_trade_history, check_whipsaw, record_trade_result)
+                     load_trade_history, save_trade_history, check_whipsaw, record_trade_result,
+                     is_market_alert_enabled)
 
+MARKET_KEY = 'US'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_us_result.csv')
 HIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'trade_history_us.csv')
+ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
 
 
 def is_us_market_open():
@@ -25,6 +32,14 @@ def is_us_market_open():
 
 
 if __name__ == "__main__":
+    alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
+    if not alerts_enabled:
+        print("[미장] 알림 중지 상태입니다 - 재확인은 정상 진행하되 텔레그램 발송만 생략합니다.")
+
+    def notify(msg):
+        if alerts_enabled:
+            notify_telegram(msg)
+
     if not is_us_market_open():
         print("미국 장 시간이 아니라서 재확인을 건너뜁니다 (평일 09:30~16:00 ET).")
         sys.exit(0)
@@ -136,10 +151,10 @@ if __name__ == "__main__":
                  f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
                  f"  괴리율 {(r['close']-r['n_high'])/r['n_high']*100:.2f}%"
                  for _, r in confirm_df.iterrows()]
-        notify_telegram("[미장] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
+        notify("[미장] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
 
     if not exit_df.empty:
         lines = [f"- {r['name']} [{r['system']}]\n"
                  f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
                  for _, r in exit_df.iterrows()]
-        notify_telegram("[미장] 확정이탈 종목! (매도 검토)\n" + "\n".join(lines))
+        notify("[미장] 확정이탈 종목! (매도 검토)\n" + "\n".join(lines))
