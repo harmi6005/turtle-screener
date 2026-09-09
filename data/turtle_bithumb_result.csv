@@ -1,6 +1,6 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,high,n_high,n_low,n_high_ratio,atr,entry_price
-A,A,System1(단기),관심,False,False,False,True,109.0,112.0,113.0,101.0,0.991,6.02,
-A,A,System2(중장기),관심,False,False,False,True,109.0,112.0,113.0,85.82,0.991,6.02,
+A,A,System1(단기),탈락,False,False,False,True,109.0,112.0,113.0,101.0,0.991,6.02,
+A,A,System2(중장기),탈락,False,False,False,True,109.0,112.0,113.0,85.82,0.991,6.02,
 VET,VET,System1(단기),관심,False,False,False,True,10.7,10.88,10.8,8.71,1.007,0.72,
 VET,VET,System2(중장기),관심,False,False,False,True,10.7,10.88,10.8,6.32,1.007,0.72,
 CHR,CHR,System1(단기),관심,False,False,False,True,21.89,22.16,22.37,19.7,0.991,1.18,
