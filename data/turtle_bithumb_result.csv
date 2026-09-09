@@ -43,7 +43,7 @@ USDT,USDT,System1(단기),청산,False,False,True,False,1351.0,1358.0,1397.0,135
 USDT,USDT,System2(중장기),청산,False,False,True,False,1351.0,1358.0,1481.0,1356.0,0.917,11.65,
 USDC,USDC,System1(단기),청산,False,False,True,False,1351.0,1359.0,1398.0,1356.0,0.972,12.05,
 USDC,USDC,System2(중장기),청산,False,False,True,False,1351.0,1359.0,1482.0,1356.0,0.917,12.05,
-PHA,PHA,System1(단기),관심,False,False,False,True,38.62,40.45,38.79,32.63,1.043,2.64,
+PHA,PHA,System1(단기),탈락,False,False,False,True,38.62,40.45,38.79,32.63,1.043,2.64,
 PHA,PHA,System2(중장기),관심,False,False,False,True,38.62,40.45,40.73,30.01,0.993,2.64,
 POLYX,POLYX,System1(단기),관심,False,False,False,True,50.1,51.37,51.83,45.0,0.991,2.71,
 PEAQ,PEAQ,System1(단기),관심,False,False,False,True,39.18,48.47,43.59,26.0,1.112,4.68,
