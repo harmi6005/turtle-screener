@@ -3,7 +3,13 @@
 이미 진입가 대비 너무 많이 오른(0.5% 초과) 코인은 '진입'에서 제외합니다.
 
 [2026-09-02 변경사항] 최종 픽을 1개 -> 최대 10개로 확대, 종가(원화) 10,000원 이하 +
-돌파강도(ATR배수) 큰 순으로 선정."""
+돌파강도(ATR배수) 큰 순으로 선정.
+
+[2026-09-10 변경사항 - 전체 교체]
+- 🐛 버그 수정: "코인알림중지"를 걸어도 전체스캔 알림(진입픽/관심요약/부합없음 등)이
+  그대로 발송되던 문제 수정. recheck_bithumb.py와 동일하게 is_market_alert_enabled()를
+  체크해서, 알림이 꺼져 있으면 스캔/저장은 그대로 진행하되 텔레그램 발송만 생략함.
+"""
 
 import sys
 import os
@@ -14,10 +20,13 @@ import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      build_watch_summary, send_long_message, pick_top_entries,
-                     PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN)
+                     PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN,
+                     is_market_alert_enabled)
 
 MAX_WORKERS = 10
+MARKET_KEY = 'COIN'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_bithumb_result.csv')
+ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
 
 
 def get_bithumb_krw_coins():
@@ -102,6 +111,18 @@ def build_pick_message(entry_cnt, top_df):
 
 
 if __name__ == "__main__":
+    alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
+    if not alerts_enabled:
+        print("[코인] 알림 중지 상태입니다 - 스캔/저장은 정상 진행하되 텔레그램 발송만 생략합니다.")
+
+    def notify(msg):
+        if alerts_enabled:
+            notify_telegram(msg)
+
+    def notify_long(text):
+        if alerts_enabled:
+            send_long_message(text)
+
     df = screen_bithumb()
     print(f"\n[코인] 신호 코인 {len(df)}개 발견")
 
@@ -132,16 +153,16 @@ if __name__ == "__main__":
         top_df = pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN)
         if not top_df.empty:
             # 10개가 안 되더라도(1~9개) 있는 만큼 그대로 발송함
-            send_long_message(build_pick_message(entry_cnt, top_df))
+            notify_long(build_pick_message(entry_cnt, top_df))
         else:
-            notify_telegram(f"[코인 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
-                             f"{PICK_PRICE_MAX:,}원 이하 조건을 만족하는 종목이 없습니다.")
+            notify(f"[코인 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
+                   f"{PICK_PRICE_MAX:,}원 이하 조건을 만족하는 종목이 없습니다.")
     else:
-        notify_telegram("[코인 전체스캔] 실행 완료 - 부합 종목 없음")
+        notify("[코인 전체스캔] 실행 완료 - 부합 종목 없음")
 
     if watch_cnt > 0:
         summary = build_watch_summary(df, "코인")
         if summary:
-            send_long_message(summary)
+            notify_long(summary)
     else:
-        notify_telegram("[코인 전체스캔] 관심종목 없음")
+        notify("[코인 전체스캔] 관심종목 없음")
