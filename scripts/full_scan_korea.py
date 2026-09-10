@@ -3,10 +3,17 @@
 
 [2026-09-02 변경사항]
 - 기존: 스캔 대상 자체를 종가 20,000~60,000원 종목으로 좁혀서 진행
-- 변경: 스캔 대상은 코스피(KOSPI) 전체로 확대. 대신 "최종 픽" 단계에서만
-  종가 10,000원 이하 조건을 적용해 최대 10개(돌파강도 큰 순)를 알림.
-  (기존 20,000원 이상 필터와 신규 10,000원 이하 조건이 정면 충돌하기 때문에
-  스캔 단계 필터는 제거하고 최종 픽 단계로 가격조건을 이동함)
+- 변경: 스캔 대상은 코스피(KOSPI) 전체로 확대.
+
+[2026-09-10 변경사항 - 전체 교체]
+- 🐛 버그 수정: "국장알림중지"를 걸어도 전체스캔 알림(스캔실패/진입픽/관심요약 등)이
+  그대로 발송되던 문제 수정. recheck_korea.py와 동일하게 is_market_alert_enabled()를
+  체크해서, 알림이 꺼져 있으면 스캔/저장은 그대로 진행하되 텔레그램 발송만 생략함.
+- 🛠 개선: KRX 서버 오류로 종목 리스트를 못 불러오는 문제 완화.
+  1) FinanceDataReader(fdr.StockListing)로 재시도 횟수/대기시간 확대(3회->5회, 15초->20초)
+  2) 그래도 실패하면 pykrx(get_market_ticker_list/get_market_ticker_name)로 재시도하는
+     2차 폴백 추가. (requirements.txt에 pykrx 추가 필요)
+  둘 다 실패해야 최종적으로 "스캔 실패" 알림을 보냄.
 """
 
 import sys
@@ -20,14 +27,17 @@ from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      build_watch_summary, send_long_message, pick_top_entries,
-                     PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN)
+                     PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN,
+                     is_market_alert_enabled)
 
 MAX_WORKERS = 20
 MARKET = 'KOSPI'
+MARKET_KEY = 'KR'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
+ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
 
-KRX_RETRY_COUNT = 3
-KRX_RETRY_WAIT_SEC = 15
+KRX_RETRY_COUNT = 5
+KRX_RETRY_WAIT_SEC = 20
 
 
 def fetch_and_check(code_name, start, end):
@@ -59,18 +69,56 @@ def fetch_and_check(code_name, start, end):
     return rows
 
 
-def get_kospi_listing():
-    """KRX 서버 일시 오류 대응: 15초 간격으로 최대 3회 재시도. 계속 실패하면 None 반환."""
+def get_kospi_listing_fdr():
+    """1차: FinanceDataReader로 조회. KRX_RETRY_COUNT회 재시도."""
     for attempt in range(1, KRX_RETRY_COUNT + 1):
         try:
             listing = fdr.StockListing(MARKET)
             if listing is not None and not listing.empty:
-                return listing
+                return listing[['Code', 'Name']]
         except Exception as e:
-            print(f"KOSPI 목록 조회 실패 ({attempt}/{KRX_RETRY_COUNT}): {e}")
+            print(f"[fdr] KOSPI 목록 조회 실패 ({attempt}/{KRX_RETRY_COUNT}): {e}")
         if attempt < KRX_RETRY_COUNT:
             time.sleep(KRX_RETRY_WAIT_SEC)
     return None
+
+
+def get_kospi_listing_pykrx():
+    """2차 폴백: pykrx로 조회. fdr이 완전히 막혀도 pykrx 엔드포인트는 살아있는 경우가 있음."""
+    try:
+        from pykrx import stock
+    except ImportError:
+        print("[pykrx] 패키지가 설치되어 있지 않아 폴백을 건너뜁니다 (requirements.txt에 pykrx 추가 필요).")
+        return None
+
+    today = datetime.today().strftime('%Y%m%d')
+    for attempt in range(1, KRX_RETRY_COUNT + 1):
+        try:
+            codes = stock.get_market_ticker_list(today, market=MARKET)
+            if codes:
+                rows = []
+                for code in codes:
+                    try:
+                        name = stock.get_market_ticker_name(code)
+                    except Exception:
+                        name = code
+                    rows.append([code, name])
+                if rows:
+                    return pd.DataFrame(rows, columns=['Code', 'Name'])
+        except Exception as e:
+            print(f"[pykrx] KOSPI 목록 조회 실패 ({attempt}/{KRX_RETRY_COUNT}): {e}")
+        if attempt < KRX_RETRY_COUNT:
+            time.sleep(KRX_RETRY_WAIT_SEC)
+    return None
+
+
+def get_kospi_listing():
+    """KRX 서버 일시 오류 대응: fdr 재시도 -> 실패시 pykrx 재시도. 둘 다 실패하면 None."""
+    listing = get_kospi_listing_fdr()
+    if listing is not None:
+        return listing
+    print("[국장] fdr 조회 완전 실패 -> pykrx 폴백 시도")
+    return get_kospi_listing_pykrx()
 
 
 def screen_korea():
@@ -113,10 +161,22 @@ def build_pick_message(entry_cnt, top_df):
 
 
 if __name__ == "__main__":
+    alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
+    if not alerts_enabled:
+        print("[국장] 알림 중지 상태입니다 - 스캔/저장은 정상 진행하되 텔레그램 발송만 생략합니다.")
+
+    def notify(msg):
+        if alerts_enabled:
+            notify_telegram(msg)
+
+    def notify_long(text):
+        if alerts_enabled:
+            send_long_message(text)
+
     df = screen_korea()
 
     if df is None:
-        notify_telegram("[국장 전체스캔] 스캔 실패 - KOSPI 종목 리스트를 불러오지 못했습니다 (KRX 서버 오류로 추정).")
+        notify("[국장 전체스캔] 스캔 실패 - KOSPI 종목 리스트를 불러오지 못했습니다 (KRX 서버 오류로 추정, fdr/pykrx 모두 실패).")
         sys.exit(0)
 
     print(f"\n[국장] 신호 종목 {len(df)}개 발견")
@@ -150,16 +210,16 @@ if __name__ == "__main__":
         top_df = pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN)
         if not top_df.empty:
             # 10개가 안 되더라도(1~9개) 있는 만큼 그대로 발송함 - 10개를 채워야만 보내는 게 아님
-            send_long_message(build_pick_message(entry_cnt, top_df))
+            notify_long(build_pick_message(entry_cnt, top_df))
         else:
-            notify_telegram(f"[국장 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
-                             f"{PICK_PRICE_MAX:,}원 이하 조건을 만족하는 종목이 없습니다.")
+            notify(f"[국장 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
+                   f"{PICK_PRICE_MAX:,}원 이하 조건을 만족하는 종목이 없습니다.")
     else:
-        notify_telegram("[국장 전체스캔] 실행 완료 - 부합 종목 없음")
+        notify("[국장 전체스캔] 실행 완료 - 부합 종목 없음")
 
     if watch_cnt > 0:
         summary = build_watch_summary(df, "국장")
         if summary:
-            send_long_message(summary)
+            notify_long(summary)
     else:
-        notify_telegram("[국장 전체스캔] 관심종목 없음")
+        notify("[국장 전체스캔] 관심종목 없음")
