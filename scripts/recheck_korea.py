@@ -8,7 +8,11 @@ System1(단기)에는 터틀 휩쏘 필터가 적용됩니다 (직전 거래가 
 
 [2026-09-04 변경사항] "국장알림중지" 명령으로 알림을 꺼두면, 재확인(휩쏘필터
 포함) 자체는 계속 정상 진행하고 data/*.csv도 그대로 갱신하되, 텔레그램 발송
-(확정전환/확정이탈/전환없음 알림)만 생략합니다."""
+(확정전환/확정이탈/전환없음 알림)만 생략합니다.
+
+[2026-09-10 변경사항 - 전체 교체] full_scan_korea.py와 동일하게, 개별 종목의
+일봉 데이터를 KIS 인증 API로 우선 조회하고 실패하거나 자격증명이 없으면 기존
+fdr 방식으로 폴백하도록 변경함 (kis_client.py 신규 모듈)."""
 
 import sys
 import os
@@ -22,12 +26,15 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      load_trade_history, save_trade_history, check_whipsaw, record_trade_result,
                      is_market_alert_enabled)
+from kis_client import kis_credentials_available, get_kis_daily_ohlc
 
 MAX_WORKERS = 20
 MARKET_KEY = 'KR'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
 HIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'trade_history_korea.csv')
 ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
+
+KIS_AVAILABLE = kis_credentials_available()
 
 
 def is_korea_market_open():
@@ -37,14 +44,29 @@ def is_korea_market_open():
     return dtime(9, 0) <= now.time() <= dtime(15, 30)
 
 
+def fetch_ohlc(code, start, end):
+    """① KIS 인증 API -> ② fdr 순으로 개별 종목 일봉 데이터를 가져온다."""
+    if KIS_AVAILABLE:
+        df = get_kis_daily_ohlc(code, days=300)
+        if df is not None and not df.empty:
+            return df
+    try:
+        df = fdr.DataReader(str(code).zfill(6), start, end)
+        if df is not None and not df.empty:
+            return df
+    except Exception:
+        pass
+    return None
+
+
 def recheck_one(row, start, end):
     code, name, system, orig_signal = row['code'], row['name'], row['system'], row['signal']
     sysconf = SYSTEMS.get(system)
     if not sysconf:
         return None
     try:
-        df = fdr.DataReader(str(code).zfill(6), start, end)
-        if df.empty:
+        df = fetch_ohlc(code, start, end)
+        if df is None or df.empty:
             return {'code': code, 'name': name, 'system': system, 'status': '데이터없음'}
         res = check_turtle_breakout(df, sysconf['entry'], sysconf['exit'], WATCH_RATIO)
         if not res:
@@ -132,11 +154,11 @@ if __name__ == "__main__":
     result_df = pd.DataFrame(results)
     confirm_df = pd.DataFrame(confirm_rows)
     exit_df = pd.DataFrame(exit_rows)
-    skip_df = result_df[result_df['status'] == '스킵(추격과다)']
+    skip_df = result_df[result_df['status'] == '스킵(추격과다)'] if not result_df.empty else result_df
     print(f"확정 {len(confirm_df)}개 / 확정이탈 {len(exit_df)}개 / "
           f"휩쏘스킵 {whipsaw_skip_count}개 / 스킵(추격과다) {len(skip_df)}개 / "
-          f"유지 {len(result_df[result_df['status']=='유지'])}개 / "
-          f"탈락 {len(result_df[result_df['status']=='탈락'])}개")
+          f"유지 {len(result_df[result_df['status']=='유지']) if not result_df.empty else 0}개 / "
+          f"탈락 {len(result_df[result_df['status']=='탈락']) if not result_df.empty else 0}개")
 
     for r in results:
         code, system, status = r['code'], r['system'], r['status']
