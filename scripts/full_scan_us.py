@@ -4,7 +4,13 @@
 
 [2026-09-02 변경사항] 최종 픽을 1개 -> 최대 10개로 확대, 종가 10,000(원화 환산 기준 아님,
 단순 통화단위 숫자) 이하 + 돌파강도(ATR배수) 큰 순으로 선정. common.py의 PICK_PRICE_MAX와
-동일 임계값을 그대로 사용합니다(국장/코인과 동일 기준 공유)."""
+동일 임계값을 그대로 사용합니다(국장/코인과 동일 기준 공유).
+
+[2026-09-10 변경사항 - 전체 교체]
+- 🐛 버그 수정: "미장알림중지"를 걸어도 전체스캔 알림(진입픽/관심요약/부합없음 등)이
+  그대로 발송되던 문제 수정. recheck_us.py와 동일하게 is_market_alert_enabled()를
+  체크해서, 알림이 꺼져 있으면 스캔/저장은 그대로 진행하되 텔레그램 발송만 생략함.
+"""
 
 import sys
 import os
@@ -15,9 +21,12 @@ import yfinance as yf
 from datetime import datetime, timedelta
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      build_watch_summary, send_long_message, pick_top_entries,
-                     PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN)
+                     PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN,
+                     is_market_alert_enabled)
 
+MARKET_KEY = 'US'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_us_result.csv')
+ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
 
 
 def get_sp500_tickers():
@@ -78,6 +87,18 @@ def build_pick_message(entry_cnt, top_df):
 
 
 if __name__ == "__main__":
+    alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
+    if not alerts_enabled:
+        print("[미장] 알림 중지 상태입니다 - 스캔/저장은 정상 진행하되 텔레그램 발송만 생략합니다.")
+
+    def notify(msg):
+        if alerts_enabled:
+            notify_telegram(msg)
+
+    def notify_long(text):
+        if alerts_enabled:
+            send_long_message(text)
+
     df = screen_us()
     print(f"\n[미장] 신호 종목 {len(df)}개 발견")
 
@@ -108,16 +129,16 @@ if __name__ == "__main__":
         top_df = pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN)
         if not top_df.empty:
             # 10개가 안 되더라도(1~9개) 있는 만큼 그대로 발송함
-            send_long_message(build_pick_message(entry_cnt, top_df))
+            notify_long(build_pick_message(entry_cnt, top_df))
         else:
-            notify_telegram(f"[미장 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
-                             f"{PICK_PRICE_MAX:,} 이하 조건을 만족하는 종목이 없습니다.")
+            notify(f"[미장 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
+                   f"{PICK_PRICE_MAX:,} 이하 조건을 만족하는 종목이 없습니다.")
     else:
-        notify_telegram("[미장 전체스캔] 실행 완료 - 부합 종목 없음")
+        notify("[미장 전체스캔] 실행 완료 - 부합 종목 없음")
 
     if watch_cnt > 0:
         summary = build_watch_summary(df, "미장")
         if summary:
-            send_long_message(summary)
+            notify_long(summary)
     else:
-        notify_telegram("[미장 전체스캔] 관심종목 없음")
+        notify("[미장 전체스캔] 관심종목 없음")
