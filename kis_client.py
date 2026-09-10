@@ -44,7 +44,7 @@ def _rate_limit():
 
 
 def kis_credentials_available():
-    return bool(os.environ.get('KIS_APP_KEY')) and bool(os.environ.get('KIS_APP_SECRET'))
+    return bool(os.environ.get('PSWqb0iXAiPNZtVwRV40s8ALkNmC1H4JchfR')) and bool(os.environ.get('ZA/1e2YVtVk+c3rVB3EVEPetCz+G3tO14P/I0kK6LSw0HQbH1LX6q+F+7fWSZvAfT05l74qesZZsFmxObIfSXkKylz5rwgY+ZYxeQRKIV5vHDtRZY5e0SKu7jT5lLwEanZD56LGQOE294E/fPi+GqsnLjItnE0FLD37Z2H6R10gy8KSTqDA='))
 
 
 def get_kis_access_token():
