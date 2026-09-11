@@ -53,8 +53,8 @@ AVAIL,AVAIL,System1(단기),청산,False,False,True,False,2.88,2.91,3.88,2.88,0.
 SWELL,SWELL,System1(단기),청산,False,False,True,False,0.98,0.99,1.93,0.98,0.514,0.18,
 PONKE,PONKE,System1(단기),청산,False,False,True,False,27.26,27.83,41.0,27.8,0.679,3.86,
 MVL,MVL,System1(단기),관심,False,False,False,True,1.4,1.54,1.47,1.2,1.047,0.09,
-PUFFER,PUFFER,System1(단기),관심,False,False,False,True,26.74,27.8,27.89,17.51,0.997,3.15,
-PUFFER,PUFFER,System2(중장기),관심,False,False,False,True,26.74,27.8,27.89,17.51,0.997,3.15,
+PUFFER,PUFFER,System1(단기),탈락,False,False,False,True,26.74,27.8,27.89,17.51,0.997,3.15,
+PUFFER,PUFFER,System2(중장기),탈락,False,False,False,True,26.74,27.8,27.89,17.51,0.997,3.15,
 TURBO,TURBO,System1(단기),청산,False,False,True,False,1.24,1.27,1.58,1.24,0.802,0.1,
 VANA,VANA,System1(단기),청산,False,False,True,False,1190.0,1222.0,1549.0,1205.0,0.789,69.3,
 VANA,VANA,System2(중장기),청산,False,False,True,False,1190.0,1222.0,1931.0,1205.0,0.633,69.3,
@@ -95,7 +95,7 @@ SKR,SKR,System1(단기),청산,False,False,True,False,25.36,27.0,48.57,25.7,0.55
 ICNT,ICNT,System1(단기),청산,False,False,True,False,131.0,135.0,176.0,134.0,0.767,9.9,
 PRL,PRL,System1(단기),청산,False,False,True,False,149.0,153.0,355.0,150.0,0.431,16.75,
 PRL,PRL,System2(중장기),청산,False,False,True,False,149.0,153.0,654.0,150.0,0.234,16.75,
-MBX,MBX,System1(단기),확정,False,False,False,True,41.27,54.45,45.56,28.2,1.195,4.25,45.75
+MBX,MBX,System1(단기),확정이탈,False,False,False,True,41.27,54.45,45.56,28.2,1.195,4.25,45.75
 MBX,MBX,System2(중장기),확정,False,False,False,True,41.27,54.45,45.56,11.35,1.195,4.25,45.75
 COS,COS,System1(단기),확정,False,False,False,True,0.27,0.3,0.29,0.22,1.06,0.02,0.29
 CRTS,CRTS,System1(단기),확정,False,False,False,True,0.06,0.07,0.06,0.05,1.085,0.0,0.06
