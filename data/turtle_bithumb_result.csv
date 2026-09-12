@@ -26,7 +26,7 @@ PENGU,PENGU,System1(단기),청산,False,False,True,False,9.83,10.35,14.56,9.88,
 PENGU,PENGU,System2(중장기),청산,False,False,True,False,9.83,10.35,14.56,9.88,0.711,0.99,
 PUMP,PUMP,System1(단기),청산,False,False,True,False,4.87,5.15,7.41,4.88,0.694,0.66,
 PUMP,PUMP,System2(중장기),청산,False,False,True,False,4.87,5.15,7.41,4.88,0.694,0.66,
-ENSO,ENSO,System1(단기),관심,False,False,False,True,1298.0,1310.0,1307.0,1130.0,1.002,76.25,
+ENSO,ENSO,System1(단기),탈락,False,False,False,True,1298.0,1310.0,1307.0,1130.0,1.002,76.25,
 YB,YB,System1(단기),청산,False,False,True,False,116.0,120.0,148.0,117.0,0.811,9.9,
 YB,YB,System2(중장기),청산,False,False,True,False,116.0,120.0,148.0,117.0,0.811,9.9,
 INIT,INIT,System2(중장기),확정,False,False,False,True,92.92,97.27,93.8,67.55,1.037,4.86,93.93
