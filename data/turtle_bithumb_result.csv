@@ -6,7 +6,7 @@ BSV,BSV,System1(단기),관심,False,False,False,True,23660.0,23720.0,23800.0,21
 MBL,MBL,System1(단기),관심,False,False,False,True,1.09,1.14,1.12,0.91,1.019,0.08,
 RSR,RSR,System1(단기),관심,False,False,False,True,2.11,2.11,2.11,1.83,1.0,0.12,
 USDS,USDS,System1(단기),관심,False,False,False,True,1370.0,1390.0,1399.0,1352.0,0.994,15.05,
-META,META,System1(단기),관심,False,False,False,True,11.62,11.91,11.7,10.13,1.018,0.54,
+META,META,System1(단기),탈락,False,False,False,True,11.62,11.91,11.7,10.13,1.018,0.54,
 JST,JST,System1(단기),관심,False,False,False,True,154.0,154.0,154.0,135.0,1.0,6.3,
 JST,JST,System2(중장기),관심,False,False,False,True,154.0,154.0,154.0,129.0,1.0,6.3,
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
