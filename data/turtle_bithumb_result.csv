@@ -22,7 +22,7 @@ TEMCO,TEMCO,System1(단기),관심,False,False,False,True,0.45,0.61,0.59,0.33,1.
 TEMCO,TEMCO,System2(중장기),관심,False,False,False,True,0.45,0.61,0.59,0.3,1.038,0.09,
 NFT,NFT,System1(단기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
 NFT,NFT,System2(중장기),관심,False,False,False,True,0.0,0.0,0.0,0.0,1.0,0.0,
-XEC,XEC,System1(단기),관심,False,False,False,True,0.01,0.01,0.01,0.01,1.028,0.0,
+XEC,XEC,System1(단기),확정,False,False,False,True,0.01,0.01,0.01,0.01,1.028,0.0,0.01
 EGLD,EGLD,System1(단기),청산,False,False,True,False,5645.0,6025.0,8100.0,5850.0,0.744,625.55,
 MINA,MINA,System1(단기),관심,False,False,False,True,136.0,154.0,154.0,88.58,1.0,15.56,
 MINA,MINA,System2(중장기),관심,False,False,False,True,136.0,154.0,154.0,72.1,1.0,15.56,
@@ -35,7 +35,7 @@ GMT,GMT,System2(중장기),관심,False,False,False,True,11.0,15.0,13.69,9.18,1.
 AZIT,AZIT,System1(단기),관심,False,False,False,True,3.05,5.5,3.86,2.23,1.423,0.62,
 AZIT,AZIT,System2(중장기),관심,False,False,False,True,3.05,5.5,3.86,2.03,1.423,0.62,
 NCT,NCT,System1(단기),청산,False,False,True,False,12.91,13.69,38.91,13.0,0.352,4.61,
-ID,ID,System1(단기),관심,False,False,False,True,45.92,47.44,46.91,41.89,1.011,2.39,
+ID,ID,System1(단기),확정,False,False,False,True,45.92,47.44,46.91,41.89,1.011,2.39,47.0
 ILV,ILV,System2(중장기),관심,False,False,False,True,4752.0,6265.0,5855.0,4068.0,1.07,272.3,
 AGLD,AGLD,System2(중장기),관심,False,False,False,True,250.0,298.0,253.0,216.0,1.178,12.55,
 BICO,BICO,System1(단기),청산,False,False,True,False,26.08,27.21,47.69,26.14,0.571,4.17,
@@ -67,7 +67,7 @@ MORPHO,MORPHO,System2(중장기),청산,False,False,True,False,2957.0,3110.0,395
 INIT,INIT,System1(단기),관심,False,False,False,True,91.25,98.01,97.64,80.22,1.004,5.08,
 INIT,INIT,System2(중장기),관심,False,False,False,True,91.25,98.01,97.64,72.3,1.004,5.08,
 BOUNTY,BOUNTY,System1(단기),관심,False,False,False,True,18.65,18.69,18.67,16.23,1.001,1.09,
-BERA,BERA,System1(단기),관심,False,False,False,True,267.0,284.0,267.0,228.0,1.064,16.55,
+BERA,BERA,System1(단기),탈락,False,False,False,True,267.0,284.0,267.0,228.0,1.064,16.55,
 VTHO,VTHO,System1(단기),관심,False,False,False,True,1.11,1.68,1.11,0.52,1.504,0.12,
 VTHO,VTHO,System2(중장기),관심,False,False,False,True,1.11,1.68,1.11,0.49,1.504,0.12,
 RED,RED,System1(단기),관심,False,False,False,True,180.0,184.0,182.0,157.0,1.011,10.85,
