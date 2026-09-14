@@ -34,7 +34,7 @@ DOV,DOV,System1(단기),청산,False,False,True,False,184.69,207.64,186.33,0.903
 DOV,DOV,System2(중장기),청산,False,False,True,False,184.69,233.03,186.33,0.805,3.92,,
 DD,DD,System1(단기),청산,False,False,True,False,124.03,146.18,126.23,0.855,2.97,,
 DD,DD,System2(중장기),청산,False,False,True,False,124.03,148.77,126.23,0.84,2.97,,
-EBAY,EBAY,System1(단기),관심,False,False,False,True,109.04,109.65,99.85,0.995,3.15,,
+EBAY,EBAY,System1(단기),탈락,False,False,False,True,109.04,109.65,99.85,0.995,3.15,,
 ELV,ELV,System1(단기),탈락,False,False,False,True,424.97,426.39,389.11,0.999,10.32,,
 EMR,EMR,System1(단기),청산,False,False,True,False,146.73,164.8,146.35,0.897,3.61,,
 EMR,EMR,System2(중장기),청산,False,False,True,False,146.73,165.79,146.35,0.892,3.61,,
