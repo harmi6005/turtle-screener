@@ -115,7 +115,7 @@ VRSN,VRSN,System1(단기),관심,False,False,False,True,297.3,300.36,279.04,0.99
 VRSN,VRSN,System2(중장기),관심,False,False,False,True,297.3,302.11,270.82,0.991,7.54,,
 VRT,VRT,System1(단기),청산,False,False,True,False,229.68,300.3,244.77,0.776,14.74,,
 VRT,VRT,System2(중장기),청산,False,False,True,False,229.68,340.0,244.77,0.685,14.74,,
-WRB,WRB,System1(단기),관심,False,False,False,True,70.94,71.38,67.36,0.994,1.27,,
+WRB,WRB,System1(단기),탈락,False,False,False,True,70.94,71.38,67.36,0.994,1.27,,
 WFC,WFC,System1(단기),관심,False,False,False,True,90.3,91.16,85.2,0.991,1.72,,
 WFC,WFC,System2(중장기),관심,False,False,False,True,90.3,91.16,83.48,0.991,1.72,,
 WDC,WDC,System1(단기),청산,False,False,True,False,419.66,548.42,420.74,0.77,27.82,,
