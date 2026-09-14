@@ -4,7 +4,7 @@ BCH,BCH,System2(중장기),청산,False,False,True,False,300900.0,307100.0,42100
 ELF,ELF,System1(단기),탈락,False,False,False,True,118.0,174.0,139.0,92.06,1.252,17.34,
 ELF,ELF,System2(중장기),탈락,False,False,False,True,118.0,174.0,139.0,87.01,1.252,17.34,
 BAT,BAT,System1(단기),탈락,False,False,False,True,106.0,114.0,112.0,94.23,1.018,5.17,
-BSV,BSV,System1(단기),관심,False,False,False,True,23250.0,23720.0,23800.0,21410.0,0.997,885.5,
+BSV,BSV,System1(단기),탈락,False,False,False,True,23250.0,23720.0,23800.0,21410.0,0.997,885.5,
 LINK,LINK,System1(단기),청산,False,False,True,False,15230.0,15640.0,18640.0,15260.0,0.839,837.5,
 MBL,MBL,System1(단기),탈락,False,False,False,True,1.12,1.4,1.12,0.91,1.245,0.09,
 MBL,MBL,System2(중장기),탈락,False,False,False,True,1.12,1.4,1.38,0.87,1.014,0.09,
