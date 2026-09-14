@@ -60,7 +60,7 @@ IR,IR,System1(단기),청산,False,False,True,False,71.35,84.43,71.65,0.853,1.91
 IR,IR,System2(중장기),청산,False,False,True,False,71.35,91.76,71.65,0.785,1.91,,
 JCI,JCI,System1(단기),청산,False,False,True,False,137.77,155.79,137.54,0.902,3.52,,
 JCI,JCI,System2(중장기),청산,False,False,True,False,137.77,157.06,137.54,0.894,3.52,,
-KR,KR,System2(중장기),관심,False,False,False,True,59.89,60.86,55.05,0.992,1.47,,
+KR,KR,System2(중장기),탈락,False,False,False,True,59.89,60.86,55.05,0.992,1.47,,
 LRCX,LRCX,System1(단기),청산,False,False,True,False,274.83,345.28,278.04,0.802,14.34,,
 LRCX,LRCX,System2(중장기),청산,False,False,True,False,274.83,438.5,278.04,0.632,14.34,,
 LII,LII,System1(단기),청산,False,False,True,False,354.9,425.56,365.7,0.834,11.16,,
