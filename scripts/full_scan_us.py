@@ -22,9 +22,10 @@ from datetime import datetime, timedelta
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      build_watch_summary, send_long_message, pick_top_entries,
                      PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN,
-                     is_market_alert_enabled)
+                     is_market_alert_enabled, is_market_open_scan_window)
 
 MARKET_KEY = 'US'
+MARKET_CALENDAR = 'XNYS'  # 뉴욕증권거래소 (나스닥 상장 종목도 휴장일은 동일)
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_us_result.csv')
 ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
 SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'scan_settings.csv')
@@ -93,6 +94,13 @@ if __name__ == "__main__":
     scan_enabled = is_market_alert_enabled(MARKET_KEY, SCAN_SETTINGS_PATH)
     if not scan_enabled:
         print("[미장] 매시간 전체스캔이 꺼져있는 상태입니다 - 이번 실행은 건너뜁니다.")
+        sys.exit(0)
+
+    # 2026-09-14 추가: 휴장일(주말/공휴일)이거나 "개장 1시간 전 ~ 마감 1시간 후"
+    # 구간 밖이면 API 호출 없이 건너뜀. exchange_calendars가 미국 서머타임(EDT/EST)
+    # 전환까지 정확히 반영해서 개장/마감 시각을 판정함.
+    if not is_market_open_scan_window(MARKET_CALENDAR, buffer_before_hours=1, buffer_after_hours=1):
+        print("[미장] 휴장일이거나 장 운영시간(개장 1시간 전~마감 1시간 후) 밖이라 이번 실행은 건너뜁니다.")
         sys.exit(0)
 
     alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
