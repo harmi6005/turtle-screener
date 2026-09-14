@@ -50,6 +50,7 @@ MARKET = 'KOSPI'
 MARKET_KEY = 'KR'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
 ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
+SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'scan_settings.csv')
 TICKER_CACHE_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'kospi_tickers_cache.csv')
 
 KRX_RETRY_COUNT = 5
@@ -296,6 +297,14 @@ def build_pick_message(entry_cnt, top_df):
 
 
 if __name__ == "__main__":
+    # 2026-09-14 추가: 매시간 전체스캔 자체를 텔레그램 명령("국장전체스캔중지"/"국장전체스캔시작")
+    # 으로 켜고 끌 수 있음. 알림 on/off(ALERT_SETTINGS_PATH)와는 별개 설정이며,
+    # 이게 꺼져 있으면 API 호출/데이터 갱신 없이 스캔 자체를 건너뜀(리소스 절약 목적).
+    scan_enabled = is_market_alert_enabled(MARKET_KEY, SCAN_SETTINGS_PATH)
+    if not scan_enabled:
+        print("[국장] 매시간 전체스캔이 꺼져있는 상태입니다 - 이번 실행은 건너뜁니다.")
+        sys.exit(0)
+
     alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
     if not alerts_enabled:
         print("[국장] 알림 중지 상태입니다 - 스캔/저장은 정상 진행하되 텔레그램 발송만 생략합니다.")
