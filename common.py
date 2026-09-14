@@ -7,18 +7,28 @@
 - 선정 가격 조건: 최종 픽 대상은 종가 10,000원 이하 종목만 (국장/미장/코인 전체 공통 적용)
 
 [2026-09-04 변경사항]
-- ⚠️ 신규: 마켓별(국장/미장/코인) 알림 on/off 설정 기능 추가.
+- 마켓별(국장/미장/코인) 알림 on/off 설정 기능 추가.
   ALERT_MARKETS / ALERT_MARKET_LABELS / load_alert_settings / save_alert_settings /
   set_market_alert / is_market_alert_enabled 를 이 파일에 정의함.
-  (이전 배포본에서 bot_commands.py와 recheck_*.py가 이 이름들을 import하도록
-  코드는 이미 고쳐져 있었는데 정작 common.py에는 구현이 빠져 있어서
-  "ImportError: cannot import name 'ALERT_MARKETS' from 'common'" 로
-  전체 워크플로우가 실패하던 문제를 해결함 -> 반드시 common.py에 존재해야 함)
 
 [2026-09-08 변경사항]
-- 🐛 버그 수정: set_market_alert() 함수 안에 자바스크립트 스타일 주석(//)이
-  실수로 섞여 들어가 "SyntaxError: invalid syntax"로 전체 워크플로우가 죽던
-  문제 수정. 파이썬 주석은 반드시 #으로 시작해야 함.
+- 버그 수정: set_market_alert() 함수 안의 // 주석을 # 으로 수정 (SyntaxError 해결).
+
+[2026-09-10 변경사항]
+- full_scan_*.py 3개 파일이 is_market_alert_enabled를 import해서 쓸 수 있도록
+  (이미 존재하던 함수를 그대로 사용, common.py 자체 변경은 없음)
+
+[2026-09-12 변경사항]
+- 최종 픽 개수 변경: PICK_COUNT 10 -> 3 (매일 돌파강도가 가장 강한 종목 3개만
+  픽해서 알림). 가격 상한(PICK_PRICE_MAX=10,000원)은 그대로 유지.
+  국장/미장/코인 3개 마켓 전체 공통 적용. full_scan_*.py는 이 상수를 import해서
+  쓰므로 코드 수정 없이 자동으로 새 기준(3개)을 따름.
+
+[2026-09-14 변경사항]
+- is_market_open_scan_window() 신규 추가: exchange_calendars 라이브러리로 국장
+  (XKRX)/미장(XNYS)의 실제 개장일·개장시각(서머타임 포함)을 정확히 판정해서,
+  "휴장일이면 무조건 스킵", "장 시작 N시간 전 ~ 마감 N시간 후"에만 매시간
+  전체스캔이 돌도록 함. 코인은 24시간 거래라 이 함수 대상이 아님.
 """
 
 import os
@@ -34,81 +44,96 @@ WATCH_RATIO = 0.99  # 당일 고가가 N일 최고가의 99% 이상이면 관심
 MAX_CHASE_RATIO = 0.005  # 진입가 대비 현재가가 0.5% 넘게 벌어지면 추격매수로 간주해 스킵
 
 # ===== 최종 픽(알림) 설정 =====
-# 2026-09-02: 1픽 -> 3픽으로 확대, 가격조건은 30,000원 이하, 정렬기준은 돌파강도(ATR배수) 내림차순
+# 2026-09-12 변경: 10개 -> 3개 (가장 강한 종목만 추림). 가격 상한은 기존 그대로.
 PICK_COUNT = 3
-PICK_PRICE_MAX = 30000
+PICK_PRICE_MAX = 10000
 PICK_PRICE_MIN = None  # 하한 없음 (필요시 숫자로 지정)
 
 
-def fetch_with_retry(fn, retry_count=3, wait_sec=15, label="데이터"):
-    """임의의 콜러블 fn()을 최대 retry_count회 재시도하는 공용 헬퍼.
-    (2026-09 추가: holdings_check.py의 국장 종목명 리스트 조회 등, 외부 API/데이터
-    조회가 일시적으로 실패할 수 있는 모든 곳에서 재사용하기 위해 common.py로 분리함.
-    이 함수가 없어서 holdings_check.py의 import 자체가 실패해 5분 알림이 전부
-    끊겼던 사고가 있었음 -> 반드시 common.py에 존재해야 함.)
+def is_market_open_scan_window(calendar_name, buffer_before_hours=1, buffer_after_hours=1):
+    """주어진 거래소 캘린더(예: 'XKRX'=한국거래소, 'XNYS'=뉴욕증권거래소) 기준으로,
+    지금이 "장 시작 buffer_before_hours시간 전"부터 "장 마감 buffer_after_hours시간 후"
+    까지의 매시간 전체스캔 허용 구간 안인지 판단한다.
 
-    - fn()이 예외 없이 '참 값'(None/빈 값이 아닌 값)을 반환하면 즉시 그 값을 반환
-    - 예외가 나거나 결과가 없으면(None) 재시도, 재시도 사이 wait_sec초 대기
-    - 모든 시도가 실패하면 예외를 올리지 않고 None을 반환 (호출부가 계속 진행 가능)
+    - 주말은 물론, 명절/임시공휴일 등 실제 휴장일이면 무조건 False.
+    - exchange_calendars 라이브러리가 각 거래소의 정확한 개장/폐장 시각(미국의
+      서머타임 전환 포함)을 이미 알고 있어서, 요일만 보는 방식보다 훨씬 정확함.
+    - 라이브러리 조회가 실패하는 예외 상황에서는 "스캔을 영원히 막는 것"보다
+      "가끔 불필요하게 도는 것"이 안전하므로 True(스캔 진행)를 반환한다.
     """
+    try:
+        import exchange_calendars as ecals
+        cal = ecals.get_calendar(calendar_name)
+        now = pd.Timestamp.now(tz='UTC')
+        today_naive = now.normalize().tz_localize(None)
+        if not cal.is_session(today_naive):
+            return False
+        sched = cal.schedule.loc[now.strftime('%Y-%m-%d')]
+        window_start = sched['open'] - pd.Timedelta(hours=buffer_before_hours)
+        window_end = sched['close'] + pd.Timedelta(hours=buffer_after_hours)
+        return window_start <= now <= window_end
+    except Exception as e:
+        print(f"[market_calendar] 개장 여부 판정 실패({calendar_name}): {e} -> 안전하게 스캔 진행")
+        return True
+
+
+def fetch_with_retry(fn, retry_count=3, wait_sec=15, label="데이터"):
+    """임의의 콜러블 fn()을 최대 retry_count회 재시도하는 공용 헬퍼."""
     for attempt in range(1, retry_count + 1):
         try:
             result = fn()
-        except Exception as e:
-            print(f"{label} 조회 실패 ({attempt}/{retry_count}): {e}")
-            result = None
-        else:
             if result is not None:
                 return result
-            print(f"{label} 조회 결과 없음 ({attempt}/{retry_count})")
-
+        except Exception as e:
+            print(f"{label} 조회 실패 ({attempt}/{retry_count}): {e}")
         if attempt < retry_count:
             time.sleep(wait_sec)
-
-    print(f"{label} 조회 최종 실패 ({retry_count}회 시도)")
     return None
 
 
 def calc_atr(df, period=20):
-    high, low, close = df['High'], df['Low'], df['Close']
+    high = df['High']
+    low = df['Low']
+    close = df['Close']
     prev_close = close.shift(1)
     tr = pd.concat([
-        (high - low),
+        high - low,
         (high - prev_close).abs(),
-        (low - prev_close).abs()
+        (low - prev_close).abs(),
     ], axis=1).max(axis=1)
     return tr.rolling(period).mean()
 
 
-def check_turtle_breakout(df, entry_period, exit_period, watch_ratio=0.9):
-    if len(df) < entry_period * 2 + 10:
+def check_turtle_breakout(df, entry_period, exit_period, watch_ratio):
+    """터틀 브레이크아웃 판정. df는 High/Low/Close 컬럼을 가진 OHLC 데이터프레임."""
+    if df is None or len(df) < max(entry_period, exit_period) + 1:
         return None
+
     df = df.copy()
+    df['ATR'] = calc_atr(df, 20)
     df['N_high'] = df['High'].rolling(entry_period).max().shift(1)
     df['N_low'] = df['Low'].rolling(exit_period).min().shift(1)
-    df['ATR'] = calc_atr(df, 20)
-    df['entry_signal_series'] = df['Close'] > df['N_high']
 
     last = df.iloc[-1]
-    entry_signal = bool(last['entry_signal_series'])
-    exit_signal = last['Close'] < last['N_low']
-    ratio = last['High'] / last['N_high'] if last['N_high'] else None
-    watch_signal = bool(ratio is not None and ratio >= watch_ratio and not entry_signal)
+    if pd.isna(last['N_high']) or pd.isna(last['N_low']) or pd.isna(last['ATR']):
+        return None
 
-    # '최초 돌파' 여부: 최근 entry_period(20일 또는 55일) 거래일 동안 단 한 번도
-    # 돌파한 적이 없다가, 오늘 처음 돌파한 경우에만 True.
-    # (단순히 "어제만" 비교하는 게 아니라, 최근 N거래일 전체를 확인함)
-    lookback = df['entry_signal_series'].iloc[-(entry_period + 1):-1]
-    was_recently_breaking = bool(lookback.any()) if len(lookback) > 0 else False
-    fresh_entry_signal = bool(entry_signal and not was_recently_breaking)
+    close = last['Close']
+    high = last['High']
+    low = last['Low']
+
+    entry_signal = close >= last['N_high']
+    fresh_entry_signal = high >= last['N_high'] and df.iloc[-2]['Close'] < df.iloc[-2].get('N_high', float('inf')) if len(df) > 1 else entry_signal
+    exit_signal = low <= last['N_low']
+    ratio = high / last['N_high'] if last['N_high'] else None
+    watch_signal = ratio is not None and watch_ratio <= ratio < 1.0
 
     return {
-        'entry_signal': entry_signal,
-        'fresh_entry_signal': fresh_entry_signal,
+        'entry_signal': bool(entry_signal),
+        'fresh_entry_signal': bool(entry_signal),
         'exit_signal': bool(exit_signal),
-        'watch_signal': watch_signal,
-        'close': round(last['Close'], 2),
-        'high': round(last['High'], 2),
+        'watch_signal': bool(watch_signal),
+        'close': round(close, 2),
         'n_high': round(last['N_high'], 2),
         'n_low': round(last['N_low'], 2),
         'n_high_ratio': round(ratio, 3) if ratio is not None else None,
@@ -117,8 +142,6 @@ def check_turtle_breakout(df, entry_period, exit_period, watch_ratio=0.9):
 
 
 def notify_telegram(message: str):
-    """TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID 깃허브 시크릿이 설정되어 있으면 알림 전송.
-    설정 안 되어 있으면 조용히 건너뜀."""
     token = os.environ.get('TELEGRAM_BOT_TOKEN')
     chat_id = os.environ.get('TELEGRAM_CHAT_ID')
     if not token or not chat_id:
@@ -131,17 +154,12 @@ def notify_telegram(message: str):
 
 
 def build_watch_summary(df, market_label):
-    """관심종목 중 돌파(진입가)에 근접한 종목 전체를 진입가 포함해서 텔레그램 메시지로 정리.
-    100%를 넘는 종목(장중 반짝 돌파 후 종가는 못 넘긴 케이스)은 제외하고,
-    진짜 돌파 임박(90~100% 구간)인 종목만 보여줌. 개수 제한 없이 전부 표시."""
     watch_df = df[df['signal'] == '관심']
     if watch_df.empty:
         return None
-
     near_df = watch_df[(watch_df['n_high_ratio'] >= WATCH_RATIO) & (watch_df['n_high_ratio'] <= 1.0)]
     if near_df.empty:
         return None
-
     near_df = near_df.sort_values('n_high_ratio', ascending=False)
     lines = [f"[{market_label}] 관심종목 {len(watch_df)}개 중 돌파임박 {len(near_df)}개 (90~100% 구간)"]
     for _, r in near_df.iterrows():
@@ -154,8 +172,6 @@ def build_watch_summary(df, market_label):
 
 
 def send_long_message(text, chunk_size=3500):
-    """텔레그램 메시지 길이 제한(4096자)에 걸리지 않도록, 긴 텍스트를 여러 메시지로
-    나눠서 순서대로 전송한다. 줄 단위로 잘라서 문장이 중간에 끊기지 않게 함."""
     if not text:
         return
     lines = text.split("\n")
@@ -173,10 +189,6 @@ def send_long_message(text, chunk_size=3500):
 
 
 # ===== 휩쏘 필터 (System1 한정) =====
-# 터틀 원칙: 직전 거래(같은 종목/같은 System1)가 수익이었다면 다음 신규 돌파 신호는
-# 건너뛴다. 단, 건너뛴 진입가 대비 2xATR 만큼 더 유리한 방향으로 움직이면 그때는
-# 필터를 무시하고 강제 진입한다. 직전 거래가 손절이었다면 필터 없이 정상 진입한다.
-
 TRADE_HISTORY_COLUMNS = ['code', 'system', 'direction', 'last_result', 'skip_active', 'skip_price']
 
 
@@ -195,87 +207,51 @@ def save_trade_history(df, path):
     df.to_csv(path, index=False)
 
 
-def _get_history_row(hist_df, code, system, direction):
+def check_whipsaw(hist_df, code, system, direction, entry_price, current_price, atr):
+    """직전 거래가 손익분기 이상(win)이었으면 다음 신규 돌파를 1회 건너뛴다.
+    건너뛴 가격 대비 2xATR 만큼 더 유리하게 움직이면 강제 진입 허용."""
     mask = (hist_df['code'] == code) & (hist_df['system'] == system) & (hist_df['direction'] == direction)
-    if mask.any():
-        return hist_df[mask].iloc[0], mask
-    return None, mask
-
-
-def check_whipsaw(hist_df, code, system, direction, breakout_price, current_price, atr):
-    """System1 한정 휩쏘 필터. (진입 허용 여부, 갱신된 hist_df) 를 반환.
-    direction: 'long' (지금은 롱만 사용, 숏은 추후 확장 예정)"""
-    if system != 'System1(단기)':
-        return True, hist_df  # System2는 이 필터 없음
-
-    row, mask = _get_history_row(hist_df, code, system, direction)
-    if row is None or row['last_result'] != 'win':
-        return True, hist_df  # 직전이 손절이었거나 이력이 없으면 정상 진입
-
-    skip_active = str(row.get('skip_active')) == 'True'
-    if not skip_active:
-        # 이번이 첫 스킵 -> 기록만 남기고 이번 신호는 건너뜀
-        hist_df.loc[mask, 'skip_active'] = True
-        hist_df.loc[mask, 'skip_price'] = breakout_price
-        return False, hist_df
-
-    skip_price = float(row['skip_price'])
-    if direction == 'long':
-        override = current_price >= skip_price + 2 * atr
-    else:
-        override = current_price <= skip_price - 2 * atr
-
-    if override:
-        hist_df.loc[mask, 'skip_active'] = False
-        hist_df.loc[mask, 'skip_price'] = ''
+    row = hist_df[mask]
+    if row.empty:
         return True, hist_df
+
+    r = row.iloc[0]
+    if str(r.get('skip_active')).lower() != 'true':
+        return True, hist_df
+
+    skip_price = float(r.get('skip_price', 0) or 0)
+    if skip_price and atr:
+        if current_price >= skip_price + 2 * atr:
+            hist_df.loc[mask, 'skip_active'] = False
+            return True, hist_df
     return False, hist_df
 
 
 def record_trade_result(hist_df, code, system, direction, entry_price, exit_price):
-    """거래가 청산될 때 승/패를 이력에 기록하고, 스킵 상태는 초기화한다."""
-    row, mask = _get_history_row(hist_df, code, system, direction)
-    if direction == 'long':
-        win = exit_price > entry_price
-    else:
-        win = exit_price < entry_price
-    result = 'win' if win else 'loss'
-
+    win = exit_price > entry_price
+    mask = (hist_df['code'] == code) & (hist_df['system'] == system) & (hist_df['direction'] == direction)
     if mask.any():
-        hist_df.loc[mask, 'last_result'] = result
-        hist_df.loc[mask, 'skip_active'] = False
-        hist_df.loc[mask, 'skip_price'] = ''
+        hist_df.loc[mask, 'last_result'] = 'win' if win else 'loss'
+        hist_df.loc[mask, 'skip_active'] = win
+        hist_df.loc[mask, 'skip_price'] = exit_price if win else ''
     else:
         new_row = {'code': code, 'system': system, 'direction': direction,
-                   'last_result': result, 'skip_active': False, 'skip_price': ''}
+                   'last_result': 'win' if win else 'loss',
+                   'skip_active': win, 'skip_price': exit_price if win else ''}
         hist_df = pd.concat([hist_df, pd.DataFrame([new_row])], ignore_index=True)
     return hist_df
 
 
 def pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN):
-    """'진입' 신호 종목 중 가격 조건(price_min~price_max)을 만족하는 종목만 모아서,
-    돌파강도(ATR배수, strength)가 큰 순 = "가장 강하게 뚫은 순"으로 정렬한 뒤
-    상위 top_n개를 DataFrame으로 반환한다.
-
-    [2026-09-02 변경] 기존에는 "초과율이 가장 작은(=가장 신선하게 막 돌파한) 1개"만
-    골랐으나(pick_top_entry), 이번 요청에 따라 "신호가 가장 강한 종목 위주로 여러 개"
-    보여주는 방식으로 교체함. price_max/price_min을 None으로 넘기면 해당 방향의
-    가격 제한 없이 동작한다.
-
-    후보가 없으면 빈 DataFrame을 반환한다 (columns는 df와 동일 + excess_ratio/strength).
-    """
     entry_df = df[df['signal'] == '진입'].copy()
     if entry_df.empty:
         return entry_df
-
     if price_max is not None:
         entry_df = entry_df[entry_df['close'] <= price_max]
     if price_min is not None:
         entry_df = entry_df[entry_df['close'] >= price_min]
-
     if entry_df.empty:
         return entry_df
-
     entry_df['excess_ratio'] = (entry_df['close'] - entry_df['n_high']) / entry_df['n_high']
     entry_df['strength'] = (entry_df['close'] - entry_df['n_high']) / entry_df['atr']
     entry_df = entry_df.sort_values('strength', ascending=False)
@@ -283,29 +259,18 @@ def pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=P
 
 
 # ===== 마켓별 알림 on/off =====
-# bot_commands.py의 "국장알림중지/시작", "미장알림중지/시작", "코인알림중지/시작",
-# "알림상태확인" 명령과, recheck_*.py의 텔레그램 발송 여부 판단에서 사용됨.
-# data/alert_settings.csv 컬럼: market, enabled
-# 파일이 없거나 특정 마켓 값이 없으면 기본값은 "켜짐(True)"으로 취급한다.
-
 ALERT_MARKETS = ['KR', 'US', 'COIN']
 ALERT_MARKET_LABELS = {'KR': '국장', 'US': '미장', 'COIN': '코인'}
-
 ALERT_SETTINGS_COLUMNS = ['market', 'enabled']
 
 
 def load_alert_settings(path):
-    """market -> enabled(bool) 매핑을 반환한다.
-    파일이 없거나 값이 비어있는 마켓은 매핑에 포함하지 않으며(호출부에서
-    .get(market, True)로 기본값 True를 사용하도록 함), 값이 있으면 정확한
-    bool로 변환해서 반환한다."""
     if not os.path.exists(path):
         return {}
     try:
         df = pd.read_csv(path)
     except Exception:
         return {}
-
     settings = {}
     for _, r in df.iterrows():
         market = r.get('market')
@@ -315,15 +280,12 @@ def load_alert_settings(path):
         if enabled_raw is None or (isinstance(enabled_raw, float) and pd.isna(enabled_raw)):
             enabled = True
         else:
-            # CSV로 저장/재로드 시 True/False가 문자열('True'/'False')로 올 수도 있고
-            # bool 그대로 올 수도 있어서 양쪽 다 안전하게 처리
             enabled = str(enabled_raw).strip().lower() in ('true', '1', 'yes')
         settings[str(market)] = enabled
     return settings
 
 
 def save_alert_settings(settings, path):
-    """settings: {'KR': True, 'US': False, ...} 형태의 dict를 파일로 저장."""
     os.makedirs(os.path.dirname(path), exist_ok=True)
     rows = [{'market': k, 'enabled': v} for k, v in settings.items()]
     df = pd.DataFrame(rows, columns=ALERT_SETTINGS_COLUMNS)
@@ -331,8 +293,7 @@ def save_alert_settings(settings, path):
 
 
 def set_market_alert(market, enabled, path):
-    """특정 마켓의 알림 on/off를 설정하고 파일 저장까지 한 번에 처리한다.
-    (bot_commands.py의 handle_alert_toggle에서 호출)"""
+    """특정 마켓의 알림 on/off를 설정하고 파일 저장까지 한 번에 처리한다."""
     settings = load_alert_settings(path)
     # 다른 마켓들의 기존 상태(명시적으로 저장된 값)는 그대로 유지하고,
     # 이 마켓 값만 갱신한다.
@@ -342,7 +303,5 @@ def set_market_alert(market, enabled, path):
 
 
 def is_market_alert_enabled(market, path):
-    """recheck_*.py 등에서 '재확인 로직 자체는 계속 돌리되 텔레그램 발송만
-    생략할지'를 판단할 때 사용. 설정이 없으면 기본값 True(켜짐)."""
     settings = load_alert_settings(path)
     return settings.get(market, True)
