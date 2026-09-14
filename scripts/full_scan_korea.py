@@ -42,8 +42,10 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      build_watch_summary, send_long_message, pick_top_entries,
                      PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN,
-                     is_market_alert_enabled)
+                     is_market_alert_enabled, is_market_open_scan_window)
 from kis_client import kis_credentials_available, get_kis_daily_ohlc
+
+MARKET_CALENDAR = 'XKRX'  # 한국거래소
 
 MAX_WORKERS = 20
 MARKET = 'KOSPI'
@@ -303,6 +305,13 @@ if __name__ == "__main__":
     scan_enabled = is_market_alert_enabled(MARKET_KEY, SCAN_SETTINGS_PATH)
     if not scan_enabled:
         print("[국장] 매시간 전체스캔이 꺼져있는 상태입니다 - 이번 실행은 건너뜁니다.")
+        sys.exit(0)
+
+    # 2026-09-14 추가: 휴장일(주말/공휴일)이거나 "개장 1시간 전 ~ 마감 1시간 후"
+    # 구간 밖이면 API 호출 없이 건너뜀. exchange_calendars가 실제 KRX 휴장일을
+    # 정확히 알고 있어서 단순 요일 체크보다 신뢰도가 높음.
+    if not is_market_open_scan_window(MARKET_CALENDAR, buffer_before_hours=1, buffer_after_hours=1):
+        print("[국장] 휴장일이거나 장 운영시간(개장 1시간 전~마감 1시간 후) 밖이라 이번 실행은 건너뜁니다.")
         sys.exit(0)
 
     alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
