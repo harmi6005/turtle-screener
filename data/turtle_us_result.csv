@@ -111,7 +111,7 @@ TT,TT,System1(단기),청산,False,False,True,False,423.7,480.36,432.98,0.886,9.
 TT,TT,System2(중장기),청산,False,False,True,False,423.7,504.68,432.98,0.844,9.34,,
 VLO,VLO,System1(단기),탈락,False,False,False,True,391.26,399.26,345.12,0.998,10.27,,
 VLO,VLO,System2(중장기),탈락,False,False,False,True,391.26,399.26,335.0,0.998,10.27,,
-VRSN,VRSN,System1(단기),관심,False,False,False,True,297.3,300.36,279.04,0.997,7.54,,
+VRSN,VRSN,System1(단기),탈락,False,False,False,True,297.3,300.36,279.04,0.997,7.54,,
 VRSN,VRSN,System2(중장기),관심,False,False,False,True,297.3,302.11,270.82,0.991,7.54,,
 VRT,VRT,System1(단기),청산,False,False,True,False,229.68,300.3,244.77,0.776,14.74,,
 VRT,VRT,System2(중장기),청산,False,False,True,False,229.68,340.0,244.77,0.685,14.74,,
