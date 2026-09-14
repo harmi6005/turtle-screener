@@ -65,7 +65,7 @@ LRCX,LRCX,System1(단기),청산,False,False,True,False,274.83,345.28,278.04,0.8
 LRCX,LRCX,System2(중장기),청산,False,False,True,False,274.83,438.5,278.04,0.632,14.34,,
 LII,LII,System1(단기),청산,False,False,True,False,354.9,425.56,365.7,0.834,11.16,,
 LII,LII,System2(중장기),청산,False,False,True,False,354.9,587.27,365.7,0.604,11.16,,
-META,META,System1(단기),관심,False,False,False,True,654.46,664.24,556.1,0.993,19.98,,
+META,META,System1(단기),확정,False,False,False,True,654.46,664.24,556.1,0.993,19.98,,664.62
 MGM,MGM,System1(단기),청산,False,False,True,False,39.89,44.42,40.05,0.928,0.81,,
 MGM,MGM,System2(중장기),청산,False,False,True,False,39.89,50.55,40.05,0.815,0.81,,
 MU,MU,System1(단기),청산,False,False,True,False,910.17,1042.4,909.09,0.876,48.09,,
