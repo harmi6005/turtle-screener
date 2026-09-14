@@ -3,12 +3,23 @@
 telegram_listener.py(폴링 방식, 5분마다)와 webhook_handler.py(웹훅 방식, 즉시)가
 둘 다 이 모듈의 함수를 가져다 씁니다.
 
-이번 개정 사항 (2026-09-04):
-- ⚠️ 신규: "국장알림중지/국장알림시작", "미장알림중지/미장알림시작",
+이번 개정 사항 (2026-09-14):
+- ⚠️ 신규: "국장전체스캔중지/국장전체스캔시작", "미장전체스캔중지/미장전체스캔시작",
+  "코인전체스캔중지/코인전체스캔시작" 명령 추가. data/scan_settings.csv에 저장되며,
+  full_scan_*.py가 매시간 실행될 때마다 이 파일을 읽어 "이번 시간에 스캔 자체를
+  돌릴지"를 판단함. 기존 "OO알림중지"(텔레그램 발송만 생략, 스캔은 계속 진행)와는
+  완전히 별개 기능 - 이건 꺼지면 API 호출/데이터 갱신 없이 그 시간 스캔을 통째로
+  건너뜀 (리소스 절약 목적).
+- ⚠️ 신규: "전체스캔상태확인" 명령 추가 - 국장/미장/코인 매시간스캔이 지금
+  실행중인지 중지됐는지 조회.
+- 도움말(HELP_TEXT)에 위 명령어들 안내 추가.
+
+이전 개정 사항 (2026-09-04):
+- 신규: "국장알림중지/국장알림시작", "미장알림중지/미장알림시작",
   "코인알림중지/코인알림시작" 명령 추가. data/alert_settings.csv에 저장되며,
   full_scan_*.py / recheck_*.py가 이 파일을 읽어 텔레그램 발송 여부를 판단함
   (스캔/재확인 자체는 꺼져 있어도 계속 돌고, 텔레그램 전송만 생략됨).
-- ⚠️ 신규: "알림상태확인" 명령 추가 - 국장/미장/코인 현재 켜짐/꺼짐 상태 조회.
+- 신규: "알림상태확인" 명령 추가 - 국장/미장/코인 현재 켜짐/꺼짐 상태 조회.
 - 도움말(HELP_TEXT)에 위 명령어들 안내 추가.
 
 이전 개정 사항:
@@ -39,6 +50,9 @@ from common import (SYSTEMS, WATCH_RATIO, calc_atr, check_turtle_breakout,
 HOLDINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'holdings.csv')
 WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), 'data', 'watchlist.csv')
 ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'alert_settings.csv')
+# 2026-09-14 추가: 매시간 전체스캔 자체를 켜고 끄는 설정 파일 (알림 on/off와는 별개).
+# full_scan_korea.py / full_scan_us.py / full_scan_bithumb.py가 이 경로를 그대로 참조함.
+SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'scan_settings.csv')
 
 # holdings_check.py 의 COLUMNS 와 반드시 동일하게 유지할 것 (하나만 고치면 다른 쪽에서
 # 컬럼이 잘려나가는 사고가 남 - 실제로 last_price/breakeven_notified 누락 버그 발생했었음)
@@ -56,6 +70,7 @@ HELP_WORDS = ('명령어확인', '명령어 확인', '도움말', 'help', '/help
 RESET_WORD = '보유종목 초기화'
 RESET_CONFIRM_WORD = '보유종목 초기화 확인'
 ALERT_STATUS_WORDS = ('알림상태확인', '알림상태')
+SCAN_STATUS_WORDS = ('전체스캔상태확인', '스캔상태확인')
 
 # market_key -> (중지 명령어, 시작 명령어)
 ALERT_TOGGLE_COMMANDS = {
@@ -68,6 +83,18 @@ ALERT_COMMAND_LOOKUP = {}
 for _market, (_stop_word, _start_word) in ALERT_TOGGLE_COMMANDS.items():
     ALERT_COMMAND_LOOKUP[_stop_word] = (_market, False)
     ALERT_COMMAND_LOOKUP[_start_word] = (_market, True)
+
+# 2026-09-14 추가: 매시간 전체스캔 자체를 켜고 끄는 명령. ALERT_TOGGLE_COMMANDS와
+# 구조는 동일하지만 별도 설정 파일(SCAN_SETTINGS_PATH)에 저장되는 완전히 다른 기능.
+SCAN_TOGGLE_COMMANDS = {
+    'KR': ('국장전체스캔중지', '국장전체스캔시작'),
+    'US': ('미장전체스캔중지', '미장전체스캔시작'),
+    'COIN': ('코인전체스캔중지', '코인전체스캔시작'),
+}
+SCAN_COMMAND_LOOKUP = {}
+for _market, (_stop_word, _start_word) in SCAN_TOGGLE_COMMANDS.items():
+    SCAN_COMMAND_LOOKUP[_stop_word] = (_market, False)
+    SCAN_COMMAND_LOOKUP[_start_word] = (_market, True)
 
 HELP_TEXT = (
     "사용 가능한 명령어\n\n"
@@ -96,6 +123,13 @@ HELP_TEXT = (
     "  끄고 켤 수 있음. 스캔 자체와 데이터 저장은 꺼져 있어도 계속 정상 진행됨.\n\n"
     "알림상태확인 (알림상태도 동일)\n"
     "  국장/미장/코인 알림이 지금 켜져 있는지 꺼져 있는지 조회\n\n"
+    "국장전체스캔중지 / 국장전체스캔시작\n"
+    "미장전체스캔중지 / 미장전체스캔시작\n"
+    "코인전체스캔중지 / 코인전체스캔시작\n"
+    "  해당 시장의 '매시간 전체스캔' 자체를 켜고 끔 (알림 on/off와는 별개).\n"
+    "  꺼두면 그 시간에는 API 호출/데이터 갱신 없이 스캔을 통째로 건너뜀.\n\n"
+    "전체스캔상태확인 (스캔상태확인도 동일)\n"
+    "  국장/미장/코인 매시간 전체스캔이 지금 실행중인지 중지됐는지 조회\n\n"
     "명령어확인 (도움말/help도 동일)\n"
     "  이 도움말을 다시 보여줌"
 )
@@ -318,6 +352,31 @@ def handle_alert_status():
     return "\n".join(lines)
 
 
+# ===== 마켓별 매시간 전체스캔 on/off (2026-09-14 신규) =====
+
+def handle_scan_toggle(market, enabled):
+    """국장전체스캔중지/시작 등 명령 처리. 알림 on/off와는 별개로, 매시간
+    도는 전체스캔 자체를 켜고 끈다. set_market_alert()는 범용 함수(path만 받음)라
+    SCAN_SETTINGS_PATH를 넘겨서 그대로 재사용한다 (common.py 수정 불필요)."""
+    label = ALERT_MARKET_LABELS.get(market, market)
+    set_market_alert(market, enabled, SCAN_SETTINGS_PATH)
+    if enabled:
+        return f"▶️ [{label}] 매시간 전체스캔을 다시 시작합니다."
+    return (f"⏸️ [{label}] 매시간 전체스캔을 중지합니다. "
+            f"(재확인/보유종목 추적 등 다른 기능은 그대로 동작하며, "
+            f"이 마켓의 전체스캔만 API 호출 없이 건너뜁니다)")
+
+
+def handle_scan_status():
+    settings = load_alert_settings(SCAN_SETTINGS_PATH)
+    lines = ["🕐 마켓별 매시간 전체스캔 상태"]
+    for market in ALERT_MARKETS:
+        label = ALERT_MARKET_LABELS.get(market, market)
+        state = "▶️ 실행중" if settings.get(market, True) else "⏸️ 중지됨"
+        lines.append(f"- {label}: {state}")
+    return "\n".join(lines)
+
+
 # ===== 감시목록(watchlist / 추적) =====
 
 def load_watchlist():
@@ -416,6 +475,16 @@ def dispatch(text, df, wdf):
 
     if text in ALERT_STATUS_WORDS:
         reply = handle_alert_status()
+        return df, wdf, reply, False, False, False
+
+    # 2026-09-14 추가: 마켓별 매시간 전체스캔 중지/시작 (국장전체스캔중지 등)
+    if text in SCAN_COMMAND_LOOKUP:
+        market, enabled = SCAN_COMMAND_LOOKUP[text]
+        reply = handle_scan_toggle(market, enabled)
+        return df, wdf, reply, False, False, False
+
+    if text in SCAN_STATUS_WORDS:
+        reply = handle_scan_status()
         return df, wdf, reply, False, False, False
 
     parts = text.split()
