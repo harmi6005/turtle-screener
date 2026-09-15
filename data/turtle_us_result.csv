@@ -123,8 +123,8 @@ FERG,FERG,System1(단기),청산,False,False,True,False,217.01,248.54,215.8,0.89
 FERG,FERG,System2(중장기),청산,False,False,True,False,217.01,266.84,215.8,0.83,5.65,,
 FE,FE,System1(단기),청산,False,False,True,False,45.38,48.26,45.32,0.951,0.77,,
 FE,FE,System2(중장기),청산,False,False,True,False,45.38,49.95,45.32,0.919,0.77,,
-FTNT,FTNT,System1(단기),관심,False,False,False,True,172.9,173.89,151.8,0.995,7.02,,
-FTNT,FTNT,System2(중장기),관심,False,False,False,True,172.9,173.89,148.25,0.995,7.02,,
+FTNT,FTNT,System1(단기),확정,False,False,False,True,172.9,173.89,151.8,0.995,7.02,,173.9
+FTNT,FTNT,System2(중장기),확정,False,False,False,True,172.9,173.89,148.25,0.995,7.02,,173.9
 IT,IT,System1(단기),관심,False,False,False,True,201.38,203.03,166.01,1.0,8.78,,
 IT,IT,System2(중장기),관심,False,False,False,True,201.38,203.03,166.01,1.0,8.78,,
 GE,GE,System1(단기),청산,False,False,True,False,308.9,375.58,312.08,0.853,9.21,,
