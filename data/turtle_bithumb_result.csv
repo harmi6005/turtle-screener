@@ -2,7 +2,7 @@
 ICX,ICX,System1(단기),청산,False,False,True,False,17.68,34.0,17.77,0.535,3.01,,
 ICX,ICX,System2(중장기),청산,False,False,True,False,17.68,35.9,17.77,0.507,3.01,,
 XLM,XLM,System1(단기),관심,False,False,False,True,262.0,268.0,236.0,0.996,12.15,,
-CTK,CTK,System1(단기),관심,False,False,False,True,168.0,171.0,132.0,0.994,8.55,,
+CTK,CTK,System1(단기),확정,False,False,False,True,168.0,171.0,132.0,0.994,8.55,,171.0
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
