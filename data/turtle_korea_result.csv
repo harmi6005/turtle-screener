@@ -891,7 +891,7 @@
 394660,TIGER 글로벌자율주행&전기차SOLACTIVE,System2(중장기),청산,False,False,True,False,15035.0,20900.0,14965.0,0.722,350.75,,
 394670,TIGER 글로벌리튬&2차전지SOLACTIVE(합성),System1(단기),청산,False,False,True,False,10490.0,11825.0,10475.0,0.898,217.75,,
 394670,TIGER 글로벌리튬&2차전지SOLACTIVE(합성),System2(중장기),청산,False,False,True,False,10490.0,13480.0,10475.0,0.788,217.75,,
-395290,HANARO Fn K-POP&미디어,System1(단기),관심,False,False,False,True,5150.0,5175.0,4795.0,0.995,165.75,,
+395290,HANARO Fn K-POP&미디어,System1(단기),확정,False,False,False,True,5150.0,5175.0,4795.0,0.995,165.75,,5180.0
 396510,TIGER 차이나클린에너지SOLACTIVE,System1(단기),청산,False,False,True,False,6665.0,7885.0,6600.0,0.852,180.25,,
 396510,TIGER 차이나클린에너지SOLACTIVE,System2(중장기),청산,False,False,True,False,6665.0,9625.0,6600.0,0.698,180.25,,
 396520,TIGER 차이나반도체FACTSET,System1(단기),청산,False,False,True,False,12185.0,15435.0,12115.0,0.807,543.5,,
@@ -1051,8 +1051,8 @@
 463300,RISE 중국본토CSI300,System2(중장기),청산,False,False,True,False,12565.0,16001.0,12590.0,0.801,244.75,,
 463640,KODEX 미국S&P500유틸리티,System1(단기),청산,False,False,True,False,13190.0,14540.0,13200.0,0.911,179.0,,
 463640,KODEX 미국S&P500유틸리티,System2(중장기),청산,False,False,True,False,13190.0,16501.0,13200.0,0.803,179.0,,
-464240,KIWOOM 26-09회사채(AA-이상)액티브,System1(단기),관심,False,False,False,True,52020.0,52030.0,51970.0,1.0,16.25,,
-464240,KIWOOM 26-09회사채(AA-이상)액티브,System2(중장기),관심,False,False,False,True,52020.0,52030.0,51920.0,1.0,16.25,,
+464240,KIWOOM 26-09회사채(AA-이상)액티브,System1(단기),확정,False,False,False,True,52020.0,52030.0,51970.0,1.0,16.25,,52040.0
+464240,KIWOOM 26-09회사채(AA-이상)액티브,System2(중장기),확정,False,False,False,True,52020.0,52030.0,51920.0,1.0,16.25,,52040.0
 464310,TIGER 글로벌AI&로보틱스 INDXX,System1(단기),청산,False,False,True,False,12890.0,15055.0,12915.0,0.867,261.5,,
 464310,TIGER 글로벌AI&로보틱스 INDXX,System2(중장기),청산,False,False,True,False,12890.0,16840.0,12915.0,0.775,261.5,,
 464610,SOL 의료기기소부장Fn,System1(단기),청산,False,False,True,False,7005.0,8150.0,6955.0,0.863,218.25,,
@@ -1093,7 +1093,7 @@
 473460,KODEX 미국서학개미,System2(중장기),청산,False,False,True,False,22590.0,27445.0,22610.0,0.825,404.0,,
 474800,KIWOOM 미국원유에너지기업,System1(단기),탈락,False,False,False,True,16140.0,16460.0,15510.0,0.993,308.25,,
 474800,KIWOOM 미국원유에너지기업,System2(중장기),탈락,False,False,False,True,16140.0,16460.0,15510.0,0.993,308.25,,
-475050,ACE KPOP포커스,System1(단기),관심,False,False,False,True,7250.0,7315.0,6615.0,0.995,256.1,,
+475050,ACE KPOP포커스,System1(단기),확정,False,False,False,True,7250.0,7315.0,6615.0,0.995,256.1,,7330.0
 474920,에셋플러스 차이나일등기업포커스10액티브,System1(단기),청산,False,False,True,False,17350.0,20120.0,17335.0,0.875,404.0,,
 474920,에셋플러스 차이나일등기업포커스10액티브,System2(중장기),청산,False,False,True,False,17350.0,22705.0,17335.0,0.775,404.0,,
 475270,ACE 5월만기자동연장회사채AA-이상액티브,System1(단기),청산,False,False,True,False,10730.0,10740.0,10730.0,1.0,5.5,,
