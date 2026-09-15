@@ -5,7 +5,7 @@ ELF,ELF,System1(단기),청산,False,False,True,False,96.52,174.0,95.26,0.58,18.
 COMP,COMP,System1(단기),청산,False,False,True,False,26030.0,29970.0,26090.0,0.889,1362.0,,
 SWAP,SWAP,System1(단기),청산,False,False,True,False,54.15,69.98,55.05,0.809,3.35,,
 SWAP,SWAP,System2(중장기),청산,False,False,True,False,54.15,75.23,52.7,0.752,3.35,,
-XLM,XLM,System1(단기),관심,False,False,False,True,262.0,268.0,236.0,0.996,12.15,,
+XLM,XLM,System1(단기),탈락,False,False,False,True,262.0,268.0,236.0,0.996,12.15,,
 JST,JST,System1(단기),진입,True,True,False,False,156.0,156.0,135.0,1.0,6.5,,
 JST,JST,System2(중장기),진입,True,True,False,False,156.0,156.0,129.0,1.0,6.5,,
 DOGE,DOGE,System1(단기),청산,False,False,True,False,112.0,130.0,112.0,0.892,6.1,,
