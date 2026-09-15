@@ -260,7 +260,7 @@ TRGP,TRGP,System1(단기),청산,False,False,True,False,286.89,307.94,286.0,0.94
 TGT,TGT,System1(단기),청산,False,False,True,False,155.51,170.75,154.35,0.932,5.01,,
 TJX,TJX,System1(단기),청산,False,False,True,False,124.22,153.43,124.87,0.828,2.86,,
 TJX,TJX,System2(중장기),청산,False,False,True,False,124.22,162.53,124.87,0.782,2.86,,
-TTD,TTD,System1(단기),관심,False,False,False,True,15.22,15.26,13.37,0.998,0.56,,
+TTD,TTD,System1(단기),확정,False,False,False,True,15.22,15.26,13.37,0.998,0.56,,15.27
 TSCO,TSCO,System1(단기),청산,False,False,True,False,32.65,36.11,32.9,0.934,1.03,,
 TSCO,TSCO,System2(중장기),청산,False,False,True,False,32.65,36.64,32.9,0.921,1.03,,
 TT,TT,System1(단기),청산,False,False,True,False,415.96,480.36,420.44,0.895,9.84,,
