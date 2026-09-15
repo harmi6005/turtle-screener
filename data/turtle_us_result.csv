@@ -97,7 +97,7 @@ EXC,EXC,System2(중장기),청산,False,False,True,False,42.72,48.08,42.63,0.906
 EXE,EXE,System1(단기),청산,False,False,True,False,93.4,100.14,94.08,0.964,2.35,,
 EXPD,EXPD,System1(단기),진입,True,True,False,False,193.61,193.15,184.29,1.003,3.39,,
 EXPD,EXPD,System2(중장기),진입,True,True,False,False,193.61,193.15,184.29,1.003,3.39,,
-FFIV,FFIV,System1(단기),관심,False,False,False,True,411.49,420.05,384.95,0.99,12.3,,
+FFIV,FFIV,System1(단기),확정,False,False,False,True,411.49,420.05,384.95,0.99,12.3,,417.99
 FCX,FCX,System1(단기),청산,False,False,True,False,69.34,80.24,68.85,0.873,3.35,,
 GE,GE,System1(단기),청산,False,False,True,False,317.56,375.58,321.16,0.848,8.82,,
 GE,GE,System2(중장기),청산,False,False,True,False,317.56,388.84,321.16,0.819,8.82,,
