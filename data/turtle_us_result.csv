@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 AMD,AMD,System1(단기),관심,False,False,False,True,523.23,526.79,440.5,0.994,19.85,,
 AES,AES,System1(단기),관심,False,False,False,True,14.82,14.85,14.74,0.998,0.05,,
 AES,AES,System2(중장기),관심,False,False,False,True,14.82,14.85,14.7,0.998,0.05,,
