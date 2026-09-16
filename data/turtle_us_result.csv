@@ -133,8 +133,8 @@ TJX,TJX,System1(단기),청산,False,False,True,False,124.1,153.43,123.84,0.817,
 TJX,TJX,System2(중장기),청산,False,False,True,False,124.1,162.53,123.84,0.771,2.82,,
 TDG,TDG,System1(단기),청산,False,False,True,False,1087.26,1243.18,1082.4,0.878,24.98,,
 TDG,TDG,System2(중장기),청산,False,False,True,False,1087.26,1359.99,1082.4,0.803,24.98,,
-VLO,VLO,System1(단기),관심,False,False,False,True,394.65,399.76,356.23,0.991,11.58,,
-VLO,VLO,System2(중장기),관심,False,False,False,True,394.65,399.76,335.0,0.991,11.58,,
+VLO,VLO,System1(단기),확정,False,False,False,True,394.65,399.76,356.23,0.991,11.58,,399.97
+VLO,VLO,System2(중장기),확정,False,False,False,True,394.65,399.76,335.0,0.991,11.58,,399.97
 VZ,VZ,System1(단기),관심,False,False,False,True,51.34,51.67,48.82,0.998,0.79,,
 VZ,VZ,System2(중장기),관심,False,False,False,True,51.34,51.67,48.41,0.998,0.79,,
 WRB,WRB,System1(단기),관심,False,False,False,True,70.84,71.46,67.42,0.993,1.27,,
