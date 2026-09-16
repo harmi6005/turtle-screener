@@ -275,8 +275,8 @@ TROW,TROW,System1(단기),청산,False,False,True,False,104.23,112.69,103.81,0.9
 TROW,TROW,System2(중장기),청산,False,False,True,False,104.23,120.5,103.81,0.873,2.05,,
 TRGP,TRGP,System1(단기),청산,False,False,True,False,285.68,307.94,286.0,0.94,8.42,,
 TGT,TGT,System1(단기),청산,False,False,True,False,154.4,170.75,154.35,0.932,5.01,,
-TMO,TMO,System1(단기),관심,False,False,False,True,641.39,646.5,594.36,0.993,16.65,,
-TMO,TMO,System2(중장기),관심,False,False,False,True,641.39,646.5,579.56,0.993,16.65,,
+TMO,TMO,System1(단기),확정,False,False,False,True,641.39,646.5,594.36,0.993,16.65,,646.95
+TMO,TMO,System2(중장기),확정,False,False,False,True,641.39,646.5,579.56,0.993,16.65,,646.95
 TJX,TJX,System1(단기),청산,False,False,True,False,124.6,153.43,124.87,0.828,2.88,,
 TJX,TJX,System2(중장기),청산,False,False,True,False,124.6,162.53,124.87,0.782,2.88,,
 TSCO,TSCO,System1(단기),청산,False,False,True,False,33.03,36.11,32.9,0.934,1.03,,
