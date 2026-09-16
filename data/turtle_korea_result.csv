@@ -732,7 +732,7 @@
 449680,TIGER 한중전기차(합성),System2(중장기),청산,False,False,True,False,9990.0,12570.0,9995.0,0.804,178.15,,
 450180,KODEX 한중전기차(합성),System1(단기),청산,False,False,True,False,10120.0,11530.0,10135.0,0.885,200.5,,
 450180,KODEX 한중전기차(합성),System2(중장기),청산,False,False,True,False,10120.0,12990.0,10135.0,0.786,200.5,,
-45226K,한화갤러리아우,System1(단기),관심,False,False,False,True,4400.0,4425.0,3950.0,0.994,138.0,,
+45226K,한화갤러리아우,System1(단기),탈락,False,False,False,True,4400.0,4425.0,3950.0,0.994,138.0,,
 453010,PLUS KOFR금리,System1(단기),진입,True,True,False,False,109995.0,109985.0,109855.0,1.0,20.5,,
 453010,PLUS KOFR금리,System2(중장기),진입,True,True,False,False,109995.0,109985.0,109735.0,1.0,20.5,,
 453060,HANARO KOFR금리액티브(합성),System1(단기),진입,True,True,False,False,111550.0,111540.0,111400.0,1.0,16.25,,
