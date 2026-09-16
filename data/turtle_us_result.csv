@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 AES,AES,System1(단기),관심,False,False,False,True,14.81,14.85,14.74,0.998,0.05,,
 AES,AES,System2(중장기),관심,False,False,False,True,14.81,14.85,14.7,0.998,0.05,,
 ALB,ALB,System1(단기),청산,False,False,True,False,111.85,143.58,112.5,0.798,5.45,,
@@ -137,8 +137,8 @@ ORCL,ORCL,System1(단기),청산,False,False,True,False,143.09,170.7,139.72,0.85
 PSKY,PSKY,System1(단기),진입,True,True,False,False,11.18,11.16,10.12,1.01,0.41,,
 PSKY,PSKY,System2(중장기),진입,True,True,False,False,11.18,11.16,10.08,1.01,0.41,,
 PM,PM,System1(단기),관심,False,False,False,True,193.33,196.66,181.01,0.994,4.47,,
-PSX,PSX,System1(단기),관심,False,False,False,True,265.89,266.7,247.14,1.0,7.1,,
-PSX,PSX,System2(중장기),관심,False,False,False,True,265.89,266.7,233.55,1.0,7.1,,
+PSX,PSX,System1(단기),탈락,False,False,False,True,265.89,266.7,247.14,1.0,7.1,,
+PSX,PSX,System2(중장기),탈락,False,False,False,True,265.89,266.7,233.55,1.0,7.1,,
 PNC,PNC,System1(단기),청산,False,False,True,False,237.39,257.99,236.79,0.934,4.61,,
 PNC,PNC,System2(중장기),청산,False,False,True,False,237.39,258.96,236.79,0.93,4.61,,
 PG,PG,System1(단기),관심,False,False,False,True,148.13,148.36,141.86,0.999,2.31,,
