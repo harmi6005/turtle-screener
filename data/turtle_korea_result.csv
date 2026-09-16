@@ -271,7 +271,7 @@
 014130,한익스프레스,System1(단기),관심,False,False,False,True,2595.0,2660.0,2400.0,0.998,81.25,,
 014130,한익스프레스,System2(중장기),관심,False,False,False,True,2595.0,2660.0,2400.0,0.998,81.25,,
 014825,동원시스템즈우,System1(단기),청산,False,False,True,False,14490.0,14640.0,14060.0,0.99,292.0,,
-014680,한솔케미칼,System1(단기),관심,False,False,False,True,208500.0,212000.0,189600.0,0.998,8305.0,,
+014680,한솔케미칼,System1(단기),탈락,False,False,False,True,208500.0,212000.0,189600.0,0.998,8305.0,,
 0155M0,ACE 미국SMR원자력TOP10,System1(단기),청산,False,False,True,False,6215.0,7750.0,6180.0,0.805,281.75,,
 0155M0,ACE 미국SMR원자력TOP10,System2(중장기),청산,False,False,True,False,6215.0,8505.0,6180.0,0.733,281.75,,
 0162M0,KODEX 금융채1~2년(AA-이상)PLUS액티브,System1(단기),관심,False,False,False,True,10055.0,10090.0,10040.0,0.997,16.5,,
