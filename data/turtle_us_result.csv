@@ -89,8 +89,8 @@ LVS,LVS,System1(단기),청산,False,False,True,False,41.51,47.5,41.26,0.874,1.1
 LVS,LVS,System2(중장기),청산,False,False,True,False,41.51,49.76,41.26,0.834,1.16,,
 MTB,MTB,System1(단기),청산,False,False,True,False,231.37,253.22,231.27,0.93,4.43,,
 MTB,MTB,System2(중장기),청산,False,False,True,False,231.37,254.31,231.27,0.926,4.43,,
-MPC,MPC,System1(단기),관심,False,False,False,True,409.5,413.28,373.0,0.995,11.57,,
-MPC,MPC,System2(중장기),관심,False,False,False,True,409.5,413.28,347.67,0.995,11.57,,
+MPC,MPC,System1(단기),확정,False,False,False,True,409.5,413.28,373.0,0.995,11.57,,413.37
+MPC,MPC,System2(중장기),확정,False,False,False,True,409.5,413.28,347.67,0.995,11.57,,413.37
 MCD,MCD,System1(단기),청산,False,False,True,False,249.38,271.49,252.15,0.932,4.07,,
 MCD,MCD,System2(중장기),청산,False,False,True,False,249.38,285.07,252.15,0.888,4.07,,
 META,META,System1(단기),진입,True,True,False,False,679.59,678.87,556.1,1.009,19.75,,
