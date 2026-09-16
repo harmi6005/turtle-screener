@@ -159,7 +159,7 @@ MORPHO,MORPHO,System1(단기),청산,False,False,True,False,2828.0,3755.0,2845.0
 MORPHO,MORPHO,System2(중장기),청산,False,False,True,False,2828.0,3954.0,2845.0,0.746,221.35,,
 MOODENG,MOODENG,System1(단기),청산,False,False,True,False,51.75,65.82,51.9,0.813,3.8,,
 MOODENG,MOODENG,System2(중장기),청산,False,False,True,False,51.75,72.88,51.9,0.734,3.8,,
-DBR,DBR,System1(단기),관심,False,False,False,True,21.12,21.13,19.78,1.0,0.56,,
+DBR,DBR,System1(단기),탈락,False,False,False,True,21.12,21.13,19.78,1.0,0.56,,
 NIL,NIL,System1(단기),청산,False,False,True,False,53.92,88.53,54.4,0.633,6.61,,
 NIL,NIL,System2(중장기),청산,False,False,True,False,53.92,88.53,54.4,0.633,6.61,,
 ME,ME,System1(단기),청산,False,False,True,False,83.68,95.55,83.75,0.902,3.7,,

@@ -713,7 +713,7 @@
 287180,PLUS 미국나스닥테크,System2(중장기),청산,False,False,True,False,52590.0,66050.0,51785.0,0.798,1183.5,,
 289670,PLUS 국채선물10년,System1(단기),청산,False,False,True,False,51225.0,52430.0,51225.0,0.981,243.0,,
 289670,PLUS 국채선물10년,System2(중장기),청산,False,False,True,False,51225.0,52770.0,51225.0,0.975,243.0,,
-291680,RISE 차이나H선물인버스(H),System1(단기),관심,False,False,False,True,7885.0,7955.0,7545.0,0.996,122.0,,
+291680,RISE 차이나H선물인버스(H),System1(단기),확정,False,False,False,True,7885.0,7955.0,7545.0,0.996,122.0,,7955.0
 291890,KODEX MSCI EM선물(H),System1(단기),청산,False,False,True,False,12090.0,12815.0,12170.0,0.958,208.75,,
 292770,KODEX 국채선물3년인버스,System1(단기),확정,False,False,False,True,58030.0,58060.0,57720.0,0.999,69.5,,58180.0
 292770,KODEX 국채선물3년인버스,System2(중장기),확정,False,False,False,True,58030.0,58060.0,57535.0,0.999,69.5,,58180.0
