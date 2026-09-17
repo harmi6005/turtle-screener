@@ -124,7 +124,7 @@ TSCO,TSCO,System2(중장기),청산,False,False,True,False,32.93,36.64,32.59,0.9
 TRV,TRV,System1(단기),관심,False,False,False,True,376.69,383.99,358.64,0.994,6.17,,
 VLO,VLO,System1(단기),탈락,False,False,False,True,402.88,407.27,359.52,0.994,12.27,,
 VLO,VLO,System2(중장기),탈락,False,False,False,True,402.88,407.27,335.0,0.994,12.27,,
-VTRS,VTRS,System1(단기),관심,False,False,False,True,17.2,17.28,16.15,0.996,0.4,,
+VTRS,VTRS,System1(단기),탈락,False,False,False,True,17.2,17.28,16.15,0.996,0.4,,
 VICI,VICI,System1(단기),청산,False,False,True,False,24.17,27.15,24.42,0.895,0.41,,
 VICI,VICI,System2(중장기),청산,False,False,True,False,24.17,27.65,24.42,0.879,0.41,,
 VMRK,VMRK,System1(단기),청산,False,False,True,False,62.88,68.62,62.98,0.925,1.28,,
