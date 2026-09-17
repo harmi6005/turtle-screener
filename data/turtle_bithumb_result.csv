@@ -63,7 +63,7 @@ APE,APE,System1(단기),청산,False,False,True,False,177.0,200.0,165.0,0.89,8.5
 APE,APE,System2(중장기),청산,False,False,True,False,177.0,235.0,165.0,0.757,8.55,,
 WNCG,WNCG,System1(단기),청산,False,False,True,False,5.73,7.65,5.62,0.779,0.34,,
 WNCG,WNCG,System2(중장기),청산,False,False,True,False,5.73,7.65,5.62,0.779,0.34,,
-AL,AL,System1(단기),관심,False,False,False,True,2.62,2.99,2.35,0.995,0.18,,
+AL,AL,System1(단기),탈락,False,False,False,True,2.62,2.99,2.35,0.995,0.18,,
 STAT,STAT,System1(단기),청산,False,False,True,False,35.41,47.92,34.28,0.739,3.34,,
 APT,APT,System1(단기),청산,False,False,True,False,797.0,925.0,720.0,0.864,57.0,,
 OP,OP,System1(단기),청산,False,False,True,False,137.0,157.0,125.0,0.873,10.0,,
@@ -267,7 +267,7 @@ EDGEX,EDGEX,System1(단기),탈락,False,False,False,True,863.0,955.0,620.0,0.99
 EDGEX,EDGEX,System2(중장기),탈락,False,False,False,True,863.0,955.0,480.0,0.994,100.15,,
 SPX,SPX,System1(단기),청산,False,False,True,False,651.0,920.0,617.0,0.721,70.95,,
 SPX,SPX,System2(중장기),청산,False,False,True,False,651.0,920.0,617.0,0.721,70.95,,
-ARX,ARX,System1(단기),관심,False,False,False,True,230.0,238.0,179.0,0.992,19.6,,
+ARX,ARX,System1(단기),탈락,False,False,False,True,230.0,238.0,179.0,0.992,19.6,,
 CTK,CTK,System1(단기),확정,False,False,False,True,168.0,171.0,132.0,0.994,8.55,,171.0
 HP,HP,System1(단기),확정,False,False,False,True,11.3,11.4,9.82,1.246,0.78,14.21,11.41
 MBX,MBX,System2(중장기),확정,False,False,False,True,41.27,45.56,11.35,1.195,4.25,54.45,45.75

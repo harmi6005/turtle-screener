@@ -1,8 +1,8 @@
 code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ABT,ABT,System1(단기),청산,False,False,True,False,100.97,117.34,101.47,0.873,2.51,,
 ABT,ABT,System2(중장기),청산,False,False,True,False,100.97,117.34,101.47,0.873,2.51,,
-AES,AES,System1(단기),관심,False,False,False,True,14.83,14.85,14.75,0.999,0.04,,
-AES,AES,System2(중장기),관심,False,False,False,True,14.83,14.85,14.7,0.999,0.04,,
+AES,AES,System1(단기),확정,False,False,False,True,14.83,14.85,14.75,0.999,0.04,,14.86
+AES,AES,System2(중장기),확정,False,False,False,True,14.83,14.85,14.7,0.999,0.04,,14.86
 ARE,ARE,System2(중장기),확정,False,False,False,True,55.35,55.74,46.74,0.997,1.77,,55.92
 GOOGL,GOOGL,System1(단기),관심,False,False,False,True,344.61,351.37,327.74,0.995,7.34,,
 GOOG,GOOG,System1(단기),관심,False,False,False,True,341.27,347.85,325.63,0.995,7.01,,
