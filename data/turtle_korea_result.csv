@@ -450,7 +450,7 @@
 282000,RISE 국고채3년선물인버스,System2(중장기),관심,False,False,False,True,115405.0,115585.0,114305.0,0.998,174.75,,
 285130,SK케미칼,System1(단기),청산,False,False,True,False,53000.0,57000.0,52500.0,0.956,2655.0,,
 291680,RISE 차이나H선물인버스(H),System1(단기),진입,True,True,False,False,8000.0,8000.0,7545.0,1.0,108.0,,
-292560,TIGER 일본엔선물,System1(단기),관심,False,False,False,True,8165.0,8195.0,7930.0,0.997,59.0,,
+292560,TIGER 일본엔선물,System1(단기),확정,False,False,False,True,8165.0,8195.0,7930.0,0.997,59.0,,8200.0
 292770,KODEX 국채선물3년인버스,System1(단기),관심,False,False,False,True,58120.0,58180.0,57730.0,0.999,74.75,,
 292770,KODEX 국채선물3년인버스,System2(중장기),관심,False,False,False,True,58120.0,58180.0,57535.0,0.999,74.75,,
 293940,신한알파리츠,System1(단기),관심,False,False,False,True,5430.0,5520.0,5210.0,0.995,123.0,,
