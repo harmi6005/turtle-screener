@@ -162,7 +162,7 @@
 008260,NI스틸,System1(단기),청산,False,False,True,False,3290.0,3770.0,3270.0,0.878,143.85,,
 008420,문배철강,System1(단기),청산,False,False,True,False,2170.0,2550.0,2170.0,0.861,67.75,,
 0089D0,KODEX 금융고배당TOP10,System1(단기),관심,False,False,False,True,13695.0,13935.0,13252.0,0.994,327.2,,
-0090B0,PLUS K방산소부장,System1(단기),관심,False,False,False,True,6980.0,7060.0,6405.0,0.995,226.85,,
+0090B0,PLUS K방산소부장,System1(단기),확정,False,False,False,True,6980.0,7060.0,6405.0,0.995,226.85,,7075.0
 0092C0,SOL 27-12 회사채(AA-이상)액티브,System1(단기),관심,False,False,False,True,50305.0,50335.0,50300.0,0.999,15.0,,
 0092C0,SOL 27-12 회사채(AA-이상)액티브,System2(중장기),관심,False,False,False,True,50305.0,50335.0,50235.0,0.999,15.0,,
 009240,한샘,System1(단기),관심,False,False,False,True,39350.0,40000.0,36650.0,0.991,1175.0,,
