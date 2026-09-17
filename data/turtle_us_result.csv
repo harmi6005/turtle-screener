@@ -9,7 +9,7 @@ GOOG,GOOG,System1(단기),관심,False,False,False,True,341.27,347.85,325.63,0.9
 MO,MO,System1(단기),관심,False,False,False,True,69.72,70.71,66.34,0.991,1.37,,
 AON,AON,System1(단기),청산,False,False,True,False,297.89,361.73,298.48,0.835,9.34,,
 AON,AON,System2(중장기),청산,False,False,True,False,297.89,381.47,298.48,0.792,9.34,,
-AAPL,AAPL,System1(단기),관심,False,False,False,True,331.46,336.22,309.9,0.998,7.19,,
+AAPL,AAPL,System1(단기),확정,False,False,False,True,331.46,336.22,309.9,0.998,7.19,,336.27
 ANET,ANET,System1(단기),관심,False,False,False,True,203.33,206.13,181.27,0.994,7.48,,
 BRK-B,BRK-B,System1(단기),관심,False,False,False,True,513.66,523.74,500.7,0.993,5.41,,
 TECH,TECH,System1(단기),관심,False,False,False,True,72.38,72.58,72.08,0.997,0.17,,
