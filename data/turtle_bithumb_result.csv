@@ -149,7 +149,7 @@ NIL,NIL,System1(단기),청산,False,False,True,False,55.0,88.53,53.52,0.621,6.3
 NIL,NIL,System2(중장기),청산,False,False,True,False,55.0,88.53,53.52,0.621,6.32,,
 ME,ME,System1(단기),청산,False,False,True,False,84.28,92.66,81.0,0.91,3.6,,
 ME,ME,System2(중장기),청산,False,False,True,False,84.28,102.0,81.0,0.826,3.6,,
-DBR,DBR,System1(단기),관심,False,False,False,True,21.09,21.2,19.92,0.995,0.56,,
+DBR,DBR,System1(단기),확정,False,False,False,True,21.09,21.2,19.92,0.995,0.56,,21.2
 ZRC,ZRC,System1(단기),청산,False,False,True,False,1.16,1.4,1.13,0.831,0.08,,
 IOTA,IOTA,System1(단기),청산,False,False,True,False,53.02,66.97,50.5,0.792,3.92,,
 IOTA,IOTA,System2(중장기),청산,False,False,True,False,53.02,66.99,50.5,0.791,3.92,,
