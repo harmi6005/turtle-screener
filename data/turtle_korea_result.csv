@@ -364,8 +364,8 @@
 138040,메리츠금융지주,System1(단기),청산,False,False,True,False,127900.0,139100.0,123200.0,0.938,5695.0,,
 138230,KIWOOM 미국달러선물,System1(단기),관심,False,False,False,True,16190.0,16335.0,15650.0,0.994,111.75,,
 138530,TIGER LG그룹플러스,System1(단기),청산,False,False,True,False,12140.0,12915.0,12130.0,0.95,325.25,,
-138920,KODEX 콩선물(H),System1(단기),관심,False,False,False,True,13117.0,13160.0,12745.0,0.998,164.5,,
-138920,KODEX 콩선물(H),System2(중장기),관심,False,False,False,True,13117.0,13160.0,12070.0,0.998,164.5,,
+138920,KODEX 콩선물(H),System1(단기),확정,False,False,False,True,13117.0,13160.0,12745.0,0.998,164.5,,13165.0
+138920,KODEX 콩선물(H),System2(중장기),확정,False,False,False,True,13117.0,13160.0,12070.0,0.998,164.5,,13165.0
 139990,아주스틸,System1(단기),청산,False,False,True,False,2085.0,2390.0,2085.0,0.887,88.0,,
 139990,아주스틸,System2(중장기),청산,False,False,True,False,2085.0,2640.0,2085.0,0.803,88.0,,
 139320,TIGER 금은선물(H),System1(단기),청산,False,False,True,False,17830.0,19605.0,17785.0,0.915,316.5,,
