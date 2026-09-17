@@ -346,8 +346,8 @@ GWW,GWW,System1(단기),청산,False,False,True,False,1258.26,1337.96,1258.7,0.9
 GWW,GWW,System2(중장기),청산,False,False,True,False,1258.26,1417.14,1258.7,0.899,25.92,,
 WAB,WAB,System1(단기),청산,False,False,True,False,276.37,302.9,274.74,0.926,6.24,,
 WAB,WAB,System2(중장기),청산,False,False,True,False,276.37,306.32,274.74,0.916,6.24,,
-WAT,WAT,System1(단기),관심,False,False,False,True,418.64,426.22,392.95,0.997,12.09,,
-WAT,WAT,System2(중장기),관심,False,False,False,True,418.64,426.22,392.95,0.997,12.09,,
+WAT,WAT,System1(단기),확정,False,False,False,True,418.64,426.22,392.95,0.997,12.09,,427.98
+WAT,WAT,System2(중장기),확정,False,False,False,True,418.64,426.22,392.95,0.997,12.09,,427.98
 WEC,WEC,System1(단기),청산,False,False,True,False,103.38,111.89,103.26,0.934,1.68,,
 WEC,WEC,System2(중장기),청산,False,False,True,False,103.38,118.87,103.26,0.879,1.68,,
 WST,WST,System1(단기),탈락,False,False,False,True,362.01,370.67,331.99,0.991,8.27,,
@@ -368,6 +368,6 @@ CHRW,CHRW,System1(단기),확정,False,False,False,True,156.82,157.82,143.4,0.99
 FTNT,FTNT,System1(단기),확정,False,False,False,True,172.9,173.89,151.8,0.995,7.02,,173.9
 FTNT,FTNT,System2(중장기),확정,False,False,False,True,172.9,173.89,148.25,0.995,7.02,,173.9
 TTD,TTD,System1(단기),확정,False,False,False,True,15.22,15.26,13.37,0.998,0.56,,15.27
-WFC,WFC,System1(단기),확정,False,False,False,True,88.71,91.16,85.2,0.993,1.86,,91.28
+WFC,WFC,System1(단기),확정이탈,False,False,False,True,88.71,91.16,85.2,0.993,1.86,,91.28
 WFC,WFC,System2(중장기),확정,False,False,False,True,88.71,91.16,83.48,0.993,1.86,,91.28
 ACN,ACN,System2(중장기),확정,False,False,False,True,187.68,191.9,157.76,0.99,6.87,190.04,192.22
