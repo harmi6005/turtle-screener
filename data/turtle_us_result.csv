@@ -59,8 +59,8 @@ FFIV,FFIV,System1(단기),탈락,False,False,False,True,432.1,435.45,384.95,0.99
 FFIV,FFIV,System2(중장기),탈락,False,False,False,True,432.1,435.45,376.21,0.999,13.05,,
 FIS,FIS,System1(단기),청산,False,False,True,False,36.56,42.34,36.67,0.872,1.19,,
 FIS,FIS,System2(중장기),청산,False,False,True,False,36.56,46.46,36.67,0.795,1.19,,
-FTNT,FTNT,System1(단기),관심,False,False,False,True,172.69,174.61,151.8,0.996,7.13,,
-FTNT,FTNT,System2(중장기),관심,False,False,False,True,172.69,174.61,148.25,0.996,7.13,,
+FTNT,FTNT,System1(단기),확정,False,False,False,True,172.69,174.61,151.8,0.996,7.13,,174.9
+FTNT,FTNT,System2(중장기),확정,False,False,False,True,172.69,174.61,148.25,0.996,7.13,,174.9
 GEHC,GEHC,System1(단기),청산,False,False,True,False,63.55,75.65,63.22,0.846,1.51,,
 GEHC,GEHC,System2(중장기),청산,False,False,True,False,63.55,75.65,63.22,0.846,1.51,,
 GM,GM,System1(단기),관심,False,False,False,True,86.87,88.18,82.86,0.99,2.28,,
