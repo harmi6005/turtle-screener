@@ -546,7 +546,7 @@
 469830,SOL 초단기채권액티브,System2(중장기),진입,True,True,False,False,54470.0,54465.0,54325.0,1.0,11.35,,
 471460,KIWOOM 국고채30년액티브,System1(단기),관심,False,False,False,True,45160.0,46045.0,44080.0,0.99,441.5,,
 472160,TIGER 미국테크TOP10 INDXX(H),System1(단기),진입,True,True,False,False,19145.0,19140.0,18680.0,1.001,162.75,,
-472160,TIGER 미국테크TOP10 INDXX(H),System2(중장기),관심,False,False,False,True,19145.0,19190.0,18295.0,0.998,162.75,,
+472160,TIGER 미국테크TOP10 INDXX(H),System2(중장기),확정,False,False,False,True,19145.0,19190.0,18295.0,0.998,162.75,,19190.0
 472170,TIGER 미국테크TOP10채권혼합,System1(단기),진입,True,True,False,False,14025.0,13980.0,13640.0,1.003,108.35,,
 472920,HK 종합채권(AA-이상)액티브,System1(단기),관심,False,False,False,True,98100.0,98405.0,97460.0,0.997,155.25,,
 472920,HK 종합채권(AA-이상)액티브,System2(중장기),관심,False,False,False,True,98100.0,98435.0,97460.0,0.997,155.25,,
