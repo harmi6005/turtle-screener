@@ -502,7 +502,7 @@
 469830,SOL 초단기채권액티브,System2(중장기),진입,True,True,False,False,54467.0,54465.0,54325.0,1.0,11.35,,
 471460,KIWOOM 국고채30년액티브,System1(단기),관심,False,False,False,True,45320.0,46045.0,44080.0,0.99,437.0,,
 472170,TIGER 미국테크TOP10채권혼합,System1(단기),진입,True,True,False,False,14015.0,13980.0,13640.0,1.003,107.85,,
-472160,TIGER 미국테크TOP10 INDXX(H),System1(단기),관심,False,False,False,True,19095.0,19140.0,18680.0,0.999,160.75,,
+472160,TIGER 미국테크TOP10 INDXX(H),System1(단기),확정,False,False,False,True,19095.0,19140.0,18680.0,0.999,160.75,,19145.0
 472160,TIGER 미국테크TOP10 INDXX(H),System2(중장기),관심,False,False,False,True,19095.0,19190.0,18295.0,0.996,160.75,,
 472920,HK 종합채권(AA-이상)액티브,System1(단기),관심,False,False,False,True,98100.0,98405.0,97460.0,0.997,155.25,,
 472920,HK 종합채권(AA-이상)액티브,System2(중장기),관심,False,False,False,True,98100.0,98435.0,97460.0,0.997,155.25,,
@@ -567,7 +567,7 @@
 492500,1Q 현대차그룹채권(A+이상)&국고통안,System2(중장기),관심,False,False,False,True,51325.0,51405.0,51270.0,0.999,52.25,,
 493810,TIGER 미국AI빅테크10타겟데일리커버드콜,System1(단기),진입,True,True,False,False,11415.0,11374.0,10569.0,1.009,181.6,,
 494300,KODEX 미국나스닥100데일리커버드콜OTM,System1(단기),관심,False,False,False,True,9037.0,9068.0,8610.0,0.997,100.15,,
-495940,RISE 미국AI테크액티브,System1(단기),관심,False,False,False,True,19355.0,19415.0,17775.0,0.997,318.5,,
+495940,RISE 미국AI테크액티브,System1(단기),확정,False,False,False,True,19355.0,19415.0,17775.0,0.997,318.5,,19415.0
 496020,WON 전단채플러스액티브,System1(단기),진입,True,True,False,False,52550.0,52550.0,52480.0,1.0,14.75,,
 496020,WON 전단채플러스액티브,System2(중장기),진입,True,True,False,False,52550.0,52550.0,52410.0,1.0,14.75,,
 497880,SOL CD금리&머니마켓액티브,System1(단기),진입,True,True,False,False,50115.0,50110.0,50045.0,1.0,9.3,,
