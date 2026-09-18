@@ -253,7 +253,7 @@
 102460,이연제약,System1(단기),진입,True,True,False,False,10200.0,10150.0,9730.0,1.006,190.5,,
 102970,KODEX 증권,System1(단기),청산,False,False,True,False,17455.0,19145.0,17430.0,0.927,478.5,,
 102970,KODEX 증권,System2(중장기),청산,False,False,True,False,17455.0,24303.0,17430.0,0.73,478.5,,
-105010,TIGER 라틴35,System1(단기),관심,False,False,False,True,6490.0,6500.0,6230.0,0.998,100.5,,
+105010,TIGER 라틴35,System1(단기),확정,False,False,False,True,6490.0,6500.0,6230.0,0.998,100.5,,6505.0
 105560,KB금융,System1(단기),관심,False,False,False,True,175700.0,181700.0,170800.0,0.999,5757.5,,
 107590,미원홀딩스,System1(단기),청산,False,False,True,False,60800.0,64400.0,60800.0,0.944,955.0,,
 109070,주성코퍼레이션,System1(단기),청산,False,False,True,False,1550.0,1718.0,0.0,0.0,1189.45,,
