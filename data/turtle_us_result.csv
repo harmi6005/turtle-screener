@@ -77,7 +77,7 @@ CLX,CLX,System1(단기),청산,False,False,True,False,83.9,109.42,83.76,0.774,2.
 CLX,CLX,System2(중장기),청산,False,False,True,False,83.9,109.42,83.76,0.774,2.6,,
 CMS,CMS,System1(단기),청산,False,False,True,False,65.46,70.95,65.67,0.928,1.02,,
 CMS,CMS,System2(중장기),청산,False,False,True,False,65.46,77.88,65.67,0.846,1.02,,
-COHR,COHR,System1(단기),관심,False,False,False,True,314.01,315.7,255.25,0.997,18.73,,
+COHR,COHR,System1(단기),확정,False,False,False,True,314.01,315.7,255.25,0.997,18.73,,315.79
 CMCSA,CMCSA,System1(단기),청산,False,False,True,False,22.78,27.35,22.84,0.838,0.69,,
 CMCSA,CMCSA,System2(중장기),청산,False,False,True,False,22.78,27.35,22.84,0.838,0.69,,
 STZ,STZ,System1(단기),청산,False,False,True,False,119.5,138.9,120.25,0.878,3.05,,
