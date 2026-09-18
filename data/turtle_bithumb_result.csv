@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-MANA,MANA,System1(단기),관심,False,False,False,True,105.0,107.0,95.0,0.991,4.4,,
+MANA,MANA,System1(단기),확정,False,False,False,True,105.0,107.0,95.0,0.991,4.4,,107.0
 XEC,XEC,System1(단기),관심,False,False,False,True,0.01,0.01,0.01,0.991,0.0,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
