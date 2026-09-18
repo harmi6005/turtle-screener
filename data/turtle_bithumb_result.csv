@@ -5,7 +5,7 @@ NFT,NFT,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 USDC,USDC,System1(단기),관심,False,False,False,True,1380.0,1395.0,1348.0,0.991,11.3,,
-BEAM,BEAM,System1(단기),관심,False,False,False,True,2.34,2.36,2.0,0.993,0.13,,
+BEAM,BEAM,System1(단기),확정,False,False,False,True,2.34,2.36,2.0,0.993,0.13,,2.37
 PUMPBTC,PUMPBTC,System1(단기),청산,False,False,True,False,14.83,17.83,14.64,0.832,1.1,,
 PUMPBTC,PUMPBTC,System2(중장기),청산,False,False,True,False,14.83,21.18,14.64,0.7,1.1,,
 STABLE,STABLE,System1(단기),청산,False,False,True,False,32.96,41.13,32.23,0.813,2.1,,
