@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 AOS,AOS,System1(단기),청산,False,False,True,False,57.07,64.09,56.5,0.892,1.4,,
 AOS,AOS,System2(중장기),청산,False,False,True,False,57.07,64.38,56.5,0.888,1.4,,
 ABBV,ABBV,System1(단기),관심,False,False,False,True,264.57,266.91,246.77,0.998,5.37,,
