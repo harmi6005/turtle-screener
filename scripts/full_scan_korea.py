@@ -48,7 +48,7 @@ from kis_client import kis_credentials_available, get_kis_daily_ohlc
 MARKET_CALENDAR = 'XKRX'  # 한국거래소
 
 MAX_WORKERS = 20
-MARKET = 'KOSPI'
+MARKET = ['KOSPI', 'KOSDAQ']
 MARKET_KEY = 'KR'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
 ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
