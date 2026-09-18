@@ -22,7 +22,7 @@ USDC,USDC,System1(단기),탈락,False,False,False,True,1380.0,1395.0,1348.0,0.9
 DBR,DBR,System1(단기),진입,True,True,False,False,21.3,21.25,19.92,1.009,0.58,,
 INIT,INIT,System1(단기),진입,True,True,False,False,102.0,102.0,84.74,1.029,6.24,,
 INIT,INIT,System2(중장기),진입,True,True,False,False,102.0,102.0,72.3,1.029,6.24,,
-KERNEL,KERNEL,System1(단기),관심,False,False,False,True,55.89,56.77,50.41,0.994,2.7,,
+KERNEL,KERNEL,System1(단기),탈락,False,False,False,True,55.89,56.77,50.41,0.994,2.7,,
 COW,COW,System1(단기),진입,True,True,False,False,192.0,192.0,171.0,1.016,9.25,,
 PUMPBTC,PUMPBTC,System1(단기),청산,False,False,True,False,14.79,17.83,14.64,0.836,1.11,,
 PUMPBTC,PUMPBTC,System2(중장기),청산,False,False,True,False,14.79,21.18,14.64,0.703,1.11,,
