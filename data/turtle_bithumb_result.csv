@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ICX,ICX,System1(단기),청산,False,False,True,False,16.26,29.74,16.07,0.656,2.04,,
 ICX,ICX,System2(중장기),청산,False,False,True,False,16.26,35.9,16.07,0.543,2.04,,
-CHR,CHR,System1(단기),관심,False,False,False,True,22.85,23.0,20.03,0.993,1.12,,
-CHR,CHR,System2(중장기),관심,False,False,False,True,22.85,23.0,19.7,0.993,1.12,,
+CHR,CHR,System1(단기),확정,False,False,False,True,22.85,23.0,20.03,0.993,1.12,,23.0
+CHR,CHR,System2(중장기),확정,False,False,False,True,22.85,23.0,19.7,0.993,1.12,,23.0
 CAKE,CAKE,System1(단기),관심,False,False,False,True,3379.0,3500.0,2820.0,0.996,218.05,,
 CAKE,CAKE,System2(중장기),관심,False,False,False,True,3379.0,3500.0,2307.0,0.996,218.05,,
 NFT,NFT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
