@@ -476,7 +476,7 @@
 455890,RISE 머니마켓액티브,System1(단기),진입,True,True,False,False,55565.0,55560.0,55490.0,1.0,9.0,,
 455890,RISE 머니마켓액티브,System2(중장기),진입,True,True,False,False,55565.0,55560.0,55425.0,1.0,9.0,,
 456200,PLUS 미국달러SOFR금리액티브(합성),System1(단기),관심,False,False,False,True,60070.0,60180.0,57990.0,0.998,305.75,,
-456600,TIME 글로벌AI인공지능액티브,System1(단기),관심,False,False,False,True,58190.0,58490.0,55065.0,0.995,1246.75,,
+456600,TIME 글로벌AI인공지능액티브,System1(단기),확정,False,False,False,True,58190.0,58490.0,55065.0,0.995,1246.75,,58515.0
 456610,TIGER 미국달러SOFR금리액티브(합성),System1(단기),관심,False,False,False,True,60265.0,60335.0,58010.0,0.999,429.25,,
 456880,ACE 미국달러SOFR금리(합성),System1(단기),관심,False,False,False,True,12200.0,12220.0,11700.0,0.999,92.35,,
 457690,KODEX 33-06 국고채액티브,System1(단기),관심,False,False,False,True,10445.0,10550.0,10340.0,0.991,39.5,,
