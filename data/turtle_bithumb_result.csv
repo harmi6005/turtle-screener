@@ -3,8 +3,8 @@ ICX,ICX,System1(단기),청산,False,False,True,False,16.26,29.74,16.07,0.656,2.
 ICX,ICX,System2(중장기),청산,False,False,True,False,16.26,35.9,16.07,0.543,2.04,,
 CHR,CHR,System1(단기),확정,False,False,False,True,22.85,23.0,20.03,0.993,1.12,,23.0
 CHR,CHR,System2(중장기),확정,False,False,False,True,22.85,23.0,19.7,0.993,1.12,,23.0
-CAKE,CAKE,System1(단기),관심,False,False,False,True,3379.0,3500.0,2820.0,0.996,218.05,,
-CAKE,CAKE,System2(중장기),관심,False,False,False,True,3379.0,3500.0,2307.0,0.996,218.05,,
+CAKE,CAKE,System1(단기),탈락,False,False,False,True,3379.0,3500.0,2820.0,0.996,218.05,,
+CAKE,CAKE,System2(중장기),탈락,False,False,False,True,3379.0,3500.0,2307.0,0.996,218.05,,
 NFT,NFT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 XEC,XEC,System1(단기),확정,False,False,False,True,0.01,0.01,0.01,0.991,0.0,,0.01
@@ -15,7 +15,7 @@ BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 APT,APT,System1(단기),진입,True,True,False,False,925.0,925.0,719.0,1.046,64.25,,
 HOOK,HOOK,System1(단기),청산,False,False,True,False,5.54,8.39,5.5,0.847,0.63,,
 HOOK,HOOK,System2(중장기),청산,False,False,True,False,5.54,8.65,5.47,0.821,0.63,,
-FET,FET,System2(중장기),관심,False,False,False,True,252.0,258.0,202.0,0.996,16.4,,
+FET,FET,System2(중장기),탈락,False,False,False,True,252.0,258.0,202.0,0.996,16.4,,
 AR,AR,System1(단기),진입,True,True,False,False,4234.0,4234.0,3310.0,1.047,333.25,,
 AR,AR,System2(중장기),진입,True,True,False,False,4234.0,4234.0,2788.0,1.047,333.25,,
 USDC,USDC,System1(단기),탈락,False,False,False,True,1380.0,1395.0,1348.0,0.991,11.55,,
