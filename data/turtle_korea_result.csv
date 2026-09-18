@@ -121,7 +121,7 @@
 0083S0,1Q 미국메디컬AI,System2(중장기),관심,False,False,False,True,11850.0,11960.0,9830.0,0.991,281.5,,
 0089B0,PLUS 미국나스닥100미국채혼합50,System1(단기),진입,True,True,False,False,11240.0,11239.0,10815.0,1.001,85.1,,
 0089C0,KODEX 미국S&P500변동성확대시커버드콜,System1(단기),관심,False,False,False,True,11400.0,11494.0,10985.0,0.992,84.6,,
-0090B0,PLUS K방산소부장,System1(단기),관심,False,False,False,True,7065.0,7085.0,6490.0,0.999,210.1,,
+0090B0,PLUS K방산소부장,System1(단기),탈락,False,False,False,True,7065.0,7085.0,6490.0,0.999,210.1,,
 0092C0,SOL 27-12 회사채(AA-이상)액티브,System1(단기),관심,False,False,False,True,50300.0,50335.0,50295.0,0.999,15.25,,
 0092C0,SOL 27-12 회사채(AA-이상)액티브,System2(중장기),관심,False,False,False,True,50300.0,50335.0,50235.0,0.999,15.25,,
 0094K0,TIGER 28-04 회사채(A+이상)액티브,System1(단기),관심,False,False,False,True,99520.0,99845.0,99430.0,0.997,97.5,,
