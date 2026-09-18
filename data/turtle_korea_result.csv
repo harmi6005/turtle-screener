@@ -586,7 +586,7 @@
 483320,ACE 엔비디아밸류체인액티브,System1(단기),관심,False,False,False,True,24760.0,24985.0,22930.0,0.994,703.1,,
 483330,ACE 마이크로소프트밸류체인액티브,System1(단기),관심,False,False,False,True,15185.0,15240.0,14165.0,0.996,270.75,,
 484880,SOL 금융지주플러스고배당,System1(단기),관심,False,False,False,True,23165.0,23950.0,22590.0,0.992,631.9,,
-485690,RISE 미국AI밸류체인TOP3Plus,System1(단기),관심,False,False,False,True,22280.0,22290.0,20855.0,1.0,350.4,,
+485690,RISE 미국AI밸류체인TOP3Plus,System1(단기),확정,False,False,False,True,22280.0,22290.0,20855.0,1.0,350.4,,22290.0
 486290,TIGER 미국나스닥100타겟데일리커버드콜,System1(단기),관심,False,False,False,True,10535.0,10590.0,10050.0,0.995,120.8,,
 486830,HANARO 머니마켓액티브,System1(단기),진입,True,True,False,False,53375.0,53365.0,53300.0,1.0,12.5,,
 486830,HANARO 머니마켓액티브,System2(중장기),진입,True,True,False,False,53375.0,53365.0,53240.0,1.0,12.5,,

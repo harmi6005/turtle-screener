@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-AWE,AWE,System1(단기),관심,False,False,False,True,87.87,88.17,78.81,1.0,2.5,,
+AWE,AWE,System1(단기),확정,False,False,False,True,87.87,88.17,78.81,1.0,2.5,,88.5
 NFT,NFT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
