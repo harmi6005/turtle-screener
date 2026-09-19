@@ -32,7 +32,7 @@ ONDO,ONDO,System2(중장기),관심,False,False,False,True,565.0,609.0,442.0,0.9
 RON,RON,System2(중장기),관심,False,False,False,True,80.08,85.79,63.7,0.997,5.08,,
 MOCA,MOCA,System1(단기),관심,False,False,False,True,13.22,13.6,11.47,0.991,0.62,,
 MOCA,MOCA,System2(중장기),관심,False,False,False,True,13.22,13.6,11.35,0.991,0.62,,
-ATH,ATH,System1(단기),관심,False,False,False,True,7.23,7.36,5.6,0.999,0.42,,
+ATH,ATH,System1(단기),확정,False,False,False,True,7.23,7.36,5.6,0.999,0.42,,7.36
 EIGEN,EIGEN,System1(단기),관심,False,False,False,True,310.0,330.0,255.0,0.994,23.7,,
 EIGEN,EIGEN,System2(중장기),관심,False,False,False,True,310.0,330.0,252.0,0.994,23.7,,
 CARV,CARV,System1(단기),관심,False,False,False,True,52.0,53.01,45.39,0.992,2.38,,
