@@ -43,7 +43,7 @@ EIGEN,EIGEN,System2(중장기),관심,False,False,False,True,321.0,330.0,252.0,0
 CARV,CARV,System1(단기),관심,False,False,False,True,52.33,53.01,45.39,0.992,2.38,,
 CARV,CARV,System2(중장기),관심,False,False,False,True,52.33,53.01,45.16,0.992,2.38,,
 TURBO,TURBO,System1(단기),관심,False,False,False,True,1.38,1.41,1.16,0.999,0.07,,
-DEEP,DEEP,System1(단기),관심,False,False,False,True,23.32,23.82,19.03,0.996,1.4,,
+DEEP,DEEP,System1(단기),탈락,False,False,False,True,23.32,23.82,19.03,0.996,1.4,,
 ME,ME,System1(단기),탈락,False,False,False,True,93.75,94.5,80.81,0.999,3.61,,
 KERNEL,KERNEL,System1(단기),관심,False,False,False,True,58.2,59.38,50.41,0.993,2.53,,
 COW,COW,System1(단기),진입,True,True,False,False,211.0,211.0,171.0,1.014,9.45,,
