@@ -30,7 +30,7 @@ ARB,ARB,System2(중장기),관심,False,False,False,True,292.0,316.0,116.0,0.991
 CELO,CELO,System1(단기),진입,True,True,False,False,118.0,118.0,99.15,1.0,7.14,,
 CELO,CELO,System2(중장기),진입,True,True,False,False,118.0,118.0,99.15,1.0,7.14,,
 SUI,SUI,System1(단기),확정,False,False,False,True,1146.0,1150.0,919.0,0.997,65.4,,1150.0
-RENDER,RENDER,System1(단기),관심,False,False,False,True,2125.0,2183.0,1757.0,0.996,113.1,,
+RENDER,RENDER,System1(단기),확정,False,False,False,True,2125.0,2183.0,1757.0,0.996,113.1,,2188.0
 NEO,NEO,System1(단기),진입,True,True,False,False,3214.0,3200.0,2780.0,1.019,163.1,,
 BEAM,BEAM,System1(단기),진입,True,True,False,False,2.48,2.47,2.0,1.026,0.13,,
 MOCA,MOCA,System1(단기),확정,False,False,False,True,13.11,13.17,11.47,0.995,0.62,,13.18
