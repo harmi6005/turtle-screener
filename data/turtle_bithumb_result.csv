@@ -42,7 +42,7 @@ DBR,DBR,System1(단기),관심,False,False,False,True,21.3,21.59,19.92,0.991,0.5
 KERNEL,KERNEL,System1(단기),관심,False,False,False,True,57.78,59.38,50.41,0.993,2.57,,
 WAL,WAL,System1(단기),확정,False,False,False,True,44.48,44.58,33.7,0.998,2.56,,44.76
 WAL,WAL,System2(중장기),확정,False,False,False,True,44.48,44.58,31.5,0.998,2.56,,44.76
-HOME,HOME,System1(단기),관심,False,False,False,True,8.76,8.94,6.44,0.994,0.45,,
+HOME,HOME,System1(단기),탈락,False,False,False,True,8.76,8.94,6.44,0.994,0.45,,
 IRYS,IRYS,System1(단기),관심,False,False,False,True,20.38,20.54,17.77,0.996,0.86,,
 SOMI,SOMI,System1(단기),진입,True,True,False,False,275.0,275.0,173.0,1.011,17.25,,
 SOMI,SOMI,System2(중장기),진입,True,True,False,False,275.0,275.0,138.0,1.011,17.25,,
