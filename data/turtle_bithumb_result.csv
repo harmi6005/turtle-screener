@@ -6,8 +6,8 @@ VET,VET,System2(중장기),관심,False,False,False,True,11.92,12.07,8.71,0.994,
 BSV,BSV,System1(단기),관심,False,False,False,True,23580.0,23930.0,21260.0,0.994,916.0,,
 EL,EL,System1(단기),관심,False,False,False,True,2.33,2.4,1.92,0.999,0.15,,
 EL,EL,System2(중장기),관심,False,False,False,True,2.33,2.4,1.9,0.999,0.15,,
-CHR,CHR,System1(단기),관심,False,False,False,True,23.21,23.67,20.03,0.99,1.11,,
-CHR,CHR,System2(중장기),관심,False,False,False,True,23.21,23.67,19.7,0.99,1.11,,
+CHR,CHR,System1(단기),확정,False,False,False,True,23.21,23.67,20.03,0.99,1.11,,23.71
+CHR,CHR,System2(중장기),확정,False,False,False,True,23.21,23.67,19.7,0.99,1.11,,23.71
 COMP,COMP,System1(단기),관심,False,False,False,True,29170.0,29770.0,25290.0,0.999,1192.5,,
 COMP,COMP,System2(중장기),관심,False,False,False,True,29170.0,29970.0,24900.0,0.992,1192.5,,
 RSR,RSR,System1(단기),진입,True,True,False,False,2.19,2.19,1.81,1.028,0.13,,
@@ -22,7 +22,7 @@ NFT,NFT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 SUN,SUN,System1(단기),관심,False,False,False,True,23.25,23.53,22.39,0.992,0.45,,
 ENS,ENS,System1(단기),관심,False,False,False,True,8715.0,8870.0,7110.0,0.994,576.0,,
-DYDX,DYDX,System2(중장기),관심,False,False,False,True,184.0,186.0,138.0,0.995,9.55,,
+DYDX,DYDX,System2(중장기),확정,False,False,False,True,184.0,186.0,138.0,0.995,9.55,,186.0
 BTT,BTT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 HBAR,HBAR,System1(단기),관심,False,False,False,True,113.0,114.0,98.46,0.991,5.44,,
@@ -35,8 +35,8 @@ AR,AR,System1(단기),관심,False,False,False,True,5775.0,6695.0,3310.0,0.99,49
 AR,AR,System2(중장기),관심,False,False,False,True,5775.0,6695.0,2788.0,0.99,496.4,,
 PEPE,PEPE,System1(단기),진입,True,True,False,False,0.01,0.01,0.0,1.113,0.0,,
 GTC,GTC,System1(단기),확정,False,False,False,True,115.0,116.0,101.0,0.991,4.5,,116.0
-NEO,NEO,System1(단기),관심,False,False,False,True,3293.0,3324.0,2780.0,0.991,161.3,,
-NEO,NEO,System2(중장기),관심,False,False,False,True,3293.0,3324.0,2550.0,0.991,161.3,,
+NEO,NEO,System1(단기),확정,False,False,False,True,3293.0,3324.0,2780.0,0.991,161.3,,3338.0
+NEO,NEO,System2(중장기),확정,False,False,False,True,3293.0,3324.0,2550.0,0.991,161.3,,3338.0
 SKL,SKL,System1(단기),탈락,False,False,False,True,5.58,5.61,4.65,0.996,0.26,,
 ONDO,ONDO,System2(중장기),관심,False,False,False,True,585.0,609.0,442.0,0.993,31.75,,
 RON,RON,System2(중장기),관심,False,False,False,True,79.69,85.79,63.7,0.997,5.08,,
