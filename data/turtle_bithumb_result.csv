@@ -49,8 +49,8 @@ KERNEL,KERNEL,System1(단기),관심,False,False,False,True,58.2,59.38,50.41,0.9
 COW,COW,System1(단기),진입,True,True,False,False,211.0,211.0,171.0,1.014,9.45,,
 WAL,WAL,System1(단기),관심,False,False,False,True,44.09,44.58,33.7,0.994,2.55,,
 WAL,WAL,System2(중장기),관심,False,False,False,True,44.09,44.58,31.5,0.994,2.55,,
-PROVE,PROVE,System1(단기),관심,False,False,False,True,305.0,306.0,242.0,0.997,13.35,,
-PROVE,PROVE,System2(중장기),관심,False,False,False,True,305.0,306.0,235.0,0.997,13.35,,
+PROVE,PROVE,System1(단기),확정,False,False,False,True,305.0,306.0,242.0,0.997,13.35,,306.0
+PROVE,PROVE,System2(중장기),확정,False,False,False,True,305.0,306.0,235.0,0.997,13.35,,306.0
 FLUID,FLUID,System1(단기),관심,False,False,False,True,1818.0,1859.0,1435.0,0.992,96.45,,
 SENT,SENT,System1(단기),관심,False,False,False,True,24.83,24.99,18.06,0.998,1.5,,
 SENT,SENT,System2(중장기),관심,False,False,False,True,24.83,24.99,16.8,0.998,1.5,,
