@@ -54,8 +54,8 @@ PROVE,PROVE,System2(중장기),확정,False,False,False,True,305.0,306.0,235.0,0
 FLUID,FLUID,System1(단기),관심,False,False,False,True,1818.0,1859.0,1435.0,0.992,96.45,,
 SENT,SENT,System1(단기),관심,False,False,False,True,24.83,24.99,18.06,0.998,1.5,,
 SENT,SENT,System2(중장기),관심,False,False,False,True,24.83,24.99,16.8,0.998,1.5,,
-OPG,OPG,System1(단기),관심,False,False,False,True,154.0,155.0,128.0,0.994,7.15,,
-OPG,OPG,System2(중장기),관심,False,False,False,True,154.0,155.0,126.0,0.994,7.15,,
+OPG,OPG,System1(단기),확정,False,False,False,True,154.0,155.0,128.0,0.994,7.15,,155.0
+OPG,OPG,System2(중장기),확정,False,False,False,True,154.0,155.0,126.0,0.994,7.15,,155.0
 MANA,MANA,System2(중장기),확정,False,False,False,True,111.0,113.0,95.0,0.991,4.5,,113.0
 XLM,XLM,System1(단기),확정,False,False,False,True,264.0,270.0,236.0,0.996,13.9,,271.0
 STX,STX,System2(중장기),확정,False,False,False,True,395.0,399.0,311.0,0.992,27.0,,399.0
