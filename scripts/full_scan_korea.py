@@ -25,6 +25,26 @@
   ⚠️ 참고: KIS_APP_KEY/KIS_APP_SECRET이 GitHub Secrets에 없으면 이 스크립트는 자동으로
   기존 fdr 방식으로만 동작합니다 (에러 없이 조용히 폴백). 즉 이 커밋을 올려도 Secrets를
   등록하기 전까지는 동작이 그대로입니다.
+
+[2026-09-12 5차 수정 - 전체 교체]
+- ⭐ 검색 범위를 코스피(KOSPI) 단일 시장에서 **코스피+코스닥(KOSDAQ) 통합**으로 확대.
+  MARKET(문자열) 상수를 MARKETS(리스트) 상수로 바꾸고, 종목 리스트 조회 함수
+  4종(kis마스터/fdr/pykrx/naver)이 전부 두 시장을 각각 조회한 뒤 하나로 합치도록 수정.
+  KIS 마스터 파일도 코스피용(kospi_code.mst.zip)과 코스닥용(kosdaq_code.mst.zip)
+  두 개를 모두 받아서 합침. 가격(일봉) 조회 로직(fetch_ohlc, KIS/fdr 우선순위)과
+  최종 픽 기준(PICK_COUNT=3, PICK_PRICE_MAX=30000)은 변경 없음 - 스캔 "대상 종목 수"만
+  늘어난 것이므로, 코스닥 종목도 동일한 터틀 로직/픽 기준을 그대로 적용받음.
+
+[2026-09-20 6차 수정 - 전체 교체]
+- ⭐ 주말(토/일, KST 기준)에는 국장이 쉬는데도 전체스캔 알림이 계속 오던 문제 수정.
+  원인: 워크플로우 cron이 요일 구분 없이 매일 실행되도록 되어 있었고, 스크립트 쪽에도
+  휴장일 체크가 전혀 없었음 (recheck_korea.py는 is_korea_market_open()으로 이미
+  주말을 걸러내고 있었으나, 전체스캔에는 같은 방어 로직이 빠져 있었음).
+  수정: ① 워크플로우 cron을 월~금(1-5)으로 제한 (full_scan_korea.yml, 별도 교체)
+        ② 스크립트 맨 앞에서 KST 기준 토/일이면 스캔/저장/알림 전부 생략하고 종료
+           (이중 방어. GitHub 스케줄 지연 등으로 주말에 실행돼도 알림이 안 감)
+        ③ 수동 실행(workflow_dispatch)은 주말에도 정상 동작 - 테스트/점검용
+  ※ 평일 공휴일(설날/추석 등)은 이번 수정에서 다루지 않음.
 """
 
 import sys
@@ -38,28 +58,39 @@ import pandas as pd
 import requests
 import FinanceDataReader as fdr
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      build_watch_summary, send_long_message, pick_top_entries,
                      PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN,
-                     is_market_alert_enabled, is_market_open_scan_window)
+                     is_market_alert_enabled)
 from kis_client import kis_credentials_available, get_kis_daily_ohlc
 
-MARKET_CALENDAR = 'XKRX'  # 한국거래소
-
 MAX_WORKERS = 20
-MARKET = ['KOSPI', 'KOSDAQ']
+MARKETS = ['KOSPI', 'KOSDAQ']  # 2026-09-12: 'KOSPI' 단일값 -> 코스피+코스닥 리스트로 확대
 MARKET_KEY = 'KR'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
 ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
-SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'scan_settings.csv')
-TICKER_CACHE_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'kospi_tickers_cache.csv')
+TICKER_CACHE_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'krx_tickers_cache.csv')
 
 KRX_RETRY_COUNT = 5
 KRX_RETRY_WAIT_SEC = 20
-KIS_MASTER_URL = "https://new.real.download.dws.co.kr/common/master/kospi_code.mst.zip"
+KIS_MASTER_URLS = {
+    'KOSPI': "https://new.real.download.dws.co.kr/common/master/kospi_code.mst.zip",
+    'KOSDAQ': "https://new.real.download.dws.co.kr/common/master/kosdaq_code.mst.zip",
+}
 
 KIS_AVAILABLE = kis_credentials_available()
+
+
+def is_weekend_kst():
+    """2026-09-20 추가: 한국시간(KST) 기준 토/일이면 True (국장 휴장)."""
+    return datetime.now(ZoneInfo('Asia/Seoul')).weekday() >= 5
+
+
+def is_manual_run():
+    """GitHub Actions에서 사람이 'Run workflow' 버튼으로 수동 실행했는지 여부."""
+    return os.environ.get('GITHUB_EVENT_NAME') == 'workflow_dispatch'
 
 
 def fetch_ohlc(code, start, end):
@@ -103,20 +134,23 @@ def fetch_and_check(code_name, start, end):
     return rows
 
 
-def get_kospi_listing_kis_master():
-    """⓪ 한국투자증권 공식 종목마스터 파일. API 키 불필요, KRX/네이버와 무관한 서버."""
+def _get_one_market_listing_kis_master(market):
+    """⓪ 한국투자증권 공식 종목마스터 파일 (시장 1개분). API 키 불필요, KRX/네이버와 무관한 서버."""
+    url = KIS_MASTER_URLS.get(market)
+    if not url:
+        return None
     try:
-        res = requests.get(KIS_MASTER_URL, timeout=15)
+        res = requests.get(url, timeout=15)
         res.raise_for_status()
         with zipfile.ZipFile(io.BytesIO(res.content)) as zf:
             mst_names = [n for n in zf.namelist() if n.lower().endswith('.mst')]
             if not mst_names:
-                print("[kis마스터] zip 안에 .mst 파일이 없습니다.")
+                print(f"[kis마스터] {market} zip 안에 .mst 파일이 없습니다.")
                 return None
             raw_bytes = zf.read(mst_names[0])
         raw_text = raw_bytes.decode('cp949', errors='ignore')
     except Exception as e:
-        print(f"[kis마스터] 다운로드/압축해제 실패: {e}")
+        print(f"[kis마스터] {market} 다운로드/압축해제 실패: {e}")
         return None
 
     rows = []
@@ -130,62 +164,95 @@ def get_kospi_listing_kis_master():
             rows.append([code, name])
 
     if not rows:
-        print("[kis마스터] 파싱 결과가 비어있습니다 (파일 형식이 바뀌었을 수 있음).")
+        print(f"[kis마스터] {market} 파싱 결과가 비어있습니다 (파일 형식이 바뀌었을 수 있음).")
         return None
     return pd.DataFrame(rows, columns=['Code', 'Name']).drop_duplicates(subset=['Code'])
 
 
-def get_kospi_listing_fdr():
-    """① FinanceDataReader (내부적으로 KRX 데이터를 씀)."""
+def get_kospi_listing_kis_master():
+    """⓪ 한국투자증권 공식 종목마스터 파일 - 코스피+코스닥 두 시장을 각각 받아서 합침."""
+    dfs = []
+    for market in MARKETS:
+        df = _get_one_market_listing_kis_master(market)
+        if df is not None and not df.empty:
+            dfs.append(df)
+    if not dfs:
+        return None
+    return pd.concat(dfs, ignore_index=True).drop_duplicates(subset=['Code'])
+
+
+def _get_one_market_listing_fdr(market):
     for attempt in range(1, KRX_RETRY_COUNT + 1):
         try:
-            listing = fdr.StockListing(MARKET)
+            listing = fdr.StockListing(market)
             if listing is not None and not listing.empty:
                 return listing[['Code', 'Name']]
         except Exception as e:
-            print(f"[fdr] KOSPI 목록 조회 실패 ({attempt}/{KRX_RETRY_COUNT}): {e}")
+            print(f"[fdr] {market} 목록 조회 실패 ({attempt}/{KRX_RETRY_COUNT}): {e}")
         if attempt < KRX_RETRY_COUNT:
             time.sleep(KRX_RETRY_WAIT_SEC)
     return None
 
 
-def get_kospi_listing_pykrx():
-    """② pykrx (이것도 결국 data.krx.co.kr을 씀 - fdr과 같은 이유로 같이 막힐 수 있음)."""
-    try:
-        from pykrx import stock
-    except ImportError:
-        print("[pykrx] 패키지가 설치되어 있지 않아 폴백을 건너뜁니다 (requirements.txt에 pykrx 추가 필요).")
+def get_kospi_listing_fdr():
+    """① FinanceDataReader (내부적으로 KRX 데이터를 씀) - 코스피+코스닥 합산."""
+    dfs = []
+    for market in MARKETS:
+        df = _get_one_market_listing_fdr(market)
+        if df is not None and not df.empty:
+            dfs.append(df)
+    if not dfs:
         return None
+    return pd.concat(dfs, ignore_index=True).drop_duplicates(subset=['Code'])
 
+
+def _get_one_market_listing_pykrx(stock_mod, market):
     today = datetime.today().strftime('%Y%m%d')
     for attempt in range(1, KRX_RETRY_COUNT + 1):
         try:
-            codes = stock.get_market_ticker_list(today, market=MARKET)
+            codes = stock_mod.get_market_ticker_list(today, market=market)
             if codes:
                 rows = []
                 for code in codes:
                     try:
-                        name = stock.get_market_ticker_name(code)
+                        name = stock_mod.get_market_ticker_name(code)
                     except Exception:
                         name = code
                     rows.append([code, name])
                 if rows:
                     return pd.DataFrame(rows, columns=['Code', 'Name'])
         except Exception as e:
-            print(f"[pykrx] KOSPI 목록 조회 실패 ({attempt}/{KRX_RETRY_COUNT}): {e}")
+            print(f"[pykrx] {market} 목록 조회 실패 ({attempt}/{KRX_RETRY_COUNT}): {e}")
         if attempt < KRX_RETRY_COUNT:
             time.sleep(KRX_RETRY_WAIT_SEC)
     return None
 
 
-def get_kospi_listing_naver():
-    """③ 네이버 금융 모바일 API."""
+def get_kospi_listing_pykrx():
+    """② pykrx (이것도 결국 data.krx.co.kr을 씀 - fdr과 같은 이유로 같이 막힐 수 있음) - 코스피+코스닥 합산."""
+    try:
+        from pykrx import stock
+    except ImportError:
+        print("[pykrx] 패키지가 설치되어 있지 않아 폴백을 건너뜁니다 (requirements.txt에 pykrx 추가 필요).")
+        return None
+
+    dfs = []
+    for market in MARKETS:
+        df = _get_one_market_listing_pykrx(stock, market)
+        if df is not None and not df.empty:
+            dfs.append(df)
+    if not dfs:
+        return None
+    return pd.concat(dfs, ignore_index=True).drop_duplicates(subset=['Code'])
+
+
+def _get_one_market_listing_naver(market):
     rows = []
     page = 1
-    max_pages = 20
+    max_pages = 30
     try:
         while page <= max_pages:
-            url = f"https://m.stock.naver.com/api/stocks/marketValue/KOSPI?page={page}&pageSize=100"
+            url = f"https://m.stock.naver.com/api/stocks/marketValue/{market}?page={page}&pageSize=100"
             res = requests.get(url, timeout=10, headers={'User-Agent': 'Mozilla/5.0'})
             if res.status_code != 200:
                 break
@@ -204,7 +271,7 @@ def get_kospi_listing_naver():
             page += 1
             time.sleep(0.3)
     except Exception as e:
-        print(f"[naver] KOSPI 목록 조회 실패: {e}")
+        print(f"[naver] {market} 목록 조회 실패: {e}")
         return None
 
     if not rows:
@@ -212,8 +279,20 @@ def get_kospi_listing_naver():
     return pd.DataFrame(rows, columns=['Code', 'Name']).drop_duplicates(subset=['Code'])
 
 
+def get_kospi_listing_naver():
+    """③ 네이버 금융 모바일 API - 코스피+코스닥 합산."""
+    dfs = []
+    for market in MARKETS:
+        df = _get_one_market_listing_naver(market)
+        if df is not None and not df.empty:
+            dfs.append(df)
+    if not dfs:
+        return None
+    return pd.concat(dfs, ignore_index=True).drop_duplicates(subset=['Code'])
+
+
 def get_kospi_listing_cache():
-    """④ 최후의 수단: 직전에 성공했던 목록을 저장소에서 그대로 읽음."""
+    """④ 최후의 수단: 직전에 성공했던 코스피+코스닥 통합 목록을 저장소에서 그대로 읽음."""
     if not os.path.exists(TICKER_CACHE_PATH):
         print("[cache] 캐시된 종목 리스트 파일이 없습니다.")
         return None
@@ -237,13 +316,14 @@ def save_kospi_listing_cache(listing):
 
 
 def get_kospi_listing():
+    """이름은 kospi지만 실제로는 MARKETS(코스피+코스닥) 통합 리스트를 반환한다."""
     for label, fn in (('kis마스터', get_kospi_listing_kis_master),
                        ('fdr', get_kospi_listing_fdr),
                        ('pykrx', get_kospi_listing_pykrx),
                        ('naver', get_kospi_listing_naver)):
         listing = fn()
         if listing is not None and not listing.empty:
-            print(f"[국장] {label} 소스로 종목 리스트 조회 성공 ({len(listing)}개)")
+            print(f"[국장] {label} 소스로 코스피+코스닥 종목 리스트 조회 성공 ({len(listing)}개)")
             save_kospi_listing_cache(listing)
             return listing
         print(f"[국장] {label} 소스 실패 -> 다음 소스 시도")
@@ -253,7 +333,7 @@ def get_kospi_listing():
 
 
 def screen_korea():
-    print(f"[국장] {MARKET} 종목 리스트 불러오는 중...")
+    print(f"[국장] {'+'.join(MARKETS)} 종목 리스트 불러오는 중...")
     if KIS_AVAILABLE:
         print("[국장] KIS_APP_KEY/KIS_APP_SECRET 감지됨 - 가격 조회는 KIS 인증 API를 우선 사용합니다.")
     else:
@@ -264,7 +344,7 @@ def screen_korea():
         return None
 
     tickers = listing[['Code', 'Name']].values.tolist()
-    print(f"총 {len(tickers)}개 종목 병렬 조회 시작 (가격필터 없이 코스피 전체 스캔)")
+    print(f"총 {len(tickers)}개 종목 병렬 조회 시작 (가격필터 없이 코스피+코스닥 전체 스캔)")
 
     end = datetime.today()
     start = end - timedelta(days=300)
@@ -299,19 +379,10 @@ def build_pick_message(entry_cnt, top_df):
 
 
 if __name__ == "__main__":
-    # 2026-09-14 추가: 매시간 전체스캔 자체를 텔레그램 명령("국장전체스캔중지"/"국장전체스캔시작")
-    # 으로 켜고 끌 수 있음. 알림 on/off(ALERT_SETTINGS_PATH)와는 별개 설정이며,
-    # 이게 꺼져 있으면 API 호출/데이터 갱신 없이 스캔 자체를 건너뜀(리소스 절약 목적).
-    scan_enabled = is_market_alert_enabled(MARKET_KEY, SCAN_SETTINGS_PATH)
-    if not scan_enabled:
-        print("[국장] 매시간 전체스캔이 꺼져있는 상태입니다 - 이번 실행은 건너뜁니다.")
-        sys.exit(0)
-
-    # 2026-09-14 추가: 휴장일(주말/공휴일)이거나 "개장 1시간 전 ~ 마감 1시간 후"
-    # 구간 밖이면 API 호출 없이 건너뜀. exchange_calendars가 실제 KRX 휴장일을
-    # 정확히 알고 있어서 단순 요일 체크보다 신뢰도가 높음.
-    if not is_market_open_scan_window(MARKET_CALENDAR, buffer_before_hours=1, buffer_after_hours=1):
-        print("[국장] 휴장일이거나 장 운영시간(개장 1시간 전~마감 1시간 후) 밖이라 이번 실행은 건너뜁니다.")
+    # 2026-09-20 추가: 주말(토/일, KST)은 국장 휴장이므로 스캔/저장/알림 전부 생략.
+    # 수동 실행(workflow_dispatch)은 테스트/점검 목적이므로 주말에도 정상 진행.
+    if is_weekend_kst() and not is_manual_run():
+        print("[국장] 주말(토/일)이라 국장이 휴장입니다 - 전체스캔과 알림을 건너뜁니다.")
         sys.exit(0)
 
     alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
@@ -329,7 +400,7 @@ if __name__ == "__main__":
     df = screen_korea()
 
     if df is None:
-        notify("[국장 전체스캔] 스캔 실패 - KOSPI 종목 리스트를 불러오지 못했습니다 "
+        notify("[국장 전체스캔] 스캔 실패 - KOSPI/KOSDAQ 종목 리스트를 불러오지 못했습니다 "
                "(KRX 서버 오류로 추정, kis마스터/fdr/pykrx/네이버/캐시 모두 실패).")
         sys.exit(0)
 
