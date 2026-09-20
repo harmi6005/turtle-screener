@@ -7,7 +7,7 @@ BSV,BSV,System1(단기),관심,False,False,False,True,23560.0,23930.0,21260.0,0.
 EL,EL,System1(단기),관심,False,False,False,True,2.31,2.4,1.92,0.999,0.15,,
 EL,EL,System2(중장기),관심,False,False,False,True,2.31,2.4,1.9,0.999,0.15,,
 COMP,COMP,System1(단기),확정,False,False,False,True,29110.0,29770.0,25290.0,0.999,1208.0,,29890.0
-COMP,COMP,System2(중장기),관심,False,False,False,True,29110.0,29970.0,24900.0,0.992,1208.0,,
+COMP,COMP,System2(중장기),탈락,False,False,False,True,29110.0,29970.0,24900.0,0.992,1208.0,,
 RSR,RSR,System1(단기),진입,True,True,False,False,2.19,2.19,1.81,1.028,0.13,,
 RSR,RSR,System2(중장기),진입,True,True,False,False,2.19,2.19,1.79,1.028,0.13,,
 USDS,USDS,System1(단기),청산,False,False,True,False,1352.0,1408.0,1353.0,0.987,20.4,,
