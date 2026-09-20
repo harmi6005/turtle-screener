@@ -22,7 +22,7 @@ JOE,JOE,System2(중장기),탈락,False,False,False,True,46.95,50.5,36.7,0.995,2
 BTT,BTT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 HOOK,HOOK,System1(단기),청산,False,False,True,False,5.43,8.39,5.43,0.739,0.65,,
 HOOK,HOOK,System2(중장기),청산,False,False,True,False,5.43,8.65,5.43,0.717,0.65,,
-CFX,CFX,System1(단기),관심,False,False,False,True,67.15,70.2,59.83,0.996,2.98,,
+CFX,CFX,System1(단기),탈락,False,False,False,True,67.15,70.2,59.83,0.996,2.98,,
 S,S,System1(단기),진입,True,True,False,False,47.61,47.39,34.04,1.04,3.02,,
 S,S,System2(중장기),진입,True,True,False,False,47.61,47.39,34.04,1.04,3.02,,
 AR,AR,System1(단기),탈락,False,False,False,True,5850.0,6695.0,3310.0,0.99,507.4,,
