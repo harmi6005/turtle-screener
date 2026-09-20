@@ -12,7 +12,7 @@ RSR,RSR,System1(단기),진입,True,True,False,False,2.19,2.19,1.81,1.028,0.13,,
 RSR,RSR,System2(중장기),진입,True,True,False,False,2.19,2.19,1.79,1.028,0.13,,
 USDS,USDS,System1(단기),청산,False,False,True,False,1352.0,1408.0,1353.0,0.987,20.4,,
 USDS,USDS,System2(중장기),청산,False,False,True,False,1352.0,1470.0,1352.0,0.946,20.4,,
-ALGO,ALGO,System2(중장기),관심,False,False,False,True,144.0,145.0,116.0,0.993,8.15,,
+ALGO,ALGO,System2(중장기),확정,False,False,False,True,144.0,145.0,116.0,0.993,8.15,,145.0
 SUN,SUN,System1(단기),관심,False,False,False,True,23.37,23.53,22.39,0.993,0.45,,
 NFT,NFT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
