@@ -18,7 +18,7 @@ SEI,SEI,System2(중장기),확정,False,False,False,True,69.2,70.14,55.94,0.992,
 PYTH,PYTH,System1(단기),관심,False,False,False,True,83.08,84.04,67.77,0.994,5.29,,
 PYTH,PYTH,System2(중장기),관심,False,False,False,True,83.08,84.04,64.0,0.994,5.29,,
 JTO,JTO,System1(단기),관심,False,False,False,True,687.0,695.0,535.0,0.999,50.2,,
-ZRO,ZRO,System1(단기),관심,False,False,False,True,1585.0,1597.0,1258.0,0.997,111.2,,
+ZRO,ZRO,System1(단기),확정,False,False,False,True,1585.0,1597.0,1258.0,0.997,111.2,,1597.0
 ATH,ATH,System1(단기),진입,True,True,False,False,7.41,7.41,5.6,1.03,0.44,,
 ATH,ATH,System2(중장기),관심,False,False,False,True,7.41,7.64,5.6,0.999,0.44,,
 CFG,CFG,System1(단기),진입,True,True,False,False,188.0,188.0,136.0,1.005,15.05,,
