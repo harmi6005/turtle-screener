@@ -41,7 +41,7 @@ EIGEN,EIGEN,System1(단기),탈락,False,False,False,True,304.0,330.0,255.0,0.99
 EIGEN,EIGEN,System2(중장기),탈락,False,False,False,True,304.0,330.0,252.0,0.994,24.0,,
 CARV,CARV,System1(단기),탈락,False,False,False,True,50.55,53.01,45.39,0.994,2.45,,
 CARV,CARV,System2(중장기),탈락,False,False,False,True,50.55,53.01,45.16,0.994,2.45,,
-TURBO,TURBO,System1(단기),관심,False,False,False,True,1.28,1.41,1.16,0.999,0.07,,
+TURBO,TURBO,System1(단기),탈락,False,False,False,True,1.28,1.41,1.16,0.999,0.07,,
 INIT,INIT,System1(단기),탈락,False,False,False,True,96.98,105.0,84.74,0.99,6.02,,
 INIT,INIT,System2(중장기),탈락,False,False,False,True,96.98,105.0,75.1,0.99,6.02,,
 IOTA,IOTA,System1(단기),탈락,False,False,False,True,62.48,66.97,50.45,0.992,4.15,,
