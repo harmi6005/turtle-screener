@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-TRX,TRX,System1(단기),관심,False,False,False,True,470.0,474.0,451.0,0.992,7.7,,
+TRX,TRX,System1(단기),확정,False,False,False,True,470.0,474.0,451.0,0.992,7.7,,474.0
 BTC,BTC,System1(단기),관심,False,False,False,True,110101000.0,112250000.0,102111000.0,0.997,2843050.0,,
 BTC,BTC,System2(중장기),관심,False,False,False,True,110101000.0,112499000.0,102111000.0,0.994,2843050.0,,
 VET,VET,System1(단기),관심,False,False,False,True,11.15,12.07,8.71,0.997,0.84,,
