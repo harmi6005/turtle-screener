@@ -16,7 +16,7 @@ USDS,USDS,System2(중장기),청산,False,False,True,False,1355.0,1470.0,1352.0,
 ALGO,ALGO,System1(단기),진입,True,True,False,False,140.0,140.0,116.0,1.079,8.5,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
-SUN,SUN,System1(단기),관심,False,False,False,True,23.44,23.53,22.39,0.999,0.46,,
+SUN,SUN,System1(단기),확정,False,False,False,True,23.44,23.53,22.39,0.999,0.46,,23.53
 JOE,JOE,System2(중장기),관심,False,False,False,True,43.57,50.5,36.7,0.995,2.67,,
 BTT,BTT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 HOOK,HOOK,System1(단기),청산,False,False,True,False,5.5,8.39,5.43,0.739,0.65,,
