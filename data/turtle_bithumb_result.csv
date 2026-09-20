@@ -49,7 +49,7 @@ IOTA,IOTA,System2(중장기),탈락,False,False,False,True,62.48,66.99,50.45,0.9
 KERNEL,KERNEL,System1(단기),탈락,False,False,False,True,55.14,59.38,50.41,0.993,2.69,,
 SIGN,SIGN,System1(단기),탈락,False,False,False,True,15.97,16.32,13.04,0.996,1.26,,
 SIGN,SIGN,System2(중장기),탈락,False,False,False,True,15.97,16.32,11.38,0.996,1.26,,
-FLUID,FLUID,System1(단기),관심,False,False,False,True,1718.0,1859.0,1435.0,0.992,101.2,,
+FLUID,FLUID,System1(단기),탈락,False,False,False,True,1718.0,1859.0,1435.0,0.992,101.2,,
 SUN,SUN,System1(단기),확정,False,False,False,True,23.44,23.53,22.39,0.999,0.46,,23.53
 COMP,COMP,System1(단기),확정,False,False,False,True,29110.0,29770.0,25290.0,0.999,1208.0,,29890.0
 ALGO,ALGO,System2(중장기),확정,False,False,False,True,144.0,145.0,116.0,0.993,8.15,,145.0
