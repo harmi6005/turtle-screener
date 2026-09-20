@@ -253,6 +253,7 @@ RCL,RCL,System1(단기),청산,False,False,True,False,245.81,297.09,247.17,0.846
 RCL,RCL,System2(중장기),청산,False,False,True,False,245.81,332.03,247.17,0.757,7.07,,
 SPGI,SPGI,System1(단기),청산,False,False,True,False,405.32,454.92,403.68,0.897,10.98,,
 SPGI,SPGI,System2(중장기),청산,False,False,True,False,405.32,460.98,403.68,0.885,10.98,,
+CRM,CRM,System1(단기),청산,False,False,True,False,237.92,267.8,241.33,0.912,10.79,,
 SNDK,SNDK,System1(단기),관심,False,False,False,True,1791.82,1807.38,1504.2,0.994,100.35,,
 SBAC,SBAC,System1(단기),청산,False,False,True,False,178.59,194.23,179.52,0.937,4.82,,
 SBAC,SBAC,System2(중장기),청산,False,False,True,False,178.59,194.23,179.52,0.937,4.82,,
