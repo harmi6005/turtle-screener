@@ -109,7 +109,7 @@ ESS,ESS,System1(단기),청산,False,False,True,False,270.05,294.72,269.86,0.923
 ESS,ESS,System2(중장기),청산,False,False,True,False,270.05,303.35,269.86,0.897,4.71,,
 EL,EL,System1(단기),청산,False,False,True,False,93.43,108.01,93.42,0.876,3.16,,
 EL,EL,System2(중장기),청산,False,False,True,False,93.43,108.01,93.42,0.876,3.16,,
-EG,EG,System1(단기),관심,False,False,False,True,374.85,385.93,361.7,0.993,7.13,,
+EG,EG,System1(단기),탈락,False,False,False,True,374.85,385.93,361.7,0.993,7.13,,
 EVRG,EVRG,System1(단기),청산,False,False,True,False,79.78,84.47,79.89,0.957,1.26,,
 EVRG,EVRG,System2(중장기),청산,False,False,True,False,79.78,87.89,79.85,0.919,1.26,,
 EXC,EXC,System1(단기),청산,False,False,True,False,42.07,45.29,42.14,0.939,0.74,,
