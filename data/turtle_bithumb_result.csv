@@ -17,7 +17,7 @@ CAKE,CAKE,System2(중장기),관심,False,False,False,True,3388.0,3531.0,2421.0,
 SHIB,SHIB,System1(단기),진입,True,True,False,False,0.01,0.01,0.01,1.038,0.0,,
 POL,POL,System1(단기),관심,False,False,False,True,151.0,155.0,124.0,0.994,7.4,,
 XLM,XLM,System1(단기),진입,True,True,False,False,289.0,288.0,236.0,1.007,15.5,,
-KAIA,KAIA,System1(단기),관심,False,False,False,True,44.04,44.19,36.17,0.997,2.28,,
+KAIA,KAIA,System1(단기),확정,False,False,False,True,44.04,44.19,36.17,0.997,2.28,,44.21
 NFT,NFT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 SOL,SOL,System1(단기),진입,True,True,False,False,160900.0,160500.0,130900.0,1.003,6390.0,,
