@@ -27,8 +27,8 @@ ONDO,ONDO,System2(중장기),진입,True,True,False,False,611.0,608.0,442.0,1.01
 TAIKO,TAIKO,System1(단기),진입,True,True,False,False,121.0,121.0,100.0,1.008,7.08,,
 TAIKO,TAIKO,System2(중장기),진입,True,True,False,False,121.0,121.0,99.5,1.008,7.08,,
 ATH,ATH,System2(중장기),관심,False,False,False,True,7.48,7.64,5.6,0.999,0.44,,
-EIGEN,EIGEN,System1(단기),관심,False,False,False,True,328.0,330.0,255.0,0.997,24.0,,
-EIGEN,EIGEN,System2(중장기),관심,False,False,False,True,328.0,330.0,255.0,0.997,24.0,,
+EIGEN,EIGEN,System1(단기),확정,False,False,False,True,328.0,330.0,255.0,0.997,24.0,,330.0
+EIGEN,EIGEN,System2(중장기),확정,False,False,False,True,328.0,330.0,255.0,0.997,24.0,,330.0
 ME,ME,System1(단기),진입,True,True,False,False,97.02,96.99,80.81,1.006,4.15,,
 AERO,AERO,System1(단기),관심,False,False,False,True,921.0,933.0,705.0,0.999,66.45,,
 AERO,AERO,System2(중장기),관심,False,False,False,True,921.0,933.0,626.0,0.999,66.45,,
