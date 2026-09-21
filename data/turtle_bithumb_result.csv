@@ -10,7 +10,7 @@ CHR,CHR,System1(단기),확정,False,False,False,True,23.41,24.0,20.03,0.992,1.1
 CHR,CHR,System2(중장기),확정,False,False,False,True,23.41,24.0,19.7,0.992,1.18,,24.0
 CKB,CKB,System1(단기),탈락,False,False,False,True,1.71,1.73,1.42,0.993,0.11,,
 CKB,CKB,System2(중장기),탈락,False,False,False,True,1.71,1.73,1.34,0.993,0.11,,
-ALICE,ALICE,System1(단기),관심,False,False,False,True,192.0,193.0,169.0,0.995,8.2,,
+ALICE,ALICE,System1(단기),확정,False,False,False,True,192.0,193.0,169.0,0.995,8.2,,193.0
 COTI,COTI,System1(단기),청산,False,False,True,False,20.53,36.81,21.29,0.641,3.69,,
 CAKE,CAKE,System1(단기),관심,False,False,False,True,3388.0,3531.0,2946.0,0.991,254.8,,
 CAKE,CAKE,System2(중장기),관심,False,False,False,True,3388.0,3531.0,2421.0,0.991,254.8,,
