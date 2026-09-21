@@ -466,7 +466,7 @@
 214980,KODEX 단기채권PLUS,System2(중장기),진입,True,True,False,False,114425.0,114425.0,114255.0,1.0,22.4,,
 215620,HK S&P코리아로우볼,System1(단기),청산,False,False,True,False,16070.0,16545.0,16135.0,0.971,125.25,,
 225030,TIGER 미국S&P500선물인버스(H),System1(단기),탈락,False,False,False,True,2265.0,2290.0,2230.0,0.996,16.6,,
-225800,KIWOOM 미국달러선물레버리지,System1(단기),관심,False,False,False,True,15070.0,15195.0,14040.0,0.997,195.5,,
+225800,KIWOOM 미국달러선물레버리지,System1(단기),확정,False,False,False,True,15070.0,15195.0,14040.0,0.997,195.5,,15165.0
 226380,ACE Fn성장소비주도주,System1(단기),청산,False,False,True,False,5700.0,6210.0,5700.0,0.923,97.0,,
 226380,ACE Fn성장소비주도주,System2(중장기),청산,False,False,True,False,5700.0,6210.0,5700.0,0.923,97.0,,
 228800,TIGER 여행레저,System1(단기),청산,False,False,True,False,2625.0,2765.0,2635.0,0.964,57.4,,
@@ -492,7 +492,7 @@
 261120,TIGER 미국달러선물인버스2X,System1(단기),청산,False,False,True,False,5295.0,5670.0,5275.0,0.934,74.5,,
 261110,TIGER 미국달러선물레버리지,System1(단기),확정,False,False,False,True,16030.0,16185.0,14930.0,0.995,208.5,,16105.0
 261240,KODEX 미국달러선물,System1(단기),확정,False,False,False,True,14300.0,14355.0,13795.0,0.999,103.5,,14350.0
-261250,KODEX 미국달러선물레버리지,System1(단기),관심,False,False,False,True,15965.0,16140.0,14880.0,0.995,218.7,,
+261250,KODEX 미국달러선물레버리지,System1(단기),탈락,False,False,False,True,15965.0,16140.0,14880.0,0.995,218.7,,
 261260,KODEX 미국달러선물인버스2X,System1(단기),청산,False,False,True,False,5325.0,5710.0,5310.0,0.936,79.5,,
 261270,KODEX 미국달러선물인버스,System1(단기),청산,False,False,True,False,8095.0,8380.0,8080.0,0.968,62.1,,
 266550,PLUS 중형주저변동50,System1(단기),청산,False,False,True,False,18525.0,19135.0,18525.0,0.971,196.25,,
