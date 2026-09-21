@@ -23,7 +23,7 @@ PENDLE,PENDLE,System1(단기),관심,False,False,False,True,3737.0,3770.0,2650.0
 PENDLE,PENDLE,System2(중장기),관심,False,False,False,True,3737.0,3770.0,2361.0,0.997,257.6,,
 PYTH,PYTH,System1(단기),진입,True,True,False,False,84.21,84.04,67.77,1.009,5.35,,
 PYTH,PYTH,System2(중장기),진입,True,True,False,False,84.21,84.04,64.0,1.009,5.35,,
-AKT,AKT,System2(중장기),관심,False,False,False,True,808.0,845.0,667.0,0.994,50.85,,
+AKT,AKT,System2(중장기),확정,False,False,False,True,808.0,845.0,667.0,0.994,50.85,,845.0
 BEAM,BEAM,System1(단기),진입,True,True,False,False,2.54,2.53,2.0,1.004,0.13,,
 ENA,ENA,System1(단기),진입,True,True,False,False,303.0,302.0,183.0,1.043,23.4,,
 ENA,ENA,System2(중장기),진입,True,True,False,False,303.0,302.0,183.0,1.043,23.4,,
