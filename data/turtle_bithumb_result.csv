@@ -1,7 +1,7 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 BTC,BTC,System1(단기),관심,False,False,False,True,110959000.0,112250000.0,102111000.0,0.991,2805000.0,,
-ETH,ETH,System1(단기),관심,False,False,False,True,3608000.0,3636000.0,3233000.0,0.994,125650.0,,
-ETH,ETH,System2(중장기),관심,False,False,False,True,3608000.0,3636000.0,3233000.0,0.994,125650.0,,
+ETH,ETH,System1(단기),탈락,False,False,False,True,3608000.0,3636000.0,3233000.0,0.994,125650.0,,
+ETH,ETH,System2(중장기),탈락,False,False,False,True,3608000.0,3636000.0,3233000.0,0.994,125650.0,,
 TRX,TRX,System1(단기),관심,False,False,False,True,469.0,476.0,451.0,0.994,7.7,,
 ORBS,ORBS,System1(단기),관심,False,False,False,True,9.62,9.67,8.4,0.995,0.36,,
 ORBS,ORBS,System2(중장기),관심,False,False,False,True,9.62,9.67,8.2,0.995,0.36,,
