@@ -55,7 +55,7 @@ WAL,WAL,System2(중장기),관심,False,False,False,True,45.27,47.48,33.34,0.991
 SXT,SXT,System1(단기),관심,False,False,False,True,11.94,12.46,10.07,0.995,0.61,,
 SIGN,SIGN,System1(단기),관심,False,False,False,True,16.35,16.45,13.04,0.995,1.2,,
 SIGN,SIGN,System2(중장기),관심,False,False,False,True,16.35,16.45,11.81,0.995,1.2,,
-LA,LA,System1(단기),관심,False,False,False,True,99.25,102.0,81.57,0.99,9.39,,
+LA,LA,System1(단기),탈락,False,False,False,True,99.25,102.0,81.57,0.99,9.39,,
 USD1,USD1,System1(단기),청산,False,False,True,False,1346.0,1425.0,1346.0,0.948,18.15,,
 BARD,BARD,System1(단기),관심,False,False,False,True,181.0,187.0,156.0,0.995,9.9,,
 THQ,THQ,System1(단기),관심,False,False,False,True,15.69,16.9,14.2,0.998,1.03,,
