@@ -46,8 +46,8 @@ MEW,MEW,System1(단기),진입,True,True,False,False,0.63,0.63,0.51,1.023,0.03,,
 ATH,ATH,System1(단기),관심,False,False,False,True,7.6,7.63,5.6,0.996,0.44,,
 ATH,ATH,System2(중장기),관심,False,False,False,True,7.6,7.64,5.6,0.995,0.44,,
 GRAM,GRAM,System1(단기),진입,True,True,False,False,1957.0,1954.0,1759.0,1.016,54.05,,
-PUFFER,PUFFER,System1(단기),관심,False,False,False,True,40.0,42.3,24.06,0.999,5.55,,
-PUFFER,PUFFER,System2(중장기),관심,False,False,False,True,40.0,42.3,17.51,0.999,5.55,,
+PUFFER,PUFFER,System1(단기),확정,False,False,False,True,40.0,42.3,24.06,0.999,5.55,,42.39
+PUFFER,PUFFER,System2(중장기),확정,False,False,False,True,40.0,42.3,17.51,0.999,5.55,,42.39
 DBR,DBR,System1(단기),진입,True,True,False,False,22.06,22.04,20.08,1.044,0.68,,
 BIO,BIO,System1(단기),관심,False,False,False,True,38.16,39.18,32.63,0.996,2.07,,
 WAL,WAL,System1(단기),관심,False,False,False,True,45.27,47.48,34.5,0.991,2.81,,
