@@ -18,7 +18,7 @@ LDO,LDO,System1(단기),관심,False,False,False,True,580.0,594.0,446.0,0.992,36
 LDO,LDO,System2(중장기),관심,False,False,False,True,580.0,594.0,446.0,0.992,36.45,,
 PYTH,PYTH,System1(단기),확정,False,False,False,True,83.65,84.04,67.77,0.998,5.31,,84.15
 PYTH,PYTH,System2(중장기),확정,False,False,False,True,83.65,84.04,64.0,0.998,5.31,,84.15
-JTO,JTO,System1(단기),관심,False,False,False,True,678.0,695.0,535.0,0.999,50.2,,
+JTO,JTO,System1(단기),확정,False,False,False,True,678.0,695.0,535.0,0.999,50.2,,696.0
 ONDO,ONDO,System1(단기),관심,False,False,False,True,593.0,605.0,442.0,0.992,34.85,,
 IO,IO,System1(단기),관심,False,False,False,True,196.0,200.0,158.0,0.995,13.25,,
 ATH,ATH,System2(중장기),관심,False,False,False,True,7.31,7.64,5.6,0.999,0.44,,
