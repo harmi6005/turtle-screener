@@ -26,8 +26,8 @@ JOE,JOE,System1(단기),관심,False,False,False,True,48.27,52.14,36.7,0.993,2.9
 JOE,JOE,System2(중장기),관심,False,False,False,True,48.27,52.14,36.7,0.993,2.99,,
 BTT,BTT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
-APT,APT,System1(단기),관심,False,False,False,True,1043.0,1060.0,719.0,0.991,73.15,,
-APT,APT,System2(중장기),관심,False,False,False,True,1043.0,1060.0,719.0,0.991,73.15,,
+APT,APT,System1(단기),확정,False,False,False,True,1043.0,1060.0,719.0,0.991,73.15,,1060.0
+APT,APT,System2(중장기),확정,False,False,False,True,1043.0,1060.0,719.0,0.991,73.15,,1060.0
 FLOKI,FLOKI,System1(단기),진입,True,True,False,False,0.04,0.04,0.03,1.044,0.0,,
 ID,ID,System1(단기),탈락,False,False,False,True,50.36,50.62,40.09,0.996,2.7,,
 ID,ID,System2(중장기),탈락,False,False,False,True,50.36,50.62,40.09,0.996,2.7,,
