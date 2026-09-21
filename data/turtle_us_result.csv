@@ -271,7 +271,7 @@ VRSK,VRSK,System1(단기),청산,False,False,True,False,172.24,196.68,171.33,0.8
 VRSK,VRSK,System2(중장기),청산,False,False,True,False,172.24,225.48,171.33,0.777,6.15,,
 VRTX,VRTX,System1(단기),청산,False,False,True,False,512.05,560.25,505.01,0.917,10.82,,
 VRTX,VRTX,System2(중장기),청산,False,False,True,False,512.05,560.25,505.01,0.917,10.82,,
-VTRS,VTRS,System1(단기),관심,False,False,False,True,17.27,17.31,16.15,0.998,0.41,,
+VTRS,VTRS,System1(단기),확정,False,False,False,True,17.27,17.31,16.15,0.998,0.41,,17.31
 VST,VST,System1(단기),청산,False,False,True,False,141.81,154.9,139.62,0.919,4.6,,
 VMRK,VMRK,System1(단기),청산,False,False,True,False,61.58,68.62,61.09,0.9,1.27,,
 VMRK,VMRK,System2(중장기),청산,False,False,True,False,61.58,71.5,61.09,0.864,1.27,,
