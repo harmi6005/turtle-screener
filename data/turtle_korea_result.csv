@@ -432,7 +432,7 @@
 134790,시디즈,System1(단기),청산,False,False,True,False,19100.0,22550.0,19000.0,0.847,505.5,,
 134790,시디즈,System2(중장기),청산,False,False,True,False,19100.0,22550.0,19000.0,0.847,505.5,,
 136490,선진,System1(단기),청산,False,False,True,False,10230.0,11350.0,10060.0,0.907,394.0,,
-138230,KIWOOM 미국달러선물,System1(단기),관심,False,False,False,True,16210.0,16290.0,15650.0,0.998,108.25,,
+138230,KIWOOM 미국달러선물,System1(단기),확정,False,False,False,True,16210.0,16290.0,15650.0,0.998,108.25,,16270.0
 138530,TIGER LG그룹플러스,System1(단기),청산,False,False,True,False,12025.0,12915.0,12075.0,0.952,319.5,,
 138920,KODEX 콩선물(H),System1(단기),탈락,False,False,False,True,12855.0,13165.0,12745.0,0.992,173.25,,
 138920,KODEX 콩선물(H),System2(중장기),탈락,False,False,False,True,12855.0,13165.0,12070.0,0.992,173.25,,
@@ -667,7 +667,7 @@
 455660,ACE 미국하이일드액티브(H),System2(중장기),탈락,False,False,False,True,9370.0,9460.0,9305.0,0.99,26.15,,
 455030,KODEX 미국달러SOFR금리액티브(합성),System1(단기),확정,False,False,False,True,11880.0,11929.0,11445.0,0.999,89.85,,11920.0
 455960,RISE 미국달러SOFR금리액티브(합성),System1(단기),확정,False,False,False,True,12130.0,12190.0,11695.0,0.996,70.25,,12170.0
-456200,PLUS 미국달러SOFR금리액티브(합성),System1(단기),관심,False,False,False,True,60070.0,60180.0,57990.0,0.998,305.75,,
+456200,PLUS 미국달러SOFR금리액티브(합성),System1(단기),확정,False,False,False,True,60070.0,60180.0,57990.0,0.998,305.75,,60245.0
 455890,RISE 머니마켓액티브,System1(단기),진입,True,True,False,False,55560.0,55560.0,55490.0,1.0,9.0,,
 455890,RISE 머니마켓액티브,System2(중장기),진입,True,True,False,False,55560.0,55560.0,55425.0,1.0,9.0,,
 456880,ACE 미국달러SOFR금리(합성),System1(단기),확정,False,False,False,True,12175.0,12220.0,11700.0,0.999,92.35,,12210.0
