@@ -7,7 +7,7 @@ CKB,CKB,System2(중장기),탈락,False,False,False,True,1.72,1.73,1.34,0.998,0.
 RSR,RSR,System1(단기),진입,True,True,False,False,2.26,2.25,1.81,1.013,0.13,,
 RSR,RSR,System2(중장기),진입,True,True,False,False,2.26,2.25,1.79,1.013,0.13,,
 ALICE,ALICE,System1(단기),탈락,False,False,False,True,191.0,193.0,168.0,0.995,8.55,,
-OGN,OGN,System1(단기),관심,False,False,False,True,26.93,27.13,21.57,0.993,1.15,,
+OGN,OGN,System1(단기),탈락,False,False,False,True,26.93,27.13,21.57,0.993,1.15,,
 CHZ,CHZ,System1(단기),진입,True,True,False,False,21.1,21.1,18.06,1.0,1.08,,
 AXS,AXS,System1(단기),진입,True,True,False,False,1441.0,1435.0,1213.0,1.008,61.75,,
 SHIB,SHIB,System1(단기),진입,True,True,False,False,0.01,0.01,0.01,1.0,0.0,,
