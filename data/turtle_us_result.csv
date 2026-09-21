@@ -229,8 +229,8 @@ PGR,PGR,System1(단기),청산,False,False,True,False,213.48,225.45,212.63,0.954
 PGR,PGR,System2(중장기),청산,False,False,True,False,213.48,239.38,212.63,0.899,3.86,,
 PEG,PEG,System1(단기),청산,False,False,True,False,69.77,74.87,70.05,0.943,1.1,,
 PEG,PEG,System2(중장기),청산,False,False,True,False,69.77,81.91,70.05,0.862,1.1,,
-DGX,DGX,System1(단기),관심,False,False,False,True,246.45,248.7,228.57,0.996,4.99,,
-DGX,DGX,System2(중장기),관심,False,False,False,True,246.45,248.7,228.57,0.996,4.99,,
+DGX,DGX,System1(단기),확정,False,False,False,True,246.45,248.7,228.57,0.996,4.99,,248.84
+DGX,DGX,System2(중장기),확정,False,False,False,True,246.45,248.7,228.57,0.996,4.99,,248.84
 RL,RL,System1(단기),청산,False,False,True,False,335.1,380.0,331.35,0.882,9.72,,
 RL,RL,System2(중장기),청산,False,False,True,False,335.1,411.19,331.35,0.815,9.72,,
 RTX,RTX,System1(단기),청산,False,False,True,False,194.0,220.49,191.84,0.88,3.73,,
