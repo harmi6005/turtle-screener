@@ -33,7 +33,7 @@ EIGEN,EIGEN,System2(중장기),관심,False,False,False,True,326.0,330.0,255.0,0
 AERO,AERO,System1(단기),관심,False,False,False,True,930.0,933.0,705.0,0.997,66.35,,
 AERO,AERO,System2(중장기),관심,False,False,False,True,930.0,933.0,626.0,0.997,66.35,,
 VANA,VANA,System1(단기),탈락,False,False,False,True,1491.0,1522.0,1189.0,0.992,77.95,,
-ERA,ERA,System1(단기),관심,False,False,False,True,85.41,86.3,73.78,0.994,3.36,,
+ERA,ERA,System1(단기),탈락,False,False,False,True,85.41,86.3,73.78,0.994,3.36,,
 COW,COW,System1(단기),관심,False,False,False,True,216.0,217.0,171.0,0.995,10.15,,
 SENT,SENT,System1(단기),확정,False,False,False,True,24.73,25.13,18.08,0.993,1.57,,25.13
 SENT,SENT,System2(중장기),확정,False,False,False,True,24.73,25.13,17.13,0.993,1.57,,25.13
