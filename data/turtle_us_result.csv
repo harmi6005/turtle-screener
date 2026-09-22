@@ -3,8 +3,8 @@ ABBV,ABBV,System1(단기),탈락,False,False,False,True,264.48,266.91,246.77,0.9
 ABBV,ABBV,System2(중장기),탈락,False,False,False,True,264.48,267.47,246.77,0.997,5.3,,
 AES,AES,System1(단기),관심,False,False,False,True,14.83,14.88,14.78,0.997,0.04,,
 AES,AES,System2(중장기),관심,False,False,False,True,14.83,14.88,14.71,0.997,0.04,,
-A,A,System1(단기),관심,False,False,False,True,161.94,163.75,141.25,0.995,4.49,,
-A,A,System2(중장기),관심,False,False,False,True,161.94,163.75,141.25,0.995,4.49,,
+A,A,System1(단기),확정,False,False,False,True,161.94,163.75,141.25,0.995,4.49,,163.77
+A,A,System2(중장기),확정,False,False,False,True,161.94,163.75,141.25,0.995,4.49,,163.77
 APD,APD,System1(단기),청산,False,False,True,False,279.46,313.93,281.23,0.906,5.47,,
 APD,APD,System2(중장기),청산,False,False,True,False,279.46,314.87,281.23,0.903,5.47,,
 ABNB,ABNB,System1(단기),청산,False,False,True,False,166.84,193.45,164.79,0.868,4.64,,
