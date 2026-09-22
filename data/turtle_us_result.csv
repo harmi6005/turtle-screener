@@ -15,8 +15,8 @@ LNT,LNT,System1(단기),청산,False,False,True,False,64.97,70.51,65.56,0.932,0.
 LNT,LNT,System2(중장기),청산,False,False,True,False,64.97,78.22,65.56,0.84,0.99,,
 ALL,ALL,System1(단기),청산,False,False,True,False,242.86,266.45,247.78,0.944,5.08,,
 ALL,ALL,System2(중장기),청산,False,False,True,False,242.86,276.07,247.78,0.911,5.08,,
-GOOGL,GOOGL,System1(단기),관심,False,False,False,True,354.97,359.44,327.74,0.995,7.78,,
-GOOG,GOOG,System1(단기),관심,False,False,False,True,350.87,355.13,325.63,0.995,7.48,,
+GOOGL,GOOGL,System1(단기),확정,False,False,False,True,354.97,359.44,327.74,0.995,7.78,,360.44
+GOOG,GOOG,System1(단기),확정,False,False,False,True,350.87,355.13,325.63,0.995,7.48,,356.22
 AEE,AEE,System1(단기),청산,False,False,True,False,101.83,108.9,102.21,0.94,1.53,,
 AEE,AEE,System2(중장기),청산,False,False,True,False,101.83,115.58,102.21,0.886,1.53,,
 AEP,AEP,System1(단기),청산,False,False,True,False,120.03,126.34,119.71,0.956,1.84,,
@@ -27,7 +27,7 @@ AON,AON,System1(단기),청산,False,False,True,False,290.82,361.73,293.0,0.823,
 AON,AON,System2(중장기),청산,False,False,True,False,290.82,381.47,293.0,0.781,9.2,,
 AAPL,AAPL,System1(단기),진입,True,True,False,False,338.98,338.49,309.9,1.003,7.21,,
 APP,APP,System1(단기),탈락,False,False,False,True,330.17,338.34,300.09,0.996,15.23,,
-ANET,ANET,System1(단기),관심,False,False,False,True,205.42,206.13,186.11,0.999,7.52,,
+ANET,ANET,System1(단기),탈락,False,False,False,True,205.42,206.13,186.11,0.999,7.52,,
 AJG,AJG,System1(단기),청산,False,False,True,False,236.61,272.06,238.75,0.885,6.94,,
 AJG,AJG,System2(중장기),청산,False,False,True,False,236.61,272.06,238.75,0.885,6.94,,
 AIZ,AIZ,System1(단기),청산,False,False,True,False,277.38,288.7,278.29,0.985,4.88,,
@@ -316,6 +316,6 @@ ZTS,ZTS,System2(중장기),청산,False,False,True,False,71.33,80.17,71.4,0.904,
 COHR,COHR,System1(단기),확정,False,False,False,True,314.01,315.7,255.25,0.997,18.73,,315.79
 ARE,ARE,System2(중장기),확정,False,False,False,True,55.35,55.74,46.74,0.997,1.77,,55.92
 CHRW,CHRW,System1(단기),확정,False,False,False,True,156.82,157.82,143.4,0.997,3.73,,157.86
-TTD,TTD,System1(단기),확정,False,False,False,True,15.22,15.26,13.37,0.998,0.56,,15.27
+TTD,TTD,System1(단기),확정이탈,False,False,False,True,15.22,15.26,13.37,0.998,0.56,,15.27
 WFC,WFC,System2(중장기),확정,False,False,False,True,88.71,91.16,83.48,0.993,1.86,,91.28
 ACN,ACN,System2(중장기),확정,False,False,False,True,187.68,191.9,157.76,0.99,6.87,190.04,192.22
