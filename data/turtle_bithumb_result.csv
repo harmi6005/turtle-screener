@@ -12,8 +12,8 @@ UMA,UMA,System1(단기),관심,False,False,False,True,543.0,550.0,467.0,0.993,23
 UMA,UMA,System2(중장기),관심,False,False,False,True,543.0,550.0,467.0,0.993,23.2,,
 COMP,COMP,System1(단기),관심,False,False,False,True,30220.0,30750.0,25290.0,0.99,1333.0,,
 COMP,COMP,System2(중장기),관심,False,False,False,True,30220.0,30750.0,25290.0,0.99,1333.0,,
-MANA,MANA,System1(단기),관심,False,False,False,True,115.0,117.0,95.3,0.991,4.8,,
-MANA,MANA,System2(중장기),관심,False,False,False,True,115.0,117.0,95.0,0.991,4.8,,
+MANA,MANA,System1(단기),확정,False,False,False,True,115.0,117.0,95.3,0.991,4.8,,117.0
+MANA,MANA,System2(중장기),확정,False,False,False,True,115.0,117.0,95.0,0.991,4.8,,117.0
 COTI,COTI,System1(단기),청산,False,False,True,False,20.1,36.81,21.29,0.641,3.69,,
 CAKE,CAKE,System1(단기),관심,False,False,False,True,3392.0,3531.0,2946.0,0.991,254.8,,
 CAKE,CAKE,System2(중장기),관심,False,False,False,True,3392.0,3531.0,2421.0,0.991,254.8,,
