@@ -32,8 +32,9 @@
   4종(kis마스터/fdr/pykrx/naver)이 전부 두 시장을 각각 조회한 뒤 하나로 합치도록 수정.
   KIS 마스터 파일도 코스피용(kospi_code.mst.zip)과 코스닥용(kosdaq_code.mst.zip)
   두 개를 모두 받아서 합침. 가격(일봉) 조회 로직(fetch_ohlc, KIS/fdr 우선순위)과
-  최종 픽 기준(PICK_COUNT=3, PICK_PRICE_MAX=30000)은 변경 없음 - 스캔 "대상 종목 수"만
-  늘어난 것이므로, 코스닥 종목도 동일한 터틀 로직/픽 기준을 그대로 적용받음.
+  최종 픽 기준(PICK_COUNT/PICK_PRICE_MAX, common.py 참조)은 변경 없음 - 스캔 "대상
+  종목 수"만 늘어난 것이므로, 코스닥 종목도 동일한 터틀 로직/픽 기준을 그대로
+  적용받음.
 
 [2026-09-20 6차 수정 - 전체 교체]
 - ⭐ 주말(토/일, KST 기준)에는 국장이 쉬는데도 전체스캔 알림이 계속 오던 문제 수정.
@@ -45,6 +46,19 @@
            (이중 방어. GitHub 스케줄 지연 등으로 주말에 실행돼도 알림이 안 감)
         ③ 수동 실행(workflow_dispatch)은 주말에도 정상 동작 - 테스트/점검용
   ※ 평일 공휴일(설날/추석 등)은 이번 수정에서 다루지 않음.
+
+[2026-09-22 7차 수정 - 전체 교체]
+- 🔴 버그 수정: "국장전체스캔중지"/"국장전체스캔시작" 텔레그램 명령이 
+  data/scan_settings.csv에 값은 정상 저장하면서도, 정작 이 스크립트가 그 파일을
+  전혀 확인하지 않아 실제로는 아무 효과가 없었음(같은 기능을 가진 full_scan_us.py,
+  full_scan_bithumb.py에는 이미 구현되어 있었으나 이 파일에만 누락되어 있었음).
+  수정: SCAN_SETTINGS_PATH 상수와 scan_enabled 체크를 추가해서, 매시간 전체스캔
+  자체를 껐을 때 API 호출/데이터 갱신 없이 이번 실행을 건너뛰도록 함(다른 두
+  마켓과 동일한 방식).
+- 참고: 같은 날 kis_client.py의 kis_credentials_available() 버그(잘못된 환경변수
+  이름 조회로 KIS 인증 API가 한 번도 호출되지 않던 문제)도 별도로 수정함. 이
+  파일의 KIS_AVAILABLE 플래그는 그 수정에 따라 자동으로 정상 동작하게 됨(이
+  파일 자체의 로직 변경은 아님).
 """
 
 import sys
@@ -71,6 +85,10 @@ MARKETS = ['KOSPI', 'KOSDAQ']  # 2026-09-12: 'KOSPI' 단일값 -> 코스피+코�
 MARKET_KEY = 'KR'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
 ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
+# 2026-09-22 추가: 매시간(정확히는 하루 2회) 전체스캔 자체를 켜고 끄는 설정 파일.
+# ALERT_SETTINGS_PATH(텔레그램 발송 on/off)와는 완전히 별개 기능이며,
+# full_scan_us.py / full_scan_bithumb.py에는 이미 있었으나 이 파일에만 누락되어 있었음.
+SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'scan_settings.csv')
 TICKER_CACHE_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'krx_tickers_cache.csv')
 
 KRX_RETRY_COUNT = 5
@@ -383,6 +401,13 @@ if __name__ == "__main__":
     # 수동 실행(workflow_dispatch)은 테스트/점검 목적이므로 주말에도 정상 진행.
     if is_weekend_kst() and not is_manual_run():
         print("[국장] 주말(토/일)이라 국장이 휴장입니다 - 전체스캔과 알림을 건너뜁니다.")
+        sys.exit(0)
+
+    # 2026-09-22 추가: "국장전체스캔중지" 명령으로 매시간 전체스캔 자체를 꺼둔 경우,
+    # API 호출/데이터 갱신 없이 이번 실행을 통째로 건너뜀 (알림 on/off와는 별개 설정).
+    scan_enabled = is_market_alert_enabled(MARKET_KEY, SCAN_SETTINGS_PATH)
+    if not scan_enabled:
+        print("[국장] 매시간 전체스캔이 꺼져있는 상태입니다 - 이번 실행은 건너뜁니다.")
         sys.exit(0)
 
     alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
