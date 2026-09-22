@@ -149,7 +149,7 @@ IQV,IQV,System1(단기),관심,False,False,False,True,271.67,273.88,252.53,0.993
 IQV,IQV,System2(중장기),관심,False,False,False,True,271.67,273.88,252.53,0.993,6.51,,
 JKHY,JKHY,System1(단기),청산,False,False,True,False,150.29,174.36,151.4,0.881,4.77,,
 JKHY,JKHY,System2(중장기),청산,False,False,True,False,150.29,174.36,151.4,0.881,4.77,,
-JCI,JCI,System1(단기),관심,False,False,False,True,144.79,146.64,135.41,0.998,3.35,,
+JCI,JCI,System1(단기),확정,False,False,False,True,144.79,146.64,135.41,0.998,3.35,,146.86
 JPM,JPM,System1(단기),청산,False,False,True,False,337.54,362.86,343.07,0.97,6.77,,
 JPM,JPM,System2(중장기),청산,False,False,True,False,337.54,366.5,343.07,0.961,6.77,,
 LHX,LHX,System1(단기),청산,False,False,True,False,241.51,268.21,244.76,0.926,5.41,,
