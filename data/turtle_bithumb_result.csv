@@ -29,7 +29,7 @@ LISTA,LISTA,System1(단기),진입,True,True,False,False,115.0,115.0,91.88,1.043
 LISTA,LISTA,System2(중장기),진입,True,True,False,False,115.0,115.0,70.99,1.043,8.21,,
 INIT,INIT,System1(단기),확정,False,False,False,True,115.0,116.0,84.74,0.991,6.48,,116.0
 INIT,INIT,System2(중장기),확정,False,False,False,True,115.0,116.0,80.22,0.991,6.48,,116.0
-AMP,AMP,System1(단기),관심,False,False,False,True,0.66,0.66,0.57,0.998,0.03,,
+AMP,AMP,System1(단기),탈락,False,False,False,True,0.66,0.66,0.57,0.998,0.03,,
 COW,COW,System1(단기),탈락,False,False,False,True,207.0,217.0,172.0,0.995,10.15,,
 SIGN,SIGN,System1(단기),진입,True,True,False,False,16.5,16.5,13.04,1.005,1.18,,
 SIGN,SIGN,System2(중장기),진입,True,True,False,False,16.5,16.5,11.81,1.005,1.18,,
