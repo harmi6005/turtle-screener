@@ -12,6 +12,21 @@
 
 사용법 (환경변수):
   KIS_APP_KEY, KIS_APP_SECRET  (GitHub Secrets에 등록 후 workflow env로 주입)
+
+[2026-09-22 긴급 수정 - 전체 교체]
+- 🔴 심각한 버그 발견 및 수정: kis_credentials_available()가 'KIS_APP_KEY'/
+  'KIS_APP_SECRET'이 아니라 알 수 없이 깨진 문자열을 환경변수 이름으로 조회하고
+  있었음. 그 이름의 환경변수는 GitHub Secrets에 절대 존재할 수 없으므로 이
+  함수는 KIS_APP_KEY/KIS_APP_SECRET을 실제로 등록해 두었어도 항상 False를
+  반환했음.
+  영향: full_scan_korea.py / recheck_korea.py의 KIS_AVAILABLE 플래그가 항상
+  False가 되어, get_kis_daily_ohlc()가 KIS_APP_KEY를 올바르게 읽는 코드임에도
+  그 앞단 게이트에 막혀 한 번도 호출되지 않고 모든 조회가 fdr 폴백으로만
+  진행되고 있었음(에러 로그도 없이 조용히 발생하는 유형의 버그). "KIS_APP_KEY/
+  KIS_APP_SECRET 감지됨" 로그가 한 번도 안 찍혔다면 바로 이 버그 때문이었음.
+  수정: kis_credentials_available()이 문서화된 대로 'KIS_APP_KEY'/'KIS_APP_SECRET'
+  환경변수를 조회하도록 복구함. 다른 함수(get_kis_access_token, get_kis_daily_ohlc)는
+  원래부터 올바른 이름을 쓰고 있었으므로 변경 없음.
 """
 
 import os
@@ -44,7 +59,8 @@ def _rate_limit():
 
 
 def kis_credentials_available():
-    return bool(os.environ.get('PSWqb0iXAiPNZtVwRV40s8ALkNmC1H4JchfR')) and bool(os.environ.get('ZA/1e2YVtVk+c3rVB3EVEPetCz+G3tO14P/I0kK6LSw0HQbH1LX6q+F+7fWSZvAfT05l74qesZZsFmxObIfSXkKylz5rwgY+ZYxeQRKIV5vHDtRZY5e0SKu7jT5lLwEanZD56LGQOE294E/fPi+GqsnLjItnE0FLD37Z2H6R10gy8KSTqDA='))
+    """2026-09-22 수정: 깨진 환경변수 이름을 KIS_APP_KEY/KIS_APP_SECRET으로 복구."""
+    return bool(os.environ.get('KIS_APP_KEY')) and bool(os.environ.get('KIS_APP_SECRET'))
 
 
 def get_kis_access_token():
