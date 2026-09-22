@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ABBV,ABBV,System1(단기),관심,False,False,False,True,266.33,266.91,246.77,0.998,5.31,,
 ABBV,ABBV,System2(중장기),관심,False,False,False,True,266.33,267.47,246.77,0.996,5.31,,
 ADBE,ADBE,System1(단기),청산,False,False,True,False,241.89,294.53,241.51,0.865,10.24,,
@@ -39,8 +39,8 @@ BAC,BAC,System1(단기),청산,False,False,True,False,56.22,63.83,57.18,0.91,1.2
 BAC,BAC,System2(중장기),청산,False,False,True,False,56.22,64.9,57.18,0.895,1.29,,
 BBY,BBY,System1(단기),관심,False,False,False,True,94.84,95.85,85.87,0.998,3.47,,
 BBY,BBY,System2(중장기),관심,False,False,False,True,94.84,95.85,75.9,0.998,3.47,,
-TECH,TECH,System1(단기),관심,False,False,False,True,72.55,72.58,72.08,1.0,0.17,,
-TECH,TECH,System2(중장기),관심,False,False,False,True,72.55,72.58,72.08,1.0,0.17,,
+TECH,TECH,System1(단기),확정,False,False,False,True,72.55,72.58,72.08,1.0,0.17,,72.6
+TECH,TECH,System2(중장기),확정,False,False,False,True,72.55,72.58,72.08,1.0,0.17,,72.6
 BIIB,BIIB,System1(단기),진입,True,True,False,False,226.08,225.8,208.93,1.001,5.64,,
 BIIB,BIIB,System2(중장기),진입,True,True,False,False,226.08,225.8,208.93,1.001,5.64,,
 BNY,BNY,System1(단기),청산,False,False,True,False,149.32,165.84,151.78,0.923,3.05,,
