@@ -169,7 +169,7 @@ MRSH,MRSH,System1(단기),청산,False,False,True,False,168.85,195.67,172.63,0.8
 MRSH,MRSH,System2(중장기),청산,False,False,True,False,168.85,198.49,172.63,0.871,3.64,,
 MA,MA,System1(단기),청산,False,False,True,False,559.96,601.23,561.9,0.95,8.24,,
 MA,MA,System2(중장기),청산,False,False,True,False,559.96,601.23,561.9,0.95,8.24,,
-MTD,MTD,System2(중장기),관심,False,False,False,True,1471.1,1474.19,1266.55,0.998,36.34,,
+MTD,MTD,System2(중장기),탈락,False,False,False,True,1471.1,1474.19,1266.55,0.998,36.34,,
 MS,MS,System1(단기),청산,False,False,True,False,198.91,218.51,200.26,0.946,5.11,,
 MS,MS,System2(중장기),청산,False,False,True,False,198.91,230.98,200.26,0.895,5.11,,
 MSI,MSI,System1(단기),청산,False,False,True,False,456.86,493.57,455.22,0.937,8.67,,
