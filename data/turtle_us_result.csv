@@ -189,7 +189,7 @@ MKC,MKC,System1(단기),청산,False,False,True,False,48.89,56.43,48.7,0.877,1.2
 MKC,MKC,System2(중장기),청산,False,False,True,False,48.89,56.87,48.7,0.87,1.28,,
 MCD,MCD,System1(단기),청산,False,False,True,False,247.88,271.49,247.65,0.922,3.91,,
 MCD,MCD,System2(중장기),청산,False,False,True,False,247.88,285.07,247.65,0.878,3.91,,
-MTD,MTD,System1(단기),관심,False,False,False,True,1430.44,1440.22,1266.55,0.997,35.68,,
+MTD,MTD,System1(단기),확정,False,False,False,True,1430.44,1440.22,1266.55,0.997,35.68,,1441.54
 MU,MU,System1(단기),진입,True,True,False,False,1043.96,1042.4,902.6,1.021,44.32,,
 MAA,MAA,System1(단기),청산,False,False,True,False,118.86,134.04,118.91,0.892,2.08,,
 MAA,MAA,System2(중장기),청산,False,False,True,False,118.86,142.76,118.91,0.838,2.08,,
