@@ -186,7 +186,7 @@ NOC,NOC,System1(단기),청산,False,False,True,False,512.71,551.1,515.06,0.96,1
 NOC,NOC,System2(중장기),청산,False,False,True,False,512.71,591.82,512.54,0.894,11.36,,
 NUE,NUE,System1(단기),청산,False,False,True,False,243.7,268.47,242.07,0.913,7.53,,
 NUE,NUE,System2(중장기),청산,False,False,True,False,243.7,280.11,242.07,0.875,7.53,,
-NXPI,NXPI,System1(단기),관심,False,False,False,True,232.88,237.53,216.66,0.991,6.85,,
+NXPI,NXPI,System1(단기),확정,False,False,False,True,232.88,237.53,216.66,0.991,6.85,,237.84
 OXY,OXY,System1(단기),청산,False,False,True,False,57.12,63.77,57.0,0.898,1.52,,
 OXY,OXY,System2(중장기),청산,False,False,True,False,57.12,63.77,57.0,0.898,1.52,,
 OMC,OMC,System1(단기),청산,False,False,True,False,75.01,88.66,74.97,0.861,2.18,,
