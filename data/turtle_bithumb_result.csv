@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-BCH,BCH,System1(단기),관심,False,False,False,True,355700.0,367700.0,291000.0,0.998,20565.0,,
+BCH,BCH,System1(단기),탈락,False,False,False,True,355700.0,367700.0,291000.0,0.998,20565.0,,
 ETC,ETC,System1(단기),관심,False,False,False,True,11750.0,12260.0,9690.0,0.992,637.0,,
 CHR,CHR,System1(단기),진입,True,True,False,False,24.01,24.0,20.03,1.028,1.22,,
 CHR,CHR,System2(중장기),진입,True,True,False,False,24.01,24.0,19.7,1.028,1.22,,
