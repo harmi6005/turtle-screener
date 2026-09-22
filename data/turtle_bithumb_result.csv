@@ -33,7 +33,7 @@ AMP,AMP,System1(단기),탈락,False,False,False,True,0.66,0.66,0.57,0.998,0.03,
 COW,COW,System1(단기),탈락,False,False,False,True,207.0,217.0,172.0,0.995,10.15,,
 SIGN,SIGN,System1(단기),진입,True,True,False,False,16.5,16.5,13.04,1.005,1.18,,
 SIGN,SIGN,System2(중장기),진입,True,True,False,False,16.5,16.5,11.81,1.005,1.18,,
-HYPER,HYPER,System1(단기),관심,False,False,False,True,101.0,103.0,87.01,0.99,5.42,,
+HYPER,HYPER,System1(단기),확정,False,False,False,True,101.0,103.0,87.01,0.99,5.42,,103.0
 USDE,USDE,System1(단기),청산,False,False,True,False,1348.0,1503.0,1321.0,0.9,25.2,,
 USDE,USDE,System2(중장기),청산,False,False,True,False,1348.0,1503.0,1321.0,0.9,25.2,,
 ZBT,ZBT,System1(단기),확정,False,False,False,True,118.0,119.0,101.0,0.992,4.75,,119.0
