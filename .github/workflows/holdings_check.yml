@@ -33,10 +33,47 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/holdings_check.py
 
+      # [2026-09-22 8차 수정 - 전체 교체]
+      # 🔴 이 저장소엔 5분마다 도는 워크플로우(보유종목 추적, 관심종목 재확인),
+      # 텔레그램 메시지가 올 때마다 즉시 도는 웹훅, 그리고 하루 여러 번(또는 매시간)
+      # 도는 전체스캔들까지 여러 워크플로우가 동시에 같은 data/ 폴더에 git push를
+      # 시도합니다. 기존에는 이 스텝이 단순히 "commit 후 push"만 하고 있어서,
+      # 다른 워크플로우가 그 사이에 먼저 push해버리면 이 push는 그냥
+      # "non-fast-forward"로 거부되고 실패합니다 - 재시도 로직이 전혀 없었기
+      # 때문에, 이 워크플로우가 방금 만든 변경사항이 원격 저장소에 반영되지
+      # 못한 채 통째로 유실되는 문제가 있었습니다(예: buy 명령으로 보유종목을
+      # 등록했다는 텔레그램 답장은 받았지만 실제로는 push가 실패해서
+      # holdings.csv에는 저장이 안 되고, list에는 안 보이는 증상).
+      # 수정: push가 거부되면 원격의 최신 커밋을 rebase로 받아온 뒤 최대 5회까지
+      # 재시도하도록 변경. rebase 충돌이 발생하면 자동 해결을 시도하지 않고
+      # 명확히 실패시켜서 데이터가 조용히 깨지는 것을 방지합니다.
       - name: 결과 커밋
         run: |
           git config user.name "turtle-bot"
           git config user.email "turtle-bot@users.noreply.github.com"
           git add data/holdings.csv data/telegram_offset.txt
-          git diff --cached --quiet || git commit -m "보유종목 상태 업데이트"
-          git push
+
+          if git diff --cached --quiet; then
+            echo "변경 사항 없음 - 커밋 스킵"
+            exit 0
+          fi
+
+          git commit -m "보유종목 상태 업데이트"
+
+          BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+          for i in 1 2 3 4 5; do
+            if git push origin "HEAD:$BRANCH"; then
+              echo "푸시 성공 (시도 $i회)"
+              exit 0
+            fi
+            echo "푸시 실패 ($i/5) - 다른 워크플로우가 먼저 push한 것으로 보입니다. 원격 변경사항을 받아와 재시도합니다."
+            git fetch origin "$BRANCH"
+            if ! git rebase "origin/$BRANCH"; then
+              echo "::error::rebase 충돌 발생 - 자동 해결이 불가능해 수동 확인이 필요합니다."
+              git rebase --abort
+              exit 1
+            fi
+            sleep $((RANDOM % 6 + 2))
+          done
+          echo "::error::5회 재시도 후에도 push에 실패했습니다."
+          exit 1
