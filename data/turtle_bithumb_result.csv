@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-XRP,XRP,System1(단기),관심,False,False,False,True,2121.0,2145.0,1713.0,0.992,94.45,,
+XRP,XRP,System1(단기),확정,False,False,False,True,2121.0,2145.0,1713.0,0.992,94.45,,2145.0
 BCH,BCH,System1(단기),탈락,False,False,False,True,436800.0,441000.0,291000.0,0.998,23770.0,,
 BCH,BCH,System2(중장기),탈락,False,False,False,True,436800.0,441000.0,291000.0,0.998,23770.0,,
 ADA,ADA,System1(단기),탈락,False,False,False,True,339.0,342.0,261.0,0.997,17.1,,
