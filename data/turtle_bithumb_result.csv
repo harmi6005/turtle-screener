@@ -20,8 +20,8 @@ C98,C98,System1(단기),확정,False,False,False,True,22.28,22.4,17.83,0.995,1.0
 BTT,BTT,System1(단기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 APE,APE,System1(단기),탈락,False,False,False,True,198.0,200.0,165.0,0.99,8.3,,
-FLUX,FLUX,System1(단기),관심,False,False,False,True,84.85,85.71,69.2,0.994,4.23,,
-FLUX,FLUX,System2(중장기),관심,False,False,False,True,84.85,85.71,65.05,0.994,4.23,,
+FLUX,FLUX,System1(단기),확정,False,False,False,True,84.85,85.71,69.2,0.994,4.23,,86.0
+FLUX,FLUX,System2(중장기),확정,False,False,False,True,84.85,85.71,65.05,0.994,4.23,,86.0
 MOCA,MOCA,System1(단기),탈락,False,False,False,True,13.63,14.14,11.49,0.994,0.66,,
 MOCA,MOCA,System2(중장기),탈락,False,False,False,True,13.63,14.14,11.47,0.994,0.66,,
 ZRO,ZRO,System1(단기),탈락,False,False,False,True,1677.0,1691.0,1258.0,0.992,114.7,,
