@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-ETC,ETC,System1(단기),관심,False,False,False,True,11670.0,12260.0,9690.0,0.992,642.5,,
+ETC,ETC,System1(단기),확정,False,False,False,True,11670.0,12260.0,9690.0,0.992,642.5,,12320.0
 ORBS,ORBS,System1(단기),진입,True,True,False,False,9.8,9.77,8.5,1.035,0.4,,
 ORBS,ORBS,System2(중장기),진입,True,True,False,False,9.8,9.77,8.2,1.035,0.4,,
 UMA,UMA,System1(단기),관심,False,False,False,True,531.0,550.0,467.0,0.998,23.55,,
