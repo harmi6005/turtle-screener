@@ -14,7 +14,7 @@ COMP,COMP,System1(단기),진입,True,True,False,False,30890.0,30750.0,25290.0,1
 COMP,COMP,System2(중장기),진입,True,True,False,False,30890.0,30750.0,25290.0,1.005,1251.0,,
 MANA,MANA,System1(단기),진입,True,True,False,False,117.0,117.0,95.3,1.009,4.93,,
 MANA,MANA,System2(중장기),진입,True,True,False,False,117.0,117.0,95.0,1.009,4.93,,
-AXS,AXS,System2(중장기),관심,False,False,False,True,1525.0,1532.0,1213.0,0.999,62.8,,
+AXS,AXS,System2(중장기),확정,False,False,False,True,1525.0,1532.0,1213.0,0.999,62.8,,1532.0
 USDS,USDS,System1(단기),청산,False,False,True,False,1341.0,1408.0,1343.0,0.972,22.1,,
 USDS,USDS,System2(중장기),청산,False,False,True,False,1341.0,1457.0,1343.0,0.939,22.1,,
 ONT,ONT,System1(단기),관심,False,False,False,True,76.9,77.42,64.99,0.993,3.81,,
@@ -34,7 +34,7 @@ OP,OP,System2(중장기),관심,False,False,False,True,179.0,180.0,125.0,0.994,1
 CFX,CFX,System1(단기),관심,False,False,False,True,72.86,73.24,59.83,0.997,3.06,,
 ACS,ACS,System1(단기),관심,False,False,False,True,0.23,0.23,0.19,1.0,0.01,,
 FLOKI,FLOKI,System1(단기),관심,False,False,False,True,0.04,0.04,0.03,0.993,0.0,,
-MAV,MAV,System1(단기),관심,False,False,False,True,15.76,15.83,13.14,0.996,0.71,,
+MAV,MAV,System1(단기),탈락,False,False,False,True,15.76,15.83,13.14,0.996,0.71,,
 AUCTION,AUCTION,System1(단기),진입,True,True,False,False,5065.0,5050.0,4217.0,1.012,236.4,,
 USDT,USDT,System1(단기),청산,False,False,True,False,1343.0,1383.0,1343.0,0.975,11.1,,
 USDT,USDT,System2(중장기),청산,False,False,True,False,1343.0,1443.0,1343.0,0.935,11.1,,
