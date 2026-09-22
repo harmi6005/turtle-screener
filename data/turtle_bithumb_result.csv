@@ -31,7 +31,7 @@ APT,APT,System1(단기),관심,False,False,False,True,1060.0,1081.0,719.0,0.995,
 APT,APT,System2(중장기),관심,False,False,False,True,1060.0,1081.0,719.0,0.995,72.4,,
 OP,OP,System1(단기),탈락,False,False,False,True,179.0,180.0,125.0,0.994,11.8,,
 OP,OP,System2(중장기),탈락,False,False,False,True,179.0,180.0,125.0,0.994,11.8,,
-CFX,CFX,System1(단기),관심,False,False,False,True,72.86,73.24,59.83,0.997,3.06,,
+CFX,CFX,System1(단기),확정,False,False,False,True,72.86,73.24,59.83,0.997,3.06,,73.4
 ACS,ACS,System1(단기),관심,False,False,False,True,0.23,0.23,0.19,1.0,0.01,,
 FLOKI,FLOKI,System1(단기),관심,False,False,False,True,0.04,0.04,0.03,0.993,0.0,,
 MAV,MAV,System1(단기),탈락,False,False,False,True,15.76,15.83,13.14,0.996,0.71,,
