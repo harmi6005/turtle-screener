@@ -45,8 +45,8 @@ ATH,ATH,System1(단기),관심,False,False,False,True,7.35,7.63,5.6,0.997,0.44,,
 ATH,ATH,System2(중장기),관심,False,False,False,True,7.35,7.64,5.6,0.997,0.44,,
 LISTA,LISTA,System1(단기),진입,True,True,False,False,115.0,115.0,91.88,1.035,8.16,,
 LISTA,LISTA,System2(중장기),진입,True,True,False,False,115.0,115.0,70.99,1.035,8.16,,
-MERL,MERL,System1(단기),관심,False,False,False,True,37.45,37.53,29.7,0.998,2.89,,
-MERL,MERL,System2(중장기),관심,False,False,False,True,37.45,37.53,26.8,0.998,2.89,,
+MERL,MERL,System1(단기),확정,False,False,False,True,37.45,37.53,29.7,0.998,2.89,,37.6
+MERL,MERL,System2(중장기),확정,False,False,False,True,37.45,37.53,26.8,0.998,2.89,,37.6
 INIT,INIT,System1(단기),관심,False,False,False,True,109.0,114.0,84.74,0.991,6.52,,
 INIT,INIT,System2(중장기),관심,False,False,False,True,109.0,114.0,77.98,0.991,6.52,,
 ERA,ERA,System1(단기),진입,True,True,False,False,89.53,89.52,73.78,1.022,3.52,,
