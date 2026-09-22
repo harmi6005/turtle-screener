@@ -46,8 +46,8 @@ MOCA,MOCA,System1(단기),관심,False,False,False,True,13.8,14.14,11.49,0.994,0
 MOCA,MOCA,System2(중장기),관심,False,False,False,True,13.8,14.14,11.47,0.994,0.66,,
 IO,IO,System1(단기),관심,False,False,False,True,198.0,207.0,158.0,0.99,13.8,,
 IO,IO,System2(중장기),관심,False,False,False,True,198.0,207.0,158.0,0.99,13.8,,
-ATH,ATH,System1(단기),관심,False,False,False,True,7.4,7.63,5.6,0.997,0.44,,
-ATH,ATH,System2(중장기),관심,False,False,False,True,7.4,7.64,5.6,0.997,0.44,,
+ATH,ATH,System1(단기),확정,False,False,False,True,7.4,7.63,5.6,0.997,0.44,,7.64
+ATH,ATH,System2(중장기),확정,False,False,False,True,7.4,7.64,5.6,0.997,0.44,,7.64
 DBR,DBR,System1(단기),진입,True,True,False,False,22.15,22.04,20.08,1.044,0.68,,
 AERO,AERO,System1(단기),진입,True,True,False,False,937.0,933.0,705.0,1.029,67.4,,
 AERO,AERO,System2(중장기),진입,True,True,False,False,937.0,933.0,626.0,1.029,67.4,,
