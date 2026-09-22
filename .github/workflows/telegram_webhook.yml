@@ -1,4 +1,4 @@
-name: 보유종목 추적
+name: 텔레그램 실시간 명령 처리
 
 # ⚠️ schedule(GitHub 자체 cron) 트리거를 의도적으로 제거함.
 # cron-job.org가 GitHub API로 5분마다 workflow_dispatch를 정확히 호출해주고 있는데,
