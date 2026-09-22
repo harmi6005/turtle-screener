@@ -5,8 +5,8 @@ BCH,BCH,System2(중장기),탈락,False,False,False,True,436800.0,441000.0,29100
 ADA,ADA,System1(단기),탈락,False,False,False,True,339.0,342.0,261.0,0.997,17.1,,
 CKB,CKB,System1(단기),확정,False,False,False,True,1.74,1.74,1.42,0.998,0.11,,1.74
 CKB,CKB,System2(중장기),확정,False,False,False,True,1.74,1.74,1.34,0.998,0.11,,1.74
-GRT,GRT,System1(단기),관심,False,False,False,True,32.19,32.5,23.13,0.99,1.79,,
-GRT,GRT,System2(중장기),관심,False,False,False,True,32.19,32.5,22.02,0.99,1.79,,
+GRT,GRT,System1(단기),확정,False,False,False,True,32.19,32.5,23.13,0.99,1.79,,32.54
+GRT,GRT,System2(중장기),확정,False,False,False,True,32.19,32.5,22.02,0.99,1.79,,32.54
 MANA,MANA,System1(단기),탈락,False,False,False,True,115.0,117.0,95.3,0.991,4.83,,
 MANA,MANA,System2(중장기),탈락,False,False,False,True,115.0,117.0,95.0,0.991,4.83,,
 CHZ,CHZ,System1(단기),확정,False,False,False,True,21.69,21.7,18.06,1.0,1.08,,21.71
@@ -16,7 +16,7 @@ USDS,USDS,System1(단기),청산,False,False,True,False,1368.0,1408.0,1352.0,0.9
 USDS,USDS,System2(중장기),청산,False,False,True,False,1368.0,1459.0,1352.0,0.942,20.95,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
-C98,C98,System1(단기),관심,False,False,False,True,22.28,22.4,17.83,0.995,1.04,,
+C98,C98,System1(단기),확정,False,False,False,True,22.28,22.4,17.83,0.995,1.04,,22.51
 BTT,BTT,System1(단기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 APE,APE,System1(단기),관심,False,False,False,True,198.0,200.0,165.0,0.99,8.3,,
