@@ -459,8 +459,8 @@
 218420,KODEX 미국S&P500에너지(합성),System2(중장기),청산,False,False,True,False,19825.0,21050.0,19870.0,0.955,318.1,,
 219390,RISE 미국S&P원유생산기업(합성 H),System1(단기),청산,False,False,True,False,8050.0,8700.0,8145.0,0.932,141.75,,
 217780,TIGER 차이나CSI300인버스(합성),System1(단기),청산,False,False,True,False,5540.0,5785.0,5415.0,0.96,129.0,,
-214980,KODEX 단기채권PLUS,System1(단기),관심,False,False,False,True,114420.0,114435.0,114375.0,1.0,22.65,,
-214980,KODEX 단기채권PLUS,System2(중장기),관심,False,False,False,True,114420.0,114435.0,114270.0,1.0,22.65,,
+214980,KODEX 단기채권PLUS,System1(단기),확정,False,False,False,True,114420.0,114435.0,114375.0,1.0,22.65,,114435.0
+214980,KODEX 단기채권PLUS,System2(중장기),확정,False,False,False,True,114420.0,114435.0,114270.0,1.0,22.65,,114435.0
 219480,KODEX 미국S&P500선물(H),System1(단기),진입,True,True,False,False,33495.0,33445.0,32700.0,1.002,196.75,,
 219480,KODEX 미국S&P500선물(H),System2(중장기),관심,False,False,False,True,33495.0,33690.0,32700.0,0.995,196.75,,
 220130,SOL 차이나강소기업CSI500(합성 H),System1(단기),관심,False,False,False,True,6985.0,6990.0,6560.0,0.999,90.0,,
