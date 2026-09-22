@@ -11,7 +11,7 @@ MANA,MANA,System1(단기),관심,False,False,False,True,115.0,117.0,95.3,0.991,4
 MANA,MANA,System2(중장기),관심,False,False,False,True,115.0,117.0,95.0,0.991,4.83,,
 CHZ,CHZ,System1(단기),확정,False,False,False,True,21.69,21.7,18.06,1.0,1.08,,21.71
 CHZ,CHZ,System2(중장기),확정,False,False,False,True,21.69,21.7,17.95,1.0,1.08,,21.71
-AXS,AXS,System1(단기),관심,False,False,False,True,1450.0,1462.0,1213.0,0.992,58.75,,
+AXS,AXS,System1(단기),확정,False,False,False,True,1450.0,1462.0,1213.0,0.992,58.75,,1463.0
 USDS,USDS,System1(단기),청산,False,False,True,False,1368.0,1408.0,1352.0,0.977,20.95,,
 USDS,USDS,System2(중장기),청산,False,False,True,False,1368.0,1459.0,1352.0,0.942,20.95,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
@@ -30,7 +30,7 @@ LISTA,LISTA,System2(중장기),진입,True,True,False,False,115.0,115.0,70.99,1.
 INIT,INIT,System1(단기),확정,False,False,False,True,115.0,116.0,84.74,0.991,6.48,,116.0
 INIT,INIT,System2(중장기),확정,False,False,False,True,115.0,116.0,80.22,0.991,6.48,,116.0
 AMP,AMP,System1(단기),관심,False,False,False,True,0.66,0.66,0.57,0.998,0.03,,
-COW,COW,System1(단기),관심,False,False,False,True,207.0,217.0,172.0,0.995,10.15,,
+COW,COW,System1(단기),탈락,False,False,False,True,207.0,217.0,172.0,0.995,10.15,,
 SIGN,SIGN,System1(단기),진입,True,True,False,False,16.5,16.5,13.04,1.005,1.18,,
 SIGN,SIGN,System2(중장기),진입,True,True,False,False,16.5,16.5,11.81,1.005,1.18,,
 HYPER,HYPER,System1(단기),관심,False,False,False,True,101.0,103.0,87.01,0.99,5.42,,
