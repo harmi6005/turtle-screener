@@ -7,8 +7,8 @@ ZRX,ZRX,System1(단기),관심,False,False,False,True,162.0,164.0,142.0,0.994,8.
 ZRX,ZRX,System2(중장기),관심,False,False,False,True,162.0,164.0,131.0,0.994,8.65,,
 VET,VET,System1(단기),관심,False,False,False,True,12.41,12.52,8.71,0.991,0.89,,
 VET,VET,System2(중장기),관심,False,False,False,True,12.41,12.52,8.71,0.991,0.89,,
-COMP,COMP,System1(단기),관심,False,False,False,True,30550.0,30750.0,25290.0,0.999,1243.0,,
-COMP,COMP,System2(중장기),관심,False,False,False,True,30550.0,30750.0,25290.0,0.999,1243.0,,
+COMP,COMP,System1(단기),확정,False,False,False,True,30550.0,30750.0,25290.0,0.999,1243.0,,30760.0
+COMP,COMP,System2(중장기),확정,False,False,False,True,30550.0,30750.0,25290.0,0.999,1243.0,,30760.0
 RSR,RSR,System1(단기),진입,True,True,False,False,2.28,2.28,1.81,1.007,0.13,,
 RSR,RSR,System2(중장기),진입,True,True,False,False,2.28,2.28,1.79,1.007,0.13,,
 MANA,MANA,System1(단기),진입,True,True,False,False,117.0,117.0,95.3,1.009,4.93,,
