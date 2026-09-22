@@ -134,8 +134,8 @@ HAL,HAL,System1(단기),청산,False,False,True,False,33.33,38.06,32.84,0.878,1.
 HAL,HAL,System2(중장기),청산,False,False,True,False,33.33,38.06,32.84,0.878,1.1,,
 HIG,HIG,System1(단기),청산,False,False,True,False,128.88,140.41,130.72,0.931,2.23,,
 HIG,HIG,System2(중장기),청산,False,False,True,False,128.88,145.43,130.72,0.899,2.23,,
-HCA,HCA,System1(단기),관심,False,False,False,True,433.41,436.14,395.27,0.998,12.21,,
-HCA,HCA,System2(중장기),관심,False,False,False,True,433.41,436.14,395.27,0.998,12.21,,
+HCA,HCA,System1(단기),확정,False,False,False,True,433.41,436.14,395.27,0.998,12.21,,436.24
+HCA,HCA,System2(중장기),확정,False,False,False,True,433.41,436.14,395.27,0.998,12.21,,436.24
 HONA,HONA,System1(단기),관심,False,False,False,True,167.33,170.32,149.19,0.994,5.85,,
 HUM,HUM,System1(단기),청산,False,False,True,False,372.29,419.97,374.35,0.904,12.61,,
 HUM,HUM,System2(중장기),청산,False,False,True,False,372.29,428.88,374.35,0.885,12.61,,
