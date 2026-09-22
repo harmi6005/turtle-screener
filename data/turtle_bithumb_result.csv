@@ -25,8 +25,8 @@ FLR,FLR,System1(단기),관심,False,False,False,True,9.6,9.65,8.46,0.995,0.34,,
 CFX,CFX,System1(단기),관심,False,False,False,True,72.45,73.24,59.83,0.997,3.06,,
 ACS,ACS,System1(단기),관심,False,False,False,True,0.23,0.23,0.19,1.0,0.01,,
 FLOKI,FLOKI,System1(단기),관심,False,False,False,True,0.04,0.04,0.03,0.99,0.0,,
-ID,ID,System1(단기),관심,False,False,False,True,51.72,52.12,40.09,0.995,2.77,,
-ID,ID,System2(중장기),관심,False,False,False,True,51.72,52.12,40.09,0.995,2.77,,
+ID,ID,System1(단기),확정,False,False,False,True,51.72,52.12,40.09,0.995,2.77,,52.12
+ID,ID,System2(중장기),확정,False,False,False,True,51.72,52.12,40.09,0.995,2.77,,52.12
 GTC,GTC,System1(단기),진입,True,True,False,False,118.0,118.0,101.0,1.0,5.0,,
 AUCTION,AUCTION,System1(단기),진입,True,True,False,False,5075.0,5050.0,4217.0,1.012,236.4,,
 USDT,USDT,System1(단기),청산,False,False,True,False,1343.0,1383.0,1343.0,0.975,11.0,,
