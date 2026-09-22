@@ -69,8 +69,8 @@ SENT,SENT,System2(중장기),탈락,False,False,False,True,25.87,25.97,17.13,0.9
 ZKP,ZKP,System1(단기),관심,False,False,False,True,66.27,68.78,55.36,0.992,3.48,,
 SPX,SPX,System1(단기),청산,False,False,True,False,671.0,920.0,597.0,0.764,68.2,,
 SPX,SPX,System2(중장기),청산,False,False,True,False,671.0,920.0,597.0,0.764,68.2,,
-ARX,ARX,System1(단기),관심,False,False,False,True,279.0,297.0,186.0,0.997,25.95,,
-ARX,ARX,System2(중장기),관심,False,False,False,True,279.0,297.0,165.0,0.997,25.95,,
+ARX,ARX,System1(단기),탈락,False,False,False,True,279.0,297.0,186.0,0.997,25.95,,
+ARX,ARX,System2(중장기),탈락,False,False,False,True,279.0,297.0,165.0,0.997,25.95,,
 BAT,BAT,System1(단기),확정,False,False,False,True,114.0,115.0,94.53,0.991,5.83,,115.0
 BAT,BAT,System2(중장기),확정,False,False,False,True,114.0,115.0,91.85,0.991,5.83,,115.0
 MANA,MANA,System1(단기),확정,False,False,False,True,115.0,117.0,95.3,0.991,4.8,,117.0
