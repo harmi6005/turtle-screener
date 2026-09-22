@@ -237,7 +237,7 @@ SO,SO,System1(단기),청산,False,False,True,False,85.42,90.58,85.18,0.949,1.19
 SO,SO,System2(중장기),청산,False,False,True,False,85.42,98.45,85.18,0.873,1.19,,
 STT,STT,System1(단기),청산,False,False,True,False,178.08,195.93,180.46,0.938,4.22,,
 STT,STT,System2(중장기),청산,False,False,True,False,178.08,195.93,180.46,0.938,4.22,,
-SMCI,SMCI,System1(단기),관심,False,False,False,True,40.79,41.72,35.36,0.992,2.25,,
+SMCI,SMCI,System1(단기),탈락,False,False,False,True,40.79,41.72,35.36,0.992,2.25,,
 TPR,TPR,System1(단기),청산,False,False,True,False,110.21,132.48,112.11,0.867,3.53,,
 TPR,TPR,System2(중장기),청산,False,False,True,False,110.21,164.18,112.11,0.7,3.53,,
 TRGP,TRGP,System1(단기),청산,False,False,True,False,292.85,299.48,281.09,0.98,7.29,,
