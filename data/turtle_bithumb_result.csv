@@ -41,7 +41,7 @@ USDC,USDC,System1(단기),청산,False,False,True,False,1350.0,1389.0,1348.0,0.9
 USDC,USDC,System2(중장기),청산,False,False,True,False,1350.0,1456.0,1348.0,0.93,11.6,,
 RAD,RAD,System1(단기),관심,False,False,False,True,332.0,345.0,304.0,0.997,11.45,,
 BEAM,BEAM,System1(단기),탈락,False,False,False,True,2.54,2.64,2.06,0.992,0.13,,
-JTO,JTO,System1(단기),관심,False,False,False,True,671.0,702.0,542.0,0.997,51.05,,
+JTO,JTO,System1(단기),탈락,False,False,False,True,671.0,702.0,542.0,0.997,51.05,,
 MOCA,MOCA,System1(단기),관심,False,False,False,True,13.8,14.14,11.49,0.994,0.66,,
 MOCA,MOCA,System2(중장기),관심,False,False,False,True,13.8,14.14,11.47,0.994,0.66,,
 IO,IO,System1(단기),탈락,False,False,False,True,198.0,207.0,158.0,0.99,13.8,,
