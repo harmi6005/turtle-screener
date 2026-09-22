@@ -2,8 +2,8 @@
 BTC,BTC,System1(단기),관심,False,False,False,True,115720000.0,117639000.0,102111000.0,0.992,2860450.0,,
 BTC,BTC,System2(중장기),관심,False,False,False,True,115720000.0,117639000.0,102111000.0,0.992,2860450.0,,
 ETC,ETC,System2(중장기),진입,True,True,False,False,12570.0,12530.0,9690.0,1.008,654.0,,
-QTUM,QTUM,System1(단기),관심,False,False,False,True,1348.0,1363.0,1150.0,0.99,60.95,,
-QTUM,QTUM,System2(중장기),관심,False,False,False,True,1348.0,1363.0,1113.0,0.99,60.95,,
+QTUM,QTUM,System1(단기),확정,False,False,False,True,1348.0,1363.0,1150.0,0.99,60.95,,1363.0
+QTUM,QTUM,System2(중장기),확정,False,False,False,True,1348.0,1363.0,1113.0,0.99,60.95,,1363.0
 ZRX,ZRX,System1(단기),진입,True,True,False,False,164.0,164.0,142.0,1.0,8.7,,
 ZRX,ZRX,System2(중장기),진입,True,True,False,False,164.0,164.0,131.0,1.0,8.7,,
 VET,VET,System1(단기),관심,False,False,False,True,12.39,12.52,8.71,0.994,0.89,,
@@ -56,8 +56,8 @@ BIO,BIO,System1(단기),진입,True,True,False,False,39.26,39.18,32.63,1.011,2.0
 FLOCK,FLOCK,System1(단기),관심,False,False,False,True,119.0,130.0,80.0,0.992,20.37,,
 FLOCK,FLOCK,System2(중장기),관심,False,False,False,True,119.0,130.0,47.32,0.992,20.37,,
 SOON,SOON,System1(단기),진입,True,True,False,False,267.0,266.0,234.0,1.011,11.55,,
-WAL,WAL,System1(단기),관심,False,False,False,True,47.33,47.9,34.88,0.992,2.86,,
-WAL,WAL,System2(중장기),관심,False,False,False,True,47.33,47.9,33.34,0.992,2.86,,
+WAL,WAL,System1(단기),탈락,False,False,False,True,47.33,47.9,34.88,0.992,2.86,,
+WAL,WAL,System2(중장기),탈락,False,False,False,True,47.33,47.9,33.34,0.992,2.86,,
 FORT,FORT,System1(단기),관심,False,False,False,True,21.52,21.66,19.01,0.994,0.68,,
 USD1,USD1,System1(단기),청산,False,False,True,False,1341.0,1425.0,1344.0,0.947,17.8,,
 USD1,USD1,System2(중장기),청산,False,False,True,False,1341.0,1446.0,1344.0,0.933,17.8,,
