@@ -3,8 +3,8 @@ BCH,BCH,System1(단기),관심,False,False,False,True,363400.0,367700.0,291000.0
 BTC,BTC,System1(단기),진입,True,True,False,False,116509000.0,116055000.0,102111000.0,1.014,2989200.0,,
 BTC,BTC,System2(중장기),진입,True,True,False,False,116509000.0,116055000.0,102111000.0,1.014,2989200.0,,
 ETC,ETC,System1(단기),관심,False,False,False,True,12010.0,12260.0,9690.0,0.992,630.0,,
-BAT,BAT,System1(단기),관심,False,False,False,True,114.0,115.0,94.53,0.991,5.83,,
-BAT,BAT,System2(중장기),관심,False,False,False,True,114.0,115.0,91.85,0.991,5.83,,
+BAT,BAT,System1(단기),확정,False,False,False,True,114.0,115.0,94.53,0.991,5.83,,115.0
+BAT,BAT,System2(중장기),확정,False,False,False,True,114.0,115.0,91.85,0.991,5.83,,115.0
 ADA,ADA,System1(단기),탈락,False,False,False,True,332.0,336.0,261.0,0.994,18.05,,
 ORBS,ORBS,System1(단기),진입,True,True,False,False,9.8,9.77,8.5,1.011,0.39,,
 ORBS,ORBS,System2(중장기),진입,True,True,False,False,9.8,9.77,8.2,1.011,0.39,,
