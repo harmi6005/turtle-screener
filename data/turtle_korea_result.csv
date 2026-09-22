@@ -883,8 +883,8 @@
 463290,1Q 단기금융채액티브,System2(중장기),관심,False,False,False,True,109395.0,109677.0,109185.0,0.998,16.15,,
 463050,TIME K바이오액티브,System1(단기),청산,False,False,True,False,11195.0,13475.0,11200.0,0.845,447.0,,
 463050,TIME K바이오액티브,System2(중장기),청산,False,False,True,False,11195.0,14850.0,11200.0,0.767,447.0,,
-464240,KIWOOM 26-09회사채(AA-이상)액티브,System1(단기),관심,False,False,False,True,52045.0,52055.0,51990.0,1.0,15.5,,
-464240,KIWOOM 26-09회사채(AA-이상)액티브,System2(중장기),관심,False,False,False,True,52045.0,52055.0,51940.0,1.0,15.5,,
+464240,KIWOOM 26-09회사채(AA-이상)액티브,System1(단기),확정,False,False,False,True,52045.0,52055.0,51990.0,1.0,15.5,,52060.0
+464240,KIWOOM 26-09회사채(AA-이상)액티브,System2(중장기),확정,False,False,False,True,52045.0,52055.0,51940.0,1.0,15.5,,52060.0
 464610,SOL 의료기기소부장Fn,System1(단기),청산,False,False,True,False,6770.0,7830.0,6800.0,0.875,175.5,,
 464610,SOL 의료기기소부장Fn,System2(중장기),청산,False,False,True,False,6770.0,8780.0,6800.0,0.781,175.5,,
 465330,RISE 2차전지TOP10,System1(단기),청산,False,False,True,False,11090.0,12235.0,11102.0,0.933,473.4,,
