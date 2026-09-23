@@ -60,8 +60,8 @@ IRYS,IRYS,System1(단기),관심,False,False,False,True,21.74,22.22,17.77,0.995,
 FF,FF,System1(단기),청산,False,False,True,False,170.0,250.0,166.0,0.696,25.35,,
 RECALL,RECALL,System1(단기),관심,False,False,False,True,64.63,66.49,51.44,0.993,3.78,,
 ZKP,ZKP,System1(단기),진입,True,True,False,False,69.03,68.78,55.36,1.021,3.37,,
-LIT,LIT,System1(단기),관심,False,False,False,True,6935.0,7165.0,5400.0,0.992,711.75,,
-LIT,LIT,System2(중장기),관심,False,False,False,True,6935.0,7165.0,4865.0,0.992,711.75,,
+LIT,LIT,System1(단기),탈락,False,False,False,True,6935.0,7165.0,5400.0,0.992,711.75,,
+LIT,LIT,System2(중장기),탈락,False,False,False,True,6935.0,7165.0,4865.0,0.992,711.75,,
 AI,AI,System1(단기),관심,False,False,False,True,28.83,29.53,24.47,0.995,1.29,,
 FRAX,FRAX,System1(단기),확정,False,False,False,True,406.0,410.0,345.0,0.998,16.9,,411.0
 GRASS,GRASS,System1(단기),확정,False,False,False,True,610.0,626.0,408.0,0.998,38.25,,628.0
