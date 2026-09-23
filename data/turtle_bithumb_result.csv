@@ -6,8 +6,8 @@ QTUM,QTUM,System1(단기),확정,False,False,False,True,1348.0,1363.0,1150.0,0.9
 QTUM,QTUM,System2(중장기),확정,False,False,False,True,1348.0,1363.0,1113.0,0.99,60.95,,1363.0
 ZRX,ZRX,System1(단기),진입,True,True,False,False,164.0,164.0,142.0,1.0,8.7,,
 ZRX,ZRX,System2(중장기),진입,True,True,False,False,164.0,164.0,131.0,1.0,8.7,,
-VET,VET,System1(단기),관심,False,False,False,True,12.39,12.52,8.71,0.994,0.89,,
-VET,VET,System2(중장기),관심,False,False,False,True,12.39,12.52,8.71,0.994,0.89,,
+VET,VET,System1(단기),탈락,False,False,False,True,12.39,12.52,8.71,0.994,0.89,,
+VET,VET,System2(중장기),탈락,False,False,False,True,12.39,12.52,8.71,0.994,0.89,,
 BSV,BSV,System1(단기),진입,True,True,False,False,28020.0,27890.0,21260.0,1.05,1218.0,,
 BSV,BSV,System2(중장기),진입,True,True,False,False,28020.0,27890.0,21260.0,1.05,1218.0,,
 COMP,COMP,System1(단기),진입,True,True,False,False,30890.0,30750.0,25290.0,1.005,1251.0,,
