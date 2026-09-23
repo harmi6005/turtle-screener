@@ -58,8 +58,8 @@ USD1,USD1,System1(단기),청산,False,False,True,False,1345.0,1425.0,1344.0,0.9
 USD1,USD1,System2(중장기),청산,False,False,True,False,1345.0,1446.0,1344.0,0.933,17.95,,
 IRYS,IRYS,System1(단기),관심,False,False,False,True,21.74,22.22,17.77,0.995,0.98,,
 RECALL,RECALL,System1(단기),관심,False,False,False,True,63.68,66.49,51.44,0.993,3.78,,
-MEGA,MEGA,System1(단기),관심,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,
-MEGA,MEGA,System2(중장기),관심,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,
+MEGA,MEGA,System1(단기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
+MEGA,MEGA,System2(중장기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
 AAVE,AAVE,System1(단기),확정,False,False,False,True,199000.0,202500.0,155700.0,0.991,11095.0,,203400.0
 AAVE,AAVE,System2(중장기),확정,False,False,False,True,199000.0,202500.0,155700.0,0.991,11095.0,,203400.0
 AHT,AHT,System1(단기),확정,False,False,False,True,1.61,1.62,1.36,0.991,0.09,,1.62
