@@ -15,8 +15,8 @@ HEMI,HEMI,System1(단기),청산,False,False,True,False,8.46,23.35,8.47,0.369,1.
 HEMI,HEMI,System2(중장기),청산,False,False,True,False,8.46,30.9,8.34,0.279,1.66,,
 WLFI,WLFI,System1(단기),청산,False,False,True,False,75.37,83.24,75.93,0.924,3.31,,
 HOLO,HOLO,System1(단기),관심,False,False,False,True,89.93,94.03,73.32,1.0,4.66,,
-LIT,LIT,System1(단기),관심,False,False,False,True,7270.0,7385.0,5400.0,0.997,698.0,,
-LIT,LIT,System2(중장기),관심,False,False,False,True,7270.0,7385.0,5400.0,0.997,698.0,,
+LIT,LIT,System1(단기),확정,False,False,False,True,7270.0,7385.0,5400.0,0.997,698.0,,7385.0
+LIT,LIT,System2(중장기),확정,False,False,False,True,7270.0,7385.0,5400.0,0.997,698.0,,7385.0
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.571,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.48,0.0,,
 EDGEX,EDGEX,System1(단기),청산,False,False,True,False,760.0,955.0,735.0,0.797,93.7,,
