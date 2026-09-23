@@ -6,7 +6,7 @@ GHX,GHX,System1(단기),탈락,False,False,False,True,16.16,18.12,11.68,0.993,1.
 GHX,GHX,System2(중장기),탈락,False,False,False,True,16.16,18.12,9.82,0.993,1.7,,
 USDS,USDS,System1(단기),청산,False,False,True,False,1372.0,1408.0,1343.0,0.974,22.3,,
 USDS,USDS,System2(중장기),청산,False,False,True,False,1372.0,1457.0,1343.0,0.942,22.3,,
-SUN,SUN,System1(단기),관심,False,False,False,True,23.53,23.74,22.39,0.992,0.48,,
+SUN,SUN,System1(단기),탈락,False,False,False,True,23.53,23.74,22.39,0.992,0.48,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 SOL,SOL,System1(단기),탈락,False,False,False,True,157900.0,161600.0,130900.0,0.994,6270.0,,
