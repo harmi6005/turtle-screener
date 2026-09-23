@@ -20,8 +20,8 @@ NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 XEC,XEC,System1(단기),진입,True,True,False,False,0.01,0.01,0.01,1.024,0.0,,
 XEC,XEC,System2(중장기),진입,True,True,False,False,0.01,0.01,0.01,1.024,0.0,,
-1INCH,1INCH,System1(단기),관심,False,False,False,True,137.0,139.0,117.0,0.993,5.6,,
-1INCH,1INCH,System2(중장기),관심,False,False,False,True,137.0,139.0,117.0,0.993,5.6,,
+1INCH,1INCH,System1(단기),확정,False,False,False,True,137.0,139.0,117.0,0.993,5.6,,139.0
+1INCH,1INCH,System2(중장기),확정,False,False,False,True,137.0,139.0,117.0,0.993,5.6,,139.0
 BTT,BTT,System1(단기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 APE,APE,System2(중장기),관심,False,False,False,True,211.0,216.0,165.0,0.995,9.15,,
@@ -29,8 +29,8 @@ APT,APT,System1(단기),진입,True,True,False,False,1085.0,1081.0,719.0,1.035,7
 APT,APT,System2(중장기),진입,True,True,False,False,1085.0,1081.0,719.0,1.035,74.55,,
 AHT,AHT,System1(단기),확정,False,False,False,True,1.61,1.62,1.36,0.991,0.09,,1.62
 ACS,ACS,System1(단기),관심,False,False,False,True,0.22,0.23,0.19,1.0,0.01,,
-CELO,CELO,System1(단기),관심,False,False,False,True,129.0,131.0,104.0,0.992,7.79,,
-CELO,CELO,System2(중장기),관심,False,False,False,True,129.0,131.0,99.15,0.992,7.79,,
+CELO,CELO,System1(단기),확정,False,False,False,True,129.0,131.0,104.0,0.992,7.79,,131.0
+CELO,CELO,System2(중장기),확정,False,False,False,True,129.0,131.0,99.15,0.992,7.79,,131.0
 CYBER,CYBER,System1(단기),진입,True,True,False,False,472.0,472.0,358.0,1.032,25.25,,
 MNT,MNT,System1(단기),확정,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,910.0
 MNT,MNT,System2(중장기),확정,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,910.0
@@ -39,8 +39,8 @@ USDT,USDT,System1(단기),청산,False,False,True,False,1340.0,1383.0,1343.0,0.9
 USDT,USDT,System2(중장기),청산,False,False,True,False,1340.0,1443.0,1343.0,0.935,11.2,,
 USDC,USDC,System1(단기),청산,False,False,True,False,1341.0,1384.0,1342.0,0.975,11.7,,
 USDC,USDC,System2(중장기),청산,False,False,True,False,1341.0,1446.0,1342.0,0.933,11.7,,
-MOCA,MOCA,System1(단기),관심,False,False,False,True,14.08,14.14,11.49,0.997,0.67,,
-MOCA,MOCA,System2(중장기),관심,False,False,False,True,14.08,14.14,11.47,0.997,0.67,,
+MOCA,MOCA,System1(단기),탈락,False,False,False,True,14.08,14.14,11.49,0.997,0.67,,
+MOCA,MOCA,System2(중장기),탈락,False,False,False,True,14.08,14.14,11.47,0.997,0.67,,
 MEW,MEW,System1(단기),관심,False,False,False,True,0.65,0.65,0.51,0.997,0.03,,
 TAIKO,TAIKO,System1(단기),관심,False,False,False,True,123.0,127.0,100.0,0.992,7.65,,
 TAIKO,TAIKO,System2(중장기),관심,False,False,False,True,123.0,127.0,99.5,0.992,7.65,,
