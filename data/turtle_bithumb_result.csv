@@ -22,7 +22,7 @@ ARB,ARB,System2(중장기),진입,True,True,False,False,331.0,330.0,155.0,1.039,
 RPL,RPL,System1(단기),진입,True,True,False,False,2741.0,2734.0,2134.0,1.003,171.8,,
 RPL,RPL,System2(중장기),진입,True,True,False,False,2741.0,2734.0,2132.0,1.003,171.8,,
 ACS,ACS,System1(단기),관심,False,False,False,True,0.23,0.23,0.19,1.0,0.01,,
-FRAX,FRAX,System1(단기),관심,False,False,False,True,406.0,410.0,345.0,0.998,16.9,,
+FRAX,FRAX,System1(단기),확정,False,False,False,True,406.0,410.0,345.0,0.998,16.9,,411.0
 CELO,CELO,System1(단기),진입,True,True,False,False,131.0,131.0,104.0,1.008,7.89,,
 CELO,CELO,System2(중장기),진입,True,True,False,False,131.0,131.0,99.15,1.008,7.89,,
 FET,FET,System1(단기),진입,True,True,False,False,286.0,286.0,202.0,1.01,19.95,,
