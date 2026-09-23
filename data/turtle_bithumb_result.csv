@@ -17,7 +17,7 @@ MANA,MANA,System2(중장기),진입,True,True,False,False,117.0,117.0,95.0,1.009
 AXS,AXS,System2(중장기),확정,False,False,False,True,1525.0,1532.0,1213.0,0.999,62.8,,1532.0
 USDS,USDS,System1(단기),청산,False,False,True,False,1341.0,1408.0,1343.0,0.972,22.1,,
 USDS,USDS,System2(중장기),청산,False,False,True,False,1341.0,1457.0,1343.0,0.939,22.1,,
-ONT,ONT,System1(단기),관심,False,False,False,True,76.9,77.42,64.99,0.993,3.81,,
+ONT,ONT,System1(단기),확정,False,False,False,True,76.9,77.42,64.99,0.993,3.81,,77.53
 KAIA,KAIA,System1(단기),탈락,False,False,False,True,44.27,44.75,36.17,0.99,2.27,,
 NFT,NFT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
