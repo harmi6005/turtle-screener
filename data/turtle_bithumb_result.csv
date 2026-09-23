@@ -60,7 +60,7 @@ USD1,USD1,System1(단기),청산,False,False,True,False,1341.0,1425.0,1344.0,0.9
 USD1,USD1,System2(중장기),청산,False,False,True,False,1341.0,1446.0,1344.0,0.933,17.95,,
 BARD,BARD,System2(중장기),관심,False,False,False,True,190.0,193.0,156.0,0.995,10.0,,
 FLUID,FLUID,System1(단기),확정,False,False,False,True,1913.0,1919.0,1435.0,0.997,98.0,,1926.0
-MMT,MMT,System1(단기),관심,False,False,False,True,229.0,232.0,170.0,0.996,13.3,,
+MMT,MMT,System1(단기),탈락,False,False,False,True,229.0,232.0,170.0,0.996,13.3,,
 ZKP,ZKP,System1(단기),확정,False,False,False,True,68.32,68.78,55.36,0.998,3.3,,68.8
 MEGA,MEGA,System1(단기),관심,False,False,False,True,61.72,64.4,45.45,0.994,4.23,,
 MEGA,MEGA,System2(중장기),관심,False,False,False,True,61.72,64.4,45.45,0.994,4.23,,
