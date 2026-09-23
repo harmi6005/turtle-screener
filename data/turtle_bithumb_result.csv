@@ -35,8 +35,8 @@ RAD,RAD,System1(단기),관심,False,False,False,True,337.0,345.0,304.0,0.991,11
 NEAR,NEAR,System1(단기),진입,True,True,False,False,6315.0,6290.0,3094.0,1.037,520.0,,
 NEAR,NEAR,System2(중장기),진입,True,True,False,False,6315.0,6290.0,2519.0,1.037,520.0,,
 GRAM,GRAM,System1(단기),관심,False,False,False,True,1940.0,1985.0,1759.0,0.997,57.1,,
-PEAQ,PEAQ,System1(단기),관심,False,False,False,True,47.63,50.0,30.94,1.0,5.3,,
-PEAQ,PEAQ,System2(중장기),관심,False,False,False,True,47.63,50.0,26.0,1.0,5.3,,
+PEAQ,PEAQ,System1(단기),확정,False,False,False,True,47.63,50.0,30.94,1.0,5.3,,50.0
+PEAQ,PEAQ,System2(중장기),확정,False,False,False,True,47.63,50.0,26.0,1.0,5.3,,50.0
 EIGEN,EIGEN,System1(단기),진입,True,True,False,False,337.0,336.0,255.0,1.027,25.25,,
 EIGEN,EIGEN,System2(중장기),진입,True,True,False,False,337.0,336.0,255.0,1.027,25.25,,
 RAY,RAY,System1(단기),탈락,False,False,False,True,2597.0,2639.0,1624.0,0.997,324.1,,
