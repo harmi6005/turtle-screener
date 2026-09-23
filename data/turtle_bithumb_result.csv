@@ -53,7 +53,7 @@ PAXG,PAXG,System1(단기),청산,False,False,True,False,5787000.0,6161000.0,5763
 GRASS,GRASS,System1(단기),관심,False,False,False,True,610.0,626.0,408.0,0.998,38.25,,
 GRASS,GRASS,System2(중장기),관심,False,False,False,True,610.0,626.0,408.0,0.998,38.25,,
 PARTI,PARTI,System1(단기),진입,True,True,False,False,35.87,35.84,28.36,1.001,1.98,,
-FORT,FORT,System1(단기),관심,False,False,False,True,21.6,21.66,19.01,0.997,0.7,,
+FORT,FORT,System1(단기),탈락,False,False,False,True,21.6,21.66,19.01,0.997,0.7,,
 USD1,USD1,System1(단기),청산,False,False,True,False,1345.0,1425.0,1344.0,0.947,17.95,,
 USD1,USD1,System2(중장기),청산,False,False,True,False,1345.0,1446.0,1344.0,0.933,17.95,,
 IRYS,IRYS,System1(단기),관심,False,False,False,True,21.74,22.22,17.77,0.995,0.98,,
