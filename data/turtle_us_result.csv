@@ -315,5 +315,5 @@ ZTS,ZTS,System1(단기),청산,False,False,True,False,71.33,78.75,71.4,0.92,1.83
 ZTS,ZTS,System2(중장기),청산,False,False,True,False,71.33,80.17,71.4,0.904,1.83,,
 COHR,COHR,System1(단기),확정,False,False,False,True,314.01,315.7,255.25,0.997,18.73,,315.79
 ARE,ARE,System2(중장기),확정,False,False,False,True,55.35,55.74,46.74,0.997,1.77,,55.92
-CHRW,CHRW,System1(단기),확정,False,False,False,True,156.82,157.82,143.4,0.997,3.73,,157.86
+CHRW,CHRW,System1(단기),확정이탈,False,False,False,True,156.82,157.82,143.4,0.997,3.73,,157.86
 ACN,ACN,System2(중장기),확정,False,False,False,True,187.68,191.9,157.76,0.99,6.87,190.04,192.22
