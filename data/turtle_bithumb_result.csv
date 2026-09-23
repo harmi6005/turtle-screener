@@ -32,8 +32,8 @@ ACS,ACS,System1(단기),관심,False,False,False,True,0.22,0.23,0.19,1.0,0.01,,
 CELO,CELO,System1(단기),관심,False,False,False,True,129.0,131.0,104.0,0.992,7.79,,
 CELO,CELO,System2(중장기),관심,False,False,False,True,129.0,131.0,99.15,0.992,7.79,,
 CYBER,CYBER,System1(단기),진입,True,True,False,False,472.0,472.0,358.0,1.032,25.25,,
-MNT,MNT,System1(단기),관심,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,
-MNT,MNT,System2(중장기),관심,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,
+MNT,MNT,System1(단기),확정,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,910.0
+MNT,MNT,System2(중장기),확정,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,910.0
 GTC,GTC,System1(단기),진입,True,True,False,False,118.0,118.0,101.0,1.0,5.0,,
 USDT,USDT,System1(단기),청산,False,False,True,False,1340.0,1383.0,1343.0,0.975,11.2,,
 USDT,USDT,System2(중장기),청산,False,False,True,False,1340.0,1443.0,1343.0,0.935,11.2,,
