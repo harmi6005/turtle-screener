@@ -58,7 +58,7 @@ USD1,USD1,System1(단기),청산,False,False,True,False,1355.0,1425.0,1344.0,0.9
 USD1,USD1,System2(중장기),청산,False,False,True,False,1355.0,1446.0,1344.0,0.938,18.3,,
 IRYS,IRYS,System1(단기),탈락,False,False,False,True,21.74,22.22,17.77,0.995,0.98,,
 FF,FF,System1(단기),청산,False,False,True,False,170.0,250.0,166.0,0.696,25.35,,
-RECALL,RECALL,System1(단기),관심,False,False,False,True,64.63,66.49,51.44,0.993,3.78,,
+RECALL,RECALL,System1(단기),탈락,False,False,False,True,64.63,66.49,51.44,0.993,3.78,,
 ZKP,ZKP,System1(단기),진입,True,True,False,False,69.03,68.78,55.36,1.021,3.37,,
 LIT,LIT,System1(단기),탈락,False,False,False,True,6935.0,7165.0,5400.0,0.992,711.75,,
 LIT,LIT,System2(중장기),탈락,False,False,False,True,6935.0,7165.0,4865.0,0.992,711.75,,
