@@ -27,7 +27,7 @@ BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 APE,APE,System2(중장기),관심,False,False,False,True,211.0,216.0,165.0,0.995,9.15,,
 APT,APT,System1(단기),진입,True,True,False,False,1085.0,1081.0,719.0,1.035,74.55,,
 APT,APT,System2(중장기),진입,True,True,False,False,1085.0,1081.0,719.0,1.035,74.55,,
-AHT,AHT,System1(단기),관심,False,False,False,True,1.61,1.62,1.36,0.991,0.09,,
+AHT,AHT,System1(단기),확정,False,False,False,True,1.61,1.62,1.36,0.991,0.09,,1.62
 ACS,ACS,System1(단기),관심,False,False,False,True,0.22,0.23,0.19,1.0,0.01,,
 CELO,CELO,System1(단기),관심,False,False,False,True,129.0,131.0,104.0,0.992,7.79,,
 CELO,CELO,System2(중장기),관심,False,False,False,True,129.0,131.0,99.15,0.992,7.79,,
