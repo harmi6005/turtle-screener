@@ -4,8 +4,8 @@ BTC,BTC,System2(중장기),관심,False,False,False,True,116200000.0,117639000.0
 ADA,ADA,System1(단기),진입,True,True,False,False,343.0,342.0,261.0,1.009,17.55,,
 VET,VET,System1(단기),진입,True,True,False,False,12.57,12.52,8.71,1.006,0.9,,
 VET,VET,System2(중장기),진입,True,True,False,False,12.57,12.52,8.71,1.006,0.9,,
-AAVE,AAVE,System1(단기),관심,False,False,False,True,199000.0,202500.0,155700.0,0.991,11095.0,,
-AAVE,AAVE,System2(중장기),관심,False,False,False,True,199000.0,202500.0,155700.0,0.991,11095.0,,
+AAVE,AAVE,System1(단기),확정,False,False,False,True,199000.0,202500.0,155700.0,0.991,11095.0,,203400.0
+AAVE,AAVE,System2(중장기),확정,False,False,False,True,199000.0,202500.0,155700.0,0.991,11095.0,,203400.0
 COMP,COMP,System1(단기),진입,True,True,False,False,30810.0,30750.0,25290.0,1.019,1273.5,,
 COMP,COMP,System2(중장기),진입,True,True,False,False,30810.0,30750.0,25290.0,1.019,1273.5,,
 SAND,SAND,System1(단기),진입,True,True,False,False,56.43,56.35,44.01,1.01,2.71,,
