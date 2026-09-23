@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ADBE,ADBE,System1(단기),청산,False,False,True,False,240.46,294.53,241.51,0.821,10.17,,
 ADBE,ADBE,System2(중장기),청산,False,False,True,False,240.46,294.53,241.51,0.821,10.17,,
 AES,AES,System1(단기),관심,False,False,False,True,14.83,14.88,14.78,0.997,0.04,,
