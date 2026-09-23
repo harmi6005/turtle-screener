@@ -1,7 +1,7 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 BTC,BTC,System1(단기),탈락,False,False,False,True,116043000.0,117639000.0,102111000.0,0.994,2874200.0,,
 BTC,BTC,System2(중장기),탈락,False,False,False,True,116043000.0,117639000.0,102111000.0,0.994,2874200.0,,
-YFI,YFI,System1(단기),관심,False,False,False,True,3216000.0,3279000.0,2717000.0,0.995,125900.0,,
+YFI,YFI,System1(단기),탈락,False,False,False,True,3216000.0,3279000.0,2717000.0,0.995,125900.0,,
 GHX,GHX,System1(단기),탈락,False,False,False,True,16.16,18.12,11.68,0.993,1.7,,
 GHX,GHX,System2(중장기),탈락,False,False,False,True,16.16,18.12,9.82,0.993,1.7,,
 USDS,USDS,System1(단기),청산,False,False,True,False,1372.0,1408.0,1343.0,0.974,22.3,,
@@ -13,7 +13,7 @@ SOL,SOL,System1(단기),탈락,False,False,False,True,157900.0,161600.0,130900.0
 SOL,SOL,System2(중장기),탈락,False,False,False,True,157900.0,161600.0,130900.0,0.994,6270.0,,
 DYDX,DYDX,System1(단기),관심,False,False,False,True,183.0,191.0,138.0,0.995,11.0,,
 DYDX,DYDX,System2(중장기),관심,False,False,False,True,183.0,191.0,138.0,0.995,11.0,,
-BOBA,BOBA,System1(단기),관심,False,False,False,True,28.45,29.45,24.58,0.99,1.41,,
+BOBA,BOBA,System1(단기),탈락,False,False,False,True,28.45,29.45,24.58,0.99,1.41,,
 BTT,BTT,System1(단기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 APE,APE,System2(중장기),진입,True,True,False,False,216.0,216.0,165.0,1.019,9.4,,
@@ -31,10 +31,10 @@ USDT,USDT,System1(단기),청산,False,False,True,False,1358.0,1383.0,1343.0,0.9
 USDT,USDT,System2(중장기),청산,False,False,True,False,1358.0,1443.0,1343.0,0.942,11.7,,
 USDC,USDC,System1(단기),청산,False,False,True,False,1358.0,1384.0,1342.0,0.983,12.25,,
 USDC,USDC,System2(중장기),청산,False,False,True,False,1358.0,1446.0,1342.0,0.941,12.25,,
-RAD,RAD,System1(단기),관심,False,False,False,True,337.0,345.0,304.0,0.991,11.65,,
+RAD,RAD,System1(단기),탈락,False,False,False,True,337.0,345.0,304.0,0.991,11.65,,
 NEAR,NEAR,System1(단기),진입,True,True,False,False,6315.0,6290.0,3094.0,1.037,520.0,,
 NEAR,NEAR,System2(중장기),진입,True,True,False,False,6315.0,6290.0,2519.0,1.037,520.0,,
-GRAM,GRAM,System1(단기),관심,False,False,False,True,1940.0,1985.0,1759.0,0.997,57.1,,
+GRAM,GRAM,System1(단기),탈락,False,False,False,True,1940.0,1985.0,1759.0,0.997,57.1,,
 PEAQ,PEAQ,System1(단기),확정,False,False,False,True,47.63,50.0,30.94,1.0,5.3,,50.0
 PEAQ,PEAQ,System2(중장기),확정,False,False,False,True,47.63,50.0,26.0,1.0,5.3,,50.0
 EIGEN,EIGEN,System1(단기),진입,True,True,False,False,337.0,336.0,255.0,1.027,25.25,,
@@ -56,13 +56,13 @@ LA,LA,System1(단기),진입,True,True,False,False,102.0,102.0,81.57,1.069,9.05,
 LA,LA,System2(중장기),진입,True,True,False,False,102.0,102.0,78.8,1.069,9.05,,
 USD1,USD1,System1(단기),청산,False,False,True,False,1355.0,1425.0,1344.0,0.952,18.3,,
 USD1,USD1,System2(중장기),청산,False,False,True,False,1355.0,1446.0,1344.0,0.938,18.3,,
-IRYS,IRYS,System1(단기),관심,False,False,False,True,21.74,22.22,17.77,0.995,0.98,,
+IRYS,IRYS,System1(단기),탈락,False,False,False,True,21.74,22.22,17.77,0.995,0.98,,
 FF,FF,System1(단기),청산,False,False,True,False,170.0,250.0,166.0,0.696,25.35,,
 RECALL,RECALL,System1(단기),관심,False,False,False,True,64.63,66.49,51.44,0.993,3.78,,
 ZKP,ZKP,System1(단기),진입,True,True,False,False,69.03,68.78,55.36,1.021,3.37,,
 LIT,LIT,System1(단기),탈락,False,False,False,True,6935.0,7165.0,5400.0,0.992,711.75,,
 LIT,LIT,System2(중장기),탈락,False,False,False,True,6935.0,7165.0,4865.0,0.992,711.75,,
-AI,AI,System1(단기),관심,False,False,False,True,28.83,29.53,24.47,0.995,1.29,,
+AI,AI,System1(단기),탈락,False,False,False,True,28.83,29.53,24.47,0.995,1.29,,
 FRAX,FRAX,System1(단기),확정,False,False,False,True,406.0,410.0,345.0,0.998,16.9,,411.0
 GRASS,GRASS,System1(단기),확정,False,False,False,True,610.0,626.0,408.0,0.998,38.25,,628.0
 GRASS,GRASS,System2(중장기),확정,False,False,False,True,610.0,626.0,408.0,0.998,38.25,,628.0
