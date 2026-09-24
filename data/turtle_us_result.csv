@@ -143,8 +143,8 @@ HAS,HAS,System1(단기),청산,False,False,True,False,86.41,98.2,85.4,0.893,2.1,
 HAS,HAS,System2(중장기),청산,False,False,True,False,86.41,98.2,85.4,0.893,2.1,,
 HCA,HCA,System1(단기),관심,False,False,False,True,433.51,446.36,395.27,0.991,13.02,,
 HCA,HCA,System2(중장기),관심,False,False,False,True,433.51,446.36,395.27,0.991,13.02,,
-HPE,HPE,System1(단기),관심,False,False,False,True,62.47,63.86,54.88,0.997,3.66,,
-HPE,HPE,System2(중장기),관심,False,False,False,True,62.47,63.86,45.58,0.997,3.66,,
+HPE,HPE,System1(단기),확정,False,False,False,True,62.47,63.86,54.88,0.997,3.66,,63.95
+HPE,HPE,System2(중장기),확정,False,False,False,True,62.47,63.86,45.58,0.997,3.66,,63.95
 HD,HD,System1(단기),청산,False,False,True,False,292.38,337.01,295.39,0.888,6.08,,
 HD,HD,System2(중장기),청산,False,False,True,False,292.38,355.74,295.39,0.841,6.08,,
 HBAN,HBAN,System1(단기),청산,False,False,True,False,15.22,16.99,15.38,0.91,0.36,,
