@@ -23,6 +23,20 @@ System1(단기)/System2(중장기) 둘 다 독립적으로 체크합니다.
   requirements.txt에 exchange_calendars가 추가되어 있어야 정상 동작하며(누락 시
   주말 여부만으로 안전하게 폴백). 미장(is_us_market_open)은 이번 수정 대상이
   아니며 기존 그대로 유지함.
+
+[2026-09-24 변경사항 - 전체 교체 (이어서)]
+- 🐛 GitHub Actions 로그에서 발견된 실행 오류 수정: TypeError: Invalid value ''
+  for dtype 'float64'. 원인은 "코드 추적시작"으로 종목을 처음 등록하면
+  sys1_status/sys2_status가 빈 문자열('')로 저장되는데, watchlist.csv를 다시
+  읽어올 때 그 칸이 비어있으면 pandas가 값이 하나도 없는 컬럼이라고 판단해 해당
+  컬럼 dtype을 자동으로 float64(빈칸=NaN)로 추론해버림. 이후
+  wdf.at[idx, sys_key] = new_status로 '관심'/'진입' 같은 문자열이나 빈 문자열을
+  다시 써넣으려 하면, pandas가 "float64 컬럼에 문자열은 넣을 수 없다"며 곧바로
+  예외를 던져 워크플로우 전체가 실패했음(추적 등록 직후 최초 실행에서 특히 잘 남).
+  pd.read_csv에 sys1_status/sys2_status도 dtype=str로 명시하고
+  keep_default_na=False를 추가해서, 빈 칸을 NaN이 아닌 빈 문자열 그대로(컬럼
+  dtype은 항상 문자열로) 읽어오도록 수정. bot_commands.py의 load_watchlist()도
+  "코드 추적시작" 직후 같은 파일을 다시 읽는 경로라 동일하게 수정함.
 """
 
 import sys
@@ -109,7 +123,9 @@ if __name__ == "__main__":
         print("감시목록 파일이 없어요. 텔레그램에서 추적시작 명령으로 먼저 등록해주세요.")
         sys.exit(0)
 
-    wdf = pd.read_csv(WATCHLIST_PATH, dtype={'code': str})
+    wdf = pd.read_csv(WATCHLIST_PATH, dtype={'code': str, 'market': str,
+                                              'sys1_status': str, 'sys2_status': str},
+                      keep_default_na=False)
     for col in WATCHLIST_COLUMNS:
         if col not in wdf.columns:
             wdf[col] = ''
