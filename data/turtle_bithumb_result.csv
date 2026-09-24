@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 TRX,TRX,System1(단기),관심,False,False,False,True,467.0,476.0,451.0,0.994,8.15,,
 ICX,ICX,System1(단기),관심,False,False,False,True,19.5,23.0,15.32,0.996,2.46,,
-CKB,CKB,System1(단기),관심,False,False,False,True,1.8,1.83,1.42,0.998,0.11,,
-CKB,CKB,System2(중장기),관심,False,False,False,True,1.8,1.83,1.36,0.998,0.11,,
+CKB,CKB,System1(단기),탈락,False,False,False,True,1.8,1.83,1.42,0.998,0.11,,
+CKB,CKB,System2(중장기),탈락,False,False,False,True,1.8,1.83,1.36,0.998,0.11,,
 JST,JST,System1(단기),청산,False,False,True,False,154.0,162.0,150.0,0.951,6.6,,
 NFT,NFT,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
