@@ -23,7 +23,7 @@ APO,APO,System1(단기),청산,False,False,True,False,118.79,137.83,122.72,0.9,3
 APO,APO,System2(중장기),청산,False,False,True,False,118.79,143.72,122.72,0.863,3.83,,
 ARES,ARES,System1(단기),청산,False,False,True,False,116.75,144.01,121.21,0.84,4.28,,
 ARES,ARES,System2(중장기),청산,False,False,True,False,116.75,148.3,121.21,0.816,4.28,,
-ANET,ANET,System1(단기),관심,False,False,False,True,203.6,206.48,186.11,0.992,7.64,,
+ANET,ANET,System1(단기),확정,False,False,False,True,203.6,206.48,186.11,0.992,7.64,,206.51
 AJG,AJG,System1(단기),청산,False,False,True,False,228.76,272.06,227.91,0.857,6.91,,
 AJG,AJG,System2(중장기),청산,False,False,True,False,228.76,272.06,227.91,0.857,6.91,,
 AIZ,AIZ,System1(단기),청산,False,False,True,False,264.21,288.7,266.28,0.934,5.22,,
