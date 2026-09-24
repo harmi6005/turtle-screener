@@ -3,3 +3,4 @@ requests
 yfinance
 finance-datareader
 lxml
+exchange_calendars
