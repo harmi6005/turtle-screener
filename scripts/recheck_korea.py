@@ -12,7 +12,17 @@ System1(단기)에는 터틀 휩쏘 필터가 적용됩니다 (직전 거래가 
 
 [2026-09-10 변경사항 - 전체 교체] full_scan_korea.py와 동일하게, 개별 종목의
 일봉 데이터를 KIS 인증 API로 우선 조회하고 실패하거나 자격증명이 없으면 기존
-fdr 방식으로 폴백하도록 변경함 (kis_client.py 신규 모듈)."""
+fdr 방식으로 폴백하도록 변경함 (kis_client.py 신규 모듈).
+
+[2026-09-24 변경사항 - 전체 교체]
+- 🐛 is_korea_market_open()이 "평일 9:00~15:30"만 봤을 뿐 설/추석 같은 명절이나
+  임시공휴일은 전혀 몰라서, 평일 공휴일에도 계속 "장이 열려있다"고 착각해 5분마다
+  "재확인 실행 완료 - 없음" 문자가 하루 종일(약 78회) 발송되고 있었음.
+- common.py에 새로 추가된 is_korea_trading_day()(exchange_calendars로 KRX
+  실제 개장일을 정확히 판정 - 주말+공휴일 모두 포함)를 먼저 확인하고, 개장일이
+  아니면 시간대 확인 없이 바로 종료하도록 수정. requirements.txt에
+  exchange_calendars가 추가되어 있어야 정상 동작하며(누락 시 주말 여부만으로
+  안전하게 폴백)."""
 
 import sys
 import os
@@ -25,7 +35,7 @@ from zoneinfo import ZoneInfo
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
                      load_trade_history, save_trade_history, check_whipsaw, record_trade_result,
-                     is_market_alert_enabled)
+                     is_market_alert_enabled, is_korea_trading_day)
 from kis_client import kis_credentials_available, get_kis_daily_ohlc
 
 MAX_WORKERS = 20
@@ -38,9 +48,10 @@ KIS_AVAILABLE = kis_credentials_available()
 
 
 def is_korea_market_open():
-    now = datetime.now(ZoneInfo('Asia/Seoul'))
-    if now.weekday() >= 5:
+    """2026-09-24 수정: 시간대 체크 전에 먼저 실제 개장일(주말+공휴일)인지부터 확인."""
+    if not is_korea_trading_day():
         return False
+    now = datetime.now(ZoneInfo('Asia/Seoul'))
     return dtime(9, 0) <= now.time() <= dtime(15, 30)
 
 
@@ -99,7 +110,7 @@ if __name__ == "__main__":
             notify_telegram(msg)
 
     if not is_korea_market_open():
-        print("국내 장 시간이 아니라서 재확인을 건너뜁니다 (평일 09:00~15:30 KST).")
+        print("국내 장 시간이 아니라서 재확인을 건너뜁니다 (평일 09:00~15:30 KST, 공휴일 제외).")
         sys.exit(0)
 
     if not os.path.exists(DATA_PATH):

@@ -9,6 +9,21 @@
 - 🐛 버그 수정: "코인알림중지"를 걸어도 전체스캔 알림(진입픽/관심요약/부합없음 등)이
   그대로 발송되던 문제 수정. recheck_bithumb.py와 동일하게 is_market_alert_enabled()를
   체크해서, 알림이 꺼져 있으면 스캔/저장은 그대로 진행하되 텔레그램 발송만 생략함.
+
+[2026-09-24 변경사항 - 전체 교체]
+- ⭐ 사용자 요청: 코인은 앞으로 "픽3 종목"과 "내가 지정한 관심 종목(집중추적,
+  watchlist_check.py)" 외의 다른 알림은 받지 않기로 함.
+  이번 수정으로 전체스캔에서 보내던 아래 3종류의 알림을 전부 제거함(콘솔 로그는
+  그대로 남겨 디버깅은 가능):
+    ① "관심종목 없음" / 관심종목 돌파임박 요약(build_watch_summary) — 완전 삭제
+    ② "실행 완료 - 부합 종목 없음" (진입 신호 자체가 없을 때) — 완전 삭제
+    ③ "진입 신호 있지만 가격조건 만족 종목 없음" — 완전 삭제
+  이제 코인 전체스캔에서 텔레그램으로 나가는 메시지는 픽(top_df)이 1개 이상
+  있을 때의 "[코인 전체스캔] 진입 신호 …픽" 메시지 하나뿐임. 관심/확정 신호는
+  data/turtle_bithumb_result.csv에는 계속 기록되지만(recheck_bithumb.py가 내부
+  상태 추적용으로 계속 사용), 그 자체로 알림이 나가지는 않음. 사용자가 특정
+  코인을 계속 추적하고 싶으면 텔레그램 `코드 추적시작` 명령으로 watchlist에
+  등록하면 됨(watchlist_check.py가 별도로 5분마다 체크/알림).
 """
 
 import sys
@@ -19,7 +34,7 @@ import requests
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
-                     build_watch_summary, send_long_message, pick_top_entries,
+                     send_long_message, pick_top_entries,
                      PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN,
                      is_market_alert_enabled)
 
@@ -123,10 +138,6 @@ if __name__ == "__main__":
     if not alerts_enabled:
         print("[코인] 알림 중지 상태입니다 - 스캔/저장은 정상 진행하되 텔레그램 발송만 생략합니다.")
 
-    def notify(msg):
-        if alerts_enabled:
-            notify_telegram(msg)
-
     def notify_long(text):
         if alerts_enabled:
             send_long_message(text)
@@ -151,26 +162,15 @@ if __name__ == "__main__":
 
     entry_cnt = len(df[df['signal'] == '진입']) if not df.empty else 0
     watch_cnt = len(df[df['signal'] == '관심']) if not df.empty else 0
+    print(f"[코인] 진입신호 {entry_cnt}개 / 관심신호 {watch_cnt}개 "
+          f"(2026-09-24부터 픽3 외 알림은 전송하지 않음 - 콘솔 로그로만 확인)")
 
+    # 2026-09-24: 픽(top_df)이 있을 때만 딱 1건 알림. 그 외(진입 0개, 가격조건
+    # 미달, 관심종목 등) 어떤 경우에도 텔레그램 알림을 보내지 않음.
     if entry_cnt > 0:
-        entry_only_df = df[df['signal'] == '진입']
-        price_ok_cnt = len(entry_only_df[entry_only_df['close'] <= PICK_PRICE_MAX]) if PICK_PRICE_MAX is not None else entry_cnt
-        print(f"[코인] 진입신호 {entry_cnt}개 중 {PICK_PRICE_MAX:,}원 이하 {price_ok_cnt}개 "
-              f"(이 중 최대 {PICK_COUNT}개까지 알림)")
-
         top_df = pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN)
         if not top_df.empty:
-            # 10개가 안 되더라도(1~9개) 있는 만큼 그대로 발송함
             notify_long(build_pick_message(entry_cnt, top_df))
         else:
-            notify(f"[코인 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
-                   f"{PICK_PRICE_MAX:,}원 이하 조건을 만족하는 종목이 없습니다.")
-    else:
-        notify("[코인 전체스캔] 실행 완료 - 부합 종목 없음")
-
-    if watch_cnt > 0:
-        summary = build_watch_summary(df, "코인")
-        if summary:
-            notify_long(summary)
-    else:
-        notify("[코인 전체스캔] 관심종목 없음")
+            print(f"[코인] 진입 신호 {entry_cnt}개가 있지만 {PICK_PRICE_MAX:,}원 이하 "
+                  f"조건을 만족하는 종목이 없어 알림을 보내지 않습니다.")
