@@ -29,12 +29,35 @@
   (XKRX)/미장(XNYS)의 실제 개장일·개장시각(서머타임 포함)을 정확히 판정해서,
   "휴장일이면 무조건 스킵", "장 시작 N시간 전 ~ 마감 N시간 후"에만 매시간
   전체스캔이 돌도록 함. 코인은 24시간 거래라 이 함수 대상이 아님.
+  ⚠️ 이 시점엔 requirements.txt에 exchange_calendars가 빠져 있어서, GitHub
+  Actions에서는 항상 ImportError -> except 절 -> True(스캔 진행) 였고, 사실상
+  휴장일 판정이 전혀 동작하지 않고 있었음 (2026-09-24 수정에서 함께 고침).
+
+[2026-09-24 변경사항 - 전체 교체]
+- 🐛 근본 원인 발견: 국내 5분 재확인(recheck_korea.py)·집중추적(watchlist_check.py)·
+  보유종목(holdings_check.py)의 "지금 국장이 열려있나?" 판정이 전부 "평일(월~금)
+  9:00~15:30"만 볼 뿐, 설/추석 같은 명절이나 임시공휴일은 전혀 몰랐음. 그래서
+  평일인 공휴일에는 계속 "장이 열려있다"고 착각해 5분마다 "재확인 완료 - 없음",
+  "집중추적종목 현황", "보유종목 현황" 문자가 하루 종일(9~15:30, 약 78회) 발송됨.
+  거기에 더해 requirements.txt에 exchange_calendars가 없어서 is_market_open_scan_window()도
+  항상 True만 반환하고 있었음 (바로 위 항목 참고) — 즉 휴일 판정 코드가 있었지만
+  실제로는 한 번도 작동한 적이 없었음.
+- ✅ exchange_calendars를 requirements.txt에 추가하고, 새 공용 함수
+  is_korea_trading_day()를 이 파일에 추가함. 한국거래소(XKRX) 캘린더로 "오늘이
+  실제 개장일인지"(주말은 물론 설/추석/임시공휴일 등 모든 휴장일 포함)를 정확히
+  판정하고, 라이브러리 조회 자체가 실패하는 예외 상황에서만 "주말 여부만으로"
+  안전하게 폴백함(무한정 알림을 막는 것보다 나음).
+- full_scan_korea.py / recheck_korea.py / watchlist_check.py / holdings_check.py
+  4개 파일이 각자 갖고 있던 "평일 9~15:30" 자체 판정 앞에 이 함수를 추가로 걸어서,
+  공휴일에는 위 5분 스크립트들이 전부 "장마감"으로 인식하고 조용히 종료하도록 수정.
 """
 
 import os
 import time
 import pandas as pd
 import requests
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 SYSTEMS = {
     'System1(단기)': {'entry': 20, 'exit': 10},
@@ -48,6 +71,28 @@ MAX_CHASE_RATIO = 0.005  # 진입가 대비 현재가가 0.5% 넘게 벌어지�
 PICK_COUNT = 3
 PICK_PRICE_MAX = 100000
 PICK_PRICE_MIN = None  # 하한 없음 (필요시 숫자로 지정)
+
+
+def is_trading_day(calendar_name):
+    """주어진 거래소 캘린더(예: 'XKRX'=한국거래소, 'XNYS'=뉴욕증권거래소) 기준으로
+    "오늘"이 실제 개장일인지(주말은 물론 명절/임시공휴일 등 모든 휴장일 포함) 판정한다.
+
+    - exchange_calendars 조회가 실패하는 예외 상황에서는, 휴장일 정보 없이도
+      최소한의 방어는 되도록 "주말 여부만으로" 판단해서 반환한다 (평일이면 True).
+    """
+    try:
+        import exchange_calendars as ecals
+        cal = ecals.get_calendar(calendar_name)
+        today_naive = pd.Timestamp.now(tz='UTC').normalize().tz_localize(None)
+        return bool(cal.is_session(today_naive))
+    except Exception as e:
+        print(f"[market_calendar] {calendar_name} 개장일 판정 실패: {e} -> 주말 여부만으로 판단")
+        return datetime.now(ZoneInfo('Asia/Seoul')).weekday() < 5
+
+
+def is_korea_trading_day():
+    """오늘이 한국거래소(KRX) 실제 개장일인지 (주말 + 설/추석/임시공휴일 등 전부 반영)."""
+    return is_trading_day('XKRX')
 
 
 def is_market_open_scan_window(calendar_name, buffer_before_hours=1, buffer_after_hours=1):
