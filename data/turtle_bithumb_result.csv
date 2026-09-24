@@ -16,7 +16,7 @@ TRAC,TRAC,System1(단기),관심,False,False,False,True,484.0,545.0,406.0,0.994,
 AVAIL,AVAIL,System1(단기),관심,False,False,False,True,3.3,3.39,2.68,0.994,0.24,,
 SKY,SKY,System1(단기),관심,False,False,False,True,95.24,103.0,75.65,0.99,6.8,,
 SKY,SKY,System2(중장기),관심,False,False,False,True,95.24,103.0,75.65,0.99,6.8,,
-BIO,BIO,System1(단기),관심,False,False,False,True,39.1,40.76,32.63,0.992,2.1,,
+BIO,BIO,System1(단기),확정,False,False,False,True,39.1,40.76,32.63,0.992,2.1,,40.79
 OBT,OBT,System1(단기),관심,False,False,False,True,0.53,0.59,0.44,0.995,0.04,,
 OBT,OBT,System2(중장기),관심,False,False,False,True,0.53,0.59,0.43,0.995,0.04,,
 GPS,GPS,System1(단기),관심,False,False,False,True,15.87,17.67,13.57,0.99,1.25,,
