@@ -13,6 +13,16 @@ System1(단기)/System2(중장기) 둘 다 독립적으로 체크합니다.
 2. (신규) 매 실행마다(5분마다) 등록된 전체 종목의 "현재 상태"를 무조건
    요약 문자로 발송 — 국장/미장은 장중에만 자연히 포함되고(장마감중이면 그
    시장 종목은 이번 요약에서 빠짐), 코인은 24시간 항상 포함됨
+
+[2026-09-24 변경사항 - 전체 교체]
+- 🐛 is_korea_market_open()이 "평일 9:00~15:30"만 봤을 뿐 설/추석 같은 명절이나
+  임시공휴일은 몰라서, 평일 공휴일에도 국장 종목이 계속 "장중"으로 포함되어
+  5분마다 집중추적 요약 문자가 하루 종일 발송되고 있었음.
+- common.py에 새로 추가된 is_korea_trading_day()(exchange_calendars로 KRX
+  실제 개장일을 정확히 판정 - 주말+공휴일 모두 포함)를 먼저 확인하도록 수정.
+  requirements.txt에 exchange_calendars가 추가되어 있어야 정상 동작하며(누락 시
+  주말 여부만으로 안전하게 폴백). 미장(is_us_market_open)은 이번 수정 대상이
+  아니며 기존 그대로 유지함.
 """
 
 import sys
@@ -25,7 +35,7 @@ import FinanceDataReader as fdr
 import yfinance as yf
 from datetime import datetime, timedelta, time as dtime
 from zoneinfo import ZoneInfo
-from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, send_long_message
+from common import SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram, send_long_message, is_korea_trading_day
 
 WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'watchlist.csv')
 WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status']
@@ -39,9 +49,10 @@ STATUS_TAG = {
 
 
 def is_korea_market_open():
-    now = datetime.now(ZoneInfo('Asia/Seoul'))
-    if now.weekday() >= 5:
+    """2026-09-24 수정: 시간대 체크 전에 먼저 실제 개장일(주말+공휴일)인지부터 확인."""
+    if not is_korea_trading_day():
         return False
+    now = datetime.now(ZoneInfo('Asia/Seoul'))
     return dtime(9, 0) <= now.time() <= dtime(15, 30)
 
 
@@ -174,5 +185,4 @@ if __name__ == "__main__":
         header = f"🎯 [집중추적종목 현황] {tracked_code_count}종목 (5분 자동 갱신)"
         send_long_message(header + "\n" + "\n".join(summary_lines))
     else:
-        print("이번 실행에서 포함할 종목이 없어 요약을 보내지 않았습니다 (장마감/데이터없음 등).")
-
+        print("이번 실행에서 포함할 종목이 없어 요약을 보내지 않았습니다 (장마감/공휴일/데이터없음 등).")

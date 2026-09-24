@@ -35,6 +35,16 @@ data/holdings.csv 컬럼:
   last_milestone,status,last_price,breakeven_notified,exit10_notified,exit20_notified
   market 값: KR(국내) / US(미국) / COIN(빗썸)
   status 값: active(감시중) / stop_hit(손절확정, sell 대기) / closed_manual(수동청산)
+
+[2026-09-24 변경사항]
+- 🐛 is_korea_market_open()이 "평일 9:00~15:30(±5분)"만 봤을 뿐 설/추석 같은
+  명절이나 임시공휴일은 몰라서, 평일 공휴일에도 국내 보유종목이 계속 "장중"으로
+  포함되어 5분마다 보유종목 현황 문자가 하루 종일 발송되고 있었음.
+- common.py에 새로 추가된 is_korea_trading_day()(exchange_calendars로 KRX 실제
+  개장일을 정확히 판정 - 주말+공휴일 모두 포함)를 먼저 확인하도록 수정.
+  requirements.txt에 exchange_calendars가 추가되어 있어야 정상 동작하며(누락 시
+  주말 여부만으로 안전하게 폴백). 미장(is_us_market_open)/코인은 이번 수정
+  대상이 아니며 기존 그대로 유지함.
 """
 
 import sys
@@ -47,7 +57,7 @@ import FinanceDataReader as fdr
 import yfinance as yf
 from datetime import datetime, timedelta, time as dtime
 from zoneinfo import ZoneInfo
-from common import notify_telegram, send_long_message, calc_atr, fetch_with_retry
+from common import notify_telegram, send_long_message, calc_atr, fetch_with_retry, is_korea_trading_day
 
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
@@ -74,9 +84,10 @@ def fmt_num(v):
 
 
 def is_korea_market_open():
-    now = datetime.now(ZoneInfo('Asia/Seoul'))
-    if now.weekday() >= 5:
+    """2026-09-24 수정: 시간대 체크 전에 먼저 실제 개장일(주말+공휴일)인지부터 확인."""
+    if not is_korea_trading_day():
         return False
+    now = datetime.now(ZoneInfo('Asia/Seoul'))
     start = (datetime.combine(now.date(), dtime(9, 0)) - timedelta(minutes=PRE_MARKET_BUFFER_MIN)).time()
     end = (datetime.combine(now.date(), dtime(15, 30)) + timedelta(minutes=POST_MARKET_BUFFER_MIN)).time()
     return start <= now.time() <= end
