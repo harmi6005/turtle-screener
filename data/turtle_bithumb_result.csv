@@ -10,7 +10,7 @@ BTT,BTT,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,1.0,0.0,,
 USDT,USDT,System1(단기),관심,False,False,False,True,1370.0,1383.0,1339.0,0.994,12.25,,
 USDC,USDC,System1(단기),관심,False,False,False,True,1369.0,1384.0,1339.0,0.994,12.8,,
 LSK,LSK,System1(단기),청산,False,False,True,False,502.0,2196.0,414.0,0.239,257.8,,
-BEAM,BEAM,System1(단기),관심,False,False,False,True,2.64,2.7,2.06,0.991,0.14,,
+BEAM,BEAM,System1(단기),확정,False,False,False,True,2.64,2.7,2.06,0.991,0.14,,2.71
 TRAC,TRAC,System1(단기),관심,False,False,False,True,493.0,545.0,406.0,0.994,47.15,,
 AVAIL,AVAIL,System1(단기),관심,False,False,False,True,3.23,3.39,2.68,0.994,0.24,,
 SKY,SKY,System1(단기),관심,False,False,False,True,96.97,103.0,75.65,0.99,6.8,,
