@@ -208,8 +208,8 @@ ORCL,ORCL,System1(단기),청산,False,False,True,False,137.34,170.7,139.0,0.816
 ORCL,ORCL,System2(중장기),청산,False,False,True,False,137.34,170.7,139.0,0.816,7.54,,
 PCAR,PCAR,System1(단기),청산,False,False,True,False,111.38,130.97,111.9,0.861,2.69,,
 PCAR,PCAR,System2(중장기),청산,False,False,True,False,111.38,138.87,111.9,0.812,2.69,,
-PLTR,PLTR,System1(단기),관심,False,False,False,True,191.83,193.79,164.55,0.995,6.92,,
-PLTR,PLTR,System2(중장기),관심,False,False,False,True,191.83,193.79,164.55,0.995,6.92,,
+PLTR,PLTR,System1(단기),확정,False,False,False,True,191.83,193.79,164.55,0.995,6.92,,193.99
+PLTR,PLTR,System2(중장기),확정,False,False,False,True,191.83,193.79,164.55,0.995,6.92,,193.99
 PANW,PANW,System2(중장기),관심,False,False,False,True,390.3,398.88,321.39,0.994,20.39,,
 PAYX,PAYX,System1(단기),청산,False,False,True,False,103.44,127.98,103.25,0.841,3.07,,
 PAYX,PAYX,System2(중장기),청산,False,False,True,False,103.44,127.98,103.25,0.841,3.07,,
