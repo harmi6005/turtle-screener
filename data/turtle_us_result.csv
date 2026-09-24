@@ -237,8 +237,8 @@ O,O,System1(단기),청산,False,False,True,False,55.21,62.82,55.28,0.888,0.88,,
 O,O,System2(중장기),청산,False,False,True,False,55.21,66.58,55.28,0.838,0.88,,
 RF,RF,System1(단기),청산,False,False,True,False,27.12,30.63,27.35,0.898,0.61,,
 RF,RF,System2(중장기),청산,False,False,True,False,27.12,32.14,27.35,0.856,0.61,,
-RVTY,RVTY,System1(단기),관심,False,False,False,True,145.39,149.52,120.9,0.991,4.62,,
-RVTY,RVTY,System2(중장기),관심,False,False,False,True,145.39,149.52,120.9,0.991,4.62,,
+RVTY,RVTY,System1(단기),확정,False,False,False,True,145.39,149.52,120.9,0.991,4.62,,149.65
+RVTY,RVTY,System2(중장기),확정,False,False,False,True,145.39,149.52,120.9,0.991,4.62,,149.65
 ROK,ROK,System1(단기),관심,False,False,False,True,430.14,436.29,406.92,0.996,10.14,,
 ROL,ROL,System1(단기),청산,False,False,True,False,30.36,37.47,31.88,0.842,0.91,,
 ROL,ROL,System2(중장기),청산,False,False,True,False,30.36,46.14,31.88,0.684,0.91,,
