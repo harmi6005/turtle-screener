@@ -30,8 +30,8 @@ XPL,XPL,System2(중장기),관심,False,False,False,True,144.0,152.0,105.0,0.993
 MMT,MMT,System1(단기),관심,False,False,False,True,229.0,237.0,170.0,0.992,13.5,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.6,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.48,0.0,,
-PROS,PROS,System1(단기),관심,False,False,False,True,826.0,836.0,643.0,0.998,70.0,,
-PROS,PROS,System2(중장기),관심,False,False,False,True,826.0,836.0,545.0,0.998,70.0,,
+PROS,PROS,System1(단기),확정,False,False,False,True,826.0,836.0,643.0,0.998,70.0,,836.0
+PROS,PROS,System2(중장기),확정,False,False,False,True,826.0,836.0,545.0,0.998,70.0,,836.0
 A,A,System1(단기),확정,False,False,False,True,133.0,135.0,101.0,0.993,7.1,,135.0
 A,A,System2(중장기),확정,False,False,False,True,133.0,135.0,101.0,0.993,7.1,,135.0
 BIO,BIO,System1(단기),확정,False,False,False,True,39.1,40.76,32.63,0.992,2.1,,40.79
