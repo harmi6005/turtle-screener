@@ -3,6 +3,15 @@
 telegram_listener.py(폴링 방식, 5분마다)와 webhook_handler.py(웹훅 방식, 즉시)가
 둘 다 이 모듈의 함수를 가져다 씁니다.
 
+이번 개정 사항 (2026-09-24, 이어서):
+- 🐛 GitHub Actions 로그에서 발견된 실행 오류 수정: `TypeError: Invalid value ''
+  for dtype 'float64'`. `load_watchlist()`가 `watchlist.csv`를 읽을 때
+  `sys1_status`/`sys2_status` 컬럼이 전부 빈칸이면 pandas가 dtype을 `float64`로
+  잘못 추론해서, 이후 이 컬럼에 문자열('관심'/'진입' 등)이나 빈 문자열을 다시
+  쓰려고 하면 예외가 발생했음(watchlist_check.py에서도 동일한 원인으로 동시에
+  발견되어 함께 수정). `pd.read_csv`에 해당 컬럼들도 `dtype=str`로 명시하고
+  `keep_default_na=False`를 추가해서 항상 문자열 컬럼으로 읽히도록 수정.
+
 이번 개정 사항 (2026-09-24):
 - ⭐ "명령어목록"(및 "명령어 목록") 명령 추가. 기존 "명령어확인"/"도움말"/"help"와
   완전히 동일하게 동작(HELP_TEXT 전체를 보여줌) - 사용자가 "명령어목록"이라는
@@ -389,7 +398,9 @@ def handle_scan_status():
 
 def load_watchlist():
     if os.path.exists(WATCHLIST_PATH):
-        df = pd.read_csv(WATCHLIST_PATH, dtype={'code': str})
+        df = pd.read_csv(WATCHLIST_PATH, dtype={'code': str, 'market': str,
+                                                 'sys1_status': str, 'sys2_status': str},
+                         keep_default_na=False)
         for col in WATCHLIST_COLUMNS:
             if col not in df.columns:
                 df[col] = ''
