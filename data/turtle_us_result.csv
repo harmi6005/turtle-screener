@@ -87,7 +87,7 @@ CCI,CCI,System1(단기),청산,False,False,True,False,67.75,76.64,70.08,0.917,1.
 CCI,CCI,System2(중장기),청산,False,False,True,False,67.75,79.66,70.08,0.882,1.94,,
 CVS,CVS,System1(단기),청산,False,False,True,False,84.89,98.5,85.67,0.873,2.14,,
 CVS,CVS,System2(중장기),청산,False,False,True,False,84.89,110.0,85.67,0.782,2.14,,
-DDOG,DDOG,System1(단기),관심,False,False,False,True,254.68,256.71,209.04,0.998,11.99,,
+DDOG,DDOG,System1(단기),탈락,False,False,False,True,254.68,256.71,209.04,0.998,11.99,,
 DVA,DVA,System1(단기),청산,False,False,True,False,176.07,195.75,176.82,0.939,5.49,,
 D,D,System1(단기),청산,False,False,True,False,60.71,66.81,61.04,0.919,1.12,,
 D,D,System2(중장기),청산,False,False,True,False,60.71,72.26,61.04,0.85,1.12,,
