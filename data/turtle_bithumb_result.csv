@@ -23,8 +23,8 @@ ID,ID,System2(중장기),관심,False,False,False,True,51.94,52.59,40.09,0.991,2
 GTC,GTC,System1(단기),진입,True,True,False,False,120.0,120.0,101.0,1.0,5.05,,
 NEO,NEO,System1(단기),관심,False,False,False,True,3573.0,3623.0,2780.0,0.996,173.85,,
 NEO,NEO,System2(중장기),관심,False,False,False,True,3573.0,3623.0,2780.0,0.996,173.85,,
-IO,IO,System1(단기),관심,False,False,False,True,214.0,219.0,158.0,0.995,14.75,,
-IO,IO,System2(중장기),관심,False,False,False,True,214.0,219.0,158.0,0.995,14.75,,
+IO,IO,System1(단기),확정,False,False,False,True,214.0,219.0,158.0,0.995,14.75,,219.0
+IO,IO,System2(중장기),확정,False,False,False,True,214.0,219.0,158.0,0.995,14.75,,219.0
 SAFE,SAFE,System1(단기),진입,True,True,False,False,153.0,153.0,120.0,1.013,8.5,,
 SAFE,SAFE,System2(중장기),진입,True,True,False,False,153.0,153.0,120.0,1.013,8.5,,
 MORPHO,MORPHO,System1(단기),관심,False,False,False,True,3786.0,4021.0,2779.0,0.996,270.2,,
