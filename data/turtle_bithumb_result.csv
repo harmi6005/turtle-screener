@@ -26,7 +26,7 @@ KMNO,KMNO,System2(중장기),관심,False,False,False,True,50.73,52.23,32.83,1.0
 FORT,FORT,System1(단기),관심,False,False,False,True,21.55,21.93,19.01,0.994,0.7,,
 HUMA,HUMA,System1(단기),관심,False,False,False,True,34.86,35.25,30.0,0.999,2.07,,
 IRYS,IRYS,System1(단기),진입,True,True,False,False,22.3,22.22,17.77,1.019,0.96,,
-XPL,XPL,System2(중장기),관심,False,False,False,True,144.0,152.0,105.0,0.993,12.15,,
+XPL,XPL,System2(중장기),확정,False,False,False,True,144.0,152.0,105.0,0.993,12.15,,152.0
 MMT,MMT,System1(단기),관심,False,False,False,True,229.0,237.0,170.0,0.992,13.5,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.6,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.48,0.0,,
