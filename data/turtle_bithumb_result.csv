@@ -3,7 +3,7 @@ ORBS,ORBS,System1(단기),관심,False,False,False,True,10.05,10.3,8.58,0.99,0.4
 ORBS,ORBS,System2(중장기),관심,False,False,False,True,10.05,10.3,8.2,0.99,0.41,,
 RSR,RSR,System1(단기),관심,False,False,False,True,2.34,2.42,1.81,0.998,0.15,,
 RSR,RSR,System2(중장기),관심,False,False,False,True,2.34,2.42,1.81,0.998,0.15,,
-SAND,SAND,System1(단기),관심,False,False,False,True,60.31,60.68,44.01,0.994,3.12,,
+SAND,SAND,System1(단기),탈락,False,False,False,True,60.31,60.68,44.01,0.994,3.12,,
 XLM,XLM,System2(중장기),관심,False,False,False,True,297.0,306.0,236.0,0.997,17.15,,
 SOL,SOL,System1(단기),관심,False,False,False,True,158700.0,161600.0,130900.0,0.998,6330.0,,
 SOL,SOL,System2(중장기),관심,False,False,False,True,158700.0,161600.0,130900.0,0.998,6330.0,,
