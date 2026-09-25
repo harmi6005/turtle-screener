@@ -31,7 +31,7 @@ WAL,WAL,System1(단기),관심,False,False,False,True,47.77,47.99,34.88,0.997,3.
 WAL,WAL,System2(중장기),관심,False,False,False,True,47.77,47.99,33.7,0.997,3.0,,
 KMNO,KMNO,System1(단기),관심,False,False,False,True,49.72,52.23,33.05,1.0,3.37,,
 KMNO,KMNO,System2(중장기),관심,False,False,False,True,49.72,52.23,32.83,1.0,3.37,,
-HUMA,HUMA,System1(단기),관심,False,False,False,True,35.0,35.25,30.0,0.999,2.07,,
+HUMA,HUMA,System1(단기),확정,False,False,False,True,35.0,35.25,30.0,0.999,2.07,,35.33
 MMT,MMT,System1(단기),관심,False,False,False,True,232.0,237.0,170.0,0.992,13.6,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.65,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.52,0.0,,
