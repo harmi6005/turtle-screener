@@ -47,7 +47,7 @@ FORT,FORT,System1(단기),관심,False,False,False,True,21.8,22.07,19.01,0.998,0
 SPK,SPK,System1(단기),진입,True,True,False,False,31.88,31.78,23.8,1.133,1.86,,
 SOMI,SOMI,System1(단기),확정,False,False,False,True,276.0,279.0,192.0,0.996,15.6,,279.0
 SOMI,SOMI,System2(중장기),확정,False,False,False,True,276.0,279.0,163.0,0.996,15.6,,279.0
-ZKP,ZKP,System1(단기),관심,False,False,False,True,69.29,70.2,55.36,0.992,3.1,,
+ZKP,ZKP,System1(단기),확정,False,False,False,True,69.29,70.2,55.36,0.992,3.1,,70.23
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.6,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.48,0.0,,
 AEON,AEON,System1(단기),관심,False,False,False,True,78.06,87.84,64.3,0.99,9.33,,
