@@ -29,7 +29,7 @@ SAFE,SAFE,System1(단기),진입,True,True,False,False,153.0,153.0,120.0,1.013,8
 SAFE,SAFE,System2(중장기),진입,True,True,False,False,153.0,153.0,120.0,1.013,8.5,,
 MORPHO,MORPHO,System1(단기),탈락,False,False,False,True,3786.0,4021.0,2779.0,0.996,270.2,,
 MORPHO,MORPHO,System2(중장기),탈락,False,False,False,True,3786.0,4021.0,2779.0,0.996,270.2,,
-XYO,XYO,System1(단기),관심,False,False,False,True,4.88,4.96,4.22,0.991,0.21,,
+XYO,XYO,System1(단기),탈락,False,False,False,True,4.88,4.96,4.22,0.991,0.21,,
 MMT,MMT,System1(단기),탈락,False,False,False,True,230.0,237.0,170.0,0.992,13.6,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.65,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.52,0.0,,
