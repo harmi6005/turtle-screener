@@ -10,8 +10,8 @@ SOL,SOL,System2(중장기),탈락,False,False,False,True,158700.0,161600.0,13090
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 SUN,SUN,System1(단기),관심,False,False,False,True,23.44,23.74,22.39,0.995,0.47,,
-JOE,JOE,System1(단기),관심,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,
-JOE,JOE,System2(중장기),관심,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,
+JOE,JOE,System1(단기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
+JOE,JOE,System2(중장기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
 INJ,INJ,System1(단기),관심,False,False,False,True,10770.0,11770.0,7350.0,0.996,1086.5,,
 INJ,INJ,System2(중장기),관심,False,False,False,True,10770.0,11770.0,5900.0,0.996,1086.5,,
 IMX,IMX,System1(단기),확정,False,False,False,True,208.0,213.0,158.0,0.995,12.7,,213.0
