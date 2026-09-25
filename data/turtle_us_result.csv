@@ -160,7 +160,7 @@ INTC,INTC,System1(단기),관심,False,False,False,True,124.3,127.44,94.52,0.996
 INTC,INTC,System2(중장기),관심,False,False,False,True,124.3,127.44,85.72,0.996,6.02,,
 INTU,INTU,System1(단기),청산,False,False,True,False,275.82,365.77,276.78,0.758,13.15,,
 INTU,INTU,System2(중장기),청산,False,False,True,False,275.82,372.98,276.78,0.744,13.15,,
-ISRG,ISRG,System1(단기),관심,False,False,False,True,403.21,404.44,363.56,0.999,11.27,,
+ISRG,ISRG,System1(단기),확정,False,False,False,True,403.21,404.44,363.56,0.999,11.27,,404.71
 INVH,INVH,System1(단기),청산,False,False,True,False,26.44,29.4,26.4,0.903,0.41,,
 INVH,INVH,System2(중장기),청산,False,False,True,False,26.44,30.55,26.4,0.869,0.41,,
 IQV,IQV,System1(단기),관심,False,False,False,True,271.65,277.4,256.97,0.991,6.81,,
