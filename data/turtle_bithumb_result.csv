@@ -49,7 +49,7 @@ FORT,FORT,System1(단기),관심,False,False,False,True,22.03,22.07,19.01,0.998,
 IRYS,IRYS,System1(단기),관심,False,False,False,True,22.83,23.18,17.77,0.996,0.97,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.6,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.48,0.0,,
-AI,AI,System1(단기),관심,False,False,False,True,29.38,29.53,24.47,0.995,1.36,,
+AI,AI,System1(단기),확정,False,False,False,True,29.38,29.53,24.47,0.995,1.36,,29.55
 AEON,AEON,System1(단기),관심,False,False,False,True,78.94,87.84,64.3,0.99,9.33,,
 XLM,XLM,System2(중장기),확정,False,False,False,True,297.0,306.0,236.0,0.997,17.15,,306.0
 JOE,JOE,System1(단기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
