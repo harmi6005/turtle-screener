@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ABT,ABT,System1(단기),청산,False,False,True,False,101.11,113.91,100.33,0.894,2.47,,
 ABT,ABT,System2(중장기),청산,False,False,True,False,101.11,117.34,100.33,0.868,2.47,,
 ACN,ACN,System1(단기),청산,False,False,True,False,177.44,197.63,176.87,0.911,6.71,,
@@ -270,7 +270,7 @@ VTR,VTR,System1(단기),청산,False,False,True,False,85.77,93.83,85.9,0.927,1.6
 VTR,VTR,System2(중장기),청산,False,False,True,False,85.77,101.6,85.9,0.856,1.67,,
 VRSK,VRSK,System1(단기),청산,False,False,True,False,169.74,196.68,167.62,0.87,5.87,,
 VRSK,VRSK,System2(중장기),청산,False,False,True,False,169.74,225.48,167.62,0.759,5.87,,
-VTRS,VTRS,System1(단기),관심,False,False,False,True,17.57,17.6,16.32,1.0,0.41,,
+VTRS,VTRS,System1(단기),탈락,False,False,False,True,17.57,17.6,16.32,1.0,0.41,,
 VMRK,VMRK,System1(단기),청산,False,False,True,False,61.14,67.26,60.63,0.909,1.23,,
 VMRK,VMRK,System2(중장기),청산,False,False,True,False,61.14,70.75,60.63,0.864,1.23,,
 WRB,WRB,System1(단기),청산,False,False,True,False,66.77,71.36,67.24,0.943,1.29,,
