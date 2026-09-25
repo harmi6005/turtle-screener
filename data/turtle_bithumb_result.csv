@@ -7,8 +7,8 @@ LINK,LINK,System1(단기),관심,False,False,False,True,18720.0,19230.0,14560.0,
 LINK,LINK,System2(중장기),관심,False,False,False,True,18720.0,19230.0,14560.0,0.991,1037.0,,
 CTC,CTC,System1(단기),관심,False,False,False,True,156.0,159.0,125.0,0.994,11.7,,
 CTC,CTC,System2(중장기),관심,False,False,False,True,156.0,159.0,125.0,0.994,11.7,,
-AAVE,AAVE,System1(단기),관심,False,False,False,True,206000.0,208900.0,155700.0,0.995,11610.0,,
-AAVE,AAVE,System2(중장기),관심,False,False,False,True,206000.0,208900.0,155700.0,0.995,11610.0,,
+AAVE,AAVE,System1(단기),확정,False,False,False,True,206000.0,208900.0,155700.0,0.995,11610.0,,209200.0
+AAVE,AAVE,System2(중장기),확정,False,False,False,True,206000.0,208900.0,155700.0,0.995,11610.0,,209200.0
 SNX,SNX,System1(단기),청산,False,False,True,False,376.0,650.0,365.0,0.648,65.65,,
 OGN,OGN,System1(단기),진입,True,True,False,False,27.23,27.2,22.73,1.048,1.26,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
