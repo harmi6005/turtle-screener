@@ -1,6 +1,6 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-XRP,XRP,System1(단기),관심,False,False,False,True,2188.0,2220.0,1713.0,0.99,105.45,,
-ADA,ADA,System1(단기),관심,False,False,False,True,347.0,351.0,261.0,0.994,18.6,,
+XRP,XRP,System1(단기),탈락,False,False,False,True,2188.0,2220.0,1713.0,0.99,105.45,,
+ADA,ADA,System1(단기),탈락,False,False,False,True,347.0,351.0,261.0,0.994,18.6,,
 RSR,RSR,System1(단기),관심,False,False,False,True,2.34,2.42,1.81,0.998,0.15,,
 RSR,RSR,System2(중장기),관심,False,False,False,True,2.34,2.42,1.81,0.998,0.15,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
@@ -14,8 +14,8 @@ SFP,SFP,System1(단기),관심,False,False,False,True,408.0,421.0,357.0,0.993,17
 SFP,SFP,System2(중장기),관심,False,False,False,True,408.0,421.0,346.0,0.993,17.3,,
 APT,APT,System1(단기),관심,False,False,False,True,1143.0,1156.0,719.0,0.993,82.6,,
 APT,APT,System2(중장기),관심,False,False,False,True,1143.0,1156.0,719.0,0.993,82.6,,
-INJ,INJ,System1(단기),관심,False,False,False,True,11180.0,11770.0,7350.0,0.996,1086.5,,
-INJ,INJ,System2(중장기),관심,False,False,False,True,11180.0,11770.0,5900.0,0.996,1086.5,,
+INJ,INJ,System1(단기),탈락,False,False,False,True,11180.0,11770.0,7350.0,0.996,1086.5,,
+INJ,INJ,System2(중장기),탈락,False,False,False,True,11180.0,11770.0,5900.0,0.996,1086.5,,
 RPL,RPL,System1(단기),관심,False,False,False,True,2715.0,2829.0,2134.0,0.994,180.65,,
 RPL,RPL,System2(중장기),관심,False,False,False,True,2715.0,2829.0,2134.0,0.994,180.65,,
 ID,ID,System1(단기),관심,False,False,False,True,51.94,52.59,42.48,0.991,2.86,,
@@ -30,7 +30,7 @@ SAFE,SAFE,System2(중장기),진입,True,True,False,False,153.0,153.0,120.0,1.01
 MORPHO,MORPHO,System1(단기),관심,False,False,False,True,3786.0,4021.0,2779.0,0.996,270.2,,
 MORPHO,MORPHO,System2(중장기),관심,False,False,False,True,3786.0,4021.0,2779.0,0.996,270.2,,
 XYO,XYO,System1(단기),관심,False,False,False,True,4.88,4.96,4.22,0.991,0.21,,
-MMT,MMT,System1(단기),관심,False,False,False,True,230.0,237.0,170.0,0.992,13.6,,
+MMT,MMT,System1(단기),탈락,False,False,False,True,230.0,237.0,170.0,0.992,13.6,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.65,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.52,0.0,,
 XLM,XLM,System2(중장기),확정,False,False,False,True,297.0,306.0,236.0,0.997,17.15,,306.0
