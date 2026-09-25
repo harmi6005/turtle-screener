@@ -1,6 +1,6 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-ORBS,ORBS,System1(단기),관심,False,False,False,True,10.05,10.3,8.58,0.99,0.41,,
-ORBS,ORBS,System2(중장기),관심,False,False,False,True,10.05,10.3,8.2,0.99,0.41,,
+ORBS,ORBS,System1(단기),탈락,False,False,False,True,10.05,10.3,8.58,0.99,0.41,,
+ORBS,ORBS,System2(중장기),탈락,False,False,False,True,10.05,10.3,8.2,0.99,0.41,,
 RSR,RSR,System1(단기),관심,False,False,False,True,2.34,2.42,1.81,0.998,0.15,,
 RSR,RSR,System2(중장기),관심,False,False,False,True,2.34,2.42,1.81,0.998,0.15,,
 SAND,SAND,System1(단기),탈락,False,False,False,True,60.31,60.68,44.01,0.994,3.12,,
