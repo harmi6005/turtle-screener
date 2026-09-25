@@ -29,8 +29,8 @@ ORDER,ORDER,System1(단기),관심,False,False,False,True,55.68,56.23,41.92,0.99
 ORDER,ORDER,System2(중장기),관심,False,False,False,True,55.68,56.23,41.92,0.99,4.06,,
 SKY,SKY,System1(단기),관심,False,False,False,True,103.0,105.0,75.65,0.99,6.99,,
 SKY,SKY,System2(중장기),관심,False,False,False,True,103.0,105.0,75.65,0.99,6.99,,
-SAFE,SAFE,System1(단기),관심,False,False,False,True,153.0,155.0,120.0,0.994,8.4,,
-SAFE,SAFE,System2(중장기),관심,False,False,False,True,153.0,155.0,120.0,0.994,8.4,,
+SAFE,SAFE,System1(단기),확정,False,False,False,True,153.0,155.0,120.0,0.994,8.4,,155.0
+SAFE,SAFE,System2(중장기),확정,False,False,False,True,153.0,155.0,120.0,0.994,8.4,,155.0
 DEEP,DEEP,System1(단기),확정,False,False,False,True,30.78,31.26,19.03,0.995,2.02,,31.4
 DEEP,DEEP,System2(중장기),확정,False,False,False,True,30.78,31.26,19.03,0.995,2.02,,31.4
 IOTA,IOTA,System1(단기),관심,False,False,False,True,67.55,68.15,50.45,0.998,4.34,,
