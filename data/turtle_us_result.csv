@@ -282,7 +282,7 @@ PEG,PEG,System1(단기),청산,False,False,True,False,66.56,73.98,67.13,0.914,1.
 PEG,PEG,System2(중장기),청산,False,False,True,False,66.56,81.91,67.13,0.825,1.11,,
 PSA,PSA,System1(단기),청산,False,False,True,False,284.56,322.79,286.01,0.893,6.33,,
 PSA,PSA,System2(중장기),청산,False,False,True,False,284.56,332.14,286.01,0.868,6.33,,
-PWR,PWR,System1(단기),관심,False,False,False,True,643.5,653.87,607.45,0.995,20.78,,
+PWR,PWR,System1(단기),탈락,False,False,False,True,643.5,653.87,607.45,0.995,20.78,,
 RJF,RJF,System1(단기),청산,False,False,True,False,158.76,181.4,157.7,0.877,4.13,,
 RJF,RJF,System2(중장기),청산,False,False,True,False,158.76,182.73,157.7,0.87,4.13,,
 RTX,RTX,System1(단기),청산,False,False,True,False,188.61,213.5,190.7,0.905,3.8,,
