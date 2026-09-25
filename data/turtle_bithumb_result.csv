@@ -15,7 +15,7 @@ IMX,IMX,System2(중장기),관심,False,False,False,True,205.0,213.0,158.0,0.995
 NEO,NEO,System1(단기),관심,False,False,False,True,3505.0,3623.0,2780.0,0.99,170.15,,
 NEO,NEO,System2(중장기),관심,False,False,False,True,3505.0,3623.0,2780.0,0.99,170.15,,
 GAS,GAS,System1(단기),관심,False,False,False,True,1968.0,1992.0,1635.0,0.992,95.15,,
-MOODENG,MOODENG,System1(단기),관심,False,False,False,True,66.45,67.71,50.22,0.997,4.81,,
+MOODENG,MOODENG,System1(단기),탈락,False,False,False,True,66.45,67.71,50.22,0.997,4.81,,
 ME,ME,System1(단기),관심,False,False,False,True,104.0,106.0,80.81,0.991,4.77,,
 ME,ME,System2(중장기),관심,False,False,False,True,104.0,106.0,80.81,0.991,4.77,,
 XYO,XYO,System1(단기),관심,False,False,False,True,4.8,4.96,4.22,0.991,0.21,,
