@@ -27,8 +27,8 @@ ARK,ARK,System2(중장기),확정,False,False,False,True,269.0,288.0,147.0,0.997
 ME,ME,System1(단기),확정,False,False,False,True,104.0,106.0,80.81,0.991,4.77,,106.0
 ME,ME,System2(중장기),확정,False,False,False,True,104.0,106.0,80.81,0.991,4.77,,106.0
 XYO,XYO,System1(단기),관심,False,False,False,True,4.88,4.96,4.22,0.991,0.21,,
-WAL,WAL,System1(단기),관심,False,False,False,True,47.77,47.99,34.88,0.997,3.0,,
-WAL,WAL,System2(중장기),관심,False,False,False,True,47.77,47.99,33.7,0.997,3.0,,
+WAL,WAL,System1(단기),확정,False,False,False,True,47.77,47.99,34.88,0.997,3.0,,48.0
+WAL,WAL,System2(중장기),확정,False,False,False,True,47.77,47.99,33.7,0.997,3.0,,48.0
 KMNO,KMNO,System1(단기),관심,False,False,False,True,49.72,52.23,33.05,1.0,3.37,,
 KMNO,KMNO,System2(중장기),관심,False,False,False,True,49.72,52.23,32.83,1.0,3.37,,
 HUMA,HUMA,System1(단기),확정,False,False,False,True,35.0,35.25,30.0,0.999,2.07,,35.33
