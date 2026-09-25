@@ -46,7 +46,7 @@ PLUME,PLUME,System2(중장기),관심,False,False,False,True,26.72,26.94,16.25,1
 WAL,WAL,System1(단기),진입,True,True,False,False,50.0,49.86,34.88,1.009,3.1,,
 WAL,WAL,System2(중장기),진입,True,True,False,False,50.0,49.86,33.7,1.009,3.1,,
 FORT,FORT,System1(단기),관심,False,False,False,True,22.03,22.07,19.01,0.998,0.71,,
-IRYS,IRYS,System1(단기),관심,False,False,False,True,22.83,23.18,17.77,0.996,0.97,,
+IRYS,IRYS,System1(단기),탈락,False,False,False,True,22.83,23.18,17.77,0.996,0.97,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.6,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.48,0.0,,
 AI,AI,System1(단기),확정,False,False,False,True,29.38,29.53,24.47,0.995,1.36,,29.55
