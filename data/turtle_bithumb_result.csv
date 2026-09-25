@@ -29,7 +29,7 @@ GAS,GAS,System1(단기),관심,False,False,False,True,1980.0,2004.0,1635.0,0.991
 RAD,RAD,System1(단기),관심,False,False,False,True,335.0,345.0,304.0,0.994,12.6,,
 JUP,JUP,System1(단기),확정,False,False,False,True,436.0,449.0,285.0,0.991,33.2,,449.0
 JUP,JUP,System2(중장기),확정,False,False,False,True,436.0,449.0,285.0,0.991,33.2,,449.0
-JTO,JTO,System1(단기),관심,False,False,False,True,724.0,747.0,542.0,0.991,52.05,,
+JTO,JTO,System1(단기),확정,False,False,False,True,724.0,747.0,542.0,0.991,52.05,,748.0
 IO,IO,System1(단기),진입,True,True,False,False,222.0,222.0,158.0,1.0,14.5,,
 IO,IO,System2(중장기),진입,True,True,False,False,222.0,222.0,158.0,1.0,14.5,,
 SAFE,SAFE,System1(단기),관심,False,False,False,True,154.0,155.0,120.0,0.994,8.4,,
