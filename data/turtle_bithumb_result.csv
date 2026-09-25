@@ -14,8 +14,8 @@ JOE,JOE,System1(단기),관심,False,False,False,True,49.12,52.14,36.7,0.997,3.3
 JOE,JOE,System2(중장기),관심,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,
 INJ,INJ,System1(단기),관심,False,False,False,True,10770.0,11770.0,7350.0,0.996,1086.5,,
 INJ,INJ,System2(중장기),관심,False,False,False,True,10770.0,11770.0,5900.0,0.996,1086.5,,
-IMX,IMX,System1(단기),관심,False,False,False,True,208.0,213.0,158.0,0.995,12.7,,
-IMX,IMX,System2(중장기),관심,False,False,False,True,208.0,213.0,158.0,0.995,12.7,,
+IMX,IMX,System1(단기),확정,False,False,False,True,208.0,213.0,158.0,0.995,12.7,,213.0
+IMX,IMX,System2(중장기),확정,False,False,False,True,208.0,213.0,158.0,0.995,12.7,,213.0
 SUI,SUI,System1(단기),관심,False,False,False,True,1381.0,1457.0,919.0,0.991,88.95,,
 SUI,SUI,System2(중장기),관심,False,False,False,True,1381.0,1457.0,919.0,0.991,88.95,,
 SEI,SEI,System1(단기),진입,True,True,False,False,86.78,86.77,55.94,1.003,5.37,,
