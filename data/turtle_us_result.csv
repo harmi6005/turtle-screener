@@ -170,7 +170,7 @@ JBHT,JBHT,System2(중장기),청산,False,False,True,False,225.7,299.26,229.07,0
 JBL,JBL,System1(단기),진입,True,True,False,False,320.02,319.87,293.6,1.037,11.29,,
 JKHY,JKHY,System1(단기),청산,False,False,True,False,148.16,173.14,147.1,0.857,4.55,,
 JKHY,JKHY,System2(중장기),청산,False,False,True,False,148.16,174.36,147.1,0.851,4.55,,
-KEYS,KEYS,System2(중장기),관심,False,False,False,True,365.67,366.41,311.43,1.0,10.13,,
+KEYS,KEYS,System2(중장기),탈락,False,False,False,True,365.67,366.41,311.43,1.0,10.13,,
 KMB,KMB,System1(단기),청산,False,False,True,False,98.03,110.07,96.82,0.892,2.11,,
 KMB,KMB,System2(중장기),청산,False,False,True,False,98.03,114.1,96.82,0.861,2.11,,
 KIM,KIM,System1(단기),청산,False,False,True,False,22.28,24.04,22.08,0.927,0.33,,
