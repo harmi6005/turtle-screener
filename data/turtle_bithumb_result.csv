@@ -38,7 +38,7 @@ IOTA,IOTA,System2(중장기),관심,False,False,False,True,67.55,68.15,50.45,0.9
 THE,THE,System1(단기),관심,False,False,False,True,114.0,117.0,86.64,0.991,7.13,,
 THE,THE,System2(중장기),관심,False,False,False,True,114.0,117.0,85.24,0.991,7.13,,
 XYO,XYO,System1(단기),관심,False,False,False,True,4.86,4.96,4.22,0.991,0.21,,
-BLUE,BLUE,System1(단기),관심,False,False,False,True,15.4,15.47,11.8,0.995,1.01,,
+BLUE,BLUE,System1(단기),확정,False,False,False,True,15.4,15.47,11.8,0.995,1.01,,15.53
 BOUNTY,BOUNTY,System1(단기),관심,False,False,False,True,19.51,19.63,16.43,0.994,1.03,,
 BOUNTY,BOUNTY,System2(중장기),관심,False,False,False,True,19.51,19.63,16.3,0.994,1.03,,
 PLUME,PLUME,System1(단기),관심,False,False,False,True,25.49,26.94,16.25,1.0,1.68,,
