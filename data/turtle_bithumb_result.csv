@@ -35,7 +35,7 @@ SHELL,SHELL,System1(단기),진입,True,True,False,False,38.64,38.5,26.61,1.01,2
 SHELL,SHELL,System2(중장기),진입,True,True,False,False,38.64,38.5,26.61,1.01,2.0,,
 KMNO,KMNO,System1(단기),관심,False,False,False,True,51.21,52.23,33.05,1.0,3.37,,
 KMNO,KMNO,System2(중장기),관심,False,False,False,True,51.21,52.23,32.83,1.0,3.37,,
-FORT,FORT,System1(단기),관심,False,False,False,True,21.75,21.93,19.01,0.994,0.7,,
+FORT,FORT,System1(단기),탈락,False,False,False,True,21.75,21.93,19.01,0.994,0.7,,
 HUMA,HUMA,System1(단기),관심,False,False,False,True,34.69,35.25,30.0,0.999,2.07,,
 MMT,MMT,System1(단기),관심,False,False,False,True,231.0,237.0,170.0,0.992,13.5,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.6,0.0,,
