@@ -256,7 +256,7 @@ TTWO,TTWO,System1(단기),청산,False,False,True,False,201.53,240.54,202.37,0.8
 TTWO,TTWO,System2(중장기),청산,False,False,True,False,201.53,256.62,202.37,0.795,7.22,,
 TRGP,TRGP,System1(단기),청산,False,False,True,False,275.64,299.48,281.0,0.947,6.92,,
 TRGP,TRGP,System2(중장기),청산,False,False,True,False,275.64,307.94,281.0,0.921,6.92,,
-TER,TER,System1(단기),관심,False,False,False,True,397.19,399.4,326.37,1.0,19.04,,
+TER,TER,System1(단기),탈락,False,False,False,True,397.19,399.4,326.37,1.0,19.04,,
 TPL,TPL,System1(단기),청산,False,False,True,False,339.77,393.0,334.13,0.872,14.1,,
 TPL,TPL,System2(중장기),청산,False,False,True,False,339.77,436.6,334.13,0.785,14.1,,
 TMO,TMO,System1(단기),관심,False,False,False,True,671.8,682.98,605.19,0.993,15.45,,
