@@ -21,8 +21,8 @@ APT,APT,System1(단기),진입,True,True,False,False,1160.0,1156.0,719.0,1.023,8
 APT,APT,System2(중장기),진입,True,True,False,False,1160.0,1156.0,719.0,1.023,83.7,,
 RPL,RPL,System1(단기),진입,True,True,False,False,2831.0,2829.0,2134.0,1.029,175.7,,
 RPL,RPL,System2(중장기),진입,True,True,False,False,2831.0,2829.0,2134.0,1.029,175.7,,
-ID,ID,System1(단기),관심,False,False,False,True,52.53,52.59,42.48,0.999,2.82,,
-ID,ID,System2(중장기),관심,False,False,False,True,52.53,52.59,40.09,0.999,2.82,,
+ID,ID,System1(단기),확정,False,False,False,True,52.53,52.59,42.48,0.999,2.82,,52.61
+ID,ID,System2(중장기),확정,False,False,False,True,52.53,52.59,40.09,0.999,2.82,,52.61
 GAS,GAS,System1(단기),진입,True,True,False,False,2004.0,2004.0,1635.0,1.0,95.9,,
 RAD,RAD,System1(단기),관심,False,False,False,True,334.0,345.0,304.0,0.994,12.6,,
 ORDER,ORDER,System1(단기),관심,False,False,False,True,55.68,56.23,41.92,0.99,4.06,,
