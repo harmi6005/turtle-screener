@@ -50,6 +50,23 @@
 - full_scan_korea.py / recheck_korea.py / watchlist_check.py / holdings_check.py
   4개 파일이 각자 갖고 있던 "평일 9~15:30" 자체 판정 앞에 이 함수를 추가로 걸어서,
   공휴일에는 위 5분 스크립트들이 전부 "장마감"으로 인식하고 조용히 종료하도록 수정.
+
+[2026-09-24 변경사항 - 전체 교체 (이어서, 2차)]
+- ⭐ 사용자 요청: "지정한 종목(집중추적/watchlist) 추적은 관찰만 하는 게 아니라
+  규칙에 따라 진입과 보류 신호도 줘야 한다." 기존 watchlist_check.py는 추격필터
+  (MAX_CHASE_RATIO)와 휩쏘필터(check_whipsaw)를 전혀 적용하지 않고 단순히
+  "종가가 N일 최고가를 넘었으면 무조건 진입"이라고만 판정하고 있어서,
+  full_scan/recheck가 국장·미장·코인 전체스캔에 적용하는 것과 다른(더 단순한)
+  규칙으로 동작하고 있었음.
+- 신규 공용 함수 classify_with_whipsaw(res, hist_df, code, system) 추가: 터틀
+  판정 결과(res)에 ① 추격필터(초과율이 MAX_CHASE_RATIO를 넘으면 진입 무시)와
+  ② 휩쏘필터(직전 거래가 수익이었으면 다음 신규 돌파는 1회 보류, 2xATR만큼
+  더 유리해지면 강제 진입 허용)를 그대로 적용해서, full_scan/recheck와 완전히
+  동일한 규칙으로 '진입확정'(매수 신호) / '보류'(휩쏘 필터로 보류 중) / '관심'
+  (돌파임박) / '청산'(매도 신호) / ''(관찰중) 5단계 상태를 반환함.
+- watchlist_check.py와 bot_commands.py(handle_track_check)가 이 함수를 공통으로
+  사용하도록 교체 - 5분 자동 체크와 "추적확인" 수동 조회가 항상 같은 규칙, 같은
+  결과를 보여주게 됨.
 """
 
 import os
@@ -285,6 +302,32 @@ def record_trade_result(hist_df, code, system, direction, entry_price, exit_pric
                    'skip_active': win, 'skip_price': exit_price if win else ''}
         hist_df = pd.concat([hist_df, pd.DataFrame([new_row])], ignore_index=True)
     return hist_df
+
+
+def classify_with_whipsaw(res, hist_df, code, system, direction='long'):
+    """터틀 판정 결과(res)에 추격필터+휩쏘필터까지 적용해서 최종 상태를 반환한다.
+    full_scan_*.py/recheck_*.py가 국장·미장·코인 전체스캔에 적용하는 것과 완전히
+    동일한 규칙이며, watchlist_check.py(집중추적)와 bot_commands.py(추적확인)가
+    똑같이 이 함수를 사용해서 "관찰만 하는" 게 아니라 실제 매수/보류/매도 신호를
+    준다.
+
+    반환: (status, hist_df)
+      status: '진입확정'(매수 신호, 휩쏘필터 통과) / '보류'(신규 돌파는 맞지만
+              직전 거래가 수익이어서 이번 1회는 보류 중) / '관심'(돌파임박) /
+              '청산'(매도 신호) / ''(관찰중, 아무 신호 없음)
+    """
+    if res['fresh_entry_signal']:
+        chase_ratio = (res['close'] - res['n_high']) / res['n_high']
+        if chase_ratio > MAX_CHASE_RATIO:
+            return '', hist_df  # 이미 너무 많이 올라서 추격매수 위험 -> 신호 없음
+        allowed, hist_df = check_whipsaw(hist_df, code, system, direction,
+                                          res['n_high'], res['close'], res['atr'])
+        return ('진입확정' if allowed else '보류'), hist_df
+    elif res['exit_signal']:
+        return '청산', hist_df
+    elif res['watch_signal']:
+        return '관심', hist_df
+    return '', hist_df
 
 
 def pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN):

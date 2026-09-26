@@ -3,6 +3,15 @@
 telegram_listener.py(폴링 방식, 5분마다)와 webhook_handler.py(웹훅 방식, 즉시)가
 둘 다 이 모듈의 함수를 가져다 씁니다.
 
+이번 개정 사항 (2026-09-24, 3차):
+- ⭐ 사용자 요청: "지정한 종목 추적은 관찰만 하는 게 아니라 규칙에 따라 진입과
+  보류 신호도 줘야 한다." handle_track_check()가 자체적으로 갖고 있던 단순 판정
+  (entry_signal이면 무조건 '진입')을 common.classify_with_whipsaw()로 교체해서,
+  watchlist_check.py(5분 자동 체크)와 완전히 동일한 규칙(추격필터+휩쏘필터)으로
+  '진입확정'/'보류'/'관심'/'청산' 신호를 보여주도록 수정. WATCHLIST_COLUMNS에
+  sys1_entry_price/sys2_entry_price 컬럼을 추가하고, handle_track_start()의
+  신규 행에도 이 컬럼들을 함께 초기화하도록 수정.
+
 이번 개정 사항 (2026-09-24, 이어서):
 - 🐛 GitHub Actions 로그에서 발견된 실행 오류 수정: `TypeError: Invalid value ''
   for dtype 'float64'`. `load_watchlist()`가 `watchlist.csv`를 읽을 때
@@ -61,7 +70,8 @@ import yfinance as yf
 from datetime import datetime, timedelta
 from common import (SYSTEMS, WATCH_RATIO, calc_atr, check_turtle_breakout,
                      ALERT_MARKETS, ALERT_MARKET_LABELS,
-                     load_alert_settings, set_market_alert)
+                     load_alert_settings, set_market_alert,
+                     classify_with_whipsaw, load_trade_history)
 
 HOLDINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'holdings.csv')
 WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), 'data', 'watchlist.csv')
@@ -75,7 +85,11 @@ SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'scan_setti
 HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
                     'highest_price', 'stop_price', 'last_milestone', 'status',
                     'last_price', 'breakeven_notified', 'exit10_notified', 'exit20_notified']
-WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status']
+WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status',
+                      'sys1_entry_price', 'sys2_entry_price']
+# 2026-09-24 추가: watchlist_check.py와 동일한 휩쏘 이력 파일(읽기 전용으로 참고만 함 -
+# "추적확인"은 즉석 조회라 이 파일에 쓰기(저장)는 하지 않음).
+WATCHLIST_HIST_PATH = os.path.join(os.path.dirname(__file__), 'data', 'trade_history_watchlist.csv')
 ATR_PERIOD = 20
 ATR_MULTIPLIER = 2
 
@@ -130,7 +144,9 @@ HELP_TEXT = (
     "  2) '보유종목 초기화 확인' 입력 -> 이때 실제로 전부 삭제\n\n"
     "코드 추적시작 / 코드 추적종료(추적해제/추적중지)\n"
     "  예) 005930 추적시작\n"
-    "  매수 여부와 상관없이 특정 종목 신호만 계속 감시\n\n"
+    "  매수 여부와 상관없이 특정 종목 신호만 계속 감시\n"
+    "  전체스캔과 동일한 규칙(추격필터+휩쏘필터)으로 진입확정(매수)/보류(휩쏘\n"
+    "  필터로 이번 1회 보류)/관심(돌파임박)/청산(매도) 신호를 5분마다 알려줌\n\n"
     "추적확인 (추적목록도 동일)\n"
     "  추적 중인 종목들을 지금 이 순간 실시간 재조회해서 보여줌\n\n"
     "국장알림중지 / 국장알림시작\n"
@@ -399,7 +415,8 @@ def handle_scan_status():
 def load_watchlist():
     if os.path.exists(WATCHLIST_PATH):
         df = pd.read_csv(WATCHLIST_PATH, dtype={'code': str, 'market': str,
-                                                 'sys1_status': str, 'sys2_status': str},
+                                                 'sys1_status': str, 'sys2_status': str,
+                                                 'sys1_entry_price': str, 'sys2_entry_price': str},
                          keep_default_na=False)
         for col in WATCHLIST_COLUMNS:
             if col not in df.columns:
@@ -419,9 +436,12 @@ def handle_track_start(code, wdf):
         return wdf, f"{code}는 이미 추적 중이에요."
 
     market = detect_market(code)
-    new_row = {'code': code, 'market': market, 'sys1_status': '', 'sys2_status': ''}
+    new_row = {'code': code, 'market': market, 'sys1_status': '', 'sys2_status': '',
+               'sys1_entry_price': '', 'sys2_entry_price': ''}
     wdf = pd.concat([wdf, pd.DataFrame([new_row])], ignore_index=True)
-    return wdf, f"추적시작: {code} [{market}]\n관심/진입/청산 신호가 바뀔 때마다 알림 드릴게요."
+    return wdf, (f"추적시작: {code} [{market}]\n"
+                 f"진입확정(매수)/보류(휩쏘필터)/관심(돌파임박)/청산(매도) 신호가 "
+                 f"바뀔 때마다 알림 드릴게요.")
 
 
 def handle_track_stop(code, wdf):
@@ -434,9 +454,15 @@ def handle_track_stop(code, wdf):
 
 
 def handle_track_check(wdf):
-    """지금 이 순간 실시간으로 재조회해서 현재 상태를 분석해 보여준다."""
+    """지금 이 순간 실시간으로 재조회해서 현재 상태를 분석해 보여준다.
+    2026-09-24부터 watchlist_check.py(5분 자동 체크)와 완전히 동일한 규칙
+    (classify_with_whipsaw - 추격필터+휩쏘필터)을 사용함. 단, 이 조회는 즉석
+    조회라 휩쏘 이력 파일(WATCHLIST_HIST_PATH)에 변경사항을 저장하지는 않음
+    (실제 상태 확정/저장은 5분마다 도는 watchlist_check.py가 담당)."""
     if wdf.empty:
         return "현재 추적 중인 종목이 없어요."
+
+    hist_df = load_trade_history(WATCHLIST_HIST_PATH)
 
     lines = [f"추적 중인 종목 {len(wdf)}개 실시간 분석:"]
     for _, row in wdf.iterrows():
@@ -452,17 +478,10 @@ def handle_track_check(wdf):
             if not res:
                 lines.append(f"    {sys_name}: 데이터 부족")
                 continue
-            if res['entry_signal']:
-                status = '진입'
-            elif res['exit_signal']:
-                status = '청산'
-            elif res['watch_signal']:
-                status = '관심'
-            else:
-                status = '관찰중'
+            status, hist_df = classify_with_whipsaw(res, hist_df, code, sys_name)
             gap_pct = (res['close'] - res['n_high']) / res['n_high'] * 100
             lines.append(
-                f"    {sys_name}: {status} | 현재가 {res['close']} / "
+                f"    {sys_name}: {status or '관찰중'} | 현재가 {res['close']} / "
                 f"N일고가 {res['n_high']} ({gap_pct:+.2f}%) / N일저가 {res['n_low']}"
             )
     return "\n".join(lines)
