@@ -29,7 +29,7 @@ MAV,MAV,System2(중장기),탈락,False,False,False,True,16.53,16.9,13.14,0.993,
 FLUX,FLUX,System1(단기),진입,True,True,False,False,98.06,97.81,69.23,1.033,5.3,,
 FLUX,FLUX,System2(중장기),진입,True,True,False,False,98.06,97.81,66.13,1.033,5.3,,
 GAS,GAS,System2(중장기),관심,False,False,False,True,2081.0,2203.0,1622.0,0.999,105.7,,
-RAD,RAD,System1(단기),관심,False,False,False,True,340.0,345.0,304.0,0.994,12.6,,
+RAD,RAD,System1(단기),확정,False,False,False,True,340.0,345.0,304.0,0.994,12.6,,345.0
 W,W,System1(단기),진입,True,True,False,False,17.05,17.01,11.87,1.005,1.05,,
 W,W,System2(중장기),진입,True,True,False,False,17.05,17.01,11.87,1.005,1.05,,
 MOCA,MOCA,System1(단기),탈락,False,False,False,True,14.34,14.42,11.49,0.997,0.69,,
