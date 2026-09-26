@@ -50,8 +50,8 @@ BABY,BABY,System2(중장기),관심,False,False,False,True,18.28,19.18,13.98,0.9
 KMNO,KMNO,System1(단기),관심,False,False,False,True,67.25,69.46,34.13,0.997,4.57,,
 KMNO,KMNO,System2(중장기),관심,False,False,False,True,67.25,69.46,32.83,0.997,4.57,,
 PARTI,PARTI,System1(단기),관심,False,False,False,True,35.02,36.66,28.36,0.994,2.03,,
-SIGN,SIGN,System1(단기),관심,False,False,False,True,18.2,18.4,13.94,0.995,1.02,,
-SIGN,SIGN,System2(중장기),관심,False,False,False,True,18.2,18.4,13.04,0.995,1.02,,
+SIGN,SIGN,System1(단기),확정,False,False,False,True,18.2,18.4,13.94,0.995,1.02,,18.43
+SIGN,SIGN,System2(중장기),확정,False,False,False,True,18.2,18.4,13.04,0.995,1.02,,18.43
 HOLO,HOLO,System1(단기),관심,False,False,False,True,91.18,94.03,73.32,0.995,4.86,,
 SOMI,SOMI,System1(단기),진입,True,True,False,False,296.0,296.0,208.0,1.017,16.3,,
 SOMI,SOMI,System2(중장기),진입,True,True,False,False,296.0,296.0,173.0,1.017,16.3,,
