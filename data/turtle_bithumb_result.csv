@@ -61,7 +61,7 @@ SOMI,SOMI,System2(중장기),진입,True,True,False,False,280.0,279.0,163.0,1.01
 FLUID,FLUID,System1(단기),관심,False,False,False,True,1941.0,1977.0,1435.0,0.993,101.0,,
 EDGE,EDGE,System1(단기),관심,False,False,False,True,161.0,178.0,87.31,0.994,14.26,,
 EDGE,EDGE,System2(중장기),관심,False,False,False,True,161.0,178.0,87.31,0.994,14.26,,
-ELSA,ELSA,System1(단기),관심,False,False,False,True,78.79,80.3,65.32,0.996,4.57,,
+ELSA,ELSA,System1(단기),탈락,False,False,False,True,78.79,80.3,65.32,0.996,4.57,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.6,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.48,0.0,,
 AEON,AEON,System1(단기),관심,False,False,False,True,77.9,87.84,64.3,0.99,9.35,,
