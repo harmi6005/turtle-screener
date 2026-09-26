@@ -43,8 +43,8 @@ IO,IO,System2(중장기),진입,True,True,False,False,223.0,222.0,158.0,1.027,14
 GRAM,GRAM,System1(단기),관심,False,False,False,True,1959.0,1985.0,1759.0,0.991,56.25,,
 EIGEN,EIGEN,System1(단기),진입,True,True,False,False,345.0,345.0,255.0,1.041,27.25,,
 EIGEN,EIGEN,System2(중장기),진입,True,True,False,False,345.0,345.0,255.0,1.041,27.25,,
-ME,ME,System1(단기),관심,False,False,False,True,105.0,107.0,80.81,0.991,5.03,,
-ME,ME,System2(중장기),관심,False,False,False,True,105.0,107.0,80.81,0.991,5.03,,
+ME,ME,System1(단기),확정,False,False,False,True,105.0,107.0,80.81,0.991,5.03,,107.0
+ME,ME,System2(중장기),확정,False,False,False,True,105.0,107.0,80.81,0.991,5.03,,107.0
 THE,THE,System1(단기),관심,False,False,False,True,112.0,117.0,86.64,0.991,7.13,,
 THE,THE,System2(중장기),관심,False,False,False,True,112.0,117.0,85.24,0.991,7.13,,
 XYO,XYO,System1(단기),관심,False,False,False,True,4.86,4.96,4.22,0.991,0.21,,
