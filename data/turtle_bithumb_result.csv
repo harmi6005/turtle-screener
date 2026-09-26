@@ -49,7 +49,7 @@ PLUME,PLUME,System2(중장기),관심,False,False,False,True,25.18,26.94,16.25,1
 KMNO,KMNO,System1(단기),진입,True,True,False,False,59.18,58.95,33.51,1.013,3.92,,
 KMNO,KMNO,System2(중장기),진입,True,True,False,False,59.18,58.95,32.83,1.013,3.92,,
 FORT,FORT,System1(단기),관심,False,False,False,True,21.61,22.07,19.01,0.998,0.72,,
-TOWNS,TOWNS,System1(단기),관심,False,False,False,True,2.93,3.03,2.28,0.991,0.19,,
+TOWNS,TOWNS,System1(단기),확정,False,False,False,True,2.93,3.03,2.28,0.991,0.19,,3.04
 FLUID,FLUID,System1(단기),관심,False,False,False,True,1923.0,1977.0,1435.0,0.993,101.25,,
 EDGE,EDGE,System1(단기),관심,False,False,False,True,149.0,178.0,87.31,0.994,14.26,,
 EDGE,EDGE,System2(중장기),관심,False,False,False,True,149.0,178.0,87.31,0.994,14.26,,
