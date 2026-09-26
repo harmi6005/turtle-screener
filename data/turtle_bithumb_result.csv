@@ -32,8 +32,8 @@ FET,FET,System2(중장기),탈락,False,False,False,True,331.0,333.0,202.0,0.994
 ID,ID,System1(단기),진입,True,True,False,False,52.76,52.59,42.48,1.004,2.83,,
 ID,ID,System2(중장기),진입,True,True,False,False,52.76,52.59,40.09,1.004,2.83,,
 GTC,GTC,System1(단기),진입,True,True,False,False,123.0,123.0,101.0,1.024,5.25,,
-BIGTIME,BIGTIME,System1(단기),관심,False,False,False,True,11.82,11.97,9.38,0.991,0.73,,
-BIGTIME,BIGTIME,System2(중장기),관심,False,False,False,True,11.82,11.97,8.88,0.991,0.73,,
+BIGTIME,BIGTIME,System1(단기),확정,False,False,False,True,11.82,11.97,9.38,0.991,0.73,,11.98
+BIGTIME,BIGTIME,System2(중장기),확정,False,False,False,True,11.82,11.97,8.88,0.991,0.73,,11.98
 RAD,RAD,System1(단기),관심,False,False,False,True,336.0,345.0,304.0,0.994,12.6,,
 ZRO,ZRO,System1(단기),관심,False,False,False,True,2179.0,2222.0,1264.0,0.991,153.9,,
 ZRO,ZRO,System2(중장기),관심,False,False,False,True,2179.0,2222.0,1258.0,0.991,153.9,,
