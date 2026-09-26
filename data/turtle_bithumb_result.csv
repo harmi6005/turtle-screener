@@ -23,8 +23,8 @@ BTT,BTT,System1(단기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 WNCG,WNCG,System1(단기),관심,False,False,False,True,6.2,6.28,5.57,0.992,0.25,,
 AHT,AHT,System1(단기),확정,False,False,False,True,1.63,1.65,1.4,0.996,0.1,,1.65
-IMX,IMX,System1(단기),관심,False,False,False,True,218.0,220.0,158.0,0.995,12.6,,
-IMX,IMX,System2(중장기),관심,False,False,False,True,218.0,220.0,158.0,0.995,12.6,,
+IMX,IMX,System1(단기),확정,False,False,False,True,218.0,220.0,158.0,0.995,12.6,,221.0
+IMX,IMX,System2(중장기),확정,False,False,False,True,218.0,220.0,158.0,0.995,12.6,,221.0
 CFX,CFX,System1(단기),관심,False,False,False,True,74.37,75.71,59.83,0.998,3.29,,
 CFX,CFX,System2(중장기),관심,False,False,False,True,74.37,75.71,59.83,0.998,3.29,,
 ID,ID,System1(단기),진입,True,True,False,False,52.63,52.59,42.48,1.014,2.86,,
