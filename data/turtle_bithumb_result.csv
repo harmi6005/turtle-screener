@@ -65,7 +65,7 @@ ELSA,ELSA,System1(단기),탈락,False,False,False,True,78.79,80.3,65.32,0.996,4
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.6,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.48,0.0,,
 AEON,AEON,System1(단기),관심,False,False,False,True,77.9,87.84,64.3,0.99,9.35,,
-RE,RE,System1(단기),관심,False,False,False,True,638.0,650.0,550.0,0.998,35.25,,
+RE,RE,System1(단기),확정,False,False,False,True,638.0,650.0,550.0,0.998,35.25,,652.0
 AXS,AXS,System1(단기),확정,False,False,False,True,1604.0,1657.0,1213.0,0.992,76.5,,1663.0
 AXS,AXS,System2(중장기),확정,False,False,False,True,1604.0,1657.0,1213.0,0.992,76.5,,1663.0
 BIGTIME,BIGTIME,System1(단기),확정,False,False,False,True,11.82,11.97,9.38,0.991,0.73,,11.98
