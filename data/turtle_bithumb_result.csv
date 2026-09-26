@@ -18,7 +18,7 @@ MANA,MANA,System2(중장기),진입,True,True,False,False,124.0,124.0,95.0,1.0,5
 ALICE,ALICE,System1(단기),진입,True,True,False,False,215.0,214.0,169.0,1.019,9.9,,
 AXS,AXS,System1(단기),관심,False,False,False,True,1604.0,1657.0,1213.0,0.992,76.5,,
 AXS,AXS,System2(중장기),관심,False,False,False,True,1604.0,1657.0,1213.0,0.992,76.5,,
-ONT,ONT,System1(단기),관심,False,False,False,True,80.2,80.44,64.99,0.997,4.23,,
+ONT,ONT,System1(단기),탈락,False,False,False,True,80.2,80.44,64.99,0.997,4.23,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 1INCH,1INCH,System1(단기),진입,True,True,False,False,140.0,140.0,117.0,1.0,5.85,,
