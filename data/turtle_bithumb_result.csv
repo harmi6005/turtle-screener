@@ -2,8 +2,8 @@
 A,A,System1(단기),진입,True,True,False,False,137.0,137.0,101.0,1.022,7.5,,
 A,A,System2(중장기),진입,True,True,False,False,137.0,137.0,101.0,1.022,7.5,,
 ICX,ICX,System1(단기),탈락,False,False,False,True,19.43,23.0,15.32,0.996,2.45,,
-FCT2,FCT2,System1(단기),관심,False,False,False,True,13.0,13.17,10.93,0.998,0.78,,
-FCT2,FCT2,System2(중장기),관심,False,False,False,True,13.0,13.17,9.68,0.998,0.78,,
+FCT2,FCT2,System1(단기),확정,False,False,False,True,13.0,13.17,10.93,0.998,0.78,,13.18
+FCT2,FCT2,System2(중장기),확정,False,False,False,True,13.0,13.17,9.68,0.998,0.78,,13.18
 CTC,CTC,System1(단기),진입,True,True,False,False,159.0,159.0,125.0,1.025,11.95,,
 CTC,CTC,System2(중장기),진입,True,True,False,False,159.0,159.0,125.0,1.025,11.95,,
 AAVE,AAVE,System1(단기),진입,True,True,False,False,209100.0,208900.0,155700.0,1.011,11775.0,,
