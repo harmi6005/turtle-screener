@@ -1,7 +1,7 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ICX,ICX,System1(단기),관심,False,False,False,True,19.39,23.0,15.32,0.996,2.44,,
-BAT,BAT,System1(단기),관심,False,False,False,True,127.0,128.0,94.53,0.992,6.87,,
-BAT,BAT,System2(중장기),관심,False,False,False,True,127.0,128.0,94.53,0.992,6.87,,
+BAT,BAT,System1(단기),확정,False,False,False,True,127.0,128.0,94.53,0.992,6.87,,128.0
+BAT,BAT,System2(중장기),확정,False,False,False,True,127.0,128.0,94.53,0.992,6.87,,128.0
 FCT2,FCT2,System1(단기),관심,False,False,False,True,12.91,13.17,10.93,0.995,0.78,,
 FCT2,FCT2,System2(중장기),관심,False,False,False,True,12.91,13.17,9.68,0.995,0.78,,
 RSR,RSR,System1(단기),진입,True,True,False,False,2.43,2.42,1.81,1.003,0.15,,
