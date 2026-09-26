@@ -47,8 +47,8 @@ KAITO,KAITO,System1(단기),관심,False,False,False,True,481.0,499.0,378.0,0.99
 AVL,AVL,System1(단기),관심,False,False,False,True,34.41,36.22,27.16,0.991,2.93,,
 BABY,BABY,System1(단기),관심,False,False,False,True,18.28,19.18,13.98,0.996,1.3,,
 BABY,BABY,System2(중장기),관심,False,False,False,True,18.28,19.18,13.98,0.996,1.3,,
-KMNO,KMNO,System1(단기),관심,False,False,False,True,67.25,69.46,34.13,0.997,4.57,,
-KMNO,KMNO,System2(중장기),관심,False,False,False,True,67.25,69.46,32.83,0.997,4.57,,
+KMNO,KMNO,System1(단기),탈락,False,False,False,True,67.25,69.46,34.13,0.997,4.57,,
+KMNO,KMNO,System2(중장기),탈락,False,False,False,True,67.25,69.46,32.83,0.997,4.57,,
 PARTI,PARTI,System1(단기),관심,False,False,False,True,35.02,36.66,28.36,0.994,2.03,,
 SIGN,SIGN,System1(단기),확정,False,False,False,True,18.2,18.4,13.94,0.995,1.02,,18.43
 SIGN,SIGN,System2(중장기),확정,False,False,False,True,18.2,18.4,13.04,0.995,1.02,,18.43
