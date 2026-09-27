@@ -1,7 +1,7 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 TRX,TRX,System1(단기),청산,False,False,True,False,452.0,476.0,452.0,0.966,8.4,,
-BAT,BAT,System1(단기),관심,False,False,False,True,131.0,132.0,99.94,0.992,6.99,,
-BAT,BAT,System2(중장기),관심,False,False,False,True,131.0,132.0,94.53,0.992,6.99,,
+BAT,BAT,System1(단기),확정,False,False,False,True,131.0,132.0,99.94,0.992,6.99,,132.0
+BAT,BAT,System2(중장기),확정,False,False,False,True,131.0,132.0,94.53,0.992,6.99,,132.0
 AAVE,AAVE,System1(단기),관심,False,False,False,True,207300.0,211500.0,171200.0,0.99,11505.0,,
 AAVE,AAVE,System2(중장기),관심,False,False,False,True,207300.0,211500.0,155700.0,0.99,11505.0,,
 SNX,SNX,System1(단기),청산,False,False,True,False,362.0,530.0,356.0,0.717,60.2,,
