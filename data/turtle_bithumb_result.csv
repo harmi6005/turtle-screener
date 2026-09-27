@@ -17,7 +17,7 @@ CFX,CFX,System2(중장기),관심,False,False,False,True,75.41,77.1,59.83,0.99,3
 ACS,ACS,System1(단기),관심,False,False,False,True,0.22,0.23,0.21,0.995,0.01,,
 SEI,SEI,System1(단기),진입,True,True,False,False,104.0,104.0,59.93,1.0,6.61,,
 SEI,SEI,System2(중장기),진입,True,True,False,False,104.0,104.0,55.94,1.0,6.61,,
-VIRTUAL,VIRTUAL,System1(단기),관심,False,False,False,True,1118.0,1126.0,834.0,0.994,63.15,,
+VIRTUAL,VIRTUAL,System1(단기),확정,False,False,False,True,1118.0,1126.0,834.0,0.994,63.15,,1129.0
 ME,ME,System1(단기),관심,False,False,False,True,106.0,110.0,84.75,0.991,5.32,,
 ME,ME,System2(중장기),관심,False,False,False,True,106.0,110.0,80.81,0.991,5.32,,
 BABY,BABY,System1(단기),관심,False,False,False,True,18.94,19.48,14.46,0.995,1.34,,
