@@ -26,8 +26,8 @@ IMX,IMX,System1(단기),관심,False,False,False,True,227.0,230.0,158.0,0.991,12
 IMX,IMX,System2(중장기),관심,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,
 SC,SC,System1(단기),관심,False,False,False,True,1.56,1.79,1.17,0.997,0.2,,
 SC,SC,System2(중장기),관심,False,False,False,True,1.56,1.79,0.97,0.997,0.2,,
-NEAR,NEAR,System1(단기),관심,False,False,False,True,6915.0,7060.0,3325.0,0.994,602.6,,
-NEAR,NEAR,System2(중장기),관심,False,False,False,True,6915.0,7060.0,3056.0,0.994,602.6,,
+NEAR,NEAR,System1(단기),확정,False,False,False,True,6915.0,7060.0,3325.0,0.994,602.6,,7090.0
+NEAR,NEAR,System2(중장기),확정,False,False,False,True,6915.0,7060.0,3056.0,0.994,602.6,,7090.0
 ATH,ATH,System1(단기),관심,False,False,False,True,8.52,8.93,5.65,0.991,0.56,,
 ATH,ATH,System2(중장기),관심,False,False,False,True,8.52,8.93,5.6,0.991,0.56,,
 TAIKO,TAIKO,System1(단기),확정,False,False,False,True,127.0,128.0,104.0,0.992,7.6,,128.0
