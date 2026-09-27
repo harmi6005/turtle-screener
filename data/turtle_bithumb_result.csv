@@ -30,8 +30,8 @@ NEAR,NEAR,System1(단기),관심,False,False,False,True,6915.0,7060.0,3325.0,0.9
 NEAR,NEAR,System2(중장기),관심,False,False,False,True,6915.0,7060.0,3056.0,0.994,602.6,,
 ATH,ATH,System1(단기),관심,False,False,False,True,8.52,8.93,5.65,0.991,0.56,,
 ATH,ATH,System2(중장기),관심,False,False,False,True,8.52,8.93,5.6,0.991,0.56,,
-TAIKO,TAIKO,System1(단기),관심,False,False,False,True,127.0,128.0,104.0,0.992,7.6,,
-TAIKO,TAIKO,System2(중장기),관심,False,False,False,True,127.0,128.0,100.0,0.992,7.6,,
+TAIKO,TAIKO,System1(단기),확정,False,False,False,True,127.0,128.0,104.0,0.992,7.6,,128.0
+TAIKO,TAIKO,System2(중장기),확정,False,False,False,True,127.0,128.0,100.0,0.992,7.6,,128.0
 AVAIL,AVAIL,System1(단기),관심,False,False,False,True,3.46,3.49,2.76,0.998,0.24,,
 LISTA,LISTA,System1(단기),관심,False,False,False,True,117.0,120.0,92.64,0.992,6.83,,
 LISTA,LISTA,System2(중장기),관심,False,False,False,True,117.0,120.0,91.88,0.992,6.83,,
