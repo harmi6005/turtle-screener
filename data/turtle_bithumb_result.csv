@@ -42,7 +42,7 @@ SAFE,SAFE,System2(중장기),관심,False,False,False,True,154.0,158.0,120.0,0.9
 MOVE,MOVE,System1(단기),관심,False,False,False,True,13.1,13.68,10.16,0.996,0.79,,
 DEEP,DEEP,System1(단기),진입,True,True,False,False,31.58,31.57,19.03,1.027,2.06,,
 DEEP,DEEP,System2(중장기),진입,True,True,False,False,31.58,31.57,19.03,1.027,2.06,,
-ERA,ERA,System1(단기),관심,False,False,False,True,94.08,95.68,73.78,0.993,3.91,,
+ERA,ERA,System1(단기),확정,False,False,False,True,94.08,95.68,73.78,0.993,3.91,,95.78
 BERA,BERA,System1(단기),관심,False,False,False,True,315.0,331.0,234.0,0.991,21.8,,
 BERA,BERA,System2(중장기),관심,False,False,False,True,315.0,331.0,228.0,0.991,21.8,,
 KAITO,KAITO,System1(단기),관심,False,False,False,True,476.0,499.0,378.0,0.996,29.1,,
