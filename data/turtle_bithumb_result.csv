@@ -35,8 +35,8 @@ TAIKO,TAIKO,System2(중장기),확정,False,False,False,True,127.0,128.0,100.0,0
 AVAIL,AVAIL,System1(단기),관심,False,False,False,True,3.46,3.49,2.76,0.998,0.24,,
 LISTA,LISTA,System1(단기),관심,False,False,False,True,117.0,120.0,92.64,0.992,6.83,,
 LISTA,LISTA,System2(중장기),관심,False,False,False,True,117.0,120.0,91.88,0.992,6.83,,
-EIGEN,EIGEN,System1(단기),관심,False,False,False,True,361.0,382.0,255.0,0.995,26.95,,
-EIGEN,EIGEN,System2(중장기),관심,False,False,False,True,361.0,382.0,255.0,0.995,26.95,,
+EIGEN,EIGEN,System1(단기),확정,False,False,False,True,361.0,382.0,255.0,0.995,26.95,,382.0
+EIGEN,EIGEN,System2(중장기),확정,False,False,False,True,361.0,382.0,255.0,0.995,26.95,,382.0
 SAFE,SAFE,System1(단기),관심,False,False,False,True,154.0,158.0,120.0,0.994,8.55,,
 SAFE,SAFE,System2(중장기),관심,False,False,False,True,154.0,158.0,120.0,0.994,8.55,,
 MOVE,MOVE,System1(단기),관심,False,False,False,True,13.1,13.68,10.16,0.996,0.79,,
