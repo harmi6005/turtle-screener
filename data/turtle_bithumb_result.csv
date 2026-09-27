@@ -22,8 +22,8 @@ OP,OP,System1(단기),관심,False,False,False,True,196.0,204.0,125.0,0.995,13.2
 OP,OP,System2(중장기),관심,False,False,False,True,196.0,204.0,125.0,0.995,13.2,,
 RPL,RPL,System1(단기),관심,False,False,False,True,2807.0,2940.0,2134.0,0.994,171.45,,
 RPL,RPL,System2(중장기),관심,False,False,False,True,2807.0,2940.0,2134.0,0.994,171.45,,
-IMX,IMX,System1(단기),관심,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,
-IMX,IMX,System2(중장기),관심,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,
+IMX,IMX,System1(단기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
+IMX,IMX,System2(중장기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
 SC,SC,System1(단기),관심,False,False,False,True,1.56,1.79,1.17,0.997,0.2,,
 SC,SC,System2(중장기),관심,False,False,False,True,1.56,1.79,0.97,0.997,0.2,,
 NEAR,NEAR,System1(단기),확정,False,False,False,True,6915.0,7060.0,3325.0,0.994,602.6,,7090.0
