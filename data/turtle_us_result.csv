@@ -124,7 +124,7 @@ EXR,EXR,System1(단기),청산,False,False,True,False,133.35,143.59,132.01,0.929
 EXR,EXR,System2(중장기),청산,False,False,True,False,133.35,157.03,132.01,0.849,2.57,,
 FICO,FICO,System1(단기),청산,False,False,True,False,863.09,1177.0,855.0,0.739,47.51,,
 FICO,FICO,System2(중장기),청산,False,False,True,False,863.09,1410.17,855.0,0.617,47.51,,
-FAST,FAST,System1(단기),관심,False,False,False,True,50.43,51.52,48.53,0.991,1.02,,
+FAST,FAST,System1(단기),탈락,False,False,False,True,50.43,51.52,48.53,0.991,1.02,,
 FDX,FDX,System1(단기),청산,False,False,True,False,285.85,333.72,279.34,0.859,7.28,,
 FDX,FDX,System2(중장기),청산,False,False,True,False,285.85,340.35,279.34,0.842,7.28,,
 FDXF,FDXF,System1(단기),청산,False,False,True,False,113.18,135.7,113.75,0.867,4.89,,
@@ -265,7 +265,7 @@ TTWO,TTWO,System1(단기),청산,False,False,True,False,201.44,240.54,202.37,0.8
 TTWO,TTWO,System2(중장기),청산,False,False,True,False,201.44,256.62,202.37,0.795,7.23,,
 TRGP,TRGP,System1(단기),청산,False,False,True,False,277.84,299.48,281.0,0.947,6.92,,
 TRGP,TRGP,System2(중장기),청산,False,False,True,False,277.84,307.94,281.0,0.921,6.92,,
-TEL,TEL,System2(중장기),관심,False,False,False,True,218.59,221.12,199.82,0.993,6.05,,
+TEL,TEL,System2(중장기),탈락,False,False,False,True,218.59,221.12,199.82,0.993,6.05,,
 TPL,TPL,System1(단기),청산,False,False,True,False,341.07,393.0,334.13,0.873,14.12,,
 TPL,TPL,System2(중장기),청산,False,False,True,False,341.07,436.6,334.13,0.786,14.12,,
 TMO,TMO,System1(단기),탈락,False,False,False,True,675.0,682.98,605.19,0.993,15.45,,
@@ -310,5 +310,5 @@ ZTS,ZTS,System2(중장기),청산,False,False,True,False,71.05,80.17,69.93,0.886
 ROK,ROK,System1(단기),확정,False,False,False,True,432.93,436.29,406.92,0.996,10.14,,436.3
 TXN,TXN,System1(단기),확정,False,False,False,True,270.65,273.33,255.82,0.996,7.88,,274.16
 COHR,COHR,System1(단기),확정,False,False,False,True,314.01,315.7,255.25,0.997,18.73,,315.79
-ARE,ARE,System2(중장기),확정,False,False,False,True,55.35,55.74,46.74,0.997,1.77,,55.92
+ARE,ARE,System2(중장기),확정이탈,False,False,False,True,55.35,55.74,46.74,0.997,1.77,,55.92
 ACN,ACN,System2(중장기),확정이탈,False,False,False,True,187.68,191.9,157.76,0.99,6.87,190.04,192.22
