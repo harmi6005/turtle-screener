@@ -18,7 +18,7 @@ AIG,AIG,System2(중장기),청산,False,False,True,False,73.62,80.51,73.46,0.922
 AWK,AWK,System1(단기),청산,False,False,True,False,130.04,142.37,129.8,0.92,2.44,,
 AWK,AWK,System2(중장기),청산,False,False,True,False,130.04,142.37,129.8,0.92,2.44,,
 AME,AME,System1(단기),관심,False,False,False,True,250.91,252.78,230.01,0.996,4.89,,
-APH,APH,System1(단기),관심,False,False,False,True,82.75,85.01,76.62,0.996,2.74,,
+APH,APH,System1(단기),확정,False,False,False,True,82.75,85.01,76.62,0.996,2.74,,85.11
 ADI,ADI,System1(단기),관심,False,False,False,True,388.88,395.92,358.66,0.999,10.51,,
 AON,AON,System1(단기),청산,False,False,True,False,272.74,358.71,275.38,0.776,9.42,,
 AON,AON,System2(중장기),청산,False,False,True,False,272.74,381.47,275.38,0.73,9.42,,
