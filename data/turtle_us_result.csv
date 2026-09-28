@@ -81,8 +81,8 @@ CSGP,CSGP,System1(단기),청산,False,False,True,False,27.09,32.79,27.28,0.846,
 CSGP,CSGP,System2(중장기),청산,False,False,True,False,27.09,33.82,27.28,0.821,1.18,,
 CRH,CRH,System1(단기),청산,False,False,True,False,84.0,96.87,83.48,0.885,2.52,,
 CRH,CRH,System2(중장기),청산,False,False,True,False,84.0,105.96,83.48,0.809,2.52,,
-DHR,DHR,System1(단기),관심,False,False,False,True,224.53,226.65,199.09,0.994,5.53,,
-DHR,DHR,System2(중장기),관심,False,False,False,True,224.53,226.65,199.09,0.994,5.53,,
+DHR,DHR,System1(단기),확정,False,False,False,True,224.53,226.65,199.09,0.994,5.53,,226.89
+DHR,DHR,System2(중장기),확정,False,False,False,True,224.53,226.65,199.09,0.994,5.53,,226.89
 DRI,DRI,System1(단기),청산,False,False,True,False,197.86,223.17,198.06,0.907,5.27,,
 DRI,DRI,System2(중장기),청산,False,False,True,False,197.86,229.76,198.06,0.881,5.27,,
 D,D,System1(단기),청산,False,False,True,False,60.29,66.81,60.14,0.911,1.06,,
@@ -240,7 +240,7 @@ URI,URI,System1(단기),관심,False,False,False,True,1044.28,1056.99,968.51,0.9
 VRSN,VRSN,System1(단기),청산,False,False,True,False,282.16,310.0,286.82,0.92,7.57,,
 VRSK,VRSK,System1(단기),청산,False,False,True,False,168.91,196.68,167.5,0.862,5.83,,
 VRSK,VRSK,System2(중장기),청산,False,False,True,False,168.91,225.48,167.5,0.752,5.83,,
-VTRS,VTRS,System1(단기),관심,False,False,False,True,17.91,17.98,16.38,0.997,0.41,,
+VTRS,VTRS,System1(단기),확정,False,False,False,True,17.91,17.98,16.38,0.997,0.41,,17.99
 VST,VST,System1(단기),청산,False,False,True,False,137.26,154.65,135.98,0.894,4.33,,
 WRB,WRB,System1(단기),청산,False,False,True,False,67.18,71.36,66.32,0.943,1.29,,
 WRB,WRB,System2(중장기),청산,False,False,True,False,67.18,77.34,66.32,0.87,1.29,,
