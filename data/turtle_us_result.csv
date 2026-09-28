@@ -253,7 +253,7 @@ ROL,ROL,System1(단기),청산,False,False,True,False,30.03,36.64,30.12,0.828,0.
 ROL,ROL,System2(중장기),청산,False,False,True,False,30.03,46.14,30.12,0.658,0.88,,
 ROP,ROP,System1(단기),청산,False,False,True,False,358.56,429.6,360.65,0.847,9.71,,
 ROP,ROP,System2(중장기),청산,False,False,True,False,358.56,429.6,360.65,0.847,9.71,,
-ROST,ROST,System1(단기),관심,False,False,False,True,236.12,237.0,222.15,1.0,4.68,,
+ROST,ROST,System1(단기),확정,False,False,False,True,236.12,237.0,222.15,1.0,4.68,,237.4
 SPGI,SPGI,System1(단기),청산,False,False,True,False,403.3,454.92,400.61,0.892,10.78,,
 SPGI,SPGI,System2(중장기),청산,False,False,True,False,403.3,460.98,400.61,0.88,10.78,,
 SRE,SRE,System1(단기),청산,False,False,True,False,77.93,86.46,77.67,0.902,1.77,,
