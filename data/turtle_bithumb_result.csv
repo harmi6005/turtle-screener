@@ -111,7 +111,7 @@ ETC,ETC,System1(단기),확정,False,False,False,True,11670.0,12260.0,9690.0,0.9
 UOS,UOS,System1(단기),확정,False,False,False,True,4.98,4.99,4.22,0.999,0.28,,4.99
 MERL,MERL,System1(단기),확정,False,False,False,True,37.45,37.53,29.7,0.998,2.89,,37.6
 MERL,MERL,System2(중장기),확정,False,False,False,True,37.45,37.53,26.8,0.998,2.89,,37.6
-PUFFER,PUFFER,System1(단기),확정,False,False,False,True,40.0,42.3,24.06,0.999,5.55,,42.39
+PUFFER,PUFFER,System1(단기),확정이탈,False,False,False,True,40.0,42.3,24.06,0.999,5.55,,42.39
 PUFFER,PUFFER,System2(중장기),확정,False,False,False,True,40.0,42.3,17.51,0.999,5.55,,42.39
 AKT,AKT,System2(중장기),확정,False,False,False,True,808.0,845.0,667.0,0.994,50.85,,845.0
 BNB,BNB,System1(단기),확정,False,False,False,True,1061000.0,1065000.0,963500.0,0.996,33950.0,,1065000.0
