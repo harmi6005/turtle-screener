@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 TRX,TRX,System1(단기),청산,False,False,True,False,454.0,476.0,452.0,0.966,8.45,,
 TRX,TRX,System2(중장기),청산,False,False,True,False,454.0,482.0,451.0,0.954,8.45,,
-FCT2,FCT2,System1(단기),관심,False,False,False,True,13.09,13.18,10.93,0.993,0.8,,
-FCT2,FCT2,System2(중장기),관심,False,False,False,True,13.09,13.18,9.68,0.993,0.8,,
+FCT2,FCT2,System1(단기),탈락,False,False,False,True,13.09,13.18,10.93,0.993,0.8,,
+FCT2,FCT2,System2(중장기),탈락,False,False,False,True,13.09,13.18,9.68,0.993,0.8,,
 AAVE,AAVE,System1(단기),관심,False,False,False,True,202800.0,211500.0,171200.0,0.993,11765.0,,
 AAVE,AAVE,System2(중장기),관심,False,False,False,True,202800.0,211500.0,155700.0,0.993,11765.0,,
 NMR,NMR,System1(단기),진입,True,True,False,False,13710.0,13710.0,12090.0,1.048,534.5,,
