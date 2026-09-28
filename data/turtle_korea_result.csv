@@ -1097,7 +1097,7 @@
 454180,KIWOOM 차이나내수소비TOP CSI,System1(단기),청산,False,False,True,False,7330.0,7755.0,7145.0,0.0,459.5,,
 454180,KIWOOM 차이나내수소비TOP CSI,System2(중장기),청산,False,False,True,False,7330.0,8510.0,7145.0,0.0,459.5,,
 454780,KIWOOM 종합채권(AA-이상)액티브,System1(단기),관심,False,False,False,True,99685.0,99960.0,98855.0,0.997,195.5,,
-454780,KIWOOM 종합채권(AA-이상)액티브,System2(중장기),관심,False,False,False,True,99685.0,100045.0,98855.0,0.996,195.5,,
+454780,KIWOOM 종합채권(AA-이상)액티브,System2(중장기),탈락,False,False,False,True,99685.0,100045.0,98855.0,0.996,195.5,,
 455660,ACE 미국하이일드액티브(H),System1(단기),탈락,False,False,False,True,9375.0,9460.0,9305.0,0.992,27.45,,
 455660,ACE 미국하이일드액티브(H),System2(중장기),탈락,False,False,False,True,9375.0,9460.0,9305.0,0.992,27.45,,
 455860,SOL 2차전지소부장Fn,System1(단기),청산,False,False,True,False,4355.0,4920.0,4330.0,0.902,174.75,,
