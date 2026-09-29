@@ -167,7 +167,7 @@ NEE,NEE,System1(단기),청산,False,False,True,False,74.89,84.38,75.15,0.893,1.
 NEE,NEE,System2(중장기),청산,False,False,True,False,74.89,90.31,75.15,0.835,1.19,,
 NI,NI,System1(단기),청산,False,False,True,False,38.95,42.18,38.95,0.925,0.58,,
 NI,NI,System2(중장기),청산,False,False,True,False,38.95,47.22,38.95,0.826,0.58,,
-NDSN,NDSN,System1(단기),관심,False,False,False,True,331.48,332.9,306.03,1.0,5.85,,
+NDSN,NDSN,System1(단기),탈락,False,False,False,True,331.48,332.9,306.03,1.0,5.85,,
 NOC,NOC,System1(단기),청산,False,False,True,False,503.75,549.77,503.94,0.919,11.51,,
 NOC,NOC,System2(중장기),청산,False,False,True,False,503.75,591.82,503.94,0.853,11.51,,
 NUE,NUE,System1(단기),청산,False,False,True,False,241.21,268.47,241.21,0.909,7.53,,
@@ -195,7 +195,7 @@ PEG,PEG,System1(단기),청산,False,False,True,False,66.24,73.98,66.15,0.898,1.
 PEG,PEG,System2(중장기),청산,False,False,True,False,66.24,80.91,66.15,0.821,1.04,,
 PSA,PSA,System1(단기),청산,False,False,True,False,282.8,307.78,283.09,0.923,5.87,,
 PSA,PSA,System2(중장기),청산,False,False,True,False,282.8,332.14,283.09,0.855,5.87,,
-PWR,PWR,System1(단기),관심,False,False,False,True,653.51,656.51,607.45,0.998,20.57,,
+PWR,PWR,System1(단기),탈락,False,False,False,True,653.51,656.51,607.45,0.998,20.57,,
 Q,Q,System1(단기),확정,False,False,False,True,126.32,127.16,111.75,1.0,4.72,,127.27
 RTX,RTX,System1(단기),청산,False,False,True,False,187.57,211.31,186.81,0.889,3.83,,
 RTX,RTX,System2(중장기),청산,False,False,True,False,187.57,226.41,186.81,0.83,3.83,,
