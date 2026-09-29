@@ -102,7 +102,7 @@ PROVE,PROVE,System2(중장기),확정,False,False,False,True,305.0,306.0,235.0,0
 OPG,OPG,System1(단기),확정,False,False,False,True,154.0,155.0,128.0,0.994,7.15,,155.0
 OPG,OPG,System2(중장기),확정,False,False,False,True,154.0,155.0,126.0,0.994,7.15,,155.0
 AWE,AWE,System1(단기),확정,False,False,False,True,87.87,88.17,78.81,1.0,2.5,,88.5
-CTK,CTK,System1(단기),확정,False,False,False,True,168.0,171.0,132.0,0.994,8.55,,171.0
+CTK,CTK,System1(단기),확정이탈,False,False,False,True,168.0,171.0,132.0,0.994,8.55,,171.0
 HP,HP,System1(단기),확정,False,False,False,True,11.3,11.4,9.82,1.246,0.78,14.21,11.41
 MBX,MBX,System2(중장기),확정,False,False,False,True,41.27,45.56,11.35,1.195,4.25,54.45,45.75
 COS,COS,System1(단기),확정,False,False,False,True,0.27,0.29,0.22,1.06,0.02,0.3,0.29
