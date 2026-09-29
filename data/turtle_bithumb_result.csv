@@ -55,7 +55,7 @@ HUMA,HUMA,System1(단기),확정,False,False,False,True,35.0,35.25,30.0,0.999,2.
 XPL,XPL,System2(중장기),확정,False,False,False,True,144.0,152.0,105.0,0.993,12.15,,152.0
 BIO,BIO,System1(단기),확정,False,False,False,True,39.1,40.76,32.63,0.992,2.1,,40.79
 BEAM,BEAM,System1(단기),확정,False,False,False,True,2.64,2.7,2.06,0.991,0.14,,2.71
-LIT,LIT,System2(중장기),확정,False,False,False,True,7270.0,7385.0,5400.0,0.997,698.0,,7385.0
+LIT,LIT,System2(중장기),확정이탈,False,False,False,True,7270.0,7385.0,5400.0,0.997,698.0,,7385.0
 FRAX,FRAX,System1(단기),확정,False,False,False,True,406.0,410.0,345.0,0.998,16.9,,411.0
 MEGA,MEGA,System1(단기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
 MEGA,MEGA,System2(중장기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
