@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ABT,ABT,System1(단기),청산,False,False,True,False,100.8,113.91,100.09,0.886,2.4,,
 ABT,ABT,System2(중장기),청산,False,False,True,False,100.8,117.34,100.09,0.86,2.4,,
 ABBV,ABBV,System1(단기),관심,False,False,False,True,263.72,269.39,257.8,0.998,5.36,,
@@ -291,8 +291,8 @@ RF,RF,System1(단기),청산,False,False,True,False,26.91,30.63,27.08,0.893,0.6,
 RF,RF,System2(중장기),청산,False,False,True,False,26.91,32.14,27.08,0.851,0.6,,
 RSG,RSG,System1(단기),청산,False,False,True,False,210.9,227.32,211.23,0.935,3.4,,
 RSG,RSG,System2(중장기),청산,False,False,True,False,210.9,228.22,211.23,0.931,3.4,,
-RVTY,RVTY,System1(단기),관심,False,False,False,True,152.17,152.26,128.67,1.0,4.86,,
-RVTY,RVTY,System2(중장기),관심,False,False,False,True,152.17,152.26,120.9,1.0,4.86,,
+RVTY,RVTY,System1(단기),확정,False,False,False,True,152.17,152.26,128.67,1.0,4.86,,152.42
+RVTY,RVTY,System2(중장기),확정,False,False,False,True,152.17,152.26,120.9,1.0,4.86,,152.42
 ROK,ROK,System1(단기),관심,False,False,False,True,430.3,438.5,406.92,0.991,10.01,,
 ROP,ROP,System1(단기),청산,False,False,True,False,349.09,429.6,348.77,0.82,9.88,,
 ROP,ROP,System2(중장기),청산,False,False,True,False,349.09,429.6,348.77,0.82,9.88,,
