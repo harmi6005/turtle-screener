@@ -1,6 +1,6 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 KNC,KNC,System1(단기),청산,False,False,True,False,186.0,206.0,184.0,0.922,12.9,,
-CRO,CRO,System2(중장기),관심,False,False,False,True,93.51,96.88,73.55,0.991,5.24,,
+CRO,CRO,System2(중장기),확정,False,False,False,True,93.51,96.88,73.55,0.991,5.24,,97.25
 XPR,XPR,System1(단기),청산,False,False,True,False,3.31,3.88,3.29,0.872,0.15,,
 AAVE,AAVE,System1(단기),탈락,False,False,False,True,208900.0,211500.0,182700.0,0.99,12640.0,,
 AAVE,AAVE,System2(중장기),탈락,False,False,False,True,208900.0,211500.0,155700.0,0.99,12640.0,,
