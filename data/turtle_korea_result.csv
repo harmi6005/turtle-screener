@@ -225,7 +225,7 @@
 008040,사조동아원,System1(단기),청산,False,False,True,False,7470.0,9030.0,7130.0,0.886,710.0,,
 0080Y0,SOL 조선TOP3플러스레버리지,System1(단기),청산,False,False,True,False,7920.0,9495.0,7910.0,0.856,627.25,,
 0082V0,KODEX TDF2060액티브 적격,System1(단기),탈락,False,False,False,True,11250.0,11390.0,10920.0,0.991,111.0,,
-0084D0,KIWOOM 미국테크100월간목표헤지액티브,System1(단기),관심,False,False,False,True,11330.0,11445.0,10900.0,0.992,84.4,,
+0084D0,KIWOOM 미국테크100월간목표헤지액티브,System1(단기),탈락,False,False,False,True,11330.0,11445.0,10900.0,0.992,84.4,,
 0085N0,ACE 미국10년국채액티브(H),System1(단기),청산,False,False,True,False,9480.0,9784.0,9570.0,0.97,37.75,,
 0085N0,ACE 미국10년국채액티브(H),System2(중장기),청산,False,False,True,False,9480.0,9858.0,9570.0,0.963,37.75,,
 0085P0,ACE 미국10년국채액티브,System1(단기),청산,False,False,True,False,9440.0,9889.0,9400.0,0.955,82.5,,
