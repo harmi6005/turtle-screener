@@ -903,8 +903,8 @@
 357120,코람코라이프인프라리츠,System1(단기),탈락,False,False,False,True,4275.0,4305.0,4010.0,0.994,103.0,,
 357870,TIGER CD금리투자KIS(합성),System1(단기),진입,True,True,False,False,58130.0,58125.0,58045.0,1.0,9.5,,
 357870,TIGER CD금리투자KIS(합성),System2(중장기),진입,True,True,False,False,58130.0,58125.0,57975.0,1.0,9.5,,
-363510,SOL KIS단기통안채,System1(단기),관심,False,False,False,True,112290.0,112305.0,112250.0,1.0,17.5,,
-363510,SOL KIS단기통안채,System2(중장기),관심,False,False,False,True,112290.0,112305.0,112140.0,1.0,17.5,,
+363510,SOL KIS단기통안채,System1(단기),확정,False,False,False,True,112290.0,112305.0,112250.0,1.0,17.5,,112315.0
+363510,SOL KIS단기통안채,System2(중장기),확정,False,False,False,True,112290.0,112305.0,112140.0,1.0,17.5,,112315.0
 363570,KODEX 장기종합채권(AA-이상)액티브,System1(단기),관심,False,False,False,True,86045.0,86900.0,84965.0,0.99,456.5,,
 364980,TIGER 2차전지TOP10,System1(단기),청산,False,False,True,False,9880.0,11185.0,9905.0,0.909,394.25,,
 364980,TIGER 2차전지TOP10,System2(중장기),청산,False,False,True,False,9880.0,11185.0,9905.0,0.909,394.25,,
