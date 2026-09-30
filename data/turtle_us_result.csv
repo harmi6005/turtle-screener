@@ -206,7 +206,7 @@ KKR,KKR,System2(중장기),청산,False,False,True,False,92.73,116.57,92.7,0.807
 KHC,KHC,System1(단기),청산,False,False,True,False,23.41,26.02,23.45,0.909,0.59,,
 KHC,KHC,System2(중장기),청산,False,False,True,False,23.41,27.65,23.45,0.855,0.59,,
 LRCX,LRCX,System1(단기),진입,True,True,False,False,322.99,321.87,265.09,1.02,13.91,,
-LLY,LLY,System1(단기),관심,False,False,False,True,1185.32,1197.79,1131.59,0.996,28.6,,
+LLY,LLY,System1(단기),확정,False,False,False,True,1185.32,1197.79,1131.59,0.996,28.6,,1198.53
 LMT,LMT,System1(단기),청산,False,False,True,False,511.86,564.98,515.6,0.92,12.78,,
 LMT,LMT,System2(중장기),청산,False,False,True,False,511.86,608.98,515.6,0.853,12.78,,
 LYB,LYB,System1(단기),청산,False,False,True,False,58.08,67.49,57.64,0.865,2.06,,
