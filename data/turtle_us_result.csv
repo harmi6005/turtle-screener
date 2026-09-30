@@ -37,7 +37,7 @@ BNY,BNY,System1(단기),청산,False,False,True,False,146.22,165.84,146.28,0.889
 BNY,BNY,System2(중장기),청산,False,False,True,False,146.22,165.84,146.28,0.889,3.04,,
 BXP,BXP,System1(단기),청산,False,False,True,False,61.45,68.59,61.57,0.899,1.38,,
 BXP,BXP,System2(중장기),청산,False,False,True,False,61.45,74.94,61.57,0.823,1.38,,
-CDNS,CDNS,System1(단기),관심,False,False,False,True,327.8,332.84,274.16,0.995,10.3,,
+CDNS,CDNS,System1(단기),확정,False,False,False,True,327.8,332.84,274.16,0.995,10.3,,334.05
 CPT,CPT,System1(단기),청산,False,False,True,False,97.3,106.54,96.89,0.917,1.73,,
 CPT,CPT,System2(중장기),청산,False,False,True,False,97.3,116.84,96.89,0.836,1.73,,
 CBRE,CBRE,System1(단기),청산,False,False,True,False,129.05,150.11,128.62,0.878,4.3,,
