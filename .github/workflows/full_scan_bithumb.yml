@@ -55,9 +55,16 @@ jobs:
 
           git commit -m "빗썸 전체스캔 결과 업데이트"
 
-          BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+          # 2026-09-24 버그 수정: actions/checkout은 detached HEAD 상태로 체크아웃하므로
+          # `git rev-parse --abbrev-ref HEAD`는 실제 브랜치명이 아니라 문자 그대로 "HEAD"를
+          # 반환합니다. 그 상태로 `git push origin "HEAD:HEAD"`를 시도하면 "not a full
+          # refname" 에러로 매번 실패합니다 - 이 저장소의 모든 5분/매시간 워크플로우가
+          # "결과 커밋" 단계에서 계속 실패하던 진짜 원인이었습니다(로컬에서 동일 상황을
+          # 재현해 확인함). GitHub Actions가 항상 정확한 브랜치명으로 채워주는 환경변수
+          # GITHUB_REF_NAME을 우선 사용하도록 수정.
+          BRANCH="${GITHUB_REF_NAME:-$(git rev-parse --abbrev-ref HEAD)}"
           for i in 1 2 3 4 5; do
-            if git push origin "HEAD:$BRANCH"; then
+            if git push origin "HEAD:refs/heads/$BRANCH"; then
               echo "푸시 성공 (시도 $i회)"
               exit 0
             fi
