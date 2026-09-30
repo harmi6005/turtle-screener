@@ -192,7 +192,7 @@ ISRG,ISRG,System1(단기),탈락,False,False,False,True,411.56,416.51,368.85,0.9
 ISRG,ISRG,System2(중장기),탈락,False,False,False,True,411.56,416.51,345.25,0.994,11.53,,
 JKHY,JKHY,System1(단기),청산,False,False,True,False,146.34,170.33,146.19,0.865,4.52,,
 JKHY,JKHY,System2(중장기),청산,False,False,True,False,146.34,174.36,146.19,0.845,4.52,,
-JCI,JCI,System1(단기),관심,False,False,False,True,150.03,151.0,136.75,0.997,3.38,,
+JCI,JCI,System1(단기),확정,False,False,False,True,150.03,151.0,136.75,0.997,3.38,,151.07
 JPM,JPM,System1(단기),청산,False,False,True,False,335.45,362.86,335.28,0.934,7.01,,
 JPM,JPM,System2(중장기),청산,False,False,True,False,335.45,366.5,335.28,0.924,7.01,,
 KEY,KEY,System1(단기),청산,False,False,True,False,20.14,22.35,20.04,0.917,0.44,,
