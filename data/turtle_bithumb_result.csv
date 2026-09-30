@@ -7,7 +7,7 @@ COMP,COMP,System1(단기),진입,True,True,False,False,35310.0,35310.0,28130.0,1
 COMP,COMP,System2(중장기),진입,True,True,False,False,35310.0,35310.0,25290.0,1.034,1934.5,,
 AAVE,AAVE,System1(단기),관심,False,False,False,True,215000.0,235000.0,182700.0,0.991,14300.0,,
 AAVE,AAVE,System2(중장기),관심,False,False,False,True,215000.0,235000.0,155700.0,0.991,14300.0,,
-ALICE,ALICE,System1(단기),관심,False,False,False,True,223.0,237.0,180.0,0.992,13.3,,
+ALICE,ALICE,System1(단기),탈락,False,False,False,True,223.0,237.0,180.0,0.992,13.3,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 MASK,MASK,System1(단기),청산,False,False,True,False,603.0,779.0,601.0,0.798,41.7,,
