@@ -45,6 +45,12 @@ data/holdings.csv 컬럼:
   requirements.txt에 exchange_calendars가 추가되어 있어야 정상 동작하며(누락 시
   주말 여부만으로 안전하게 폴백). 미장(is_us_market_open)/코인은 이번 수정
   대상이 아니며 기존 그대로 유지함.
+
+[2026-09-24 변경사항 - 이어서]
+- ⭐ "익절선 확정!" 알림에 현재가 추가. 기존엔 매수가와 익절선(트레일링) 값만
+  보여줘서 지금 얼마에 거래되고 있는지는 다른 메시지를 찾아봐야 알 수 있었음.
+  마일스톤/트레일링 이탈/최저가 이탈 등 다른 알림에는 이미 현재가가 표시되고
+  있었는데 이 알림만 빠져 있던 것.
 """
 
 import sys
@@ -337,7 +343,8 @@ if __name__ == "__main__":
                 notify_telegram(
                     f"[{market}] 익절선 확정! (손익분기 돌파)\n"
                     f"거래번호 {trade_id} - {code}\n"
-                    f"매수가 {fmt_num(buy_price)} / 현재 익절선(트레일링) {fmt_num(cur_stop_val)}\n"
+                    f"매수가 {fmt_num(buy_price)} / 현재가 {fmt_num(ohlc['close'])} / "
+                    f"현재 익절선(트레일링) {fmt_num(cur_stop_val)}\n"
                     f"이제부터 이 선을 이탈해도 손해가 아닌 이익 확정 매도가 됩니다."
                 )
                 df.at[idx, 'breakeven_notified'] = True
