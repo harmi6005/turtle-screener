@@ -9,8 +9,8 @@ NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 MASK,MASK,System1(단기),청산,False,False,True,False,600.0,779.0,601.0,0.798,41.35,,
 STAT,STAT,System1(단기),청산,False,False,True,False,34.56,41.8,34.72,0.856,2.42,,
-ZRO,ZRO,System1(단기),관심,False,False,False,True,2259.0,2307.0,1439.0,1.0,187.0,,
-ZRO,ZRO,System2(중장기),관심,False,False,False,True,2259.0,2307.0,1258.0,1.0,187.0,,
+ZRO,ZRO,System1(단기),확정,False,False,False,True,2259.0,2307.0,1439.0,1.0,187.0,,2315.0
+ZRO,ZRO,System2(중장기),확정,False,False,False,True,2259.0,2307.0,1258.0,1.0,187.0,,2315.0
 SKY,SKY,System1(단기),관심,False,False,False,True,111.0,118.0,81.62,0.992,8.29,,
 SKY,SKY,System2(중장기),관심,False,False,False,True,111.0,118.0,75.65,0.992,8.29,,
 GPS,GPS,System1(단기),청산,False,False,True,False,14.05,17.67,13.8,0.807,1.32,,
