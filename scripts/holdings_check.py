@@ -51,6 +51,23 @@ data/holdings.csv 컬럼:
   보여줘서 지금 얼마에 거래되고 있는지는 다른 메시지를 찾아봐야 알 수 있었음.
   마일스톤/트레일링 이탈/최저가 이탈 등 다른 알림에는 이미 현재가가 표시되고
   있었는데 이 알림만 빠져 있던 것.
+
+[2026-09-24 변경사항 - 이어서, 2차]
+- 🐛 GitHub Actions 로그에서 발견된 실행 오류 수정: TypeError: Invalid value
+  'True' for dtype 'float64'. watchlist.csv에서 발견됐던 것과 완전히 같은
+  종류의 버그가 holdings.csv에도 있었음. breakeven_notified/exit10_notified/
+  exit20_notified 칸이 전부 비어있는 상태로 파일을 읽으면 pandas가 "빈 칸만
+  있으니 숫자(float64) 컬럼이겠지"라고 잘못 추론해버리고, 이후
+  df.at[idx, 'breakeven_notified'] = True처럼 불리언 값을 써넣으려 하면
+  "float64 컬럼에는 숫자만 넣을 수 있다"며 예외가 나서 스크립트가 죽음(신규
+  등록 직후 첫 실행, 즉 아직 한 번도 알림이 안 나간 새 보유종목에서 특히 잘 남).
+  pd.read_csv에 market/status/breakeven_notified/exit10_notified/
+  exit20_notified도 dtype=object로 명시하고 keep_default_na=False를 추가해서
+  해결. (참고: dtype=str로 하면 최신 pandas의 전용 문자열 타입이 너무 엄격해서
+  이번엔 불리언 True/False 대입 자체가 막혀버리므로, 덜 엄격한 object를 사용함
+  - watchlist.csv는 문자열만 다뤄서 str로 충분했던 것과 다른 점.) 숫자 컬럼
+  (buy_price 등)은 이 변경 이후에도 기존의 pd.to_numeric(..., errors='coerce')
+  변환을 그대로 거치므로 빈 칸이 정상적으로 NaN으로 처리됨을 재확인함.
 """
 
 import sys
@@ -249,7 +266,10 @@ if __name__ == "__main__":
         print("data/holdings.csv 파일이 없어요. 텔레그램에서 buy 명령으로 먼저 등록해주세요.")
         sys.exit(0)
 
-    df = pd.read_csv(DATA_PATH, dtype={'code': str, 'trade_id': str})
+    df = pd.read_csv(DATA_PATH, dtype={'code': str, 'trade_id': str, 'market': object,
+                                        'status': object, 'breakeven_notified': object,
+                                        'exit10_notified': object, 'exit20_notified': object},
+                      keep_default_na=False)
     for col in COLUMNS:
         if col not in df.columns:
             df[col] = ''
