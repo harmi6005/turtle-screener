@@ -125,7 +125,7 @@ KHC,KHC,System1(단기),청산,False,False,True,False,23.08,26.02,23.24,0.911,0.
 KHC,KHC,System2(중장기),청산,False,False,True,False,23.08,27.65,23.24,0.858,0.6,,
 LHX,LHX,System1(단기),청산,False,False,True,False,238.37,268.21,234.59,0.89,5.29,,
 LHX,LHX,System2(중장기),청산,False,False,True,False,238.37,307.42,234.59,0.776,5.29,,
-LRCX,LRCX,System1(단기),관심,False,False,False,True,324.81,328.32,265.47,0.999,13.46,,
+LRCX,LRCX,System1(단기),확정,False,False,False,True,324.81,328.32,265.47,0.999,13.46,,328.44
 LMT,LMT,System1(단기),청산,False,False,True,False,512.22,564.98,511.03,0.908,12.07,,
 LMT,LMT,System2(중장기),청산,False,False,True,False,512.22,608.98,511.03,0.842,12.07,,
 LOW,LOW,System1(단기),청산,False,False,True,False,186.15,205.48,186.3,0.921,4.03,,
