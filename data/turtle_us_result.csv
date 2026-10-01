@@ -300,7 +300,7 @@ PSA,PSA,System2(중장기),청산,False,False,True,False,281.36,332.14,281.91,0.
 PHM,PHM,System1(단기),청산,False,False,True,False,112.69,126.67,115.96,0.912,3.03,,
 PHM,PHM,System2(중장기),청산,False,False,True,False,112.69,135.92,114.53,0.85,3.03,,
 Q,Q,System1(단기),관심,False,False,False,True,123.75,127.77,116.2,0.991,4.54,,
-RL,RL,System1(단기),관심,False,False,False,True,357.54,361.1,329.99,0.993,9.57,,
+RL,RL,System1(단기),확정,False,False,False,True,357.54,361.1,329.99,0.993,9.57,,361.17
 O,O,System1(단기),청산,False,False,True,False,53.65,61.66,54.23,0.881,0.88,,
 O,O,System2(중장기),청산,False,False,True,False,53.65,66.25,54.23,0.82,0.88,,
 REG,REG,System1(단기),청산,False,False,True,False,71.35,75.83,71.85,0.944,1.01,,
