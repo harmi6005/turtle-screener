@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 AOS,AOS,System1(단기),청산,False,False,True,False,55.63,61.11,56.33,0.921,1.21,,
 AOS,AOS,System2(중장기),청산,False,False,True,False,55.63,64.38,56.33,0.874,1.21,,
 ABT,ABT,System1(단기),청산,False,False,True,False,97.87,112.2,98.72,0.886,2.18,,
@@ -217,8 +217,8 @@ LVS,LVS,System2(중장기),청산,False,False,True,False,37.12,49.76,37.79,0.762
 LII,LII,System1(단기),청산,False,False,True,False,352.61,394.71,354.24,0.902,10.17,,
 LOW,LOW,System1(단기),청산,False,False,True,False,180.07,205.48,184.22,0.894,4.17,,
 LOW,LOW,System2(중장기),청산,False,False,True,False,180.07,225.79,184.22,0.813,4.17,,
-LITE,LITE,System1(단기),관심,False,False,False,True,1022.49,1026.76,881.23,0.997,62.1,,
-LITE,LITE,System2(중장기),관심,False,False,False,True,1022.49,1026.76,818.89,0.997,62.1,,
+LITE,LITE,System1(단기),확정,False,False,False,True,1022.49,1026.76,881.23,0.997,62.1,,1027.74
+LITE,LITE,System2(중장기),확정,False,False,False,True,1022.49,1026.76,818.89,0.997,62.1,,1027.74
 LYB,LYB,System1(단기),청산,False,False,True,False,56.15,67.49,56.81,0.845,1.94,,
 LYB,LYB,System2(중장기),청산,False,False,True,False,56.15,68.42,56.81,0.834,1.94,,
 MTB,MTB,System1(단기),청산,False,False,True,False,212.54,242.84,215.72,0.894,4.36,,
