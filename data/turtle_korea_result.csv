@@ -759,7 +759,7 @@
 385510,KODEX 신재생에너지액티브,System1(단기),탈락,False,False,False,True,39350.0,40240.0,37000.0,0.993,1240.0,,
 385540,RISE 종합채권(A-이상)액티브,System1(단기),확정,False,False,False,True,103255.0,103260.0,102150.0,1.0,320.75,,103255.0
 385540,RISE 종합채권(A-이상)액티브,System2(중장기),관심,False,False,False,True,103255.0,103445.0,102150.0,0.998,320.75,,
-385560,RISE KIS국고채30년Enhanced,System1(단기),관심,False,False,False,True,51245.0,51294.0,48810.0,1.0,708.1,,
+385560,RISE KIS국고채30년Enhanced,System1(단기),확정,False,False,False,True,51245.0,51294.0,48810.0,1.0,708.1,,51300.0
 388420,RISE 비메모리반도체액티브,System1(단기),진입,True,True,False,False,30030.0,29950.0,25135.0,1.018,1091.0,,
 390390,KODEX 미국반도체,System1(단기),탈락,False,False,False,True,55685.0,56495.0,49675.0,0.996,1053.0,,
 394660,TIGER 글로벌자율주행&전기차SOLACTIVE,System1(단기),청산,False,False,True,False,14910.0,16180.0,14795.0,0.924,299.5,,
@@ -941,7 +941,7 @@
 469160,ACE 일본반도체,System1(단기),탈락,False,False,False,True,25160.0,25190.0,22100.0,1.0,809.1,,
 471040,KoAct 글로벌AI&로봇액티브,System1(단기),탈락,False,False,False,True,29565.0,30470.0,27110.0,0.999,748.0,,
 471230,KODEX 국고채10년액티브,System1(단기),관심,False,False,False,True,103630.0,104235.0,101930.0,0.995,564.0,,
-471460,KIWOOM 국고채30년액티브,System1(단기),관심,False,False,False,True,45685.0,45736.0,44017.0,1.0,473.4,,
+471460,KIWOOM 국고채30년액티브,System1(단기),확정,False,False,False,True,45685.0,45736.0,44017.0,1.0,473.4,,45725.0
 472830,RISE 미국30년국채커버드콜(합성),System1(단기),청산,False,False,True,False,7340.0,7877.0,7350.0,0.937,80.95,,
 472830,RISE 미국30년국채커버드콜(합성),System2(중장기),청산,False,False,True,False,7340.0,8840.0,7350.0,0.835,80.95,,
 472870,RISE 미국30년국채엔화노출(합성 H),System1(단기),청산,False,False,True,False,6505.0,6983.0,6480.0,0.937,86.35,,
