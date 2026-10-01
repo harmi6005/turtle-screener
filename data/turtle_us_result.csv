@@ -209,7 +209,7 @@ VZ,VZ,System1(단기),청산,False,False,True,False,46.19,51.67,45.98,0.895,0.99
 VZ,VZ,System2(중장기),청산,False,False,True,False,46.19,51.67,45.98,0.895,0.99,,
 VST,VST,System1(단기),청산,False,False,True,False,137.51,154.65,135.77,0.91,4.66,,
 VST,VST,System2(중장기),청산,False,False,True,False,137.51,169.48,134.68,0.83,4.66,,
-WAB,WAB,System1(단기),관심,False,False,False,True,290.27,293.95,273.01,0.995,5.65,,
+WAB,WAB,System1(단기),탈락,False,False,False,True,290.27,293.95,273.01,0.995,5.65,,
 WMT,WMT,System1(단기),청산,False,False,True,False,105.55,111.23,105.35,0.962,1.98,,
 WBD,WBD,System1(단기),탈락,False,False,False,True,30.83,30.92,27.74,0.998,0.39,,
 WBD,WBD,System2(중장기),탈락,False,False,False,True,30.83,30.92,27.74,0.998,0.39,,
@@ -218,7 +218,7 @@ WFC,WFC,System2(중장기),청산,False,False,True,False,80.29,91.99,80.12,0.879
 WY,WY,System1(단기),청산,False,False,True,False,19.42,23.26,19.51,0.846,0.49,,
 WY,WY,System2(중장기),청산,False,False,True,False,19.42,25.76,19.51,0.764,0.49,,
 WSM,WSM,System1(단기),탈락,False,False,False,True,229.68,234.33,216.68,0.996,6.18,,
-ZBRA,ZBRA,System1(단기),관심,False,False,False,True,376.17,380.85,338.67,0.998,10.85,,
+ZBRA,ZBRA,System1(단기),탈락,False,False,False,True,376.17,380.85,338.67,0.998,10.85,,
 ZBH,ZBH,System1(단기),청산,False,False,True,False,89.13,102.86,89.02,0.883,2.84,,
 ZBH,ZBH,System2(중장기),청산,False,False,True,False,89.13,102.86,89.02,0.883,2.84,,
 CRL,CRL,System1(단기),확정,False,False,False,True,293.41,298.4,269.93,0.999,9.72,,298.95
