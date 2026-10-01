@@ -223,8 +223,8 @@ LYB,LYB,System1(단기),청산,False,False,True,False,56.15,67.49,56.81,0.845,1.
 LYB,LYB,System2(중장기),청산,False,False,True,False,56.15,68.42,56.81,0.834,1.94,,
 MTB,MTB,System1(단기),청산,False,False,True,False,212.54,242.84,215.72,0.894,4.36,,
 MTB,MTB,System2(중장기),청산,False,False,True,False,212.54,254.31,215.72,0.853,4.36,,
-MRVL,MRVL,System1(단기),관심,False,False,False,True,260.07,267.48,235.96,0.998,12.41,,
-MRVL,MRVL,System2(중장기),관심,False,False,False,True,260.07,267.48,201.1,0.998,12.41,,
+MRVL,MRVL,System1(단기),확정,False,False,False,True,260.07,267.48,235.96,0.998,12.41,,268.04
+MRVL,MRVL,System2(중장기),확정,False,False,False,True,260.07,267.48,201.1,0.998,12.41,,268.04
 MAS,MAS,System1(단기),청산,False,False,True,False,66.52,73.27,67.03,0.919,1.75,,
 MAS,MAS,System2(중장기),청산,False,False,True,False,66.52,83.27,67.03,0.809,1.75,,
 MA,MA,System1(단기),청산,False,False,True,False,552.59,592.97,551.43,0.94,8.61,,
