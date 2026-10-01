@@ -727,7 +727,7 @@
 357870,TIGER CD금리투자KIS(합성),System2(중장기),진입,True,True,False,False,58130.0,58130.0,57980.0,1.0,9.5,,
 360140,KODEX 200롱코스닥150숏선물,System1(단기),청산,False,False,True,False,21980.0,23680.0,22010.0,0.95,625.25,,
 363570,KODEX 장기종합채권(AA-이상)액티브,System1(단기),확정,False,False,False,True,86760.0,86900.0,85000.0,0.998,476.5,,86760.0
-363570,KODEX 장기종합채권(AA-이상)액티브,System2(중장기),관심,False,False,False,True,86760.0,87400.0,84965.0,0.993,476.5,,
+363570,KODEX 장기종합채권(AA-이상)액티브,System2(중장기),탈락,False,False,False,True,86760.0,87400.0,84965.0,0.993,476.5,,
 364990,TIGER 게임TOP10,System1(단기),청산,False,False,True,False,4390.0,4890.0,4375.0,0.914,107.25,,
 364990,TIGER 게임TOP10,System2(중장기),청산,False,False,True,False,4390.0,5265.0,4375.0,0.849,107.25,,
 365000,TIGER 인터넷TOP10,System1(단기),탈락,False,False,False,True,3615.0,3710.0,3410.0,0.991,100.25,,
@@ -962,7 +962,7 @@
 475270,ACE 5월만기자동연장회사채AA-이상액티브,System1(단기),관심,False,False,False,True,10735.0,10745.0,10730.0,0.999,7.0,,
 475270,ACE 5월만기자동연장회사채AA-이상액티브,System2(중장기),관심,False,False,False,True,10735.0,10745.0,10730.0,0.999,7.0,,
 475280,ACE 8월만기자동연장회사채AA-이상액티브,System1(단기),청산,False,False,True,True,10745.0,10750.0,10735.0,1.0,10.0,,
-475280,ACE 8월만기자동연장회사채AA-이상액티브,System2(중장기),관심,False,False,False,True,10745.0,10750.0,10730.0,1.0,10.0,,
+475280,ACE 8월만기자동연장회사채AA-이상액티브,System2(중장기),확정,False,False,False,True,10745.0,10750.0,10730.0,1.0,10.0,,10750.0
 475350,RISE 버크셔포트폴리오TOP10,System1(단기),청산,False,False,True,False,14050.0,14765.0,14050.0,0.956,184.9,,
 475350,RISE 버크셔포트폴리오TOP10,System2(중장기),청산,False,False,True,False,14050.0,15805.0,14010.0,0.893,184.9,,
 475380,RISE 글로벌리얼티인컴,System1(단기),청산,False,False,True,False,9635.0,10402.0,9670.0,0.934,104.95,,
