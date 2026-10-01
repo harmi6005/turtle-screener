@@ -309,7 +309,7 @@ RF,RF,System1(단기),청산,False,False,True,False,26.17,30.63,26.74,0.876,0.57
 RF,RF,System2(중장기),청산,False,False,True,False,26.17,32.14,26.74,0.835,0.57,,
 RSG,RSG,System1(단기),청산,False,False,True,False,209.79,227.32,209.51,0.931,3.29,,
 RSG,RSG,System2(중장기),청산,False,False,True,False,209.79,228.22,209.51,0.927,3.29,,
-RCL,RCL,System1(단기),관심,False,False,False,True,266.06,270.41,222.22,0.991,9.56,,
+RCL,RCL,System1(단기),탈락,False,False,False,True,266.06,270.41,222.22,0.991,9.56,,
 SBAC,SBAC,System1(단기),청산,False,False,True,False,158.39,194.23,159.91,0.832,5.02,,
 SBAC,SBAC,System2(중장기),청산,False,False,True,False,158.39,194.23,159.91,0.832,5.02,,
 SLB,SLB,System1(단기),청산,False,False,True,False,48.01,59.36,48.69,0.822,1.68,,

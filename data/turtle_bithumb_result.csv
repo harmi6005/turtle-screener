@@ -2,7 +2,7 @@
 XPR,XPR,System1(단기),청산,False,False,True,False,3.27,3.83,3.21,0.875,0.16,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
-SUN,SUN,System1(단기),관심,False,False,False,True,23.0,23.74,22.77,0.992,0.5,,
+SUN,SUN,System1(단기),탈락,False,False,False,True,23.0,23.74,22.77,0.992,0.5,,
 GALA,GALA,System1(단기),탈락,False,False,False,True,3.04,3.24,2.54,0.992,0.35,,
 CSPR,CSPR,System1(단기),청산,False,False,True,False,3.54,4.24,3.5,0.871,0.25,,
 AR,AR,System1(단기),청산,False,False,True,False,5855.0,7170.0,5520.0,0.861,692.55,,
