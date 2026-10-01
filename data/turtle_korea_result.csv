@@ -1,6 +1,6 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-0000Y0,HK 26-12 회사채(AA-이상)액티브,System1(단기),관심,False,False,False,True,102070.0,102075.0,101960.0,1.0,19.25,,
-0000Y0,HK 26-12 회사채(AA-이상)액티브,System2(중장기),관심,False,False,False,True,102070.0,102075.0,101825.0,1.0,19.25,,
+0000Y0,HK 26-12 회사채(AA-이상)액티브,System1(단기),확정,False,False,False,True,102070.0,102075.0,101960.0,1.0,19.25,,102125.0
+0000Y0,HK 26-12 회사채(AA-이상)액티브,System2(중장기),확정,False,False,False,True,102070.0,102075.0,101825.0,1.0,19.25,,102125.0
 0000H0,KODEX 인도Nifty미드캡100,System1(단기),청산,False,False,True,False,9585.0,10550.0,9550.0,0.909,151.5,,
 0000H0,KODEX 인도Nifty미드캡100,System2(중장기),청산,False,False,True,False,9585.0,11439.0,9550.0,0.838,151.5,,
 000145,하이트진로홀딩스우,System1(단기),탈락,False,False,False,True,9110.0,9350.0,9000.0,0.994,103.5,,
