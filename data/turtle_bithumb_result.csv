@@ -14,7 +14,7 @@ ETHFI,ETHFI,System2(중장기),관심,False,False,False,True,979.0,1095.0,784.0,
 G,G,System1(단기),청산,False,False,True,False,6.88,12.8,6.77,0.559,1.29,,
 LISTA,LISTA,System1(단기),관심,False,False,False,True,116.0,123.0,106.0,0.992,7.3,,
 LISTA,LISTA,System2(중장기),관심,False,False,False,True,116.0,123.0,91.88,0.992,7.3,,
-SCR,SCR,System1(단기),관심,False,False,False,True,33.62,36.13,30.02,0.996,2.67,,
+SCR,SCR,System1(단기),탈락,False,False,False,True,33.62,36.13,30.02,0.996,2.67,,
 THE,THE,System1(단기),청산,False,False,True,False,99.25,121.0,101.0,0.86,7.29,,
 BLUE,BLUE,System1(단기),청산,False,False,True,False,13.06,15.93,13.14,0.881,1.06,,
 BERA,BERA,System1(단기),탈락,False,False,False,True,319.0,360.0,279.0,0.992,27.0,,
@@ -27,7 +27,7 @@ PROMPT,PROMPT,System1(단기),청산,False,False,True,False,29.9,31.09,26.8,1.07
 PROMPT,PROMPT,System2(중장기),청산,False,False,True,False,29.9,39.5,24.97,0.843,1.91,,
 CAMP,CAMP,System1(단기),청산,False,False,True,False,0.51,0.73,0.5,0.703,0.06,,
 CAMP,CAMP,System2(중장기),청산,False,False,True,False,0.51,0.93,0.5,0.553,0.06,,
-THQ,THQ,System2(중장기),관심,False,False,False,True,15.17,18.4,14.2,0.991,1.25,,
+THQ,THQ,System2(중장기),탈락,False,False,False,True,15.17,18.4,14.2,0.991,1.25,,
 FLUID,FLUID,System1(단기),청산,False,False,True,False,1949.0,2090.0,1726.0,0.968,125.55,,
 MMT,MMT,System1(단기),관심,False,False,False,True,250.0,260.0,217.0,0.996,16.7,,
 PIEVERSE,PIEVERSE,System1(단기),청산,False,False,True,False,1885.0,2714.0,1891.0,0.728,228.7,,
@@ -35,8 +35,8 @@ SKR,SKR,System1(단기),청산,False,False,True,False,23.68,35.17,24.11,0.706,2.
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.75,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.48,0.0,,
 SLX,SLX,System1(단기),청산,False,False,True,False,84.32,105.0,84.7,0.828,5.48,,
-CAP,CAP,System1(단기),관심,False,False,False,True,113.0,115.0,59.5,0.991,12.81,,
-CAP,CAP,System2(중장기),관심,False,False,False,True,113.0,115.0,58.01,0.991,12.81,,
+CAP,CAP,System1(단기),확정,False,False,False,True,113.0,115.0,59.5,0.991,12.81,,115.0
+CAP,CAP,System2(중장기),확정,False,False,False,True,113.0,115.0,58.01,0.991,12.81,,115.0
 HUMA,HUMA,System1(단기),확정,False,False,False,True,42.5,43.0,30.31,0.995,3.04,,43.07
 HUMA,HUMA,System2(중장기),확정,False,False,False,True,42.5,43.0,28.74,0.995,3.04,,43.07
 ZRO,ZRO,System1(단기),확정,False,False,False,True,2259.0,2307.0,1439.0,1.0,187.0,,2315.0
