@@ -270,7 +270,7 @@ NUE,NUE,System1(단기),청산,False,False,True,False,230.83,267.83,233.6,0.875,
 NUE,NUE,System2(중장기),청산,False,False,True,False,230.83,279.45,233.6,0.838,7.25,,
 NVR,NVR,System1(단기),청산,False,False,True,False,6031.61,6462.63,6128.93,0.951,134.96,,
 NVR,NVR,System2(중장기),청산,False,False,True,False,6031.61,6832.43,6057.84,0.9,134.96,,
-NXPI,NXPI,System1(단기),관심,False,False,False,True,236.34,239.83,220.67,0.997,7.21,,
+NXPI,NXPI,System1(단기),확정,False,False,False,True,236.34,239.83,220.67,0.997,7.21,,240.42
 ON,ON,System1(단기),탈락,False,False,False,True,76.41,77.68,66.05,0.994,3.29,,
 OKE,OKE,System1(단기),청산,False,False,True,False,85.0,99.3,85.18,0.858,2.35,,
 OKE,OKE,System2(중장기),청산,False,False,True,False,85.0,99.85,85.18,0.853,2.35,,
