@@ -877,7 +877,7 @@
 453850,ACE 미국30년국채액티브(H),System2(중장기),청산,False,False,True,False,6845.0,7306.0,6835.0,0.938,54.1,,
 454180,KIWOOM 차이나내수소비TOP CSI,System1(단기),청산,False,False,True,False,7330.0,7755.0,7145.0,0.0,459.5,,
 454180,KIWOOM 차이나내수소비TOP CSI,System2(중장기),청산,False,False,True,False,7330.0,8510.0,7145.0,0.0,459.5,,
-454780,KIWOOM 종합채권(AA-이상)액티브,System1(단기),관심,False,False,False,True,99645.0,99820.0,98855.0,0.998,238.5,,
+454780,KIWOOM 종합채권(AA-이상)액티브,System1(단기),확정,False,False,False,True,99645.0,99820.0,98855.0,0.998,238.5,,99715.0
 454780,KIWOOM 종합채권(AA-이상)액티브,System2(중장기),관심,False,False,False,True,99645.0,100045.0,98855.0,0.996,238.5,,
 455660,ACE 미국하이일드액티브(H),System1(단기),청산,False,False,True,False,9160.0,9398.0,9155.0,0.975,34.45,,
 455660,ACE 미국하이일드액티브(H),System2(중장기),청산,False,False,True,False,9160.0,9408.0,9155.0,0.974,34.45,,
