@@ -27,7 +27,7 @@ AMT,AMT,System1(단기),청산,False,False,True,False,161.96,177.88,163.35,0.925
 AMT,AMT,System2(중장기),청산,False,False,True,False,161.96,179.04,163.35,0.919,3.89,,
 AWK,AWK,System1(단기),청산,False,False,True,False,127.84,142.37,127.33,0.906,2.34,,
 AWK,AWK,System2(중장기),청산,False,False,True,False,127.84,142.37,127.33,0.906,2.34,,
-APH,APH,System1(단기),관심,False,False,False,True,83.98,86.22,76.96,0.99,2.66,,
+APH,APH,System1(단기),탈락,False,False,False,True,83.98,86.22,76.96,0.99,2.66,,
 APO,APO,System1(단기),청산,False,False,True,False,113.28,135.61,115.42,0.868,3.79,,
 APO,APO,System2(중장기),청산,False,False,True,False,113.28,143.72,115.42,0.819,3.79,,
 AAPL,AAPL,System1(단기),청산,False,False,True,False,329.11,345.34,328.7,0.963,7.13,,
