@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 VET,VET,System1(단기),청산,False,False,True,False,11.95,13.7,11.71,0.873,0.9,,
 IOST,IOST,System1(단기),청산,False,False,True,False,1.16,1.38,1.16,0.856,0.14,,
-AAVE,AAVE,System1(단기),관심,False,False,False,True,232700.0,235000.0,185800.0,0.99,14800.0,,
-AAVE,AAVE,System2(중장기),관심,False,False,False,True,232700.0,235000.0,155700.0,0.99,14800.0,,
+AAVE,AAVE,System1(단기),탈락,False,False,False,True,232700.0,235000.0,185800.0,0.99,14800.0,,
+AAVE,AAVE,System2(중장기),탈락,False,False,False,True,232700.0,235000.0,155700.0,0.99,14800.0,,
 ADP,ADP,System1(단기),청산,False,False,True,False,0.69,1.22,0.69,0.588,0.11,,
 JST,JST,System1(단기),관심,False,False,False,True,181.0,184.0,150.0,0.995,6.5,,
 JST,JST,System2(중장기),관심,False,False,False,True,181.0,184.0,138.0,0.995,6.5,,
