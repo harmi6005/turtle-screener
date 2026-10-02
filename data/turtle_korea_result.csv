@@ -544,7 +544,7 @@
 111770,영원무역,System2(중장기),청산,False,False,True,False,69300.0,95000.0,68300.0,0.732,2195.0,,
 114260,KODEX 국고채3년,System1(단기),확정,False,False,False,True,61775.0,61880.0,61375.0,0.999,125.75,,61885.0
 114260,KODEX 국고채3년,System2(중장기),관심,False,False,False,True,61775.0,62025.0,61375.0,0.996,125.75,,
-114470,KIWOOM 국고채3년,System1(단기),관심,False,False,False,True,107425.0,107564.0,106905.0,0.999,153.8,,
+114470,KIWOOM 국고채3년,System1(단기),확정,False,False,False,True,107425.0,107564.0,106905.0,0.999,153.8,,107605.0
 114470,KIWOOM 국고채3년,System2(중장기),관심,False,False,False,True,107425.0,107763.0,106905.0,0.997,153.8,,
 114820,TIGER 국채3년,System1(단기),확정,False,False,False,True,105005.0,105235.0,104470.0,0.999,188.75,,105245.0
 114820,TIGER 국채3년,System2(중장기),관심,False,False,False,True,105005.0,105440.0,104470.0,0.997,188.75,,
@@ -931,7 +931,7 @@
 448290,TIGER 미국S&P500(H),System1(단기),탈락,False,False,False,True,17825.0,17990.0,17550.0,0.991,104.25,,
 448330,KODEX 삼성전자채권혼합,System1(단기),관심,False,False,False,True,17715.0,17790.0,16960.0,0.997,233.3,,
 448330,KODEX 삼성전자채권혼합,System2(중장기),관심,False,False,False,True,17715.0,17803.0,16920.0,0.996,233.3,,
-448490,HANARO 32-10 국고채액티브,System1(단기),관심,False,False,False,True,52815.0,52915.0,51930.0,0.998,251.25,,
+448490,HANARO 32-10 국고채액티브,System1(단기),확정,False,False,False,True,52815.0,52915.0,51930.0,0.998,251.25,,53055.0
 449170,TIGER KOFR금리액티브(합성),System1(단기),진입,True,True,False,False,112040.0,112015.0,111870.0,1.0,15.25,,
 449170,TIGER KOFR금리액티브(합성),System2(중장기),진입,True,True,False,False,112040.0,112015.0,111740.0,1.0,15.25,,
 449180,KODEX 미국S&P500(H),System1(단기),탈락,False,False,False,True,17210.0,17370.0,16930.0,0.991,105.25,,
