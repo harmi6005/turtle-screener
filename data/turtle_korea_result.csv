@@ -971,7 +971,7 @@
 453870,TIGER 인도니프티50,System2(중장기),청산,False,False,True,False,10515.0,12851.0,10470.0,0.827,203.25,,
 454320,HANARO CAPEX설비투자iSelect,System1(단기),청산,False,False,True,False,41550.0,44870.0,40840.0,0.926,1294.5,,
 454780,KIWOOM 종합채권(AA-이상)액티브,System1(단기),진입,True,True,False,False,99715.0,99685.0,98855.0,1.0,222.75,,
-454780,KIWOOM 종합채권(AA-이상)액티브,System2(중장기),관심,False,False,False,True,99715.0,100045.0,98855.0,0.997,222.75,,
+454780,KIWOOM 종합채권(AA-이상)액티브,System2(중장기),확정,False,False,False,True,99715.0,100045.0,98855.0,0.997,222.75,,100095.0
 455660,ACE 미국하이일드액티브(H),System1(단기),청산,False,False,True,False,9150.0,9398.0,9135.0,0.974,35.0,,
 455660,ACE 미국하이일드액티브(H),System2(중장기),청산,False,False,True,False,9150.0,9408.0,9135.0,0.973,35.0,,
 455890,RISE 머니마켓액티브,System1(단기),진입,True,True,False,False,55635.0,55620.0,55535.0,1.0,10.75,,

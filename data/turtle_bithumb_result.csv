@@ -17,8 +17,8 @@ BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 CSPR,CSPR,System1(단기),청산,False,False,True,False,3.48,4.22,3.49,0.843,0.25,,
 TDROP,TDROP,System1(단기),청산,False,False,True,False,0.66,0.88,0.66,0.753,0.04,,
 CYBER,CYBER,System1(단기),청산,False,False,True,False,434.0,505.0,423.0,0.861,32.45,,
-ZRO,ZRO,System1(단기),관심,False,False,False,True,2458.0,2545.0,1536.0,0.993,214.95,,
-ZRO,ZRO,System2(중장기),관심,False,False,False,True,2458.0,2545.0,1258.0,0.993,214.95,,
+ZRO,ZRO,System1(단기),확정,False,False,False,True,2458.0,2545.0,1536.0,0.993,214.95,,2550.0
+ZRO,ZRO,System2(중장기),확정,False,False,False,True,2458.0,2545.0,1258.0,0.993,214.95,,2550.0
 THE,THE,System1(단기),청산,False,False,True,False,100.0,121.0,99.25,0.835,7.12,,
 VTHO,VTHO,System1(단기),청산,False,False,True,False,0.91,1.68,0.88,0.544,0.16,,
 XTER,XTER,System1(단기),청산,False,False,True,False,13.08,15.25,12.99,0.867,0.69,,
