@@ -756,8 +756,8 @@
 284980,RISE 200금융,System2(중장기),청산,False,False,True,False,21755.0,24042.0,21930.0,0.912,562.0,,
 285690,FOCUS ESG리더스,System1(단기),청산,False,False,True,False,21335.0,22055.0,21290.0,0.967,223.0,,
 289670,PLUS 국채선물10년,System1(단기),확정,False,False,False,True,52005.0,52115.0,51180.0,0.998,260.5,,52150.0
-289480,TIGER 200커버드콜,System1(단기),관심,False,False,False,True,13325.0,13382.0,12404.0,0.996,267.6,,
-289480,TIGER 200커버드콜,System2(중장기),관심,False,False,False,True,13325.0,13382.0,11883.0,0.996,267.6,,
+289480,TIGER 200커버드콜,System1(단기),확정,False,False,False,True,13325.0,13382.0,12404.0,0.996,267.6,,13385.0
+289480,TIGER 200커버드콜,System2(중장기),확정,False,False,False,True,13325.0,13382.0,11883.0,0.996,267.6,,13385.0
 290080,RISE 200고배당커버드콜ATM,System1(단기),청산,False,False,True,False,7200.0,7702.0,7200.0,0.948,221.55,,
 291130,ACE MSCI멕시코(합성),System1(단기),청산,False,False,True,False,16520.0,18060.0,16635.0,0.919,200.5,,
 291130,ACE MSCI멕시코(합성),System2(중장기),청산,False,False,True,False,16520.0,19425.0,16635.0,0.855,200.5,,
