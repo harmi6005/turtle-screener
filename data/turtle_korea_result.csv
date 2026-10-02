@@ -763,7 +763,7 @@
 291130,ACE MSCI멕시코(합성),System2(중장기),청산,False,False,True,False,16520.0,19425.0,16635.0,0.855,200.5,,
 291620,KIWOOM 코스닥150선물인버스,System1(단기),청산,False,False,True,False,3920.0,4575.0,4135.0,0.916,135.75,,
 291620,KIWOOM 코스닥150선물인버스,System2(중장기),청산,False,False,True,False,3920.0,6020.0,4135.0,0.696,135.75,,
-291680,RISE 차이나H선물인버스(H),System1(단기),관심,False,False,False,True,7965.0,8030.0,7770.0,0.992,98.25,,
+291680,RISE 차이나H선물인버스(H),System1(단기),탈락,False,False,False,True,7965.0,8030.0,7770.0,0.992,98.25,,
 292770,KODEX 국채선물3년인버스,System1(단기),관심,False,False,False,True,58055.0,58235.0,58025.0,0.997,70.75,,
 292770,KODEX 국채선물3년인버스,System2(중장기),관심,False,False,False,True,58055.0,58235.0,57720.0,0.997,70.75,,
 293940,신한알파리츠,System1(단기),관심,False,False,False,True,5610.0,5660.0,5210.0,0.993,131.5,,
