@@ -390,7 +390,7 @@ SYF,SYF,System2(중장기),청산,False,False,True,False,71.51,81.92,70.22,0.874
 TRGP,TRGP,System1(단기),청산,False,False,True,False,279.31,298.18,268.87,0.937,7.39,,
 TRGP,TRGP,System2(중장기),청산,False,False,True,False,279.31,307.94,268.87,0.907,7.39,,
 TEL,TEL,System1(단기),확정,False,False,False,True,217.76,219.63,201.09,0.999,5.98,,220.2
-TEL,TEL,System2(중장기),관심,False,False,False,True,217.76,221.12,199.82,0.993,5.98,,
+TEL,TEL,System2(중장기),확정,False,False,False,True,217.76,221.12,199.82,0.993,5.98,,221.68
 TER,TER,System1(단기),진입,True,True,False,False,415.79,415.61,350.0,1.009,18.73,,
 TXN,TXN,System1(단기),탈락,False,False,False,True,281.31,284.39,257.1,0.997,7.48,,
 TJX,TJX,System1(단기),관심,False,False,False,True,133.59,134.67,123.26,0.993,2.85,,
