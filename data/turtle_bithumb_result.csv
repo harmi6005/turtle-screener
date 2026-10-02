@@ -31,7 +31,7 @@ SKR,SKR,System1(단기),청산,False,False,True,False,23.57,35.17,23.68,0.675,2.
 SKR,SKR,System2(중장기),청산,False,False,True,False,23.57,48.57,23.0,0.489,2.27,,
 VVV,VVV,System1(단기),청산,False,False,True,False,35710.0,46730.0,35570.0,0.809,3746.5,,
 CHIP,CHIP,System1(단기),청산,False,False,True,False,57.95,70.45,56.2,0.835,6.17,,
-GRVT,GRVT,System1(단기),관심,False,False,False,True,282.0,285.0,249.0,0.993,15.45,,
+GRVT,GRVT,System1(단기),확정,False,False,False,True,282.0,285.0,249.0,0.993,15.45,,285.0
 AEON,AEON,System1(단기),청산,False,False,True,False,69.57,87.84,69.0,0.805,7.86,,
 BANK,BANK,System1(단기),청산,False,False,True,False,42.01,55.55,41.1,0.757,3.5,,
 CAP,CAP,System1(단기),확정,False,False,False,True,113.0,115.0,59.5,0.991,12.81,,115.0
