@@ -56,7 +56,7 @@ FIS,FIS,System1(단기),청산,False,False,True,False,32.56,42.34,32.75,0.782,1.
 FIS,FIS,System2(중장기),청산,False,False,True,False,32.56,46.46,32.75,0.712,1.13,,
 FISV,FISV,System1(단기),청산,False,False,True,False,44.57,53.63,44.81,0.845,1.67,,
 FISV,FISV,System2(중장기),청산,False,False,True,False,44.57,56.63,44.81,0.801,1.67,,
-FTV,FTV,System1(단기),관심,False,False,False,True,56.72,57.59,54.38,0.991,1.03,,
+FTV,FTV,System1(단기),탈락,False,False,False,True,56.72,57.59,54.38,0.991,1.03,,
 GE,GE,System1(단기),청산,False,False,True,False,308.89,342.73,309.6,0.928,8.62,,
 GD,GD,System1(단기),청산,False,False,True,False,329.24,367.25,329.41,0.907,6.12,,
 GD,GD,System2(중장기),청산,False,False,True,False,329.24,400.0,329.41,0.833,6.12,,
