@@ -1057,7 +1057,7 @@
 475270,ACE 5월만기자동연장회사채AA-이상액티브,System2(중장기),진입,True,True,False,False,10755.0,10745.0,10730.0,1.001,7.75,,
 475380,RISE 글로벌리얼티인컴,System1(단기),청산,False,False,True,False,9575.0,10328.0,9555.0,0.933,109.2,,
 475380,RISE 글로벌리얼티인컴,System2(중장기),청산,False,False,True,False,9575.0,11221.0,9555.0,0.859,109.2,,
-475720,RISE 200위클리커버드콜,System1(단기),관심,False,False,False,True,12695.0,12769.0,11939.0,0.995,245.0,,
+475720,RISE 200위클리커버드콜,System1(단기),확정,False,False,False,True,12695.0,12769.0,11939.0,0.995,245.0,,12770.0
 476000,UNICORN 포스트IPO액티브,System1(단기),청산,False,False,True,False,5185.0,5370.0,4835.0,0.969,182.75,,
 476000,UNICORN 포스트IPO액티브,System2(중장기),청산,False,False,True,False,5185.0,6165.0,4835.0,0.844,182.75,,
 475630,TIGER CD1년금리액티브(합성),System1(단기),진입,True,True,False,False,1079095.0,1078690.0,1077210.0,1.0,160.5,,
