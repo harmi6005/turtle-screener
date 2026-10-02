@@ -91,7 +91,7 @@ CNC,CNC,System1(단기),청산,False,False,True,False,60.99,69.63,60.94,0.895,2.
 CNC,CNC,System2(중장기),청산,False,False,True,False,60.99,69.63,60.94,0.895,2.29,,
 CF,CF,System1(단기),청산,False,False,True,False,114.54,141.66,114.03,0.817,4.71,,
 CF,CF,System2(중장기),청산,False,False,True,False,114.54,141.66,114.03,0.817,4.71,,
-CRL,CRL,System1(단기),관심,False,False,False,True,286.83,298.98,274.4,0.993,9.63,,
+CRL,CRL,System1(단기),탈락,False,False,False,True,286.83,298.98,274.4,0.993,9.63,,
 SCHW,SCHW,System1(단기),청산,False,False,True,False,98.37,110.72,97.4,0.89,2.26,,
 SCHW,SCHW,System2(중장기),청산,False,False,True,False,98.37,114.53,97.4,0.86,2.26,,
 CHTR,CHTR,System1(단기),청산,False,False,True,False,111.37,160.7,109.96,0.7,6.13,,
@@ -200,7 +200,7 @@ HD,HD,System1(단기),청산,False,False,True,False,282.46,321.8,284.01,0.882,6.
 HD,HD,System2(중장기),청산,False,False,True,False,282.46,355.74,284.01,0.798,6.35,,
 HON,HON,System1(단기),진입,True,True,False,False,213.8,213.64,204.26,1.007,4.05,,
 HST,HST,System1(단기),확정,False,False,False,True,22.51,22.7,21.52,0.996,0.39,,22.77
-HUBB,HUBB,System1(단기),관심,False,False,False,True,466.98,472.35,435.91,0.995,12.53,,
+HUBB,HUBB,System1(단기),탈락,False,False,False,True,466.98,472.35,435.91,0.995,12.53,,
 HBAN,HBAN,System1(단기),청산,False,False,True,False,15.19,16.99,15.08,0.899,0.36,,
 HBAN,HBAN,System2(중장기),청산,False,False,True,False,15.19,18.4,15.08,0.83,0.36,,
 IEX,IEX,System1(단기),관심,False,False,False,True,229.85,233.04,220.77,0.996,4.39,,
