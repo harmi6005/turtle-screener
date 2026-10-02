@@ -881,8 +881,8 @@
 417630,TIGER KEDI혁신기업ESG30,System1(단기),청산,False,False,True,False,19010.0,20140.0,18785.0,0.947,382.0,,
 417630,TIGER KEDI혁신기업ESG30,System2(중장기),청산,False,False,True,False,19010.0,20345.0,18785.0,0.938,382.0,,
 418660,TIGER 미국나스닥100레버리지(합성),System1(단기),탈락,False,False,False,True,42240.0,42370.0,37000.0,0.999,951.0,,
-419890,KIWOOM 단기채권ESG액티브,System1(단기),관심,False,False,False,True,107545.0,107620.0,107435.0,0.999,36.0,,
-419890,KIWOOM 단기채권ESG액티브,System2(중장기),관심,False,False,False,True,107545.0,107620.0,107435.0,0.999,36.0,,
+419890,KIWOOM 단기채권ESG액티브,System1(단기),확정,False,False,False,True,107545.0,107620.0,107435.0,0.999,36.0,,107640.0
+419890,KIWOOM 단기채권ESG액티브,System2(중장기),확정,False,False,False,True,107545.0,107620.0,107435.0,0.999,36.0,,107640.0
 423170,SOL 글로벌AI반도체탑픽액티브,System1(단기),진입,True,True,False,False,61895.0,61740.0,54210.0,1.004,1867.5,,
 423160,KODEX KOFR금리액티브(합성),System1(단기),진입,True,True,False,False,110680.0,110675.0,110525.0,1.0,15.3,,
 423160,KODEX KOFR금리액티브(합성),System2(중장기),진입,True,True,False,False,110680.0,110675.0,110395.0,1.0,15.3,,
