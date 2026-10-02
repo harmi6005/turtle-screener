@@ -81,7 +81,7 @@ JKHY,JKHY,System1(단기),청산,False,False,True,False,142.88,170.33,142.75,0.8
 JKHY,JKHY,System2(중장기),청산,False,False,True,False,142.88,174.36,142.75,0.828,4.58,,
 JNJ,JNJ,System1(단기),청산,False,False,True,False,255.35,278.89,258.33,0.93,5.01,,
 JNJ,JNJ,System2(중장기),청산,False,False,True,False,255.35,281.07,258.33,0.923,5.01,,
-JCI,JCI,System2(중장기),관심,False,False,False,True,155.08,156.62,135.41,0.997,3.47,,
+JCI,JCI,System2(중장기),탈락,False,False,False,True,155.08,156.62,135.41,0.997,3.47,,
 KVUE,KVUE,System1(단기),청산,False,False,True,False,17.23,18.96,17.19,0.917,0.32,,
 KVUE,KVUE,System2(중장기),청산,False,False,True,False,17.23,19.59,17.19,0.887,0.32,,
 KMB,KMB,System1(단기),청산,False,False,True,False,94.47,108.7,94.19,0.879,2.09,,
