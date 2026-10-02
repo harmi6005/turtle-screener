@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-BTC,BTC,System1(단기),관심,False,False,False,True,117031000.0,117639000.0,112000000.0,1.0,2870350.0,,
-BTC,BTC,System2(중장기),관심,False,False,False,True,117031000.0,117639000.0,102111000.0,1.0,2870350.0,,
-ETH,ETH,System1(단기),관심,False,False,False,True,3715000.0,3780000.0,3582000.0,0.991,115150.0,,
-ETH,ETH,System2(중장기),관심,False,False,False,True,3715000.0,3780000.0,3233000.0,0.991,115150.0,,
+BTC,BTC,System1(단기),탈락,False,False,False,True,117031000.0,117639000.0,112000000.0,1.0,2870350.0,,
+BTC,BTC,System2(중장기),탈락,False,False,False,True,117031000.0,117639000.0,102111000.0,1.0,2870350.0,,
+ETH,ETH,System1(단기),탈락,False,False,False,True,3715000.0,3780000.0,3582000.0,0.991,115150.0,,
+ETH,ETH,System2(중장기),탈락,False,False,False,True,3715000.0,3780000.0,3233000.0,0.991,115150.0,,
 TRX,TRX,System1(단기),청산,False,False,True,False,452.0,476.0,451.0,0.962,8.35,,
 TRX,TRX,System2(중장기),청산,False,False,True,False,452.0,482.0,451.0,0.95,8.35,,
 VET,VET,System1(단기),청산,False,False,True,False,12.07,13.7,11.71,0.893,0.91,,
