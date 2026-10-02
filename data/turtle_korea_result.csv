@@ -212,7 +212,7 @@
 006400,삼성SDI,System2(중장기),청산,False,False,True,False,517000.0,600000.0,505000.0,0.863,22300.0,,
 0067Y0,TIGER 차이나AI소프트웨어,System1(단기),청산,False,False,True,False,9175.0,11130.0,9145.0,0.833,310.75,,
 0067Y0,TIGER 차이나AI소프트웨어,System2(중장기),청산,False,False,True,False,9175.0,13510.0,9145.0,0.687,310.75,,
-0068M0,KODEX 미국S&P500버퍼6월액티브,System1(단기),관심,False,False,False,True,11685.0,11770.0,11415.0,0.993,95.0,,
+0068M0,KODEX 미국S&P500버퍼6월액티브,System1(단기),탈락,False,False,False,True,11685.0,11770.0,11415.0,0.993,95.0,,
 0069M0,1Q 미국나스닥100,System1(단기),관심,False,False,False,True,13865.0,13895.0,12975.0,1.0,162.4,,
 00680K,미래에셋증권2우B,System1(단기),청산,False,False,True,False,10250.0,11490.0,10070.0,0.899,391.0,,
 00680K,미래에셋증권2우B,System2(중장기),청산,False,False,True,False,10250.0,13620.0,10070.0,0.758,391.0,,
