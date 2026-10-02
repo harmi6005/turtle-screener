@@ -99,7 +99,7 @@ QTUM,QTUM,System2(중장기),확정,False,False,False,True,1348.0,1363.0,1113.0,
 C98,C98,System1(단기),확정,False,False,False,True,22.28,22.4,17.83,0.995,1.04,,22.51
 INIT,INIT,System1(단기),확정,False,False,False,True,115.0,116.0,84.74,0.991,6.48,,116.0
 INIT,INIT,System2(중장기),확정,False,False,False,True,115.0,116.0,80.22,0.991,6.48,,116.0
-HYPER,HYPER,System1(단기),확정,False,False,False,True,101.0,103.0,87.01,0.99,5.42,,103.0
+HYPER,HYPER,System1(단기),확정이탈,False,False,False,True,101.0,103.0,87.01,0.99,5.42,,103.0
 ZBT,ZBT,System1(단기),확정,False,False,False,True,118.0,119.0,101.0,0.992,4.75,,119.0
 ETC,ETC,System1(단기),확정,False,False,False,True,11670.0,12260.0,9690.0,0.992,642.5,,12320.0
 UOS,UOS,System1(단기),확정,False,False,False,True,4.98,4.99,4.22,0.999,0.28,,4.99
