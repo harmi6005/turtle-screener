@@ -396,7 +396,7 @@
 0206G0,1Q 현대차기아채권혼합50,System1(단기),청산,False,False,True,False,7705.0,8320.0,7680.0,0.928,106.25,,
 0206G0,1Q 현대차기아채권혼합50,System2(중장기),청산,False,False,True,False,7705.0,8840.0,7680.0,0.874,106.25,,
 0207G0,SOL 우주항공밸류체인,System2(중장기),탈락,False,False,False,True,7650.0,7705.0,6010.0,0.993,283.5,,
-0210A0,ACE K반도체TOP2+,System1(단기),관심,False,False,False,True,7885.0,7925.0,6760.0,0.996,305.25,,
+0210A0,ACE K반도체TOP2+,System1(단기),탈락,False,False,False,True,7885.0,7925.0,6760.0,0.996,305.25,,
 023350,한국종합기술,System1(단기),청산,False,False,True,False,3780.0,4350.0,3725.0,0.878,176.0,,
 023350,한국종합기술,System2(중장기),청산,False,False,True,False,3780.0,4355.0,3725.0,0.877,176.0,,
 023450,동남합성,System1(단기),탈락,False,False,False,True,32200.0,32650.0,30900.0,0.991,650.0,,
@@ -755,7 +755,7 @@
 284980,RISE 200금융,System1(단기),청산,False,False,True,False,21755.0,23630.0,21930.0,0.928,562.0,,
 284980,RISE 200금융,System2(중장기),청산,False,False,True,False,21755.0,24042.0,21930.0,0.912,562.0,,
 285690,FOCUS ESG리더스,System1(단기),청산,False,False,True,False,21335.0,22055.0,21290.0,0.967,223.0,,
-289670,PLUS 국채선물10년,System1(단기),관심,False,False,False,True,52005.0,52115.0,51180.0,0.998,260.5,,
+289670,PLUS 국채선물10년,System1(단기),확정,False,False,False,True,52005.0,52115.0,51180.0,0.998,260.5,,52150.0
 289480,TIGER 200커버드콜,System1(단기),관심,False,False,False,True,13325.0,13382.0,12404.0,0.996,267.6,,
 289480,TIGER 200커버드콜,System2(중장기),관심,False,False,False,True,13325.0,13382.0,11883.0,0.996,267.6,,
 290080,RISE 200고배당커버드콜ATM,System1(단기),청산,False,False,True,False,7200.0,7702.0,7200.0,0.948,221.55,,
@@ -855,7 +855,7 @@
 385540,RISE 종합채권(A-이상)액티브,System2(중장기),탈락,False,False,False,True,103120.0,103445.0,102150.0,0.998,307.75,,
 388280,RISE K엔터&여행레저,System1(단기),청산,False,False,True,False,6875.0,7430.0,6925.0,0.935,136.5,,
 388280,RISE K엔터&여행레저,System2(중장기),청산,False,False,True,False,6875.0,8320.0,6925.0,0.835,136.5,,
-395270,HANARO Fn K-반도체,System1(단기),관심,False,False,False,True,61500.0,61740.0,53370.0,0.997,2384.9,,
+395270,HANARO Fn K-반도체,System1(단기),확정,False,False,False,True,61500.0,61740.0,53370.0,0.997,2384.9,,61880.0
 395150,KODEX 웹툰&드라마,System1(단기),청산,False,False,True,False,1832.0,1907.0,1815.0,0.961,39.25,,
 395290,HANARO Fn K-POP&미디어,System1(단기),청산,False,False,True,False,4750.0,5210.0,4790.0,0.928,129.6,,
 395290,HANARO Fn K-POP&미디어,System2(중장기),청산,False,False,True,False,4750.0,5755.0,4790.0,0.84,129.6,,
@@ -907,8 +907,8 @@
 438570,SOL 국고채10년,System1(단기),확정,False,False,False,True,97835.0,98250.0,96440.0,0.996,477.5,,98385.0
 438900,HANARO Fn K-푸드,System1(단기),청산,False,False,True,False,10730.0,12195.0,10730.0,0.891,187.25,,
 438900,HANARO Fn K-푸드,System2(중장기),청산,False,False,True,False,10730.0,12260.0,10730.0,0.886,187.25,,
-439860,KODEX ESG종합채권(A-이상)액티브,System1(단기),관심,False,False,False,True,113650.0,113785.0,113215.0,0.999,126.0,,
-439860,KODEX ESG종합채권(A-이상)액티브,System2(중장기),관심,False,False,False,True,113650.0,113855.0,113215.0,0.998,126.0,,
+439860,KODEX ESG종합채권(A-이상)액티브,System1(단기),확정,False,False,False,True,113650.0,113785.0,113215.0,0.999,126.0,,113890.0
+439860,KODEX ESG종합채권(A-이상)액티브,System2(중장기),확정,False,False,False,True,113650.0,113855.0,113215.0,0.998,126.0,,113890.0
 439870,KODEX 국고채30년액티브,System2(중장기),확정,False,False,False,True,88195.0,89255.0,84800.0,0.993,986.5,,89265.0
 440640,ACE 단기채권알파액티브,System1(단기),진입,True,True,False,False,112925.0,112925.0,112785.0,1.0,32.25,,
 440640,ACE 단기채권알파액티브,System2(중장기),진입,True,True,False,False,112925.0,112925.0,112670.0,1.0,32.25,,
@@ -1048,7 +1048,7 @@
 473640,HANARO 글로벌금채굴기업,System1(단기),청산,False,False,True,False,31570.0,36130.0,31200.0,0.876,991.65,,
 473640,HANARO 글로벌금채굴기업,System2(중장기),청산,False,False,True,False,31570.0,38235.0,31200.0,0.828,991.65,,
 474390,SOL 국고채30년액티브,System1(단기),진입,True,True,False,False,40990.0,40810.0,39680.0,1.005,286.95,,
-474390,SOL 국고채30년액티브,System2(중장기),관심,False,False,False,True,40990.0,41310.0,39470.0,0.993,286.95,,
+474390,SOL 국고채30년액티브,System2(중장기),확정,False,False,False,True,40990.0,41310.0,39470.0,0.993,286.95,,41270.0
 475050,ACE KPOP포커스,System1(단기),청산,False,False,True,False,6625.0,7362.0,6700.0,0.92,209.35,,
 475050,ACE KPOP포커스,System2(중장기),청산,False,False,True,False,6625.0,7985.0,6650.0,0.848,209.35,,
 475350,RISE 버크셔포트폴리오TOP10,System1(단기),청산,False,False,True,False,14065.0,14765.0,14000.0,0.957,183.15,,
