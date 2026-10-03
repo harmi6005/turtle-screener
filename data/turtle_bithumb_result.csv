@@ -14,7 +14,7 @@ SAND,SAND,System2(중장기),진입,True,True,False,False,99.18,98.96,44.01,1.15
 ADP,ADP,System1(단기),청산,False,False,True,False,0.67,1.22,0.68,0.573,0.11,,
 BFC,BFC,System1(단기),청산,False,False,True,False,36.67,48.77,36.67,0.867,4.46,,
 SHIB,SHIB,System1(단기),청산,False,False,True,False,0.01,0.01,0.01,0.941,0.0,,
-ONT,ONT,System1(단기),관심,False,False,False,True,82.6,84.2,69.41,0.995,4.09,,
+ONT,ONT,System1(단기),탈락,False,False,False,True,82.6,84.2,69.41,0.995,4.09,,
 ATOM,ATOM,System1(단기),청산,False,False,True,False,2290.0,2590.0,2295.0,0.904,135.95,,
 DOGE,DOGE,System1(단기),청산,False,False,True,False,126.0,143.0,125.0,0.909,7.45,,
 CTK,CTK,System1(단기),청산,False,False,True,False,166.0,214.0,165.0,0.808,10.55,,
