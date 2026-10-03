@@ -153,7 +153,7 @@ BEAM,BEAM,System1(단기),확정,False,False,False,True,2.64,2.7,2.06,0.991,0.14
 FRAX,FRAX,System1(단기),확정,False,False,False,True,406.0,410.0,345.0,0.998,16.9,,411.0
 MEGA,MEGA,System1(단기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
 MEGA,MEGA,System2(중장기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
-MNT,MNT,System1(단기),확정,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,910.0
+MNT,MNT,System1(단기),확정이탈,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,910.0
 MNT,MNT,System2(중장기),확정,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,910.0
 QTUM,QTUM,System1(단기),확정,False,False,False,True,1348.0,1363.0,1150.0,0.99,60.95,,1363.0
 QTUM,QTUM,System2(중장기),확정,False,False,False,True,1348.0,1363.0,1113.0,0.99,60.95,,1363.0
