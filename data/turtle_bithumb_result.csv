@@ -49,8 +49,8 @@ LSK,LSK,System1(단기),청산,False,False,True,False,378.0,2196.0,374.0,0.189,1
 AIOZ,AIOZ,System1(단기),청산,False,False,True,False,147.0,210.0,147.0,0.752,18.98,,
 POLYX,POLYX,System1(단기),청산,False,False,True,False,57.48,75.0,56.0,0.781,3.57,,
 BB,BB,System1(단기),청산,False,False,True,False,12.77,17.57,12.1,0.766,1.44,,
-ZRO,ZRO,System1(단기),관심,False,False,False,True,2356.0,2673.0,1648.0,0.999,235.8,,
-ZRO,ZRO,System2(중장기),관심,False,False,False,True,2356.0,2673.0,1258.0,0.999,235.8,,
+ZRO,ZRO,System1(단기),확정,False,False,False,True,2356.0,2673.0,1648.0,0.999,235.8,,2676.0
+ZRO,ZRO,System2(중장기),확정,False,False,False,True,2356.0,2673.0,1258.0,0.999,235.8,,2676.0
 BLAST,BLAST,System1(단기),청산,False,False,True,False,0.39,0.74,0.51,0.72,0.08,,
 BLAST,BLAST,System2(중장기),청산,False,False,True,False,0.39,0.74,0.41,0.72,0.08,,
 G,G,System1(단기),청산,False,False,True,False,6.39,12.8,6.43,0.515,1.32,,
