@@ -19,8 +19,8 @@ SUNDOG,SUNDOG,System2(중장기),청산,False,False,True,False,3.7,8.65,3.91,0.5
 DATA,DATA,System1(단기),청산,False,False,True,False,285.0,357.0,282.0,0.801,22.4,,
 BLUE,BLUE,System1(단기),청산,False,False,True,False,13.63,15.93,13.05,0.857,1.06,,
 PROVE,PROVE,System1(단기),청산,False,False,True,False,295.0,431.0,292.0,0.684,25.5,,
-SYRUP,SYRUP,System1(단기),관심,False,False,False,True,342.0,343.0,273.0,0.997,22.75,,
-SYRUP,SYRUP,System2(중장기),관심,False,False,False,True,342.0,343.0,260.0,0.997,22.75,,
+SYRUP,SYRUP,System1(단기),확정,False,False,False,True,342.0,343.0,273.0,0.997,22.75,,343.0
+SYRUP,SYRUP,System2(중장기),확정,False,False,False,True,342.0,343.0,260.0,0.997,22.75,,343.0
 ALLO,ALLO,System1(단기),청산,False,False,True,False,351.0,484.0,354.0,0.731,34.65,,
 OPEN,OPEN,System1(단기),청산,False,False,True,False,159.0,205.0,158.0,0.78,11.45,,
 OPEN,OPEN,System2(중장기),청산,False,False,True,False,159.0,330.0,158.0,0.485,11.45,,
