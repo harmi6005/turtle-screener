@@ -87,8 +87,8 @@ THQ,THQ,System1(단기),청산,False,False,True,False,15.23,18.24,14.98,0.929,1.
 2Z,2Z,System2(중장기),청산,False,False,True,False,61.46,110.0,61.31,0.702,7.59,,
 FF,FF,System1(단기),청산,False,False,True,False,158.0,250.0,158.0,0.644,20.25,,
 FF,FF,System2(중장기),청산,False,False,True,False,158.0,250.0,158.0,0.644,20.25,,
-SUPER,SUPER,System1(단기),관심,False,False,False,True,323.0,335.0,202.0,0.997,25.1,,
-SUPER,SUPER,System2(중장기),관심,False,False,False,True,323.0,335.0,149.0,0.997,25.1,,
+SUPER,SUPER,System1(단기),확정,False,False,False,True,323.0,335.0,202.0,0.997,25.1,,336.0
+SUPER,SUPER,System2(중장기),확정,False,False,False,True,323.0,335.0,149.0,0.997,25.1,,336.0
 EDEN,EDEN,System1(단기),청산,False,False,True,False,75.57,90.45,76.42,0.914,7.36,,
 ZBT,ZBT,System1(단기),청산,False,False,True,False,117.0,126.0,113.0,0.944,5.8,,
 ZORA,ZORA,System1(단기),청산,False,False,True,False,10.47,13.0,10.3,0.828,0.79,,
