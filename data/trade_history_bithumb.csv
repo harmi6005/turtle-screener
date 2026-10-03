@@ -15,3 +15,4 @@ ZBT,System1(단기),long,loss,False,
 ETC,System1(단기),long,loss,False,
 PROVE,System1(단기),long,loss,False,
 MNT,System1(단기),long,loss,False,
+CRTS,System1(단기),long,win,True,0.08
