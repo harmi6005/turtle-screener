@@ -87,7 +87,7 @@ QTUM,QTUM,System2(중장기),확정,False,False,False,True,1348.0,1363.0,1113.0,
 C98,C98,System1(단기),확정,False,False,False,True,22.28,22.4,17.83,0.995,1.04,,22.51
 UOS,UOS,System1(단기),확정,False,False,False,True,4.98,4.99,4.22,0.999,0.28,,4.99
 PUFFER,PUFFER,System2(중장기),확정,False,False,False,True,40.0,42.3,17.51,0.999,5.55,,42.39
-BNB,BNB,System1(단기),확정,False,False,False,True,1061000.0,1065000.0,963500.0,0.996,33950.0,,1065000.0
+BNB,BNB,System1(단기),확정이탈,False,False,False,True,1061000.0,1065000.0,963500.0,0.996,33950.0,,1065000.0
 BNB,BNB,System2(중장기),확정,False,False,False,True,1061000.0,1065000.0,936000.0,0.996,33950.0,,1065000.0
 PHA,PHA,System1(단기),확정,False,False,False,True,49.4,50.6,32.74,0.993,3.68,,50.62
 PHA,PHA,System2(중장기),확정,False,False,False,True,49.4,50.6,32.63,0.993,3.68,,50.62
