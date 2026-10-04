@@ -22,8 +22,8 @@ RON,RON,System1(단기),관심,False,False,False,True,93.35,95.46,75.8,0.999,8.8
 RON,RON,System2(중장기),관심,False,False,False,True,93.35,95.46,63.7,0.999,8.85,,
 BLAST,BLAST,System1(단기),청산,False,False,True,False,0.36,0.74,0.38,0.631,0.08,,
 BLAST,BLAST,System2(중장기),청산,False,False,True,False,0.36,0.74,0.38,0.631,0.08,,
-MERL,MERL,System1(단기),관심,False,False,False,True,43.37,45.19,35.56,0.995,3.66,,
-MERL,MERL,System2(중장기),관심,False,False,False,True,43.37,45.19,29.7,0.995,3.66,,
+MERL,MERL,System1(단기),탈락,False,False,False,True,43.37,45.19,35.56,0.995,3.66,,
+MERL,MERL,System2(중장기),탈락,False,False,False,True,43.37,45.19,29.7,0.995,3.66,,
 MVL,MVL,System1(단기),청산,False,False,True,False,1.53,1.61,1.5,0.951,0.05,,
 SUNDOG,SUNDOG,System1(단기),청산,False,False,True,False,3.84,6.0,3.91,0.74,0.43,,
 SUNDOG,SUNDOG,System2(중장기),청산,False,False,True,False,3.84,8.65,3.91,0.513,0.43,,
@@ -48,7 +48,7 @@ KITE,KITE,System2(중장기),관심,False,False,False,True,209.0,217.0,133.0,0.9
 PIEVERSE,PIEVERSE,System1(단기),청산,False,False,True,False,1817.0,2714.0,1813.0,0.675,200.8,,
 CTR,CTR,System1(단기),청산,False,False,True,False,17.13,20.0,15.71,0.986,2.15,,
 CTR,CTR,System2(중장기),청산,False,False,True,False,17.13,20.0,13.83,0.986,2.15,,
-GRVT,GRVT,System1(단기),관심,False,False,False,True,290.0,295.0,257.0,0.997,16.45,,
+GRVT,GRVT,System1(단기),탈락,False,False,False,True,290.0,295.0,257.0,0.997,16.45,,
 BANK,BANK,System1(단기),청산,False,False,True,False,39.08,55.55,38.93,0.713,3.12,,
 YFI,YFI,System1(단기),확정,False,False,False,True,3562000.0,3634000.0,3079000.0,0.994,170900.0,,3640000.0
 YFI,YFI,System2(중장기),확정,False,False,False,True,3562000.0,3634000.0,2717000.0,0.994,170900.0,,3640000.0
