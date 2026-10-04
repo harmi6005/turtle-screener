@@ -32,8 +32,8 @@ MVL,MVL,System1(단기),청산,False,False,True,False,1.51,1.61,1.5,0.942,0.05,,
 SUNDOG,SUNDOG,System1(단기),청산,False,False,True,False,3.57,6.0,3.91,0.74,0.43,,
 SUNDOG,SUNDOG,System2(중장기),청산,False,False,True,False,3.57,8.65,3.91,0.513,0.43,,
 DATA,DATA,System1(단기),청산,False,False,True,False,284.0,357.0,282.0,0.815,22.65,,
-C,C,System1(단기),관심,False,False,False,True,134.0,135.0,99.3,0.993,12.38,,
-C,C,System2(중장기),관심,False,False,False,True,134.0,135.0,71.89,0.993,12.38,,
+C,C,System1(단기),확정,False,False,False,True,134.0,135.0,99.3,0.993,12.38,,135.0
+C,C,System2(중장기),확정,False,False,False,True,134.0,135.0,71.89,0.993,12.38,,135.0
 HEMI,HEMI,System1(단기),청산,False,False,True,False,8.08,10.29,8.11,0.805,0.54,,
 HEMI,HEMI,System2(중장기),청산,False,False,True,False,8.08,30.9,8.11,0.268,0.54,,
 PROVE,PROVE,System1(단기),청산,False,False,True,False,294.0,431.0,292.0,0.684,25.5,,
