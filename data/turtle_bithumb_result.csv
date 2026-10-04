@@ -23,8 +23,8 @@ PROVE,PROVE,System1(단기),청산,False,False,True,False,286.0,431.0,292.0,0.68
 ALLO,ALLO,System1(단기),청산,False,False,True,False,356.0,484.0,354.0,0.75,35.1,,
 FF,FF,System1(단기),청산,False,False,True,False,155.0,250.0,155.0,0.62,14.85,,
 FF,FF,System2(중장기),청산,False,False,True,False,155.0,250.0,155.0,0.62,14.85,,
-MON,MON,System1(단기),관심,False,False,False,True,44.61,47.86,32.4,0.994,3.72,,
-MON,MON,System2(중장기),관심,False,False,False,True,44.61,47.86,28.55,0.994,3.72,,
+MON,MON,System1(단기),탈락,False,False,False,True,44.61,47.86,32.4,0.994,3.72,,
+MON,MON,System2(중장기),탈락,False,False,False,True,44.61,47.86,28.55,0.994,3.72,,
 YFI,YFI,System1(단기),확정,False,False,False,True,3562000.0,3634000.0,3079000.0,0.994,170900.0,,3640000.0
 YFI,YFI,System2(중장기),확정,False,False,False,True,3562000.0,3634000.0,2717000.0,0.994,170900.0,,3640000.0
 FLUID,FLUID,System1(단기),확정,False,False,False,True,2277.0,2288.0,1631.0,0.999,140.6,,2289.0
