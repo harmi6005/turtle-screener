@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 MMM,MMM,System1(단기),청산,False,False,True,False,162.26,170.98,161.12,0.953,3.47,,
 MMM,MMM,System2(중장기),청산,False,False,True,False,162.26,184.09,160.27,0.885,3.47,,
 AES,AES,System1(단기),관심,False,False,False,True,14.9,14.94,14.8,0.999,0.04,,
@@ -147,8 +147,8 @@ NEM,NEM,System1(단기),청산,False,False,True,False,115.71,130.48,113.86,0.889
 NEM,NEM,System2(중장기),청산,False,False,True,False,115.71,135.01,113.86,0.859,3.75,,
 NDSN,NDSN,System1(단기),관심,False,False,False,True,334.89,335.77,310.5,0.998,5.68,,
 NDSN,NDSN,System2(중장기),관심,False,False,False,True,334.89,338.1,306.03,0.991,5.68,,
-NVDA,NVDA,System1(단기),관심,False,False,False,True,237.45,237.88,221.09,1.0,5.35,,
-NVDA,NVDA,System2(중장기),관심,False,False,False,True,237.45,237.88,208.93,1.0,5.35,,
+NVDA,NVDA,System1(단기),확정,False,False,False,True,237.45,237.88,221.09,1.0,5.35,,237.94
+NVDA,NVDA,System2(중장기),확정,False,False,False,True,237.45,237.88,208.93,1.0,5.35,,237.94
 NVR,NVR,System1(단기),청산,False,False,True,False,5948.41,6383.3,5948.13,0.94,143.81,,
 NVR,NVR,System2(중장기),청산,False,False,True,False,5948.41,6832.43,5948.13,0.878,143.81,,
 ON,ON,System1(단기),관심,False,False,False,True,85.74,86.45,68.17,0.993,3.64,,
