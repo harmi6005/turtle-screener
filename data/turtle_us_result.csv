@@ -66,8 +66,8 @@ CTVA,CTVA,System2(중장기),청산,False,False,True,False,12.36,90.87,11.84,0.1
 COST,COST,System1(단기),관심,False,False,False,True,924.32,931.09,883.1,0.994,14.03,,
 CRH,CRH,System1(단기),청산,False,False,True,False,82.32,94.72,80.81,0.87,2.36,,
 CRH,CRH,System2(중장기),청산,False,False,True,False,82.32,105.29,80.81,0.782,2.36,,
-CRWD,CRWD,System1(단기),관심,False,False,False,True,273.02,273.54,230.85,0.999,11.3,,
-CRWD,CRWD,System2(중장기),관심,False,False,False,True,273.02,273.54,204.27,0.999,11.3,,
+CRWD,CRWD,System1(단기),확정,False,False,False,True,273.02,273.54,230.85,0.999,11.3,,273.73
+CRWD,CRWD,System2(중장기),확정,False,False,False,True,273.02,273.54,204.27,0.999,11.3,,273.73
 CCI,CCI,System1(단기),청산,False,False,True,False,66.33,76.49,65.68,0.874,1.86,,
 CCI,CCI,System2(중장기),청산,False,False,True,False,66.33,79.53,65.68,0.84,1.86,,
 DDOG,DDOG,System1(단기),관심,False,False,False,True,279.81,282.0,226.83,0.999,11.08,,
@@ -145,7 +145,7 @@ NFLX,NFLX,System1(단기),청산,False,False,True,False,66.86,82.69,66.75,0.814,
 NFLX,NFLX,System2(중장기),청산,False,False,True,False,66.86,83.6,66.75,0.805,1.89,,
 NEM,NEM,System1(단기),청산,False,False,True,False,115.71,130.48,113.86,0.889,3.75,,
 NEM,NEM,System2(중장기),청산,False,False,True,False,115.71,135.01,113.86,0.859,3.75,,
-NDSN,NDSN,System1(단기),관심,False,False,False,True,334.89,335.77,310.5,0.998,5.68,,
+NDSN,NDSN,System1(단기),확정,False,False,False,True,334.89,335.77,310.5,0.998,5.68,,335.78
 NDSN,NDSN,System2(중장기),관심,False,False,False,True,334.89,338.1,306.03,0.991,5.68,,
 NVDA,NVDA,System1(단기),확정,False,False,False,True,237.45,237.88,221.09,1.0,5.35,,237.94
 NVDA,NVDA,System2(중장기),확정,False,False,False,True,237.45,237.88,208.93,1.0,5.35,,237.94
