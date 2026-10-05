@@ -26,8 +26,8 @@ SKY,SKY,System1(단기),확정,False,False,False,True,130.0,132.0,97.74,0.992,10
 SKY,SKY,System2(중장기),확정,False,False,False,True,130.0,132.0,75.65,0.992,10.3,,132.0
 SUNDOG,SUNDOG,System1(단기),청산,False,False,True,False,2.78,6.0,3.44,0.748,0.51,,
 SUNDOG,SUNDOG,System2(중장기),청산,False,False,True,False,2.78,8.65,3.44,0.519,0.51,,
-INIT,INIT,System1(단기),관심,False,False,False,True,156.0,160.0,113.0,0.994,12.22,,
-INIT,INIT,System2(중장기),관심,False,False,False,True,156.0,160.0,86.76,0.994,12.22,,
+INIT,INIT,System1(단기),확정,False,False,False,True,156.0,160.0,113.0,0.994,12.22,,160.0
+INIT,INIT,System2(중장기),확정,False,False,False,True,156.0,160.0,86.76,0.994,12.22,,160.0
 C,C,System1(단기),확정,False,False,False,True,138.0,139.0,107.0,0.993,12.66,,139.0
 C,C,System2(중장기),확정,False,False,False,True,138.0,139.0,71.89,0.993,12.66,,139.0
 PAXG,PAXG,System1(단기),청산,False,False,True,False,5614000.0,6440000.0,5600000.0,0.874,124750.0,,
