@@ -17,3 +17,4 @@ PROVE,System1(단기),long,loss,False,
 MNT,System1(단기),long,loss,False,
 CRTS,System1(단기),long,win,True,0.08
 BNB,System1(단기),long,win,True,1076000.0
+UOS,System1(단기),long,loss,False,
