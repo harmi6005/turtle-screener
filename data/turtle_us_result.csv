@@ -8,7 +8,7 @@ AFL,AFL,System2(중장기),청산,False,False,True,False,111.41,129.57,110.66,0.
 ALLE,ALLE,System1(단기),탈락,False,False,False,True,155.08,158.01,151.13,0.996,2.96,,
 AMT,AMT,System1(단기),청산,False,False,True,False,163.41,177.88,160.94,0.929,3.82,,
 AMT,AMT,System2(중장기),청산,False,False,True,False,163.41,179.04,160.94,0.923,3.82,,
-AME,AME,System1(단기),관심,False,False,False,True,252.49,254.19,233.62,0.998,5.09,,
+AME,AME,System1(단기),탈락,False,False,False,True,252.49,254.19,233.62,0.998,5.09,,
 APH,APH,System2(중장기),관심,False,False,False,True,86.97,88.03,76.62,1.0,2.72,,
 AON,AON,System1(단기),청산,False,False,True,False,270.27,336.45,269.02,0.821,7.32,,
 AON,AON,System2(중장기),청산,False,False,True,False,270.27,381.47,269.02,0.725,7.32,,
