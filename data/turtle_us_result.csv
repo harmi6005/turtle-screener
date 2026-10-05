@@ -148,7 +148,7 @@ LUV,LUV,System1(단기),탈락,False,False,False,True,42.25,43.2,40.45,0.991,1.2
 TMUS,TMUS,System1(단기),청산,False,False,True,False,164.05,189.87,161.14,0.867,4.84,,
 TMUS,TMUS,System2(중장기),청산,False,False,True,False,164.05,197.72,161.14,0.832,4.84,,
 TDY,TDY,System1(단기),탈락,False,False,False,True,619.57,624.58,597.94,0.995,10.24,,
-TJX,TJX,System1(단기),관심,False,False,False,True,132.86,134.67,126.07,0.995,2.82,,
+TJX,TJX,System1(단기),탈락,False,False,False,True,132.86,134.67,126.07,0.995,2.82,,
 UBER,UBER,System1(단기),청산,False,False,True,False,68.14,78.35,67.32,0.874,1.74,,
 UBER,UBER,System2(중장기),청산,False,False,True,False,68.14,82.36,67.32,0.831,1.74,,
 VTR,VTR,System1(단기),청산,False,False,True,False,84.43,92.43,83.33,0.918,1.62,,
