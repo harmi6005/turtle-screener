@@ -224,7 +224,7 @@ WELL,WELL,System1(단기),청산,False,False,True,False,224.8,241.41,225.36,0.95
 WELL,WELL,System2(중장기),청산,False,False,True,False,224.8,254.24,225.36,0.904,4.82,,
 WY,WY,System1(단기),청산,False,False,True,False,18.58,23.23,18.41,0.811,0.52,,
 WY,WY,System2(중장기),청산,False,False,True,False,18.58,25.76,18.41,0.731,0.52,,
-WSM,WSM,System1(단기),관심,False,False,False,True,236.93,237.84,222.77,0.996,6.41,,
+WSM,WSM,System1(단기),탈락,False,False,False,True,236.93,237.84,222.77,0.996,6.41,,
 WTW,WTW,System1(단기),청산,False,False,True,False,286.17,339.1,285.31,0.848,7.06,,
 WTW,WTW,System2(중장기),청산,False,False,True,False,286.17,350.34,285.31,0.821,7.06,,
 YUM,YUM,System1(단기),청산,False,False,True,False,137.55,152.45,135.89,0.903,3.44,,
