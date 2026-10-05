@@ -78,8 +78,8 @@ DHI,DHI,System2(중장기),청산,False,False,True,False,133.54,156.76,132.37,0.
 DD,DD,System1(단기),관심,False,False,False,True,130.91,132.39,127.62,0.991,2.47,,
 EME,EME,System1(단기),관심,False,False,False,True,785.92,794.95,730.0,0.995,22.89,,
 EMR,EMR,System2(중장기),관심,False,False,False,True,163.06,165.79,144.4,0.99,3.75,,
-EXPD,EXPD,System1(단기),관심,False,False,False,True,194.1,194.59,183.36,0.998,3.96,,
-EXPD,EXPD,System2(중장기),관심,False,False,False,True,194.1,194.59,183.36,0.998,3.96,,
+EXPD,EXPD,System1(단기),확정,False,False,False,True,194.1,194.59,183.36,0.998,3.96,,194.63
+EXPD,EXPD,System2(중장기),확정,False,False,False,True,194.1,194.59,183.36,0.998,3.96,,194.63
 FFIV,FFIV,System1(단기),관심,False,False,False,True,458.36,462.0,428.93,0.995,13.76,,
 FFIV,FFIV,System2(중장기),관심,False,False,False,True,458.36,462.0,386.03,0.995,13.76,,
 FTNT,FTNT,System1(단기),진입,True,True,False,False,183.62,183.09,167.41,1.003,6.25,,
