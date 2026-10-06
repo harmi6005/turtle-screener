@@ -1,14 +1,14 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 A,A,System1(단기),관심,False,False,False,True,138.0,144.0,124.0,0.993,8.4,,
 A,A,System2(중장기),관심,False,False,False,True,138.0,144.0,101.0,0.993,8.4,,
-GLM,GLM,System1(단기),관심,False,False,False,True,177.0,179.0,165.0,0.994,7.6,,
+GLM,GLM,System1(단기),확정,False,False,False,True,177.0,179.0,165.0,0.994,7.6,,179.0
 ADP,ADP,System1(단기),청산,False,False,True,False,0.66,1.22,0.65,0.547,0.09,,
 ADP,ADP,System2(중장기),청산,False,False,True,False,0.66,1.22,0.65,0.547,0.09,,
 CAKE,CAKE,System1(단기),청산,False,False,True,False,3333.0,3875.0,3323.0,0.865,246.4,,
 NFT,NFT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 NFT,NFT,System2(중장기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
-1INCH,1INCH,System1(단기),관심,False,False,False,True,144.0,145.0,131.0,0.993,6.45,,
-1INCH,1INCH,System2(중장기),관심,False,False,False,True,144.0,145.0,117.0,0.993,6.45,,
+1INCH,1INCH,System1(단기),확정,False,False,False,True,144.0,145.0,131.0,0.993,6.45,,145.0
+1INCH,1INCH,System2(중장기),확정,False,False,False,True,144.0,145.0,117.0,0.993,6.45,,145.0
 BTT,BTT,System1(단기),진입,True,True,True,False,0.0,0.0,0.0,1.0,0.0,,
 BTT,BTT,System2(중장기),진입,True,True,False,False,0.0,0.0,0.0,1.0,0.0,,
 AZIT,AZIT,System1(단기),청산,False,False,True,False,2.44,3.62,2.58,0.739,0.24,,
@@ -40,7 +40,7 @@ WLFI,WLFI,System2(중장기),청산,False,False,True,False,74.0,109.0,73.25,0.68
 2Z,2Z,System2(중장기),청산,False,False,True,False,58.2,110.0,57.71,0.534,7.51,,
 TRUST,TRUST,System1(단기),청산,False,False,True,False,79.82,123.0,79.65,0.651,6.09,,
 CHECK,CHECK,System1(단기),청산,False,False,True,False,15.58,19.05,15.41,0.831,1.15,,
-CHIP,CHIP,System1(단기),관심,False,False,False,True,69.84,70.45,56.17,1.0,5.95,,
+CHIP,CHIP,System1(단기),확정,False,False,False,True,69.84,70.45,56.17,1.0,5.95,,70.69
 GRVT,GRVT,System1(단기),관심,False,False,False,True,300.0,306.0,257.0,0.99,16.55,,
 SKY,SKY,System1(단기),확정,False,False,False,True,130.0,132.0,97.74,0.992,10.3,,132.0
 SKY,SKY,System2(중장기),확정,False,False,False,True,130.0,132.0,75.65,0.992,10.3,,132.0

@@ -178,7 +178,7 @@
 0091M0,HANARO 27-06 회사채(AA-이상)액티브,System1(단기),진입,True,True,False,False,10180.0,10175.0,10160.0,1.0,8.25,,
 0091M0,HANARO 27-06 회사채(AA-이상)액티브,System2(중장기),진입,True,True,False,False,10180.0,10175.0,10155.0,1.0,8.25,,
 009150,삼성전기,System1(단기),탈락,False,False,False,True,1577000.0,1587000.0,1305000.0,0.997,77600.0,,
-009180,한솔로지스틱스,System1(단기),관심,False,False,False,True,2810.0,2825.0,2725.0,0.996,42.25,,
+009180,한솔로지스틱스,System1(단기),확정,False,False,False,True,2810.0,2825.0,2725.0,0.996,42.25,,2820.0
 0092C0,SOL 27-12 회사채(AA-이상)액티브,System1(단기),진입,True,True,False,False,50360.0,50335.0,50265.0,1.0,17.5,,
 0092C0,SOL 27-12 회사채(AA-이상)액티브,System2(중장기),진입,True,True,False,False,50360.0,50335.0,50265.0,1.0,17.5,,
 0093B0,RISE 엔비디아고정테크100,System1(단기),탈락,False,False,False,True,12795.0,13008.0,12274.0,0.993,180.95,,
@@ -271,7 +271,7 @@
 014130,한익스프레스,System2(중장기),탈락,False,False,False,True,2715.0,2730.0,2400.0,0.996,76.0,,
 0148J0,TIGER 코리아휴머노이드로봇산업,System1(단기),탈락,False,False,False,True,9930.0,10055.0,9200.0,0.995,432.25,,
 0151P0,RISE 코리아전략산업액티브,System1(단기),탈락,False,False,False,True,15320.0,15530.0,13855.0,0.993,490.25,,
-014580,태경비케이,System1(단기),관심,False,False,False,True,3880.0,3915.0,3705.0,0.999,77.75,,
+014580,태경비케이,System1(단기),탈락,False,False,False,True,3880.0,3915.0,3705.0,0.999,77.75,,
 0155M0,ACE 미국SMR원자력TOP10,System1(단기),청산,False,False,True,False,6020.0,7750.0,6015.0,0.783,253.75,,
 0155M0,ACE 미국SMR원자력TOP10,System2(중장기),청산,False,False,True,False,6020.0,7785.0,6015.0,0.78,253.75,,
 015260,에이엔피,System1(단기),청산,False,False,True,False,202.0,396.0,238.0,0.616,28.25,,
@@ -507,7 +507,7 @@
 238670,PLUS 스마트베타Quality채권혼합,System2(중장기),관심,False,False,False,True,13615.0,13740.0,13360.0,0.991,167.25,,
 238720,ACE 일본Nikkei225(H),System1(단기),탈락,False,False,False,True,49805.0,50300.0,45835.0,1.0,975.5,,
 238720,ACE 일본Nikkei225(H),System2(중장기),탈락,False,False,False,True,49805.0,50670.0,45505.0,0.992,975.5,,
-241390,RISE V&S셀렉트밸류채권혼합,System1(단기),관심,False,False,False,True,15910.0,16000.0,15470.0,0.998,187.5,,
+241390,RISE V&S셀렉트밸류채권혼합,System1(단기),확정,False,False,False,True,15910.0,16000.0,15470.0,0.998,187.5,,16030.0
 245340,TIGER 미국다우존스30,System1(단기),청산,False,False,True,False,33550.0,35503.0,33670.0,0.954,303.3,,
 245340,TIGER 미국다우존스30,System2(중장기),청산,False,False,True,False,33550.0,38883.0,33670.0,0.871,303.3,,
 245350,TIGER 유로스탁스배당30,System1(단기),청산,False,False,True,False,17815.0,19850.0,18200.0,0.947,356.0,,
