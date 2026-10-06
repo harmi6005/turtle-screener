@@ -17,8 +17,8 @@ AMT,AMT,System1(단기),청산,False,False,True,False,160.73,177.88,160.85,0.914
 AMT,AMT,System2(중장기),청산,False,False,True,False,160.73,179.04,160.85,0.909,3.74,,
 APH,APH,System1(단기),탈락,False,False,False,True,87.11,88.02,78.76,0.996,2.67,,
 APH,APH,System2(중장기),탈락,False,False,False,True,87.11,88.03,76.62,0.996,2.67,,
-ADI,ADI,System1(단기),관심,False,False,False,True,416.86,421.7,370.97,0.994,11.11,,
-ADI,ADI,System2(중장기),관심,False,False,False,True,416.86,421.7,356.12,0.994,11.11,,
+ADI,ADI,System1(단기),확정,False,False,False,True,416.86,421.7,370.97,0.994,11.11,,421.83
+ADI,ADI,System2(중장기),확정,False,False,False,True,416.86,421.7,356.12,0.994,11.11,,421.83
 AON,AON,System1(단기),청산,False,False,True,False,269.53,328.84,268.9,0.827,7.22,,
 AON,AON,System2(중장기),청산,False,False,True,False,269.53,381.47,268.9,0.713,7.22,,
 AMAT,AMAT,System1(단기),관심,False,False,False,True,536.53,547.25,452.66,0.997,17.95,,
@@ -70,13 +70,13 @@ CRWD,CRWD,System1(단기),확정,False,False,False,True,273.02,273.54,230.85,0.9
 CRWD,CRWD,System2(중장기),확정,False,False,False,True,273.02,273.54,204.27,0.999,11.3,,273.73
 CCI,CCI,System1(단기),청산,False,False,True,False,66.33,76.49,65.68,0.874,1.86,,
 CCI,CCI,System2(중장기),청산,False,False,True,False,66.33,79.53,65.68,0.84,1.86,,
-DDOG,DDOG,System1(단기),관심,False,False,False,True,279.81,282.0,226.83,0.999,11.08,,
+DDOG,DDOG,System1(단기),탈락,False,False,False,True,279.81,282.0,226.83,0.999,11.08,,
 DAL,DAL,System1(단기),탈락,False,False,False,True,83.67,86.17,79.85,0.99,2.34,,
 DXCM,DXCM,System1(단기),청산,False,False,True,False,86.76,90.39,84.8,0.962,2.2,,
 DHI,DHI,System1(단기),청산,False,False,True,False,133.54,144.86,132.37,0.929,3.84,,
 DHI,DHI,System2(중장기),청산,False,False,True,False,133.54,156.76,132.37,0.858,3.84,,
 DD,DD,System1(단기),탈락,False,False,False,True,130.91,132.39,127.62,0.991,2.47,,
-EME,EME,System1(단기),관심,False,False,False,True,785.92,794.95,730.0,0.995,22.89,,
+EME,EME,System1(단기),확정,False,False,False,True,785.92,794.95,730.0,0.995,22.89,,797.47
 EMR,EMR,System2(중장기),탈락,False,False,False,True,163.06,165.79,144.4,0.99,3.75,,
 EXPD,EXPD,System1(단기),확정,False,False,False,True,194.1,194.59,183.36,0.998,3.96,,194.63
 EXPD,EXPD,System2(중장기),확정,False,False,False,True,194.1,194.59,183.36,0.998,3.96,,194.63
@@ -88,7 +88,7 @@ FTV,FTV,System1(단기),진입,True,True,False,False,57.79,57.69,54.64,1.004,1.0
 GE,GE,System1(단기),청산,False,False,True,False,306.15,342.73,308.19,0.903,8.57,,
 GE,GE,System2(중장기),청산,False,False,True,False,306.15,388.84,306.8,0.796,8.57,,
 GEHC,GEHC,System1(단기),청산,False,False,True,False,65.32,69.26,63.71,0.944,1.49,,
-GEV,GEV,System1(단기),관심,False,False,False,True,991.83,1006.0,921.53,0.99,35.18,,
+GEV,GEV,System1(단기),탈락,False,False,False,True,991.83,1006.0,921.53,0.99,35.18,,
 GD,GD,System1(단기),청산,False,False,True,False,331.61,366.47,328.0,0.908,5.96,,
 GD,GD,System2(중장기),청산,False,False,True,False,331.61,400.0,328.0,0.832,5.96,,
 GILD,GILD,System1(단기),청산,False,False,True,False,143.9,154.2,144.0,0.941,3.37,,
