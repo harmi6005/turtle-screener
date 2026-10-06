@@ -8,3 +8,4 @@ code,system,direction,last_result,skip_active,skip_price
 136490,System2(중장기),long,loss,False,
 055550,System2(중장기),long,loss,False,
 008370,System1(단기),long,loss,False,
+261110,System1(단기),long,loss,False,
