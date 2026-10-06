@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 BTC,BTC,System1(단기),관심,False,False,False,True,116580000.0,117639000.0,112000000.0,0.992,2603400.0,,
 BTC,BTC,System2(중장기),관심,False,False,False,True,116580000.0,117639000.0,102111000.0,0.992,2603400.0,,
-A,A,System1(단기),관심,False,False,False,True,142.0,144.0,124.0,0.993,8.5,,
-A,A,System2(중장기),관심,False,False,False,True,142.0,144.0,101.0,0.993,8.5,,
+A,A,System1(단기),확정,False,False,False,True,142.0,144.0,124.0,0.993,8.5,,144.0
+A,A,System2(중장기),확정,False,False,False,True,142.0,144.0,101.0,0.993,8.5,,144.0
 ADA,ADA,System1(단기),진입,True,True,False,False,375.0,374.0,323.0,1.019,22.0,,
 ADA,ADA,System2(중장기),진입,True,True,False,False,375.0,374.0,261.0,1.019,22.0,,
 EGG,EGG,System1(단기),청산,False,False,True,False,0.48,0.73,0.48,0.688,0.04,,
