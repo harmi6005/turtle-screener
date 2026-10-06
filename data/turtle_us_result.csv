@@ -63,7 +63,7 @@ STZ,STZ,System1(단기),청산,False,False,True,False,113.89,130.99,111.54,0.87,
 STZ,STZ,System2(중장기),청산,False,False,True,False,113.89,139.26,111.54,0.818,3.01,,
 CTVA,CTVA,System1(단기),청산,False,False,True,False,12.36,89.13,11.84,0.14,5.38,,
 CTVA,CTVA,System2(중장기),청산,False,False,True,False,12.36,90.87,11.84,0.137,5.38,,
-COST,COST,System1(단기),관심,False,False,False,True,924.32,931.09,883.1,0.994,14.03,,
+COST,COST,System1(단기),탈락,False,False,False,True,924.32,931.09,883.1,0.994,14.03,,
 CRH,CRH,System1(단기),청산,False,False,True,False,82.32,94.72,80.81,0.87,2.36,,
 CRH,CRH,System2(중장기),청산,False,False,True,False,82.32,105.29,80.81,0.782,2.36,,
 CRWD,CRWD,System1(단기),확정,False,False,False,True,273.02,273.54,230.85,0.999,11.3,,273.73
