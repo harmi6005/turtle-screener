@@ -695,7 +695,7 @@
 379810,KODEX 미국나스닥100,System1(단기),탈락,False,False,False,True,27385.0,27830.0,26145.0,0.995,320.25,,
 381180,TIGER 미국필라델피아반도체나스닥,System1(단기),탈락,False,False,False,True,45260.0,45955.0,39630.0,0.999,925.0,,
 381570,HANARO Fn친환경에너지,System1(단기),진입,True,True,False,False,10695.0,10670.0,9815.0,1.002,291.0,,
-381570,HANARO Fn친환경에너지,System2(중장기),관심,False,False,False,True,10695.0,10765.0,9800.0,0.993,291.0,,
+381570,HANARO Fn친환경에너지,System2(중장기),탈락,False,False,False,True,10695.0,10765.0,9800.0,0.993,291.0,,
 383220,F&F,System1(단기),탈락,False,False,False,True,69200.0,69900.0,66300.0,0.999,2005.0,,
 385510,KODEX 신재생에너지액티브,System2(중장기),진입,True,True,False,False,40915.0,40900.0,36355.0,1.003,1184.65,,
 385540,RISE 종합채권(A-이상)액티브,System1(단기),진입,True,True,False,False,103480.0,103255.0,102180.0,1.003,319.5,,
