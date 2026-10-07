@@ -70,7 +70,7 @@ AZTEC,AZTEC,System1(단기),청산,False,False,True,False,22.01,28.62,22.05,0.79
 SLX,SLX,System1(단기),청산,False,False,True,False,80.89,105.0,81.0,0.788,4.89,,
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.688,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.5,0.0,,
-GRVT,GRVT,System1(단기),관심,False,False,False,True,302.0,306.0,257.0,0.997,15.7,,
+GRVT,GRVT,System1(단기),확정,False,False,False,True,302.0,306.0,257.0,0.997,15.7,,306.0
 QUID,QUID,System1(단기),청산,False,False,True,False,82.04,117.0,82.09,0.733,8.68,,
 O,O,System1(단기),청산,False,False,True,False,665.0,1050.0,666.0,0.648,55.85,,
 O,O,System2(중장기),청산,False,False,True,False,665.0,1050.0,666.0,0.648,55.85,,
