@@ -62,7 +62,7 @@ LITE,LITE,System2(중장기),진입,True,True,False,False,1125.58,1124.4,832.11,
 MPC,MPC,System1(단기),탈락,False,False,False,True,434.24,437.67,378.8,0.995,16.33,,
 MPC,MPC,System2(중장기),탈락,False,False,False,True,434.24,437.67,378.8,0.995,16.33,,
 MAR,MAR,System1(단기),관심,False,False,False,True,360.49,364.09,343.15,0.996,7.15,,
-MCK,MCK,System2(중장기),관심,False,False,False,True,920.34,929.95,847.29,0.996,22.58,,
+MCK,MCK,System2(중장기),탈락,False,False,False,True,920.34,929.95,847.29,0.996,22.58,,
 NTAP,NTAP,System1(단기),확정,False,False,False,True,228.66,231.9,190.89,0.994,8.22,,232.57
 NTAP,NTAP,System2(중장기),확정,False,False,False,True,228.66,231.9,182.23,0.994,8.22,,232.57
 NDSN,NDSN,System1(단기),진입,True,True,False,False,336.92,336.7,314.36,1.004,5.87,,
