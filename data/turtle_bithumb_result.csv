@@ -238,8 +238,8 @@ FLUID,FLUID,System2(중장기),확정,False,False,False,True,2277.0,2288.0,1435.
 WLD,WLD,System2(중장기),확정,False,False,False,True,762.0,794.0,486.0,0.992,66.95,,796.0
 SUPER,SUPER,System1(단기),확정,False,False,False,True,323.0,335.0,202.0,0.997,25.1,,336.0
 SUPER,SUPER,System2(중장기),확정,False,False,False,True,323.0,335.0,149.0,0.997,25.1,,336.0
-CAP,CAP,System1(단기),확정,False,False,False,True,113.0,115.0,59.5,0.991,12.81,,115.0
-CAP,CAP,System2(중장기),확정,False,False,False,True,113.0,115.0,58.01,0.991,12.81,,115.0
+CAP,CAP,System1(단기),확정이탈,False,False,False,True,113.0,115.0,59.5,0.991,12.81,,115.0
+CAP,CAP,System2(중장기),확정이탈,False,False,False,True,113.0,115.0,58.01,0.991,12.81,,115.0
 CRO,CRO,System2(중장기),확정,False,False,False,True,93.51,96.88,73.55,0.991,5.24,,97.25
 VIRTUAL,VIRTUAL,System1(단기),확정,False,False,False,True,1118.0,1126.0,834.0,0.994,63.15,,1129.0
 IMX,IMX,System1(단기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
