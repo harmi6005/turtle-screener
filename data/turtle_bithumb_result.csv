@@ -250,7 +250,7 @@ ACH,ACH,System2(중장기),확정,False,False,False,True,8.44,8.56,6.5,0.991,0.4
 RAD,RAD,System1(단기),확정,False,False,False,True,340.0,345.0,304.0,0.994,12.6,,345.0
 JUP,JUP,System1(단기),확정,False,False,False,True,436.0,449.0,285.0,0.991,33.2,,449.0
 JUP,JUP,System2(중장기),확정,False,False,False,True,436.0,449.0,285.0,0.991,33.2,,449.0
-JTO,JTO,System1(단기),확정,False,False,False,True,724.0,747.0,542.0,0.991,52.05,,748.0
+JTO,JTO,System1(단기),확정이탈,False,False,False,True,724.0,747.0,542.0,0.991,52.05,,748.0
 AI,AI,System1(단기),확정,False,False,False,True,29.38,29.53,24.47,0.995,1.36,,29.55
 JOE,JOE,System1(단기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
 JOE,JOE,System2(중장기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35

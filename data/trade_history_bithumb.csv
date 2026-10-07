@@ -28,3 +28,4 @@ HP,System1(단기),long,win,True,12.29
 PUFFER,System2(중장기),long,loss,False,
 CAP,System1(단기),long,loss,False,
 CAP,System2(중장기),long,loss,False,
+JTO,System1(단기),long,loss,False,
