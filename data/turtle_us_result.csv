@@ -4,7 +4,7 @@ AOS,AOS,System2(중장기),청산,False,False,True,False,54.96,64.38,55.48,0.875
 AKAM,AKAM,System1(단기),청산,False,False,True,False,104.71,128.46,104.0,0.838,6.23,,
 ALLE,ALLE,System1(단기),청산,False,False,True,False,146.3,157.3,151.13,0.964,3.41,,
 ALLE,ALLE,System2(중장기),청산,False,False,True,False,146.3,170.27,150.16,0.89,3.41,,
-AMZN,AMZN,System1(단기),관심,False,False,False,True,258.44,259.49,244.73,0.997,5.3,,
+AMZN,AMZN,System1(단기),확정,False,False,False,True,258.44,259.49,244.73,0.997,5.3,,259.52
 ANET,ANET,System1(단기),확정,False,False,False,True,214.21,216.07,198.76,0.992,6.92,,216.23
 ANET,ANET,System2(중장기),확정,False,False,False,True,214.21,216.07,186.11,0.992,6.92,,216.23
 AVY,AVY,System1(단기),청산,False,False,True,False,167.32,174.63,166.95,0.965,3.51,,
