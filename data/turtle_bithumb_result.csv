@@ -97,13 +97,13 @@ CRO,CRO,System2(중장기),확정,False,False,False,True,93.51,96.88,73.55,0.991
 VIRTUAL,VIRTUAL,System1(단기),확정,False,False,False,True,1118.0,1126.0,834.0,0.994,63.15,,1129.0
 IMX,IMX,System1(단기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
 IMX,IMX,System2(중장기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
-TAIKO,TAIKO,System1(단기),확정,False,False,False,True,127.0,128.0,104.0,0.992,7.6,,128.0
+TAIKO,TAIKO,System1(단기),확정이탈,False,False,False,True,127.0,128.0,104.0,0.992,7.6,,128.0
 TAIKO,TAIKO,System2(중장기),확정,False,False,False,True,127.0,128.0,100.0,0.992,7.6,,128.0
 AHT,AHT,System2(중장기),확정,False,False,False,True,1.67,1.7,1.28,0.992,0.09,,1.7
 ACH,ACH,System1(단기),확정이탈,False,False,False,True,8.44,8.56,6.68,0.991,0.45,,8.56
 ACH,ACH,System2(중장기),확정,False,False,False,True,8.44,8.56,6.5,0.991,0.45,,8.56
 RAD,RAD,System1(단기),확정,False,False,False,True,340.0,345.0,304.0,0.994,12.6,,345.0
-GRAM,GRAM,System1(단기),확정,False,False,False,True,1978.0,1985.0,1759.0,0.998,56.9,,1987.0
+GRAM,GRAM,System1(단기),확정이탈,False,False,False,True,1978.0,1985.0,1759.0,0.998,56.9,,1987.0
 JUP,JUP,System1(단기),확정,False,False,False,True,436.0,449.0,285.0,0.991,33.2,,449.0
 JUP,JUP,System2(중장기),확정,False,False,False,True,436.0,449.0,285.0,0.991,33.2,,449.0
 JTO,JTO,System1(단기),확정,False,False,False,True,724.0,747.0,542.0,0.991,52.05,,748.0
@@ -113,7 +113,7 @@ JOE,JOE,System2(중장기),확정,False,False,False,True,49.12,52.14,36.7,0.997,
 ARK,ARK,System1(단기),확정,False,False,False,True,269.0,288.0,183.0,0.997,30.2,,289.0
 ARK,ARK,System2(중장기),확정,False,False,False,True,269.0,288.0,147.0,0.997,30.2,,289.0
 XPL,XPL,System2(중장기),확정,False,False,False,True,144.0,152.0,105.0,0.993,12.15,,152.0
-BIO,BIO,System1(단기),확정,False,False,False,True,39.1,40.76,32.63,0.992,2.1,,40.79
+BIO,BIO,System1(단기),확정이탈,False,False,False,True,39.1,40.76,32.63,0.992,2.1,,40.79
 BEAM,BEAM,System1(단기),확정,False,False,False,True,2.64,2.7,2.06,0.991,0.14,,2.71
 FRAX,FRAX,System1(단기),확정,False,False,False,True,406.0,410.0,345.0,0.998,16.9,,411.0
 MEGA,MEGA,System1(단기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
