@@ -4,7 +4,7 @@
 0000H0,KODEX 인도Nifty미드캡100,System1(단기),청산,False,False,True,False,9435.0,10415.0,9400.0,0.906,145.0,,
 0000H0,KODEX 인도Nifty미드캡100,System2(중장기),청산,False,False,True,False,9435.0,11259.0,9400.0,0.838,145.0,,
 0000Z0,RISE 바이오TOP10액티브,System1(단기),탈락,False,False,False,True,8750.0,8915.0,7925.0,0.992,269.5,,
-0001P0,마이티 바이오시밀러&CDMO액티브,System1(단기),관심,False,False,False,True,9125.0,9170.0,8415.0,0.997,223.75,,
+0001P0,마이티 바이오시밀러&CDMO액티브,System1(단기),탈락,False,False,False,True,9125.0,9170.0,8415.0,0.997,223.75,,
 0004G0,1Q 미국배당TOP30,System1(단기),청산,False,False,True,False,8350.0,9029.0,8385.0,0.93,90.85,,
 0004G0,1Q 미국배당TOP30,System2(중장기),청산,False,False,True,False,8350.0,9820.0,8385.0,0.855,90.85,,
 000215,DL우,System1(단기),청산,False,False,True,False,24350.0,26450.0,24050.0,0.955,882.5,,
@@ -291,7 +291,7 @@
 017860,DS단석,System2(중장기),탈락,False,False,False,True,13010.0,13200.0,11350.0,0.998,514.0,,
 0184L0,PLUS 중기종합채권(A-이상)액티브,System1(단기),관심,False,False,False,True,100770.0,100830.0,100335.0,1.0,105.75,,
 0184L0,PLUS 중기종합채권(A-이상)액티브,System2(중장기),관심,False,False,False,True,100770.0,100830.0,100335.0,1.0,105.75,,
-0186L0,KoAct 미국로봇피지컬AI액티브,System1(단기),관심,False,False,False,True,9645.0,9655.0,9120.0,0.999,164.25,,
+0186L0,KoAct 미국로봇피지컬AI액티브,System1(단기),확정,False,False,False,True,9645.0,9655.0,9120.0,0.999,164.25,,9655.0
 0189B0,TIGER 은액티브,System1(단기),청산,False,False,True,False,7365.0,8435.0,7390.0,0.891,215.75,,
 0189B0,TIGER 은액티브,System2(중장기),청산,False,False,True,False,7365.0,8795.0,7390.0,0.854,215.75,,
 0190Y0,TIGER 구글밸류체인,System1(단기),탈락,False,False,False,True,8775.0,8855.0,8280.0,0.995,172.25,,
@@ -422,7 +422,7 @@
 114090,GKL,System1(단기),청산,False,False,True,False,8430.0,9680.0,8480.0,0.887,165.5,,
 114090,GKL,System2(중장기),청산,False,False,True,False,8430.0,10590.0,8480.0,0.811,165.5,,
 114460,ACE 국고채3년,System1(단기),진입,True,True,False,False,100415.0,100345.0,99675.0,1.001,166.65,,
-114100,RISE 국고채3년,System1(단기),관심,False,False,False,True,106280.0,106320.0,105475.0,1.0,193.4,,
+114100,RISE 국고채3년,System1(단기),확정,False,False,False,True,106280.0,106320.0,105475.0,1.0,193.4,,106325.0
 114100,RISE 국고채3년,System2(중장기),관심,False,False,False,True,106280.0,106378.0,105415.0,0.999,193.4,,
 114260,KODEX 국고채3년,System1(단기),진입,True,True,False,False,61940.0,61940.0,61460.0,1.0,125.0,,
 114260,KODEX 국고채3년,System2(중장기),관심,False,False,False,True,61940.0,62025.0,61375.0,0.999,125.0,,
@@ -577,7 +577,7 @@
 270800,RISE KQ고배당,System2(중장기),진입,True,True,False,False,16535.0,16520.0,15110.0,1.007,204.75,,
 272910,ACE 중장기국공채액티브,System1(단기),진입,True,True,False,False,106375.0,106315.0,105565.0,1.001,170.75,,
 272910,ACE 중장기국공채액티브,System2(중장기),관심,False,False,False,True,106375.0,106505.0,105375.0,0.999,170.75,,
-272570,RISE 중장기국공채액티브,System1(단기),관심,False,False,False,True,108160.0,108170.0,107165.0,1.0,238.5,,
+272570,RISE 중장기국공채액티브,System1(단기),확정,False,False,False,True,108160.0,108170.0,107165.0,1.0,238.5,,108240.0
 272570,RISE 중장기국공채액티브,System2(중장기),관심,False,False,False,True,108160.0,108525.0,107040.0,0.997,238.5,,
 272560,RISE 단기국공채액티브,System1(단기),진입,True,True,False,False,115065.0,115035.0,114860.0,1.0,39.5,,
 272560,RISE 단기국공채액티브,System2(중장기),진입,True,True,False,False,115065.0,115035.0,114860.0,1.0,39.5,,
@@ -656,7 +656,7 @@
 334690,RISE 팔라듐선물(H),System2(중장기),청산,False,False,True,False,5245.0,6505.0,5215.0,0.813,152.0,,
 334700,RISE 팔라듐선물인버스(H),System1(단기),진입,True,True,False,False,3695.0,3690.0,3250.0,1.004,87.0,,
 334700,RISE 팔라듐선물인버스(H),System2(중장기),진입,True,True,False,False,3695.0,3690.0,3045.0,1.004,87.0,,
-336160,RISE 금융채액티브,System1(단기),관심,False,False,False,True,100040.0,100105.0,99515.0,1.0,138.25,,
+336160,RISE 금융채액티브,System1(단기),확정,False,False,False,True,100040.0,100105.0,99515.0,1.0,138.25,,100125.0
 336160,RISE 금융채액티브,System2(중장기),관심,False,False,False,True,100040.0,100187.0,99464.0,0.999,138.25,,
 33626L,두산퓨얼셀2우B,System1(단기),청산,False,False,True,False,7460.0,8970.0,7200.0,0.981,569.0,,
 33626L,두산퓨얼셀2우B,System2(중장기),청산,False,False,True,False,7460.0,8970.0,7200.0,0.981,569.0,,
@@ -768,13 +768,13 @@
 437350,RISE 미국단기투자등급회사채액티브,System2(중장기),청산,False,False,True,False,11720.0,13185.0,11775.0,0.891,96.75,,
 438080,ACE 미국S&P500미국채혼합50액티브,System1(단기),청산,False,False,True,False,13770.0,14200.0,13750.0,0.971,139.5,,
 438330,TIGER 우량회사채액티브,System1(단기),확정,False,False,False,True,115825.0,115850.0,115025.0,1.0,196.5,,115910.0
-438330,TIGER 우량회사채액티브,System2(중장기),관심,False,False,False,True,115825.0,115915.0,115025.0,0.999,196.5,,
+438330,TIGER 우량회사채액티브,System2(중장기),탈락,False,False,False,True,115825.0,115915.0,115025.0,0.999,196.5,,
 438560,SOL 국고채3년,System2(중장기),관심,False,False,False,True,100645.0,100700.0,99875.0,1.0,150.0,,
 438570,SOL 국고채10년,System1(단기),관심,False,False,False,True,98380.0,98530.0,96795.0,0.998,503.0,,
 438900,HANARO Fn K-푸드,System1(단기),청산,False,False,True,False,10740.0,12060.0,10680.0,0.894,176.0,,
 438900,HANARO Fn K-푸드,System2(중장기),청산,False,False,True,False,10740.0,12260.0,10680.0,0.88,176.0,,
-439860,KODEX ESG종합채권(A-이상)액티브,System1(단기),관심,False,False,False,True,113905.0,113955.0,113215.0,1.0,135.5,,
-439860,KODEX ESG종합채권(A-이상)액티브,System2(중장기),관심,False,False,False,True,113905.0,113955.0,113215.0,1.0,135.5,,
+439860,KODEX ESG종합채권(A-이상)액티브,System1(단기),확정,False,False,False,True,113905.0,113955.0,113215.0,1.0,135.5,,113985.0
+439860,KODEX ESG종합채권(A-이상)액티브,System2(중장기),확정,False,False,False,True,113905.0,113955.0,113215.0,1.0,135.5,,113985.0
 439870,KODEX 국고채30년액티브,System1(단기),관심,False,False,False,True,88850.0,89330.0,85585.0,0.995,1020.25,,
 439870,KODEX 국고채30년액티브,System2(중장기),관심,False,False,False,True,88850.0,89330.0,84800.0,0.995,1020.25,,
 440340,TIGER 글로벌멀티에셋TIF액티브,System1(단기),청산,False,False,True,False,11335.0,11925.0,11250.0,0.953,183.2,,
