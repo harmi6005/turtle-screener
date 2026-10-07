@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ETH,ETH,System1(단기),청산,False,False,True,False,3552000.0,3780000.0,3582000.0,0.971,95100.0,,
 ETC,ETC,System1(단기),청산,False,False,True,False,11540.0,14190.0,11590.0,0.853,735.5,,
-A,A,System1(단기),관심,False,False,False,True,136.0,145.0,124.0,0.993,8.75,,
-A,A,System2(중장기),관심,False,False,False,True,136.0,145.0,101.0,0.993,8.75,,
+A,A,System1(단기),탈락,False,False,False,True,136.0,145.0,124.0,0.993,8.75,,
+A,A,System2(중장기),탈락,False,False,False,True,136.0,145.0,101.0,0.993,8.75,,
 ICX,ICX,System1(단기),청산,False,False,True,False,16.9,29.5,17.0,0.629,3.25,,
 XRP,XRP,System1(단기),청산,False,False,True,False,1995.0,2220.0,1993.0,0.924,89.0,,
 QTUM,QTUM,System1(단기),청산,False,False,True,False,1299.0,1468.0,1299.0,0.913,65.8,,
