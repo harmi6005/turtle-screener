@@ -81,7 +81,7 @@ ACH,ACH,System1(단기),확정,False,False,False,True,8.44,8.56,6.68,0.991,0.45,
 ACH,ACH,System2(중장기),확정,False,False,False,True,8.44,8.56,6.5,0.991,0.45,,8.56
 RAD,RAD,System1(단기),확정,False,False,False,True,340.0,345.0,304.0,0.994,12.6,,345.0
 GRAM,GRAM,System1(단기),확정,False,False,False,True,1978.0,1985.0,1759.0,0.998,56.9,,1987.0
-TOWNS,TOWNS,System1(단기),확정,False,False,False,True,2.93,3.03,2.28,0.991,0.19,,3.04
+TOWNS,TOWNS,System1(단기),확정이탈,False,False,False,True,2.93,3.03,2.28,0.991,0.19,,3.04
 JUP,JUP,System1(단기),확정,False,False,False,True,436.0,449.0,285.0,0.991,33.2,,449.0
 JUP,JUP,System2(중장기),확정,False,False,False,True,436.0,449.0,285.0,0.991,33.2,,449.0
 JTO,JTO,System1(단기),확정,False,False,False,True,724.0,747.0,542.0,0.991,52.05,,748.0
