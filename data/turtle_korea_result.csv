@@ -832,8 +832,8 @@
 453820,KODEX 인도Nifty50레버리지(합성),System2(중장기),청산,False,False,True,False,9525.0,13535.0,9505.0,0.704,252.25,,
 454180,KIWOOM 차이나내수소비TOP CSI,System1(단기),청산,False,False,True,False,7330.0,7755.0,7145.0,0.0,459.5,,
 454180,KIWOOM 차이나내수소비TOP CSI,System2(중장기),청산,False,False,True,False,7330.0,8510.0,7145.0,0.0,459.5,,
-454780,KIWOOM 종합채권(AA-이상)액티브,System1(단기),관심,False,False,False,True,99985.0,100095.0,98930.0,0.999,234.75,,
-454780,KIWOOM 종합채권(AA-이상)액티브,System2(중장기),관심,False,False,False,True,99985.0,100095.0,98855.0,0.999,234.75,,
+454780,KIWOOM 종합채권(AA-이상)액티브,System1(단기),확정,False,False,False,True,99985.0,100095.0,98930.0,0.999,234.75,,100190.0
+454780,KIWOOM 종합채권(AA-이상)액티브,System2(중장기),확정,False,False,False,True,99985.0,100095.0,98855.0,0.999,234.75,,100190.0
 455030,KODEX 미국달러SOFR금리액티브(합성),System1(단기),청산,False,False,True,False,11530.0,11893.0,11530.0,0.972,104.1,,
 455660,ACE 미국하이일드액티브(H),System1(단기),청산,False,False,True,False,9140.0,9378.0,9120.0,0.976,34.8,,
 455660,ACE 미국하이일드액티브(H),System2(중장기),청산,False,False,True,False,9140.0,9408.0,9120.0,0.973,34.8,,
