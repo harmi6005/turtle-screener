@@ -100,7 +100,7 @@ IMX,IMX,System2(중장기),확정,False,False,False,True,227.0,230.0,158.0,0.991
 TAIKO,TAIKO,System1(단기),확정,False,False,False,True,127.0,128.0,104.0,0.992,7.6,,128.0
 TAIKO,TAIKO,System2(중장기),확정,False,False,False,True,127.0,128.0,100.0,0.992,7.6,,128.0
 AHT,AHT,System2(중장기),확정,False,False,False,True,1.67,1.7,1.28,0.992,0.09,,1.7
-ACH,ACH,System1(단기),확정,False,False,False,True,8.44,8.56,6.68,0.991,0.45,,8.56
+ACH,ACH,System1(단기),확정이탈,False,False,False,True,8.44,8.56,6.68,0.991,0.45,,8.56
 ACH,ACH,System2(중장기),확정,False,False,False,True,8.44,8.56,6.5,0.991,0.45,,8.56
 RAD,RAD,System1(단기),확정,False,False,False,True,340.0,345.0,304.0,0.994,12.6,,345.0
 GRAM,GRAM,System1(단기),확정,False,False,False,True,1978.0,1985.0,1759.0,0.998,56.9,,1987.0
@@ -119,7 +119,7 @@ FRAX,FRAX,System1(단기),확정,False,False,False,True,406.0,410.0,345.0,0.998,
 MEGA,MEGA,System1(단기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
 MEGA,MEGA,System2(중장기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
 MNT,MNT,System2(중장기),확정,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,910.0
-QTUM,QTUM,System1(단기),확정,False,False,False,True,1348.0,1363.0,1150.0,0.99,60.95,,1363.0
+QTUM,QTUM,System1(단기),확정이탈,False,False,False,True,1348.0,1363.0,1150.0,0.99,60.95,,1363.0
 QTUM,QTUM,System2(중장기),확정,False,False,False,True,1348.0,1363.0,1113.0,0.99,60.95,,1363.0
 PUFFER,PUFFER,System2(중장기),확정,False,False,False,True,40.0,42.3,17.51,0.999,5.55,,42.39
 BNB,BNB,System2(중장기),확정,False,False,False,True,1061000.0,1065000.0,936000.0,0.996,33950.0,,1065000.0
