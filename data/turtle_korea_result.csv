@@ -844,8 +844,8 @@
 456250,KODEX 유럽명품TOP10 STOXX,System2(중장기),청산,False,False,True,False,7495.0,9901.0,7560.0,0.764,123.0,,
 456610,TIGER 미국달러SOFR금리액티브(합성),System1(단기),청산,False,False,True,False,58560.0,60395.0,58635.0,0.972,598.75,,
 456880,ACE 미국달러SOFR금리(합성),System1(단기),청산,False,False,True,False,11850.0,12220.0,11870.0,0.971,102.0,,
-457700,KODEX 53-09 국고채액티브,System1(단기),관심,False,False,False,True,9250.0,9300.0,8995.0,0.997,76.0,,
-457700,KODEX 53-09 국고채액티브,System2(중장기),관심,False,False,False,True,9250.0,9300.0,8910.0,0.997,76.0,,
+457700,KODEX 53-09 국고채액티브,System1(단기),확정,False,False,False,True,9250.0,9300.0,8995.0,0.997,76.0,,9305.0
+457700,KODEX 53-09 국고채액티브,System2(중장기),확정,False,False,False,True,9250.0,9300.0,8910.0,0.997,76.0,,9305.0
 457690,KODEX 33-06 국고채액티브,System1(단기),탈락,False,False,False,True,10525.0,10540.0,10375.0,0.999,43.25,,
 457690,KODEX 33-06 국고채액티브,System2(중장기),관심,False,False,False,True,10525.0,10595.0,10340.0,0.994,43.25,,
 458030,WON 국공채머니마켓액티브,System1(단기),진입,True,True,False,False,55190.0,55190.0,55110.0,1.0,14.5,,
