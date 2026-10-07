@@ -5,8 +5,8 @@ AKAM,AKAM,System1(단기),청산,False,False,True,False,104.71,128.46,104.0,0.83
 ALLE,ALLE,System1(단기),청산,False,False,True,False,146.3,157.3,151.13,0.964,3.41,,
 ALLE,ALLE,System2(중장기),청산,False,False,True,False,146.3,170.27,150.16,0.89,3.41,,
 AMZN,AMZN,System1(단기),관심,False,False,False,True,258.44,259.49,244.73,0.997,5.3,,
-ANET,ANET,System1(단기),관심,False,False,False,True,214.21,216.07,198.76,0.992,6.92,,
-ANET,ANET,System2(중장기),관심,False,False,False,True,214.21,216.07,186.11,0.992,6.92,,
+ANET,ANET,System1(단기),확정,False,False,False,True,214.21,216.07,198.76,0.992,6.92,,216.23
+ANET,ANET,System2(중장기),확정,False,False,False,True,214.21,216.07,186.11,0.992,6.92,,216.23
 AVY,AVY,System1(단기),청산,False,False,True,False,167.32,174.63,166.95,0.965,3.51,,
 AVY,AVY,System2(중장기),청산,False,False,True,False,167.32,186.82,166.95,0.902,3.51,,
 AXON,AXON,System1(단기),청산,False,False,True,False,410.95,503.28,408.0,0.825,19.27,,
@@ -134,8 +134,8 @@ SNA,SNA,System1(단기),청산,False,False,True,False,359.7,387.52,361.22,0.945,
 SNA,SNA,System2(중장기),청산,False,False,True,False,359.7,420.41,361.22,0.871,6.45,,
 SOLV,SOLV,System1(단기),청산,False,False,True,False,86.64,91.87,86.26,0.95,1.9,,
 SOLV,SOLV,System2(중장기),청산,False,False,True,False,86.64,94.16,86.26,0.927,1.9,,
-SMCI,SMCI,System1(단기),관심,False,False,False,True,44.07,44.74,39.85,0.992,2.25,,
-SMCI,SMCI,System2(중장기),관심,False,False,False,True,44.07,44.74,35.36,0.992,2.25,,
+SMCI,SMCI,System1(단기),확정,False,False,False,True,44.07,44.74,39.85,0.992,2.25,,44.78
+SMCI,SMCI,System2(중장기),확정,False,False,False,True,44.07,44.74,35.36,0.992,2.25,,44.78
 TXT,TXT,System1(단기),청산,False,False,True,False,73.4,82.79,75.28,0.909,1.71,,
 TXT,TXT,System2(중장기),청산,False,False,True,False,73.4,97.3,75.28,0.773,1.71,,
 USB,USB,System1(단기),청산,False,False,True,False,56.13,62.77,56.04,0.905,1.15,,
