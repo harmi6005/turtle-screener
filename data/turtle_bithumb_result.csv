@@ -340,7 +340,7 @@ CHIP,CHIP,System1(단기),확정,False,False,False,True,69.84,70.45,56.17,1.0,5.
 SKY,SKY,System2(중장기),확정,False,False,False,True,130.0,132.0,75.65,0.992,10.3,,132.0
 C,C,System1(단기),확정,False,False,False,True,138.0,139.0,107.0,0.993,12.66,,139.0
 C,C,System2(중장기),확정,False,False,False,True,138.0,139.0,71.89,0.993,12.66,,139.0
-YFI,YFI,System1(단기),확정,False,False,False,True,3562000.0,3634000.0,3079000.0,0.994,170900.0,,3640000.0
+YFI,YFI,System1(단기),확정이탈,False,False,False,True,3562000.0,3634000.0,3079000.0,0.994,170900.0,,3640000.0
 YFI,YFI,System2(중장기),확정,False,False,False,True,3562000.0,3634000.0,2717000.0,0.994,170900.0,,3640000.0
 FLUID,FLUID,System1(단기),확정,False,False,False,True,2277.0,2288.0,1631.0,0.999,140.6,,2289.0
 FLUID,FLUID,System2(중장기),확정,False,False,False,True,2277.0,2288.0,1435.0,0.999,140.6,,2289.0
@@ -350,7 +350,7 @@ SUPER,SUPER,System2(중장기),확정,False,False,False,True,323.0,335.0,149.0,0
 CRO,CRO,System2(중장기),확정,False,False,False,True,93.51,96.88,73.55,0.991,5.24,,97.25
 IMX,IMX,System1(단기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
 IMX,IMX,System2(중장기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
-TAIKO,TAIKO,System2(중장기),확정,False,False,False,True,127.0,128.0,100.0,0.992,7.6,,128.0
+TAIKO,TAIKO,System2(중장기),확정이탈,False,False,False,True,127.0,128.0,100.0,0.992,7.6,,128.0
 AHT,AHT,System2(중장기),확정,False,False,False,True,1.67,1.7,1.28,0.992,0.09,,1.7
 RAD,RAD,System1(단기),확정,False,False,False,True,340.0,345.0,304.0,0.994,12.6,,345.0
 JOE,JOE,System1(단기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
