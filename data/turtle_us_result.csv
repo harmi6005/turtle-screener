@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 A,A,System1(단기),청산,False,False,True,False,164.71,176.79,163.38,0.954,5.2,,
 AKAM,AKAM,System1(단기),청산,False,False,True,False,101.42,128.46,103.95,0.812,6.18,,
 AKAM,AKAM,System2(중장기),청산,False,False,True,False,101.42,128.46,102.5,0.812,6.18,,
