@@ -228,7 +228,7 @@ GRVT,GRVT,System1(단기),확정,False,False,False,True,302.0,306.0,257.0,0.997,
 RENDER,RENDER,System1(단기),확정,False,False,False,True,2731.0,2840.0,2450.0,0.998,183.3,,2843.0
 RENDER,RENDER,System2(중장기),확정,False,False,False,True,2731.0,2840.0,1757.0,0.998,183.3,,2843.0
 GLM,GLM,System1(단기),확정,False,False,False,True,177.0,179.0,165.0,0.994,7.6,,179.0
-1INCH,1INCH,System1(단기),확정,False,False,False,True,144.0,145.0,131.0,0.993,6.45,,145.0
+1INCH,1INCH,System1(단기),확정이탈,False,False,False,True,144.0,145.0,131.0,0.993,6.45,,145.0
 1INCH,1INCH,System2(중장기),확정,False,False,False,True,144.0,145.0,117.0,0.993,6.45,,145.0
 CHIP,CHIP,System1(단기),확정,False,False,False,True,69.84,70.45,56.17,1.0,5.95,,70.69
 SKY,SKY,System1(단기),확정,False,False,False,True,130.0,132.0,97.74,0.992,10.3,,132.0
