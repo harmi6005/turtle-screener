@@ -41,7 +41,7 @@ CEG,CEG,System2(중장기),관심,False,False,False,True,292.02,309.8,247.2,0.99
 COO,COO,System1(단기),청산,False,False,True,False,53.8,57.69,54.63,0.948,1.56,,
 DE,DE,System1(단기),청산,False,False,True,False,643.46,719.5,644.06,0.913,17.6,,
 DE,DE,System2(중장기),청산,False,False,True,False,643.46,719.5,644.06,0.913,17.6,,
-ECL,ECL,System1(단기),관심,False,False,False,True,279.43,282.44,267.46,0.99,5.1,,
+ECL,ECL,System1(단기),확정,False,False,False,True,279.43,282.44,267.46,0.99,5.1,,282.45
 EW,EW,System1(단기),청산,False,False,True,False,82.75,89.7,84.49,0.956,2.2,,
 EW,EW,System2(중장기),청산,False,False,True,False,82.75,93.91,83.81,0.913,2.2,,
 EXR,EXR,System1(단기),청산,False,False,True,False,130.84,139.54,130.64,0.945,2.57,,
