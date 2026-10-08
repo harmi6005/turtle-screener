@@ -105,8 +105,8 @@ PNR,PNR,System2(중장기),청산,False,False,True,False,51.91,70.97,51.76,0.747
 PEP,PEP,System1(단기),청산,False,False,True,False,124.21,138.8,124.22,0.911,2.19,,
 PEP,PEP,System2(중장기),청산,False,False,True,False,124.21,144.36,124.22,0.876,2.19,,
 PM,PM,System1(단기),탈락,False,False,False,True,192.21,193.83,184.11,0.995,4.29,,
-PSX,PSX,System1(단기),관심,False,False,False,True,270.7,277.12,248.51,0.995,9.07,,
-PSX,PSX,System2(중장기),관심,False,False,False,True,270.7,277.12,248.51,0.995,9.07,,
+PSX,PSX,System1(단기),확정,False,False,False,True,270.7,277.12,248.51,0.995,9.07,,277.77
+PSX,PSX,System2(중장기),확정,False,False,False,True,270.7,277.12,248.51,0.995,9.07,,277.77
 PNW,PNW,System1(단기),탈락,False,False,False,True,97.99,98.32,90.27,0.998,1.7,,
 PFG,PFG,System1(단기),청산,False,False,True,False,109.29,119.06,109.36,0.92,2.31,,
 PFG,PFG,System2(중장기),청산,False,False,True,False,109.29,121.18,109.36,0.904,2.31,,
