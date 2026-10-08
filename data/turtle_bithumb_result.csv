@@ -145,7 +145,7 @@ AZTEC,AZTEC,System1(단기),청산,False,False,True,False,20.75,28.62,20.43,0.72
 NEX,NEX,System1(단기),청산,False,False,True,False,0.0,0.0,0.0,0.688,0.0,,
 NEX,NEX,System2(중장기),청산,False,False,True,False,0.0,0.0,0.0,0.5,0.0,,
 VVV,VVV,System1(단기),청산,False,False,True,False,34720.0,46730.0,34680.0,0.749,3549.5,,
-GRVT,GRVT,System1(단기),관심,False,False,False,True,302.0,306.0,257.0,0.997,15.9,,
+GRVT,GRVT,System1(단기),확정,False,False,False,True,302.0,306.0,257.0,0.997,15.9,,306.0
 SPX,SPX,System1(단기),청산,False,False,True,False,530.0,781.0,512.0,0.68,65.75,,
 SPX,SPX,System2(중장기),청산,False,False,True,False,530.0,920.0,512.0,0.577,65.75,,
 HPP,HPP,System1(단기),청산,False,False,True,False,7.94,10.2,7.92,0.793,0.51,,
