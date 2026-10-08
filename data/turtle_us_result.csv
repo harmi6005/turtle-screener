@@ -164,7 +164,7 @@ UAL,UAL,System1(단기),청산,False,False,True,False,106.73,118.26,108.05,0.927
 VTR,VTR,System1(단기),청산,False,False,True,False,80.88,91.54,79.93,0.884,1.64,,
 VTR,VTR,System2(중장기),청산,False,False,True,False,80.88,100.99,79.93,0.801,1.64,,
 VLTO,VLTO,System1(단기),관심,False,False,False,True,94.89,97.44,93.54,0.991,1.7,,
-V,V,System1(단기),관심,False,False,False,True,375.64,377.17,356.75,0.998,5.77,,
+V,V,System1(단기),확정,False,False,False,True,375.64,377.17,356.75,0.998,5.77,,377.39
 VST,VST,System2(중장기),관심,False,False,False,True,160.02,169.48,133.44,0.996,6.01,,
 WRB,WRB,System1(단기),관심,False,False,False,True,70.71,71.36,66.26,0.993,1.28,,
 WAB,WAB,System1(단기),청산,False,False,True,False,278.49,294.72,280.32,0.956,6.02,,
