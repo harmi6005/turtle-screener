@@ -87,8 +87,8 @@ LSK,LSK,System2(중장기),청산,False,False,True,False,320.0,2196.0,315.0,0.15
 PYTH,PYTH,System1(단기),청산,False,False,True,False,99.63,120.0,95.8,0.842,8.47,,
 IQ,IQ,System1(단기),청산,False,False,True,False,1.12,1.35,1.12,0.84,0.06,,
 JTO,JTO,System1(단기),청산,False,False,True,False,755.0,877.0,675.0,0.867,64.7,,
-JUP,JUP,System1(단기),관심,False,False,False,True,498.0,506.0,413.0,0.996,37.9,,
-JUP,JUP,System2(중장기),관심,False,False,False,True,498.0,506.0,309.0,0.996,37.9,,
+JUP,JUP,System1(단기),확정,False,False,False,True,498.0,506.0,413.0,0.996,37.9,,506.0
+JUP,JUP,System2(중장기),확정,False,False,False,True,498.0,506.0,309.0,0.996,37.9,,506.0
 STRAX,STRAX,System1(단기),청산,False,False,True,False,14.77,16.46,14.47,0.897,0.68,,
 POKT,POKT,System1(단기),청산,False,False,True,False,11.36,12.81,11.04,0.887,0.59,,
 REZ,REZ,System1(단기),청산,False,False,True,False,5.3,6.66,5.07,0.798,0.47,,
