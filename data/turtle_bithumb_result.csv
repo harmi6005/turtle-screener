@@ -333,7 +333,7 @@ O,O,System2(중장기),청산,False,False,True,False,604.0,1050.0,623.0,0.594,54
 SENT,SENT,System1(단기),확정,False,False,False,True,34.07,35.98,27.32,0.998,2.96,,36.0
 SENT,SENT,System2(중장기),확정,False,False,False,True,34.07,35.98,21.38,0.998,2.96,,36.0
 GRVT,GRVT,System1(단기),확정,False,False,False,True,302.0,306.0,257.0,0.997,15.9,,306.0
-RENDER,RENDER,System1(단기),확정,False,False,False,True,2731.0,2840.0,2450.0,0.998,183.3,,2843.0
+RENDER,RENDER,System1(단기),확정이탈,False,False,False,True,2731.0,2840.0,2450.0,0.998,183.3,,2843.0
 RENDER,RENDER,System2(중장기),확정,False,False,False,True,2731.0,2840.0,1757.0,0.998,183.3,,2843.0
 GLM,GLM,System1(단기),확정,False,False,False,True,177.0,179.0,165.0,0.994,7.6,,179.0
 CHIP,CHIP,System1(단기),확정,False,False,False,True,69.84,70.45,56.17,1.0,5.95,,70.69
@@ -360,7 +360,7 @@ ARK,ARK,System2(중장기),확정,False,False,False,True,269.0,288.0,147.0,0.997
 XPL,XPL,System2(중장기),확정이탈,False,False,False,True,144.0,152.0,105.0,0.993,12.15,,152.0
 BEAM,BEAM,System1(단기),확정,False,False,False,True,2.64,2.7,2.06,0.991,0.14,,2.71
 FRAX,FRAX,System1(단기),확정,False,False,False,True,406.0,410.0,345.0,0.998,16.9,,411.0
-MEGA,MEGA,System1(단기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
+MEGA,MEGA,System1(단기),확정이탈,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
 MEGA,MEGA,System2(중장기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4
 MNT,MNT,System2(중장기),확정,False,False,False,True,905.0,909.0,722.0,0.997,47.15,,910.0
 QTUM,QTUM,System2(중장기),확정,False,False,False,True,1348.0,1363.0,1113.0,0.99,60.95,,1363.0
