@@ -448,7 +448,7 @@ SUPER,SUPER,System2(중장기),확정,False,False,False,True,323.0,335.0,149.0,0
 CRO,CRO,System2(중장기),확정,False,False,False,True,93.51,96.88,73.55,0.991,5.24,,97.25
 IMX,IMX,System1(단기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
 IMX,IMX,System2(중장기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
-AHT,AHT,System2(중장기),확정,False,False,False,True,1.67,1.7,1.28,0.992,0.09,,1.7
+AHT,AHT,System2(중장기),확정이탈,False,False,False,True,1.67,1.7,1.28,0.992,0.09,,1.7
 RAD,RAD,System1(단기),확정,False,False,False,True,340.0,345.0,304.0,0.994,12.6,,345.0
 JOE,JOE,System1(단기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
 JOE,JOE,System2(중장기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
