@@ -348,8 +348,8 @@
 0178H0,IBK 미국AI TOP10국채혼합50,System2(중장기),탈락,False,False,False,True,10220.0,10578.0,9010.0,0.998,264.5,,
 0180V0,ACE 미국우주테크액티브,System1(단기),탈락,False,False,False,True,8110.0,8240.0,7680.0,0.991,207.15,,
 0182R0,1Q K반도체TOP2+,System1(단기),탈락,False,False,False,True,11160.0,11660.0,10500.0,0.993,414.5,,
-0184L0,PLUS 중기종합채권(A-이상)액티브,System1(단기),관심,False,False,False,True,100815.0,100830.0,100335.0,1.0,107.25,,
-0184L0,PLUS 중기종합채권(A-이상)액티브,System2(중장기),관심,False,False,False,True,100815.0,100830.0,100335.0,1.0,107.25,,
+0184L0,PLUS 중기종합채권(A-이상)액티브,System1(단기),확정,False,False,False,True,100815.0,100830.0,100335.0,1.0,107.25,,100865.0
+0184L0,PLUS 중기종합채권(A-이상)액티브,System2(중장기),확정,False,False,False,True,100815.0,100830.0,100335.0,1.0,107.25,,100865.0
 0184N0,PLUS 은채권혼합,System1(단기),청산,False,False,True,False,8380.0,8945.0,8380.0,0.946,126.75,,
 0184N0,PLUS 은채권혼합,System2(중장기),청산,False,False,True,False,8380.0,9135.0,8380.0,0.927,126.75,,
 0184V0,UNICORN K바이오액티브,System1(단기),탈락,False,False,False,True,5660.0,5840.0,5045.0,0.994,223.25,,
