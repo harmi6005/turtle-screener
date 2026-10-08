@@ -357,7 +357,7 @@ JOE,JOE,System1(단기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.3
 JOE,JOE,System2(중장기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
 ARK,ARK,System1(단기),확정,False,False,False,True,269.0,288.0,183.0,0.997,30.2,,289.0
 ARK,ARK,System2(중장기),확정,False,False,False,True,269.0,288.0,147.0,0.997,30.2,,289.0
-XPL,XPL,System2(중장기),확정,False,False,False,True,144.0,152.0,105.0,0.993,12.15,,152.0
+XPL,XPL,System2(중장기),확정이탈,False,False,False,True,144.0,152.0,105.0,0.993,12.15,,152.0
 BEAM,BEAM,System1(단기),확정,False,False,False,True,2.64,2.7,2.06,0.991,0.14,,2.71
 FRAX,FRAX,System1(단기),확정,False,False,False,True,406.0,410.0,345.0,0.998,16.9,,411.0
 MEGA,MEGA,System1(단기),확정,False,False,False,True,62.69,64.4,45.45,0.994,4.23,,64.4

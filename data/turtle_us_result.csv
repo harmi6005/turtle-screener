@@ -99,7 +99,7 @@ LMT,LMT,System1(단기),청산,False,False,True,False,503.16,542.61,498.55,0.934
 LMT,LMT,System2(중장기),청산,False,False,True,False,503.16,608.98,498.55,0.832,10.62,,
 LULU,LULU,System1(단기),청산,False,False,True,False,92.03,104.24,90.56,0.887,3.23,,
 LULU,LULU,System2(중장기),청산,False,False,True,False,92.03,128.86,90.56,0.717,3.23,,
-MA,MA,System1(단기),관심,False,False,False,True,575.31,578.9,545.41,0.997,9.17,,
+MA,MA,System1(단기),탈락,False,False,False,True,575.31,578.9,545.41,0.997,9.17,,
 MGM,MGM,System1(단기),청산,False,False,True,False,29.92,41.2,29.62,0.729,1.16,,
 MGM,MGM,System2(중장기),청산,False,False,True,False,29.92,46.59,29.62,0.645,1.16,,
 MSFT,MSFT,System1(단기),관심,False,False,False,True,530.18,535.69,491.22,0.996,11.22,,
