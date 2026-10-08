@@ -687,7 +687,7 @@
 292560,TIGER 일본엔선물,System2(중장기),청산,False,False,True,False,7820.0,8525.0,7850.0,0.924,65.5,,
 292770,KODEX 국채선물3년인버스,System1(단기),관심,False,False,False,True,57920.0,58235.0,57915.0,0.995,67.0,,
 292770,KODEX 국채선물3년인버스,System2(중장기),관심,False,False,False,True,57920.0,58235.0,57730.0,0.995,67.0,,
-295000,RISE 국채선물10년,System1(단기),관심,False,False,False,True,51415.0,51480.0,50675.0,0.999,245.25,,
+295000,RISE 국채선물10년,System1(단기),확정,False,False,False,True,51415.0,51480.0,50675.0,0.999,245.25,,51500.0
 298040,효성중공업,System1(단기),청산,False,False,True,False,2619000.0,3009000.0,2705000.0,0.96,126100.0,,
 298040,효성중공업,System2(중장기),청산,False,False,True,False,2619000.0,3265000.0,2680000.0,0.885,126100.0,,
 298340,PLUS 국채선물3년,System1(단기),관심,False,False,False,True,56595.0,56670.0,56200.0,1.0,113.0,,
@@ -752,7 +752,7 @@
 363510,SOL KIS단기통안채,System1(단기),진입,True,True,False,False,112440.0,112410.0,112265.0,1.0,21.5,,
 363510,SOL KIS단기통안채,System2(중장기),진입,True,True,False,False,112440.0,112410.0,112190.0,1.0,21.5,,
 363570,KODEX 장기종합채권(AA-이상)액티브,System1(단기),진입,True,True,False,False,87365.0,87220.0,85280.0,1.002,459.75,,
-363570,KODEX 장기종합채권(AA-이상)액티브,System2(중장기),관심,False,False,False,True,87365.0,87400.0,84965.0,1.0,459.75,,
+363570,KODEX 장기종합채권(AA-이상)액티브,System2(중장기),확정,False,False,False,True,87365.0,87400.0,84965.0,1.0,459.75,,87510.0
 363580,KODEX 200IT TR,System1(단기),탈락,False,False,False,True,58305.0,60785.0,55000.0,0.994,1970.25,,
 364980,TIGER 2차전지TOP10,System1(단기),탈락,False,False,False,True,10695.0,10935.0,9760.0,0.994,355.0,,
 365780,ACE 국고채10년,System1(단기),확정,False,False,False,True,82605.0,82755.0,81295.0,1.0,466.15,,82805.0
@@ -833,7 +833,7 @@
 429740,PLUS K리츠,System1(단기),관심,False,False,False,True,6045.0,6095.0,5872.0,0.995,97.6,,
 429000,TIGER 미국S&P500배당귀족,System1(단기),청산,False,False,True,False,12400.0,13293.0,12360.0,0.936,144.5,,
 429000,TIGER 미국S&P500배당귀족,System2(중장기),청산,False,False,True,False,12400.0,14837.0,12360.0,0.839,144.5,,
-430500,KIWOOM 물가채KIS,System1(단기),관심,False,False,False,True,112855.0,113030.0,111500.0,1.0,423.5,,
+430500,KIWOOM 물가채KIS,System1(단기),확정,False,False,False,True,112855.0,113030.0,111500.0,1.0,423.5,,113185.0
 430500,KIWOOM 물가채KIS,System2(중장기),관심,False,False,False,True,112855.0,113750.0,111500.0,0.994,423.5,,
 432320,KB스타리츠,System1(단기),청산,False,False,True,False,1622.0,1788.0,1607.0,0.923,65.9,,
 432600,RISE 국채선물3년,System1(단기),진입,True,True,False,False,55405.0,55405.0,55050.0,1.0,89.0,,
@@ -849,8 +849,8 @@
 435530,KIWOOM TDF2030액티브 적격,System2(중장기),청산,False,False,True,False,14850.0,16494.0,14840.0,0.901,115.4,,
 435540,KIWOOM TDF2040액티브 적격,System1(단기),청산,False,False,True,False,16740.0,17305.0,16725.0,0.97,127.0,,
 435540,KIWOOM TDF2040액티브 적격,System2(중장기),청산,False,False,True,False,16740.0,18464.0,16725.0,0.909,127.0,,
-436140,SOL 종합채권(AA-이상)액티브,System1(단기),관심,False,False,False,True,106825.0,106835.0,105615.0,1.0,263.0,,
-436140,SOL 종합채권(AA-이상)액티브,System2(중장기),관심,False,False,False,True,106825.0,106835.0,105470.0,1.0,263.0,,
+436140,SOL 종합채권(AA-이상)액티브,System1(단기),확정,False,False,False,True,106825.0,106835.0,105615.0,1.0,263.0,,106995.0
+436140,SOL 종합채권(AA-이상)액티브,System2(중장기),확정,False,False,False,True,106825.0,106835.0,105470.0,1.0,263.0,,106995.0
 437350,RISE 미국단기투자등급회사채액티브,System1(단기),청산,False,False,True,False,11705.0,12175.0,11700.0,0.962,94.5,,
 437350,RISE 미국단기투자등급회사채액티브,System2(중장기),청산,False,False,True,False,11705.0,13155.0,11700.0,0.891,94.5,,
 438570,SOL 국고채10년,System1(단기),확정,False,False,False,True,98380.0,98530.0,96795.0,1.0,501.5,,98665.0
@@ -1381,8 +1381,8 @@
 082920,비츠로셀,System1(단기),탈락,False,False,False,True,29450.0,30400.0,27550.0,0.993,1413.75,,
 083310,엘오티베큠,System1(단기),탈락,False,False,False,True,12750.0,13500.0,9820.0,0.996,593.0,,
 083310,엘오티베큠,System2(중장기),탈락,False,False,False,True,12750.0,13500.0,9240.0,0.996,593.0,,
-083450,GST,System1(단기),관심,False,False,False,True,55300.0,56900.0,45850.0,0.998,2590.0,,
-083450,GST,System2(중장기),관심,False,False,False,True,55300.0,56900.0,41750.0,0.998,2590.0,,
+083450,GST,System1(단기),탈락,False,False,False,True,55300.0,56900.0,45850.0,0.998,2590.0,,
+083450,GST,System2(중장기),탈락,False,False,False,True,55300.0,56900.0,41750.0,0.998,2590.0,,
 083650,비에이치아이,System1(단기),청산,False,False,True,False,56600.0,70700.0,57100.0,0.853,3740.0,,
 083650,비에이치아이,System2(중장기),청산,False,False,True,False,56600.0,70700.0,57100.0,0.853,3740.0,,
 083550,케이엠,System1(단기),청산,False,False,True,True,3315.0,3500.0,3220.0,0.997,145.0,,
