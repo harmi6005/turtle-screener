@@ -29,7 +29,7 @@ BXP,BXP,System2(중장기),청산,False,False,True,False,58.39,74.09,58.56,0.802
 CPT,CPT,System1(단기),청산,False,False,True,False,96.16,103.58,95.45,0.929,1.68,,
 CPT,CPT,System2(중장기),청산,False,False,True,False,96.16,115.58,95.45,0.832,1.68,,
 CBOE,CBOE,System1(단기),관심,False,False,False,True,292.02,295.9,252.82,0.997,10.92,,
-CHD,CHD,System1(단기),관심,False,False,False,True,97.18,97.55,93.33,0.998,1.42,,
+CHD,CHD,System1(단기),확정,False,False,False,True,97.18,97.55,93.33,0.998,1.42,,97.73
 CIEN,CIEN,System1(단기),관심,False,False,False,True,436.65,448.0,339.33,0.991,22.87,,
 CTSH,CTSH,System1(단기),청산,False,False,True,False,56.71,64.74,55.63,0.92,2.42,,
 CTSH,CTSH,System2(중장기),청산,False,False,True,False,56.71,65.42,55.63,0.911,2.42,,
@@ -123,7 +123,7 @@ PNC,PNC,System1(단기),청산,False,False,True,False,215.67,246.96,215.35,0.881
 PNC,PNC,System2(중장기),청산,False,False,True,False,215.67,258.96,215.35,0.84,4.53,,
 PFG,PFG,System1(단기),청산,False,False,True,False,108.29,119.06,108.61,0.916,2.32,,
 PFG,PFG,System2(중장기),청산,False,False,True,False,108.29,121.18,108.61,0.9,2.32,,
-PG,PG,System1(단기),관심,False,False,False,True,148.88,149.68,143.4,0.996,2.32,,
+PG,PG,System1(단기),확정,False,False,False,True,148.88,149.68,143.4,0.996,2.32,,149.76
 PLD,PLD,System1(단기),청산,False,False,True,False,127.32,136.49,127.05,0.937,2.07,,
 PLD,PLD,System2(중장기),청산,False,False,True,False,127.32,147.99,127.05,0.864,2.07,,
 PHM,PHM,System1(단기),청산,False,False,True,False,111.57,122.68,111.28,0.92,2.99,,
