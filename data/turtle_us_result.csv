@@ -67,7 +67,7 @@ INTC,INTC,System1(단기),청산,False,False,True,False,113.66,127.44,112.0,0.90
 IQV,IQV,System1(단기),청산,False,False,True,False,260.45,277.4,257.07,0.942,7.19,,
 JBHT,JBHT,System1(단기),청산,False,False,True,False,222.9,275.78,222.77,0.818,7.56,,
 JBHT,JBHT,System2(중장기),청산,False,False,True,False,222.9,294.21,222.77,0.767,7.56,,
-KMI,KMI,System1(단기),관심,False,False,False,True,31.67,32.33,29.43,0.996,0.71,,
+KMI,KMI,System1(단기),탈락,False,False,False,True,31.67,32.33,29.43,0.996,0.71,,
 KKR,KKR,System1(단기),청산,False,False,True,False,89.97,105.93,88.55,0.852,2.89,,
 KKR,KKR,System2(중장기),청산,False,False,True,False,89.97,116.57,88.55,0.774,2.89,,
 LHX,LHX,System1(단기),청산,False,False,True,False,233.84,258.04,234.01,0.925,4.89,,
