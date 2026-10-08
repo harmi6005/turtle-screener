@@ -204,8 +204,8 @@ YB,YB,System2(중장기),청산,False,False,True,False,109.0,148.0,107.0,0.743,7
 STABLE,STABLE,System1(단기),청산,False,False,True,False,35.43,39.9,35.5,0.905,1.98,,
 ZORA,ZORA,System1(단기),청산,False,False,True,False,9.71,13.0,9.48,0.762,0.69,,
 ZORA,ZORA,System2(중장기),청산,False,False,True,False,9.71,16.82,9.48,0.589,0.69,,
-SENT,SENT,System1(단기),관심,False,False,False,True,34.07,35.98,27.32,0.998,2.96,,
-SENT,SENT,System2(중장기),관심,False,False,False,True,34.07,35.98,21.38,0.998,2.96,,
+SENT,SENT,System1(단기),확정,False,False,False,True,34.07,35.98,27.32,0.998,2.96,,36.0
+SENT,SENT,System2(중장기),확정,False,False,False,True,34.07,35.98,21.38,0.998,2.96,,36.0
 KITE,KITE,System1(단기),청산,False,False,True,False,183.0,217.0,179.0,0.853,15.15,,
 PIEVERSE,PIEVERSE,System1(단기),청산,False,False,True,False,1742.0,2714.0,1718.0,0.642,170.8,,
 CC,CC,System1(단기),청산,False,False,True,False,161.0,197.0,158.0,0.832,12.05,,
