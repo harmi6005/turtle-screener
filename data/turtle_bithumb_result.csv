@@ -229,7 +229,7 @@ RENDER,RENDER,System1(단기),확정,False,False,False,True,2731.0,2840.0,2450.0
 RENDER,RENDER,System2(중장기),확정,False,False,False,True,2731.0,2840.0,1757.0,0.998,183.3,,2843.0
 GLM,GLM,System1(단기),확정,False,False,False,True,177.0,179.0,165.0,0.994,7.6,,179.0
 1INCH,1INCH,System1(단기),확정이탈,False,False,False,True,144.0,145.0,131.0,0.993,6.45,,145.0
-1INCH,1INCH,System2(중장기),확정,False,False,False,True,144.0,145.0,117.0,0.993,6.45,,145.0
+1INCH,1INCH,System2(중장기),확정이탈,False,False,False,True,144.0,145.0,117.0,0.993,6.45,,145.0
 CHIP,CHIP,System1(단기),확정,False,False,False,True,69.84,70.45,56.17,1.0,5.95,,70.69
 SKY,SKY,System1(단기),확정이탈,False,False,False,True,130.0,132.0,97.74,0.992,10.3,,132.0
 SKY,SKY,System2(중장기),확정,False,False,False,True,130.0,132.0,75.65,0.992,10.3,,132.0
@@ -248,9 +248,9 @@ IMX,IMX,System1(단기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12
 IMX,IMX,System2(중장기),확정,False,False,False,True,227.0,230.0,158.0,0.991,12.9,,230.0
 TAIKO,TAIKO,System2(중장기),확정,False,False,False,True,127.0,128.0,100.0,0.992,7.6,,128.0
 AHT,AHT,System2(중장기),확정,False,False,False,True,1.67,1.7,1.28,0.992,0.09,,1.7
-ACH,ACH,System2(중장기),확정,False,False,False,True,8.44,8.56,6.5,0.991,0.45,,8.56
+ACH,ACH,System2(중장기),확정이탈,False,False,False,True,8.44,8.56,6.5,0.991,0.45,,8.56
 RAD,RAD,System1(단기),확정,False,False,False,True,340.0,345.0,304.0,0.994,12.6,,345.0
-AI,AI,System1(단기),확정,False,False,False,True,29.38,29.53,24.47,0.995,1.36,,29.55
+AI,AI,System1(단기),확정이탈,False,False,False,True,29.38,29.53,24.47,0.995,1.36,,29.55
 JOE,JOE,System1(단기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
 JOE,JOE,System2(중장기),확정,False,False,False,True,49.12,52.14,36.7,0.997,3.35,,52.35
 ARK,ARK,System1(단기),확정,False,False,False,True,269.0,288.0,183.0,0.997,30.2,,289.0
@@ -267,7 +267,7 @@ PHA,PHA,System1(단기),확정,False,False,False,True,49.4,50.6,32.74,0.993,3.68
 PHA,PHA,System2(중장기),확정,False,False,False,True,49.4,50.6,32.63,0.993,3.68,,50.62
 STRK,STRK,System1(단기),확정,False,False,False,True,65.11,65.64,35.63,0.992,4.88,,65.72
 STRK,STRK,System2(중장기),확정,False,False,False,True,65.11,65.64,34.8,0.992,4.88,,65.72
-PROVE,PROVE,System2(중장기),확정,False,False,False,True,305.0,306.0,235.0,0.997,13.35,,306.0
+PROVE,PROVE,System2(중장기),확정이탈,False,False,False,True,305.0,306.0,235.0,0.997,13.35,,306.0
 OPG,OPG,System1(단기),확정,False,False,False,True,154.0,155.0,128.0,0.994,7.15,,155.0
 OPG,OPG,System2(중장기),확정,False,False,False,True,154.0,155.0,126.0,0.994,7.15,,155.0
 MBX,MBX,System2(중장기),확정,False,False,False,True,41.27,45.56,11.35,1.195,4.25,54.45,45.75
