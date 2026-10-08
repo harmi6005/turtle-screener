@@ -156,7 +156,7 @@ CRWD,CRWD,System2(중장기),확정,False,False,False,True,273.02,273.54,204.27,
 EME,EME,System1(단기),확정,False,False,False,True,785.92,794.95,730.0,0.995,22.89,,797.47
 NVDA,NVDA,System1(단기),확정,False,False,False,True,237.45,237.88,221.09,1.0,5.35,,237.94
 NVDA,NVDA,System2(중장기),확정,False,False,False,True,237.45,237.88,208.93,1.0,5.35,,237.94
-TDY,TDY,System1(단기),확정,False,False,False,True,621.24,624.58,601.93,0.997,10.39,,624.68
+TDY,TDY,System1(단기),확정이탈,False,False,False,True,621.24,624.58,601.93,0.997,10.39,,624.68
 NXPI,NXPI,System1(단기),확정이탈,False,False,False,True,236.34,239.83,220.67,0.997,7.21,,240.42
 RVTY,RVTY,System1(단기),확정,False,False,False,True,152.17,152.26,128.67,1.0,4.86,,152.42
 RVTY,RVTY,System2(중장기),확정,False,False,False,True,152.17,152.26,120.9,1.0,4.86,,152.42
