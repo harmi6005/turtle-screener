@@ -36,8 +36,8 @@ FTNT,FTNT,System1(단기),확정,True,True,False,False,192.88,192.41,169.56,1.00
 FTNT,FTNT,System2(중장기),확정,True,True,False,False,192.88,192.41,155.18,1.004,6.27,,192.87
 HCA,HCA,System1(단기),확정,True,True,False,False,447.72,446.48,420.0,1.004,11.6,,447.83
 HCA,HCA,System2(중장기),확정,True,True,False,False,447.72,446.48,408.99,1.004,11.6,,447.83
-HPE,HPE,System1(단기),관심,False,False,False,True,71.36,73.28,60.68,0.997,3.56,,
-HPE,HPE,System2(중장기),관심,False,False,False,True,71.36,73.28,54.88,0.997,3.56,,
+HPE,HPE,System1(단기),탈락,False,False,False,True,71.36,73.28,60.68,0.997,3.56,,
+HPE,HPE,System2(중장기),탈락,False,False,False,True,71.36,73.28,54.88,0.997,3.56,,
 HRL,HRL,System1(단기),청산,False,False,True,False,19.23,21.13,19.37,0.919,0.42,,
 HRL,HRL,System2(중장기),청산,False,False,True,False,19.23,26.43,19.37,0.735,0.42,,
 HST,HST,System1(단기),관심,False,False,False,True,22.51,22.84,21.85,0.995,0.43,,
