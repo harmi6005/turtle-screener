@@ -34,11 +34,8 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scripts/recheck_us.py
 
-      - name: 빗썸 관심코인 재확인
-        env:
-          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python scripts/recheck_bithumb.py
+      # 2026-10-09: 빗썸 관심코인 재확인 스텝 제거 - 코인은 전체스캔을 하지 않으므로 재확인할
+      # 대상이 없음. 코인은 추적종목(watchlist_check.py, holdings_check.yml)만 확인함.
 
       # [2026-09-22 8차 수정 - 전체 교체]
       # 🔴 이 저장소엔 5분마다 도는 워크플로우(보유종목 추적, 관심종목 재확인),
