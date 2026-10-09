@@ -4,8 +4,8 @@ ABBV,ABBV,System2(중장기),확정,True,True,False,False,275.02,274.94,253.92,1
 AES,AES,System1(단기),관심,False,False,False,True,14.93,14.98,14.85,0.998,0.05,,
 AES,AES,System2(중장기),관심,False,False,False,True,14.93,14.98,14.78,0.998,0.05,,
 AMZN,AMZN,System1(단기),확정,True,True,False,False,260.79,260.14,244.73,1.003,5.55,,260.99
-ANET,ANET,System1(단기),관심,False,False,False,True,215.95,217.32,200.77,0.999,6.89,,
-ANET,ANET,System2(중장기),관심,False,False,False,True,215.95,217.32,186.11,0.999,6.89,,
+ANET,ANET,System1(단기),탈락,False,False,False,True,215.95,217.32,200.77,0.999,6.89,,
+ANET,ANET,System2(중장기),탈락,False,False,False,True,215.95,217.32,186.11,0.999,6.89,,
 T,T,System1(단기),청산,False,False,True,False,22.22,26.93,23.97,0.858,0.63,,
 T,T,System2(중장기),청산,False,False,True,False,22.22,26.93,23.97,0.858,0.63,,
 TECH,TECH,System1(단기),관심,False,False,False,True,72.45,72.69,72.33,0.998,0.16,,
