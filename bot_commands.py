@@ -59,6 +59,11 @@ telegram_listener.py(폴링 방식, 5분마다)와 webhook_handler.py(웹훅 방
   파괴적 작업이라 2단계 확인 방식으로 구현함:
   1) "보유종목 초기화" -> 현재 건수만 알려주고 실제로는 아무것도 안 지움
   2) "보유종목 초기화 확인" -> 이때 비로소 전부 삭제
+
+[2026-10-09 16차 수정 - 전체 교체]
+- ⭐ 사용자 요청: 집중추적 종목은 '진입확정'(확정 전환)일 때만 알림. HELP_TEXT와
+  handle_track_start 안내 문구를 새 정책에 맞게 수정함. (추적확인 수동 조회는 그대로)
+- 보유종목 유닛 원칙 도입에 맞춰 HOLDINGS_COLUMNS에 units/last_add_price 추가, buy 시 초기값(1유닛) 기록.
 """
 
 import os
@@ -84,7 +89,8 @@ SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'scan_setti
 # 컬럼이 잘려나가는 사고가 남 - 실제로 last_price/breakeven_notified 누락 버그 발생했었음)
 HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
                     'highest_price', 'stop_price', 'last_milestone', 'status',
-                    'last_price', 'breakeven_notified', 'exit10_notified', 'exit20_notified']
+                    'last_price', 'breakeven_notified', 'exit10_notified', 'exit20_notified',
+                    'units', 'last_add_price']
 WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status',
                       'sys1_entry_price', 'sys2_entry_price']
 # 2026-09-24 추가: watchlist_check.py와 동일한 휩쏘 이력 파일(읽기 전용으로 참고만 함 -
@@ -138,6 +144,8 @@ HELP_TEXT = (
     "  매도가를 넣으면 손익률 자동 계산\n\n"
     "list\n"
     "  현재 감시 중인 보유거래 목록\n\n"
+    "[유닛 원칙] 보유종목은 매수가 대비 0.5xATR 올라갈 때마다 '추가매수 신호'를 알려줌\n"
+    "  (최대 4유닛, 이후 신호 없음). 추가매수는 직접 하시고, 신호 가격이 기준으로 기록됨\n\n"
     "보유종목 초기화\n"
     "  보유종목 전체 삭제 (되돌릴 수 없음, 2단계 확인 필요)\n"
     "  1) '보유종목 초기화' 입력 -> 현재 건수 안내만 됨\n"
@@ -145,8 +153,8 @@ HELP_TEXT = (
     "코드 추적시작 / 코드 추적종료(추적해제/추적중지)\n"
     "  예) 005930 추적시작\n"
     "  매수 여부와 상관없이 특정 종목 신호만 계속 감시\n"
-    "  전체스캔과 동일한 규칙(추격필터+휩쏘필터)으로 진입확정(매수)/보류(휩쏘\n"
-    "  필터로 이번 1회 보류)/관심(돌파임박)/청산(매도) 신호를 5분마다 알려줌\n\n"
+    "  전체스캔과 동일한 규칙(추격필터+휩쏘필터)으로 5분마다 체크하고,\n"
+    "  '진입확정'(매수 신호)으로 바뀌는 순간에만 알림 (보류/관심/청산은 알림 없음)\n\n"
     "추적확인 (추적목록도 동일)\n"
     "  추적 중인 종목들을 지금 이 순간 실시간 재조회해서 보여줌\n\n"
     "국장알림중지 / 국장알림시작\n"
@@ -286,7 +294,8 @@ def handle_buy(args, df):
                'highest_price': buy_price, 'stop_price': round(stop_price, 4),
                'last_milestone': 0, 'status': 'active',
                'last_price': buy_price, 'breakeven_notified': False,
-               'exit10_notified': False, 'exit20_notified': False}
+               'exit10_notified': False, 'exit20_notified': False,
+               'units': 1, 'last_add_price': buy_price}
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
 
     return df, (f"등록 완료 (거래번호 {trade_id})\n"
@@ -440,8 +449,7 @@ def handle_track_start(code, wdf):
                'sys1_entry_price': '', 'sys2_entry_price': ''}
     wdf = pd.concat([wdf, pd.DataFrame([new_row])], ignore_index=True)
     return wdf, (f"추적시작: {code} [{market}]\n"
-                 f"진입확정(매수)/보류(휩쏘필터)/관심(돌파임박)/청산(매도) 신호가 "
-                 f"바뀔 때마다 알림 드릴게요.")
+                 f"'진입확정'(매수 신호, 휩쏘필터 통과)으로 바뀌는 순간에만 알림 드릴게요.")
 
 
 def handle_track_stop(code, wdf):
@@ -556,7 +564,7 @@ def dispatch(text, df, wdf):
 
 
 def dispatch_lines(text, df, wdf):
-    """한 메시지에 여러 줄로 명령어가 와도(예: 'sell 8801\\nsell 7634') 줄 단위로
+    """한 메시지에 여러 줄로 명령어가 와도(예: 'sell 8801\nsell 7634') 줄 단위로
     각각 처리해서 답장을 합쳐 반환한다.
     반환값: (df, wdf, reply_text_or_None, is_long_reply, holdings_changed, watchlist_changed)"""
     lines = [line for line in text.split('\n') if line.strip()]
