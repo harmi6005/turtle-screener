@@ -11,7 +11,7 @@ T,T,System2(중장기),청산,False,False,True,False,22.22,26.93,23.97,0.858,0.6
 TECH,TECH,System1(단기),관심,False,False,False,True,72.45,72.69,72.33,0.998,0.16,,
 TECH,TECH,System2(중장기),관심,False,False,False,True,72.45,72.69,72.12,0.998,0.16,,
 CCL,CCL,System1(단기),관심,False,False,False,True,26.25,26.71,21.69,0.99,0.88,,
-CASY,CASY,System1(단기),관심,False,False,False,True,638.61,647.73,589.56,0.999,17.35,,
+CASY,CASY,System1(단기),확정,False,False,False,True,638.61,647.73,589.56,0.999,17.35,,648.65
 CHTR,CHTR,System1(단기),청산,False,False,True,False,103.5,148.34,104.91,0.733,5.26,,
 CHTR,CHTR,System2(중장기),청산,False,False,True,False,103.5,160.7,104.91,0.677,5.26,,
 CHD,CHD,System1(단기),관심,False,False,False,True,97.59,98.28,93.33,0.997,1.42,,
@@ -50,8 +50,8 @@ MAS,MAS,System1(단기),관심,False,False,False,True,68.69,70.33,66.26,0.995,1.
 MA,MA,System1(단기),탈락,True,True,False,False,584.4,581.59,545.41,1.006,9.53,,
 MET,MET,System1(단기),관심,False,False,False,True,97.81,99.06,92.21,0.999,1.98,,
 MCHP,MCHP,System1(단기),청산,False,False,True,False,74.57,83.4,74.6,0.917,2.79,,
-MSFT,MSFT,System1(단기),관심,False,False,False,True,533.58,535.69,497.25,0.997,11.97,,
-MSFT,MSFT,System2(중장기),관심,False,False,False,True,533.58,535.69,487.23,0.997,11.97,,
+MSFT,MSFT,System1(단기),확정,False,False,False,True,533.58,535.69,497.25,0.997,11.97,,535.93
+MSFT,MSFT,System2(중장기),확정,False,False,False,True,533.58,535.69,487.23,0.997,11.97,,535.93
 MRNA,MRNA,System1(단기),확정,True,True,False,False,212.58,212.22,182.5,1.022,14.42,,212.85
 MRNA,MRNA,System2(중장기),확정,True,True,False,False,212.58,212.22,135.01,1.022,14.42,,212.85
 MOS,MOS,System1(단기),청산,False,False,True,False,19.69,25.98,19.63,0.765,0.98,,
