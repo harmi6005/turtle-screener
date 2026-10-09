@@ -24,6 +24,11 @@
   상태 추적용으로 계속 사용), 그 자체로 알림이 나가지는 않음. 사용자가 특정
   코인을 계속 추적하고 싶으면 텔레그램 `코드 추적시작` 명령으로 watchlist에
   등록하면 됨(watchlist_check.py가 별도로 5분마다 체크/알림).
+
+[2026-10-09 16차 수정 - 전체 교체]
+- ⭐ 사용자 요청: 알림은 "확정 전환"만 받기로 함. 전체스캔의 "진입 신호 상위 픽" 알림도 제거
+  (스캔은 data/turtle_bithumb_result.csv 갱신만 담당). '진입' 신호 코인은 recheck_bithumb.py가
+  추격/휩쏘 필터를 통과시키고 "확정 전환" 알림을 보냄.
 """
 
 import sys
@@ -33,15 +38,12 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 import requests
 import pandas as pd
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
-                     send_long_message, pick_top_entries,
-                     PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN,
+from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout,
                      is_market_alert_enabled)
 
 MAX_WORKERS = 10
 MARKET_KEY = 'COIN'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_bithumb_result.csv')
-ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
 SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'scan_settings.csv')
 
 
@@ -114,18 +116,6 @@ def screen_bithumb():
     return pd.DataFrame(results)
 
 
-def build_pick_message(entry_cnt, top_df):
-    lines = [f"[코인 전체스캔] 진입 신호 {entry_cnt}개 중 {PICK_PRICE_MAX:,}원 이하 "
-             f"돌파강도 상위 {len(top_df)}픽 (최대 {PICK_COUNT}픽 중 {len(top_df)}개)"]
-    for i, (_, r) in enumerate(top_df.iterrows(), 1):
-        lines.append(
-            f"{i}. {r['name']} [{r['system']}]\n"
-            f"   현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
-            f"   돌파강도(ATR배수) {r['strength']:.2f} / 초과율 {r['excess_ratio']*100:.3f}%"
-        )
-    return "\n".join(lines)
-
-
 if __name__ == "__main__":
     # 2026-09-14 추가: 매시간 전체스캔 자체를 텔레그램 명령("코인전체스캔중지"/"코인전체스캔시작")
     # 으로 켜고 끌 수 있음. 알림 on/off와는 별개 설정이며, 꺼져 있으면 스캔 자체를 건너뜀.
@@ -133,14 +123,6 @@ if __name__ == "__main__":
     if not scan_enabled:
         print("[코인] 매시간 전체스캔이 꺼져있는 상태입니다 - 이번 실행은 건너뜁니다.")
         sys.exit(0)
-
-    alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
-    if not alerts_enabled:
-        print("[코인] 알림 중지 상태입니다 - 스캔/저장은 정상 진행하되 텔레그램 발송만 생략합니다.")
-
-    def notify_long(text):
-        if alerts_enabled:
-            send_long_message(text)
 
     df = screen_bithumb()
     print(f"\n[코인] 신호 코인 {len(df)}개 발견")
@@ -163,14 +145,4 @@ if __name__ == "__main__":
     entry_cnt = len(df[df['signal'] == '진입']) if not df.empty else 0
     watch_cnt = len(df[df['signal'] == '관심']) if not df.empty else 0
     print(f"[코인] 진입신호 {entry_cnt}개 / 관심신호 {watch_cnt}개 "
-          f"(2026-09-24부터 픽3 외 알림은 전송하지 않음 - 콘솔 로그로만 확인)")
-
-    # 2026-09-24: 픽(top_df)이 있을 때만 딱 1건 알림. 그 외(진입 0개, 가격조건
-    # 미달, 관심종목 등) 어떤 경우에도 텔레그램 알림을 보내지 않음.
-    if entry_cnt > 0:
-        top_df = pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN)
-        if not top_df.empty:
-            notify_long(build_pick_message(entry_cnt, top_df))
-        else:
-            print(f"[코인] 진입 신호 {entry_cnt}개가 있지만 {PICK_PRICE_MAX:,}원 이하 "
-                  f"조건을 만족하는 종목이 없어 알림을 보내지 않습니다.")
+          f"(2026-10-09부터 전체스캔은 알림 없음 - '확정 전환'만 recheck_bithumb.py가 알림)")

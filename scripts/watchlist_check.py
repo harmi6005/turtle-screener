@@ -53,6 +53,12 @@ System1(단기)/System2(중장기) 둘 다 독립적으로 체크합니다.
 - watchlist.csv에 sys1_entry_price/sys2_entry_price 컬럼 신규 추가: '진입확정'
   시점의 체결가(종가)를 저장해뒀다가, 나중에 '청산'으로 전환될 때 손익(승/패)을
   계산해서 휩쏘 이력에 기록하는 데 사용함.
+
+[2026-10-09 16차 수정 - 전체 교체]
+- ⭐ 사용자 요청: 집중추적 종목은 '진입확정'(확정 전환)으로 바뀌는 순간에만 알림.
+  보류/관심/청산 전환 알림과 5분마다 보내던 "[집중추적종목 현황]" 요약을 전부 제거함.
+  (상태 갱신·체결가 저장·휩쏘 이력 기록은 그대로 동작)
+- 시장별 알림중지 설정(국장/미장/코인알림중지)도 이제 이 알림에 적용됨.
 """
 
 import sys
@@ -66,8 +72,8 @@ import yfinance as yf
 from datetime import datetime, timedelta, time as dtime
 from zoneinfo import ZoneInfo
 from common import (SYSTEMS, WATCH_RATIO, check_turtle_breakout, notify_telegram,
-                     send_long_message, is_korea_trading_day, classify_with_whipsaw,
-                     load_trade_history, save_trade_history, record_trade_result)
+                     is_korea_trading_day, classify_with_whipsaw,
+                     load_trade_history, save_trade_history, record_trade_result, is_market_alert_enabled)
 
 WATCHLIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'watchlist.csv')
 WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status',
@@ -155,6 +161,12 @@ if __name__ == "__main__":
         print("감시목록이 비어있습니다.")
         sys.exit(0)
 
+    ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
+
+    def notify(msg, market):
+        if is_market_alert_enabled(market, ALERT_SETTINGS_PATH):
+            notify_telegram(msg)
+
     hist_df = load_trade_history(HIST_PATH)
     hist_changed = False
 
@@ -162,8 +174,6 @@ if __name__ == "__main__":
     us_open = is_us_market_open()
 
     changed = False
-    summary_lines = []
-    tracked_code_count = 0
 
     for idx, row in wdf.iterrows():
         market, code = row['market'], row['code']
@@ -175,12 +185,8 @@ if __name__ == "__main__":
         df = get_history(market, code)
         if df is None:
             print(f"{code}: 데이터 조회 실패")
-            summary_lines.append(f"- {code} [{market}]: 데이터 조회 실패")
-            tracked_code_count += 1
             continue
 
-        tracked_code_count += 1
-        code_lines = [f"- {code} [{market}]"]
         for sys_key, price_key, sys_name in [
             ('sys1_status', 'sys1_entry_price', 'System1(단기)'),
             ('sys2_status', 'sys2_entry_price', 'System2(중장기)'),
@@ -188,7 +194,7 @@ if __name__ == "__main__":
             sysconf = SYSTEMS[sys_name]
             res = check_turtle_breakout(df, sysconf['entry'], sysconf['exit'], WATCH_RATIO)
             if not res:
-                code_lines.append(f"    {sys_name}: 데이터 부족")
+                print(f"{code} {sys_name}: 데이터 부족")
                 continue
 
             old_status = str(row[sys_key]) if pd.notna(row[sys_key]) else ''
@@ -206,14 +212,16 @@ if __name__ == "__main__":
                 except (TypeError, ValueError):
                     pass  # 체결가가 없던 옛날 데이터는 승/패 기록 없이 넘어감
 
-            # 1) 상태 전환 강조 알림 - '보류'도 포함해서, 사용자가 "왜 아직 매수
-            #    신호가 안 오는지"(휩쏘필터로 보류 중임)를 바로 알 수 있게 함.
-            if new_status != old_status and new_status != '':
-                notify_telegram(
-                    f"[집중추적] {code} [{market}] {sys_name} -> {new_status} "
-                    f"({STATUS_DESC.get(new_status, '')})\n"
-                    f"현재가 {res['close']} / N일고가 {res['n_high']} / N일저가 {res['n_low']}"
+            # 1) 2026-10-09: '진입확정'으로 새로 전환되는 순간에만 텔레그램 알림
+            #    (보류/관심/청산 전환 알림과 5분 요약은 제거 - 상태 추적·휩쏘 이력은 그대로).
+            if new_status == '진입확정' and old_status != '진입확정':
+                notify(
+                    f"[집중추적] {code} [{market}] {sys_name} -> 진입확정 "
+                    f"({STATUS_DESC.get('진입확정', '')})\n"
+                    f"현재가 {res['close']} / N일고가 {res['n_high']} / N일저가 {res['n_low']}",
+                    market
                 )
+            if new_status != old_status and new_status != '':
                 print(f"{code} {sys_name}: {old_status or '(없음)'} -> {new_status}")
 
             # 진입확정 시점의 체결가(종가)를 저장해서 나중에 청산 시 손익 판정에 사용
@@ -228,17 +236,7 @@ if __name__ == "__main__":
             wdf.at[idx, price_key] = new_entry_price
             changed = True
 
-            # 2) 매 실행마다 무조건 포함되는 현재 상태 요약용 라인
-            gap_pct = (res['close'] - res['n_high']) / res['n_high'] * 100
-            tag = STATUS_TAG.get(new_status, '⚪')
-            display_status = STATUS_DESC.get(new_status, new_status or '관찰중')
-            code_lines.append(
-                f"    {sys_name}: {tag} {new_status or '관찰중'} ({display_status}) | "
-                f"현재가 {res['close']} / N일고가 {res['n_high']} ({gap_pct:+.2f}%) / "
-                f"N일저가 {res['n_low']}"
-            )
 
-        summary_lines.extend(code_lines)
 
     if changed:
         wdf.to_csv(WATCHLIST_PATH, index=False)
@@ -248,10 +246,3 @@ if __name__ == "__main__":
 
     if hist_changed:
         save_trade_history(hist_df, HIST_PATH)
-
-    # 3) 5분마다 무조건 발송되는 현재 상태 요약 (사용자 요청사항)
-    if summary_lines:
-        header = f"🎯 [집중추적종목 현황] {tracked_code_count}종목 (5분 자동 갱신)"
-        send_long_message(header + "\n" + "\n".join(summary_lines))
-    else:
-        print("이번 실행에서 포함할 종목이 없어 요약을 보내지 않았습니다 (장마감/공휴일/데이터없음 등).")

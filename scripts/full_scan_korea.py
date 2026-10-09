@@ -50,6 +50,15 @@
   실제 개장일을 정확히 판정 - 주말+공휴일 모두 포함)로 교체하고, 기존 자체
   구현이었던 is_weekend_kst()는 제거함. requirements.txt에 exchange_calendars가
   추가되어 있어야 정상 동작하며(누락 시 주말 여부만으로 안전하게 폴백).
+
+[2026-10-09 16차 수정 - 전체 교체]
+- ⭐ 사용자 요청: 알림은 "확정 전환 종목"만 받기로 함. 전체스캔이 보내던 "진입 신호 상위 3픽",
+  "실행 완료 - 부합 종목 없음", "관심종목 요약/없음" 알림을 전부 제거함(콘솔 로그만 남김).
+  스캔 결과(data/turtle_korea_result.csv)에 '진입' 신호로 기록된 종목은 recheck_korea.py가
+  5분마다 재확인(추격/휩쏘 필터)해서 통과하면 "확정 전환" 알림을 1회 보냄.
+  (스캔 실패 알림만은 무음 장애를 막기 위해 유지)
+- 실행 주기는 평일 30분마다(full_scan_korea.yml).
+- 국장전체스캔중지/시작 명령(scan_settings.csv)이 국장에도 적용되도록 체크 추가.
 """
 
 import sys
@@ -65,8 +74,6 @@ import FinanceDataReader as fdr
 from datetime import datetime, timedelta
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout, notify_telegram,
-                     build_watch_summary, send_long_message, pick_top_entries,
-                     PICK_COUNT, PICK_PRICE_MAX, PICK_PRICE_MIN,
                      is_market_alert_enabled, is_korea_trading_day)
 from kis_client import kis_credentials_available, get_kis_daily_ohlc
 
@@ -75,6 +82,7 @@ MARKETS = ['KOSPI', 'KOSDAQ']  # 2026-09-12: 'KOSPI' 단일값 -> 코스피+코�
 MARKET_KEY = 'KR'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
 ALERT_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'alert_settings.csv')
+SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'scan_settings.csv')
 TICKER_CACHE_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'krx_tickers_cache.csv')
 
 KRX_RETRY_COUNT = 5
@@ -365,23 +373,17 @@ def screen_korea():
     return pd.DataFrame(results)
 
 
-def build_pick_message(entry_cnt, top_df):
-    lines = [f"[국장 전체스캔] 진입 신호 {entry_cnt}개 중 {PICK_PRICE_MAX:,}원 이하 "
-             f"돌파강도 상위 {len(top_df)}픽 (최대 {PICK_COUNT}픽 중 {len(top_df)}개)"]
-    for i, (_, r) in enumerate(top_df.iterrows(), 1):
-        lines.append(
-            f"{i}. {r['name']}({r['code']}) [{r['system']}]\n"
-            f"   현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
-            f"   돌파강도(ATR배수) {r['strength']:.2f} / 초과율 {r['excess_ratio']*100:.3f}%"
-        )
-    return "\n".join(lines)
-
-
 if __name__ == "__main__":
     # 2026-09-24 수정: 주말+공휴일(설/추석/임시공휴일 등)을 모두 포함해 실제 개장일인지
     # 판정. 수동 실행(workflow_dispatch)은 테스트/점검 목적이므로 휴장일에도 정상 진행.
     if not is_korea_trading_day() and not is_manual_run():
         print("[국장] 오늘은 국장 휴장일(주말 또는 공휴일)입니다 - 전체스캔과 알림을 건너뜁니다.")
+        sys.exit(0)
+
+    # 2026-10-09 추가: "국장전체스캔중지"/"국장전체스캔시작" 명령이 국장에도 실제로 먹히도록
+    # (기존엔 미장/코인만 scan_settings.csv를 읽고 국장은 읽지 않았음).
+    if not is_market_alert_enabled(MARKET_KEY, SCAN_SETTINGS_PATH):
+        print("[국장] 전체스캔이 꺼져있는 상태입니다 - 이번 실행은 건너뜁니다.")
         sys.exit(0)
 
     alerts_enabled = is_market_alert_enabled(MARKET_KEY, ALERT_SETTINGS_PATH)
@@ -392,9 +394,6 @@ if __name__ == "__main__":
         if alerts_enabled:
             notify_telegram(msg)
 
-    def notify_long(text):
-        if alerts_enabled:
-            send_long_message(text)
 
     df = screen_korea()
 
@@ -422,25 +421,5 @@ if __name__ == "__main__":
 
     entry_cnt = len(df[df['signal'] == '진입']) if not df.empty else 0
     watch_cnt = len(df[df['signal'] == '관심']) if not df.empty else 0
-
-    if entry_cnt > 0:
-        entry_only_df = df[df['signal'] == '진입']
-        price_ok_cnt = len(entry_only_df[entry_only_df['close'] <= PICK_PRICE_MAX]) if PICK_PRICE_MAX is not None else entry_cnt
-        print(f"[국장] 진입신호 {entry_cnt}개 중 {PICK_PRICE_MAX:,}원 이하 {price_ok_cnt}개 "
-              f"(이 중 최대 {PICK_COUNT}개까지 알림)")
-
-        top_df = pick_top_entries(df, top_n=PICK_COUNT, price_max=PICK_PRICE_MAX, price_min=PICK_PRICE_MIN)
-        if not top_df.empty:
-            notify_long(build_pick_message(entry_cnt, top_df))
-        else:
-            notify(f"[국장 전체스캔] 진입 신호 {entry_cnt}개가 있지만 "
-                   f"{PICK_PRICE_MAX:,}원 이하 조건을 만족하는 종목이 없습니다.")
-    else:
-        notify("[국장 전체스캔] 실행 완료 - 부합 종목 없음")
-
-    if watch_cnt > 0:
-        summary = build_watch_summary(df, "국장")
-        if summary:
-            notify_long(summary)
-    else:
-        notify("[국장 전체스캔] 관심종목 없음")
+    print(f"[국장] 진입신호 {entry_cnt}개 / 관심신호 {watch_cnt}개 "
+          f"(2026-10-09부터 전체스캔은 텔레그램 알림을 보내지 않음 - '확정 전환'만 recheck_korea.py가 알림)")

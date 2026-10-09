@@ -4,7 +4,15 @@ System1(단기)에는 터틀 휩쏘 필터가 적용됩니다.
 
 [2026-09-04 변경사항] "미장알림중지" 명령으로 알림을 꺼두면, 재확인(휩쏘필터
 포함) 자체는 계속 정상 진행하고 data/*.csv도 그대로 갱신하되, 텔레그램 발송
-(확정전환/확정이탈 알림)만 생략합니다."""
+(확정전환 알림)만 생략합니다.
+
+[2026-10-09 16차 수정 - 전체 교체]
+- ⭐ 사용자 요청: 알림은 "확정 전환"만 받기로 함. 확정이탈 알림을 제거함(상태 갱신·휩쏘
+  이력 기록은 그대로).
+- 재확인 대상에 전체스캔의 '진입' 신호 종목도 포함: 스캔에서 막 돌파한 종목이 관심 단계를
+  거치지 않아도 추격/휩쏘 필터를 통과하면 "확정 전환" 알림이 1회 나가도록 함
+  (전체스캔의 상위 픽 알림을 대체).
+"""
 
 import sys
 import os
@@ -54,8 +62,8 @@ if __name__ == "__main__":
     else:
         prev_df['entry_price'] = prev_df['entry_price'].astype(object)
 
-    target_rows = prev_df[prev_df['signal'].isin(['관심', '확정'])].to_dict('records')
-    print(f"관심/확정 종목 {len(target_rows)}개 재확인 중...")
+    target_rows = prev_df[prev_df['signal'].isin(['진입', '관심', '확정'])].to_dict('records')
+    print(f"진입/관심/확정 종목 {len(target_rows)}개 재확인 중...")
 
     if not target_rows:
         print("현재 추적 중인 종목이 없습니다.")
@@ -146,6 +154,7 @@ if __name__ == "__main__":
     if hist_changed:
         save_trade_history(hist_df, HIST_PATH)
 
+    # 2026-10-09: 확정 전환만 텔레그램 알림 (확정이탈은 콘솔 로그만).
     if not confirm_df.empty:
         lines = [f"- {r['name']} [{r['system']}]\n"
                  f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
@@ -154,7 +163,5 @@ if __name__ == "__main__":
         notify("[미장] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
 
     if not exit_df.empty:
-        lines = [f"- {r['name']} [{r['system']}]\n"
-                 f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
-                 for _, r in exit_df.iterrows()]
-        notify("[미장] 확정이탈 종목! (매도 검토)\n" + "\n".join(lines))
+        print("[미장] 확정이탈(참고용, 알림 없음): " +
+              ", ".join(f"{r['name']}[{r['system']}]" for _, r in exit_df.iterrows()))

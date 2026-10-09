@@ -8,7 +8,7 @@ System1(단기)에는 터틀 휩쏘 필터가 적용됩니다 (직전 거래가 
 
 [2026-09-04 변경사항] "국장알림중지" 명령으로 알림을 꺼두면, 재확인(휩쏘필터
 포함) 자체는 계속 정상 진행하고 data/*.csv도 그대로 갱신하되, 텔레그램 발송
-(확정전환/확정이탈/전환없음 알림)만 생략합니다.
+(확정전환 알림)만 생략합니다.
 
 [2026-09-10 변경사항 - 전체 교체] full_scan_korea.py와 동일하게, 개별 종목의
 일봉 데이터를 KIS 인증 API로 우선 조회하고 실패하거나 자격증명이 없으면 기존
@@ -22,7 +22,14 @@ fdr 방식으로 폴백하도록 변경함 (kis_client.py 신규 모듈).
   실제 개장일을 정확히 판정 - 주말+공휴일 모두 포함)를 먼저 확인하고, 개장일이
   아니면 시간대 확인 없이 바로 종료하도록 수정. requirements.txt에
   exchange_calendars가 추가되어 있어야 정상 동작하며(누락 시 주말 여부만으로
-  안전하게 폴백)."""
+  안전하게 폴백).
+[2026-10-09 16차 수정 - 전체 교체]
+- ⭐ 사용자 요청: 알림은 "확정 전환"만 받기로 함. 확정이탈 알림과 "재확인 실행 완료 ... 없음"
+  알림을 제거함(상태 갱신·휩쏘 이력 기록은 그대로).
+- 재확인 대상에 전체스캔의 '진입' 신호 종목도 포함: 스캔에서 막 돌파한 종목이 관심 단계를
+  거치지 않아도 추격/휩쏘 필터를 통과하면 "확정 전환" 알림이 1회 나가도록 함
+  (전체스캔의 상위 3픽 알림을 대체).
+"""
 
 import sys
 import os
@@ -123,7 +130,7 @@ if __name__ == "__main__":
     else:
         prev_df['entry_price'] = prev_df['entry_price'].astype(object)
 
-    target_rows = prev_df[prev_df['signal'].isin(['관심', '확정'])].to_dict('records')
+    target_rows = prev_df[prev_df['signal'].isin(['진입', '관심', '확정'])].to_dict('records')
     print(f"관심/확정 종목 {len(target_rows)}개 재확인 중...")
 
     if not target_rows:
@@ -199,15 +206,3 @@ if __name__ == "__main__":
                  f"  괴리율 {(r['close']-r['n_high'])/r['n_high']*100:.2f}%"
                  for _, r in confirm_df.iterrows()]
         notify("[국장] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
-
-    if not exit_df.empty:
-        lines = [f"- {r['name']}({r['code']}) [{r['system']}]\n"
-                 f"  현재가 {r['close']} / 청산가(손절) {r['n_low']}"
-                 for _, r in exit_df.iterrows()]
-        notify("[국장] 확정이탈 종목! (매도 검토)\n" + "\n".join(lines))
-
-    if confirm_df.empty and exit_df.empty:
-        notify(
-            f"[국장] 재확인 실행 완료 - 관심/확정 {len(target_rows)}개 대상, "
-            f"확정 전환/확정이탈 종목 없음"
-        )

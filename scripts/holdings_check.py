@@ -32,7 +32,8 @@ NameError 발생하던 문제 수정 + 전체 재작성):
 
 data/holdings.csv 컬럼:
   trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,
-  last_milestone,status,last_price,breakeven_notified,exit10_notified,exit20_notified
+  last_milestone,status,last_price,breakeven_notified,exit10_notified,exit20_notified,
+  units,last_add_price
   market 값: KR(국내) / US(미국) / COIN(빗썸)
   status 값: active(감시중) / stop_hit(손절확정, sell 대기) / closed_manual(수동청산)
 
@@ -68,6 +69,17 @@ data/holdings.csv 컬럼:
   - watchlist.csv는 문자열만 다뤄서 str로 충분했던 것과 다른 점.) 숫자 컬럼
   (buy_price 등)은 이 변경 이후에도 기존의 pd.to_numeric(..., errors='coerce')
   변환을 그대로 거치므로 빈 칸이 정상적으로 NaN으로 처리됨을 재확인함.
+
+[2026-10-09 16차 수정 - 전체 교체] 터틀 "유닛 원칙(피라미딩)" 적용
+- ⭐ 사용자 요청: 보유종목에 유닛 원칙 적용(= 추가매수 신호).
+- 오리지널 터틀 규칙: 최초 진입 1유닛 후, 마지막 진입가보다 0.5xN(ATR) 올라갈 때마다 1유닛 추가,
+  최대 4유닛. 새 컬럼 units(현재 유닛 수, 기본 1) / last_add_price(마지막 진입·추가 기준가,
+  기본 buy_price). 고가가 last_add_price+0.5xATR 이상이면 "추가매수 신호" 1회 알림 후
+  units+1, last_add_price=그 트리거 가격으로 갱신(한 번에 여러 단계 상승 시 한 메시지로 묶음).
+  4유닛 도달 후엔 신호 없음. 신호 가격을 실제 체결로 간주해 기록하므로, 안 사셨다면 무시하면 되고
+  다음 신호는 그 가격 기준으로 계속 나옴.
+- 손절: 트레일링(최고가-2xATR)이 이미 "마지막 진입가-2xATR" 이상이라 기존 로직 그대로 유지.
+  요약에 유닛 수와 다음 추가매수 가격 표시. stop_hit/closed 거래는 추가매수 신호 없음.
 """
 
 import sys
@@ -85,9 +97,12 @@ from common import notify_telegram, send_long_message, calc_atr, fetch_with_retr
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv')
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
            'highest_price', 'stop_price', 'last_milestone', 'status', 'last_price',
-           'breakeven_notified', 'exit10_notified', 'exit20_notified']
+           'breakeven_notified', 'exit10_notified', 'exit20_notified',
+           'units', 'last_add_price']
 NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price',
-                    'last_milestone', 'last_price']
+                    'last_milestone', 'last_price', 'units', 'last_add_price']
+UNIT_STEP_ATR = 0.5   # 터틀 유닛 원칙: 0.5xN 상승마다 1유닛 추가
+MAX_UNITS = 4
 ATR_MULTIPLIER = 2
 PRE_MARKET_BUFFER_MIN = 5
 POST_MARKET_BUFFER_MIN = 5
@@ -278,6 +293,8 @@ if __name__ == "__main__":
     for col in NUMERIC_COLUMNS:
         df[col] = pd.to_numeric(df[col], errors='coerce')
     df['last_milestone'] = df['last_milestone'].fillna(0)
+    df['units'] = df['units'].fillna(1)
+    df['last_add_price'] = df['last_add_price'].fillna(df['buy_price'])
 
     if df.empty:
         print("등록된 거래가 없습니다.")
@@ -370,6 +387,31 @@ if __name__ == "__main__":
                 df.at[idx, 'breakeven_notified'] = True
                 breakeven_notified = True
                 changed = True
+
+            # 1-2) 터틀 유닛 원칙: 마지막 진입가 + 0.5xATR 도달마다 1유닛 추가매수 신호 (최대 4유닛)
+            units_now = int(df.at[idx, 'units']) if not pd.isna(df.at[idx, 'units']) else 1
+            last_add = df.at[idx, 'last_add_price']
+            if pd.isna(last_add):
+                last_add = buy_price
+            if (not pd.isna(atr_entry) and atr_entry > 0 and not pd.isna(last_add)
+                    and units_now < MAX_UNITS):
+                add_lines = []
+                step = UNIT_STEP_ATR * atr_entry
+                while units_now < MAX_UNITS and ohlc['high'] >= last_add + step:
+                    last_add = last_add + step
+                    units_now += 1
+                    add_lines.append(f"  {units_now}유닛째 추가매수 가격 {fmt_num(last_add)}")
+                if add_lines:
+                    notify_telegram(
+                        f"[{market}] 추가매수 신호! (터틀 유닛 원칙 {units_now}/{MAX_UNITS}유닛)\n"
+                        f"거래번호 {trade_id} - {code}\n" + "\n".join(add_lines) + "\n"
+                        f"현재가 {fmt_num(ohlc['close'])} / 손절선 {fmt_num(df.at[idx, 'stop_price'])}\n"
+                        + ("최대 유닛 도달 - 이후 추가매수 신호 없음" if units_now >= MAX_UNITS
+                           else f"다음 추가매수 가격 {fmt_num(last_add + step)}")
+                    )
+                    df.at[idx, 'units'] = units_now
+                    df.at[idx, 'last_add_price'] = round(float(last_add), 6)
+                    changed = True
 
             # 2) ATR 배수 마일스톤 체크 (정수배 최초 도달시 1회, 매도신호 아님)
             if not pd.isna(atr_entry) and atr_entry > 0 and not pd.isna(buy_price):
@@ -483,6 +525,8 @@ if __name__ == "__main__":
             'gap_pct': gap_pct, 'atr_multiple_now': atr_multiple_now,
             'last_milestone': last_milestone, 'tp1': tp1, 'tp2': tp2,
             'low_10': low_10, 'low_20': low_20,
+            'units': df.at[idx, 'units'], 'last_add_price': df.at[idx, 'last_add_price'],
+            'atr_entry': atr_entry,
             'exit10_hit': (low_10 is not None and current_close < low_10),
             'exit20_hit': (low_20 is not None and current_close < low_20),
         })
@@ -505,6 +549,12 @@ if __name__ == "__main__":
             tp2_txt = fmt_num(r['tp2']) if r.get('tp2') is not None else "N/A"
             low10_txt = fmt_num(r['low_10']) if r.get('low_10') is not None else "N/A"
             low20_txt = fmt_num(r['low_20']) if r.get('low_20') is not None else "N/A"
+            u = int(r['units']) if r.get('units') is not None and not pd.isna(r['units']) else 1
+            unit_txt = f"{u}/{MAX_UNITS}"
+            if u >= MAX_UNITS or pd.isna(r.get('last_add_price')) or pd.isna(r.get('atr_entry')):
+                next_txt = "추가매수 없음(최대 유닛)" if u >= MAX_UNITS else "다음 추가매수가 N/A"
+            else:
+                next_txt = f"다음 추가매수가 {fmt_num(r['last_add_price'] + UNIT_STEP_ATR * r['atr_entry'])}"
             exit10_mark = " ⚠️이탈" if r.get('exit10_hit') else ""
             exit20_mark = " ⚠️이탈" if r.get('exit20_hit') else ""
             lines.append(
@@ -513,6 +563,7 @@ if __name__ == "__main__":
                 f"  최고가 {fmt_num(r['highest_price'])} / {r['line_label']} {fmt_num(r['stop_price'])} (괴리율 {gap_txt})\n"
                 f"  ATR배수 {atr_txt} (직전 마일스톤 {r['last_milestone']}배)\n"
                 f"  1차 익절참고가(2×ATR) {tp1_txt} / 2차 익절참고가(4×ATR) {tp2_txt}\n"
+                f"  유닛 {unit_txt} / {next_txt}\n"
                 f"  N일최저가청산참고: [1]10일 {low10_txt}{exit10_mark} / [2]20일 {low20_txt}{exit20_mark}"
             )
         send_long_message("\n".join(lines))
