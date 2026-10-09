@@ -30,7 +30,7 @@ CPT,CPT,System1(단기),청산,False,False,True,False,96.16,103.58,95.45,0.929,1
 CPT,CPT,System2(중장기),청산,False,False,True,False,96.16,115.58,95.45,0.832,1.68,,
 CBOE,CBOE,System1(단기),확정,False,False,False,True,292.02,295.9,252.82,0.997,10.92,,295.99
 CHD,CHD,System1(단기),확정,False,False,False,True,97.18,97.55,93.33,0.998,1.42,,97.73
-CIEN,CIEN,System1(단기),관심,False,False,False,True,436.65,448.0,339.33,0.991,22.87,,
+CIEN,CIEN,System1(단기),탈락,False,False,False,True,436.65,448.0,339.33,0.991,22.87,,
 CTSH,CTSH,System1(단기),청산,False,False,True,False,56.71,64.74,55.63,0.92,2.42,,
 CTSH,CTSH,System2(중장기),청산,False,False,True,False,56.71,65.42,55.63,0.911,2.42,,
 COIN,COIN,System1(단기),청산,False,False,True,False,173.67,208.33,177.0,0.859,11.52,,
@@ -53,8 +53,8 @@ FFIV,FFIV,System2(중장기),관심,False,False,False,True,465.54,472.25,396.88,
 FRT,FRT,System1(단기),청산,False,False,True,False,105.03,114.76,104.82,0.917,1.68,,
 FRT,FRT,System2(중장기),청산,False,False,True,False,105.03,126.84,104.82,0.83,1.68,,
 FERG,FERG,System1(단기),청산,False,False,True,False,214.6,228.77,214.51,0.944,5.49,,
-FTNT,FTNT,System1(단기),관심,False,False,False,True,190.62,192.41,169.56,0.995,6.24,,
-FTNT,FTNT,System2(중장기),관심,False,False,False,True,190.62,192.41,154.0,0.995,6.24,,
+FTNT,FTNT,System1(단기),탈락,False,False,False,True,190.62,192.41,169.56,0.995,6.24,,
+FTNT,FTNT,System2(중장기),탈락,False,False,False,True,190.62,192.41,154.0,0.995,6.24,,
 GRMN,GRMN,System1(단기),청산,False,False,True,False,265.93,297.19,274.43,0.918,7.65,,
 GRMN,GRMN,System2(중장기),청산,False,False,True,False,265.93,313.07,268.67,0.871,7.65,,
 GE,GE,System1(단기),청산,False,False,True,False,301.97,329.38,302.98,0.917,8.1,,
@@ -168,7 +168,7 @@ V,V,System1(단기),확정,False,False,False,True,375.64,377.17,356.75,0.998,5.7
 VST,VST,System2(중장기),탈락,False,False,False,True,160.02,169.48,133.44,0.996,6.01,,
 WRB,WRB,System1(단기),확정,False,False,False,True,70.71,71.36,66.26,0.993,1.28,,71.36
 WAB,WAB,System1(단기),청산,False,False,True,False,278.49,294.72,280.32,0.956,6.02,,
-WMT,WMT,System1(단기),관심,False,False,False,True,110.22,111.23,103.39,0.992,2.07,,
+WMT,WMT,System1(단기),확정,False,False,False,True,110.22,111.23,103.39,0.992,2.07,,111.24
 WELL,WELL,System1(단기),청산,False,False,True,False,222.02,240.31,220.87,0.925,4.8,,
 WELL,WELL,System2(중장기),청산,False,False,True,False,222.02,254.24,220.87,0.874,4.8,,
 WST,WST,System1(단기),청산,False,False,True,False,360.65,382.71,363.12,0.96,9.25,,
