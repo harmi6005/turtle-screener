@@ -16,7 +16,7 @@ CHTR,CHTR,System1(단기),청산,False,False,True,False,103.5,148.34,104.91,0.73
 CHTR,CHTR,System2(중장기),청산,False,False,True,False,103.5,160.7,104.91,0.677,5.26,,
 CHD,CHD,System1(단기),관심,False,False,False,True,97.59,98.28,93.33,0.997,1.42,,
 CTAS,CTAS,System1(단기),관심,False,False,False,True,201.55,204.62,191.85,0.99,3.79,,
-CSCO,CSCO,System1(단기),관심,False,False,False,True,117.03,118.4,105.57,0.99,2.71,,
+CSCO,CSCO,System1(단기),탈락,False,False,False,True,117.03,118.4,105.57,0.99,2.71,,
 COIN,COIN,System1(단기),청산,False,False,True,False,181.43,208.33,171.81,0.873,11.59,,
 CMCSA,CMCSA,System1(단기),청산,False,False,True,False,20.62,25.06,20.75,0.839,0.59,,
 CMCSA,CMCSA,System2(중장기),청산,False,False,True,False,20.62,26.93,20.75,0.781,0.59,,
