@@ -738,7 +738,7 @@
 112610,씨에스윈드,System2(중장기),탈락,False,False,False,True,55400.0,58100.0,46600.0,0.993,2997.5,,
 114260,KODEX 국고채3년,System2(중장기),관심,False,False,False,True,61885.0,62025.0,61375.0,0.999,125.0,,
 114100,RISE 국고채3년,System2(중장기),관심,False,False,False,True,106240.0,106378.0,105415.0,1.0,192.25,,
-114820,TIGER 국채3년,System2(중장기),관심,False,False,False,True,105285.0,105440.0,104470.0,1.0,190.25,,
+114820,TIGER 국채3년,System2(중장기),확정,False,False,False,True,105285.0,105440.0,104470.0,1.0,190.25,,105450.0
 117680,KODEX 철강,System1(단기),청산,False,False,True,False,11910.0,12985.0,11850.0,0.929,336.5,,
 117680,KODEX 철강,System2(중장기),청산,False,False,True,False,11910.0,13400.0,11850.0,0.9,336.5,,
 117700,KODEX 건설,System1(단기),청산,False,False,True,False,6415.0,7585.0,6630.0,0.871,279.5,,
@@ -1279,8 +1279,8 @@
 419430,KODEX 차이나2차전지MSCI(합성),System2(중장기),청산,False,False,True,False,7780.0,10400.0,7825.0,0.76,151.5,,
 419650,PLUS 글로벌수소&차세대연료전지,System1(단기),청산,False,False,True,False,4605.0,5245.0,4680.0,0.93,157.25,,
 419650,PLUS 글로벌수소&차세대연료전지,System2(중장기),청산,False,False,True,False,4605.0,5850.0,4680.0,0.834,157.25,,
-419890,KIWOOM 단기채권ESG액티브,System1(단기),진입,True,True,False,False,107765.0,107765.0,107435.0,1.0,45.0,,
-419890,KIWOOM 단기채권ESG액티브,System2(중장기),진입,True,True,False,False,107765.0,107765.0,107435.0,1.0,45.0,,
+419890,KIWOOM 단기채권ESG액티브,System1(단기),확정,True,True,False,False,107765.0,107765.0,107435.0,1.0,45.0,,107805.0
+419890,KIWOOM 단기채권ESG액티브,System2(중장기),확정,True,True,False,False,107765.0,107765.0,107435.0,1.0,45.0,,107805.0
 423160,KODEX KOFR금리액티브(합성),System1(단기),확정,True,True,False,False,110770.0,110730.0,110584.0,1.0,17.05,,110782.0
 423160,KODEX KOFR금리액티브(합성),System2(중장기),확정,True,True,False,False,110770.0,110730.0,110455.0,1.0,17.05,,110782.0
 428510,KODEX 차이나AI테크액티브,System1(단기),청산,False,False,True,False,21760.0,25000.0,22065.0,0.902,723.75,,
