@@ -820,8 +820,8 @@
 155660,DSR,System2(중장기),청산,False,False,True,False,4245.0,4800.0,4170.0,0.885,123.5,,
 157490,TIGER 소프트웨어,System1(단기),청산,False,False,True,False,7500.0,8590.0,7745.0,0.901,181.75,,
 157490,TIGER 소프트웨어,System2(중장기),청산,False,False,True,False,7500.0,9185.0,7745.0,0.843,181.75,,
-157450,TIGER 단기통안채,System1(단기),진입,True,True,False,False,112885.0,112875.0,112655.0,1.0,33.25,,
-157450,TIGER 단기통안채,System2(중장기),진입,True,True,False,False,112885.0,112875.0,112575.0,1.0,33.25,,
+157450,TIGER 단기통안채,System1(단기),확정,True,True,False,False,112885.0,112875.0,112655.0,1.0,33.25,,112895.0
+157450,TIGER 단기통안채,System2(중장기),확정,True,True,False,False,112885.0,112875.0,112575.0,1.0,33.25,,112895.0
 159800,마이티 코스피100,System1(단기),청산,False,False,True,False,83590.0,90930.0,85670.0,0.942,2049.5,,
 157500,TIGER 증권,System1(단기),청산,False,False,True,False,11240.0,12710.0,11555.0,0.911,305.5,,
 157500,TIGER 증권,System2(중장기),청산,False,False,True,False,11240.0,14731.0,11555.0,0.786,305.5,,
