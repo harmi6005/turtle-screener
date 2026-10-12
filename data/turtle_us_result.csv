@@ -87,7 +87,7 @@ LUV,LUV,System1(단기),청산,False,False,True,False,41.66,43.2,40.82,0.966,1.2
 STE,STE,System1(단기),탈락,False,False,False,True,214.4,216.67,206.53,0.995,3.98,,
 TMUS,TMUS,System1(단기),청산,False,False,True,False,148.58,185.58,160.81,0.845,5.3,,
 TMUS,TMUS,System2(중장기),청산,False,False,True,False,148.58,189.87,160.81,0.826,5.3,,
-TJX,TJX,System1(단기),관심,False,False,False,True,138.76,139.62,128.57,0.999,2.9,,
+TJX,TJX,System1(단기),확정,False,False,False,True,138.76,139.62,128.57,0.999,2.9,,139.72
 TSCO,TSCO,System1(단기),탈락,False,False,False,True,33.7,34.0,30.53,0.994,0.98,,
 ULTA,ULTA,System2(중장기),진입,True,True,False,False,570.37,568.44,529.01,1.005,14.63,,
 UAL,UAL,System1(단기),청산,False,False,True,False,107.46,118.26,105.58,0.911,4.04,,
