@@ -1018,8 +1018,8 @@
 277640,TIGER 코스피대형주,System1(단기),청산,False,False,True,False,36650.0,39410.0,37180.0,0.951,957.25,,
 278530,KODEX 200TR,System1(단기),청산,False,False,True,False,38290.0,41515.0,39075.0,0.948,1077.0,,
 278540,KODEX MSCI Korea TR,System1(단기),청산,False,False,True,False,37890.0,40930.0,38500.0,0.949,1079.25,,
-278620,PLUS 단기채권액티브,System1(단기),진입,True,True,False,False,119415.0,119410.0,119080.0,1.0,44.25,,
-278620,PLUS 단기채권액티브,System2(중장기),진입,True,True,False,False,119415.0,119410.0,119055.0,1.0,44.25,,
+278620,PLUS 단기채권액티브,System1(단기),확정,True,True,False,False,119415.0,119410.0,119080.0,1.0,44.25,,119420.0
+278620,PLUS 단기채권액티브,System2(중장기),확정,True,True,False,False,119415.0,119410.0,119055.0,1.0,44.25,,119420.0
 279530,KODEX 고배당주,System1(단기),청산,False,False,True,False,17110.0,18062.0,17080.0,0.957,265.7,,
 279530,KODEX 고배당주,System2(중장기),청산,False,False,True,False,17110.0,18062.0,17080.0,0.957,265.7,,
 280920,PLUS 주도업종,System1(단기),청산,False,False,True,False,22340.0,24115.0,22795.0,0.941,422.4,,
@@ -1568,8 +1568,8 @@
 484890,SOL 머니마켓액티브,System2(중장기),확정,True,True,False,False,52710.0,52710.0,52555.0,1.0,13.15,,52710.0
 485540,KODEX 미국AI테크TOP10,System1(단기),탈락,False,False,False,True,15745.0,15910.0,15315.0,0.996,196.65,,
 486290,TIGER 미국나스닥100타겟데일리커버드콜,System1(단기),탈락,False,False,False,True,10540.0,10662.0,10355.0,0.994,114.45,,
-486830,HANARO 머니마켓액티브,System1(단기),진입,True,True,False,False,53470.0,53470.0,53360.0,1.0,14.25,,
-486830,HANARO 머니마켓액티브,System2(중장기),진입,True,True,False,False,53470.0,53470.0,53305.0,1.0,14.25,,
+486830,HANARO 머니마켓액티브,System1(단기),확정,True,True,False,False,53470.0,53470.0,53360.0,1.0,14.25,,53485.0
+486830,HANARO 머니마켓액티브,System2(중장기),확정,True,True,False,False,53470.0,53470.0,53305.0,1.0,14.25,,53485.0
 487240,KODEX AI전력핵심설비,System1(단기),청산,False,False,True,False,34025.0,38840.0,35195.0,0.914,1499.75,,
 487240,KODEX AI전력핵심설비,System2(중장기),청산,False,False,True,False,34025.0,39055.0,34310.0,0.909,1499.75,,
 487340,ACE 머니마켓액티브,System1(단기),확정,True,True,False,False,106270.0,106265.0,106040.0,1.0,22.75,,106270.0
