@@ -97,7 +97,7 @@ VRSN,VRSN,System1(단기),탈락,False,False,False,True,303.74,310.0,275.23,0.99
 VRSN,VRSN,System2(중장기),탈락,False,False,False,True,303.74,310.0,275.23,0.991,7.37,,
 VZ,VZ,System1(단기),청산,False,False,True,False,41.65,51.67,45.29,0.84,1.16,,
 VZ,VZ,System2(중장기),청산,False,False,True,False,41.65,51.67,45.29,0.84,1.16,,
-GWW,GWW,System1(단기),관심,False,False,False,True,1289.79,1300.0,1236.29,0.996,23.98,,
+GWW,GWW,System1(단기),확정,False,False,False,True,1289.79,1300.0,1236.29,0.996,23.98,,1300.53
 WMT,WMT,System1(단기),확정,True,True,False,False,111.35,111.23,103.39,1.003,2.12,,111.58
 DIS,DIS,System1(단기),탈락,False,False,False,True,108.05,109.42,101.15,0.99,2.14,,
 WDC,WDC,System1(단기),청산,False,False,True,False,397.28,475.66,390.6,0.837,25.3,,
