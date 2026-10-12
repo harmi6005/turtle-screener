@@ -1350,7 +1350,7 @@
 447430,ACE 주주환원가치주액티브,System2(중장기),탈락,False,False,False,True,16385.0,16710.0,16130.0,0.991,216.0,,
 447620,SOL 미국TOP5채권혼합50,System1(단기),관심,False,False,False,True,16045.0,16145.0,15605.0,0.998,200.75,,
 448100,WON 200,System1(단기),청산,False,False,True,False,108040.0,117736.0,110450.0,0.944,2809.8,,
-448290,TIGER 미국S&P500(H),System1(단기),관심,False,False,False,True,18000.0,18115.0,17705.0,0.996,99.75,,
+448290,TIGER 미국S&P500(H),System1(단기),확정,False,False,False,True,18000.0,18115.0,17705.0,0.996,99.75,,18115.0
 448300,TIGER 미국나스닥100(H),System1(단기),관심,False,False,False,True,24080.0,24250.0,23105.0,0.999,239.4,,
 448300,TIGER 미국나스닥100(H),System2(중장기),관심,False,False,False,True,24080.0,24250.0,22450.0,0.999,239.4,,
 448330,KODEX 삼성전자채권혼합,System1(단기),탈락,False,False,False,True,17545.0,17840.0,17285.0,0.998,213.7,,
