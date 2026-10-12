@@ -10,12 +10,12 @@ TECH,TECH,System2(중장기),관심,False,False,False,True,72.46,72.69,72.12,0.9
 BG,BG,System1(단기),청산,False,False,True,False,102.73,125.82,104.04,0.857,3.67,,
 BG,BG,System2(중장기),청산,False,False,True,False,102.73,127.47,104.04,0.846,3.67,,
 CCL,CCL,System1(단기),탈락,False,False,False,True,26.35,26.71,21.69,0.99,0.88,,
-COR,COR,System1(단기),관심,False,False,False,True,323.85,327.79,295.01,0.994,7.96,,
+COR,COR,System1(단기),탈락,False,False,False,True,323.85,327.79,295.01,0.994,7.96,,
 CF,CF,System1(단기),청산,False,False,True,False,111.54,137.54,111.83,0.862,4.43,,
 CF,CF,System2(중장기),청산,False,False,True,False,111.54,141.66,111.83,0.837,4.43,,
 CHTR,CHTR,System1(단기),청산,False,False,True,False,103.38,148.34,104.91,0.733,5.29,,
 CHTR,CHTR,System2(중장기),청산,False,False,True,False,103.38,160.7,104.91,0.677,5.29,,
-CHD,CHD,System1(단기),관심,False,False,False,True,98.11,98.28,93.33,0.999,1.43,,
+CHD,CHD,System1(단기),탈락,False,False,False,True,98.11,98.28,93.33,0.999,1.43,,
 CIEN,CIEN,System1(단기),탈락,True,True,False,False,449.77,448.0,339.33,1.015,24.0,,
 CTAS,CTAS,System1(단기),관심,False,False,False,True,202.41,204.62,191.85,0.993,3.81,,
 COIN,COIN,System1(단기),청산,False,False,True,False,179.39,208.33,171.81,0.881,11.67,,
@@ -84,7 +84,7 @@ STX,STX,System1(단기),청산,False,False,True,False,783.0,946.36,770.06,0.834,
 SWKS,SWKS,System1(단기),청산,False,False,True,False,76.35,92.8,78.43,0.858,5.14,,
 SWKS,SWKS,System2(중장기),청산,False,False,True,False,76.35,92.8,78.43,0.858,5.14,,
 LUV,LUV,System1(단기),청산,False,False,True,False,41.66,43.2,40.82,0.966,1.25,,
-STE,STE,System1(단기),관심,False,False,False,True,214.4,216.67,206.53,0.995,3.98,,
+STE,STE,System1(단기),탈락,False,False,False,True,214.4,216.67,206.53,0.995,3.98,,
 TMUS,TMUS,System1(단기),청산,False,False,True,False,148.58,185.58,160.81,0.845,5.3,,
 TMUS,TMUS,System2(중장기),청산,False,False,True,False,148.58,189.87,160.81,0.826,5.3,,
 TJX,TJX,System1(단기),관심,False,False,False,True,138.76,139.62,128.57,0.999,2.9,,
@@ -131,7 +131,7 @@ V,V,System1(단기),확정,False,False,False,True,375.64,377.17,356.75,0.998,5.7
 WRB,WRB,System1(단기),확정,False,False,False,True,70.71,71.36,66.26,0.993,1.28,,71.36
 PSX,PSX,System1(단기),확정,False,False,False,True,270.7,277.12,248.51,0.995,9.07,,277.77
 PSX,PSX,System2(중장기),확정,False,False,False,True,270.7,277.12,248.51,0.995,9.07,,277.77
-SMCI,SMCI,System1(단기),확정,False,False,False,True,44.07,44.74,39.85,0.992,2.25,,44.78
+SMCI,SMCI,System1(단기),확정이탈,False,False,False,True,44.07,44.74,39.85,0.992,2.25,,44.78
 SMCI,SMCI,System2(중장기),확정,False,False,False,True,44.07,44.74,35.36,0.992,2.25,,44.78
 ADI,ADI,System1(단기),확정,False,False,False,True,416.86,421.7,370.97,0.994,11.11,,421.83
 ADI,ADI,System2(중장기),확정,False,False,False,True,416.86,421.7,356.12,0.994,11.11,,421.83
