@@ -102,7 +102,7 @@ WMT,WMT,System1(단기),확정,True,True,False,False,111.35,111.23,103.39,1.003,
 DIS,DIS,System1(단기),탈락,False,False,False,True,108.05,109.42,101.15,0.99,2.14,,
 WDC,WDC,System1(단기),청산,False,False,True,False,397.28,475.66,390.6,0.837,25.3,,
 WDC,WDC,System2(중장기),청산,False,False,True,False,397.28,579.81,390.6,0.687,25.3,,
-WMB,WMB,System1(단기),관심,False,False,False,True,72.67,73.66,67.38,0.997,1.7,,
+WMB,WMB,System1(단기),확정,False,False,False,True,72.67,73.66,67.38,0.997,1.7,,73.66
 ZBRA,ZBRA,System1(단기),관심,False,False,False,True,387.18,390.8,363.94,0.995,10.02,,
 ZBRA,ZBRA,System2(중장기),관심,False,False,False,True,387.18,390.8,338.67,0.995,10.02,,
 ABBV,ABBV,System1(단기),확정,True,True,False,False,275.02,274.94,257.87,1.006,5.52,,275.18
