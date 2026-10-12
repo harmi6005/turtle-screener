@@ -1128,7 +1128,7 @@
 332610,PLUS 미국단기회사채(AAA~A),System1(단기),청산,False,False,True,False,121300.0,126574.0,121195.0,0.96,1045.85,,
 332930,HANARO 200TR,System1(단기),청산,False,False,True,False,138560.0,150420.0,142085.0,0.947,3606.0,,
 332940,HANARO MSCI Korea TR,System1(단기),청산,False,False,True,False,46765.0,51190.0,48225.0,0.945,1294.25,,
-336160,RISE 금융채액티브,System1(단기),관심,False,False,False,True,99985.0,100125.0,99515.0,1.0,139.6,,
+336160,RISE 금융채액티브,System1(단기),확정,False,False,False,True,99985.0,100125.0,99515.0,1.0,139.6,,100180.0
 336160,RISE 금융채액티브,System2(중장기),관심,False,False,False,True,99985.0,100187.0,99464.0,0.999,139.6,,
 332620,PLUS 미국장기우량회사채,System1(단기),청산,False,False,True,False,81005.0,88039.0,81160.0,0.925,827.65,,
 332620,PLUS 미국장기우량회사채,System2(중장기),청산,False,False,True,False,81005.0,96282.0,81160.0,0.846,827.65,,
