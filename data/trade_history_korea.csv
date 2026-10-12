@@ -23,3 +23,5 @@ code,system,direction,last_result,skip_active,skip_price
 203400,System1(단기),long,loss,False,
 000157,System1(단기),long,loss,False,
 0074K0,System1(단기),long,loss,False,
+210120,System1(단기),long,loss,False,
+210120,System2(중장기),long,loss,False,
