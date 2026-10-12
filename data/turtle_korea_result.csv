@@ -963,12 +963,12 @@
 256750,KODEX 차이나심천ChiNext(합성),System1(단기),청산,False,False,True,False,13155.0,15505.0,13500.0,0.882,326.0,,
 256750,KODEX 차이나심천ChiNext(합성),System2(중장기),청산,False,False,True,False,13155.0,18430.0,13500.0,0.742,326.0,,
 261140,TIGER 우선주,System1(단기),청산,False,False,True,False,23840.0,25230.0,23980.0,0.961,461.75,,
-261120,TIGER 미국달러선물인버스2X,System1(단기),관심,False,False,False,True,5635.0,5670.0,5250.0,0.998,79.0,,
-261120,TIGER 미국달러선물인버스2X,System2(중장기),관심,False,False,False,True,5635.0,5670.0,5250.0,0.998,79.0,,
+261120,TIGER 미국달러선물인버스2X,System1(단기),확정,False,False,False,True,5635.0,5670.0,5250.0,0.998,79.0,,5670.0
+261120,TIGER 미국달러선물인버스2X,System2(중장기),확정,False,False,False,True,5635.0,5670.0,5250.0,0.998,79.0,,5670.0
 261110,TIGER 미국달러선물레버리지,System1(단기),청산,False,False,True,False,15040.0,16115.0,15020.0,0.936,228.25,,
 261240,KODEX 미국달러선물,System1(단기),청산,False,False,True,False,13850.0,14350.0,13850.0,0.968,110.0,,
-261260,KODEX 미국달러선물인버스2X,System1(단기),관심,False,False,False,True,5675.0,5710.0,5280.0,0.997,83.75,,
-261260,KODEX 미국달러선물인버스2X,System2(중장기),관심,False,False,False,True,5675.0,5710.0,5280.0,0.997,83.75,,
+261260,KODEX 미국달러선물인버스2X,System1(단기),확정,False,False,False,True,5675.0,5710.0,5280.0,0.997,83.75,,5715.0
+261260,KODEX 미국달러선물인버스2X,System2(중장기),확정,False,False,False,True,5675.0,5710.0,5280.0,0.997,83.75,,5715.0
 261920,ACE MSCI필리핀(합성),System1(단기),청산,False,False,True,False,10975.0,12080.0,11030.0,0.93,176.0,,
 261920,ACE MSCI필리핀(합성),System2(중장기),청산,False,False,True,False,10975.0,14230.0,11030.0,0.789,176.0,,
 264900,크라운제과,System1(단기),청산,False,False,True,False,7610.0,8150.0,7580.0,0.939,138.0,,
@@ -977,8 +977,8 @@
 266160,RISE 고배당,System2(중장기),청산,False,False,True,False,31925.0,34961.0,32155.0,0.933,690.0,,
 266390,KODEX 경기소비재,System1(단기),청산,False,False,True,False,14410.0,15660.0,14460.0,0.932,296.0,,
 266390,KODEX 경기소비재,System2(중장기),청산,False,False,True,False,14410.0,15660.0,14460.0,0.932,296.0,,
-261270,KODEX 미국달러선물인버스,System1(단기),관심,False,False,False,True,8365.0,8380.0,8060.0,0.999,65.7,,
-261270,KODEX 미국달러선물인버스,System2(중장기),관심,False,False,False,True,8365.0,8380.0,8060.0,0.999,65.7,,
+261270,KODEX 미국달러선물인버스,System1(단기),확정,False,False,False,True,8365.0,8380.0,8060.0,0.999,65.7,,8385.0
+261270,KODEX 미국달러선물인버스,System2(중장기),확정,False,False,False,True,8365.0,8380.0,8060.0,0.999,65.7,,8385.0
 266360,KODEX K콘텐츠,System1(단기),청산,False,False,True,False,9070.0,10070.0,9140.0,0.921,185.0,,
 266360,KODEX K콘텐츠,System2(중장기),청산,False,False,True,False,9070.0,10645.0,9140.0,0.871,185.0,,
 266550,PLUS 중형주저변동50,System1(단기),청산,False,False,True,False,17840.0,18975.0,17945.0,0.948,144.0,,
@@ -1403,8 +1403,8 @@
 453870,TIGER 인도니프티50,System2(중장기),청산,False,False,True,False,10170.0,12543.0,10280.0,0.821,182.5,,
 454320,HANARO CAPEX설비투자iSelect,System1(단기),청산,False,False,True,False,39635.0,44870.0,40625.0,0.9,1278.25,,
 454320,HANARO CAPEX설비투자iSelect,System2(중장기),청산,False,False,True,False,39635.0,44870.0,40625.0,0.9,1278.25,,
-454780,KIWOOM 종합채권(AA-이상)액티브,System1(단기),진입,True,True,False,False,100200.0,100190.0,98930.0,1.0,241.0,,
-454780,KIWOOM 종합채권(AA-이상)액티브,System2(중장기),진입,True,True,False,False,100200.0,100190.0,98855.0,1.0,241.0,,
+454780,KIWOOM 종합채권(AA-이상)액티브,System1(단기),확정,True,True,False,False,100200.0,100190.0,98930.0,1.0,241.0,,100395.0
+454780,KIWOOM 종합채권(AA-이상)액티브,System2(중장기),확정,True,True,False,False,100200.0,100190.0,98855.0,1.0,241.0,,100395.0
 455030,KODEX 미국달러SOFR금리액티브(합성),System1(단기),청산,False,False,True,False,11485.0,11893.0,11465.0,0.967,97.1,,
 455890,RISE 머니마켓액티브,System1(단기),확정,True,True,False,False,55670.0,55665.0,55565.0,1.0,11.25,,55677.0
 455890,RISE 머니마켓액티브,System2(중장기),확정,True,True,False,False,55670.0,55665.0,55495.0,1.0,11.25,,55677.0
@@ -1705,7 +1705,7 @@
 0099W0,미래에셋비전스팩11호,System1(단기),관심,False,False,False,True,1985.0,1997.0,1952.0,0.996,16.9,,
 008830,대동기어,System1(단기),청산,False,False,True,False,6100.0,6870.0,6100.0,0.94,267.0,,
 008830,대동기어,System2(중장기),청산,False,False,True,False,6100.0,8330.0,6030.0,0.776,267.0,,
-0105P0,유진스팩12호,System1(단기),관심,False,False,False,True,2000.0,2005.0,1951.0,0.998,14.4,,
+0105P0,유진스팩12호,System1(단기),확정,False,False,False,True,2000.0,2005.0,1951.0,0.998,14.4,,2005.0
 010470,오리콤,System1(단기),탈락,False,False,False,True,5120.0,5150.0,4865.0,0.998,111.0,,
 010470,오리콤,System2(중장기),탈락,False,False,False,True,5120.0,5150.0,4795.0,0.998,111.0,,
 0130D0,신한제17호스팩,System1(단기),관심,False,False,False,True,1968.0,1987.0,1950.0,0.996,19.2,,
