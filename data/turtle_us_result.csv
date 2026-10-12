@@ -40,7 +40,7 @@ HPE,HPE,System2(중장기),진입,True,True,False,False,73.46,73.28,54.88,1.004,
 HLT,HLT,System1(단기),탈락,True,True,False,False,326.56,325.93,310.35,1.005,5.97,,
 HRL,HRL,System1(단기),청산,False,False,True,False,19.19,21.13,19.37,0.919,0.42,,
 HRL,HRL,System2(중장기),청산,False,False,True,False,19.19,26.43,19.37,0.735,0.42,,
-HST,HST,System1(단기),관심,False,False,False,True,22.65,22.84,21.85,0.995,0.43,,
+HST,HST,System1(단기),확정,False,False,False,True,22.65,22.84,21.85,0.995,0.43,,22.84
 HPQ,HPQ,System1(단기),청산,False,False,True,False,30.2,36.23,30.6,0.882,1.35,,
 HPQ,HPQ,System2(중장기),청산,False,False,True,False,30.2,36.23,30.6,0.882,1.35,,
 INTC,INTC,System1(단기),청산,False,False,True,False,104.7,127.44,105.24,0.85,6.38,,
