@@ -32,8 +32,8 @@ CAH,CAH,System1(단기),관심,False,False,False,True,238.08,241.96,216.2,0.992,
 CNP,CNP,System1(단기),확정,False,False,False,True,39.03,39.4,36.37,0.992,0.58,,39.23
 CHTR,CHTR,System1(단기),청산,False,False,True,False,102.48,148.34,102.37,0.705,5.18,,
 CHTR,CHTR,System2(중장기),청산,False,False,True,False,102.48,160.7,102.37,0.651,5.18,,
-CVX,CVX,System1(단기),관심,False,False,False,True,215.0,217.78,201.96,0.995,4.38,,
-CVX,CVX,System2(중장기),관심,False,False,False,True,215.0,217.78,200.78,0.995,4.38,,
+CVX,CVX,System1(단기),탈락,False,False,False,True,215.0,217.78,201.96,0.995,4.38,,
+CVX,CVX,System2(중장기),탈락,False,False,False,True,215.0,217.78,200.78,0.995,4.38,,
 CMG,CMG,System1(단기),청산,False,False,True,False,30.4,37.22,30.21,0.837,1.32,,
 CMG,CMG,System2(중장기),청산,False,False,True,False,30.4,39.09,30.21,0.797,1.32,,
 CTAS,CTAS,System1(단기),확정,True,True,False,False,205.23,204.62,191.85,1.008,3.77,,206.77
