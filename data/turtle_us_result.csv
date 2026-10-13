@@ -1,7 +1,7 @@
 code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 AMD,AMD,System1(단기),청산,False,False,True,False,597.16,658.52,586.54,0.913,25.01,,
 AFL,AFL,System1(단기),관심,False,False,False,True,116.31,118.09,110.0,0.992,1.76,,
-APD,APD,System1(단기),관심,False,False,False,True,288.05,290.11,267.28,0.994,5.26,,
+APD,APD,System1(단기),탈락,False,False,False,True,288.05,290.11,267.28,0.994,5.26,,
 AKAM,AKAM,System1(단기),청산,False,False,True,False,100.2,128.46,99.3,0.802,6.62,,
 AKAM,AKAM,System2(중장기),청산,False,False,True,False,100.2,128.46,99.3,0.802,6.62,,
 ALB,ALB,System1(단기),청산,False,False,True,False,96.93,117.59,96.63,0.835,3.85,,
