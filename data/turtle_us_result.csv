@@ -130,7 +130,7 @@ VLO,VLO,System2(중장기),탈락,False,False,False,True,436.0,449.77,364.96,0.9
 VRT,VRT,System1(단기),청산,False,False,True,False,239.36,258.1,238.3,0.941,9.44,,
 WRB,WRB,System1(단기),확정,True,True,False,False,72.9,72.57,66.26,1.009,1.32,,73.48
 DIS,DIS,System1(단기),확정,False,False,False,True,108.49,109.42,101.15,0.996,2.06,,109.2
-WEC,WEC,System1(단기),관심,False,False,False,True,104.91,106.0,99.8,0.99,1.55,,
+WEC,WEC,System1(단기),확정,False,False,False,True,104.91,106.0,99.8,0.99,1.55,,105.52
 WDC,WDC,System1(단기),청산,False,False,True,False,386.94,475.66,386.01,0.825,24.31,,
 WDC,WDC,System2(중장기),청산,False,False,True,False,386.94,579.81,386.01,0.677,24.31,,
 WYNN,WYNN,System1(단기),청산,False,False,True,False,74.96,88.25,73.98,0.85,2.53,,
