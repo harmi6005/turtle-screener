@@ -999,8 +999,8 @@
 122090,PLUS 코스피50,System2(중장기),청산,False,False,True,False,75955.0,87555.0,78210.0,0.898,2287.75,,
 126720,수산인더스트리,System1(단기),청산,False,False,True,False,20400.0,23050.0,20950.0,0.913,582.5,,
 126720,수산인더스트리,System2(중장기),청산,False,False,True,False,20400.0,24150.0,20950.0,0.872,582.5,,
-122260,KIWOOM 통안채1년,System1(단기),진입,True,True,False,False,104460.0,104445.0,104180.0,1.0,35.0,,
-122260,KIWOOM 통안채1년,System2(중장기),진입,True,True,False,False,104460.0,104445.0,104180.0,1.0,35.0,,
+122260,KIWOOM 통안채1년,System1(단기),확정,True,True,False,False,104460.0,104445.0,104180.0,1.0,35.0,,104510.0
+122260,KIWOOM 통안채1년,System2(중장기),확정,True,True,False,False,104460.0,104445.0,104180.0,1.0,35.0,,104510.0
 122630,KODEX 레버리지,System1(단기),청산,False,False,True,False,93620.0,120080.0,101400.0,0.834,6028.0,,
 122630,KODEX 레버리지,System2(중장기),청산,False,False,True,False,93620.0,133150.0,98695.0,0.752,6028.0,,
 123700,SJM,System1(단기),청산,False,False,True,False,3200.0,3680.0,3190.0,0.88,132.25,,
@@ -1678,7 +1678,7 @@
 428510,KODEX 차이나AI테크액티브,System2(중장기),청산,False,False,True,False,21305.0,28029.0,21670.0,0.788,734.5,,
 429740,PLUS K리츠,System1(단기),탈락,False,False,False,True,5965.0,6095.0,5911.0,0.998,100.5,,
 432320,KB스타리츠,System1(단기),청산,False,False,True,False,1614.0,1788.0,1604.0,0.907,67.9,,
-430500,KIWOOM 물가채KIS,System2(중장기),진입,True,True,False,False,113850.0,113750.0,111500.0,1.002,464.5,,
+430500,KIWOOM 물가채KIS,System2(중장기),확정,True,True,False,False,113850.0,113750.0,111500.0,1.002,464.5,,113945.0
 432600,RISE 국채선물3년,System1(단기),진입,True,True,False,False,55510.0,55425.0,55050.0,1.002,95.0,,
 432600,RISE 국채선물3년,System2(중장기),진입,True,True,False,False,55510.0,55500.0,54975.0,1.0,95.0,,
 433250,UNICORN R&D 액티브,System1(단기),청산,False,False,True,False,21690.0,23980.0,22525.0,0.934,475.25,,
