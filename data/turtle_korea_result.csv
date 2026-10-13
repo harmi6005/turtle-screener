@@ -1796,7 +1796,7 @@
 456250,KODEX 유럽명품TOP10 STOXX,System1(단기),청산,False,False,True,False,7450.0,8395.0,7475.0,0.892,111.0,,
 456250,KODEX 유럽명품TOP10 STOXX,System2(중장기),청산,False,False,True,False,7450.0,9901.0,7475.0,0.756,111.0,,
 457690,KODEX 33-06 국고채액티브,System1(단기),확정,True,True,False,False,10570.0,10545.0,10385.0,1.003,43.75,,10575.0
-457690,KODEX 33-06 국고채액티브,System2(중장기),관심,False,False,False,True,10570.0,10595.0,10340.0,0.998,43.75,,
+457690,KODEX 33-06 국고채액티브,System2(중장기),확정,False,False,False,True,10570.0,10595.0,10340.0,0.998,43.75,,10595.0
 457480,ACE 테슬라밸류체인액티브,System1(단기),청산,False,False,True,False,17975.0,19100.0,17505.0,1.011,455.0,,
 457480,ACE 테슬라밸류체인액티브,System2(중장기),청산,False,False,True,False,17975.0,19990.0,17505.0,0.966,455.0,,
 457930,BNK 미래전략기술액티브,System1(단기),청산,False,False,True,False,25950.0,28700.0,27280.0,0.932,523.25,,
