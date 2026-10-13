@@ -1348,7 +1348,7 @@
 289040,KODEX MSCI KOREA ESG유니버설,System2(중장기),청산,False,False,True,False,31745.0,35190.0,32295.0,0.921,640.25,,
 289260,TIGER MSCI KOREA ESG리더스,System1(단기),청산,False,False,True,False,27005.0,30400.0,28100.0,0.914,671.5,,
 289260,TIGER MSCI KOREA ESG리더스,System2(중장기),청산,False,False,True,False,27005.0,30400.0,28055.0,0.914,671.5,,
-289670,PLUS 국채선물10년,System2(중장기),관심,False,False,False,True,52595.0,52770.0,51180.0,0.997,282.0,,
+289670,PLUS 국채선물10년,System2(중장기),탈락,False,False,False,True,52595.0,52770.0,51180.0,0.997,282.0,,
 290080,RISE 200고배당커버드콜ATM,System1(단기),청산,False,False,True,False,7290.0,7593.0,7105.0,0.975,209.55,,
 290080,RISE 200고배당커버드콜ATM,System2(중장기),청산,False,False,True,False,7290.0,8063.0,7067.0,0.918,209.55,,
 289480,TIGER 200커버드콜,System1(단기),청산,False,False,True,False,12510.0,13455.0,12840.0,0.951,246.65,,
