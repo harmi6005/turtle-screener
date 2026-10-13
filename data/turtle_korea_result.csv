@@ -1402,7 +1402,7 @@
 300950,KODEX 게임산업,System1(단기),청산,False,False,True,False,5130.0,5495.0,5185.0,0.959,122.25,,
 300950,KODEX 게임산업,System2(중장기),청산,False,False,True,False,5130.0,6080.0,5185.0,0.867,122.25,,
 302190,TIGER 중장기국채,System1(단기),탈락,True,True,False,False,50365.0,50270.0,49610.0,1.003,172.25,,
-302190,TIGER 중장기국채,System2(중장기),관심,False,False,False,True,50365.0,50490.0,49480.0,0.998,172.25,,
+302190,TIGER 중장기국채,System2(중장기),확정,False,False,False,True,50365.0,50490.0,49480.0,0.998,172.25,,50500.0
 302450,RISE 코스피,System1(단기),청산,False,False,True,False,66570.0,74250.0,69070.0,0.924,1673.0,,
 302450,RISE 코스피,System2(중장기),청산,False,False,True,False,66570.0,74685.0,68200.0,0.919,1673.0,,
 304760,HANARO KRX300,System1(단기),청산,False,False,True,False,44535.0,49595.0,45735.0,0.922,1162.0,,
