@@ -1072,7 +1072,7 @@
 147970,TIGER 모멘텀,System2(중장기),청산,False,False,True,False,74305.0,84820.0,76375.0,0.902,1759.0,,
 148020,RISE 200,System1(단기),청산,False,False,True,False,102290.0,115545.0,106515.0,0.915,3011.65,,
 148020,RISE 200,System2(중장기),청산,False,False,True,False,102290.0,115616.0,104605.0,0.915,3011.65,,
-148070,KIWOOM 국고채10년,System1(단기),진입,True,True,False,False,105355.0,104960.0,103000.0,1.005,605.0,,
+148070,KIWOOM 국고채10년,System1(단기),확정,True,True,False,False,105355.0,104960.0,103000.0,1.005,605.0,,105460.0
 148070,KIWOOM 국고채10년,System2(중장기),관심,False,False,False,True,105355.0,105960.0,102555.0,0.995,605.0,,
 152500,ACE 레버리지,System1(단기),청산,False,False,True,False,38465.0,49300.0,41620.0,0.834,2457.25,,
 152500,ACE 레버리지,System2(중장기),청산,False,False,True,False,38465.0,54500.0,40570.0,0.755,2457.25,,
@@ -1120,7 +1120,7 @@
 183700,RISE 200채권혼합50,System2(중장기),청산,False,False,True,False,94065.0,103100.0,94095.0,0.922,1612.0,,
 183710,RISE 주식혼합,System1(단기),청산,False,False,True,False,88775.0,96480.0,91600.0,0.938,1571.0,,
 183710,RISE 주식혼합,System2(중장기),청산,False,False,True,False,88775.0,96675.0,90320.0,0.937,1571.0,,
-189400,PLUS 글로벌MSCI(합성 H),System1(단기),관심,False,False,False,True,25980.0,26210.0,25580.0,0.992,224.25,,
+189400,PLUS 글로벌MSCI(합성 H),System1(단기),탈락,False,False,False,True,25980.0,26210.0,25580.0,0.992,224.25,,
 192090,TIGER 차이나CSI300,System1(단기),청산,False,False,True,False,11255.0,12405.0,11340.0,0.923,205.75,,
 192090,TIGER 차이나CSI300,System2(중장기),청산,False,False,True,False,11255.0,13825.0,11340.0,0.829,205.75,,
 192720,파워 고배당저변동성,System1(단기),청산,False,False,True,False,56110.0,60765.0,55900.0,0.93,1042.75,,
