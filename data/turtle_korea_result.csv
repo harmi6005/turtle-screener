@@ -1380,8 +1380,8 @@
 294400,KIWOOM 200TR,System2(중장기),청산,False,False,True,False,133345.0,150635.0,136300.0,0.915,3865.75,,
 295020,RISE 국채선물10년인버스,System1(단기),청산,False,False,True,False,60445.0,61900.0,60690.0,0.981,316.75,,
 295020,RISE 국채선물10년인버스,System2(중장기),청산,False,False,True,False,60445.0,61900.0,60650.0,0.981,316.75,,
-295000,RISE 국채선물10년,System1(단기),진입,True,True,False,False,51755.0,51500.0,50675.0,1.006,262.85,,
-295000,RISE 국채선물10년,System2(중장기),관심,False,False,False,True,51755.0,52075.0,50365.0,0.995,262.85,,
+295000,RISE 국채선물10년,System1(단기),탈락,True,True,False,False,51755.0,51500.0,50675.0,1.006,262.85,,
+295000,RISE 국채선물10년,System2(중장기),확정,False,False,False,True,51755.0,52075.0,50365.0,0.995,262.85,,52095.0
 295040,SOL 200TR,System1(단기),청산,False,False,True,False,38095.0,42970.0,39610.0,0.916,1120.5,,
 295040,SOL 200TR,System2(중장기),청산,False,False,True,False,38095.0,43025.0,38930.0,0.915,1120.5,,
 298000,효성화학,System1(단기),청산,False,False,True,False,49950.0,61500.0,50500.0,0.837,2400.0,,
@@ -1679,8 +1679,8 @@
 429740,PLUS K리츠,System1(단기),탈락,False,False,False,True,5965.0,6095.0,5911.0,0.998,100.5,,
 432320,KB스타리츠,System1(단기),청산,False,False,True,False,1614.0,1788.0,1604.0,0.907,67.9,,
 430500,KIWOOM 물가채KIS,System2(중장기),확정,True,True,False,False,113850.0,113750.0,111500.0,1.002,464.5,,113945.0
-432600,RISE 국채선물3년,System1(단기),진입,True,True,False,False,55510.0,55425.0,55050.0,1.002,95.0,,
-432600,RISE 국채선물3년,System2(중장기),진입,True,True,False,False,55510.0,55500.0,54975.0,1.0,95.0,,
+432600,RISE 국채선물3년,System1(단기),확정,True,True,False,False,55510.0,55425.0,55050.0,1.002,95.0,,55600.0
+432600,RISE 국채선물3년,System2(중장기),확정,True,True,False,False,55510.0,55500.0,54975.0,1.0,95.0,,55600.0
 433250,UNICORN R&D 액티브,System1(단기),청산,False,False,True,False,21690.0,23980.0,22525.0,0.934,475.25,,
 433250,UNICORN R&D 액티브,System2(중장기),청산,False,False,True,False,21690.0,24955.0,22450.0,0.897,475.25,,
 433500,ACE 원자력TOP10,System1(단기),청산,False,False,True,False,49800.0,64750.0,52210.0,0.806,2351.75,,
