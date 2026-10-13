@@ -59,6 +59,24 @@
   (스캔 실패 알림만은 무음 장애를 막기 위해 유지)
 - 실행 주기는 평일 30분마다(full_scan_korea.yml).
 - 국장전체스캔중지/시작 명령(scan_settings.csv)이 국장에도 적용되도록 체크 추가.
+
+[2026-10-13 17차 수정 - 전체 교체]
+- ⭐ 사용자 요청(종목선정 점검 후 수정): 스캔 대상에서 ETF / ETN / 스팩을 제외함.
+  배경: 코스피+코스닥 2,438개 중 ETF가 약 791개(32%), 스팩 29개가 섞여 있었고, 저장소의
+  '확정' 140종목 중 125개가 ETF/스팩이었음(대부분 머니마켓·채권형 ETF로 ATR 평균 0.23% -
+  이자로 천천히 오르는 것을 "돌파"로 잡고 있었음). 일반 주식은 15개뿐이었음.
+  원본 터틀은 유동성 좋은 추세형 시장만 거래하므로 이 대상들은 종목선정 취지와 맞지 않음.
+- 제외 규칙(이름 기준, 2,438개 종목명으로 오탐/미탐 검증 완료):
+  ① 이름에 '스팩' 포함  ② 이름에 'ETN' 포함
+  ③ 이름이 "ETF 브랜드 + 공백"으로 시작 (KODEX/TIGER/RISE/ACE/PLUS/SOL/KIWOOM/HANARO/1Q/
+     KoAct/TIME/WON/BNK/HK/IBK/MIDAS/FOCUS/UNICORN/TREX/TRUSTON/DAISHIN/파워/마이티/에셋플러스 등)
+     -> '파워넷', 'HK이노엔', 'BNK금융지주', '유진투자증권'처럼 공백 없이 붙은 일반 종목은 유지
+  ④ 이름이 '액티브' 또는 'X클래스'로 끝남 (브랜드 목록에 없는 ETF 대비)
+- 제외 대상은 가격 조회 전에 걸러내므로 조회 대상이 약 35% 줄어 스캔도 빨라짐.
+- 직전 결과에서 보존하던 '확정' 종목에도 같은 규칙을 적용해 기존 ETF/스팩 확정 종목을 정리함
+  (다음 스캔부터 data/turtle_korea_result.csv에서 사라짐).
+- 안전장치: 제외 비율이 60%를 넘으면 규칙 오작동으로 보고 필터 없이 진행(로그에 경고).
+- 우선주·리츠는 이번 수정 대상이 아니라 그대로 둠. 진입/청산/추격필터/휩쏘 등 나머지 로직은 변경 없음.
 """
 
 import sys
@@ -66,6 +84,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
 import io
+import re
 import time
 import zipfile
 import pandas as pd
@@ -93,6 +112,50 @@ KIS_MASTER_URLS = {
 }
 
 KIS_AVAILABLE = kis_credentials_available()
+
+# ===== 스캔 제외 대상: ETF / ETN / 스팩 (2026-10-13 17차 수정) =====
+# 종목명이 "브랜드 + 공백"으로 시작할 때만 ETF로 본다. 그래서 '파워넷', 'HK이노엔',
+# 'BNK금융지주'처럼 브랜드명으로 시작하는 일반 종목은 제외되지 않는다.
+ETF_BRANDS = ('KODEX', 'TIGER', 'RISE', 'ACE', 'PLUS', 'SOL', 'KIWOOM', 'HANARO', '1Q', 'KoAct',
+              'TIME', 'TIMEFOLIO', 'WON', 'BNK', 'HK', 'IBK', 'MIDAS', 'FOCUS', 'UNICORN', 'TREX',
+              'TRUSTON', 'DAISHIN', 'ARIRANG', 'KOSEF', 'VITA', '파워', '마이티', '에셋플러스',
+              '히어로즈', '타임폴리오')
+ETF_BRAND_RE = re.compile(r'^(?:' + '|'.join(re.escape(b) for b in ETF_BRANDS) + r')\s')
+ETF_SUFFIX_RE = re.compile(r'(?:액티브(?:\([^)]*\))?|X클래스)$')  # 브랜드 목록에 없는 ETF 대비
+EXCLUDE_MAX_RATIO = 0.6  # 제외 비율이 이 값을 넘으면 규칙 오작동으로 보고 필터를 적용하지 않음
+
+
+def exclusion_reason(name):
+    """스캔에서 제외할 종목이면 사유('스팩'/'ETN'/'ETF(브랜드)'/'ETF(이름패턴)')를, 아니면 None."""
+    s = str(name).strip()
+    if '스팩' in s:
+        return '스팩'
+    if 'ETN' in s:
+        return 'ETN'
+    if ETF_BRAND_RE.match(s):
+        return 'ETF(브랜드)'
+    if ETF_SUFFIX_RE.search(s):
+        return 'ETF(이름패턴)'
+    return None
+
+
+def is_excluded_security(name):
+    return exclusion_reason(name) is not None
+
+
+def filter_listing(listing):
+    """종목 리스트(Code, Name)에서 ETF/ETN/스팩을 제거한다."""
+    reasons = listing['Name'].apply(exclusion_reason)
+    excluded = reasons.notna()
+    total = len(listing)
+    n_ex = int(excluded.sum())
+    if total and n_ex / total > EXCLUDE_MAX_RATIO:
+        print(f"[국장] ⚠️ 제외 대상이 {n_ex}/{total}개로 비정상적으로 많아 제외 필터를 적용하지 않습니다 "
+              f"(종목명 형식이 바뀌었을 수 있음).")
+        return listing
+    counts = reasons[excluded].value_counts().to_dict()
+    print(f"[국장] 스캔 제외 {n_ex}개 {counts} -> 스캔 대상 {total - n_ex}개")
+    return listing[~excluded].reset_index(drop=True)
 
 
 def is_manual_run():
@@ -350,8 +413,11 @@ def screen_korea():
     if listing is None:
         return None
 
+    # 종목 리스트 캐시(krx_tickers_cache.csv)는 필터 전 전체 목록 그대로 두고, 스캔 직전에만 제외한다.
+    listing = filter_listing(listing)
+
     tickers = listing[['Code', 'Name']].values.tolist()
-    print(f"총 {len(tickers)}개 종목 병렬 조회 시작 (가격필터 없이 코스피+코스닥 전체 스캔)")
+    print(f"총 {len(tickers)}개 종목 병렬 조회 시작 (ETF/ETN/스팩 제외, 가격필터 없이 코스피+코스닥 스캔)")
 
     end = datetime.today()
     start = end - timedelta(days=300)
@@ -407,6 +473,12 @@ if __name__ == "__main__":
     if os.path.exists(DATA_PATH):
         prev_df = pd.read_csv(DATA_PATH, dtype={'code': str})
         confirmed_prev = prev_df[prev_df['signal'] == '확정']
+        if not confirmed_prev.empty and 'name' in confirmed_prev.columns:
+            keep_mask = ~confirmed_prev['name'].apply(is_excluded_security)
+            dropped = int((~keep_mask).sum())
+            if dropped:
+                print(f"기존 확정 종목 중 ETF/ETN/스팩 {dropped}개는 보존 대상에서 제외")
+            confirmed_prev = confirmed_prev[keep_mask]
         if not confirmed_prev.empty:
             new_keys = set(zip(df['code'], df['system'])) if not df.empty else set()
             keep_rows = confirmed_prev[~confirmed_prev.apply(
