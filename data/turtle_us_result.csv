@@ -101,7 +101,7 @@ EXE,EXE,System1(단기),관심,False,False,False,True,91.79,93.67,83.36,0.991,1.
 EXPD,EXPD,System1(단기),확정,True,True,False,False,196.21,195.9,184.32,1.005,3.95,,196.35
 EXPD,EXPD,System2(중장기),확정,True,True,False,False,196.21,195.9,183.36,1.005,3.95,,196.35
 FDS,FDS,System1(단기),관심,False,False,False,True,289.39,296.4,258.5,0.992,10.81,,
-FAST,FAST,System1(단기),확정,True,True,True,False,52.24,52.0,49.11,1.008,1.17,,52.22
+FAST,FAST,System1(단기),확정이탈,True,True,True,False,52.24,52.0,49.11,1.008,1.17,,52.22
 FAST,FAST,System2(중장기),청산,False,False,True,True,52.24,52.92,48.53,0.991,1.17,,
 FRT,FRT,System1(단기),청산,False,False,True,False,104.88,113.45,104.76,0.935,1.58,,
 FRT,FRT,System2(중장기),청산,False,False,True,False,104.88,126.84,104.76,0.836,1.58,,
