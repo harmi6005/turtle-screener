@@ -225,7 +225,7 @@ VRT,VRT,System1(단기),청산,False,False,True,False,221.64,258.1,230.68,0.91,9
 VRT,VRT,System2(중장기),청산,False,False,True,False,221.64,300.23,230.68,0.782,9.59,,
 V,V,System1(단기),관심,False,False,False,True,392.92,396.35,356.75,0.999,6.39,,
 V,V,System2(중장기),관심,False,False,False,True,392.92,396.35,356.75,0.999,6.39,,
-GWW,GWW,System1(단기),관심,False,False,False,True,1318.97,1327.33,1240.0,0.997,24.83,,
+GWW,GWW,System1(단기),탈락,False,False,False,True,1318.97,1327.33,1240.0,0.997,24.83,,
 WMT,WMT,System1(단기),확정,True,True,False,False,115.32,114.83,103.39,1.005,2.23,,115.24
 WEC,WEC,System1(단기),확정,True,True,False,False,106.62,106.15,99.8,1.005,1.56,,106.6
 WST,WST,System1(단기),관심,False,False,False,True,376.01,382.71,359.49,0.991,8.82,,
