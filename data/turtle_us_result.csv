@@ -163,7 +163,7 @@ MS,MS,System2(중장기),청산,False,False,True,False,179.35,222.0,182.47,0.828
 NEM,NEM,System1(단기),청산,False,False,True,False,110.84,128.09,111.75,0.889,3.53,,
 NEM,NEM,System2(중장기),청산,False,False,True,False,110.84,135.01,111.75,0.844,3.53,,
 NI,NI,System1(단기),관심,False,False,False,True,41.38,41.7,38.42,0.996,0.64,,
-NSC,NSC,System1(단기),관심,False,False,False,True,321.98,323.83,305.43,0.998,4.65,,
+NSC,NSC,System1(단기),탈락,False,False,False,True,321.98,323.83,305.43,0.998,4.65,,
 NTRS,NTRS,System1(단기),청산,False,False,True,False,160.66,179.85,166.01,0.911,3.58,,
 NTRS,NTRS,System2(중장기),청산,False,False,True,False,160.66,194.86,166.01,0.841,3.58,,
 NVDA,NVDA,System1(단기),청산,False,False,True,False,221.27,243.37,223.06,0.929,5.39,,
