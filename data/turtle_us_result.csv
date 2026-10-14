@@ -55,7 +55,7 @@ DG,DG,System1(단기),탈락,False,False,False,True,125.0,130.11,116.73,0.993,3.
 DPZ,DPZ,System1(단기),청산,False,False,True,False,296.1,322.89,289.22,0.946,8.65,,
 DPZ,DPZ,System2(중장기),청산,False,False,True,False,296.1,369.87,286.32,0.826,8.65,,
 DOV,DOV,System1(단기),탈락,False,False,False,True,192.48,194.77,185.26,0.992,3.83,,
-DUK,DUK,System1(단기),관심,False,False,False,True,118.19,119.27,112.4,0.994,1.46,,
+DUK,DUK,System1(단기),탈락,False,False,False,True,118.19,119.27,112.4,0.994,1.46,,
 ETN,ETN,System1(단기),청산,False,False,True,False,428.31,452.0,420.0,0.953,13.29,,
 ECL,ECL,System1(단기),확정,True,True,False,False,285.66,285.57,267.46,1.005,5.19,,287.17
 ELV,ELV,System1(단기),진입,True,True,False,False,425.27,423.98,375.74,1.023,9.85,,
@@ -106,7 +106,7 @@ MCHP,MCHP,System1(단기),청산,False,False,True,False,74.16,83.4,73.19,0.892,2
 MU,MU,System1(단기),청산,False,False,True,False,953.19,1108.72,978.5,0.86,44.85,,
 MSFT,MSFT,System1(단기),진입,True,True,False,False,543.45,542.74,502.4,1.015,11.74,,
 MSFT,MSFT,System2(중장기),진입,True,True,False,False,543.45,542.74,487.23,1.015,11.74,,
-MDLZ,MDLZ,System1(단기),관심,False,False,False,True,61.5,62.47,57.32,0.999,1.13,,
+MDLZ,MDLZ,System1(단기),탈락,False,False,False,True,61.5,62.47,57.32,0.999,1.13,,
 MPWR,MPWR,System1(단기),청산,False,False,True,False,1319.55,1491.64,1314.52,0.887,55.34,,
 MCO,MCO,System1(단기),탈락,False,False,False,True,464.13,479.09,438.01,0.995,9.88,,
 NI,NI,System1(단기),진입,True,True,False,False,41.49,41.35,38.42,1.008,0.65,,
