@@ -31,7 +31,7 @@ BAC,BAC,System1(단기),청산,False,False,True,False,50.69,59.39,52.24,0.862,1.
 BAC,BAC,System2(중장기),청산,False,False,True,False,50.69,64.9,52.24,0.789,1.17,,
 BAX,BAX,System1(단기),관심,False,False,False,True,24.81,25.26,23.24,0.991,0.65,,
 BDX,BDX,System1(단기),관심,False,False,False,True,187.53,189.99,175.71,0.998,3.77,,
-BRK-B,BRK-B,System1(단기),관심,False,False,False,True,523.72,524.16,495.96,0.999,5.6,,
+BRK-B,BRK-B,System1(단기),확정,False,False,False,True,523.72,524.16,495.96,0.999,5.6,,524.33
 TECH,TECH,System1(단기),관심,False,False,False,True,72.51,72.69,72.33,0.998,0.15,,
 TECH,TECH,System2(중장기),관심,False,False,False,True,72.51,72.69,72.22,0.998,0.15,,
 BX,BX,System1(단기),청산,False,False,True,False,106.12,127.88,109.01,0.86,3.4,,
