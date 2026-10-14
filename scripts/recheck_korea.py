@@ -29,6 +29,11 @@ fdr 방식으로 폴백하도록 변경함 (kis_client.py 신규 모듈).
 - 재확인 대상에 전체스캔의 '진입' 신호 종목도 포함: 스캔에서 막 돌파한 종목이 관심 단계를
   거치지 않아도 추격/휩쏘 필터를 통과하면 "확정 전환" 알림이 1회 나가도록 함
   (전체스캔의 상위 3픽 알림을 대체).
+
+[2026-10-14 18차 수정 - 전체 교체]
+- ⭐ 사용자 요청: 확정 전환 종목 중 신호가 강한 상위 3개만 텔레그램으로 알림.
+  신호 강도 = (현재가 - 돌파가) / ATR (common.pick_top_entries와 동일 기준).
+  내림차순 정렬 후 상위 3개만 발송하고, 나머지는 알림만 생략(상태 갱신은 모두 정상 반영).
 """
 
 import sys
@@ -46,6 +51,7 @@ from common import (SYSTEMS, WATCH_RATIO, MAX_CHASE_RATIO, check_turtle_breakout
 from kis_client import kis_credentials_available, get_kis_daily_ohlc
 
 MAX_WORKERS = 20
+ALERT_TOP_N = 3  # 18차: 확정 전환 알림은 신호 강한 상위 N개만
 MARKET_KEY = 'KR'
 DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'turtle_korea_result.csv')
 HIST_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'trade_history_korea.csv')
@@ -201,8 +207,16 @@ if __name__ == "__main__":
         save_trade_history(hist_df, HIST_PATH)
 
     if not confirm_df.empty:
+        confirm_df = confirm_df.copy()
+        confirm_df['strength'] = (confirm_df['close'] - confirm_df['n_high']) / confirm_df['atr']
+        confirm_df = confirm_df.sort_values('strength', ascending=False)
+        total = len(confirm_df)
+        top_df = confirm_df.head(ALERT_TOP_N)
         lines = [f"- {r['name']}({r['code']}) [{r['system']}]\n"
                  f"  현재가 {r['close']} / 진입가(돌파) {r['n_high']} / 청산가(손절) {r['n_low']}\n"
-                 f"  괴리율 {(r['close']-r['n_high'])/r['n_high']*100:.2f}%"
-                 for _, r in confirm_df.iterrows()]
-        notify("[국장] 확정 전환 종목! (매수 검토)\n" + "\n".join(lines))
+                 f"  괴리율 {(r['close']-r['n_high'])/r['n_high']*100:.2f}% / 강도 {r['strength']:.2f}ATR"
+                 for _, r in top_df.iterrows()]
+        head = "[국장] 확정 전환 종목! (매수 검토)"
+        if total > len(top_df):
+            head += f" - 신호 강한 상위 {len(top_df)}개 (전체 {total}개 중)"
+        notify(head + "\n" + "\n".join(lines))
