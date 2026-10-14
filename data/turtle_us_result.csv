@@ -1,7 +1,7 @@
 code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ABT,ABT,System1(단기),관심,False,False,False,True,102.55,104.54,95.06,0.995,2.23,,
 AMD,AMD,System1(단기),청산,False,False,True,False,572.31,658.52,570.6,0.899,26.02,,
-AFL,AFL,System1(단기),관심,False,False,False,True,117.31,118.09,110.0,0.997,1.76,,
+AFL,AFL,System1(단기),탈락,False,False,False,True,117.31,118.09,110.0,0.997,1.76,,
 A,A,System1(단기),관심,False,False,False,True,172.72,176.79,163.32,0.993,4.98,,
 A,A,System2(중장기),관심,False,False,False,True,172.72,176.79,150.08,0.993,4.98,,
 APD,APD,System1(단기),확정,True,True,False,False,291.45,290.18,267.28,1.007,5.13,,291.16
@@ -149,7 +149,7 @@ MLM,MLM,System1(단기),청산,False,False,True,False,469.86,510.81,470.19,0.925
 MLM,MLM,System2(중장기),청산,False,False,True,False,469.86,587.05,470.19,0.805,11.92,,
 MCK,MCK,System1(단기),확정,True,True,False,False,971.44,969.48,847.3,1.009,22.44,,970.79
 MCK,MCK,System2(중장기),확정,True,True,False,False,971.44,969.48,847.29,1.009,22.44,,970.79
-MDT,MDT,System1(단기),관심,False,False,False,True,92.96,93.78,85.22,0.996,2.16,,
+MDT,MDT,System1(단기),확정,False,False,False,True,92.96,93.78,85.22,0.996,2.16,,93.79
 MTD,MTD,System1(단기),확정,True,True,False,False,1608.75,1604.39,1473.81,1.009,43.67,,1608.66
 MTD,MTD,System2(중장기),확정,True,True,False,False,1608.75,1604.39,1331.24,1.009,43.67,,1608.66
 MCHP,MCHP,System1(단기),청산,False,False,True,False,70.9,83.4,72.2,0.879,2.74,,
