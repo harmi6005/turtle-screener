@@ -79,7 +79,7 @@ DELL,DELL,System1(단기),청산,False,False,True,False,505.64,595.51,520.18,0.9
 DELL,DELL,System2(중장기),청산,False,False,True,False,505.64,595.51,520.18,0.919,27.98,,
 DAL,DAL,System1(단기),청산,False,False,True,False,76.23,86.17,78.52,0.912,2.46,,
 DAL,DAL,System2(중장기),청산,False,False,True,False,76.23,95.01,76.89,0.827,2.46,,
-DG,DG,System1(단기),관심,False,False,False,True,127.62,129.15,116.73,0.992,3.49,,
+DG,DG,System1(단기),확정,False,False,False,True,127.62,129.15,116.73,0.992,3.49,,129.34
 DOV,DOV,System1(단기),관심,False,False,False,True,192.91,194.77,185.26,0.994,3.7,,
 DHI,DHI,System1(단기),청산,False,False,True,False,132.4,144.86,132.11,0.92,3.77,,
 DHI,DHI,System2(중장기),청산,False,False,True,False,132.4,154.4,132.11,0.863,3.77,,
@@ -171,7 +171,7 @@ NVR,NVR,System1(단기),청산,False,False,True,False,5691.35,6383.3,5726.34,0.8
 NVR,NVR,System2(중장기),청산,False,False,True,False,5691.35,6558.82,5726.34,0.872,146.41,,
 NXPI,NXPI,System1(단기),청산,False,False,True,False,219.4,248.86,221.89,0.903,7.35,,
 OXY,OXY,System1(단기),관심,False,False,False,True,61.78,62.46,54.77,0.998,1.42,,
-ODFL,ODFL,System1(단기),관심,False,False,False,True,182.47,183.86,172.75,0.995,4.36,,
+ODFL,ODFL,System1(단기),탈락,False,False,False,True,182.47,183.86,172.75,0.995,4.36,,
 OMC,OMC,System1(단기),관심,False,False,False,True,78.18,79.51,73.63,0.992,1.75,,
 ON,ON,System1(단기),청산,False,False,True,False,72.38,86.92,74.27,0.875,3.31,,
 OKE,OKE,System1(단기),관심,False,False,False,True,92.14,95.01,84.15,0.99,2.33,,
