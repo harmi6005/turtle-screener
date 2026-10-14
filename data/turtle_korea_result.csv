@@ -1,7 +1,7 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 000105,유한양행우,System1(단기),청산,False,False,True,False,61500.0,77200.0,59700.0,0.797,2500.0,,
 000105,유한양행우,System2(중장기),청산,False,False,True,False,61500.0,77200.0,59700.0,0.797,2500.0,,
-000080,하이트진로,System1(단기),관심,False,False,False,True,15300.0,15390.0,14670.0,0.996,265.5,,
+000080,하이트진로,System1(단기),확정,False,False,False,True,15300.0,15390.0,14670.0,0.996,265.5,,15400.0
 000430,대원강업,System1(단기),청산,False,False,True,False,4240.0,5090.0,4065.0,0.838,209.0,,
 000430,대원강업,System2(중장기),청산,False,False,True,False,4240.0,5090.0,4065.0,0.838,209.0,,
 000760,이화산업,System1(단기),청산,False,False,True,False,11480.0,14700.0,11600.0,0.791,603.0,,
@@ -18,7 +18,7 @@
 001940,KISCO홀딩스,System2(중장기),청산,False,False,True,False,23850.0,28650.0,24150.0,0.88,1012.5,,
 002600,조흥,System1(단기),관심,False,False,False,True,139500.0,140900.0,135600.0,0.99,1295.0,,
 002600,조흥,System2(중장기),관심,False,False,False,True,139500.0,140900.0,135600.0,0.99,1295.0,,
-002700,신일전자,System1(단기),관심,False,False,False,True,1044.0,1058.0,919.0,0.991,28.25,,
+002700,신일전자,System1(단기),탈락,False,False,False,True,1044.0,1058.0,919.0,0.991,28.25,,
 002960,한국쉘석유,System1(단기),탈락,True,True,False,False,550000.0,550000.0,509000.0,1.0,11800.0,,
 002960,한국쉘석유,System2(중장기),탈락,True,True,False,False,550000.0,550000.0,499500.0,1.0,11800.0,,
 004170,신세계,System1(단기),청산,False,False,True,False,288500.0,388500.0,288500.0,0.761,12500.0,,
