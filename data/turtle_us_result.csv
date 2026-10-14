@@ -22,7 +22,7 @@ AAPL,AAPL,System2(중장기),관심,False,False,False,True,341.88,348.15,325.81,
 AMAT,AMAT,System1(단기),청산,False,False,True,False,447.81,547.25,452.81,0.84,19.02,,
 APP,APP,System1(단기),청산,False,False,True,False,263.54,336.94,266.84,0.81,14.1,,
 APP,APP,System2(중장기),청산,False,False,True,False,263.54,437.79,266.84,0.624,14.1,,
-ACGL,ACGL,System1(단기),관심,False,False,False,True,97.5,97.85,92.28,0.998,1.77,,
+ACGL,ACGL,System1(단기),확정,False,False,False,True,97.5,97.85,92.28,0.998,1.77,,97.87
 ARES,ARES,System1(단기),청산,False,False,True,False,111.91,130.65,113.06,0.881,3.87,,
 ARES,ARES,System2(중장기),청산,False,False,True,False,111.91,148.3,113.06,0.776,3.87,,
 ANET,ANET,System1(단기),청산,False,False,True,False,195.71,217.41,197.6,0.937,6.98,,
