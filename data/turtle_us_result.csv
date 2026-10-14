@@ -34,7 +34,7 @@ CAT,CAT,System2(중장기),청산,False,False,True,False,772.78,935.0,774.48,0.8
 CHD,CHD,System1(단기),탈락,True,True,False,False,100.13,99.96,93.33,1.009,1.45,,
 CI,CI,System1(단기),관심,False,False,False,True,282.53,290.72,262.85,0.995,7.34,,
 CTAS,CTAS,System1(단기),탈락,True,True,False,False,206.38,206.34,191.85,1.004,3.74,,
-CMS,CMS,System1(단기),관심,False,False,False,True,66.3,66.92,62.29,0.993,0.97,,
+CMS,CMS,System1(단기),탈락,False,False,False,True,66.3,66.92,62.29,0.993,0.97,,
 KO,KO,System1(단기),탈락,True,True,False,False,90.11,89.8,85.13,1.008,1.22,,
 COHR,COHR,System1(단기),청산,False,False,True,False,289.98,341.76,282.25,0.85,20.85,,
 FIX,FIX,System1(단기),청산,False,False,True,False,1626.64,1835.04,1624.77,0.889,69.68,,
