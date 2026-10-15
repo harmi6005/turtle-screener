@@ -102,6 +102,15 @@ data/holdings.csv 컬럼:
   high/low 대신 '현재가'를 고가·저가로 사용(최고가 갱신, 라인 이탈, 추가매수 판정 모두). 다음 거래일부터는 평소처럼
   일봉 고가/저가 사용. buy_date가 비어있는 기존 거래는 종전 동작 그대로.
 - 한계: 매수 당일은 5분 간격 현재가로만 판정하므로, 5분 사이의 순간 고저는 반영되지 않음.
+
+[2026-10-15 20차 수정 - 전체 교체] 익절선/손절선 "임박" 표시 강화
+- ⭐ 사용자 요청: "익절 손절 임박 표시 필요". 기존엔 괴리율 2% 이하일 때 태그에만 "🔶 …임박"이 작게 붙었고,
+  ATR이 큰 종목엔 2%가 너무 좁았음.
+- 임박 기준: 라인까지 거리(%) <= max(2%, 0.5×ATR(진입 시점)/라인×100). 그 절반 이하면 "🚨 초임박".
+  태그에 남은 거리(%)를 함께 표시: "🔶 익절선 임박 (현재가가 라인보다 +3.2%)".
+- 5분 요약 맨 위에 "🚨 임박 종목" 배너를 추가: 임박/초임박 종목을 이름·라인·남은 거리(% 와 원)로 한눈에 보여줌.
+  (별도 알림 상태 컬럼 없이 5분 요약에서 계속 표시 → holdings.csv 형식 변경 없음)
+- 매도/청산 로직, stop_hit 표시, 매수 당일 처리는 변경 없음(표시만).
 """
 
 import sys
@@ -126,6 +135,8 @@ NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price',
 UNIT_STEP_ATR = 0.5   # 터틀 유닛 원칙: 0.5xN 상승마다 1유닛 추가
 MAX_UNITS = 4
 ATR_MULTIPLIER = 2
+NEAR_MIN_PCT = 2.0      # 임박 최소 기준(%): 라인까지 거리가 이 값 이하면 임박
+NEAR_ATR_MULT = 0.5     # 임박 ATR 기준: 라인까지 거리가 0.5×ATR 이하여도 임박
 PRE_MARKET_BUFFER_MIN = 5
 POST_MARKET_BUFFER_MIN = 5
 
@@ -274,10 +285,22 @@ def build_line_label(stop_price, buy_price):
     return "익절선" if stop_price >= buy_price else "손절선"
 
 
-def build_status_tag(close, stop_price, buy_price=None):
+def near_threshold_pct(stop_price, atr_entry=None):
+    """임박 판정 기준(%). max(2%, 0.5xATR/라인x100). ATR이 없으면 2%."""
+    thr = NEAR_MIN_PCT
+    try:
+        if atr_entry is not None and not pd.isna(atr_entry) and atr_entry > 0 and stop_price > 0:
+            thr = max(NEAR_MIN_PCT, NEAR_ATR_MULT * float(atr_entry) / float(stop_price) * 100)
+    except Exception:
+        pass
+    return thr
+
+
+def build_status_tag(close, stop_price, buy_price=None, atr_entry=None):
     """라인까지 괴리율 기준으로 상태 태그를 부여한다.
     - 현재가 <= 라인: ⚠️ 손절선 이탈 / 🎯 익절선 이탈(라인이 매수가 이상이면)
-    - 괴리율 <= 2.0%: 🔶 손절선 임박 / 🔶 익절선 임박
+    - 괴리율 <= 기준의 절반: 🚨 손절선/익절선 초임박 (남은 거리 %)
+    - 괴리율 <= 기준(max(2%, 0.5xATR)): 🔶 손절선/익절선 임박 (남은 거리 %)
     - 그 외: 🟢 정상
     """
     try:
@@ -287,8 +310,11 @@ def build_status_tag(close, stop_price, buy_price=None):
         if close <= stop_price:
             return "🎯 익절선 이탈" if label == "익절선" else "⚠️ 손절선 이탈"
         gap_pct = (close - stop_price) / stop_price * 100
-        if gap_pct <= 2.0:
-            return f"🔶 {label} 임박"
+        thr = near_threshold_pct(stop_price, atr_entry)
+        if gap_pct <= thr / 2:
+            return f"🚨 {label} 초임박 (라인까지 {gap_pct:.1f}%)"
+        if gap_pct <= thr:
+            return f"🔶 {label} 임박 (라인까지 {gap_pct:.1f}%)"
         return "🟢 정상"
     except Exception:
         return "⬜ 상태미확인"
@@ -547,7 +573,7 @@ if __name__ == "__main__":
         if status == 'stop_hit':
             tag = build_stophit_tag(current_close, cur_stop, buy_price)
         else:
-            tag = build_status_tag(current_close, cur_stop, buy_price)
+            tag = build_status_tag(current_close, cur_stop, buy_price, atr_entry)
 
         gap_pct = None
         if not pd.isna(cur_stop) and cur_stop != 0:
@@ -596,6 +622,18 @@ if __name__ == "__main__":
     # 5분마다 무조건 발송하는 보유종목 현황 요약
     if summary_rows:
         lines = [f"📦 [보유종목 현황] {len(summary_rows)}건 (5분 자동 갱신)"]
+        near_lines = []
+        for r in summary_rows:
+            if r.get('status') == 'stop_hit' or ('임박' not in str(r['tag'])):
+                continue
+            nm = f"{r['code']} {r['name']}" if r.get('name') else r['code']
+            dist = r['close'] - r['stop_price']
+            near_lines.append(f"  · {nm}: {r['tag']} / {r['line_label']} {fmt_num(r['stop_price'])} "
+                              f"(현재가 {fmt_num(r['close'])}, {fmt_num(dist)} 남음)")
+        if near_lines:
+            lines.append("🚨 [임박 종목] 라인 근접 - 매도 대비")
+            lines.extend(near_lines)
+            lines.append("")
         for r in summary_rows:
             pnl_txt = f"{r['pnl_pct']:+.2f}%" if r['pnl_pct'] is not None else "N/A"
             gap_txt = f"{r['gap_pct']:+.2f}%" if r['gap_pct'] is not None else "N/A"
