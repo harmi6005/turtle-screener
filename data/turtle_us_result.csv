@@ -57,7 +57,7 @@ CI,CI,System1(단기),탈락,False,False,False,True,289.0,289.89,262.85,0.999,7.
 CTAS,CTAS,System1(단기),확정,True,True,False,False,207.59,207.17,191.85,1.004,3.65,,207.66
 C,C,System1(단기),청산,False,False,True,False,123.0,136.89,123.57,0.903,3.24,,
 C,C,System2(중장기),청산,False,False,True,False,123.0,141.27,123.57,0.875,3.24,,
-CME,CME,System2(중장기),관심,False,False,False,True,285.35,288.55,258.87,0.992,6.17,,
+CME,CME,System2(중장기),탈락,False,False,False,True,285.35,288.55,258.87,0.992,6.17,,
 CMS,CMS,System1(단기),확정,True,True,False,False,66.82,66.65,62.55,1.003,0.97,,66.78
 KO,KO,System2(중장기),탈락,False,False,False,True,91.87,91.94,85.13,1.0,1.26,,
 COHR,COHR,System1(단기),청산,False,False,True,False,264.24,341.76,273.93,0.834,21.0,,
@@ -100,7 +100,7 @@ EXC,EXC,System1(단기),탈락,False,False,False,True,42.54,42.75,39.81,0.996,0.
 EXE,EXE,System1(단기),탈락,False,False,False,True,91.79,93.67,83.36,0.991,1.97,,
 EXPD,EXPD,System1(단기),확정,True,True,False,False,196.21,195.9,184.32,1.005,3.95,,196.35
 EXPD,EXPD,System2(중장기),확정,True,True,False,False,196.21,195.9,183.36,1.005,3.95,,196.35
-FDS,FDS,System1(단기),관심,False,False,False,True,289.39,296.4,258.5,0.992,10.81,,
+FDS,FDS,System1(단기),확정,False,False,False,True,289.39,296.4,258.5,0.992,10.81,,296.55
 FAST,FAST,System1(단기),확정이탈,True,True,True,False,52.24,52.0,49.11,1.008,1.17,,52.22
 FAST,FAST,System2(중장기),청산,False,False,True,True,52.24,52.92,48.53,0.991,1.17,,
 FRT,FRT,System1(단기),청산,False,False,True,False,104.88,113.45,104.76,0.935,1.58,,
@@ -121,7 +121,7 @@ GPC,GPC,System1(단기),탈락,False,False,False,True,131.42,132.85,123.85,0.992
 GILD,GILD,System1(단기),탈락,False,False,False,True,153.29,154.2,142.6,0.994,3.67,,
 GILD,GILD,System2(중장기),탈락,False,False,False,True,153.29,154.2,142.6,0.994,3.67,,
 HLT,HLT,System1(단기),탈락,False,False,False,True,326.86,330.38,313.67,0.996,5.83,,
-IEX,IEX,System1(단기),관심,False,False,False,True,236.98,239.7,224.93,0.993,4.41,,
+IEX,IEX,System1(단기),탈락,False,False,False,True,236.98,239.7,224.93,0.993,4.41,,
 INTC,INTC,System1(단기),청산,False,False,True,False,98.42,127.44,98.23,0.795,6.07,,
 INTC,INTC,System2(중장기),청산,False,False,True,False,98.42,127.44,98.23,0.795,6.07,,
 ICE,ICE,System1(단기),확정,False,False,False,True,155.56,158.63,147.5,0.997,3.17,,158.66
