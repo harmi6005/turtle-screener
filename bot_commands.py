@@ -64,6 +64,12 @@ telegram_listener.py(폴링 방식, 5분마다)와 webhook_handler.py(웹훅 방
 - ⭐ 사용자 요청: 집중추적 종목은 '진입확정'(확정 전환)일 때만 알림. HELP_TEXT와
   handle_track_start 안내 문구를 새 정책에 맞게 수정함. (추적확인 수동 조회는 그대로)
 - 보유종목 유닛 원칙 도입에 맞춰 HOLDINGS_COLUMNS에 units/last_add_price 추가, buy 시 초기값(1유닛) 기록.
+
+[2026-10-15 19차 수정 - 전체 교체]
+- 🐛 하이트진로(000080)를 장중에 매수 등록하자마자 "손절 확정"이 뜬 문제 대응.
+  원인은 holdings_check.py가 매수 당일에도 '오늘 일봉 전체'(매수 전 시간대 포함)의 고가/저가를 써서
+  매수 전에 찍힌 저가가 손절선 아래면 즉시 이탈로 판정한 것. 이를 구분하려고 buy 시 매수일(KST 또는 미장은 뉴욕)을
+  새 컬럼 buy_date(YYYY-MM-DD)에 기록함. HOLDINGS_COLUMNS에 buy_date 추가(holdings_check.py COLUMNS와 동일).
 """
 
 import os
@@ -73,6 +79,7 @@ import pandas as pd
 import FinanceDataReader as fdr
 import yfinance as yf
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo
 from common import (SYSTEMS, WATCH_RATIO, calc_atr, check_turtle_breakout,
                      ALERT_MARKETS, ALERT_MARKET_LABELS,
                      load_alert_settings, set_market_alert,
@@ -90,7 +97,7 @@ SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'scan_setti
 HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
                     'highest_price', 'stop_price', 'last_milestone', 'status',
                     'last_price', 'breakeven_notified', 'exit10_notified', 'exit20_notified',
-                    'units', 'last_add_price']
+                    'units', 'last_add_price', 'buy_date']
 WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status',
                       'sys1_entry_price', 'sys2_entry_price']
 # 2026-09-24 추가: watchlist_check.py와 동일한 휩쏘 이력 파일(읽기 전용으로 참고만 함 -
@@ -254,7 +261,7 @@ def gen_trade_id(df):
 
 def load_holdings():
     if os.path.exists(HOLDINGS_PATH):
-        df = pd.read_csv(HOLDINGS_PATH, dtype={'code': str, 'trade_id': str})
+        df = pd.read_csv(HOLDINGS_PATH, dtype={'code': str, 'trade_id': str, 'buy_date': object})
         for col in HOLDINGS_COLUMNS:
             if col not in df.columns:
                 df[col] = ''
@@ -265,6 +272,12 @@ def load_holdings():
 def save_holdings(df):
     os.makedirs(os.path.dirname(HOLDINGS_PATH), exist_ok=True)
     df.to_csv(HOLDINGS_PATH, index=False)
+
+
+def buy_date_today(market):
+    """매수 당일 판정용 날짜(YYYY-MM-DD). 미장은 뉴욕, 그 외(국장/코인)는 서울 기준."""
+    tz = 'America/New_York' if market == 'US' else 'Asia/Seoul'
+    return datetime.now(ZoneInfo(tz)).strftime('%Y-%m-%d')
 
 
 def handle_buy(args, df):
@@ -295,7 +308,8 @@ def handle_buy(args, df):
                'last_milestone': 0, 'status': 'active',
                'last_price': buy_price, 'breakeven_notified': False,
                'exit10_notified': False, 'exit20_notified': False,
-               'units': 1, 'last_add_price': buy_price}
+               'units': 1, 'last_add_price': buy_price,
+               'buy_date': buy_date_today(market)}
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
 
     return df, (f"등록 완료 (거래번호 {trade_id})\n"
