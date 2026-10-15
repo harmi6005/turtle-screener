@@ -111,6 +111,16 @@ data/holdings.csv 컬럼:
 - 5분 요약 맨 위에 "🚨 임박 종목" 배너를 추가: 임박/초임박 종목을 이름·라인·남은 거리(% 와 원)로 한눈에 보여줌.
   (별도 알림 상태 컬럼 없이 5분 요약에서 계속 표시 → holdings.csv 형식 변경 없음)
 - 매도/청산 로직, stop_hit 표시, 매수 당일 처리는 변경 없음(표시만).
+
+[2026-10-15 21차 수정 - 전체 교체] 추가매수(유닛 추가) 근접/발생 표시
+- ⭐ 사용자 요청: "유닛 추가 가격에 근접하거나 돌파하면 추가매수임박/추가매수 같은 표시도".
+- 5분 요약의 종목별 블록에 한 줄 추가(active 종목, 유닛 < 4):
+  · 이번 5분 체크에서 추가매수 신호가 발생했으면 "➕ 추가매수 신호! N유닛째 (가격 X)"
+  · 아니면 다음 추가매수가까지 남은 거리가 max(1%, 0.25×ATR) 이내면 "➕ 추가매수 임박 (다음 X까지 Y원 / Z%)"
+- 요약 맨 위에 "➕ [추가매수 신호/임박]" 배너 추가(임박 종목 배너와 별도).
+- 추가매수 신호 알림/유닛 증가 로직(0.5×ATR마다, 최대 4유닛)은 변경 없음. holdings.csv 형식 변경 없음.
+- 참고: 신호는 고가가 다음 추가매수가를 넘는 순간 발생하며 그 즉시 유닛이 올라가므로 "돌파" 표시는 신호가 난 그 회차 요약에서만
+  보임(다음 회차부터는 다음 단계 가격 기준 "임박"으로 바뀜).
 """
 
 import sys
@@ -137,6 +147,8 @@ MAX_UNITS = 4
 ATR_MULTIPLIER = 2
 NEAR_MIN_PCT = 2.0      # 임박 최소 기준(%): 라인까지 거리가 이 값 이하면 임박
 NEAR_ATR_MULT = 0.5     # 임박 ATR 기준: 라인까지 거리가 0.5×ATR 이하여도 임박
+ADD_NEAR_MIN_PCT = 1.0  # 추가매수 임박 최소 기준(%): 다음 추가매수가까지 이 값 이하면 임박
+ADD_NEAR_ATR_MULT = 0.25  # 추가매수 임박 ATR 기준: 다음 추가매수가까지 0.25×ATR 이하여도 임박
 PRE_MARKET_BUFFER_MIN = 5
 POST_MARKET_BUFFER_MIN = 5
 
@@ -427,6 +439,7 @@ if __name__ == "__main__":
             ohlc['high'] = ohlc['close']
             ohlc['low'] = ohlc['close']
 
+        add_info = None  # 이번 체크에서 추가매수 신호가 발생하면 (유닛, 가격)
         trade_id = row['trade_id']
         code = row['code']
         buy_price = row['buy_price']
@@ -492,6 +505,7 @@ if __name__ == "__main__":
                     )
                     df.at[idx, 'units'] = units_now
                     df.at[idx, 'last_add_price'] = round(float(last_add), 6)
+                    add_info = (units_now, last_add)
                     changed = True
 
             # 2) ATR 배수 마일스톤 체크 (정수배 최초 도달시 1회, 매도신호 아님)
@@ -595,11 +609,27 @@ if __name__ == "__main__":
             tp1 = buy_price + 2 * atr_entry
             tp2 = buy_price + 4 * atr_entry
 
+        # 21차: 추가매수 신호 발생 / 임박 표시 (active 종목만, 최대 유닛 미만)
+        add_tag = None
+        if status == 'active':
+            u_now = int(df.at[idx, 'units']) if not pd.isna(df.at[idx, 'units']) else 1
+            if add_info is not None:
+                add_tag = f"➕ 추가매수 신호! {add_info[0]}/{MAX_UNITS}유닛째 (가격 {fmt_num(add_info[1])})"
+            elif u_now < MAX_UNITS:
+                la = df.at[idx, 'last_add_price']
+                if not pd.isna(la) and not pd.isna(atr_entry) and atr_entry > 0:
+                    nxt = float(la) + UNIT_STEP_ATR * float(atr_entry)
+                    dist = nxt - float(current_close)
+                    thr = max(nxt * ADD_NEAR_MIN_PCT / 100, ADD_NEAR_ATR_MULT * float(atr_entry))
+                    if 0 < dist <= thr:
+                        add_tag = (f"➕ 추가매수 임박 (다음 {fmt_num(nxt)}까지 {fmt_num(dist)} / "
+                                   f"{dist / nxt * 100:.1f}%)")
+
         display_name = kr_name_map.get(str(code).zfill(6)) if market == 'KR' else None
 
         summary_rows.append({
             'trade_id': trade_id, 'market': market, 'code': code, 'name': display_name, 'tag': tag,
-            'status': status,
+            'status': status, 'add_tag': add_tag,
             'close': current_close, 'trend_tag': trend_tag,
             'buy_price': buy_price, 'pnl_pct': pnl_pct,
             'highest_price': df.at[idx, 'highest_price'], 'stop_price': cur_stop,
@@ -634,6 +664,15 @@ if __name__ == "__main__":
             lines.append("🚨 [임박 종목] 라인 근접 - 매도 대비")
             lines.extend(near_lines)
             lines.append("")
+        add_lines_top = []
+        for r in summary_rows:
+            if r.get('add_tag'):
+                nm = f"{r['code']} {r['name']}" if r.get('name') else r['code']
+                add_lines_top.append(f"  · {nm}: {r['add_tag']}")
+        if add_lines_top:
+            lines.append("➕ [추가매수 신호/임박] 터틀 유닛 원칙")
+            lines.extend(add_lines_top)
+            lines.append("")
         for r in summary_rows:
             pnl_txt = f"{r['pnl_pct']:+.2f}%" if r['pnl_pct'] is not None else "N/A"
             gap_txt = f"{r['gap_pct']:+.2f}%" if r['gap_pct'] is not None else "N/A"
@@ -654,6 +693,7 @@ if __name__ == "__main__":
                 next_txt = "추가매수 신호 없음(매도신호 상태)"
             exit10_mark = " ⚠️이탈" if r.get('exit10_hit') else ""
             exit20_mark = " ⚠️이탈" if r.get('exit20_hit') else ""
+            add_line_txt = f"  {r['add_tag']}\n" if r.get('add_tag') else ""
             stophit_txt = ""
             if is_stophit and not pd.isna(r['stop_price']) and not pd.isna(r['buy_price']) and r['buy_price'] != 0:
                 sig_pnl = (r['stop_price'] - r['buy_price']) / r['buy_price'] * 100
@@ -667,6 +707,7 @@ if __name__ == "__main__":
                 f"  ATR배수 {atr_txt} (직전 마일스톤 {r['last_milestone']}배)\n"
                 f"  1차 익절참고가(2×ATR) {tp1_txt} / 2차 익절참고가(4×ATR) {tp2_txt}\n"
                 f"  유닛 {unit_txt} / {next_txt}\n"
+                f"{add_line_txt}"
                 f"  N일최저가청산참고: [1]10일 {low10_txt}{exit10_mark} / [2]20일 {low20_txt}{exit20_mark}"
             )
         send_long_message("\n".join(lines))
