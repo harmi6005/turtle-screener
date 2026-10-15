@@ -37,7 +37,7 @@ BRK-B,BRK-B,System1(단기),확정,True,True,False,False,527.99,527.19,495.96,1.
 BRK-B,BRK-B,System2(중장기),관심,False,False,False,True,527.99,537.74,495.96,0.992,5.57,,
 TECH,TECH,System1(단기),관심,False,False,False,True,72.54,72.69,72.38,0.999,0.14,,
 TECH,TECH,System2(중장기),관심,False,False,False,True,72.54,72.69,72.26,0.999,0.14,,
-BLK,BLK,System1(단기),관심,False,False,False,True,1100.77,1106.0,1040.42,0.996,23.97,,
+BLK,BLK,System1(단기),확정,False,False,False,True,1100.77,1106.0,1040.42,0.996,23.97,,1106.21
 BE,BE,System1(단기),청산,False,False,True,False,232.72,302.35,235.7,0.775,20.36,,
 BE,BE,System2(중장기),청산,False,False,True,False,232.72,302.35,235.7,0.775,20.36,,
 BNY,BNY,System1(단기),청산,False,False,True,False,139.6,155.48,135.27,0.903,2.93,,
