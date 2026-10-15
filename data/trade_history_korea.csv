@@ -39,3 +39,4 @@ code,system,direction,last_result,skip_active,skip_price
 080580,System1(단기),long,loss,False,
 348150,System1(단기),long,loss,False,
 131290,System1(단기),long,loss,False,
+214430,System1(단기),long,win,True,64700.0
