@@ -76,7 +76,7 @@ CRWD,CRWD,System1(단기),청산,False,False,True,False,242.6,286.99,248.03,0.86
 CCI,CCI,System1(단기),관심,False,False,False,True,79.92,82.28,65.32,0.995,2.39,,
 CCI,CCI,System2(중장기),관심,False,False,False,True,79.92,82.28,65.32,0.995,2.39,,
 CSX,CSX,System1(단기),확정,True,True,False,False,48.64,48.6,45.85,1.004,0.75,,48.67
-CVS,CVS,System1(단기),진입,True,True,False,False,92.2,92.14,84.23,1.003,2.24,,
+CVS,CVS,System1(단기),확정,True,True,False,False,92.2,92.14,84.23,1.003,2.24,,92.31
 DRI,DRI,System1(단기),탈락,True,True,False,False,214.59,214.42,191.44,1.002,5.09,,
 DDOG,DDOG,System1(단기),청산,False,False,True,False,265.36,300.68,268.37,0.888,12.13,,
 DELL,DELL,System1(단기),청산,False,False,True,False,465.48,595.51,502.32,0.809,29.22,,
