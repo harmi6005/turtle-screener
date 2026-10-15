@@ -242,7 +242,7 @@ ECL,ECL,System1(단기),확정,True,True,False,False,285.66,285.57,267.46,1.005,
 HCA,HCA,System1(단기),확정,True,True,False,False,460.75,460.28,422.45,1.005,11.44,,463.83
 HCA,HCA,System2(중장기),확정,True,True,False,False,460.75,460.28,408.99,1.005,11.44,,463.83
 EVRG,EVRG,System1(단기),확정,True,True,False,False,81.7,81.56,77.24,1.008,1.11,,81.72
-P,P,System1(단기),확정,False,False,False,True,155.16,157.05,127.71,0.994,6.86,,157.35
+P,P,System1(단기),확정이탈,False,False,False,True,155.16,157.05,127.71,0.994,6.86,,157.35
 P,P,System2(중장기),확정,False,False,False,True,155.16,157.05,95.43,0.994,6.86,,157.35
 GEHC,GEHC,System1(단기),확정,True,True,False,False,68.38,68.34,63.31,1.002,1.5,,68.34
 HAS,HAS,System1(단기),확정,True,True,False,False,95.35,94.96,86.85,1.012,2.29,,95.35
