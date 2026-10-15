@@ -80,6 +80,18 @@ data/holdings.csv 컬럼:
   다음 신호는 그 가격 기준으로 계속 나옴.
 - 손절: 트레일링(최고가-2xATR)이 이미 "마지막 진입가-2xATR" 이상이라 기존 로직 그대로 유지.
   요약에 유닛 수와 다음 추가매수 가격 표시. stop_hit/closed 거래는 추가매수 신호 없음.
+
+[2026-10-15 18차-2 수정 - 전체 교체] stop_hit 종목 표시 오류 수정
+- 🐛 제이티(089790): 최고가 7,490 후 라인 6,654.5(익절선) 이탈로 stop_hit이 된 뒤, 현재가가 5,330까지
+  내려와 매수가(5,930) 아래(손익 -10.12%)인데도 요약에 "🟢 익절 확정"이 계속 표시되던 문제.
+  stop_hit 라벨이 신호 시점 기준으로 고정돼 있었음.
+- 수정: stop_hit 요약 태그를 '현재가 vs 매수가'로 판정(build_stophit_tag).
+  · 라인이 손절선(매수가 미만): 🔴 손절 확정 (sell 명령 대기)
+  · 라인이 익절선 & 현재가 >= 매수가: 🟢 익절 확정 (sell 명령 대기)
+  · 라인이 익절선 & 현재가 < 매수가: 🔴 신호 이후 하락 - 매수가 아래 손실 중 (즉시 매도 검토, sell 명령 대기)
+- stop_hit 종목 요약에 "신호선 기준 시나리오" 줄 추가: 신호선에서 팔았다면 손익률 / 신호선 이탈 후 현재 변동.
+- stop_hit 종목은 "다음 추가매수가"를 숨김(신호가 나가지 않는 상태라 의미 없음).
+- 청산/트레일링/알림 로직과 holdings.csv 형식은 변경 없음(표시만 변경).
 """
 
 import sys
@@ -259,6 +271,21 @@ def build_status_tag(close, stop_price, buy_price=None):
         return "🟢 정상"
     except Exception:
         return "⬜ 상태미확인"
+
+
+def build_stophit_tag(close, stop_price, buy_price):
+    """stop_hit(트레일링 라인 이탈, sell 대기) 상태 종목의 요약 태그.
+    신호 시점이 아니라 '지금 현재가 vs 매수가'로 판정한다 (신호 이후 반등/하락 반영)."""
+    try:
+        if pd.isna(stop_price) or pd.isna(buy_price) or pd.isna(close):
+            return "🔴 매도신호 (sell 명령 대기)"
+        if stop_price < buy_price:
+            return "🔴 손절 확정 (sell 명령 대기)"
+        if close >= buy_price:
+            return "🟢 익절 확정 (sell 명령 대기)"
+        return "🔴 신호 이후 하락 - 매수가 아래 손실 중 (즉시 매도 검토, sell 명령 대기)"
+    except Exception:
+        return "🔴 매도신호 (sell 명령 대기)"
 
 
 def build_trend_tag(current, base):
@@ -490,7 +517,7 @@ if __name__ == "__main__":
         cur_stop = df.at[idx, 'stop_price']
         line_label = build_line_label(cur_stop, buy_price)
         if status == 'stop_hit':
-            tag = "🟢 익절 확정 (sell 명령 대기)" if line_label == "익절선" else "🔴 손절 확정 (sell 명령 대기)"
+            tag = build_stophit_tag(current_close, cur_stop, buy_price)
         else:
             tag = build_status_tag(current_close, cur_stop, buy_price)
 
@@ -518,6 +545,7 @@ if __name__ == "__main__":
 
         summary_rows.append({
             'trade_id': trade_id, 'market': market, 'code': code, 'name': display_name, 'tag': tag,
+            'status': status,
             'close': current_close, 'trend_tag': trend_tag,
             'buy_price': buy_price, 'pnl_pct': pnl_pct,
             'highest_price': df.at[idx, 'highest_price'], 'stop_price': cur_stop,
@@ -555,12 +583,21 @@ if __name__ == "__main__":
                 next_txt = "추가매수 없음(최대 유닛)" if u >= MAX_UNITS else "다음 추가매수가 N/A"
             else:
                 next_txt = f"다음 추가매수가 {fmt_num(r['last_add_price'] + UNIT_STEP_ATR * r['atr_entry'])}"
+            is_stophit = (r.get('status') == 'stop_hit')
+            if is_stophit:
+                next_txt = "추가매수 신호 없음(매도신호 상태)"
             exit10_mark = " ⚠️이탈" if r.get('exit10_hit') else ""
             exit20_mark = " ⚠️이탈" if r.get('exit20_hit') else ""
+            stophit_txt = ""
+            if is_stophit and not pd.isna(r['stop_price']) and not pd.isna(r['buy_price']) and r['buy_price'] != 0:
+                sig_pnl = (r['stop_price'] - r['buy_price']) / r['buy_price'] * 100
+                stophit_txt = (f"  신호선 {fmt_num(r['stop_price'])}에서 팔았다면 손익 {sig_pnl:+.2f}% / "
+                               f"신호선 이탈 후 현재 {gap_txt}\n")
             lines.append(
                 f"- [{r['trade_id']}] {code_display} [{r['market']}] {r['tag']}\n"
                 f"  현재가 {fmt_num(r['close'])} {r['trend_tag']} / 매수가 {fmt_num(r['buy_price'])} (손익 {pnl_txt})\n"
                 f"  최고가 {fmt_num(r['highest_price'])} / {r['line_label']} {fmt_num(r['stop_price'])} (괴리율 {gap_txt})\n"
+                f"{stophit_txt}"
                 f"  ATR배수 {atr_txt} (직전 마일스톤 {r['last_milestone']}배)\n"
                 f"  1차 익절참고가(2×ATR) {tp1_txt} / 2차 익절참고가(4×ATR) {tp2_txt}\n"
                 f"  유닛 {unit_txt} / {next_txt}\n"
