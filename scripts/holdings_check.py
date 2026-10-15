@@ -92,6 +92,16 @@ data/holdings.csv 컬럼:
 - stop_hit 종목 요약에 "신호선 기준 시나리오" 줄 추가: 신호선에서 팔았다면 손익률 / 신호선 이탈 후 현재 변동.
 - stop_hit 종목은 "다음 추가매수가"를 숨김(신호가 나가지 않는 상태라 의미 없음).
 - 청산/트레일링/알림 로직과 holdings.csv 형식은 변경 없음(표시만 변경).
+
+[2026-10-15 19차 수정 - 전체 교체] 매수 당일 오판정(하이트진로) 수정
+- 🐛 하이트진로(000080)를 장중 15,470에 매수 등록한 직후 "손절 확정"이 표시됨. 원인: get_latest_ohlc()의
+  high/low가 '오늘 일봉 전체'(매수 전 시간 포함)라서, 매수 전에 찍힌 저가(손절선 14,909 이하)나 고가(15,480)를
+  매수 후 값으로 착각해 최고가·손절선을 갱신하고 곧바로 라인 이탈(stop_hit)로 판정했음. 매수 당일에는 이런 일이
+  누구에게나 생길 수 있음.
+- 수정: 새 컬럼 buy_date(매수일, bot_commands.py가 buy 때 기록). 오늘이 buy_date와 같은 거래는 오늘 일봉의
+  high/low 대신 '현재가'를 고가·저가로 사용(최고가 갱신, 라인 이탈, 추가매수 판정 모두). 다음 거래일부터는 평소처럼
+  일봉 고가/저가 사용. buy_date가 비어있는 기존 거래는 종전 동작 그대로.
+- 한계: 매수 당일은 5분 간격 현재가로만 판정하므로, 5분 사이의 순간 고저는 반영되지 않음.
 """
 
 import sys
@@ -110,7 +120,7 @@ DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv'
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
            'highest_price', 'stop_price', 'last_milestone', 'status', 'last_price',
            'breakeven_notified', 'exit10_notified', 'exit20_notified',
-           'units', 'last_add_price']
+           'units', 'last_add_price', 'buy_date']
 NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price',
                     'last_milestone', 'last_price', 'units', 'last_add_price']
 UNIT_STEP_ATR = 0.5   # 터틀 유닛 원칙: 0.5xN 상승마다 1유닛 추가
@@ -244,6 +254,17 @@ def get_kr_name_map(codes):
     return name_map
 
 
+def is_buy_day(buy_date, market):
+    """buy_date(YYYY-MM-DD)가 시장 기준 '오늘'이면 True. 비어있으면 False(기존 거래는 종전 동작)."""
+    try:
+        if buy_date is None or pd.isna(buy_date) or str(buy_date).strip() == '':
+            return False
+        tz = 'America/New_York' if market == 'US' else 'Asia/Seoul'
+        return str(buy_date).strip()[:10] == datetime.now(ZoneInfo(tz)).strftime('%Y-%m-%d')
+    except Exception:
+        return False
+
+
 def build_line_label(stop_price, buy_price):
     """트레일링 라인이 지금 손절선 역할인지 익절선(손익확정) 역할인지 판정한다.
     터틀 시스템엔 별도 목표가가 없고, 이 라인이 매수가를 넘어서는 순간부터
@@ -310,7 +331,8 @@ if __name__ == "__main__":
 
     df = pd.read_csv(DATA_PATH, dtype={'code': str, 'trade_id': str, 'market': object,
                                         'status': object, 'breakeven_notified': object,
-                                        'exit10_notified': object, 'exit20_notified': object},
+                                        'exit10_notified': object, 'exit20_notified': object,
+                                        'buy_date': object},
                       keep_default_na=False)
     for col in COLUMNS:
         if col not in df.columns:
@@ -372,6 +394,12 @@ if __name__ == "__main__":
         ohlc = get_latest_ohlc(market, row['code'])
         if ohlc is None:
             continue
+
+        # 19차: 매수 당일엔 오늘 일봉의 고가/저가에 매수 '전' 시간대가 섞여 있으므로 현재가로 대체
+        if is_buy_day(row.get('buy_date'), market):
+            ohlc = dict(ohlc)
+            ohlc['high'] = ohlc['close']
+            ohlc['low'] = ohlc['close']
 
         trade_id = row['trade_id']
         code = row['code']
