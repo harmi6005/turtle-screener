@@ -36,3 +36,5 @@ code,system,direction,last_result,skip_active,skip_price
 004360,System2(중장기),long,loss,False,
 004270,System1(단기),long,loss,False,
 095610,System1(단기),long,loss,False,
+080580,System1(단기),long,loss,False,
+348150,System1(단기),long,loss,False,
