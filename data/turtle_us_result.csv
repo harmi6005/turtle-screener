@@ -104,7 +104,7 @@ EQIX,EQIX,System2(중장기),청산,False,False,True,False,982.28,1103.95,992.42
 ESS,ESS,System1(단기),관심,False,False,False,True,270.27,276.85,265.92,0.991,4.33,,
 P,P,System1(단기),청산,False,False,True,False,131.29,157.57,130.08,0.857,7.87,,
 ES,ES,System1(단기),관심,False,False,False,True,66.25,68.25,63.18,0.99,1.14,,
-EXPE,EXPE,System1(단기),관심,False,False,False,True,290.42,292.39,253.16,0.995,10.99,,
+EXPE,EXPE,System1(단기),탈락,False,False,False,True,290.42,292.39,253.16,0.995,10.99,,
 FAST,FAST,System2(중장기),관심,False,False,False,True,50.64,52.92,47.3,0.998,1.27,,
 FERG,FERG,System1(단기),확정,False,False,False,True,228.34,228.77,212.49,1.0,5.4,,229.18
 FLEX,FLEX,System1(단기),청산,False,False,True,False,95.27,121.84,99.17,0.79,5.87,,
