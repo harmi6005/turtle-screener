@@ -70,6 +70,16 @@ telegram_listener.py(폴링 방식, 5분마다)와 webhook_handler.py(웹훅 방
   원인은 holdings_check.py가 매수 당일에도 '오늘 일봉 전체'(매수 전 시간대 포함)의 고가/저가를 써서
   매수 전에 찍힌 저가가 손절선 아래면 즉시 이탈로 판정한 것. 이를 구분하려고 buy 시 매수일(KST 또는 미장은 뉴욕)을
   새 컬럼 buy_date(YYYY-MM-DD)에 기록함. HOLDINGS_COLUMNS에 buy_date 추가(holdings_check.py COLUMNS와 동일).
+
+[2026-10-16 23차 수정 - 전체 교체] 유닛 수/평균단가 수동 보정 명령 추가
+- ⭐ 사용자 요청: 추가매수(불타기) 시 실제 체결 내용을 봇에 반영할 방법이 없었음. 봇은 추가매수 신호 가격에 체결된 것으로
+  간주해 유닛을 올리므로, 실제와 다르면(안 샀거나 체결가가 다르면) 요약의 유닛 수·다음 추가매수가가 틀렸음.
+- 신규 명령 `unit 거래번호 유닛수 [마지막체결가]`: 유닛 수(1~4)와 마지막 체결가(없으면 매수가+0.5×ATR×(유닛수-1))를 맞춤.
+  마지막 체결가가 다음 추가매수가(+0.5×ATR) 기준이 됨.
+- 신규 명령 `avg 거래번호 평균단가` (`avg 거래번호 해제`로 되돌림): 평균 매수단가를 기록. holdings_check.py가
+  익절선/손절선 판정, 손익률, 임박·매도신호 표시를 평단 기준으로 계산함(ATR 배수·추가매수 단계는 첫 매수가 기준 유지).
+- HOLDINGS_COLUMNS에 avg_price 추가(holdings_check.py COLUMNS와 동일). 빈칸이면 buy_price를 평단으로 간주(기존 거래 영향 없음).
+- handle_list: 유닛 수/평단 표시.
 """
 
 import os
@@ -97,7 +107,7 @@ SCAN_SETTINGS_PATH = os.path.join(os.path.dirname(__file__), 'data', 'scan_setti
 HOLDINGS_COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
                     'highest_price', 'stop_price', 'last_milestone', 'status',
                     'last_price', 'breakeven_notified', 'exit10_notified', 'exit20_notified',
-                    'units', 'last_add_price', 'buy_date']
+                    'units', 'last_add_price', 'buy_date', 'avg_price']
 WATCHLIST_COLUMNS = ['code', 'market', 'sys1_status', 'sys2_status',
                       'sys1_entry_price', 'sys2_entry_price']
 # 2026-09-24 추가: watchlist_check.py와 동일한 휩쏘 이력 파일(읽기 전용으로 참고만 함 -
@@ -140,6 +150,9 @@ for _market, (_stop_word, _start_word) in SCAN_TOGGLE_COMMANDS.items():
     SCAN_COMMAND_LOOKUP[_stop_word] = (_market, False)
     SCAN_COMMAND_LOOKUP[_start_word] = (_market, True)
 
+MAX_UNITS = 4  # holdings_check.py의 MAX_UNITS와 동일
+UNIT_STEP_ATR = 0.5  # holdings_check.py의 UNIT_STEP_ATR과 동일
+
 HELP_TEXT = (
     "사용 가능한 명령어\n\n"
     "buy 코드 매수가\n"
@@ -151,6 +164,12 @@ HELP_TEXT = (
     "  매도가를 넣으면 손익률 자동 계산\n\n"
     "list\n"
     "  현재 감시 중인 보유거래 목록\n\n"
+    "unit 거래번호 유닛수 [마지막체결가]\n"
+    "  예) unit 2010 3 15800\n"
+    "  실제로 산 유닛 수(1~4)와 마지막 체결가를 봇에 맞춤 (체결가 생략 시 신호 가격으로 계산)\n\n"
+    "avg 거래번호 평균단가\n"
+    "  예) avg 2010 15687 / avg 2010 해제\n"
+    "  평균 매수단가를 기록하면 익절/손절선 판정과 손익률이 평단 기준으로 계산됨\n\n"
     "[유닛 원칙] 보유종목은 매수가 대비 0.5xATR 올라갈 때마다 '추가매수 신호'를 알려줌\n"
     "  (최대 4유닛, 이후 신호 없음). 추가매수는 직접 하시고, 신호 가격이 기준으로 기록됨\n\n"
     "보유종목 초기화\n"
@@ -309,7 +328,7 @@ def handle_buy(args, df):
                'last_price': buy_price, 'breakeven_notified': False,
                'exit10_notified': False, 'exit20_notified': False,
                'units': 1, 'last_add_price': buy_price,
-               'buy_date': buy_date_today(market)}
+               'buy_date': buy_date_today(market), 'avg_price': float('nan')}
     df = pd.concat([df, pd.DataFrame([new_row])], ignore_index=True)
 
     return df, (f"등록 완료 (거래번호 {trade_id})\n"
@@ -347,6 +366,75 @@ def handle_sell(args, df):
     return df, f"청산 완료 (거래번호 {trade_id}): {row['code']} [{row['market']}]{extra}"
 
 
+def handle_unit(args, df):
+    """unit 거래번호 유닛수 [마지막체결가] - 실제 유닛 수와 마지막 체결가를 맞춘다."""
+    if len(args) < 2:
+        return df, "형식: unit 거래번호 유닛수 [마지막체결가]\n예) unit 2010 3 15800"
+    trade_id = args[0]
+    try:
+        n = int(args[1])
+    except ValueError:
+        return df, "유닛수는 1~4 사이 정수로 입력해주세요."
+    if not 1 <= n <= MAX_UNITS:
+        return df, f"유닛수는 1~{MAX_UNITS} 사이여야 해요."
+    mask = (df['trade_id'] == trade_id) & (df['status'] != 'closed_manual')
+    if not mask.any():
+        return df, f"거래번호 {trade_id}를 찾지 못했어요. list 로 확인해보세요."
+    row = df[mask].iloc[0]
+    try:
+        buy = float(row['buy_price'])
+        atr = float(row['atr_entry'])
+    except (TypeError, ValueError):
+        return df, "이 거래의 매수가/ATR 정보가 없어 유닛을 맞출 수 없어요."
+    if len(args) > 2:
+        try:
+            last_fill = float(args[2])
+        except ValueError:
+            return df, "마지막 체결가는 숫자로 입력해주세요."
+        src = "입력한 체결가"
+    else:
+        last_fill = buy + UNIT_STEP_ATR * atr * (n - 1)
+        src = "신호 가격으로 계산"
+    df['units'] = pd.to_numeric(df['units'], errors='coerce').astype(float)
+    df['last_add_price'] = pd.to_numeric(df['last_add_price'], errors='coerce').astype(float)
+    df.loc[mask, 'units'] = n
+    df.loc[mask, 'last_add_price'] = round(last_fill, 6)
+    nxt = last_fill + UNIT_STEP_ATR * atr
+    nxt_txt = "최대 유닛(추가매수 신호 없음)" if n >= MAX_UNITS else f"다음 추가매수가 {fmt_num(nxt)}"
+    return df, (f"유닛 보정 완료 (거래번호 {trade_id}): {row['code']} [{row['market']}]\n"
+                f"유닛 {n}/{MAX_UNITS} / 마지막 체결가 {fmt_num(last_fill)} ({src})\n{nxt_txt}")
+
+
+def handle_avg(args, df):
+    """avg 거래번호 평균단가|해제 - 평균 매수단가 기록(익절/손절 판정·손익률 기준)."""
+    if len(args) < 2:
+        return df, "형식: avg 거래번호 평균단가\n예) avg 2010 15687 / avg 2010 해제"
+    trade_id = args[0]
+    mask = (df['trade_id'] == trade_id) & (df['status'] != 'closed_manual')
+    if not mask.any():
+        return df, f"거래번호 {trade_id}를 찾지 못했어요. list 로 확인해보세요."
+    row = df[mask].iloc[0]
+    df['avg_price'] = pd.to_numeric(df['avg_price'], errors='coerce').astype(float)  # 빈 칸 컬럼의 문자열 dtype 방지
+    if args[1] in ('해제', 'clear', 'off', '0'):
+        df.loc[mask, 'avg_price'] = float('nan')
+        return df, f"평균단가 해제 (거래번호 {trade_id}) - 이제 매수가 {fmt_num(row['buy_price'])} 기준으로 계산해요."
+    try:
+        avg = float(args[1])
+    except ValueError:
+        return df, "평균단가는 숫자로 입력해주세요."
+    if avg <= 0:
+        return df, "평균단가는 0보다 커야 해요."
+    df.loc[mask, 'avg_price'] = round(avg, 6)
+    try:
+        stop = float(row['stop_price'])
+        kind = "익절선(이탈해도 이익)" if stop >= avg else "손절선(이탈하면 손실)"
+        stop_txt = f"\n현재 라인 {fmt_num(stop)} = 평단 기준 {kind}, 평단 대비 {(stop - avg) / avg * 100:+.2f}%"
+    except (TypeError, ValueError):
+        stop_txt = ""
+    return df, (f"평균단가 기록 완료 (거래번호 {trade_id}): {row['code']} [{row['market']}]\n"
+                f"평단 {fmt_num(avg)} (첫 매수가 {fmt_num(row['buy_price'])}){stop_txt}")
+
+
 def handle_list(df):
     active = df[df['status'] != 'closed_manual']
     if active.empty:
@@ -356,12 +444,20 @@ def handle_list(df):
         status_tag = ""
         if r['status'] == 'stop_hit':
             try:
-                is_profit = float(r['stop_price']) >= float(r['buy_price'])
+                _base = r['avg_price'] if str(r.get('avg_price', '')).strip() not in ('', 'nan') else r['buy_price']
+                is_profit = float(r['stop_price']) >= float(_base)
             except (TypeError, ValueError):
                 is_profit = False
             status_tag = " [익절 확정/매도대기]" if is_profit else " [손절 확정/매도대기]"
+        _avg_txt = ""
+        if str(r.get('avg_price', '')).strip() not in ('', 'nan'):
+            _avg_txt = f" (평단 {fmt_num(r['avg_price'])})"
+        try:
+            _u = int(float(r['units']))
+        except (TypeError, ValueError):
+            _u = 1
         lines.append(f"[{r['trade_id']}] {r['code']} [{r['market']}]{status_tag} "
-                      f"매수 {fmt_num(r['buy_price'])} / 최고가 {fmt_num(r['highest_price'])} / "
+                      f"유닛 {_u}/{MAX_UNITS} / 매수 {fmt_num(r['buy_price'])}{_avg_txt} / 최고가 {fmt_num(r['highest_price'])} / "
                       f"손절(익절)선 {fmt_num(r['stop_price'])} / {r['last_milestone']}배 수익 도달")
     return "\n".join(lines)
 
@@ -561,6 +657,12 @@ def dispatch(text, df, wdf):
         holdings_changed = True
     elif cmd == 'sell':
         df, reply = handle_sell(args, df)
+        holdings_changed = True
+    elif cmd == 'unit':
+        df, reply = handle_unit(args, df)
+        holdings_changed = True
+    elif cmd == 'avg':
+        df, reply = handle_avg(args, df)
         holdings_changed = True
     elif cmd == 'list':
         reply = handle_list(df)
