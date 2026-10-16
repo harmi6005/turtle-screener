@@ -31,7 +31,7 @@ CCL,CCL,System1(단기),탈락,True,True,False,False,26.86,26.86,25.22,1.003,0.8
 CASY,CASY,System1(단기),확정,True,True,False,False,682.37,682.02,600.31,1.006,16.49,,682.99
 COR,COR,System1(단기),관심,False,False,False,True,341.24,345.46,302.14,0.994,7.54,,
 COR,COR,System2(중장기),관심,False,False,False,True,341.24,345.46,295.01,0.994,7.54,,
-CNP,CNP,System1(단기),관심,False,False,False,True,40.29,40.52,37.31,0.995,0.61,,
+CNP,CNP,System1(단기),탈락,False,False,False,True,40.29,40.52,37.31,0.995,0.61,,
 CVX,CVX,System1(단기),확정,False,False,False,True,221.91,223.46,201.96,1.0,4.28,,223.46
 CVX,CVX,System2(중장기),확정,False,False,False,True,221.91,223.46,200.78,1.0,4.28,,223.46
 CB,CB,System1(단기),관심,False,False,False,True,356.01,358.58,328.35,0.994,5.37,,
@@ -137,7 +137,7 @@ PSX,PSX,System2(중장기),관심,False,False,False,True,291.72,297.42,248.51,0.
 PNW,PNW,System1(단기),관심,False,False,False,True,103.11,103.55,95.24,0.996,1.79,,
 PNW,PNW,System2(중장기),관심,False,False,False,True,103.11,103.55,90.27,0.996,1.79,,
 PPG,PPG,System1(단기),확정,True,True,False,False,108.95,108.49,102.75,1.014,2.19,,108.98
-PPL,PPL,System1(단기),관심,False,False,False,True,34.91,35.12,32.64,0.997,0.53,,
+PPL,PPL,System1(단기),확정,False,False,False,True,34.91,35.12,32.64,0.997,0.53,,35.13
 PTC,PTC,System1(단기),관심,False,False,False,True,193.28,196.05,143.51,0.99,5.51,,
 PTC,PTC,System2(중장기),관심,False,False,False,True,193.28,196.05,132.75,0.99,5.51,,
 PSA,PSA,System1(단기),관심,False,False,False,True,300.11,302.06,280.24,0.994,5.41,,
@@ -184,7 +184,7 @@ GWW,GWW,System1(단기),관심,False,False,False,True,1336.62,1355.0,1258.59,0.9
 WAB,WAB,System1(단기),관심,False,False,False,True,289.48,294.72,275.13,0.99,6.11,,
 DIS,DIS,System2(중장기),탈락,True,True,False,False,112.3,111.87,101.15,1.004,1.95,,
 WM,WM,System1(단기),탈락,True,True,False,False,225.2,224.46,200.58,1.01,3.47,,
-WEC,WEC,System1(단기),관심,False,False,False,True,107.5,108.37,100.85,0.993,1.63,,
+WEC,WEC,System1(단기),확정,False,False,False,True,107.5,108.37,100.85,0.993,1.63,,108.42
 WELL,WELL,System1(단기),관심,False,False,False,True,235.46,238.2,220.0,0.996,4.8,,
 WST,WST,System1(단기),탈락,True,True,False,False,384.61,384.4,359.49,1.005,8.83,,
 WST,WST,System2(중장기),탈락,True,True,False,False,384.61,384.4,359.49,1.005,8.83,,
