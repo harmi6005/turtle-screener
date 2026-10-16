@@ -155,7 +155,7 @@ LH,LH,System1(단기),확정,False,False,False,True,323.44,326.79,302.71,0.991,6
 LRCX,LRCX,System1(단기),청산,False,False,True,False,279.44,352.56,284.75,0.795,13.6,,
 LRCX,LRCX,System2(중장기),청산,False,False,True,False,279.44,352.56,266.62,0.795,13.6,,
 LYV,LYV,System1(단기),관심,False,False,False,True,172.96,174.43,164.82,0.998,3.7,,
-LOW,LOW,System1(단기),관심,False,False,False,True,195.68,199.35,178.45,0.993,4.64,,
+LOW,LOW,System1(단기),확정,False,False,False,True,195.68,199.35,178.45,0.993,4.64,,198.28
 LITE,LITE,System1(단기),청산,False,False,True,False,866.59,1143.0,893.88,0.764,69.03,,
 LITE,LITE,System2(중장기),청산,False,False,True,False,866.59,1143.0,881.23,0.764,69.03,,
 MPC,MPC,System1(단기),관심,False,False,False,True,472.66,485.22,392.83,0.992,16.76,,
