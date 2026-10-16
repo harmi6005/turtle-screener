@@ -13,7 +13,7 @@ GOOG,GOOG,System1(단기),청산,False,False,True,False,335.93,359.98,336.82,0.9
 MO,MO,System1(단기),관심,False,False,False,True,75.02,75.74,65.78,0.991,1.34,,
 MO,MO,System2(중장기),관심,False,False,False,True,75.02,75.74,65.78,0.991,1.34,,
 AMZN,AMZN,System1(단기),청산,False,False,True,False,248.95,263.7,248.65,0.969,5.72,,
-AEE,AEE,System1(단기),관심,False,False,False,True,105.94,106.15,99.22,1.0,1.54,,
+AEE,AEE,System1(단기),탈락,False,False,False,True,105.94,106.15,99.22,1.0,1.54,,
 AEP,AEP,System1(단기),관심,False,False,False,True,126.96,128.14,118.63,0.992,2.06,,
 AMT,AMT,System1(단기),탈락,True,True,False,False,185.51,184.75,160.3,1.006,4.46,,
 AMT,AMT,System2(중장기),탈락,True,True,False,False,185.51,184.75,160.3,1.006,4.46,,
