@@ -45,7 +45,7 @@ CB,CB,System1(단기),확정,True,True,False,False,358.85,358.58,328.35,1.001,5.
 CB,CB,System2(중장기),확정,True,True,False,False,358.85,358.58,325.0,1.001,5.5,,358.86
 CIEN,CIEN,System1(단기),청산,False,False,True,False,334.21,454.73,333.15,0.78,24.83,,
 CIEN,CIEN,System2(중장기),청산,False,False,True,False,334.21,462.69,333.15,0.766,24.83,,
-CINF,CINF,System1(단기),관심,False,False,False,True,170.58,170.76,160.95,0.999,2.74,,
+CINF,CINF,System1(단기),확정,False,False,False,True,170.58,170.76,160.95,0.999,2.74,,170.83
 CSCO,CSCO,System1(단기),청산,False,False,True,False,107.47,118.65,108.45,0.927,2.94,,
 CLX,CLX,System1(단기),관심,False,False,False,True,86.69,87.67,79.78,0.997,2.16,,
 KO,KO,System1(단기),관심,False,False,False,True,93.15,94.1,85.13,0.996,1.39,,
@@ -171,7 +171,7 @@ STX,STX,System1(단기),청산,False,False,True,False,643.11,946.36,652.29,0.722
 STX,STX,System2(중장기),청산,False,False,True,False,643.11,1013.18,652.29,0.675,51.86,,
 SRE,SRE,System1(단기),확정,True,True,False,False,83.28,82.92,77.62,1.007,1.32,,83.27
 SOLV,SOLV,System1(단기),관심,False,False,False,True,85.44,89.89,83.29,0.99,1.89,,
-SO,SO,System1(단기),관심,False,False,False,True,90.87,91.0,83.17,1.0,1.38,,
+SO,SO,System1(단기),확정,False,False,False,True,90.87,91.0,83.17,1.0,1.38,,91.17
 SYK,SYK,System1(단기),확정,True,True,False,False,294.73,293.99,271.21,1.019,7.06,,294.55
 SMCI,SMCI,System1(단기),청산,False,False,True,False,31.59,45.77,32.38,0.756,2.41,,
 SMCI,SMCI,System2(중장기),청산,False,False,True,False,31.59,45.77,32.38,0.756,2.41,,
