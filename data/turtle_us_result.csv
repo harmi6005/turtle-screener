@@ -89,8 +89,8 @@ EG,EG,System2(중장기),확정,True,True,False,False,387.3,386.87,361.25,1.002,
 EVRG,EVRG,System1(단기),관심,False,False,False,True,83.19,83.76,78.54,0.994,1.23,,
 P,P,System1(단기),청산,False,False,True,False,124.64,157.57,127.89,0.846,8.03,,
 EXC,EXC,System1(단기),확정,True,True,False,False,43.5,43.42,40.24,1.003,0.71,,43.49
-XOM,XOM,System1(단기),관심,False,False,False,True,178.52,178.69,161.39,0.999,3.54,,
-XOM,XOM,System2(중장기),관심,False,False,False,True,178.52,178.69,155.85,0.999,3.54,,
+XOM,XOM,System1(단기),탈락,False,False,False,True,178.52,178.69,161.39,0.999,3.54,,
+XOM,XOM,System2(중장기),탈락,False,False,False,True,178.52,178.69,155.85,0.999,3.54,,
 FFIV,FFIV,System1(단기),청산,False,False,True,False,441.35,483.3,443.7,0.951,13.74,,
 FERG,FERG,System1(단기),확정,True,True,False,False,230.39,229.63,212.49,1.023,5.64,,230.46
 FLEX,FLEX,System1(단기),청산,False,False,True,False,90.95,121.84,91.68,0.797,6.16,,
