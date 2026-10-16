@@ -10,8 +10,8 @@ AIG,AIG,System2(중장기),확정,True,True,False,False,80.67,80.51,72.63,1.002,
 AMT,AMT,System1(단기),탈락,False,False,False,True,183.92,184.75,160.3,0.997,4.38,,
 AMT,AMT,System2(중장기),탈락,False,False,False,True,183.92,184.75,160.3,0.997,4.38,,
 AMGN,AMGN,System1(단기),관심,False,False,False,True,438.34,441.76,396.01,0.993,10.75,,
-APA,APA,System1(단기),관심,False,False,False,True,47.81,48.6,42.3,0.992,1.45,,
-APA,APA,System2(중장기),관심,False,False,False,True,47.81,48.6,41.23,0.992,1.45,,
+APA,APA,System1(단기),확정,False,False,False,True,47.81,48.6,42.3,0.992,1.45,,48.69
+APA,APA,System2(중장기),확정,False,False,False,True,47.81,48.6,41.23,0.992,1.45,,48.69
 AAPL,AAPL,System1(단기),관심,False,False,False,True,346.02,348.15,330.61,0.999,6.42,,
 AAPL,AAPL,System2(중장기),관심,False,False,False,True,346.02,348.15,325.81,0.999,6.42,,
 ACGL,ACGL,System1(단기),확정,True,True,False,False,100.74,100.74,92.48,1.0,1.83,,100.94
