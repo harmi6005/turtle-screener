@@ -120,7 +120,7 @@ MLM,MLM,System1(단기),관심,False,False,False,True,503.11,510.81,464.92,0.994
 MTD,MTD,System1(단기),관심,False,False,False,True,1637.55,1659.7,1479.15,0.992,43.41,,
 MTD,MTD,System2(중장기),관심,False,False,False,True,1637.55,1659.7,1385.13,0.992,43.41,,
 MDLZ,MDLZ,System1(단기),관심,False,False,False,True,64.28,64.67,57.32,0.994,1.18,,
-MSI,MSI,System1(단기),관심,False,False,False,True,463.34,465.01,441.05,0.999,7.62,,
+MSI,MSI,System1(단기),확정,False,False,False,True,463.34,465.01,441.05,0.999,7.62,,465.13
 NTAP,NTAP,System1(단기),청산,False,False,True,False,207.62,240.87,209.82,0.89,8.72,,
 NWSA,NWSA,System1(단기),탈락,True,True,False,False,30.34,30.23,28.2,1.014,0.67,,
 NEE,NEE,System1(단기),관심,False,False,False,True,79.92,81.0,75.89,0.991,1.35,,
