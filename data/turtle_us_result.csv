@@ -78,7 +78,7 @@ EG,EG,System1(단기),확정,True,True,False,False,386.7,385.3,361.25,1.004,7.0,
 EG,EG,System2(중장기),확정,False,False,False,True,386.7,386.87,361.25,1.0,7.0,,386.87
 P,P,System1(단기),청산,False,False,True,False,127.59,157.57,127.89,0.846,7.95,,
 EXC,EXC,System1(단기),관심,False,False,False,True,43.12,43.42,40.24,0.994,0.69,,
-EXE,EXE,System1(단기),관심,False,False,False,True,92.58,92.9,84.16,0.998,2.05,,
+EXE,EXE,System1(단기),확정,False,False,False,True,92.58,92.9,84.16,0.998,2.05,,92.95
 EXPD,EXPD,System1(단기),확정,True,True,False,False,199.33,199.11,190.01,1.008,3.98,,199.46
 EXPD,EXPD,System2(중장기),확정,True,True,False,False,199.33,199.11,183.36,1.008,3.98,,199.46
 EXR,EXR,System1(단기),탈락,True,True,False,False,139.88,139.54,130.54,1.004,2.58,,
