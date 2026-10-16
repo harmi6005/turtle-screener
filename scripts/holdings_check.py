@@ -121,6 +121,18 @@ data/holdings.csv 컬럼:
 - 추가매수 신호 알림/유닛 증가 로직(0.5×ATR마다, 최대 4유닛)은 변경 없음. holdings.csv 형식 변경 없음.
 - 참고: 신호는 고가가 다음 추가매수가를 넘는 순간 발생하며 그 즉시 유닛이 올라가므로 "돌파" 표시는 신호가 난 그 회차 요약에서만
   보임(다음 회차부터는 다음 단계 가격 기준 "임박"으로 바뀜).
+
+[2026-10-16 22차 수정 - 전체 교체] 장 시작 전 오판정으로 굳은 "손절 확정" 방지 + 자동 해제
+- 🐛 하이트진로(2010)·LG유플러스(0430)가 10/16 08:55(개장 5분 전)에 동시에 stop_hit이 되어, 현재가가 손절선보다 한참 위(+2.7%,
+  +3.9%)인데도 "손절 확정"이 유지되고 상승해도 표시가 안 바뀌었음. 원인: ① 개장 5분 전(08:55)부터 요약/감시를 시작하는데 그
+  시점의 일봉(fdr) 고가/저가는 장 시작 전이라 믿을 수 없고(두 종목이 동시에 이탈 판정), 이탈 판정이 '일봉 저가 <= 라인'이었음
+  ② stop_hit은 sell 전까지 영구 고정이라 한 번 잘못 걸리면 되돌릴 방법이 없었음.
+- 수정 1) 국장은 정규장(09:00~15:30 KST)에서만 최고가/손절선 갱신·추가매수·라인 이탈 판정을 함. 개장 전(08:55)·마감 후 버퍼엔 요약만 발송.
+- 수정 2) 라인 이탈 판정을 '일봉 저가'가 아니라 '현재가(5분 체크 시점 가격) <= 라인'으로 변경(일봉 저가 이상값에 영향받지 않음).
+  한계: 5분 사이의 순간 고저(꼬리)는 못 잡음.
+- 수정 3) stop_hit 자동 해제: 현재가가 라인 + max(1%, 0.25×ATR) 위로 올라오면 status를 active로 되돌리고 "🔄 매도신호 해제"
+  알림을 1회 보냄(경계 근처 반복 방지용 여유폭). 라인·최고가는 그대로 유지, 이후 다시 라인 이탈 시 정상적으로 다시 신호.
+  이미 팔았다면 sell 명령으로 정리하면 됨. 배포 후 하이트진로·LG유플러스는 다음 정규장 체크에서 자동 해제됨.
 """
 
 import sys
@@ -147,6 +159,8 @@ MAX_UNITS = 4
 ATR_MULTIPLIER = 2
 NEAR_MIN_PCT = 2.0      # 임박 최소 기준(%): 라인까지 거리가 이 값 이하면 임박
 NEAR_ATR_MULT = 0.5     # 임박 ATR 기준: 라인까지 거리가 0.5×ATR 이하여도 임박
+RESTORE_MIN_PCT = 1.0   # stop_hit 자동 해제: 라인 위로 이 %(또는 0.25×ATR) 이상 올라와야 해제(경계 반복 방지)
+RESTORE_ATR_MULT = 0.25
 ADD_NEAR_MIN_PCT = 1.0  # 추가매수 임박 최소 기준(%): 다음 추가매수가까지 이 값 이하면 임박
 ADD_NEAR_ATR_MULT = 0.25  # 추가매수 임박 ATR 기준: 다음 추가매수가까지 0.25×ATR 이하여도 임박
 PRE_MARKET_BUFFER_MIN = 5
@@ -174,6 +188,15 @@ def is_korea_market_open():
     start = (datetime.combine(now.date(), dtime(9, 0)) - timedelta(minutes=PRE_MARKET_BUFFER_MIN)).time()
     end = (datetime.combine(now.date(), dtime(15, 30)) + timedelta(minutes=POST_MARKET_BUFFER_MIN)).time()
     return start <= now.time() <= end
+
+
+def is_korea_regular_session():
+    """22차: 국장 정규장(09:00~15:30 KST) 여부. 개장 5분 전/마감 5분 후 버퍼는 요약 발송용일 뿐 가격 데이터가 불안정하므로
+    상태 갱신(최고가·손절선·이탈 판정)은 정규장에서만 한다."""
+    if not is_korea_trading_day():
+        return False
+    now = datetime.now(ZoneInfo('Asia/Seoul'))
+    return dtime(9, 0) <= now.time() <= dtime(15, 30)
 
 
 def is_us_market_open():
@@ -407,6 +430,7 @@ if __name__ == "__main__":
             print(f"거래 {row['trade_id']}({row['code']}) 손절가 재계산 완료: {new_stop}")
 
     kr_open = is_korea_market_open()
+    kr_regular = is_korea_regular_session()
     us_open = is_us_market_open()
 
     kr_codes = [
@@ -440,6 +464,7 @@ if __name__ == "__main__":
             ohlc['low'] = ohlc['close']
 
         add_info = None  # 이번 체크에서 추가매수 신호가 발생하면 (유닛, 가격)
+        regular = kr_regular if market == 'KR' else True  # 22차: 국장은 정규장에서만 상태 갱신
         trade_id = row['trade_id']
         code = row['code']
         buy_price = row['buy_price']
@@ -451,9 +476,26 @@ if __name__ == "__main__":
         breakeven_notified = str(row.get('breakeven_notified')) == 'True'
         stop_price_before_update = stop_price
 
-        # active 상태에서만 트레일링/마일스톤/손절판정 진행
+        # 22차: stop_hit 자동 해제 - 현재가가 라인 + max(1%, 0.25xATR) 위로 복귀하면 감시 재개
+        if status == 'stop_hit' and regular and not pd.isna(stop_price) and stop_price > 0:
+            restore_buf = max(stop_price * RESTORE_MIN_PCT / 100,
+                              RESTORE_ATR_MULT * float(atr_entry) if not pd.isna(atr_entry) else 0)
+            if ohlc['close'] > stop_price + restore_buf:
+                notify_telegram(
+                    f"[{market}] 🔄 매도신호 해제 (라인 위로 복귀)\n"
+                    f"거래번호 {trade_id} - {code}\n"
+                    f"현재가 {fmt_num(ohlc['close'])} / {build_line_label(stop_price, buy_price)} {fmt_num(stop_price)} / "
+                    f"매수가 {fmt_num(buy_price)}\n"
+                    f"다시 감시 상태(active)로 돌아갑니다. 이미 파셨다면 sell {trade_id} 로 정리하세요."
+                )
+                df.at[idx, 'status'] = 'active'
+                status = 'active'
+                changed = True
+                print(f"거래 {trade_id}({code}) 매도신호 해제 -> active")
+
+        # active 상태에서만 트레일링/마일스톤/손절판정 진행 (22차: 국장은 정규장에서만)
         # (stop_hit은 재판정 없이 감시만 계속 → 반복 손절알림 방지)
-        if status == 'active':
+        if status == 'active' and regular:
             # 1) 최고가 갱신 -> 트레일링 손절선 갱신 (내려가지는 않음)
             if not pd.isna(atr_entry) and ohlc['high'] > highest_price:
                 highest_price = ohlc['high']
@@ -527,7 +569,7 @@ if __name__ == "__main__":
             # 3) 트레일링 라인 이탈 체크 (진짜 매도 신호, 최초 1회만 알림)
             # 라인이 매수가보다 위에 있으면 이건 손절이 아니라 '익절 확정' 매도임
             cur_stop = df.at[idx, 'stop_price']
-            if not pd.isna(cur_stop) and ohlc['low'] <= cur_stop:
+            if not pd.isna(cur_stop) and ohlc['close'] <= cur_stop:  # 22차: 일봉 저가 대신 현재가 기준
                 if not pd.isna(buy_price) and buy_price != 0:
                     pnl_txt = f"{(ohlc['close'] - buy_price) / buy_price * 100:+.2f}%"
                 else:
