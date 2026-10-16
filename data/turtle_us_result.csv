@@ -32,8 +32,8 @@ CASY,CASY,System1(단기),확정,True,True,False,False,682.37,682.02,600.31,1.00
 COR,COR,System1(단기),관심,False,False,False,True,341.24,345.46,302.14,0.994,7.54,,
 COR,COR,System2(중장기),관심,False,False,False,True,341.24,345.46,295.01,0.994,7.54,,
 CNP,CNP,System1(단기),관심,False,False,False,True,40.29,40.52,37.31,0.995,0.61,,
-CVX,CVX,System1(단기),관심,False,False,False,True,221.91,223.46,201.96,1.0,4.28,,
-CVX,CVX,System2(중장기),관심,False,False,False,True,221.91,223.46,200.78,1.0,4.28,,
+CVX,CVX,System1(단기),확정,False,False,False,True,221.91,223.46,201.96,1.0,4.28,,223.46
+CVX,CVX,System2(중장기),확정,False,False,False,True,221.91,223.46,200.78,1.0,4.28,,223.46
 CB,CB,System1(단기),관심,False,False,False,True,356.01,358.58,328.35,0.994,5.37,,
 CB,CB,System2(중장기),관심,False,False,False,True,356.01,358.58,325.0,0.994,5.37,,
 CINF,CINF,System1(단기),관심,False,False,False,True,169.79,170.76,160.95,0.996,2.72,,
