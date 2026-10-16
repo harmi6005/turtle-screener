@@ -59,7 +59,7 @@ DHR,DHR,System2(중장기),관심,False,False,False,True,229.88,233.02,209.23,0.
 DDOG,DDOG,System1(단기),청산,False,False,True,False,250.25,300.68,256.22,0.895,12.64,,
 DELL,DELL,System1(단기),청산,False,False,True,False,461.29,595.51,452.42,0.795,28.95,,
 DELL,DELL,System2(중장기),청산,False,False,True,False,461.29,595.51,452.42,0.795,28.95,,
-FANG,FANG,System1(단기),관심,False,False,False,True,198.52,200.65,181.85,0.99,4.38,,
+FANG,FANG,System1(단기),확정,False,False,False,True,198.52,200.65,181.85,0.99,4.38,,200.77
 DLTR,DLTR,System1(단기),관심,False,False,False,True,125.44,127.0,111.12,0.995,3.48,,
 D,D,System1(단기),관심,False,False,False,True,63.65,64.45,60.55,0.992,1.08,,
 DTE,DTE,System1(단기),관심,False,False,False,True,129.39,130.25,123.76,0.995,2.08,,
