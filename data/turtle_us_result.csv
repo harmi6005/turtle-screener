@@ -200,7 +200,7 @@ Q,Q,System1(단기),청산,False,False,True,False,119.85,133.87,118.82,0.897,4.4
 Q,Q,System2(중장기),청산,False,False,True,False,119.85,146.57,116.2,0.819,4.4,,
 RJF,RJF,System1(단기),청산,False,False,True,False,157.2,166.72,154.68,0.944,3.29,,
 RJF,RJF,System2(중장기),청산,False,False,True,False,157.2,182.11,154.68,0.864,3.29,,
-REG,REG,System1(단기),관심,False,False,False,True,72.9,73.67,70.38,0.996,0.99,,
+REG,REG,System1(단기),확정,False,False,False,True,72.9,73.67,70.38,0.996,0.99,,73.67
 REGN,REGN,System1(단기),탈락,False,False,False,True,798.96,813.53,722.02,0.995,22.25,,
 RMD,RMD,System2(중장기),탈락,True,True,False,False,242.58,242.4,218.03,1.001,4.88,,
 HOOD,HOOD,System1(단기),청산,False,False,True,False,103.67,126.74,100.44,0.819,5.51,,
