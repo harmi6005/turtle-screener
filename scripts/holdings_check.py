@@ -133,6 +133,14 @@ data/holdings.csv 컬럼:
 - 수정 3) stop_hit 자동 해제: 현재가가 라인 + max(1%, 0.25×ATR) 위로 올라오면 status를 active로 되돌리고 "🔄 매도신호 해제"
   알림을 1회 보냄(경계 근처 반복 방지용 여유폭). 라인·최고가는 그대로 유지, 이후 다시 라인 이탈 시 정상적으로 다시 신호.
   이미 팔았다면 sell 명령으로 정리하면 됨. 배포 후 하이트진로·LG유플러스는 다음 정규장 체크에서 자동 해제됨.
+
+[2026-10-16 23차 수정 - 전체 교체] 평균단가(avg_price) 반영
+- ⭐ 사용자 요청: 추가매수(불타기) 때 거래를 새로 등록하지 않고 기존 거래를 유지하면서 실제 평단을 반영하고 싶음.
+- 새 컬럼 avg_price(bot_commands.py의 `avg 거래번호 평균단가` 명령으로 기록, 빈칸이면 buy_price를 평단으로 간주).
+  평단이 있으면 아래를 평단 기준으로 계산: 익절선/손절선 구분, 이탈 알림 손익률, 요약 손익%, "익절 확정" 판정(stop_hit),
+  익절선 확정(손익분기) 알림, 신호선 시나리오 손익. 요약에 "매수가 X / 평단 Y"를 함께 표시.
+  ATR 배수·마일스톤·1/2차 익절참고가·추가매수 단계는 계속 첫 매수가(buy_price) 기준(터틀 N 단위 유지).
+- 유닛 수/마지막 체결가는 `unit 거래번호 유닛수 [마지막체결가]` 명령으로 맞춤(bot_commands.py).
 """
 
 import sys
@@ -151,9 +159,9 @@ DATA_PATH = os.path.join(os.path.dirname(__file__), '..', 'data', 'holdings.csv'
 COLUMNS = ['trade_id', 'market', 'code', 'buy_price', 'atr_entry',
            'highest_price', 'stop_price', 'last_milestone', 'status', 'last_price',
            'breakeven_notified', 'exit10_notified', 'exit20_notified',
-           'units', 'last_add_price', 'buy_date']
+           'units', 'last_add_price', 'buy_date', 'avg_price']
 NUMERIC_COLUMNS = ['buy_price', 'atr_entry', 'highest_price', 'stop_price',
-                    'last_milestone', 'last_price', 'units', 'last_add_price']
+                    'last_milestone', 'last_price', 'units', 'last_add_price', 'avg_price']
 UNIT_STEP_ATR = 0.5   # 터틀 유닛 원칙: 0.5xN 상승마다 1유닛 추가
 MAX_UNITS = 4
 ATR_MULTIPLIER = 2
@@ -468,6 +476,10 @@ if __name__ == "__main__":
         trade_id = row['trade_id']
         code = row['code']
         buy_price = row['buy_price']
+        # 23차: 평균단가가 기록돼 있으면 손익·익절/손절 판정의 기준(cost_price)으로 사용, 없으면 첫 매수가
+        avg_price = row['avg_price']
+        has_avg = (not pd.isna(avg_price)) and float(avg_price) > 0
+        cost_price = float(avg_price) if has_avg else buy_price
         atr_entry = row['atr_entry']
         highest_price = row['highest_price'] if not pd.isna(row['highest_price']) else ohlc['high']
         stop_price = row['stop_price']
@@ -484,8 +496,8 @@ if __name__ == "__main__":
                 notify_telegram(
                     f"[{market}] 🔄 매도신호 해제 (라인 위로 복귀)\n"
                     f"거래번호 {trade_id} - {code}\n"
-                    f"현재가 {fmt_num(ohlc['close'])} / {build_line_label(stop_price, buy_price)} {fmt_num(stop_price)} / "
-                    f"매수가 {fmt_num(buy_price)}\n"
+                    f"현재가 {fmt_num(ohlc['close'])} / {build_line_label(stop_price, cost_price)} {fmt_num(stop_price)} / "
+                    f"{'평단' if has_avg else '매수가'} {fmt_num(cost_price)}\n"
                     f"다시 감시 상태(active)로 돌아갑니다. 이미 파셨다면 sell {trade_id} 로 정리하세요."
                 )
                 df.at[idx, 'status'] = 'active'
@@ -510,13 +522,13 @@ if __name__ == "__main__":
             # 터틀 시스템엔 목표가가 없고, 이 라인이 매수가 위로 올라오는 순간부터
             # "이탈해도 더 이상 손해가 아닌" 익절선으로 성격이 바뀐다.
             cur_stop_val = df.at[idx, 'stop_price']
-            if (not breakeven_notified and not pd.isna(cur_stop_val) and not pd.isna(buy_price)
-                    and (pd.isna(stop_price_before_update) or stop_price_before_update < buy_price)
-                    and cur_stop_val >= buy_price):
+            if (not breakeven_notified and not pd.isna(cur_stop_val) and not pd.isna(cost_price)
+                    and (pd.isna(stop_price_before_update) or stop_price_before_update < cost_price)
+                    and cur_stop_val >= cost_price):
                 notify_telegram(
                     f"[{market}] 익절선 확정! (손익분기 돌파)\n"
                     f"거래번호 {trade_id} - {code}\n"
-                    f"매수가 {fmt_num(buy_price)} / 현재가 {fmt_num(ohlc['close'])} / "
+                    f"{'평단' if has_avg else '매수가'} {fmt_num(cost_price)} / 현재가 {fmt_num(ohlc['close'])} / "
                     f"현재 익절선(트레일링) {fmt_num(cur_stop_val)}\n"
                     f"이제부터 이 선을 이탈해도 손해가 아닌 이익 확정 매도가 됩니다."
                 )
@@ -570,16 +582,16 @@ if __name__ == "__main__":
             # 라인이 매수가보다 위에 있으면 이건 손절이 아니라 '익절 확정' 매도임
             cur_stop = df.at[idx, 'stop_price']
             if not pd.isna(cur_stop) and ohlc['close'] <= cur_stop:  # 22차: 일봉 저가 대신 현재가 기준
-                if not pd.isna(buy_price) and buy_price != 0:
-                    pnl_txt = f"{(ohlc['close'] - buy_price) / buy_price * 100:+.2f}%"
+                if not pd.isna(cost_price) and cost_price != 0:
+                    pnl_txt = f"{(ohlc['close'] - cost_price) / cost_price * 100:+.2f}%" + (" (평단 기준)" if has_avg else "")
                 else:
                     pnl_txt = "N/A"
-                line_label = build_line_label(cur_stop, buy_price)
+                line_label = build_line_label(cur_stop, cost_price)
                 exit_kind = "익절 도달! (이익 확정 매도 검토)" if line_label == "익절선" else "트레일링 손절 도달! (매도 검토)"
                 notify_telegram(
                     f"[{market}] {exit_kind}\n"
                     f"거래번호 {trade_id} - {code}\n"
-                    f"매수가 {fmt_num(buy_price)} / 최고가 {fmt_num(df.at[idx, 'highest_price'])} / "
+                    f"{'평단' if has_avg else '매수가'} {fmt_num(cost_price)} / 최고가 {fmt_num(df.at[idx, 'highest_price'])} / "
                     f"{line_label} {fmt_num(cur_stop)} / 현재가 {fmt_num(ohlc['close'])}\n"
                     f"손익률 {pnl_txt}"
                 )
@@ -623,21 +635,21 @@ if __name__ == "__main__":
 
         # 요약용 정보 축적 (active / stop_hit 모두 포함)
         current_close = ohlc['close']
-        trend_tag = build_trend_tag(current_close, buy_price)  # 매수가 기준 등락 표시
+        trend_tag = build_trend_tag(current_close, cost_price)  # 매수가(평단 있으면 평단) 기준 등락 표시
         cur_stop = df.at[idx, 'stop_price']
-        line_label = build_line_label(cur_stop, buy_price)
+        line_label = build_line_label(cur_stop, cost_price)
         if status == 'stop_hit':
-            tag = build_stophit_tag(current_close, cur_stop, buy_price)
+            tag = build_stophit_tag(current_close, cur_stop, cost_price)
         else:
-            tag = build_status_tag(current_close, cur_stop, buy_price, atr_entry)
+            tag = build_status_tag(current_close, cur_stop, cost_price, atr_entry)
 
         gap_pct = None
         if not pd.isna(cur_stop) and cur_stop != 0:
             gap_pct = (current_close - cur_stop) / cur_stop * 100
 
         pnl_pct = None
-        if not pd.isna(buy_price) and buy_price != 0:
-            pnl_pct = (current_close - buy_price) / buy_price * 100
+        if not pd.isna(cost_price) and cost_price != 0:
+            pnl_pct = (current_close - cost_price) / cost_price * 100
 
         atr_multiple_now = None
         if not pd.isna(atr_entry) and atr_entry > 0 and not pd.isna(buy_price):
@@ -673,7 +685,7 @@ if __name__ == "__main__":
             'trade_id': trade_id, 'market': market, 'code': code, 'name': display_name, 'tag': tag,
             'status': status, 'add_tag': add_tag,
             'close': current_close, 'trend_tag': trend_tag,
-            'buy_price': buy_price, 'pnl_pct': pnl_pct,
+            'buy_price': buy_price, 'cost_price': cost_price, 'has_avg': has_avg, 'pnl_pct': pnl_pct,
             'highest_price': df.at[idx, 'highest_price'], 'stop_price': cur_stop,
             'line_label': line_label,
             'gap_pct': gap_pct, 'atr_multiple_now': atr_multiple_now,
@@ -736,14 +748,16 @@ if __name__ == "__main__":
             exit10_mark = " ⚠️이탈" if r.get('exit10_hit') else ""
             exit20_mark = " ⚠️이탈" if r.get('exit20_hit') else ""
             add_line_txt = f"  {r['add_tag']}\n" if r.get('add_tag') else ""
+            avg_disp = f" / 평단 {fmt_num(r['cost_price'])}" if r.get('has_avg') else ""
+            pnl_basis = " 평단기준" if r.get('has_avg') else ""
             stophit_txt = ""
-            if is_stophit and not pd.isna(r['stop_price']) and not pd.isna(r['buy_price']) and r['buy_price'] != 0:
-                sig_pnl = (r['stop_price'] - r['buy_price']) / r['buy_price'] * 100
+            if is_stophit and not pd.isna(r['stop_price']) and not pd.isna(r['cost_price']) and r['cost_price'] != 0:
+                sig_pnl = (r['stop_price'] - r['cost_price']) / r['cost_price'] * 100
                 stophit_txt = (f"  신호선 {fmt_num(r['stop_price'])}에서 팔았다면 손익 {sig_pnl:+.2f}% / "
                                f"신호선 이탈 후 현재 {gap_txt}\n")
             lines.append(
                 f"- [{r['trade_id']}] {code_display} [{r['market']}] {r['tag']}\n"
-                f"  현재가 {fmt_num(r['close'])} {r['trend_tag']} / 매수가 {fmt_num(r['buy_price'])} (손익 {pnl_txt})\n"
+                f"  현재가 {fmt_num(r['close'])} {r['trend_tag']} / 매수가 {fmt_num(r['buy_price'])}{avg_disp} (손익 {pnl_txt}{pnl_basis})\n"
                 f"  최고가 {fmt_num(r['highest_price'])} / {r['line_label']} {fmt_num(r['stop_price'])} (괴리율 {gap_txt})\n"
                 f"{stophit_txt}"
                 f"  ATR배수 {atr_txt} (직전 마일스톤 {r['last_milestone']}배)\n"
