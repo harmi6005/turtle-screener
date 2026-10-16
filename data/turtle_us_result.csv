@@ -84,7 +84,7 @@ ECL,ECL,System1(단기),관심,False,False,False,True,286.36,295.95,271.0,0.994,
 ECL,ECL,System2(중장기),관심,False,False,False,True,286.36,295.95,267.46,0.994,5.45,,
 EMR,EMR,System1(단기),관심,False,False,False,True,159.43,165.24,156.25,0.993,3.87,,
 EQT,EQT,System1(단기),관심,False,False,False,True,54.15,54.6,49.33,0.996,1.35,,
-ERIE,ERIE,System1(단기),관심,False,False,False,True,240.63,242.67,217.14,0.994,7.07,,
+ERIE,ERIE,System1(단기),확정,False,False,False,True,240.63,242.67,217.14,0.994,7.07,,243.26
 EG,EG,System2(중장기),확정,True,True,False,False,387.3,386.87,361.25,1.002,7.03,,387.49
 EVRG,EVRG,System1(단기),관심,False,False,False,True,83.19,83.76,78.54,0.994,1.23,,
 P,P,System1(단기),청산,False,False,True,False,124.64,157.57,127.89,0.846,8.03,,
