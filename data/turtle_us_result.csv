@@ -77,7 +77,7 @@ ERIE,ERIE,System1(단기),관심,False,False,False,True,239.93,242.67,217.14,0.9
 EG,EG,System1(단기),확정,True,True,False,False,386.7,385.3,361.25,1.004,7.0,,386.87
 EG,EG,System2(중장기),확정,False,False,False,True,386.7,386.87,361.25,1.0,7.0,,386.87
 P,P,System1(단기),청산,False,False,True,False,127.59,157.57,127.89,0.846,7.95,,
-EXC,EXC,System1(단기),관심,False,False,False,True,43.12,43.42,40.24,0.994,0.69,,
+EXC,EXC,System1(단기),탈락,False,False,False,True,43.12,43.42,40.24,0.994,0.69,,
 EXE,EXE,System1(단기),확정,False,False,False,True,92.58,92.9,84.16,0.998,2.05,,92.95
 EXPD,EXPD,System1(단기),확정,True,True,False,False,199.33,199.11,190.01,1.008,3.98,,199.46
 EXPD,EXPD,System2(중장기),확정,True,True,False,False,199.33,199.11,183.36,1.008,3.98,,199.46
@@ -90,7 +90,7 @@ FTNT,FTNT,System1(단기),청산,False,False,True,False,172.25,197.13,178.27,0.9
 GM,GM,System1(단기),관심,False,False,False,True,85.64,86.49,77.97,0.991,2.19,,
 GPC,GPC,System1(단기),관심,False,False,False,True,134.76,135.5,123.85,0.999,3.0,,
 HAL,HAL,System1(단기),관심,False,False,False,True,33.46,33.97,31.42,0.992,0.79,,
-HIG,HIG,System1(단기),관심,False,False,False,True,134.29,134.66,124.76,0.999,2.36,,
+HIG,HIG,System1(단기),확정,False,False,False,True,134.29,134.66,124.76,0.999,2.36,,134.66
 HAS,HAS,System1(단기),관심,False,False,False,True,99.07,100.05,89.33,0.999,2.43,,
 HAS,HAS,System2(중장기),관심,False,False,False,True,99.07,100.05,85.37,0.999,2.43,,
 HSY,HSY,System1(단기),확정,True,True,False,False,170.7,170.5,158.78,1.005,3.14,,170.95
