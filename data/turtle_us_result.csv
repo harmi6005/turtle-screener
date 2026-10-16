@@ -11,7 +11,7 @@ AKAM,AKAM,System1(단기),청산,False,False,True,False,91.85,128.46,90.03,0.716
 AKAM,AKAM,System2(중장기),청산,False,False,True,False,91.85,128.46,90.03,0.716,6.95,,
 ALB,ALB,System1(단기),청산,False,False,True,False,98.18,117.59,96.01,0.837,3.58,,
 ALB,ALB,System2(중장기),청산,False,False,True,False,98.18,143.58,96.01,0.686,3.58,,
-ALLE,ALLE,System1(단기),관심,False,False,False,True,155.24,157.3,142.0,0.994,3.47,,
+ALLE,ALLE,System1(단기),탈락,False,False,False,True,155.24,157.3,142.0,0.994,3.47,,
 AXP,AXP,System1(단기),확정,False,False,False,True,314.39,315.76,296.28,0.996,5.51,,316.33
 AMT,AMT,System1(단기),탈락,False,False,False,True,180.52,184.75,160.3,1.0,4.33,,
 AMT,AMT,System2(중장기),탈락,False,False,False,True,180.52,184.75,160.3,1.0,4.33,,
@@ -229,7 +229,7 @@ TER,TER,System1(단기),청산,False,False,True,False,342.62,451.86,354.74,0.762
 TER,TER,System2(중장기),청산,False,False,True,False,342.62,451.86,350.0,0.762,20.09,,
 TXN,TXN,System1(단기),청산,False,False,True,False,280.28,298.75,277.06,0.946,7.94,,
 TJX,TJX,System1(단기),확정,True,True,False,False,144.27,144.05,131.44,1.017,2.91,,144.26
-TSCO,TSCO,System1(단기),관심,False,False,False,True,33.01,34.03,30.53,0.991,0.99,,
+TSCO,TSCO,System1(단기),확정,False,False,False,True,33.01,34.03,30.53,0.991,0.99,,34.1
 TDG,TDG,System1(단기),확정,True,True,False,False,1134.51,1129.21,1078.0,1.006,23.34,,1134.82
 TRMB,TRMB,System1(단기),확정,False,False,False,True,60.81,61.48,57.17,0.993,1.57,,61.63
 TWLO,TWLO,System1(단기),청산,False,False,True,False,273.83,308.4,269.66,0.889,16.28,,
