@@ -51,8 +51,8 @@ ED,ED,System2(중장기),관심,False,False,False,True,111.4,111.78,102.0,0.997,
 COO,COO,System1(단기),확정,True,True,False,False,57.75,57.69,53.71,1.01,1.43,,57.84
 CRWD,CRWD,System1(단기),청산,False,False,True,False,230.35,286.99,239.82,0.864,11.37,,
 CRWD,CRWD,System2(중장기),청산,False,False,True,False,230.35,286.99,230.85,0.864,11.37,,
-CCI,CCI,System1(단기),관심,False,False,False,True,81.47,82.28,65.32,0.991,2.42,,
-CCI,CCI,System2(중장기),관심,False,False,False,True,81.47,82.28,65.32,0.991,2.42,,
+CCI,CCI,System1(단기),확정,False,False,False,True,81.47,82.28,65.32,0.991,2.42,,82.36
+CCI,CCI,System2(중장기),확정,False,False,False,True,81.47,82.28,65.32,0.991,2.42,,82.36
 CMI,CMI,System1(단기),관심,False,False,False,True,535.68,540.49,512.02,0.996,12.4,,
 DHR,DHR,System1(단기),관심,False,False,False,True,229.88,233.02,211.72,0.995,6.26,,
 DHR,DHR,System2(중장기),관심,False,False,False,True,229.88,233.02,209.23,0.995,6.26,,
