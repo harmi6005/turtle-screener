@@ -330,7 +330,7 @@ MRNA,MRNA,System1(단기),확정,True,True,False,False,212.58,212.22,182.5,1.022
 MRNA,MRNA,System2(중장기),확정,True,True,False,False,212.58,212.22,135.01,1.022,14.42,,212.85
 ADI,ADI,System1(단기),확정,False,False,False,True,416.86,421.7,370.97,0.994,11.11,,421.83
 ADI,ADI,System2(중장기),확정,False,False,False,True,416.86,421.7,356.12,0.994,11.11,,421.83
-CRWD,CRWD,System2(중장기),확정,False,False,False,True,273.02,273.54,204.27,0.999,11.3,,273.73
+CRWD,CRWD,System2(중장기),확정이탈,False,False,False,True,273.02,273.54,204.27,0.999,11.3,,273.73
 RVTY,RVTY,System1(단기),확정,False,False,False,True,152.17,152.26,128.67,1.0,4.86,,152.42
 RVTY,RVTY,System2(중장기),확정,False,False,False,True,152.17,152.26,120.9,1.0,4.86,,152.42
 WAT,WAT,System1(단기),확정,False,False,False,True,441.45,445.48,411.89,0.996,11.69,,445.54
