@@ -1,8 +1,8 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 000157,두산2우B,System1(단기),청산,False,False,True,False,302000.0,405000.0,282000.0,0.749,21012.5,,
 000157,두산2우B,System2(중장기),청산,False,False,True,False,302000.0,405000.0,282000.0,0.749,21012.5,,
-000080,하이트진로,System1(단기),관심,False,False,False,True,15820.0,15980.0,14680.0,0.994,306.0,,
-000080,하이트진로,System2(중장기),관심,False,False,False,True,15820.0,15980.0,14670.0,0.994,306.0,,
+000080,하이트진로,System1(단기),탈락,False,False,False,True,15820.0,15980.0,14680.0,0.994,306.0,,
+000080,하이트진로,System2(중장기),탈락,False,False,False,True,15820.0,15980.0,14670.0,0.994,306.0,,
 000100,유한양행,System2(중장기),관심,False,False,False,True,86700.0,87500.0,69000.0,0.995,2790.0,,
 000155,두산우,System1(단기),청산,False,False,True,False,354500.0,509000.0,328000.0,0.707,28375.0,,
 000155,두산우,System2(중장기),청산,False,False,True,False,354500.0,509000.0,328000.0,0.707,28375.0,,
@@ -35,7 +35,7 @@
 001770,SHD,System2(중장기),청산,False,False,True,False,3925.0,18630.0,0.0,0.0,3042.25,,
 002100,경농,System1(단기),청산,False,False,True,False,9010.0,9230.0,8860.0,0.976,134.5,,
 002100,경농,System2(중장기),청산,False,False,True,False,9010.0,10070.0,8860.0,0.895,134.5,,
-002350,넥센타이어,System1(단기),관심,False,False,False,True,5960.0,5970.0,5580.0,0.998,152.5,,
+002350,넥센타이어,System1(단기),확정,False,False,False,True,5960.0,5970.0,5580.0,0.998,152.5,,5970.0
 002355,넥센타이어1우B,System1(단기),청산,False,False,True,False,3880.0,4000.0,3875.0,0.986,57.25,,
 002355,넥센타이어1우B,System2(중장기),청산,False,False,True,False,3880.0,4000.0,3875.0,0.986,57.25,,
 002380,KCC,System1(단기),청산,False,False,True,False,421500.0,487500.0,410000.0,0.874,16425.0,,
