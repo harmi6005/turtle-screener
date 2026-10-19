@@ -8,7 +8,7 @@ ABNB,ABNB,System1(단기),관심,False,False,False,True,175.21,176.98,158.66,0.9
 ARE,ARE,System1(단기),청산,False,False,True,False,40.23,53.89,41.02,0.769,1.61,,
 ARE,ARE,System2(중장기),청산,False,False,True,False,40.23,56.43,41.02,0.734,1.61,,
 LNT,LNT,System1(단기),관심,False,False,False,True,67.11,68.44,63.97,0.997,1.12,,
-AMZN,AMZN,System1(단기),관심,False,False,False,True,262.04,263.7,248.6,0.999,6.1,,
+AMZN,AMZN,System1(단기),탈락,False,False,False,True,262.04,263.7,248.6,0.999,6.1,,
 AMCR,AMCR,System1(단기),관심,False,False,False,True,44.28,44.54,40.79,0.998,0.9,,
 AEE,AEE,System1(단기),관심,False,False,False,True,104.39,106.34,99.22,0.993,1.61,,
 AEP,AEP,System1(단기),관심,False,False,False,True,125.06,128.14,118.63,0.994,2.12,,
