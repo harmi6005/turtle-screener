@@ -174,7 +174,7 @@ V,V,System2(중장기),관심,False,False,False,True,403.7,404.74,356.75,0.998,7
 VMC,VMC,System1(단기),관심,False,False,False,True,257.42,259.62,238.38,0.999,6.37,,
 WRB,WRB,System1(단기),관심,False,False,False,True,73.96,75.83,68.68,0.995,1.43,,
 WRB,WRB,System2(중장기),관심,False,False,False,True,73.96,75.83,66.26,0.995,1.43,,
-WM,WM,System1(단기),관심,False,False,False,True,226.57,227.16,202.53,0.998,3.48,,
+WM,WM,System1(단기),탈락,False,False,False,True,226.57,227.16,202.53,0.998,3.48,,
 WEC,WEC,System1(단기),관심,False,False,False,True,107.12,109.07,100.85,0.995,1.75,,
 WTW,WTW,System1(단기),관심,False,False,False,True,314.51,316.91,283.42,0.998,6.86,,
 XEL,XEL,System1(단기),관심,False,False,False,True,75.25,76.54,70.76,0.998,1.25,,
