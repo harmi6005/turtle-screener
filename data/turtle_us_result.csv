@@ -71,7 +71,7 @@ DELL,DELL,System1(단기),청산,False,False,True,False,458.2,595.51,452.42,0.79
 DELL,DELL,System2(중장기),청산,False,False,True,False,458.2,595.51,452.42,0.795,28.95,,
 DAL,DAL,System1(단기),청산,False,False,True,False,75.11,85.93,75.54,0.919,2.61,,
 DAL,DAL,System2(중장기),청산,False,False,True,False,75.11,94.74,75.54,0.834,2.61,,
-DVN,DVN,System1(단기),관심,False,False,False,True,50.54,50.76,45.75,1.0,1.41,,
+DVN,DVN,System1(단기),탈락,False,False,False,True,50.54,50.76,45.75,1.0,1.41,,
 DLTR,DLTR,System1(단기),탈락,False,False,False,True,123.71,127.0,111.12,0.995,3.52,,
 D,D,System1(단기),탈락,False,False,False,True,63.69,64.45,60.55,0.992,1.08,,
 DOV,DOV,System1(단기),확정,True,True,False,False,195.12,194.77,186.65,1.014,3.63,,195.26
