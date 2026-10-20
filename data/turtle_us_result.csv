@@ -9,7 +9,7 @@ AMD,AMD,System2(중장기),청산,False,False,True,False,541.03,658.52,526.83,0.
 AES,AES,System1(단기),관심,False,False,False,True,14.96,15.0,14.88,0.999,0.05,,
 AES,AES,System2(중장기),관심,False,False,False,True,14.96,15.0,14.8,0.999,0.05,,
 AFL,AFL,System1(단기),관심,False,False,False,True,119.5,120.67,112.02,0.999,2.02,,
-APD,APD,System1(단기),관심,False,False,False,True,298.57,301.54,274.82,0.999,4.97,,
+APD,APD,System1(단기),확정,False,False,False,True,298.57,301.54,274.82,0.999,4.97,,301.56
 ABNB,ABNB,System1(단기),확정,True,True,False,False,177.05,176.98,158.66,1.012,5.03,,177.1
 AKAM,AKAM,System1(단기),청산,False,False,True,False,89.56,128.46,86.16,0.705,6.45,,
 AKAM,AKAM,System2(중장기),청산,False,False,True,False,89.56,128.46,86.16,0.705,6.45,,
