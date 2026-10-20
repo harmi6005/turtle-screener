@@ -177,8 +177,8 @@ TRV,TRV,System1(단기),확정,False,False,False,True,385.45,390.91,357.09,0.998
 TRV,TRV,System2(중장기),확정,False,False,False,True,385.45,390.91,353.79,0.998,7.38,,391.48
 UAL,UAL,System1(단기),청산,False,False,True,False,95.6,118.26,96.07,0.83,4.03,,
 UAL,UAL,System2(중장기),청산,False,False,True,False,95.6,135.37,96.07,0.725,4.03,,
-VEEV,VEEV,System1(단기),관심,False,False,False,True,316.8,319.95,274.0,0.995,9.84,,
-VEEV,VEEV,System2(중장기),관심,False,False,False,True,316.8,319.95,257.87,0.995,9.84,,
+VEEV,VEEV,System1(단기),탈락,False,False,False,True,316.8,319.95,274.0,0.995,9.84,,
+VEEV,VEEV,System2(중장기),탈락,False,False,False,True,316.8,319.95,257.87,0.995,9.84,,
 VRSN,VRSN,System1(단기),탈락,False,False,False,True,306.48,310.0,287.12,0.992,7.39,,
 VRSN,VRSN,System2(중장기),탈락,False,False,False,True,306.48,310.0,275.23,0.992,7.39,,
 V,V,System1(단기),확정,False,False,False,True,402.92,404.74,359.05,0.998,7.01,,406.09
