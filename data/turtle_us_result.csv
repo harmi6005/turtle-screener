@@ -44,7 +44,7 @@ BG,BG,System1(단기),청산,False,False,True,False,102.68,113.56,102.6,0.913,2.
 BG,BG,System2(중장기),청산,False,False,True,False,102.68,127.47,102.6,0.813,2.96,,
 CPT,CPT,System1(단기),확정,True,True,False,False,99.27,99.08,95.3,1.011,1.74,,99.26
 CAH,CAH,System2(중장기),관심,False,False,False,True,254.79,257.7,216.2,0.995,5.76,,
-CBOE,CBOE,System1(단기),관심,False,False,False,True,315.41,315.56,271.6,1.0,12.06,,
+CBOE,CBOE,System1(단기),탈락,False,False,False,True,315.41,315.56,271.6,1.0,12.06,,
 CBOE,CBOE,System2(중장기),관심,False,False,False,True,315.41,316.86,252.82,0.996,12.06,,
 COR,COR,System1(단기),관심,False,False,False,True,342.32,345.46,311.83,0.999,7.42,,
 COR,COR,System2(중장기),관심,False,False,False,True,342.32,345.46,295.01,0.999,7.42,,
