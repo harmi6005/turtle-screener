@@ -170,7 +170,7 @@ LUV,LUV,System1(단기),청산,False,False,True,False,38.8,43.2,39.09,0.926,1.26
 LUV,LUV,System2(중장기),청산,False,False,True,False,38.8,49.5,39.09,0.809,1.26,,
 STLD,STLD,System1(단기),탈락,False,False,False,True,245.17,248.92,232.97,0.999,6.63,,
 TRGP,TRGP,System1(단기),관심,False,False,False,True,292.8,296.78,277.13,0.998,7.7,,
-TDY,TDY,System1(단기),관심,False,False,False,True,619.76,626.76,599.73,0.996,11.14,,
+TDY,TDY,System1(단기),확정,False,False,False,True,619.76,626.76,599.73,0.996,11.14,,626.97
 TXN,TXN,System1(단기),청산,False,False,True,False,276.15,298.75,273.59,0.948,8.02,,
 TDG,TDG,System1(단기),탈락,False,False,False,True,1142.45,1158.04,1078.0,0.99,23.41,,
 TRV,TRV,System1(단기),확정,False,False,False,True,385.45,390.91,357.09,0.998,7.38,,391.48
@@ -183,7 +183,7 @@ VRSN,VRSN,System1(단기),탈락,False,False,False,True,306.48,310.0,287.12,0.99
 VRSN,VRSN,System2(중장기),탈락,False,False,False,True,306.48,310.0,275.23,0.992,7.39,,
 V,V,System1(단기),확정,False,False,False,True,402.92,404.74,359.05,0.998,7.01,,406.09
 V,V,System2(중장기),확정,False,False,False,True,402.92,404.74,356.75,0.998,7.01,,406.09
-VMC,VMC,System1(단기),관심,False,False,False,True,257.45,259.62,238.38,0.999,6.37,,
+VMC,VMC,System1(단기),확정,False,False,False,True,257.45,259.62,238.38,0.999,6.37,,259.93
 WRB,WRB,System1(단기),탈락,False,False,False,True,74.08,75.83,68.68,0.995,1.43,,
 WRB,WRB,System2(중장기),탈락,False,False,False,True,74.08,75.83,66.26,0.995,1.43,,
 WEC,WEC,System1(단기),탈락,False,False,False,True,107.0,109.07,100.85,0.995,1.77,,
