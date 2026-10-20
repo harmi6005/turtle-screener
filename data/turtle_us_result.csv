@@ -57,8 +57,8 @@ SCHW,SCHW,System2(중장기),청산,False,False,True,False,90.79,114.53,89.4,0.7
 CIEN,CIEN,System1(단기),청산,False,False,True,False,341.92,454.73,330.99,0.77,25.46,,
 CIEN,CIEN,System2(중장기),청산,False,False,True,False,341.92,462.69,330.99,0.757,25.46,,
 CINF,CINF,System1(단기),확정,True,True,False,False,171.74,171.29,161.46,1.009,2.74,,171.67
-CTAS,CTAS,System1(단기),관심,False,False,False,True,215.26,216.8,194.22,0.997,3.96,,
-CTAS,CTAS,System2(중장기),관심,False,False,False,True,215.26,216.8,191.09,0.997,3.96,,
+CTAS,CTAS,System1(단기),확정,False,False,False,True,215.26,216.8,194.22,0.997,3.96,,217.03
+CTAS,CTAS,System2(중장기),확정,False,False,False,True,215.26,216.8,191.09,0.997,3.96,,217.03
 CSCO,CSCO,System1(단기),청산,False,False,True,False,106.42,118.65,106.41,0.902,2.7,,
 C,C,System1(단기),청산,False,False,True,False,122.43,135.17,120.2,0.916,3.19,,
 C,C,System2(중장기),청산,False,False,True,False,122.43,141.27,120.2,0.876,3.19,,
