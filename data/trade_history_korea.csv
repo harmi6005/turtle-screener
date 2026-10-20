@@ -42,3 +42,4 @@ code,system,direction,last_result,skip_active,skip_price
 214430,System1(단기),long,win,True,64700.0
 199730,System1(단기),long,win,True,2575.0
 032685,System1(단기),long,loss,False,
+054950,System1(단기),long,loss,False,
