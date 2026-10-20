@@ -77,7 +77,7 @@ CSX,CSX,System1(단기),탈락,False,False,False,True,47.88,49.22,46.76,0.996,0.
 CMI,CMI,System1(단기),탈락,False,False,False,True,522.13,540.49,512.02,0.993,12.61,,
 CVS,CVS,System1(단기),확정,False,False,False,True,92.68,93.35,85.53,0.993,2.2,,93.44
 DRI,DRI,System1(단기),탈락,False,False,False,True,216.24,218.93,195.21,0.99,5.04,,
-DVA,DVA,System1(단기),관심,False,False,False,True,187.0,189.91,175.41,0.994,4.34,,
+DVA,DVA,System1(단기),확정,False,False,False,True,187.0,189.91,175.41,0.994,4.34,,190.68
 DELL,DELL,System1(단기),청산,False,False,True,False,455.44,595.06,450.0,0.793,28.93,,
 DELL,DELL,System2(중장기),청산,False,False,True,False,455.44,595.51,450.0,0.792,28.93,,
 DAL,DAL,System1(단기),청산,False,False,True,False,74.63,85.93,75.06,0.894,2.58,,
