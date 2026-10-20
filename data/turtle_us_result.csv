@@ -21,9 +21,9 @@ ADI,ADI,System1(단기),청산,False,False,True,False,394.35,422.67,394.18,0.963
 AAPL,AAPL,System1(단기),탈락,False,False,False,True,342.94,348.15,330.62,0.994,6.46,,
 AAPL,AAPL,System2(중장기),탈락,False,False,False,True,342.94,348.15,325.81,0.994,6.46,,
 ACGL,ACGL,System1(단기),확정,False,False,False,True,100.48,101.58,93.19,0.998,1.83,,101.76
-ACGL,ACGL,System2(중장기),관심,False,False,False,True,100.48,101.96,92.28,0.994,1.83,,
+ACGL,ACGL,System2(중장기),확정,False,False,False,True,100.48,101.96,92.28,0.994,1.83,,101.98
 AJG,AJG,System1(단기),탈락,False,False,False,True,253.01,255.4,219.65,0.995,6.26,,
-AIZ,AIZ,System1(단기),관심,False,False,False,True,280.56,285.67,265.0,0.991,5.7,,
+AIZ,AIZ,System1(단기),탈락,False,False,False,True,280.56,285.67,265.0,0.991,5.7,,
 ATO,ATO,System1(단기),관심,False,False,False,True,164.74,167.81,156.09,0.995,2.33,,
 ADP,ADP,System1(단기),확정,False,False,False,True,287.03,290.12,255.96,0.995,5.56,,290.44
 ADP,ADP,System2(중장기),확정,False,False,False,True,287.03,290.12,255.96,0.995,5.56,,290.44
@@ -41,7 +41,7 @@ BR,BR,System1(단기),탈락,False,False,False,True,175.12,175.96,155.68,0.996,3
 BRO,BRO,System1(단기),탈락,False,False,False,True,69.22,69.47,59.3,0.999,1.71,,
 BG,BG,System1(단기),청산,False,False,True,False,103.11,117.15,102.62,0.908,3.08,,
 BG,BG,System2(중장기),청산,False,False,True,False,103.11,127.47,102.62,0.834,3.08,,
-CPT,CPT,System1(단기),관심,False,False,False,True,97.85,99.08,95.3,0.996,1.67,,
+CPT,CPT,System1(단기),확정,False,False,False,True,97.85,99.08,95.3,0.996,1.67,,99.42
 CAH,CAH,System1(단기),관심,False,False,False,True,252.65,255.56,228.59,0.996,5.92,,
 CASY,CASY,System1(단기),탈락,True,True,False,False,693.73,691.29,600.31,1.014,16.75,,
 COR,COR,System1(단기),관심,False,False,False,True,340.0,345.46,307.87,0.991,7.45,,
@@ -104,7 +104,7 @@ HAL,HAL,System1(단기),탈락,False,False,False,True,32.98,33.75,31.42,0.991,0.
 HIG,HIG,System1(단기),확정,False,False,False,True,134.33,135.22,125.69,1.0,2.39,,135.76
 HSIC,HSIC,System1(단기),탈락,False,False,False,True,83.97,88.13,79.37,0.991,2.09,,
 HSY,HSY,System1(단기),탈락,False,False,False,True,167.0,172.12,159.22,0.99,3.21,,
-HD,HD,System1(단기),관심,False,False,False,True,309.88,314.66,279.76,0.99,6.7,,
+HD,HD,System1(단기),확정,False,False,False,True,309.88,314.66,279.76,0.99,6.7,,315.82
 HONA,HONA,System1(단기),탈락,False,False,False,True,162.49,170.32,149.88,0.995,5.1,,
 HRL,HRL,System1(단기),관심,False,False,False,True,20.35,20.64,18.77,0.99,0.45,,
 IDXX,IDXX,System1(단기),탈락,False,False,False,True,555.8,566.55,501.17,0.995,12.59,,
@@ -159,7 +159,7 @@ RSG,RSG,System1(단기),확정,False,False,False,True,229.03,232.02,208.34,0.996
 RSG,RSG,System2(중장기),확정,False,False,False,True,229.03,232.02,205.86,0.996,3.6,,232.45
 RMD,RMD,System1(단기),탈락,False,False,False,True,239.77,242.63,218.44,0.99,5.01,,
 RMD,RMD,System2(중장기),탈락,False,False,False,True,239.77,242.63,218.03,0.99,5.01,,
-ROST,ROST,System1(단기),관심,False,False,False,True,238.66,241.23,220.1,0.996,5.06,,
+ROST,ROST,System1(단기),탈락,False,False,False,True,238.66,241.23,220.1,0.996,5.06,,
 SPGI,SPGI,System1(단기),탈락,False,False,False,True,427.83,433.67,384.0,0.99,8.24,,
 SBAC,SBAC,System1(단기),탈락,False,False,False,True,183.09,188.19,156.6,0.991,5.68,,
 SRE,SRE,System1(단기),탈락,False,False,False,True,81.74,83.53,77.62,0.996,1.39,,
