@@ -230,7 +230,7 @@ TER,TER,System1(단기),청산,False,False,True,False,338.02,451.86,324.09,0.759
 TER,TER,System2(중장기),청산,False,False,True,False,338.02,451.86,324.09,0.759,20.17,,
 TXN,TXN,System1(단기),청산,False,False,True,False,278.64,298.75,272.07,0.945,8.33,,
 TDG,TDG,System1(단기),관심,False,False,False,True,1140.28,1158.04,1082.04,0.995,22.8,,
-TRMB,TRMB,System1(단기),관심,False,False,False,True,61.46,61.74,58.54,0.996,1.62,,
+TRMB,TRMB,System1(단기),확정,False,False,False,True,61.46,61.74,58.54,0.996,1.62,,61.74
 TRMB,TRMB,System2(중장기),관심,False,False,False,True,61.46,62.0,56.01,0.992,1.62,,
 UNP,UNP,System1(단기),관심,False,False,False,True,287.75,291.93,274.22,0.994,3.95,,
 UAL,UAL,System1(단기),청산,False,False,True,False,97.87,118.26,95.27,0.861,4.19,,
