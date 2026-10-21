@@ -225,8 +225,8 @@ VTRS,VTRS,System1(단기),관심,False,False,False,True,18.61,18.75,16.89,0.997,
 VTRS,VTRS,System2(중장기),관심,False,False,False,True,18.61,18.75,16.89,0.997,0.51,,
 V,V,System1(단기),확정,True,True,False,False,409.15,408.59,369.6,1.002,6.63,,409.02
 V,V,System2(중장기),확정,True,True,False,False,409.15,408.59,356.75,1.002,6.63,,409.02
-GWW,GWW,System1(단기),관심,False,False,False,True,1342.34,1355.0,1258.59,0.993,26.0,,
-GWW,GWW,System2(중장기),관심,False,False,False,True,1342.34,1355.0,1236.29,0.993,26.0,,
+GWW,GWW,System1(단기),탈락,False,False,False,True,1342.34,1355.0,1258.59,0.993,26.0,,
+GWW,GWW,System2(중장기),탈락,False,False,False,True,1342.34,1355.0,1236.29,0.993,26.0,,
 DIS,DIS,System1(단기),관심,False,False,False,True,111.03,112.69,102.62,0.991,1.99,,
 DIS,DIS,System2(중장기),관심,False,False,False,True,111.03,112.69,101.15,0.991,1.99,,
 WM,WM,System1(단기),관심,False,False,False,True,229.78,232.16,207.3,0.995,3.66,,
