@@ -202,8 +202,8 @@ SYK,SYK,System1(단기),관심,False,False,False,True,294.4,305.03,271.67,0.996,
 SYY,SYY,System1(단기),관심,False,False,False,True,81.88,83.15,76.56,0.998,1.37,,
 TRGP,TRGP,System1(단기),탈락,True,True,False,False,297.15,296.78,277.13,1.002,7.22,,
 TXT,TXT,System1(단기),관심,False,False,False,True,76.86,78.2,71.87,0.994,1.68,,
-TMO,TMO,System1(단기),관심,False,False,False,True,700.58,704.0,635.32,0.998,20.73,,
-TMO,TMO,System2(중장기),관심,False,False,False,True,700.58,704.0,635.32,0.998,20.73,,
+TMO,TMO,System1(단기),확정,False,False,False,True,700.58,704.0,635.32,0.998,20.73,,704.84
+TMO,TMO,System2(중장기),확정,False,False,False,True,700.58,704.0,635.32,0.998,20.73,,704.84
 TJX,TJX,System1(단기),관심,False,False,False,True,147.01,148.57,136.52,0.99,2.72,,
 TDG,TDG,System1(단기),관심,False,False,False,True,1137.79,1158.04,1082.04,0.997,22.64,,
 TRV,TRV,System1(단기),확정,True,True,False,False,397.48,396.46,357.09,1.005,7.12,,397.39
