@@ -92,7 +92,7 @@ D,D,System1(단기),관심,False,False,False,True,62.45,63.92,61.0,0.993,1.09,,
 DPZ,DPZ,System1(단기),관심,False,False,False,True,310.85,317.05,283.0,0.997,9.38,,
 DOW,DOW,System1(단기),관심,False,False,False,True,30.01,30.78,27.63,0.994,0.76,,
 DTE,DTE,System1(단기),관심,False,False,False,True,129.43,130.25,126.08,0.997,2.11,,
-EIX,EIX,System1(단기),관심,False,False,False,True,56.73,57.12,51.53,0.998,1.49,,
+EIX,EIX,System1(단기),탈락,False,False,False,True,56.73,57.12,51.53,0.998,1.49,,
 EME,EME,System1(단기),청산,False,False,True,False,688.39,833.78,691.09,0.866,26.85,,
 EME,EME,System2(중장기),청산,False,False,True,False,688.39,864.37,691.09,0.835,26.85,,
 ETR,ETR,System1(단기),확정,True,True,False,False,106.07,105.96,101.74,1.005,1.89,,106.14
