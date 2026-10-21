@@ -125,8 +125,8 @@ GEHC,GEHC,System1(단기),탈락,False,False,False,True,70.34,71.32,63.31,0.996,
 GM,GM,System1(단기),청산,False,False,True,False,75.51,85.79,80.11,0.92,2.42,,
 GM,GM,System2(중장기),청산,False,False,True,False,75.51,90.11,76.44,0.876,2.42,,
 GPN,GPN,System1(단기),탈락,False,False,False,True,85.15,86.77,79.35,0.995,2.31,,
-GDDY,GDDY,System1(단기),관심,False,False,False,True,109.46,110.35,96.74,0.994,3.95,,
-GDDY,GDDY,System2(중장기),관심,False,False,False,True,109.46,110.35,91.84,0.994,3.95,,
+GDDY,GDDY,System1(단기),확정,False,False,False,True,109.46,110.35,96.74,0.994,3.95,,110.41
+GDDY,GDDY,System2(중장기),확정,False,False,False,True,109.46,110.35,91.84,0.994,3.95,,110.41
 HIG,HIG,System1(단기),확정,True,True,False,False,135.82,135.22,125.83,1.014,2.42,,135.86
 HPE,HPE,System1(단기),청산,False,False,True,False,56.37,73.56,54.72,0.769,3.76,,
 HPE,HPE,System2(중장기),청산,False,False,True,False,56.37,73.56,54.72,0.769,3.76,,
