@@ -1,5 +1,5 @@
 code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-MMM,MMM,System1(단기),관심,False,False,False,True,170.72,172.95,159.21,0.999,3.84,,
+MMM,MMM,System1(단기),탈락,False,False,False,True,170.72,172.95,159.21,0.999,3.84,,
 ABBV,ABBV,System1(단기),관심,False,False,False,True,283.39,291.4,264.09,0.992,6.43,,
 ABBV,ABBV,System2(중장기),관심,False,False,False,True,283.39,291.4,256.3,0.992,6.43,,
 ACN,ACN,System1(단기),관심,False,False,False,True,241.4,243.67,191.68,0.995,9.53,,
