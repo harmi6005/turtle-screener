@@ -10,7 +10,7 @@ ABNB,ABNB,System1(단기),관심,False,False,False,True,175.26,179.13,158.66,0.9
 ALB,ALB,System1(단기),청산,False,False,True,False,93.47,115.08,93.8,0.839,3.39,,
 ALB,ALB,System2(중장기),청산,False,False,True,False,93.47,143.58,93.8,0.672,3.39,,
 ALGN,ALGN,System1(단기),관심,False,False,False,True,151.26,153.4,138.05,0.999,3.83,,
-ALLE,ALLE,System1(단기),관심,False,False,False,True,156.1,157.99,142.0,0.997,3.44,,
+ALLE,ALLE,System1(단기),확정,False,False,False,True,156.1,157.99,142.0,0.997,3.44,,158.48
 LNT,LNT,System1(단기),확정,True,True,False,False,68.45,68.44,64.86,1.005,1.15,,68.52
 ALL,ALL,System1(단기),관심,False,False,False,True,250.51,253.95,223.53,0.991,4.88,,
 GOOGL,GOOGL,System1(단기),청산,False,False,True,False,333.32,359.4,338.36,0.938,8.26,,
