@@ -166,7 +166,7 @@ NWS,NWS,System1(단기),관심,False,False,False,True,33.39,33.72,31.22,0.999,0.
 NEE,NEE,System1(단기),관심,False,False,False,True,78.26,80.27,76.43,0.995,1.4,,
 NKE,NKE,System1(단기),관심,False,False,False,True,37.48,38.14,33.81,0.995,1.11,,
 NSC,NSC,System1(단기),관심,False,False,False,True,327.5,329.2,311.7,0.998,4.47,,
-NUE,NUE,System1(단기),관심,False,False,False,True,262.88,265.83,244.9,0.995,6.91,,
+NUE,NUE,System1(단기),탈락,False,False,False,True,262.88,265.83,244.9,0.995,6.91,,
 OXY,OXY,System1(단기),관심,False,False,False,True,62.83,63.63,57.72,0.991,1.5,,
 ODFL,ODFL,System1(단기),관심,False,False,False,True,189.3,191.17,175.42,0.993,4.33,,
 OKE,OKE,System1(단기),관심,False,False,False,True,93.08,94.08,87.16,0.995,2.24,,
