@@ -196,7 +196,7 @@ NOW,NOW,System2(중장기),관심,False,False,False,True,153.1,154.2,126.75,0.99
 SJM,SJM,System1(단기),관심,False,False,False,True,127.79,129.86,115.66,0.996,2.68,,
 SNA,SNA,System1(단기),관심,False,False,False,True,368.13,372.86,355.36,0.992,5.41,,
 SO,SO,System1(단기),관심,False,False,False,True,90.61,91.22,84.95,0.998,1.42,,
-STLD,STLD,System1(단기),관심,False,False,False,True,244.92,248.92,231.25,0.994,7.12,,
+STLD,STLD,System1(단기),확정,False,False,False,True,244.92,248.92,231.25,0.994,7.12,,248.96
 STE,STE,System1(단기),관심,False,False,False,True,222.11,226.72,207.96,0.998,4.42,,
 SYK,SYK,System1(단기),관심,False,False,False,True,294.4,305.03,271.67,0.996,7.77,,
 SYY,SYY,System1(단기),관심,False,False,False,True,81.88,83.15,76.56,0.998,1.37,,
