@@ -36,7 +36,7 @@ T,T,System1(단기),청산,False,False,True,False,21.82,25.52,21.96,0.886,0.63,,
 T,T,System2(중장기),청산,False,False,True,False,21.82,26.63,21.96,0.849,0.63,,
 ADP,ADP,System1(단기),확정,True,True,False,False,295.39,294.27,262.16,1.005,5.49,,295.38
 ADP,ADP,System2(중장기),확정,True,True,False,False,295.39,294.27,255.96,1.005,5.49,,295.38
-AVY,AVY,System1(단기),관심,False,False,False,True,178.46,178.85,164.1,0.999,3.46,,
+AVY,AVY,System1(단기),확정,False,False,False,True,178.46,178.85,164.1,0.999,3.46,,178.97
 BALL,BALL,System1(단기),관심,False,False,False,True,64.07,64.38,56.9,1.0,1.39,,
 BALL,BALL,System2(중장기),관심,False,False,False,True,64.07,64.71,55.11,0.995,1.39,,
 BDX,BDX,System1(단기),관심,False,False,False,True,193.79,195.99,177.92,0.996,4.05,,
