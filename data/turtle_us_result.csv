@@ -237,8 +237,8 @@ WSM,WSM,System1(단기),관심,False,False,False,True,253.38,256.86,234.12,0.992
 WSM,WSM,System2(중장기),관심,False,False,False,True,253.38,256.86,224.54,0.992,6.4,,
 WTW,WTW,System1(단기),관심,False,False,False,True,317.98,322.44,289.59,0.994,6.71,,
 YUM,YUM,System1(단기),관심,False,False,False,True,150.56,152.42,139.8,0.99,2.68,,
-ZBRA,ZBRA,System1(단기),관심,False,False,False,True,389.19,390.8,365.76,0.998,9.61,,
-ZBRA,ZBRA,System2(중장기),관심,False,False,False,True,389.19,390.8,360.51,0.998,9.61,,
+ZBRA,ZBRA,System1(단기),탈락,False,False,False,True,389.19,390.8,365.76,0.998,9.61,,
+ZBRA,ZBRA,System2(중장기),탈락,False,False,False,True,389.19,390.8,360.51,0.998,9.61,,
 ZTS,ZTS,System1(단기),관심,False,False,False,True,79.26,80.59,71.12,0.992,1.82,,
 ZTS,ZTS,System2(중장기),관심,False,False,False,True,79.26,80.59,68.77,0.992,1.82,,
 APD,APD,System1(단기),확정,False,False,False,True,298.57,301.54,274.82,0.999,4.97,,301.56
