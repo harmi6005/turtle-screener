@@ -130,7 +130,7 @@ HD,HD,System1(단기),관심,False,False,False,True,313.8,317.71,282.84,0.996,6.
 HON,HON,System1(단기),관심,False,False,False,True,213.84,216.13,204.23,0.997,4.01,,
 HRL,HRL,System1(단기),관심,False,False,False,True,20.33,20.64,18.77,0.992,0.42,,
 HST,HST,System2(중장기),확정,True,True,False,False,25.11,25.1,21.76,1.004,0.5,,25.16
-HBAN,HBAN,System1(단기),관심,False,False,False,True,15.65,15.74,14.92,0.999,0.31,,
+HBAN,HBAN,System1(단기),탈락,False,False,False,True,15.65,15.74,14.92,0.999,0.31,,
 ITW,ITW,System1(단기),확정,True,True,False,False,276.46,276.19,259.09,1.002,5.26,,276.73
 IFF,IFF,System1(단기),관심,False,False,False,True,90.62,92.02,83.02,0.995,1.71,,
 IFF,IFF,System2(중장기),관심,False,False,False,True,90.62,92.02,81.54,0.995,1.71,,
@@ -177,7 +177,7 @@ PFE,PFE,System2(중장기),관심,False,False,False,True,29.74,30.25,27.12,0.995
 PM,PM,System1(단기),청산,False,False,True,False,197.13,210.45,190.39,0.94,5.33,,
 PM,PM,System2(중장기),청산,False,False,True,False,197.13,210.45,184.11,0.94,5.33,,
 PNC,PNC,System1(단기),관심,False,False,False,True,222.98,225.63,208.49,0.99,4.24,,
-PPG,PPG,System1(단기),관심,False,False,False,True,109.02,110.0,102.75,0.994,2.15,,
+PPG,PPG,System1(단기),탈락,False,False,False,True,109.02,110.0,102.75,0.994,2.15,,
 PG,PG,System1(단기),관심,False,False,False,True,157.84,159.98,147.05,0.992,2.58,,
 PG,PG,System2(중장기),관심,False,False,False,True,157.84,159.98,143.4,0.992,2.58,,
 PGR,PGR,System1(단기),관심,False,False,False,True,221.9,223.78,201.02,0.996,5.22,,
@@ -215,7 +215,7 @@ USB,USB,System1(단기),확정,True,True,False,False,59.28,59.17,55.63,1.008,1.0
 UBER,UBER,System1(단기),청산,False,False,True,False,68.21,72.08,68.0,0.96,1.62,,
 UDR,UDR,System1(단기),탈락,True,True,False,False,34.69,34.52,33.0,1.028,0.61,,
 UNP,UNP,System1(단기),관심,False,False,False,True,289.75,291.93,274.22,0.994,3.94,,
-UPS,UPS,System1(단기),관심,False,False,False,True,99.4,99.78,92.03,0.997,1.84,,
+UPS,UPS,System1(단기),탈락,False,False,False,True,99.4,99.78,92.03,0.997,1.84,,
 UNH,UNH,System1(단기),관심,False,False,False,True,416.0,422.4,368.5,0.998,11.49,,
 UNH,UNH,System2(중장기),관심,False,False,False,True,416.0,422.4,362.6,0.998,11.49,,
 VRSN,VRSN,System1(단기),관심,False,False,False,True,307.73,309.97,290.34,0.996,6.86,,
