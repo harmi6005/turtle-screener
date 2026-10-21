@@ -60,8 +60,8 @@ CDW,CDW,System2(중장기),관심,False,False,False,True,156.37,158.05,127.77,0.
 COR,COR,System1(단기),관심,False,False,False,True,339.26,345.46,314.9,0.996,7.21,,
 COR,COR,System2(중장기),관심,False,False,False,True,339.26,345.46,295.01,0.996,7.21,,
 CNP,CNP,System1(단기),관심,False,False,False,True,40.31,40.7,38.09,0.996,0.67,,
-CVX,CVX,System1(단기),관심,False,False,False,True,226.24,227.28,204.86,0.999,4.22,,
-CVX,CVX,System2(중장기),관심,False,False,False,True,226.24,227.28,201.96,0.999,4.22,,
+CVX,CVX,System1(단기),확정,False,False,False,True,226.24,227.28,204.86,0.999,4.22,,227.31
+CVX,CVX,System2(중장기),확정,False,False,False,True,226.24,227.28,201.96,0.999,4.22,,227.31
 CMG,CMG,System1(단기),청산,False,False,True,False,28.36,33.6,29.41,0.866,1.21,,
 CMG,CMG,System2(중장기),청산,False,False,True,False,28.36,38.92,29.41,0.748,1.21,,
 CHD,CHD,System1(단기),관심,False,False,False,True,104.95,106.0,96.22,0.999,1.71,,
