@@ -110,7 +110,7 @@ EXPE,EXPE,System1(단기),관심,False,False,False,True,289.44,301.81,254.0,0.99
 EXPD,EXPD,System1(단기),관심,False,False,False,True,198.3,200.66,190.39,0.991,3.79,,
 EXPD,EXPD,System2(중장기),관심,False,False,False,True,198.3,200.66,183.36,0.991,3.79,,
 EXR,EXR,System1(단기),관심,False,False,False,True,139.85,141.4,130.54,1.0,2.64,,
-FAST,FAST,System1(단기),관심,False,False,False,True,52.42,52.82,47.3,0.993,1.27,,
+FAST,FAST,System1(단기),탈락,False,False,False,True,52.42,52.82,47.3,0.993,1.27,,
 FAST,FAST,System2(중장기),관심,False,False,False,True,52.42,52.92,47.3,0.991,1.27,,
 FDX,FDX,System1(단기),관심,False,False,False,True,299.22,303.84,286.38,0.992,5.64,,
 FITB,FITB,System1(단기),확정,True,True,False,False,52.79,52.69,49.09,1.012,1.06,,52.84
