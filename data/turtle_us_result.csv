@@ -194,7 +194,7 @@ PANW,PANW,System1(단기),청산,False,False,True,False,340.81,432.33,339.55,0.8
 PANW,PANW,System2(중장기),청산,False,False,True,False,340.81,432.33,339.55,0.8,17.55,,
 PH,PH,System1(단기),청산,False,False,True,False,943.06,992.0,937.84,0.967,19.41,,
 PH,PH,System2(중장기),청산,False,False,True,False,943.06,1097.73,937.84,0.874,19.41,,
-PYPL,PYPL,System1(단기),관심,False,False,False,True,57.19,57.81,53.98,0.995,1.3,,
+PYPL,PYPL,System1(단기),탈락,False,False,False,True,57.19,57.81,53.98,0.995,1.3,,
 PEP,PEP,System1(단기),탈락,True,True,False,False,134.38,133.81,123.47,1.009,2.7,,
 PNW,PNW,System1(단기),탈락,False,False,False,True,103.01,103.71,96.36,0.998,1.94,,
 PNW,PNW,System2(중장기),탈락,False,False,False,True,103.01,103.71,90.27,0.998,1.94,,
