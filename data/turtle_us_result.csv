@@ -292,7 +292,7 @@ LOW,LOW,System1(단기),확정,False,False,False,True,195.68,199.35,178.45,0.993
 MSCI,MSCI,System1(단기),확정,True,True,False,False,574.23,571.92,535.35,1.005,10.68,,574.12
 SHW,SHW,System1(단기),확정,True,True,False,False,337.27,336.54,311.12,1.01,7.84,,336.89
 TPR,TPR,System1(단기),확정,False,False,False,True,120.37,120.75,112.21,0.998,3.12,,120.89
-TSCO,TSCO,System1(단기),확정,False,False,False,True,33.01,34.03,30.53,0.991,0.99,,34.1
+TSCO,TSCO,System1(단기),확정이탈,False,False,False,True,33.01,34.03,30.53,0.991,0.99,,34.1
 CDW,CDW,System1(단기),확정,True,True,False,False,152.71,152.66,130.04,1.013,5.22,,152.77
 DG,DG,System2(중장기),확정,True,True,False,False,133.54,133.47,116.73,1.016,3.79,,133.55
 MCO,MCO,System1(단기),확정,True,True,False,False,479.81,479.09,438.01,1.005,10.32,,480.23
