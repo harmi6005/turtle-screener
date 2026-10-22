@@ -57,7 +57,7 @@ CIEN,CIEN,System2(중장기),청산,False,False,True,False,326.28,462.69,328.88,
 CINF,CINF,System2(중장기),관심,False,False,False,True,178.59,179.97,159.2,0.993,2.82,,
 CSCO,CSCO,System1(단기),청산,False,False,True,False,104.79,118.65,105.3,0.896,2.8,,
 CSCO,CSCO,System2(중장기),청산,False,False,True,False,104.79,124.23,104.65,0.856,2.8,,
-CLX,CLX,System1(단기),관심,False,False,False,True,87.65,88.06,81.73,0.998,2.11,,
+CLX,CLX,System1(단기),확정,False,False,False,True,87.65,88.06,81.73,0.998,2.11,,88.12
 COHR,COHR,System1(단기),청산,False,False,True,False,206.87,341.76,217.83,0.657,21.93,,
 COHR,COHR,System2(중장기),청산,False,False,True,False,206.87,391.37,217.83,0.574,21.93,,
 FIX,FIX,System1(단기),청산,False,False,True,False,1278.55,1835.04,1382.15,0.74,79.16,,
@@ -100,7 +100,7 @@ EXPD,EXPD,System1(단기),관심,False,False,False,True,196.43,200.66,190.43,0.9
 EXPD,EXPD,System2(중장기),관심,False,False,False,True,196.43,200.66,183.36,0.995,3.76,,
 FAST,FAST,System1(단기),관심,False,False,False,True,52.37,52.87,47.3,0.995,1.32,,
 FAST,FAST,System2(중장기),관심,False,False,False,True,52.37,52.92,47.3,0.994,1.32,,
-FDX,FDX,System1(단기),관심,False,False,False,True,302.49,303.84,286.38,0.998,5.41,,
+FDX,FDX,System1(단기),탈락,False,False,False,True,302.49,303.84,286.38,0.998,5.41,,
 FSLR,FSLR,System1(단기),청산,False,False,True,False,170.53,190.0,169.89,0.91,6.45,,
 FLEX,FLEX,System1(단기),청산,False,False,True,False,77.53,121.84,84.55,0.683,6.59,,
 FLEX,FLEX,System2(중장기),청산,False,False,True,False,77.53,131.63,84.55,0.632,6.59,,
@@ -218,7 +218,7 @@ RTX,RTX,System1(단기),관심,False,False,False,True,192.19,197.0,179.02,0.996,
 O,O,System1(단기),확정,True,True,False,False,56.81,56.78,53.15,1.001,0.9,,56.81
 RMD,RMD,System1(단기),확정,True,True,False,False,249.65,248.6,223.04,1.014,5.21,,249.65
 RMD,RMD,System2(중장기),확정,True,True,False,False,249.65,248.6,218.03,1.014,5.21,,249.65
-CRM,CRM,System1(단기),관심,False,False,False,True,249.39,251.94,220.29,0.998,8.5,,
+CRM,CRM,System1(단기),탈락,False,False,False,True,249.39,251.94,220.29,0.998,8.5,,
 SNDK,SNDK,System1(단기),청산,False,False,True,False,1256.49,1815.0,1276.0,0.747,88.12,,
 SNDK,SNDK,System2(중장기),청산,False,False,True,False,1256.49,1909.48,1276.0,0.71,88.12,,
 STX,STX,System1(단기),청산,False,False,True,False,638.56,946.36,636.36,0.711,51.01,,
