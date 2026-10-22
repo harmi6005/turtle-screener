@@ -181,8 +181,8 @@ OMC,OMC,System1(단기),탈락,False,False,False,True,80.5,82.26,74.2,0.995,1.81
 OKE,OKE,System1(단기),탈락,False,False,False,True,93.12,94.08,87.16,0.998,2.26,,
 OTIS,OTIS,System1(단기),탈락,True,True,False,False,72.35,72.21,65.03,1.006,1.39,,
 PAYX,PAYX,System1(단기),탈락,False,False,False,True,112.5,113.94,101.09,0.996,2.43,,
-PFE,PFE,System1(단기),관심,False,False,False,True,29.85,30.25,27.48,0.995,0.57,,
-PFE,PFE,System2(중장기),관심,False,False,False,True,29.85,30.25,27.12,0.995,0.57,,
+PFE,PFE,System1(단기),탈락,False,False,False,True,29.85,30.25,27.48,0.995,0.57,,
+PFE,PFE,System2(중장기),탈락,False,False,False,True,29.85,30.25,27.12,0.995,0.57,,
 PM,PM,System1(단기),청산,False,False,True,False,197.46,210.45,190.39,0.94,5.33,,
 PM,PM,System2(중장기),청산,False,False,True,False,197.46,210.45,184.11,0.94,5.33,,
 PNW,PNW,System1(단기),확정,True,True,False,False,103.89,103.71,96.97,1.004,1.92,,104.5
