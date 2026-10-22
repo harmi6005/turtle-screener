@@ -93,7 +93,7 @@ DTE,DTE,System1(단기),확정,False,False,False,True,129.65,130.25,126.08,0.999
 DD,DD,System1(단기),탈락,True,True,False,False,134.15,134.0,127.55,1.007,2.47,,
 EBAY,EBAY,System1(단기),탈락,False,False,False,True,122.9,124.59,107.06,0.993,3.35,,
 EBAY,EBAY,System2(중장기),탈락,False,False,False,True,122.9,124.59,104.61,0.993,3.35,,
-EIX,EIX,System1(단기),진입,True,True,False,False,57.19,57.12,51.53,1.007,1.52,,
+EIX,EIX,System1(단기),확정,True,True,False,False,57.19,57.12,51.53,1.007,1.52,,57.57
 EME,EME,System1(단기),청산,False,False,True,False,699.17,833.78,691.09,0.866,26.85,,
 EME,EME,System2(중장기),청산,False,False,True,False,699.17,864.37,691.09,0.835,26.85,,
 EMR,EMR,System1(단기),탈락,False,False,False,True,163.11,165.24,156.25,0.999,4.04,,
@@ -103,7 +103,7 @@ EOG,EOG,System1(단기),확정,False,False,False,True,157.88,159.93,141.87,0.996
 EOG,EOG,System2(중장기),확정,False,False,False,True,157.88,159.93,136.43,0.996,3.45,,160.04
 EQT,EQT,System1(단기),관심,False,False,False,True,54.07,54.96,51.73,1.0,1.29,,
 EFX,EFX,System1(단기),탈락,False,False,False,True,175.57,177.8,140.84,0.997,5.54,,
-ERIE,ERIE,System1(단기),관심,False,False,False,True,244.12,250.0,217.67,0.99,6.75,,
+ERIE,ERIE,System1(단기),확정,False,False,False,True,244.12,250.0,217.67,0.99,6.75,,250.2
 ESS,ESS,System1(단기),확정,False,False,False,True,274.11,276.85,266.65,0.994,4.37,,277.37
 EG,EG,System1(단기),확정,False,False,False,True,394.78,396.91,361.25,0.996,6.87,,397.98
 EG,EG,System2(중장기),확정,False,False,False,True,394.78,396.91,361.25,0.996,6.87,,397.98
