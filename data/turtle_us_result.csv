@@ -39,7 +39,7 @@ TECH,TECH,System2(중장기),관심,False,False,False,True,72.66,72.69,72.33,1.0
 BE,BE,System1(단기),청산,False,False,True,False,212.83,302.35,213.09,0.76,20.52,,
 BE,BE,System2(중장기),청산,False,False,True,False,212.83,302.35,213.09,0.76,20.52,,
 BSX,BSX,System1(단기),관심,False,False,False,True,45.58,46.05,41.39,0.996,1.16,,
-BMY,BMY,System1(단기),관심,False,False,False,True,63.05,63.47,56.15,0.995,1.87,,
+BMY,BMY,System1(단기),탈락,False,False,False,True,63.05,63.47,56.15,0.995,1.87,,
 AVGO,AVGO,System1(단기),청산,False,False,True,False,324.52,380.84,328.58,0.869,11.16,,
 AVGO,AVGO,System2(중장기),청산,False,False,True,False,324.52,431.94,328.58,0.766,11.16,,
 BG,BG,System1(단기),청산,False,False,True,False,102.36,112.52,100.78,0.914,2.97,,
