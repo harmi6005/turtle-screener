@@ -67,7 +67,7 @@ CFG,CFG,System1(단기),탈락,False,False,False,True,64.88,65.77,61.9,0.99,1.33
 CLX,CLX,System1(단기),탈락,False,False,False,True,84.77,88.06,81.73,0.99,2.09,,
 CME,CME,System1(단기),탈락,False,False,False,True,295.79,299.92,267.87,0.997,6.06,,
 CME,CME,System2(중장기),탈락,False,False,False,True,295.79,299.92,258.87,0.997,6.06,,
-CMS,CMS,System1(단기),관심,False,False,False,True,68.13,68.99,64.53,0.997,1.1,,
+CMS,CMS,System1(단기),확정,False,False,False,True,68.13,68.99,64.53,0.997,1.1,,69.14
 KO,KO,System1(단기),탈락,False,False,False,True,92.68,94.1,85.67,0.993,1.35,,
 KO,KO,System2(중장기),탈락,False,False,False,True,92.68,94.1,85.13,0.993,1.35,,
 CL,CL,System1(단기),확정,False,False,False,True,93.4,94.79,86.6,0.995,1.56,,94.88
@@ -132,7 +132,7 @@ HIG,HIG,System1(단기),확정,False,False,False,True,135.82,137.06,126.21,1.0,2
 HD,HD,System1(단기),탈락,False,False,False,True,314.14,317.71,282.84,0.996,6.46,,
 HON,HON,System1(단기),관심,False,False,False,True,214.73,216.13,204.23,0.999,4.02,,
 HRL,HRL,System1(단기),탈락,False,False,False,True,20.44,20.64,18.77,0.992,0.42,,
-HST,HST,System1(단기),진입,True,True,False,False,25.09,24.98,22.12,1.012,0.5,,
+HST,HST,System1(단기),탈락,True,True,False,False,25.09,24.98,22.12,1.012,0.5,,
 HWM,HWM,System1(단기),청산,False,False,True,False,208.15,233.42,204.85,0.921,6.48,,
 HWM,HWM,System2(중장기),청산,False,False,True,False,208.15,309.85,204.85,0.694,6.48,,
 IBM,IBM,System2(중장기),탈락,False,False,False,True,251.46,251.82,217.8,1.0,6.23,,
@@ -209,7 +209,7 @@ SNA,SNA,System1(단기),탈락,False,False,False,True,368.91,372.86,355.36,0.992
 SO,SO,System1(단기),탈락,False,False,False,True,90.39,91.22,84.95,0.998,1.42,,
 STE,STE,System1(단기),관심,False,False,False,True,221.48,226.72,207.96,0.998,4.44,,
 SYK,SYK,System1(단기),탈락,False,False,False,True,297.6,305.03,271.67,0.996,7.77,,
-SYY,SYY,System1(단기),관심,False,False,False,True,82.06,83.15,76.56,0.998,1.37,,
+SYY,SYY,System1(단기),확정,False,False,False,True,82.06,83.15,76.56,0.998,1.37,,83.25
 TXT,TXT,System1(단기),탈락,False,False,False,True,77.28,78.2,71.87,0.994,1.68,,
 TJX,TJX,System1(단기),탈락,False,False,False,True,145.52,148.57,136.52,0.99,2.73,,
 TSCO,TSCO,System1(단기),청산,False,False,True,False,32.69,34.13,32.2,0.97,1.0,,
@@ -233,11 +233,11 @@ DIS,DIS,System1(단기),관심,False,False,False,True,111.83,112.69,102.62,0.993
 DIS,DIS,System2(중장기),관심,False,False,False,True,111.83,112.69,101.15,0.993,2.0,,
 WM,WM,System1(단기),확정,False,False,False,True,229.58,232.16,207.3,0.995,3.66,,232.55
 WM,WM,System2(중장기),확정,False,False,False,True,229.58,232.16,200.58,0.995,3.66,,232.55
-WSM,WSM,System1(단기),관심,False,False,False,True,253.32,256.86,234.12,0.992,6.4,,
-WSM,WSM,System2(중장기),관심,False,False,False,True,253.32,256.86,224.54,0.992,6.4,,
+WSM,WSM,System1(단기),확정,False,False,False,True,253.32,256.86,234.12,0.992,6.4,,257.09
+WSM,WSM,System2(중장기),확정,False,False,False,True,253.32,256.86,224.54,0.992,6.4,,257.09
 WTW,WTW,System1(단기),확정,False,False,False,True,317.62,322.44,289.59,0.994,6.71,,322.84
 XEL,XEL,System1(단기),탈락,True,True,False,False,76.78,76.77,72.03,1.009,1.27,,
-YUM,YUM,System1(단기),관심,False,False,False,True,151.24,152.42,139.8,0.995,2.68,,
+YUM,YUM,System1(단기),확정,False,False,False,True,151.24,152.42,139.8,0.995,2.68,,152.64
 ZBRA,ZBRA,System1(단기),탈락,True,True,False,False,391.0,390.8,365.76,1.005,9.76,,
 ZBRA,ZBRA,System2(중장기),탈락,True,True,False,False,391.0,390.8,360.51,1.005,9.76,,
 ZTS,ZTS,System1(단기),탈락,False,False,False,True,79.62,80.59,71.12,0.993,1.82,,
@@ -325,7 +325,7 @@ MDT,MDT,System1(단기),확정,False,False,False,True,92.96,93.78,85.22,0.996,2.
 HCA,HCA,System1(단기),확정,True,True,False,False,460.75,460.28,422.45,1.005,11.44,,463.83
 HCA,HCA,System2(중장기),확정,True,True,False,False,460.75,460.28,408.99,1.005,11.44,,463.83
 P,P,System2(중장기),확정,False,False,False,True,155.16,157.05,95.43,0.994,6.86,,157.35
-VLO,VLO,System1(단기),확정,True,True,False,False,450.98,449.77,379.57,1.006,17.48,,450.75
+VLO,VLO,System1(단기),확정이탈,True,True,False,False,450.98,449.77,379.57,1.006,17.48,,450.75
 VLO,VLO,System2(중장기),확정,True,True,False,False,450.98,449.77,364.96,1.006,17.48,,450.75
 BF-B,BF-B,System1(단기),확정,False,False,False,True,26.81,27.05,25.55,0.995,0.64,,27.14
 ORLY,ORLY,System1(단기),확정,False,False,False,True,86.65,87.46,83.01,0.993,1.76,,87.69
