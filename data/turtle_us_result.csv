@@ -130,7 +130,7 @@ GL,GL,System1(단기),탈락,False,False,False,True,169.62,171.29,163.04,0.998,2
 HAL,HAL,System1(단기),탈락,True,True,False,False,33.99,33.83,31.42,1.006,0.82,,
 HIG,HIG,System1(단기),확정,False,False,False,True,135.82,137.06,126.21,1.0,2.34,,137.11
 HD,HD,System1(단기),탈락,False,False,False,True,314.14,317.71,282.84,0.996,6.46,,
-HON,HON,System1(단기),관심,False,False,False,True,214.73,216.13,204.23,0.999,4.02,,
+HON,HON,System1(단기),탈락,False,False,False,True,214.73,216.13,204.23,0.999,4.02,,
 HRL,HRL,System1(단기),탈락,False,False,False,True,20.44,20.64,18.77,0.992,0.42,,
 HST,HST,System1(단기),탈락,True,True,False,False,25.09,24.98,22.12,1.012,0.5,,
 HWM,HWM,System1(단기),청산,False,False,True,False,208.15,233.42,204.85,0.921,6.48,,
