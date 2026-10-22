@@ -40,8 +40,8 @@ BALL,BALL,System2(중장기),확정,False,False,False,True,64.15,64.71,55.11,0.9
 BDX,BDX,System1(단기),확정,False,False,False,True,194.34,195.99,177.92,0.996,4.08,,195.99
 BDX,BDX,System2(중장기),확정,False,False,False,True,194.34,195.99,175.71,0.996,4.08,,195.99
 TECH,TECH,System2(중장기),관심,False,False,False,True,72.64,72.69,72.33,0.999,0.13,,
-BIIB,BIIB,System1(단기),관심,False,False,False,True,240.98,244.65,215.73,0.995,6.24,,
-BIIB,BIIB,System2(중장기),관심,False,False,False,True,240.98,244.65,215.73,0.995,6.24,,
+BIIB,BIIB,System1(단기),탈락,False,False,False,True,240.98,244.65,215.73,0.995,6.24,,
+BIIB,BIIB,System2(중장기),탈락,False,False,False,True,240.98,244.65,215.73,0.995,6.24,,
 BLK,BLK,System1(단기),탈락,False,False,False,True,1149.6,1150.21,1052.1,1.0,24.96,,
 BSX,BSX,System1(단기),탈락,False,False,False,True,44.51,46.05,41.39,0.991,1.12,,
 BR,BR,System1(단기),확정,False,False,False,True,178.3,180.6,158.47,0.997,3.47,,180.88
@@ -104,7 +104,7 @@ EOG,EOG,System2(중장기),확정,False,False,False,True,157.88,159.93,136.43,0.
 EQT,EQT,System1(단기),관심,False,False,False,True,54.07,54.96,51.73,1.0,1.29,,
 EFX,EFX,System1(단기),탈락,False,False,False,True,175.57,177.8,140.84,0.997,5.54,,
 ERIE,ERIE,System1(단기),관심,False,False,False,True,244.12,250.0,217.67,0.99,6.75,,
-ESS,ESS,System1(단기),관심,False,False,False,True,274.11,276.85,266.65,0.994,4.37,,
+ESS,ESS,System1(단기),확정,False,False,False,True,274.11,276.85,266.65,0.994,4.37,,277.37
 EG,EG,System1(단기),확정,False,False,False,True,394.78,396.91,361.25,0.996,6.87,,397.98
 EG,EG,System2(중장기),확정,False,False,False,True,394.78,396.91,361.25,0.996,6.87,,397.98
 EVRG,EVRG,System1(단기),탈락,False,False,False,True,83.15,83.76,79.62,0.996,1.28,,
@@ -224,7 +224,7 @@ UNH,UNH,System2(중장기),관심,False,False,False,True,417.0,422.4,362.6,0.999
 VRSN,VRSN,System1(단기),관심,False,False,False,True,307.25,309.97,290.34,0.996,6.86,,
 VRSN,VRSN,System2(중장기),관심,False,False,False,True,307.25,310.0,275.23,0.996,6.86,,
 VRSK,VRSK,System1(단기),확정,False,False,False,True,192.34,195.94,165.0,0.992,5.22,,196.35
-VRTX,VRTX,System1(단기),관심,False,False,False,True,524.52,529.89,484.08,0.998,12.56,,
+VRTX,VRTX,System1(단기),탈락,False,False,False,True,524.52,529.89,484.08,0.998,12.56,,
 VTRS,VTRS,System1(단기),탈락,False,False,False,True,18.45,18.75,16.89,0.997,0.51,,
 VTRS,VTRS,System2(중장기),탈락,False,False,False,True,18.45,18.75,16.89,0.997,0.51,,
 VMC,VMC,System1(단기),탈락,True,True,False,False,264.64,263.76,238.72,1.009,6.06,,
