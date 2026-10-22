@@ -74,7 +74,7 @@ CL,CL,System1(단기),확정,False,False,False,True,93.4,94.79,86.6,0.995,1.56,,
 CL,CL,System2(중장기),확정,False,False,False,True,93.4,94.79,83.51,0.995,1.56,,94.88
 STZ,STZ,System1(단기),확정,False,False,False,True,132.02,133.61,114.1,0.992,3.01,,133.82
 COO,COO,System1(단기),탈락,False,False,False,True,58.97,59.47,53.71,0.998,1.39,,
-CPAY,CPAY,System1(단기),관심,False,False,False,True,407.56,411.8,389.76,0.997,8.51,,
+CPAY,CPAY,System1(단기),확정,False,False,False,True,407.56,411.8,389.76,0.997,8.51,,412.09
 CSGP,CSGP,System1(단기),탈락,False,False,False,True,32.9,33.31,27.17,0.999,1.03,,
 COST,COST,System1(단기),관심,False,False,False,True,998.31,1008.37,937.6,0.992,16.75,,
 COST,COST,System2(중장기),관심,False,False,False,True,998.31,1008.37,883.1,0.992,16.75,,
@@ -108,7 +108,7 @@ ESS,ESS,System1(단기),확정,False,False,False,True,274.11,276.85,266.65,0.994
 EG,EG,System1(단기),확정,False,False,False,True,394.78,396.91,361.25,0.996,6.87,,397.98
 EG,EG,System2(중장기),확정,False,False,False,True,394.78,396.91,361.25,0.996,6.87,,397.98
 EVRG,EVRG,System1(단기),탈락,False,False,False,True,83.15,83.76,79.62,0.996,1.28,,
-EXC,EXC,System1(단기),관심,False,False,False,True,43.05,43.58,41.1,0.992,0.72,,
+EXC,EXC,System1(단기),탈락,False,False,False,True,43.05,43.58,41.1,0.992,0.72,,
 EXPE,EXPE,System1(단기),탈락,False,False,False,True,285.64,301.81,254.0,0.999,10.67,,
 EXPD,EXPD,System1(단기),탈락,False,False,False,True,197.01,200.66,190.39,0.991,3.84,,
 EXPD,EXPD,System2(중장기),탈락,False,False,False,True,197.01,200.66,183.36,0.991,3.84,,
@@ -219,8 +219,8 @@ TRMB,TRMB,System2(중장기),확정,True,True,False,False,62.59,62.45,56.01,1.00
 TFC,TFC,System1(단기),확정,False,False,False,True,47.73,48.04,45.06,0.997,0.88,,48.07
 UBER,UBER,System1(단기),청산,False,False,True,False,67.62,72.08,68.0,0.96,1.65,,
 UNP,UNP,System1(단기),탈락,False,False,False,True,287.87,291.93,274.22,0.994,3.96,,
-UNH,UNH,System1(단기),관심,False,False,False,True,417.0,422.4,368.5,0.999,11.51,,
-UNH,UNH,System2(중장기),관심,False,False,False,True,417.0,422.4,362.6,0.999,11.51,,
+UNH,UNH,System1(단기),탈락,False,False,False,True,417.0,422.4,368.5,0.999,11.51,,
+UNH,UNH,System2(중장기),탈락,False,False,False,True,417.0,422.4,362.6,0.999,11.51,,
 VRSN,VRSN,System1(단기),관심,False,False,False,True,307.25,309.97,290.34,0.996,6.86,,
 VRSN,VRSN,System2(중장기),관심,False,False,False,True,307.25,310.0,275.23,0.996,6.86,,
 VRSK,VRSK,System1(단기),확정,False,False,False,True,192.34,195.94,165.0,0.992,5.22,,196.35
