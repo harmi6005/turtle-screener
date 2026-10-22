@@ -236,7 +236,7 @@ TEL,TEL,System2(중장기),청산,False,False,True,False,207.2,223.52,207.31,0.9
 TER,TER,System1(단기),청산,False,False,True,False,313.04,451.86,322.33,0.717,21.19,,
 TER,TER,System2(중장기),청산,False,False,True,False,313.04,451.86,322.33,0.717,21.19,,
 TPL,TPL,System1(단기),청산,False,False,True,False,334.94,370.0,337.11,0.93,11.19,,
-TXT,TXT,System1(단기),관심,False,False,False,True,77.69,78.14,71.87,0.996,1.68,,
+TXT,TXT,System1(단기),확정,False,False,False,True,77.69,78.14,71.87,0.996,1.68,,78.15
 TMO,TMO,System1(단기),관심,False,False,False,True,680.68,705.79,635.32,0.996,21.06,,
 TMO,TMO,System2(중장기),관심,False,False,False,True,680.68,705.79,635.32,0.996,21.06,,
 TJX,TJX,System1(단기),관심,False,False,False,True,147.25,148.57,136.52,0.994,2.73,,
