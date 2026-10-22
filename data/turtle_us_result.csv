@@ -146,7 +146,7 @@ JCI,JCI,System1(단기),청산,False,False,True,False,144.6,160.41,143.79,0.929,
 JCI,JCI,System2(중장기),청산,False,False,True,False,144.6,160.41,143.57,0.929,4.41,,
 KEYS,KEYS,System1(단기),청산,False,False,True,False,314.3,389.93,323.07,0.852,12.92,,
 KEYS,KEYS,System2(중장기),청산,False,False,True,False,314.3,389.93,323.07,0.852,12.92,,
-KMB,KMB,System2(중장기),관심,False,False,False,True,111.12,111.36,93.95,1.0,2.3,,
+KMB,KMB,System2(중장기),확정,False,False,False,True,111.12,111.36,93.95,1.0,2.3,,111.45
 KLAC,KLAC,System1(단기),청산,False,False,True,False,149.06,208.68,159.9,0.743,7.85,,
 KLAC,KLAC,System2(중장기),청산,False,False,True,False,149.06,214.56,159.9,0.723,7.85,,
 LHX,LHX,System1(단기),확정,True,True,False,False,251.89,251.54,232.34,1.011,4.81,,252.13
@@ -180,7 +180,7 @@ MU,MU,System1(단기),청산,False,False,True,False,864.67,1108.55,858.0,0.819,4
 MU,MU,System2(중장기),청산,False,False,True,False,864.67,1108.55,858.0,0.819,46.66,,
 MRNA,MRNA,System1(단기),청산,False,False,True,False,183.9,254.48,192.71,0.948,20.31,,
 MDLZ,MDLZ,System1(단기),확정,True,True,False,False,64.82,64.67,59.62,1.003,1.24,,64.83
-MDLZ,MDLZ,System2(중장기),관심,False,False,False,True,64.82,64.98,57.32,0.998,1.24,,
+MDLZ,MDLZ,System2(중장기),확정,False,False,False,True,64.82,64.98,57.32,0.998,1.24,,65.05
 MPWR,MPWR,System1(단기),청산,False,False,True,False,1181.19,1491.64,1195.0,0.825,57.75,,
 MPWR,MPWR,System2(중장기),청산,False,False,True,False,1181.19,1491.64,1195.0,0.825,57.75,,
 MNST,MNST,System1(단기),관심,False,False,False,True,47.38,47.59,42.9,0.999,1.02,,
@@ -262,7 +262,7 @@ WMT,WMT,System1(단기),관심,False,False,False,True,120.24,121.38,108.44,0.994
 WMT,WMT,System2(중장기),관심,False,False,False,True,120.24,121.38,103.39,0.994,2.4,,
 DIS,DIS,System1(단기),확정,True,True,False,False,112.85,112.69,104.05,1.006,1.97,,112.76
 DIS,DIS,System2(중장기),확정,True,True,False,False,112.85,112.69,101.15,1.006,1.97,,112.76
-WEC,WEC,System2(중장기),관심,False,False,False,True,111.05,111.89,99.8,0.995,1.85,,
+WEC,WEC,System2(중장기),확정,False,False,False,True,111.05,111.89,99.8,0.995,1.85,,112.02
 WELL,WELL,System1(단기),관심,False,False,False,True,237.01,239.45,220.0,0.992,4.88,,
 WSM,WSM,System1(단기),확정,True,True,False,False,257.11,256.86,234.12,1.006,6.48,,257.02
 WSM,WSM,System2(중장기),확정,True,True,False,False,257.11,256.86,224.54,1.006,6.48,,257.02
