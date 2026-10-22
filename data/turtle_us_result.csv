@@ -124,7 +124,7 @@ HLT,HLT,System1(단기),관심,False,False,False,True,357.44,364.5,318.95,0.995,
 HLT,HLT,System2(중장기),관심,False,False,False,True,357.44,364.5,306.9,0.995,7.19,,
 HWM,HWM,System1(단기),청산,False,False,True,False,192.34,233.42,204.07,0.87,7.02,,
 HWM,HWM,System2(중장기),청산,False,False,True,False,192.34,309.85,204.07,0.655,7.02,,
-HPQ,HPQ,System1(단기),관심,False,False,False,True,32.78,32.85,29.18,0.998,1.12,,
+HPQ,HPQ,System1(단기),확정,False,False,False,True,32.78,32.85,29.18,0.998,1.12,,32.94
 HUBB,HUBB,System1(단기),청산,False,False,True,False,443.03,492.63,448.69,0.917,13.68,,
 HUBB,HUBB,System2(중장기),청산,False,False,True,False,443.03,527.75,448.69,0.856,13.68,,
 HBAN,HBAN,System1(단기),확정,True,True,False,False,15.78,15.76,14.92,1.008,0.32,,15.77
