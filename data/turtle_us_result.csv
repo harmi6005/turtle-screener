@@ -137,8 +137,8 @@ HWM,HWM,System1(단기),청산,False,False,True,False,208.15,233.42,204.85,0.921
 HWM,HWM,System2(중장기),청산,False,False,True,False,208.15,309.85,204.85,0.694,6.48,,
 IBM,IBM,System2(중장기),탈락,False,False,False,True,251.46,251.82,217.8,1.0,6.23,,
 ITW,ITW,System1(단기),탈락,True,True,False,False,276.8,276.19,259.09,1.007,5.33,,
-IFF,IFF,System1(단기),관심,False,False,False,True,91.03,92.02,83.02,0.996,1.71,,
-IFF,IFF,System2(중장기),관심,False,False,False,True,91.03,92.02,81.54,0.996,1.71,,
+IFF,IFF,System1(단기),탈락,False,False,False,True,91.03,92.02,83.02,0.996,1.71,,
+IFF,IFF,System2(중장기),탈락,False,False,False,True,91.03,92.02,81.54,0.996,1.71,,
 ISRG,ISRG,System1(단기),청산,False,False,True,False,428.12,440.4,404.2,0.983,12.27,,
 INVH,INVH,System1(단기),확정,False,False,False,True,26.81,27.23,25.82,0.997,0.47,,27.26
 IQV,IQV,System1(단기),탈락,False,False,False,True,276.63,277.4,252.56,1.0,7.92,,
@@ -207,7 +207,7 @@ NOW,NOW,System2(중장기),확정,False,False,False,True,153.12,154.2,126.75,0.9
 SJM,SJM,System1(단기),확정,False,False,False,True,127.81,129.86,115.66,0.997,2.72,,129.87
 SNA,SNA,System1(단기),탈락,False,False,False,True,368.91,372.86,355.36,0.992,5.41,,
 SO,SO,System1(단기),탈락,False,False,False,True,90.39,91.22,84.95,0.998,1.42,,
-STE,STE,System1(단기),관심,False,False,False,True,221.48,226.72,207.96,0.998,4.44,,
+STE,STE,System1(단기),확정,False,False,False,True,221.48,226.72,207.96,0.998,4.44,,226.98
 SYK,SYK,System1(단기),탈락,False,False,False,True,297.6,305.03,271.67,0.996,7.77,,
 SYY,SYY,System1(단기),확정,False,False,False,True,82.06,83.15,76.56,0.998,1.37,,83.25
 TXT,TXT,System1(단기),탈락,False,False,False,True,77.28,78.2,71.87,0.994,1.68,,
