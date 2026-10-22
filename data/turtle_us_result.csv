@@ -29,7 +29,7 @@ AMAT,AMAT,System2(중장기),청산,False,False,True,False,380.06,563.16,399.03,
 ADM,ADM,System1(단기),청산,False,False,True,False,79.2,84.28,78.88,0.944,1.96,,
 ANET,ANET,System1(단기),청산,False,False,True,False,171.22,217.41,176.77,0.822,8.05,,
 ANET,ANET,System2(중장기),청산,False,False,True,False,171.22,217.41,176.77,0.822,8.05,,
-ATO,ATO,System2(중장기),관심,False,False,False,True,172.21,172.56,154.72,0.999,2.55,,
+ATO,ATO,System2(중장기),확정,False,False,False,True,172.21,172.56,154.72,0.999,2.55,,172.68
 ADSK,ADSK,System1(단기),확정,True,True,False,False,252.48,251.74,228.59,1.014,7.89,,252.22
 AVY,AVY,System2(중장기),관심,False,False,False,True,182.55,184.7,164.1,0.991,3.46,,
 BKR,BKR,System1(단기),청산,False,False,True,False,53.22,58.44,53.44,0.959,1.55,,
