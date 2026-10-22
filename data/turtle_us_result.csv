@@ -52,7 +52,7 @@ CCL,CCL,System1(단기),탈락,False,False,False,True,27.3,27.8,25.51,0.996,0.97
 CARR,CARR,System1(단기),탈락,False,False,False,True,56.47,56.79,53.58,0.997,1.31,,
 CBOE,CBOE,System1(단기),탈락,True,True,False,False,318.82,317.45,275.19,1.008,12.13,,
 CBOE,CBOE,System2(중장기),탈락,True,True,False,False,318.82,317.45,252.82,1.008,12.13,,
-CDW,CDW,System2(중장기),진입,True,True,False,False,158.28,158.05,127.77,1.005,5.17,,
+CDW,CDW,System2(중장기),확정,True,True,False,False,158.28,158.05,127.77,1.005,5.17,,159.3
 COR,COR,System1(단기),관심,False,False,False,True,340.43,345.46,314.9,0.997,7.24,,
 COR,COR,System2(중장기),관심,False,False,False,True,340.43,345.46,295.01,0.997,7.24,,
 CNP,CNP,System1(단기),탈락,False,False,False,True,40.32,40.7,38.09,0.996,0.67,,
