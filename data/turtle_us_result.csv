@@ -160,7 +160,7 @@ LIN,LIN,System1(단기),탈락,False,False,False,True,500.57,506.38,479.0,0.992,
 LIN,LIN,System2(중장기),탈락,False,False,False,True,500.57,506.38,462.37,0.992,7.85,,
 L,L,System1(단기),탈락,True,True,False,False,111.72,111.69,105.23,1.001,1.58,,
 MRSH,MRSH,System1(단기),확정,False,False,False,True,190.56,193.06,166.48,0.994,3.74,,193.37
-MLM,MLM,System1(단기),관심,False,False,False,True,509.02,513.45,464.92,0.996,12.13,,
+MLM,MLM,System1(단기),확정,False,False,False,True,509.02,513.45,464.92,0.996,12.13,,513.64
 MAS,MAS,System2(중장기),탈락,False,False,False,True,74.56,77.51,66.26,0.994,1.79,,
 MCK,MCK,System1(단기),관심,False,False,False,True,1015.5,1030.27,906.65,1.0,23.88,,
 MCK,MCK,System2(중장기),관심,False,False,False,True,1015.5,1030.27,847.29,1.0,23.88,,
