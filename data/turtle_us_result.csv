@@ -76,8 +76,8 @@ DRI,DRI,System1(단기),관심,False,False,False,True,214.96,218.93,195.57,0.99,
 DECK,DECK,System1(단기),관심,False,False,False,True,87.27,88.4,79.96,0.995,2.34,,
 DXCM,DXCM,System1(단기),청산,False,False,True,False,78.27,88.87,79.92,0.906,2.49,,
 DXCM,DXCM,System2(중장기),청산,False,False,True,False,78.27,92.59,79.92,0.869,2.49,,
-DG,DG,System1(단기),관심,False,False,False,True,136.21,137.08,121.51,1.0,3.81,,
-DG,DG,System2(중장기),관심,False,False,False,True,136.21,137.08,116.73,1.0,3.81,,
+DG,DG,System1(단기),확정,False,False,False,True,136.21,137.08,121.51,1.0,3.81,,137.16
+DG,DG,System2(중장기),확정,False,False,False,True,136.21,137.08,116.73,1.0,3.81,,137.16
 DOV,DOV,System1(단기),관심,False,False,False,True,195.07,200.07,186.65,0.999,3.7,,
 DUK,DUK,System2(중장기),관심,False,False,False,True,124.44,125.66,112.4,0.992,1.82,,
 DD,DD,System1(단기),관심,False,False,False,True,133.69,134.99,127.55,0.996,2.5,,
