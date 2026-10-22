@@ -70,7 +70,7 @@ GLW,GLW,System2(중장기),청산,False,False,True,False,124.04,176.61,127.56,0.
 CPAY,CPAY,System1(단기),확정,True,True,False,False,412.87,411.8,389.76,1.004,8.53,,413.11
 COST,COST,System1(단기),확정,True,True,False,False,1012.62,1008.37,939.6,1.006,16.82,,1013.07
 COST,COST,System2(중장기),확정,True,True,False,False,1012.62,1008.37,883.1,1.006,16.82,,1013.07
-CSX,CSX,System2(중장기),관심,False,False,False,True,51.69,52.01,45.85,0.998,0.85,,
+CSX,CSX,System2(중장기),탈락,False,False,False,True,51.69,52.01,45.85,0.998,0.85,,
 CMI,CMI,System1(단기),청산,False,False,True,False,518.93,548.42,512.02,0.974,14.27,,
 DRI,DRI,System1(단기),관심,False,False,False,True,214.96,218.93,195.57,0.99,4.82,,
 DECK,DECK,System1(단기),관심,False,False,False,True,87.27,88.4,79.96,0.995,2.34,,
