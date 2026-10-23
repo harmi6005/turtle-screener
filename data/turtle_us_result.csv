@@ -260,7 +260,7 @@ Q,Q,System1(단기),청산,False,False,True,False,109.12,133.87,108.1,0.816,4.92
 Q,Q,System2(중장기),청산,False,False,True,False,109.12,146.57,108.1,0.745,4.92,,
 RDDT,RDDT,System1(단기),청산,False,False,True,False,148.29,164.94,145.51,0.906,7.54,,
 REGN,REGN,System1(단기),관심,False,False,False,True,806.04,825.52,732.83,0.992,22.37,,
-RF,RF,System1(단기),관심,False,False,False,True,28.47,28.51,26.49,1.0,0.55,,
+RF,RF,System1(단기),탈락,False,False,False,True,28.47,28.51,26.49,1.0,0.55,,
 RMD,RMD,System1(단기),확정,True,True,False,False,254.21,253.62,226.42,1.007,5.46,,254.45
 RMD,RMD,System2(중장기),확정,True,True,False,False,254.21,253.62,218.03,1.007,5.46,,254.45
 SPGI,SPGI,System1(단기),관심,False,False,False,True,450.86,456.78,402.94,0.993,9.04,,
