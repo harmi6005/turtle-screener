@@ -163,8 +163,8 @@ GM,GM,System1(단기),청산,False,False,True,False,75.54,85.79,75.08,0.887,2.37
 GM,GM,System2(중장기),청산,False,False,True,False,75.54,89.55,75.08,0.85,2.37,,
 GL,GL,System1(단기),청산,False,False,True,False,158.03,171.03,161.52,0.97,3.33,,
 GL,GL,System2(중장기),청산,False,False,True,False,158.03,188.12,161.52,0.882,3.33,,
-HAS,HAS,System1(단기),관심,False,False,False,True,116.93,117.25,92.16,0.999,3.2,,
-HAS,HAS,System2(중장기),관심,False,False,False,True,116.93,117.25,86.57,0.999,3.2,,
+HAS,HAS,System1(단기),확정,False,False,False,True,116.93,117.25,92.16,0.999,3.2,,117.3
+HAS,HAS,System2(중장기),확정,False,False,False,True,116.93,117.25,86.57,0.999,3.2,,117.3
 HSY,HSY,System1(단기),관심,False,False,False,True,170.97,175.75,160.67,0.997,3.66,,
 HD,HD,System1(단기),관심,False,False,False,True,318.93,327.92,288.51,0.994,7.0,,
 HON,HON,System1(단기),확정,False,False,False,True,217.74,218.55,205.2,0.999,4.64,,219.44
