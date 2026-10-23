@@ -152,7 +152,7 @@ IT,IT,System1(단기),관심,False,False,False,True,232.11,234.53,190.65,1.0,8.0
 IT,IT,System2(중장기),관심,False,False,False,True,232.11,234.53,177.95,1.0,8.02,,
 GE,GE,System1(단기),청산,False,False,True,False,286.99,328.67,285.51,0.875,8.43,,
 GE,GE,System2(중장기),청산,False,False,True,False,286.99,388.25,285.51,0.741,8.43,,
-GEHC,GEHC,System1(단기),관심,False,False,False,True,71.04,71.7,64.29,0.995,1.69,,
+GEHC,GEHC,System1(단기),확정,False,False,False,True,71.04,71.7,64.29,0.995,1.69,,71.79
 GEV,GEV,System1(단기),청산,False,False,True,False,826.94,1052.78,813.26,0.79,45.46,,
 GEV,GEV,System2(중장기),청산,False,False,True,False,826.94,1099.66,813.26,0.757,45.46,,
 GEN,GEN,System1(단기),관심,False,False,False,True,25.1,25.23,22.76,0.996,0.83,,
