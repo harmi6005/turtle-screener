@@ -252,7 +252,7 @@ PPL,PPL,System1(단기),관심,False,False,False,True,34.86,35.36,33.9,0.999,0.5
 PEG,PEG,System1(단기),관심,False,False,False,True,71.79,72.77,69.5,0.997,1.39,,
 PTC,PTC,System1(단기),관심,False,False,False,True,194.07,196.05,192.76,0.991,4.67,,
 PTC,PTC,System2(중장기),관심,False,False,False,True,194.07,196.05,133.67,0.991,4.67,,
-PHM,PHM,System1(단기),관심,False,False,False,True,120.36,121.09,107.16,0.997,3.6,,
+PHM,PHM,System1(단기),탈락,False,False,False,True,120.36,121.09,107.16,0.997,3.6,,
 PWR,PWR,System1(단기),청산,False,False,True,False,548.47,722.21,543.06,0.762,28.65,,
 PWR,PWR,System2(중장기),청산,False,False,True,False,548.47,724.68,543.06,0.76,28.65,,
 DGX,DGX,System1(단기),관심,False,False,False,True,242.34,246.0,223.5,0.991,5.98,,
