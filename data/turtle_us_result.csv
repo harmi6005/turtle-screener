@@ -167,7 +167,7 @@ HAS,HAS,System1(단기),관심,False,False,False,True,116.93,117.25,92.16,0.999,
 HAS,HAS,System2(중장기),관심,False,False,False,True,116.93,117.25,86.57,0.999,3.2,,
 HSY,HSY,System1(단기),관심,False,False,False,True,170.97,175.75,160.67,0.997,3.66,,
 HD,HD,System1(단기),관심,False,False,False,True,318.93,327.92,288.51,0.994,7.0,,
-HON,HON,System1(단기),관심,False,False,False,True,217.74,218.55,205.2,0.999,4.64,,
+HON,HON,System1(단기),확정,False,False,False,True,217.74,218.55,205.2,0.999,4.64,,219.44
 HRL,HRL,System1(단기),관심,False,False,False,True,21.12,21.38,18.77,0.999,0.44,,
 HWM,HWM,System1(단기),청산,False,False,True,False,186.6,233.42,190.32,0.812,7.28,,
 HWM,HWM,System2(중장기),청산,False,False,True,False,186.6,309.85,190.32,0.611,7.28,,
