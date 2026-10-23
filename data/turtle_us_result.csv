@@ -80,7 +80,7 @@ DG,DG,System1(단기),확정,False,False,False,True,136.21,137.08,121.51,1.0,3.8
 DG,DG,System2(중장기),확정,False,False,False,True,136.21,137.08,116.73,1.0,3.81,,137.16
 DOV,DOV,System1(단기),탈락,False,False,False,True,195.07,200.07,186.65,0.999,3.7,,
 DUK,DUK,System2(중장기),탈락,False,False,False,True,124.44,125.66,112.4,0.992,1.82,,
-DD,DD,System1(단기),관심,False,False,False,True,133.69,134.99,127.55,0.996,2.5,,
+DD,DD,System1(단기),확정,False,False,False,True,133.69,134.99,127.55,0.996,2.5,,135.2
 ETN,ETN,System1(단기),청산,False,False,True,False,368.79,452.0,372.79,0.842,15.35,,
 ETN,ETN,System2(중장기),청산,False,False,True,False,368.79,478.0,372.79,0.796,15.35,,
 EIX,EIX,System1(단기),확정,True,True,False,False,57.59,57.51,51.53,1.009,1.51,,57.61
