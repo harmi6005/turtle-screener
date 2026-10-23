@@ -179,7 +179,7 @@ IR,IR,System2(중장기),청산,False,False,True,False,73.6,91.76,73.16,0.808,2.
 IFF,IFF,System1(단기),확정,True,True,False,False,93.95,93.89,84.04,1.002,1.83,,94.01
 IFF,IFF,System2(중장기),확정,True,True,False,False,93.95,93.89,81.54,1.002,1.83,,94.01
 INTU,INTU,System1(단기),관심,False,False,False,True,347.13,358.03,298.83,0.995,11.96,,
-JKHY,JKHY,System1(단기),관심,False,False,False,True,160.0,162.13,149.04,0.999,3.94,,
+JKHY,JKHY,System1(단기),확정,False,False,False,True,160.0,162.13,149.04,0.999,3.94,,162.17
 J,J,System1(단기),관심,False,False,False,True,145.4,146.69,136.68,0.994,3.62,,
 JCI,JCI,System1(단기),청산,False,False,True,False,144.21,160.41,140.9,0.902,4.43,,
 JCI,JCI,System2(중장기),청산,False,False,True,False,144.21,160.41,140.9,0.902,4.43,,
