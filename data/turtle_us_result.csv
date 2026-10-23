@@ -31,7 +31,7 @@ ANET,ANET,System1(단기),청산,False,False,True,False,171.22,217.41,176.77,0.8
 ANET,ANET,System2(중장기),청산,False,False,True,False,171.22,217.41,176.77,0.822,8.05,,
 ATO,ATO,System2(중장기),확정,False,False,False,True,172.21,172.56,154.72,0.999,2.55,,172.68
 ADSK,ADSK,System1(단기),확정,True,True,False,False,252.48,251.74,228.59,1.014,7.89,,252.22
-AVY,AVY,System2(중장기),관심,False,False,False,True,182.55,184.7,164.1,0.991,3.46,,
+AVY,AVY,System2(중장기),탈락,False,False,False,True,182.55,184.7,164.1,0.991,3.46,,
 BKR,BKR,System1(단기),청산,False,False,True,False,53.22,58.44,53.44,0.959,1.55,,
 BKR,BKR,System2(중장기),청산,False,False,True,False,53.22,66.09,53.44,0.848,1.55,,
 TECH,TECH,System1(단기),탈락,True,True,False,False,72.66,72.65,72.43,1.001,0.14,,
@@ -79,7 +79,7 @@ DXCM,DXCM,System2(중장기),청산,False,False,True,False,78.27,92.59,79.92,0.8
 DG,DG,System1(단기),확정,False,False,False,True,136.21,137.08,121.51,1.0,3.81,,137.16
 DG,DG,System2(중장기),확정,False,False,False,True,136.21,137.08,116.73,1.0,3.81,,137.16
 DOV,DOV,System1(단기),탈락,False,False,False,True,195.07,200.07,186.65,0.999,3.7,,
-DUK,DUK,System2(중장기),관심,False,False,False,True,124.44,125.66,112.4,0.992,1.82,,
+DUK,DUK,System2(중장기),탈락,False,False,False,True,124.44,125.66,112.4,0.992,1.82,,
 DD,DD,System1(단기),관심,False,False,False,True,133.69,134.99,127.55,0.996,2.5,,
 ETN,ETN,System1(단기),청산,False,False,True,False,368.79,452.0,372.79,0.842,15.35,,
 ETN,ETN,System2(중장기),청산,False,False,True,False,368.79,478.0,372.79,0.796,15.35,,
@@ -134,7 +134,7 @@ IR,IR,System1(단기),청산,False,False,True,False,74.87,80.78,76.27,0.951,2.26
 IR,IR,System2(중장기),청산,False,False,True,False,74.87,91.76,73.88,0.837,2.26,,
 INTC,INTC,System1(단기),청산,False,False,True,False,86.47,127.44,88.77,0.7,5.5,,
 INTC,INTC,System2(중장기),청산,False,False,True,False,86.47,127.44,88.77,0.7,5.5,,
-ICE,ICE,System2(중장기),관심,False,False,False,True,162.9,164.11,147.5,0.998,3.32,,
+ICE,ICE,System2(중장기),확정,False,False,False,True,162.9,164.11,147.5,0.998,3.32,,164.27
 ISRG,ISRG,System1(단기),탈락,True,True,False,False,442.09,440.4,398.99,1.005,12.57,,
 ISRG,ISRG,System2(중장기),탈락,True,True,False,False,442.09,440.4,389.11,1.005,12.57,,
 IRM,IRM,System1(단기),청산,False,False,True,False,109.44,117.41,107.8,0.967,3.48,,
@@ -168,8 +168,8 @@ MRVL,MRVL,System1(단기),청산,False,False,True,False,223.87,301.2,226.52,0.78
 MRVL,MRVL,System2(중장기),청산,False,False,True,False,223.87,301.2,226.52,0.784,16.32,,
 MCK,MCK,System1(단기),탈락,False,False,False,True,1008.29,1030.27,906.65,0.995,23.3,,
 MCK,MCK,System2(중장기),탈락,False,False,False,True,1008.29,1030.27,847.29,0.995,23.3,,
-MDT,MDT,System1(단기),관심,False,False,False,True,95.45,96.5,85.55,0.996,2.46,,
-MDT,MDT,System2(중장기),관심,False,False,False,True,95.45,96.5,85.22,0.996,2.46,,
+MDT,MDT,System1(단기),탈락,False,False,False,True,95.45,96.5,85.55,0.996,2.46,,
+MDT,MDT,System2(중장기),탈락,False,False,False,True,95.45,96.5,85.22,0.996,2.46,,
 META,META,System1(단기),청산,False,False,True,False,647.22,779.82,681.05,0.873,24.79,,
 META,META,System2(중장기),청산,False,False,True,False,647.22,779.82,681.05,0.873,24.79,,
 MET,MET,System1(단기),확정,True,True,False,False,102.77,102.57,95.71,1.002,1.97,,102.76
@@ -384,7 +384,7 @@ CDW,CDW,System1(단기),확정,True,True,False,False,152.71,152.66,130.04,1.013,
 ROL,ROL,System1(단기),확정,True,True,False,False,33.99,33.9,29.29,1.005,0.92,,33.99
 HCA,HCA,System1(단기),확정,True,True,False,False,460.75,460.28,422.45,1.005,11.44,,463.83
 HCA,HCA,System2(중장기),확정,True,True,False,False,460.75,460.28,408.99,1.005,11.44,,463.83
-P,P,System2(중장기),확정,False,False,False,True,155.16,157.05,95.43,0.994,6.86,,157.35
+P,P,System2(중장기),확정이탈,False,False,False,True,155.16,157.05,95.43,0.994,6.86,,157.35
 VLO,VLO,System2(중장기),확정,True,True,False,False,450.98,449.77,364.96,1.006,17.48,,450.75
 BF-B,BF-B,System1(단기),확정,False,False,False,True,26.81,27.05,25.55,0.995,0.64,,27.14
 ORLY,ORLY,System1(단기),확정,False,False,False,True,86.65,87.46,83.01,0.993,1.76,,87.69
