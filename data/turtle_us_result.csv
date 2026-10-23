@@ -222,7 +222,7 @@ MPWR,MPWR,System1(단기),청산,False,False,True,False,1165.45,1491.64,1147.17,
 MPWR,MPWR,System2(중장기),청산,False,False,True,False,1165.45,1491.64,1147.17,0.784,58.5,,
 MNST,MNST,System1(단기),관심,False,False,False,True,46.67,47.59,43.23,0.995,1.02,,
 MCO,MCO,System1(단기),관심,False,False,False,True,482.1,494.36,455.65,0.995,12.08,,
-MSI,MSI,System1(단기),관심,False,False,False,True,478.41,479.48,441.05,0.998,7.41,,
+MSI,MSI,System1(단기),탈락,False,False,False,True,478.41,479.48,441.05,0.998,7.41,,
 MSCI,MSCI,System1(단기),관심,False,False,False,True,613.76,624.18,557.0,0.995,13.48,,
 MSCI,MSCI,System2(중장기),관심,False,False,False,True,613.76,624.18,533.45,0.995,13.48,,
 NDAQ,NDAQ,System1(단기),확정,True,True,False,False,103.43,103.39,91.73,1.008,2.19,,103.39
