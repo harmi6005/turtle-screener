@@ -80,8 +80,8 @@ CIEN,CIEN,System1(단기),청산,False,False,True,False,320.92,454.73,320.7,0.72
 CIEN,CIEN,System2(중장기),청산,False,False,True,False,320.92,462.69,320.7,0.708,27.01,,
 CI,CI,System1(단기),탈락,False,False,False,True,306.25,316.27,277.43,0.998,7.98,,
 CI,CI,System2(중장기),탈락,False,False,False,True,306.25,316.27,262.85,0.998,7.98,,
-CINF,CINF,System1(단기),관심,False,False,False,True,176.92,178.73,163.26,0.999,2.85,,
-CINF,CINF,System2(중장기),관심,False,False,False,True,176.92,178.73,159.2,0.999,2.85,,
+CINF,CINF,System1(단기),확정,False,False,False,True,176.92,178.73,163.26,0.999,2.85,,178.81
+CINF,CINF,System2(중장기),확정,False,False,False,True,176.92,178.73,159.2,0.999,2.85,,178.81
 C,C,System1(단기),청산,False,False,True,False,121.12,134.72,120.18,0.902,3.2,,
 C,C,System2(중장기),청산,False,False,True,False,121.12,141.27,120.18,0.86,3.2,,
 CFG,CFG,System1(단기),확정,False,False,False,True,65.24,65.91,61.9,0.994,1.35,,66.1
