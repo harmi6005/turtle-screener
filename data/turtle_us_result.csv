@@ -189,7 +189,7 @@ NOW,NOW,System1(단기),관심,False,False,False,True,156.61,159.5,138.16,0.999,
 NOW,NOW,System2(중장기),관심,False,False,False,True,156.61,159.5,126.75,0.999,5.92,,
 SO,SO,System1(단기),관심,False,False,False,True,92.38,94.04,85.74,0.993,1.56,,
 SO,SO,System2(중장기),관심,False,False,False,True,92.38,94.04,81.69,0.993,1.56,,
-LUV,LUV,System1(단기),관심,False,False,False,True,43.12,43.17,38.5,0.999,1.44,,
+LUV,LUV,System1(단기),확정,False,False,False,True,43.12,43.17,38.5,0.999,1.44,,43.2
 SWK,SWK,System1(단기),확정,True,True,False,False,99.81,99.63,87.86,1.005,2.77,,99.68
 SBUX,SBUX,System1(단기),확정,True,True,False,False,102.26,102.2,90.52,1.012,2.38,,102.25
 SYK,SYK,System1(단기),관심,False,False,False,True,304.36,309.68,274.5,0.993,7.95,,
