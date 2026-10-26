@@ -140,7 +140,7 @@ FRT,FRT,System1(단기),관심,False,False,False,True,108.95,109.8,104.36,0.998,
 FDX,FDX,System1(단기),탈락,False,False,False,True,300.34,304.84,286.38,0.991,5.53,,
 FIS,FIS,System1(단기),탈락,False,False,False,True,37.64,38.3,33.65,0.998,1.06,,
 FITB,FITB,System1(단기),확정,False,False,False,True,53.22,53.5,49.09,0.996,1.06,,53.69
-FE,FE,System1(단기),관심,False,False,False,True,46.17,46.55,44.56,0.997,0.73,,
+FE,FE,System1(단기),탈락,False,False,False,True,46.17,46.55,44.56,0.997,0.73,,
 FISV,FISV,System1(단기),탈락,False,False,False,True,49.81,50.83,45.28,0.994,1.25,,
 FLEX,FLEX,System1(단기),청산,False,False,True,False,76.36,121.84,76.21,0.635,6.39,,
 FLEX,FLEX,System2(중장기),청산,False,False,True,False,76.36,131.63,76.21,0.588,6.39,,
