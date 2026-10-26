@@ -59,7 +59,7 @@ AVGO,AVGO,System1(단기),청산,False,False,True,False,322.93,380.84,321.02,0.8
 AVGO,AVGO,System2(중장기),청산,False,False,True,False,322.93,431.94,321.02,0.759,11.33,,
 BF-B,BF-B,System1(단기),탈락,False,False,False,True,29.42,30.2,26.23,0.999,0.72,,
 BF-B,BF-B,System2(중장기),탈락,False,False,False,True,29.42,30.2,25.55,0.999,0.72,,
-BXP,BXP,System1(단기),관심,False,False,False,True,62.33,62.87,57.33,0.992,1.57,,
+BXP,BXP,System1(단기),확정,False,False,False,True,62.33,62.87,57.33,0.992,1.57,,62.87
 CDNS,CDNS,System1(단기),청산,False,False,True,False,317.79,361.91,306.39,0.879,11.99,,
 CDNS,CDNS,System2(중장기),청산,False,False,True,False,317.79,361.91,306.39,0.879,11.99,,
 CARR,CARR,System1(단기),관심,False,False,False,True,56.41,56.79,53.58,0.996,1.34,,
