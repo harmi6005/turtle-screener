@@ -103,7 +103,7 @@ FAST,FAST,System2(중장기),관심,False,False,False,True,52.42,52.92,47.3,0.99
 FDX,FDX,System1(단기),관심,False,False,False,True,301.74,304.84,286.38,1.0,5.5,,
 FSLR,FSLR,System1(단기),청산,False,False,True,False,167.61,187.85,168.63,0.916,6.25,,
 FSLR,FSLR,System2(중장기),청산,False,False,True,False,167.61,269.7,168.6,0.638,6.25,,
-FTV,FTV,System1(단기),관심,False,False,False,True,60.4,60.94,56.87,0.996,1.17,,
+FTV,FTV,System1(단기),확정,False,False,False,True,60.4,60.94,56.87,0.996,1.17,,60.97
 GRMN,GRMN,System1(단기),관심,False,False,False,True,293.73,297.79,265.46,0.991,7.6,,
 GEHC,GEHC,System1(단기),확정,True,True,False,False,71.94,71.86,65.7,1.006,1.72,,71.87
 GILD,GILD,System1(단기),관심,False,False,False,True,157.57,160.51,147.26,0.995,3.8,,
@@ -112,7 +112,7 @@ HCA,HCA,System1(단기),관심,False,False,False,True,462.58,478.86,444.81,0.991
 HCA,HCA,System2(중장기),관심,False,False,False,True,462.58,478.86,422.45,0.991,11.0,,
 HONA,HONA,System1(단기),관심,False,False,False,True,167.47,170.3,155.1,0.992,5.38,,
 HRL,HRL,System1(단기),관심,False,False,False,True,20.86,21.38,18.77,0.99,0.43,,
-HPQ,HPQ,System1(단기),관심,False,False,False,True,33.98,34.25,29.18,0.999,1.18,,
+HPQ,HPQ,System1(단기),탈락,False,False,False,True,33.98,34.25,29.18,0.999,1.18,,
 IBM,IBM,System1(단기),관심,False,False,False,True,253.57,256.3,224.77,0.999,6.85,,
 IBM,IBM,System2(중장기),관심,False,False,False,True,253.57,256.3,217.8,0.999,6.85,,
 IDXX,IDXX,System1(단기),탈락,True,True,False,False,569.77,569.56,514.73,1.002,12.7,,
