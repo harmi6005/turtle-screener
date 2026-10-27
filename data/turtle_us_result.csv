@@ -1,7 +1,7 @@
 code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 AOS,AOS,System1(단기),관심,False,False,False,True,61.83,62.62,56.85,0.999,1.5,,
-AES,AES,System1(단기),관심,False,False,False,True,15.03,15.04,14.93,1.0,0.05,,
-AES,AES,System2(중장기),관심,False,False,False,True,15.03,15.04,14.85,1.0,0.05,,
+AES,AES,System1(단기),탈락,False,False,False,True,15.03,15.04,14.93,1.0,0.05,,
+AES,AES,System2(중장기),탈락,False,False,False,True,15.03,15.04,14.85,1.0,0.05,,
 A,A,System1(단기),관심,False,False,False,True,177.64,179.1,169.59,0.994,4.83,,
 A,A,System2(중장기),관심,False,False,False,True,177.64,179.1,163.32,0.994,4.83,,
 APD,APD,System1(단기),관심,False,False,False,True,306.17,310.21,284.44,0.991,5.12,,
