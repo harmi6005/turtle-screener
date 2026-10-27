@@ -5,8 +5,8 @@ AES,AES,System2(중장기),탈락,False,False,False,True,15.03,15.04,14.85,1.0,0
 A,A,System1(단기),관심,False,False,False,True,177.64,179.1,169.59,0.994,4.83,,
 A,A,System2(중장기),관심,False,False,False,True,177.64,179.1,163.32,0.994,4.83,,
 APD,APD,System1(단기),관심,False,False,False,True,306.17,310.21,284.44,0.991,5.12,,
-ALLE,ALLE,System1(단기),관심,False,False,False,True,178.32,180.41,150.32,0.991,4.3,,
-ALLE,ALLE,System2(중장기),관심,False,False,False,True,178.32,180.41,142.0,0.991,4.3,,
+ALLE,ALLE,System1(단기),확정,False,False,False,True,178.32,180.41,150.32,0.991,4.3,,180.44
+ALLE,ALLE,System2(중장기),확정,False,False,False,True,178.32,180.41,142.0,0.991,4.3,,180.44
 AEE,AEE,System1(단기),관심,False,False,False,True,108.05,109.14,102.2,0.993,1.66,,
 AMGN,AMGN,System1(단기),관심,False,False,False,True,447.45,450.98,411.04,0.993,10.48,,
 AMGN,AMGN,System2(중장기),관심,False,False,False,True,447.45,450.98,396.01,0.993,10.48,,
