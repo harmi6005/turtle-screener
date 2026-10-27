@@ -234,8 +234,8 @@ WEC,WEC,System1(단기),관심,False,False,False,True,111.04,112.24,103.14,0.996
 WEC,WEC,System2(중장기),관심,False,False,False,True,111.04,112.24,99.8,0.996,1.9,,
 WFC,WFC,System1(단기),탈락,False,False,False,True,82.65,84.73,78.04,0.991,1.86,,
 WELL,WELL,System2(중장기),탈락,False,False,False,True,239.56,243.04,220.0,0.991,4.83,,
-WST,WST,System1(단기),관심,False,False,False,True,391.49,397.16,363.1,0.993,8.25,,
-WST,WST,System2(중장기),관심,False,False,False,True,391.49,397.16,359.49,0.993,8.25,,
+WST,WST,System1(단기),확정,False,False,False,True,391.49,397.16,363.1,0.993,8.25,,397.28
+WST,WST,System2(중장기),확정,False,False,False,True,391.49,397.16,359.49,0.993,8.25,,397.28
 XEL,XEL,System1(단기),탈락,False,False,False,True,77.71,79.17,73.34,0.99,1.33,,
 XYL,XYL,System1(단기),탈락,False,False,False,True,108.21,110.29,101.37,0.992,2.27,,
 ZBRA,ZBRA,System1(단기),관심,False,False,False,True,388.22,392.78,365.76,0.996,10.23,,
