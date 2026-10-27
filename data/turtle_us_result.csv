@@ -162,7 +162,7 @@ TRMB,TRMB,System2(중장기),관심,False,False,False,True,63.45,64.12,56.44,0.9
 USB,USB,System1(단기),관심,False,False,False,True,59.63,60.49,55.7,0.995,1.1,,
 UBER,UBER,System1(단기),청산,False,False,True,False,66.17,72.08,65.68,0.922,1.7,,
 UBER,UBER,System2(중장기),청산,False,False,True,False,66.17,82.36,65.68,0.807,1.7,,
-UNP,UNP,System1(단기),관심,False,False,False,True,297.87,299.38,278.59,0.998,5.24,,
+UNP,UNP,System1(단기),탈락,False,False,False,True,297.87,299.38,278.59,0.998,5.24,,
 URI,URI,System2(중장기),관심,False,False,False,True,1170.27,1176.44,973.29,0.995,39.13,,
 UHS,UHS,System1(단기),청산,False,False,True,False,176.15,190.55,177.77,1.005,4.89,,
 VLO,VLO,System1(단기),청산,False,False,True,False,394.69,461.52,416.41,0.917,18.34,,
