@@ -159,8 +159,8 @@ PYPL,PYPL,System1(단기),청산,False,False,True,False,54.56,57.95,55.12,0.98,1
 PEP,PEP,System1(단기),탈락,False,False,False,True,135.51,139.0,125.82,0.99,2.92,,
 PFE,PFE,System1(단기),탈락,False,False,False,True,29.77,30.44,28.13,0.996,0.58,,
 PFE,PFE,System2(중장기),탈락,False,False,False,True,29.77,30.44,27.12,0.996,0.58,,
-PNW,PNW,System1(단기),관심,False,False,False,True,105.32,106.77,98.57,0.999,1.93,,
-PNW,PNW,System2(중장기),관심,False,False,False,True,105.32,106.77,90.68,0.999,1.93,,
+PNW,PNW,System1(단기),탈락,False,False,False,True,105.32,106.77,98.57,0.999,1.93,,
+PNW,PNW,System2(중장기),탈락,False,False,False,True,105.32,106.77,90.68,0.999,1.93,,
 PNC,PNC,System1(단기),확정,True,True,False,False,226.01,225.72,208.49,1.011,4.3,,225.9
 PPL,PPL,System1(단기),탈락,False,False,False,True,35.04,35.36,33.9,0.995,0.58,,
 PGR,PGR,System1(단기),관심,False,False,False,True,228.92,230.28,201.02,0.998,5.31,,
