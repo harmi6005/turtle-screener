@@ -74,8 +74,8 @@ EOG,EOG,System2(중장기),관심,False,False,False,True,161.8,165.11,136.43,0.9
 EQT,EQT,System1(단기),탈락,False,False,False,True,55.47,56.07,51.73,0.994,1.45,,
 EL,EL,System1(단기),관심,False,False,False,True,107.92,109.35,97.88,0.992,3.35,,
 EL,EL,System2(중장기),관심,False,False,False,True,107.92,109.35,88.68,0.992,3.35,,
-EVRG,EVRG,System1(단기),관심,False,False,False,True,84.71,85.26,80.56,0.996,1.27,,
-EVRG,EVRG,System2(중장기),관심,False,False,False,True,84.71,85.26,77.24,0.996,1.27,,
+EVRG,EVRG,System1(단기),확정,False,False,False,True,84.71,85.26,80.56,0.996,1.27,,85.29
+EVRG,EVRG,System2(중장기),확정,False,False,False,True,84.71,85.26,77.24,0.996,1.27,,85.29
 ES,ES,System1(단기),관심,False,False,False,True,67.43,68.08,64.08,0.998,1.2,,
 EXC,EXC,System1(단기),관심,False,False,False,True,44.38,44.88,41.65,0.995,0.76,,
 FAST,FAST,System1(단기),관심,False,False,False,True,51.55,52.91,47.3,0.996,1.37,,
@@ -106,7 +106,7 @@ LIN,LIN,System1(단기),관심,False,False,False,True,507.2,512.49,489.11,0.992,
 LIN,LIN,System2(중장기),관심,False,False,False,True,507.2,512.49,462.37,0.992,7.84,,
 LMT,LMT,System1(단기),관심,False,False,False,True,631.07,636.56,502.17,0.995,15.44,,
 LMT,LMT,System2(중장기),관심,False,False,False,True,631.07,636.56,497.0,0.995,15.44,,
-LULU,LULU,System1(단기),관심,False,False,False,True,104.05,104.22,92.55,0.999,3.56,,
+LULU,LULU,System1(단기),확정,False,False,False,True,104.05,104.22,92.55,0.999,3.56,,104.65
 MTB,MTB,System1(단기),관심,False,False,False,True,220.57,224.69,212.28,0.991,4.18,,
 MPC,MPC,System1(단기),청산,False,False,True,False,441.26,493.98,448.38,0.949,18.14,,
 MRK,MRK,System1(단기),청산,False,False,True,False,142.45,154.02,139.93,0.926,4.29,,
@@ -140,7 +140,7 @@ RL,RL,System1(단기),관심,False,False,False,True,390.41,393.93,370.69,0.998,9
 O,O,System1(단기),관심,False,False,False,True,57.03,57.42,54.24,0.996,0.91,,
 RF,RF,System1(단기),관심,False,False,False,True,28.56,28.94,26.49,0.995,0.54,,
 SLB,SLB,System1(단기),탈락,True,True,False,False,53.46,53.45,47.17,1.013,1.53,,
-SRE,SRE,System1(단기),관심,False,False,False,True,84.46,84.98,80.7,0.996,1.26,,
+SRE,SRE,System1(단기),확정,False,False,False,True,84.46,84.98,80.7,0.996,1.26,,85.0
 SHW,SHW,System1(단기),청산,False,False,True,False,331.68,346.19,318.97,0.962,8.67,,
 SPG,SPG,System1(단기),관심,False,False,False,True,212.84,213.63,197.86,0.997,3.41,,
 SOLV,SOLV,System1(단기),청산,False,False,True,False,83.25,89.89,83.29,0.955,2.09,,
