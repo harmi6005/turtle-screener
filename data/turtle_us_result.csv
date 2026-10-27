@@ -154,7 +154,7 @@ TPR,TPR,System2(중장기),청산,False,False,True,False,109.78,164.18,110.12,0.
 TRGP,TRGP,System2(중장기),관심,False,False,False,True,302.87,307.94,267.0,1.0,8.01,,
 TGT,TGT,System1(단기),청산,False,False,True,False,148.9,159.92,147.23,0.941,4.12,,
 TGT,TGT,System2(중장기),청산,False,False,True,False,148.9,170.75,147.23,0.881,4.12,,
-TDY,TDY,System1(단기),관심,False,False,False,True,647.24,653.88,600.02,0.992,13.83,,
+TDY,TDY,System1(단기),탈락,False,False,False,True,647.24,653.88,600.02,0.992,13.83,,
 TXT,TXT,System1(단기),관심,False,False,False,True,77.9,78.43,73.57,0.996,1.64,,
 TJX,TJX,System1(단기),청산,False,False,True,False,141.31,148.57,141.04,0.963,2.6,,
 TRMB,TRMB,System1(단기),관심,False,False,False,True,63.45,64.12,58.58,0.994,1.64,,
