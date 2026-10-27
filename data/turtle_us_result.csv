@@ -174,8 +174,8 @@ GWW,GWW,System1(단기),관심,False,False,False,True,1340.72,1370.61,1288.16,0.
 GWW,GWW,System2(중장기),관심,False,False,False,True,1340.72,1370.61,1240.0,0.996,27.6,,
 WM,WM,System1(단기),관심,False,False,False,True,235.21,241.47,209.68,0.993,4.34,,
 WM,WM,System2(중장기),관심,False,False,False,True,235.21,241.47,200.58,0.993,4.34,,
-WAT,WAT,System1(단기),관심,False,False,False,True,461.7,465.36,422.83,0.994,13.9,,
-WAT,WAT,System2(중장기),관심,False,False,False,True,461.7,465.36,421.61,0.994,13.9,,
+WAT,WAT,System1(단기),확정,False,False,False,True,461.7,465.36,422.83,0.994,13.9,,465.88
+WAT,WAT,System2(중장기),확정,False,False,False,True,461.7,465.36,421.61,0.994,13.9,,465.88
 WEC,WEC,System1(단기),관심,False,False,False,True,111.02,112.24,103.74,0.992,1.82,,
 WEC,WEC,System2(중장기),관심,False,False,False,True,111.02,112.24,99.8,0.992,1.82,,
 WELL,WELL,System1(단기),청산,False,False,True,False,228.71,240.94,228.63,0.987,5.41,,
