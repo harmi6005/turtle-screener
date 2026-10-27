@@ -121,7 +121,7 @@ NFLX,NFLX,System2(중장기),청산,False,False,True,False,62.9,83.6,62.86,0.764
 NEE,NEE,System1(단기),관심,False,False,False,True,82.14,82.81,77.33,0.994,1.47,,
 NI,NI,System1(단기),관심,False,False,False,True,43.49,43.81,40.72,0.997,0.74,,
 NI,NI,System2(중장기),관심,False,False,False,True,43.49,43.81,38.42,0.997,0.74,,
-NSC,NSC,System1(단기),관심,False,False,False,True,336.28,338.23,318.91,0.997,5.59,,
+NSC,NSC,System1(단기),탈락,False,False,False,True,336.28,338.23,318.91,0.997,5.59,,
 PCAR,PCAR,System1(단기),청산,False,False,True,False,105.38,112.71,103.33,0.944,2.62,,
 PCAR,PCAR,System2(중장기),청산,False,False,True,False,105.38,133.71,103.33,0.796,2.62,,
 PKG,PKG,System2(중장기),관심,False,False,False,True,252.76,258.31,224.8,0.99,4.9,,
