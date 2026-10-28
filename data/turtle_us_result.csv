@@ -106,7 +106,7 @@ NDAQ,NDAQ,System2(중장기),탈락,False,False,False,True,105.31,105.45,89.67,0
 NFLX,NFLX,System1(단기),청산,False,False,True,False,62.4,73.07,62.48,0.856,1.92,,
 NFLX,NFLX,System2(중장기),청산,False,False,True,False,62.4,83.6,62.48,0.748,1.92,,
 NEE,NEE,System1(단기),관심,False,False,False,True,81.58,82.81,77.53,0.995,1.47,,
-NSC,NSC,System1(단기),관심,False,False,False,True,338.41,340.87,319.3,0.997,5.57,,
+NSC,NSC,System1(단기),확정,False,False,False,True,338.41,340.87,319.3,0.997,5.57,,341.19
 PNW,PNW,System1(단기),관심,False,False,False,True,105.58,106.77,100.52,0.994,1.83,,
 PNW,PNW,System2(중장기),관심,False,False,False,True,105.58,106.77,91.6,0.994,1.83,,
 PPL,PPL,System1(단기),관심,False,False,False,True,35.0,35.36,33.91,0.997,0.56,,
@@ -142,7 +142,7 @@ TFC,TFC,System1(단기),관심,False,False,False,True,48.61,49.27,45.06,0.992,0.
 USB,USB,System1(단기),관심,False,False,False,True,59.72,60.49,55.7,0.991,1.08,,
 UBER,UBER,System1(단기),청산,False,False,True,False,65.65,72.08,65.47,0.914,1.66,,
 UBER,UBER,System2(중장기),청산,False,False,True,False,65.65,82.36,65.47,0.8,1.66,,
-UNP,UNP,System1(단기),관심,False,False,False,True,298.52,301.21,278.59,0.996,5.23,,
+UNP,UNP,System1(단기),확정,False,False,False,True,298.52,301.21,278.59,0.996,5.23,,301.22
 UPS,UPS,System1(단기),관심,False,False,False,True,104.36,106.59,94.23,0.998,2.21,,
 UPS,UPS,System2(중장기),관심,False,False,False,True,104.36,107.11,91.56,0.993,2.21,,
 URI,URI,System1(단기),탈락,True,True,False,False,1181.39,1179.62,1005.64,1.005,39.25,,
