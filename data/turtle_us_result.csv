@@ -101,8 +101,8 @@ MTD,MTD,System1(단기),확정,False,False,False,True,1697.35,1713.39,1592.54,0.
 MTD,MTD,System2(중장기),확정,False,False,False,True,1697.35,1713.39,1473.81,0.99,39.74,,1716.95
 MDLZ,MDLZ,System1(단기),청산,False,False,True,False,61.78,65.22,61.68,0.95,1.26,,
 MSI,MSI,System1(단기),관심,False,False,False,True,476.88,487.03,446.7,0.991,7.94,,
-NDAQ,NDAQ,System1(단기),관심,False,False,False,True,105.31,105.45,91.73,0.999,2.19,,
-NDAQ,NDAQ,System2(중장기),관심,False,False,False,True,105.31,105.45,89.67,0.999,2.19,,
+NDAQ,NDAQ,System1(단기),탈락,False,False,False,True,105.31,105.45,91.73,0.999,2.19,,
+NDAQ,NDAQ,System2(중장기),탈락,False,False,False,True,105.31,105.45,89.67,0.999,2.19,,
 NFLX,NFLX,System1(단기),청산,False,False,True,False,62.4,73.07,62.48,0.856,1.92,,
 NFLX,NFLX,System2(중장기),청산,False,False,True,False,62.4,83.6,62.48,0.748,1.92,,
 NEE,NEE,System1(단기),관심,False,False,False,True,81.58,82.81,77.53,0.995,1.47,,
