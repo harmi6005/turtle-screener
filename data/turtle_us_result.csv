@@ -153,7 +153,7 @@ SHW,SHW,System1(단기),청산,False,False,True,False,326.01,346.19,318.97,0.962
 SPG,SPG,System1(단기),관심,False,False,False,True,212.28,213.63,197.86,0.997,3.41,,
 SOLV,SOLV,System1(단기),청산,False,False,True,False,82.98,89.89,83.29,0.955,2.1,,
 SOLV,SOLV,System2(중장기),청산,False,False,True,False,82.98,94.16,83.29,0.911,2.1,,
-LUV,LUV,System1(단기),진입,True,True,False,False,43.44,43.23,38.5,1.013,1.45,,
+LUV,LUV,System1(단기),확정,True,True,False,False,43.44,43.23,38.5,1.013,1.45,,43.88
 SWK,SWK,System1(단기),탈락,False,False,False,True,99.32,100.16,88.25,0.997,2.67,,
 SBUX,SBUX,System1(단기),관심,False,False,False,True,103.04,103.4,90.52,0.997,2.39,,
 STLD,STLD,System1(단기),관심,False,False,False,True,246.8,248.96,231.06,0.992,8.25,,
