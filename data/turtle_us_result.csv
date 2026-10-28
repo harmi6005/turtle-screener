@@ -46,8 +46,8 @@ CSGP,CSGP,System1(단기),청산,False,False,True,False,29.03,35.63,29.3,0.861,1
 CRH,CRH,System1(단기),탈락,False,False,False,True,85.82,86.9,78.62,0.993,2.04,,
 CSX,CSX,System1(단기),관심,False,False,False,True,51.98,52.39,47.5,0.997,0.92,,
 CSX,CSX,System2(중장기),관심,False,False,False,True,51.98,52.39,45.85,0.997,0.92,,
-DVN,DVN,System1(단기),관심,False,False,False,True,51.35,51.97,48.4,0.996,1.4,,
-DVN,DVN,System2(중장기),관심,False,False,False,True,51.35,51.97,45.75,0.996,1.4,,
+DVN,DVN,System1(단기),탈락,False,False,False,True,51.35,51.97,48.4,0.996,1.4,,
+DVN,DVN,System2(중장기),탈락,False,False,False,True,51.35,51.97,45.75,0.996,1.4,,
 D,D,System1(단기),관심,False,False,False,True,64.8,65.85,61.72,0.995,1.15,,
 DOV,DOV,System1(단기),확정,True,True,False,False,207.3,206.31,191.56,1.009,3.75,,207.28
 DTE,DTE,System1(단기),관심,False,False,False,True,131.64,133.13,126.51,0.997,2.07,,
