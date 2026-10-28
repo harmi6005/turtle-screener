@@ -53,7 +53,7 @@ DOV,DOV,System1(단기),확정,True,True,False,False,207.3,206.31,191.56,1.009,3
 DTE,DTE,System1(단기),관심,False,False,False,True,131.64,133.13,126.51,0.997,2.07,,
 DUK,DUK,System1(단기),관심,False,False,False,True,123.85,125.87,117.41,0.992,1.87,,
 DUK,DUK,System2(중장기),관심,False,False,False,True,123.85,125.87,112.61,0.992,1.87,,
-DD,DD,System1(단기),관심,False,False,False,True,137.3,138.15,127.55,0.997,2.6,,
+DD,DD,System1(단기),탈락,False,False,False,True,137.3,138.15,127.55,0.997,2.6,,
 EW,EW,System1(단기),관심,False,False,False,True,90.62,91.33,84.83,0.994,1.96,,
 ESS,ESS,System1(단기),청산,False,False,True,False,261.25,286.47,266.65,0.931,5.63,,
 ESS,ESS,System2(중장기),청산,False,False,True,False,261.25,291.93,265.92,0.914,5.63,,
@@ -74,8 +74,8 @@ GNRC,GNRC,System1(단기),청산,False,False,True,False,183.0,228.78,181.23,0.86
 GNRC,GNRC,System2(중장기),청산,False,False,True,False,183.0,231.89,181.23,0.85,10.14,,
 GD,GD,System1(단기),관심,False,False,False,True,353.38,357.46,333.36,0.993,5.61,,
 GS,GS,System1(단기),관심,False,False,False,True,916.0,931.0,859.03,0.99,22.74,,
-HAS,HAS,System1(단기),관심,False,False,False,True,118.57,119.32,93.2,0.996,3.14,,
-HAS,HAS,System2(중장기),관심,False,False,False,True,118.57,119.32,86.85,0.996,3.14,,
+HAS,HAS,System1(단기),확정,False,False,False,True,118.57,119.32,93.2,0.996,3.14,,119.46
+HAS,HAS,System2(중장기),확정,False,False,False,True,118.57,119.32,86.85,0.996,3.14,,119.46
 HII,HII,System1(단기),관심,False,False,False,True,279.66,282.04,260.0,0.997,6.79,,
 IEX,IEX,System1(단기),관심,False,False,False,True,238.07,241.3,223.06,0.995,5.26,,
 IEX,IEX,System2(중장기),관심,False,False,False,True,238.07,241.96,223.06,0.993,5.26,,
