@@ -5,8 +5,8 @@ AFL,AFL,System2(중장기),관심,False,False,False,True,121.49,123.28,110.0,0.9
 A,A,System1(단기),확정,True,True,False,False,179.25,179.1,169.59,1.002,4.82,,179.81
 A,A,System2(중장기),확정,True,True,False,False,179.25,179.1,163.32,1.002,4.82,,179.81
 APD,APD,System1(단기),관심,False,False,False,True,305.85,310.21,288.86,0.993,5.07,,
-ALLE,ALLE,System1(단기),관심,False,False,False,True,180.35,181.24,150.7,0.997,4.31,,
-ALLE,ALLE,System2(중장기),관심,False,False,False,True,180.35,181.24,142.0,0.997,4.31,,
+ALLE,ALLE,System1(단기),확정,False,False,False,True,180.35,181.24,150.7,0.997,4.31,,181.28
+ALLE,ALLE,System2(중장기),확정,False,False,False,True,180.35,181.24,142.0,0.997,4.31,,181.28
 LNT,LNT,System1(단기),관심,False,False,False,True,69.38,70.46,66.55,0.995,1.13,,
 AEE,AEE,System1(단기),관심,False,False,False,True,108.06,109.14,103.44,0.998,1.66,,
 AEP,AEP,System1(단기),관심,False,False,False,True,128.41,131.04,123.98,1.0,2.32,,
@@ -94,11 +94,11 @@ LHX,LHX,System1(단기),관심,False,False,False,True,257.93,260.3,236.09,0.997,
 LDOS,LDOS,System1(단기),관심,False,False,False,True,140.09,141.37,117.84,0.992,3.66,,
 LII,LII,System1(단기),청산,False,False,True,False,340.8,382.99,341.57,0.915,12.77,,
 LII,LII,System2(중장기),청산,False,False,True,False,340.8,436.55,340.32,0.803,12.77,,
-LULU,LULU,System1(단기),관심,False,False,False,True,104.53,104.96,92.55,0.999,3.61,,
+LULU,LULU,System1(단기),탈락,False,False,False,True,104.53,104.96,92.55,0.999,3.61,,
 MCK,MCK,System1(단기),청산,False,False,True,False,963.93,1030.27,965.05,0.939,23.55,,
 MRK,MRK,System1(단기),청산,False,False,True,False,141.18,154.02,139.83,0.918,4.22,,
-MTD,MTD,System1(단기),관심,False,False,False,True,1697.35,1713.39,1592.54,0.99,39.74,,
-MTD,MTD,System2(중장기),관심,False,False,False,True,1697.35,1713.39,1473.81,0.99,39.74,,
+MTD,MTD,System1(단기),확정,False,False,False,True,1697.35,1713.39,1592.54,0.99,39.74,,1716.95
+MTD,MTD,System2(중장기),확정,False,False,False,True,1697.35,1713.39,1473.81,0.99,39.74,,1716.95
 MDLZ,MDLZ,System1(단기),청산,False,False,True,False,61.78,65.22,61.68,0.95,1.26,,
 MSI,MSI,System1(단기),관심,False,False,False,True,476.88,487.03,446.7,0.991,7.94,,
 NDAQ,NDAQ,System1(단기),관심,False,False,False,True,105.31,105.45,91.73,0.999,2.19,,
