@@ -15,7 +15,7 @@ ADI,ADI,System1(단기),확정,False,False,False,True,420.76,427.27,382.0,0.993,
 ADI,ADI,System2(중장기),확정,False,False,False,True,420.76,427.27,382.0,0.993,13.58,,427.55
 ADM,ADM,System1(단기),청산,False,False,True,False,77.74,84.28,78.09,0.926,1.97,,
 ADM,ADM,System2(중장기),청산,False,False,True,False,77.74,88.75,78.09,0.879,1.97,,
-ARES,ARES,System1(단기),관심,False,False,False,True,123.11,123.96,110.3,0.997,3.53,,
+ARES,ARES,System1(단기),탈락,False,False,False,True,123.11,123.96,110.3,0.997,3.53,,
 AIZ,AIZ,System1(단기),관심,False,False,False,True,286.29,289.58,268.92,0.991,5.04,,
 AIZ,AIZ,System2(중장기),관심,False,False,False,True,286.29,289.61,261.17,0.991,5.04,,
 TECH,TECH,System1(단기),관심,False,False,False,True,72.65,72.75,72.45,0.999,0.13,,
