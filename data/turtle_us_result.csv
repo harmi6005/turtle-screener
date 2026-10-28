@@ -198,7 +198,7 @@ FOX,FOX,System1(단기),확정,True,True,False,False,59.91,59.77,54.65,1.011,1.5
 ICE,ICE,System2(중장기),확정,False,False,False,True,162.9,164.11,147.5,0.998,3.32,,164.27
 LLY,LLY,System1(단기),확정,True,True,False,False,1313.42,1311.75,1131.21,1.007,36.83,,1314.37
 LLY,LLY,System2(중장기),확정,True,True,False,False,1313.42,1311.75,1131.21,1.007,36.83,,1314.37
-OMC,OMC,System1(단기),확정,False,False,False,True,81.64,82.26,74.5,0.994,1.83,,82.29
+OMC,OMC,System1(단기),확정이탈,False,False,False,True,81.64,82.26,74.5,0.994,1.83,,82.29
 AXP,AXP,System1(단기),확정,True,True,False,False,323.61,322.5,298.44,1.009,5.6,,325.43
 AJG,AJG,System1(단기),확정,False,False,False,True,258.37,261.91,225.85,0.992,6.19,,263.05
 ADP,ADP,System1(단기),확정,True,True,False,False,294.5,294.27,262.16,1.006,5.52,,297.45
