@@ -124,7 +124,7 @@ SW,SW,System2(중장기),청산,False,False,True,False,40.61,50.52,40.0,0.818,1.
 SOLV,SOLV,System1(단기),청산,False,False,True,False,83.04,89.45,82.85,0.931,2.06,,
 SOLV,SOLV,System2(중장기),청산,False,False,True,False,83.04,94.16,82.85,0.884,2.06,,
 SWK,SWK,System1(단기),탈락,True,True,False,False,100.61,100.16,88.71,1.008,2.65,,
-SBUX,SBUX,System1(단기),관심,False,False,False,True,102.93,103.4,91.31,0.997,2.32,,
+SBUX,SBUX,System1(단기),확정,False,False,False,True,102.93,103.4,91.31,0.997,2.32,,103.44
 STLD,STLD,System1(단기),관심,False,False,False,True,243.66,248.96,231.06,0.992,8.16,,
 SYF,SYF,System1(단기),관심,False,False,False,True,75.61,75.87,70.82,0.998,1.78,,
 TGT,TGT,System1(단기),청산,False,False,True,False,145.87,159.92,147.15,0.924,4.05,,
