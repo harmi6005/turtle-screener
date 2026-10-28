@@ -85,7 +85,7 @@ EXR,EXR,System1(단기),확정,True,True,False,False,144.55,144.02,132.49,1.01,2
 FAST,FAST,System1(단기),탈락,False,False,False,True,51.55,52.91,47.3,0.996,1.37,,
 FAST,FAST,System2(중장기),탈락,False,False,False,True,51.55,52.92,47.3,0.996,1.37,,
 FITB,FITB,System1(단기),확정,False,False,False,True,53.59,53.79,49.09,0.998,1.05,,53.85
-FE,FE,System1(단기),관심,False,False,False,True,46.27,46.57,44.56,0.996,0.71,,
+FE,FE,System1(단기),탈락,False,False,False,True,46.27,46.57,44.56,0.996,0.71,,
 GEHC,GEHC,System1(단기),탈락,False,False,False,True,71.11,72.3,67.32,0.993,1.75,,
 GPC,GPC,System1(단기),청산,False,False,True,False,121.8,135.5,120.58,0.907,3.56,,
 GPC,GPC,System2(중장기),청산,False,False,True,False,121.8,138.81,120.58,0.886,3.56,,
@@ -144,7 +144,7 @@ PGR,PGR,System2(중장기),탈락,False,False,False,True,225.6,230.28,201.02,0.9
 PEG,PEG,System1(단기),탈락,True,True,False,False,72.82,72.77,69.5,1.001,1.36,,
 PTC,PTC,System1(단기),관심,False,False,False,True,194.62,196.05,192.76,0.993,4.16,,
 PTC,PTC,System2(중장기),관심,False,False,False,True,194.62,196.05,134.31,0.993,4.16,,
-RL,RL,System1(단기),관심,False,False,False,True,391.25,393.93,370.69,0.998,9.4,,
+RL,RL,System1(단기),확정,False,False,False,True,391.25,393.93,370.69,0.998,9.4,,394.77
 O,O,System1(단기),탈락,False,False,False,True,56.82,57.42,54.24,0.996,0.92,,
 REG,REG,System1(단기),탈락,False,False,False,True,74.28,75.09,70.92,0.991,1.15,,
 RF,RF,System1(단기),탈락,False,False,False,True,28.5,28.94,26.49,0.995,0.54,,
@@ -186,8 +186,8 @@ WM,WM,System2(중장기),탈락,False,False,False,True,235.81,241.47,200.58,0.99
 WEC,WEC,System1(단기),관심,False,False,False,True,111.43,112.24,103.74,0.996,1.86,,
 WEC,WEC,System2(중장기),관심,False,False,False,True,111.43,112.24,99.8,0.996,1.86,,
 WELL,WELL,System1(단기),청산,False,False,True,False,226.72,240.94,228.63,0.987,5.47,,
-WST,WST,System1(단기),진입,True,True,False,False,398.29,397.16,367.5,1.004,8.29,,
-WST,WST,System2(중장기),진입,True,True,False,False,398.29,397.16,359.49,1.004,8.29,,
+WST,WST,System1(단기),탈락,True,True,False,False,398.29,397.16,367.5,1.004,8.29,,
+WST,WST,System2(중장기),탈락,True,True,False,False,398.29,397.16,359.49,1.004,8.29,,
 WMB,WMB,System1(단기),관심,False,False,False,True,74.09,74.65,68.5,0.994,2.15,,
 WYNN,WYNN,System1(단기),청산,False,False,True,False,72.42,81.5,72.29,0.917,2.43,,
 WYNN,WYNN,System2(중장기),청산,False,False,True,False,72.42,106.06,72.29,0.705,2.43,,
