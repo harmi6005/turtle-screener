@@ -95,7 +95,7 @@ GD,GD,System1(단기),관심,False,False,False,True,353.07,357.46,333.36,0.994,5
 GS,GS,System1(단기),관심,False,False,False,True,921.72,931.0,859.03,0.999,23.12,,
 HAL,HAL,System1(단기),확정,True,True,False,False,35.71,35.7,32.01,1.008,0.97,,35.75
 DOC,DOC,System1(단기),청산,False,False,True,False,18.36,20.14,18.35,0.937,0.48,,
-HONA,HONA,System1(단기),관심,False,False,False,True,168.76,170.3,155.21,0.997,5.46,,
+HONA,HONA,System1(단기),확정,False,False,False,True,168.76,170.3,155.21,0.997,5.46,,170.68
 HUBB,HUBB,System1(단기),청산,False,False,True,False,433.63,492.63,429.37,0.901,15.18,,
 HUBB,HUBB,System2(중장기),청산,False,False,True,False,433.63,527.75,429.37,0.841,15.18,,
 IBM,IBM,System1(단기),관심,False,False,False,True,251.07,256.3,226.01,0.99,7.02,,
