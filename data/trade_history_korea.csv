@@ -50,3 +50,4 @@ code,system,direction,last_result,skip_active,skip_price
 018670,System1(단기),long,loss,False,
 080580,System2(중장기),long,loss,False,
 007310,System1(단기),long,loss,False,
+067160,System1(단기),long,loss,False,
