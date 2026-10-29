@@ -102,8 +102,8 @@ HD,HD,System1(단기),관심,False,False,False,True,324.22,327.92,301.42,0.996,7
 HONA,HONA,System1(단기),청산,False,False,True,False,161.25,177.47,155.54,0.93,6.86,,
 HON,HON,System1(단기),관심,False,False,False,True,222.13,223.81,205.2,0.996,5.17,,
 HII,HII,System2(중장기),관심,False,False,False,True,316.29,329.21,255.36,0.996,8.94,,
-IBM,IBM,System1(단기),관심,False,False,False,True,254.89,256.3,226.01,0.996,6.68,,
-IBM,IBM,System2(중장기),관심,False,False,False,True,254.89,256.3,217.8,0.996,6.68,,
+IBM,IBM,System1(단기),탈락,False,False,False,True,254.89,256.3,226.01,0.996,6.68,,
+IBM,IBM,System2(중장기),탈락,False,False,False,True,254.89,256.3,217.8,0.996,6.68,,
 IEX,IEX,System1(단기),관심,False,False,False,True,237.26,241.3,223.06,0.99,5.49,,
 IDXX,IDXX,System1(단기),확정,True,True,False,False,574.18,571.75,535.29,1.005,12.76,,574.18
 ITW,ITW,System1(단기),확정,False,False,False,True,279.32,280.46,267.86,0.998,5.78,,280.61
