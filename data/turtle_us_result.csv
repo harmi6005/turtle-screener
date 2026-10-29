@@ -63,7 +63,7 @@ CTSH,CTSH,System1(단기),청산,False,False,True,False,62.51,73.92,63.23,0.883,
 CPRT,CPRT,System1(단기),확정,True,True,False,False,29.43,29.43,26.66,1.004,0.82,,29.44
 DHR,DHR,System1(단기),관심,False,False,False,True,237.16,238.13,217.55,0.998,6.71,,
 DHR,DHR,System2(중장기),관심,False,False,False,True,237.16,238.13,211.18,0.998,6.71,,
-DVA,DVA,System2(중장기),관심,False,False,False,True,194.01,195.75,171.09,0.994,5.59,,
+DVA,DVA,System2(중장기),탈락,False,False,False,True,194.01,195.75,171.09,0.994,5.59,,
 DE,DE,System1(단기),청산,False,False,True,False,655.66,692.83,625.81,0.958,19.49,,
 DVN,DVN,System1(단기),관심,False,False,False,True,50.71,52.01,48.4,0.991,1.4,,
 DVN,DVN,System2(중장기),관심,False,False,False,True,50.71,52.01,45.75,0.991,1.4,,
