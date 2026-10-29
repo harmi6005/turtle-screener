@@ -242,7 +242,7 @@ MSCI,MSCI,System2(중장기),확정,False,False,False,True,620.07,624.18,533.45,
 OKE,OKE,System1(단기),확정,False,False,False,True,95.94,97.15,89.67,0.995,2.34,,97.35
 TRGP,TRGP,System1(단기),확정,True,True,False,False,304.78,303.6,277.13,1.008,7.99,,304.65
 HBAN,HBAN,System1(단기),확정,False,False,False,True,15.74,15.89,14.92,0.996,0.31,,15.9
-INVH,INVH,System1(단기),확정,True,True,False,False,27.59,27.58,26.36,1.007,0.48,,27.58
+INVH,INVH,System1(단기),확정이탈,True,True,False,False,27.59,27.58,26.36,1.007,0.48,,27.58
 NOC,NOC,System1(단기),확정,False,False,False,True,553.33,556.56,478.36,0.994,13.41,,559.08
 STE,STE,System1(단기),확정,True,True,False,False,232.72,232.34,209.02,1.003,4.91,,232.59
 HON,HON,System1(단기),확정,False,False,False,True,217.74,218.55,205.2,0.999,4.64,,219.44
