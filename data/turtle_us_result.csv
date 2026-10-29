@@ -106,7 +106,7 @@ IBM,IBM,System1(단기),관심,False,False,False,True,254.89,256.3,226.01,0.996,
 IBM,IBM,System2(중장기),관심,False,False,False,True,254.89,256.3,217.8,0.996,6.68,,
 IEX,IEX,System1(단기),관심,False,False,False,True,237.26,241.3,223.06,0.99,5.49,,
 IDXX,IDXX,System1(단기),확정,True,True,False,False,574.18,571.75,535.29,1.005,12.76,,574.18
-ITW,ITW,System1(단기),관심,False,False,False,True,279.32,280.46,267.86,0.998,5.78,,
+ITW,ITW,System1(단기),확정,False,False,False,True,279.32,280.46,267.86,0.998,5.78,,280.61
 INCY,INCY,System1(단기),청산,False,False,True,False,115.6,121.22,111.18,0.966,3.45,,
 ICE,ICE,System1(단기),확정,True,True,False,False,165.16,164.69,153.9,1.01,3.69,,165.13
 ICE,ICE,System2(중장기),확정,True,True,False,False,165.16,164.69,147.5,1.01,3.69,,165.13
