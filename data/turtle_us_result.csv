@@ -75,7 +75,7 @@ EBAY,EBAY,System2(중장기),관심,False,False,False,True,120.26,124.59,104.64,
 EIX,EIX,System1(단기),확정,True,True,False,False,59.31,59.19,54.93,1.009,1.4,,59.29
 ETR,ETR,System2(중장기),관심,False,False,False,True,109.95,110.29,97.89,0.999,1.71,,
 EQIX,EQIX,System1(단기),확정,True,True,False,False,1055.39,1052.32,931.2,1.015,30.29,,1055.36
-EXC,EXC,System2(중장기),관심,False,False,False,True,45.83,45.99,39.81,0.998,0.79,,
+EXC,EXC,System2(중장기),탈락,False,False,False,True,45.83,45.99,39.81,0.998,0.79,,
 EXPE,EXPE,System1(단기),청산,False,False,True,False,281.59,301.81,274.28,0.945,11.51,,
 EXPD,EXPD,System1(단기),관심,False,False,False,True,197.98,200.66,193.69,0.997,4.08,,
 EXPD,EXPD,System2(중장기),관심,False,False,False,True,197.98,200.66,185.02,0.997,4.08,,
