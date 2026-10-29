@@ -68,7 +68,7 @@ DE,DE,System1(단기),청산,False,False,True,False,655.66,692.83,625.81,0.958,1
 DVN,DVN,System1(단기),관심,False,False,False,True,50.71,52.01,48.4,0.991,1.4,,
 DVN,DVN,System2(중장기),관심,False,False,False,True,50.71,52.01,45.75,0.991,1.4,,
 FANG,FANG,System1(단기),관심,False,False,False,True,205.76,208.65,194.0,1.0,5.29,,
-DLTR,DLTR,System1(단기),관심,False,False,False,True,131.01,131.15,122.46,1.0,4.1,,
+DLTR,DLTR,System1(단기),탈락,False,False,False,True,131.01,131.15,122.46,1.0,4.1,,
 D,D,System1(단기),관심,False,False,False,True,65.21,65.85,62.0,0.998,1.18,,
 EBAY,EBAY,System1(단기),관심,False,False,False,True,120.26,124.59,115.76,0.999,3.5,,
 EBAY,EBAY,System2(중장기),관심,False,False,False,True,120.26,124.59,104.64,0.999,3.5,,
