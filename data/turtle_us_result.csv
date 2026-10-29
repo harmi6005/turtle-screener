@@ -20,8 +20,8 @@ ACGL,ACGL,System1(단기),확정,False,False,False,True,101.82,103.84,95.77,0.99
 ACGL,ACGL,System2(중장기),확정,False,False,False,True,101.82,103.84,92.28,0.998,2.09,,103.86
 ADM,ADM,System1(단기),청산,False,False,True,False,76.96,84.28,78.09,0.928,2.01,,
 ADM,ADM,System2(중장기),청산,False,False,True,False,76.96,88.75,78.09,0.881,2.01,,
-AIZ,AIZ,System1(단기),관심,False,False,False,True,283.79,289.58,268.92,0.991,5.18,,
-AIZ,AIZ,System2(중장기),관심,False,False,False,True,283.79,289.61,261.17,0.991,5.18,,
+AIZ,AIZ,System1(단기),탈락,False,False,False,True,283.79,289.58,268.92,0.991,5.18,,
+AIZ,AIZ,System2(중장기),탈락,False,False,False,True,283.79,289.61,261.17,0.991,5.18,,
 T,T,System1(단기),청산,False,False,True,False,20.7,24.69,20.62,0.855,0.74,,
 T,T,System2(중장기),청산,False,False,True,False,20.7,26.63,20.62,0.793,0.74,,
 BRK-B,BRK-B,System1(단기),관심,False,False,False,True,540.97,549.96,518.19,0.991,6.25,,
@@ -86,7 +86,7 @@ FRT,FRT,System1(단기),관심,False,False,False,True,108.17,110.08,104.36,0.993
 FDX,FDX,System1(단기),탈락,False,False,False,True,302.94,307.94,286.38,0.997,5.91,,
 FDXF,FDXF,System1(단기),청산,False,False,True,False,106.25,116.09,105.75,0.935,3.98,,
 FDXF,FDXF,System2(중장기),청산,False,False,True,False,106.25,152.67,105.75,0.711,3.98,,
-FERG,FERG,System1(단기),관심,False,False,False,True,228.2,235.0,217.87,0.991,5.7,,
+FERG,FERG,System1(단기),탈락,False,False,False,True,228.2,235.0,217.87,0.991,5.7,,
 GRMN,GRMN,System1(단기),청산,False,False,True,True,272.46,297.79,272.16,0.993,8.63,,
 GEHC,GEHC,System2(중장기),확정,True,True,False,False,75.7,75.61,63.28,1.03,2.03,,75.78
 GNRC,GNRC,System1(단기),청산,False,False,True,False,199.21,228.78,181.23,0.889,10.47,,
