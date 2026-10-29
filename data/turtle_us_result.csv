@@ -83,8 +83,8 @@ XOM,XOM,System1(단기),관심,False,False,False,True,182.35,184.88,173.6,0.997,
 XOM,XOM,System2(중장기),관심,False,False,False,True,182.35,184.88,160.81,0.997,3.84,,
 FFIV,FFIV,System1(단기),청산,False,False,True,False,364.58,483.3,361.78,0.77,19.13,,
 FFIV,FFIV,System2(중장기),청산,False,False,True,False,364.58,483.3,361.78,0.77,19.13,,
-FAST,FAST,System1(단기),관심,False,False,False,True,52.52,52.64,49.54,0.999,1.36,,
-FAST,FAST,System2(중장기),관심,False,False,False,True,52.52,52.64,47.06,0.999,1.36,,
+FAST,FAST,System1(단기),탈락,False,False,False,True,52.52,52.64,49.54,0.999,1.36,,
+FAST,FAST,System2(중장기),탈락,False,False,False,True,52.52,52.64,47.06,0.999,1.36,,
 FRT,FRT,System1(단기),확정,True,True,False,False,110.19,110.08,104.57,1.002,1.66,,110.19
 FDX,FDX,System1(단기),확정,True,True,False,False,308.85,307.94,289.28,1.016,6.31,,308.86
 FE,FE,System1(단기),관심,False,False,False,True,47.01,47.12,45.17,0.999,0.72,,
