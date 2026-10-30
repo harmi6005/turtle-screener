@@ -182,7 +182,7 @@ SO,SO,System2(중장기),탈락,False,False,False,True,92.96,94.04,82.01,0.993,1
 SWK,SWK,System2(중장기),탈락,False,False,False,True,102.9,103.71,85.71,0.995,2.64,,
 STT,STT,System1(단기),탈락,False,False,False,True,174.51,177.14,162.65,0.991,4.19,,
 STE,STE,System1(단기),관심,False,False,False,True,231.01,234.34,219.0,0.991,5.12,,
-SYY,SYY,System1(단기),관심,False,False,False,True,82.1,83.97,81.1,0.994,1.48,,
+SYY,SYY,System1(단기),탈락,False,False,False,True,82.1,83.97,81.1,0.994,1.48,,
 TTWO,TTWO,System1(단기),청산,False,False,True,False,193.28,215.66,195.03,0.911,5.76,,
 TTWO,TTWO,System2(중장기),청산,False,False,True,False,193.28,248.98,195.03,0.789,5.76,,
 TRGP,TRGP,System1(단기),확정,True,True,False,False,309.18,308.46,277.13,1.016,7.75,,309.29
