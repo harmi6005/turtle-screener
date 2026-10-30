@@ -172,8 +172,8 @@ MTD,MTD,System1(단기),관심,False,False,False,True,1682.21,1728.66,1606.0,0.9
 MTD,MTD,System2(중장기),관심,False,False,False,True,1682.21,1728.66,1479.15,0.994,40.94,,
 MSFT,MSFT,System1(단기),청산,False,False,True,False,521.74,551.15,515.7,0.954,11.69,,
 MCO,MCO,System1(단기),확정,True,True,False,False,495.03,494.36,455.65,1.004,12.26,,496.06
-MSCI,MSCI,System1(단기),관심,False,False,False,True,623.28,626.1,558.58,0.998,13.62,,
-MSCI,MSCI,System2(중장기),관심,False,False,False,True,623.28,626.1,535.35,0.998,13.62,,
+MSCI,MSCI,System1(단기),확정,False,False,False,True,623.28,626.1,558.58,0.998,13.62,,626.16
+MSCI,MSCI,System2(중장기),확정,False,False,False,True,623.28,626.1,535.35,0.998,13.62,,626.16
 NDAQ,NDAQ,System1(단기),관심,False,False,False,True,106.71,107.93,92.86,0.991,2.22,,
 NDAQ,NDAQ,System2(중장기),관심,False,False,False,True,106.71,107.93,89.67,0.991,2.22,,
 NTAP,NTAP,System1(단기),청산,False,False,True,False,197.51,240.87,202.56,0.87,9.77,,
@@ -246,8 +246,8 @@ TRMB,TRMB,System1(단기),확정,True,True,False,False,65.44,65.38,59.0,1.011,1.
 TRMB,TRMB,System2(중장기),확정,True,True,False,False,65.44,65.38,57.18,1.011,1.67,,65.49
 TWLO,TWLO,System1(단기),청산,False,False,True,False,199.8,308.4,232.73,0.663,18.04,,
 TWLO,TWLO,System2(중장기),청산,False,False,True,False,199.8,308.4,232.73,0.663,18.04,,
-TYL,TYL,System1(단기),관심,False,False,False,True,392.6,394.91,348.52,0.999,12.7,,
-TYL,TYL,System2(중장기),관심,False,False,False,True,392.6,394.91,322.25,0.999,12.7,,
+TYL,TYL,System1(단기),확정,False,False,False,True,392.6,394.91,348.52,0.999,12.7,,395.92
+TYL,TYL,System2(중장기),확정,False,False,False,True,392.6,394.91,322.25,0.999,12.7,,395.92
 TSN,TSN,System1(단기),확정,True,True,False,False,57.35,57.18,53.76,1.008,0.97,,57.33
 UNP,UNP,System1(단기),확정,True,True,False,False,303.8,303.37,278.59,1.007,5.38,,303.69
 VRTX,VRTX,System2(중장기),탈락,True,True,False,False,560.26,560.25,484.08,1.006,14.93,,
