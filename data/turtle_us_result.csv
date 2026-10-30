@@ -284,7 +284,7 @@ GEHC,GEHC,System1(단기),확정,False,False,False,True,76.91,77.88,68.66,0.993,
 GEHC,GEHC,System2(중장기),확정,False,False,False,True,76.91,77.88,63.28,0.993,2.04,,77.98
 GILD,GILD,System1(단기),확정,True,True,False,False,161.07,160.83,151.71,1.02,4.04,,161.09
 GILD,GILD,System2(중장기),확정,True,True,False,False,161.07,160.83,142.6,1.02,4.04,,161.09
-IDXX,IDXX,System1(단기),확정,True,True,False,False,574.18,571.75,535.29,1.005,12.76,,574.18
+IDXX,IDXX,System1(단기),확정이탈,True,True,False,False,574.18,571.75,535.29,1.005,12.76,,574.18
 ITW,ITW,System1(단기),확정,False,False,False,True,279.32,280.46,267.86,0.998,5.78,,280.61
 ICE,ICE,System1(단기),확정,True,True,False,False,165.16,164.69,153.9,1.01,3.69,,165.13
 ICE,ICE,System2(중장기),확정,True,True,False,False,165.16,164.69,147.5,1.01,3.69,,165.13
