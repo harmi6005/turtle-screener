@@ -347,7 +347,7 @@ LYB,LYB,System1(단기),확정,True,True,False,False,67.27,67.03,59.17,1.026,1.7
 NOC,NOC,System1(단기),확정,False,False,False,True,553.33,556.56,478.36,0.994,13.41,,559.08
 STZ,STZ,System2(중장기),확정,False,False,False,True,137.37,139.26,110.6,0.991,3.11,,139.39
 CPAY,CPAY,System1(단기),확정,True,True,False,False,412.87,411.8,389.76,1.004,8.53,,413.11
-FOX,FOX,System1(단기),확정,True,True,False,False,59.91,59.77,54.65,1.011,1.55,,59.81
+FOX,FOX,System1(단기),확정이탈,True,True,False,False,59.91,59.77,54.65,1.011,1.55,,59.81
 LLY,LLY,System1(단기),확정,True,True,False,False,1313.42,1311.75,1131.21,1.007,36.83,,1314.37
 LLY,LLY,System2(중장기),확정,True,True,False,False,1313.42,1311.75,1131.21,1.007,36.83,,1314.37
 ADP,ADP,System1(단기),확정,True,True,False,False,294.5,294.27,262.16,1.006,5.52,,297.45
