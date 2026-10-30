@@ -56,7 +56,7 @@ BG,BG,System1(단기),청산,False,False,True,False,95.68,110.0,95.75,0.885,3.13
 BG,BG,System2(중장기),청산,False,False,True,False,95.68,127.47,95.75,0.764,3.13,,
 CHRW,CHRW,System1(단기),청산,False,False,True,False,123.21,158.35,123.93,0.811,6.46,,
 CHRW,CHRW,System2(중장기),청산,False,False,True,False,123.21,158.35,123.93,0.811,6.46,,
-CVNA,CVNA,System1(단기),관심,False,False,False,True,68.78,69.23,55.92,0.997,3.17,,
+CVNA,CVNA,System1(단기),탈락,False,False,False,True,68.78,69.23,55.92,0.997,3.17,,
 CAT,CAT,System1(단기),청산,False,False,True,False,630.95,874.87,631.01,0.729,31.28,,
 CAT,CAT,System2(중장기),청산,False,False,True,False,630.95,885.8,631.01,0.72,31.28,,
 CBOE,CBOE,System1(단기),관심,False,False,False,True,338.39,341.27,303.54,0.994,12.49,,
