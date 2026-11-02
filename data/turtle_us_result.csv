@@ -69,8 +69,8 @@ CVX,CVX,System2(중장기),확정,True,True,False,False,234.74,234.08,201.96,1.0
 CB,CB,System1(단기),확정,True,True,False,False,365.53,364.86,350.28,1.011,6.38,,365.22
 CB,CB,System2(중장기),확정,True,True,False,False,365.53,364.86,328.35,1.011,6.38,,365.22
 CMS,CMS,System1(단기),확정,True,True,False,False,70.52,70.37,66.96,1.002,1.23,,70.47
-KO,KO,System1(단기),관심,False,False,False,True,94.54,95.37,90.58,0.997,1.68,,
-KO,KO,System2(중장기),관심,False,False,False,True,94.54,95.37,85.13,0.997,1.68,,
+KO,KO,System1(단기),탈락,False,False,False,True,94.54,95.37,90.58,0.997,1.68,,
+KO,KO,System2(중장기),탈락,False,False,False,True,94.54,95.37,85.13,0.997,1.68,,
 COIN,COIN,System1(단기),청산,False,False,True,False,140.16,200.35,155.31,0.741,9.84,,
 COIN,COIN,System2(중장기),청산,False,False,True,False,140.16,208.33,155.31,0.713,9.84,,
 CMCSA,CMCSA,System1(단기),탈락,False,False,False,True,23.12,23.29,21.0,0.996,0.65,,
