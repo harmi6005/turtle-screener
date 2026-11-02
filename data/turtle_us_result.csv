@@ -108,8 +108,8 @@ EG,EG,System1(단기),탈락,False,False,False,True,408.73,411.21,380.42,0.999,9
 EG,EG,System2(중장기),탈락,False,False,False,True,408.73,411.21,361.25,0.999,9.2,,
 EVRG,EVRG,System1(단기),확정,True,True,False,False,86.1,85.78,81.38,1.009,1.32,,86.07
 EVRG,EVRG,System2(중장기),확정,True,True,False,False,86.1,85.78,78.54,1.009,1.32,,86.07
-EXPD,EXPD,System1(단기),관심,False,False,False,True,198.99,200.66,193.69,0.995,3.87,,
-EXPD,EXPD,System2(중장기),관심,False,False,False,True,198.99,200.66,190.01,0.995,3.87,,
+EXPD,EXPD,System1(단기),확정,False,False,False,True,198.99,200.66,193.69,0.995,3.87,,201.4
+EXPD,EXPD,System2(중장기),확정,False,False,False,True,198.99,200.66,190.01,0.995,3.87,,201.4
 XOM,XOM,System1(단기),탈락,True,True,False,False,185.72,184.88,174.63,1.02,3.94,,
 XOM,XOM,System2(중장기),탈락,True,True,False,False,185.72,184.88,161.39,1.02,3.94,,
 FFIV,FFIV,System1(단기),청산,False,False,True,False,335.3,483.3,350.43,0.737,19.73,,
