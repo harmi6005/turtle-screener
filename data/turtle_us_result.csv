@@ -21,8 +21,8 @@ ADM,ADM,System1(단기),청산,False,False,True,False,75.87,84.28,75.86,0.911,1.
 ADM,ADM,System2(중장기),청산,False,False,True,False,75.87,88.75,75.86,0.865,1.9,,
 ANET,ANET,System1(단기),청산,False,False,True,False,165.95,217.41,166.86,0.787,9.36,,
 ANET,ANET,System2(중장기),청산,False,False,True,False,165.95,217.41,166.86,0.787,9.36,,
-AJG,AJG,System1(단기),진입,True,True,False,False,278.12,277.45,249.73,1.01,7.11,,
-AJG,AJG,System2(중장기),진입,True,True,False,False,278.12,277.45,219.65,1.01,7.11,,
+AJG,AJG,System1(단기),확정,True,True,False,False,278.12,277.45,249.73,1.01,7.11,,278.15
+AJG,AJG,System2(중장기),확정,True,True,False,False,278.12,277.45,219.65,1.01,7.11,,278.15
 AIZ,AIZ,System1(단기),관심,False,False,False,True,295.96,297.76,280.26,0.995,5.26,,
 AIZ,AIZ,System2(중장기),관심,False,False,False,True,295.96,297.76,265.0,0.995,5.26,,
 ATO,ATO,System1(단기),관심,False,False,False,True,173.0,174.41,164.22,0.995,2.69,,
