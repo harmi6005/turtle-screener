@@ -167,7 +167,7 @@ PFG,PFG,System1(단기),관심,False,False,False,True,112.53,114.0,106.27,0.992,
 PRU,PRU,System1(단기),확정,True,True,False,False,118.34,118.2,112.84,1.004,2.37,,118.33
 PTC,PTC,System1(단기),관심,False,False,False,True,195.2,196.05,192.85,0.997,0.96,,
 PTC,PTC,System2(중장기),관심,False,False,False,True,195.2,196.05,191.92,0.997,0.96,,
-PEG,PEG,System1(단기),관심,False,False,False,True,73.36,74.42,69.79,0.994,1.39,,
+PEG,PEG,System1(단기),탈락,False,False,False,True,73.36,74.42,69.79,0.994,1.39,,
 RL,RL,System1(단기),관심,False,False,False,True,400.54,403.96,370.69,0.996,9.85,,
 RL,RL,System2(중장기),관심,False,False,False,True,400.54,403.96,356.28,0.996,9.85,,
 RJF,RJF,System1(단기),탈락,False,False,False,True,161.17,162.17,152.93,0.997,3.38,,
