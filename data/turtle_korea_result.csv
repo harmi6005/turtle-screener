@@ -693,7 +693,7 @@
 035290,골드앤에스,System2(중장기),청산,False,False,True,False,384.0,2990.0,0.0,0.0,384.0,,
 035600,KG이니시스,System1(단기),청산,False,False,True,False,9490.0,9950.0,9390.0,0.955,198.5,,
 035600,KG이니시스,System2(중장기),청산,False,False,True,False,9490.0,10710.0,9350.0,0.887,198.5,,
-035610,솔본,System1(단기),관심,False,False,False,True,5020.0,5050.0,4545.0,0.996,215.9,,
+035610,솔본,System1(단기),확정,False,False,False,True,5020.0,5050.0,4545.0,0.996,215.9,,5050.0
 035620,바른손이앤에이,System1(단기),청산,False,False,True,False,418.0,762.0,0.0,0.0,205.2,,
 035620,바른손이앤에이,System2(중장기),청산,False,False,True,False,418.0,851.0,0.0,0.0,205.2,,
 035760,CJ ENM,System1(단기),탈락,False,False,False,True,42850.0,43200.0,38650.0,0.997,2190.0,,
