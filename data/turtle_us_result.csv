@@ -57,7 +57,7 @@ CTAS,CTAS,System1(단기),관심,False,False,False,True,224.4,226.69,209.0,0.991
 CTAS,CTAS,System2(중장기),관심,False,False,False,True,224.4,226.69,192.0,0.991,4.7,,
 CSCO,CSCO,System1(단기),청산,False,False,True,False,103.04,118.65,103.14,0.888,3.25,,
 CSCO,CSCO,System2(중장기),청산,False,False,True,False,103.04,118.65,103.14,0.888,3.25,,
-CMS,CMS,System1(단기),관심,False,False,False,True,70.25,70.63,67.2,0.995,1.21,,
+CMS,CMS,System1(단기),확정,False,False,False,True,70.25,70.63,67.2,0.995,1.21,,70.64
 KO,KO,System1(단기),확정,True,True,False,False,95.37,95.37,90.58,1.001,1.67,,95.43
 KO,KO,System2(중장기),확정,True,True,False,False,95.37,95.37,85.13,1.001,1.67,,95.43
 ED,ED,System1(단기),탈락,False,False,False,True,117.28,117.65,109.16,0.997,2.06,,
@@ -77,8 +77,8 @@ D,D,System1(단기),확정,True,True,False,False,67.19,66.98,62.0,1.006,1.23,,67
 DOV,DOV,System1(단기),확정,True,True,False,False,214.3,213.84,191.56,1.008,4.14,,214.24
 DOV,DOV,System2(중장기),확정,True,True,False,False,214.3,213.84,186.65,1.008,4.14,,214.24
 DTE,DTE,System1(단기),관심,False,False,False,True,135.17,136.11,126.51,0.998,2.01,,
-DUK,DUK,System1(단기),관심,False,False,False,True,127.53,128.09,118.95,0.997,1.99,,
-DUK,DUK,System2(중장기),관심,False,False,False,True,127.53,128.09,113.29,0.997,1.99,,
+DUK,DUK,System1(단기),확정,False,False,False,True,127.53,128.09,118.95,0.997,1.99,,128.15
+DUK,DUK,System2(중장기),확정,False,False,False,True,127.53,128.09,113.29,0.997,1.99,,128.15
 EBAY,EBAY,System1(단기),관심,False,False,False,True,121.45,124.59,115.76,0.995,3.56,,
 EBAY,EBAY,System2(중장기),관심,False,False,False,True,121.45,124.59,104.71,0.995,3.56,,
 EW,EW,System1(단기),탈락,True,True,False,False,95.45,95.34,86.55,1.002,2.22,,
