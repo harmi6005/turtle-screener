@@ -41,7 +41,7 @@ ATO,ATO,System1(단기),관심,False,False,False,True,172.75,174.41,164.22,0.996
 ATO,ATO,System2(중장기),관심,False,False,False,True,172.75,174.41,156.09,0.996,2.71,,
 AVY,AVY,System1(단기),확정,False,False,False,True,181.18,185.75,173.82,0.993,3.83,,185.83
 AVY,AVY,System2(중장기),확정,False,False,False,True,181.18,185.75,164.1,0.993,3.83,,185.83
-AXON,AXON,System1(단기),관심,False,False,False,True,427.66,439.03,377.0,0.996,16.66,,
+AXON,AXON,System1(단기),탈락,False,False,False,True,427.66,439.03,377.0,0.996,16.66,,
 BAX,BAX,System1(단기),청산,False,False,True,False,22.66,26.1,23.37,0.898,0.87,,
 BAX,BAX,System2(중장기),청산,False,False,True,False,22.66,27.44,23.24,0.854,0.87,,
 BDX,BDX,System1(단기),관심,False,False,False,True,198.93,200.47,189.49,0.997,4.1,,
