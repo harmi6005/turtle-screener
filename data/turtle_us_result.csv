@@ -10,8 +10,8 @@ APD,APD,System2(중장기),확정,True,True,False,False,317.28,316.64,274.82,1.0
 LNT,LNT,System1(단기),확정,True,True,False,False,72.61,72.42,66.07,1.003,1.2,,72.63
 LNT,LNT,System2(중장기),확정,True,True,False,False,72.61,72.42,63.49,1.003,1.2,,72.63
 AMCR,AMCR,System2(중장기),확정,True,True,False,False,48.4,48.25,40.79,1.007,0.93,,48.4
-AEE,AEE,System1(단기),관심,False,False,False,True,110.92,111.66,103.7,0.993,1.72,,
-AEE,AEE,System2(중장기),관심,False,False,False,True,110.92,111.66,99.22,0.993,1.72,,
+AEE,AEE,System1(단기),확정,False,False,False,True,110.92,111.66,103.7,0.993,1.72,,111.69
+AEE,AEE,System2(중장기),확정,False,False,False,True,110.92,111.66,99.22,0.993,1.72,,111.69
 AIG,AIG,System1(단기),관심,False,False,False,True,82.51,83.07,79.35,0.995,1.38,,
 AIG,AIG,System2(중장기),관심,False,False,False,True,82.51,83.07,74.53,0.995,1.38,,
 AWK,AWK,System1(단기),탈락,False,False,False,True,145.14,146.62,132.74,0.992,2.92,,
@@ -134,8 +134,8 @@ JPM,JPM,System1(단기),관심,False,False,False,True,341.31,345.75,330.4,0.99,6
 KDP,KDP,System1(단기),확정,False,False,False,True,35.96,36.13,34.14,0.998,0.74,,36.13
 KDP,KDP,System2(중장기),확정,False,False,False,True,35.96,36.13,30.2,0.998,0.74,,36.13
 KEY,KEY,System1(단기),관심,False,False,False,True,21.44,21.64,19.83,0.994,0.41,,
-KR,KR,System1(단기),관심,False,False,False,True,67.97,68.56,61.82,0.992,1.81,,
-KR,KR,System2(중장기),관심,False,False,False,True,67.97,68.56,57.75,0.992,1.81,,
+KR,KR,System1(단기),확정,False,False,False,True,67.97,68.56,61.82,0.992,1.81,,68.58
+KR,KR,System2(중장기),확정,False,False,False,True,67.97,68.56,57.75,0.992,1.81,,68.58
 LDOS,LDOS,System1(단기),관심,False,False,False,True,143.87,145.14,123.69,0.997,3.69,,
 LIN,LIN,System1(단기),확정,True,True,False,False,519.07,517.7,496.68,1.007,7.84,,519.4
 LIN,LIN,System2(중장기),확정,True,True,False,False,519.07,517.7,476.58,1.007,7.84,,519.4
