@@ -171,7 +171,7 @@ PEG,PEG,System1(단기),관심,False,False,False,True,73.36,74.42,69.79,0.994,1.
 RL,RL,System1(단기),관심,False,False,False,True,400.54,403.96,370.69,0.996,9.85,,
 RL,RL,System2(중장기),관심,False,False,False,True,400.54,403.96,356.28,0.996,9.85,,
 RJF,RJF,System1(단기),관심,False,False,False,True,161.17,162.17,152.93,0.997,3.38,,
-O,O,System1(단기),관심,False,False,False,True,57.15,57.65,55.02,0.993,0.92,,
+O,O,System1(단기),확정,False,False,False,True,57.15,57.65,55.02,0.993,0.92,,57.67
 REG,REG,System1(단기),관심,False,False,False,True,75.18,75.83,72.12,0.992,1.2,,
 RF,RF,System1(단기),관심,False,False,False,True,28.93,29.04,27.15,0.999,0.55,,
 RMD,RMD,System1(단기),청산,False,False,True,False,229.34,255.57,228.33,0.913,6.54,,
