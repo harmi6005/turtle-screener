@@ -159,8 +159,8 @@ OXY,OXY,System1(단기),청산,False,False,True,False,61.17,64.96,61.28,0.969,1.
 ORCL,ORCL,System1(단기),청산,False,False,True,False,122.18,148.48,122.76,0.852,7.54,,
 ORCL,ORCL,System2(중장기),청산,False,False,True,False,122.18,170.07,122.76,0.744,7.54,,
 PEP,PEP,System1(단기),확정,True,True,False,False,139.54,139.0,130.27,1.01,3.13,,139.64
-PFE,PFE,System1(단기),관심,False,False,False,True,30.63,30.67,29.22,1.0,0.58,,
-PFE,PFE,System2(중장기),관심,False,False,False,True,30.63,30.67,27.12,1.0,0.58,,
+PFE,PFE,System1(단기),확정,False,False,False,True,30.63,30.67,29.22,1.0,0.58,,30.68
+PFE,PFE,System2(중장기),확정,False,False,False,True,30.63,30.67,27.12,1.0,0.58,,30.68
 PNC,PNC,System1(단기),관심,False,False,False,True,232.04,233.1,215.99,0.998,4.36,,
 PPL,PPL,System1(단기),관심,False,False,False,True,35.83,36.04,33.91,0.995,0.55,,
 PFG,PFG,System1(단기),관심,False,False,False,True,112.53,114.0,106.27,0.992,2.37,,
