@@ -214,8 +214,8 @@ VMC,VMC,System1(단기),확정,True,True,False,False,287.64,286.46,255.09,1.012,
 VMC,VMC,System2(중장기),확정,True,True,False,False,287.64,286.46,238.38,1.012,6.91,,287.42
 DIS,DIS,System1(단기),확정,True,True,False,False,113.43,113.38,108.75,1.002,1.95,,113.42
 DIS,DIS,System2(중장기),확정,True,True,False,False,113.43,113.38,101.32,1.002,1.95,,113.42
-WEC,WEC,System1(단기),관심,False,False,False,True,116.19,116.81,106.59,0.996,2.0,,
-WEC,WEC,System2(중장기),관심,False,False,False,True,116.19,116.81,100.85,0.996,2.0,,
+WEC,WEC,System1(단기),탈락,False,False,False,True,116.19,116.81,106.59,0.996,2.0,,
+WEC,WEC,System2(중장기),탈락,False,False,False,True,116.19,116.81,100.85,0.996,2.0,,
 WFC,WFC,System1(단기),관심,False,False,False,True,84.98,85.49,81.02,0.996,1.95,,
 WSM,WSM,System1(단기),관심,False,False,False,True,260.86,263.65,246.45,0.998,7.19,,
 WSM,WSM,System2(중장기),관심,False,False,False,True,260.86,263.65,230.99,0.998,7.19,,
