@@ -190,7 +190,7 @@ STLD,STLD,System1(단기),확정,True,True,False,False,255.31,254.13,231.06,1.02
 STE,STE,System1(단기),관심,False,False,False,True,232.68,234.34,219.8,0.993,5.37,,
 SYF,SYF,System1(단기),관심,False,False,False,True,76.81,77.76,72.25,0.992,1.91,,
 SYY,SYY,System2(중장기),관심,False,False,False,True,82.4,84.65,76.09,0.992,1.55,,
-TROW,TROW,System1(단기),관심,False,False,False,True,106.79,107.37,99.79,0.995,2.41,,
+TROW,TROW,System1(단기),탈락,False,False,False,True,106.79,107.37,99.79,0.995,2.41,,
 TER,TER,System1(단기),청산,False,False,True,False,265.58,448.0,266.36,0.62,21.99,,
 TER,TER,System2(중장기),청산,False,False,True,False,265.58,451.86,266.36,0.615,21.99,,
 TXN,TXN,System1(단기),관심,False,False,False,True,308.38,311.55,270.69,1.0,9.9,,
