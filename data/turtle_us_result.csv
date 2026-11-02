@@ -45,8 +45,8 @@ COF,COF,System1(단기),확정,True,True,False,False,211.69,211.49,198.7,1.004,5
 CASY,CASY,System1(단기),청산,False,False,True,False,656.66,718.24,660.82,0.95,19.82,,
 CBRE,CBRE,System1(단기),확정,True,True,False,False,137.22,136.97,121.44,1.011,4.73,,137.25
 CNC,CNC,System1(단기),청산,False,False,True,False,66.09,72.5,65.67,0.961,2.68,,
-CNP,CNP,System1(단기),관심,False,False,False,True,42.27,42.64,39.49,0.992,0.69,,
-CNP,CNP,System2(중장기),관심,False,False,False,True,42.27,42.64,37.51,0.992,0.69,,
+CNP,CNP,System1(단기),확정,False,False,False,True,42.27,42.64,39.49,0.992,0.69,,42.66
+CNP,CNP,System2(중장기),확정,False,False,False,True,42.27,42.64,37.51,0.992,0.69,,42.66
 CMG,CMG,System1(단기),관심,False,False,False,True,32.85,33.4,27.31,0.998,1.21,,
 CB,CB,System1(단기),관심,False,False,False,True,367.08,369.0,351.61,0.996,6.35,,
 CB,CB,System2(중장기),관심,False,False,False,True,367.08,369.0,328.81,0.996,6.35,,
@@ -162,7 +162,7 @@ PEP,PEP,System1(단기),확정,True,True,False,False,139.54,139.0,130.27,1.01,3.
 PFE,PFE,System1(단기),확정,False,False,False,True,30.63,30.67,29.22,1.0,0.58,,30.68
 PFE,PFE,System2(중장기),확정,False,False,False,True,30.63,30.67,27.12,1.0,0.58,,30.68
 PNC,PNC,System1(단기),관심,False,False,False,True,232.04,233.1,215.99,0.998,4.36,,
-PPL,PPL,System1(단기),관심,False,False,False,True,35.83,36.04,33.91,0.995,0.55,,
+PPL,PPL,System1(단기),탈락,False,False,False,True,35.83,36.04,33.91,0.995,0.55,,
 PFG,PFG,System1(단기),관심,False,False,False,True,112.53,114.0,106.27,0.992,2.37,,
 PRU,PRU,System1(단기),확정,True,True,False,False,118.34,118.2,112.84,1.004,2.37,,118.33
 PTC,PTC,System1(단기),관심,False,False,False,True,195.2,196.05,192.85,0.997,0.96,,
