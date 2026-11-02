@@ -36,8 +36,8 @@ TECH,TECH,System2(중장기),관심,False,False,False,True,72.68,72.75,72.38,1.0
 BLK,BLK,System1(단기),관심,False,False,False,True,1172.31,1182.61,1105.47,0.998,26.83,,
 BLK,BLK,System2(중장기),관심,False,False,False,True,1172.31,1182.61,1040.42,0.998,26.83,,
 BNY,BNY,System1(단기),관심,False,False,False,True,148.11,150.28,141.43,0.992,3.0,,
-BF-B,BF-B,System1(단기),관심,False,False,False,True,29.82,30.2,27.51,0.993,0.79,,
-BF-B,BF-B,System2(중장기),관심,False,False,False,True,29.82,30.2,25.69,0.993,0.79,,
+BF-B,BF-B,System1(단기),확정,False,False,False,True,29.82,30.2,27.51,0.993,0.79,,30.22
+BF-B,BF-B,System2(중장기),확정,False,False,False,True,29.82,30.2,25.69,0.993,0.79,,30.22
 BG,BG,System1(단기),청산,False,False,True,False,95.37,110.0,95.07,0.879,3.07,,
 BG,BG,System2(중장기),청산,False,False,True,False,95.37,127.47,95.07,0.758,3.07,,
 BXP,BXP,System1(단기),확정,True,True,False,False,63.62,63.55,57.59,1.014,1.6,,63.62
