@@ -136,7 +136,7 @@ KDP,KDP,System2(중장기),확정,False,False,False,True,35.96,36.13,30.2,0.998,
 KEY,KEY,System1(단기),관심,False,False,False,True,21.44,21.64,19.83,0.994,0.41,,
 KR,KR,System1(단기),확정,False,False,False,True,67.97,68.56,61.82,0.992,1.81,,68.58
 KR,KR,System2(중장기),확정,False,False,False,True,67.97,68.56,57.75,0.992,1.81,,68.58
-LDOS,LDOS,System1(단기),관심,False,False,False,True,143.87,145.14,123.69,0.997,3.69,,
+LDOS,LDOS,System1(단기),탈락,False,False,False,True,143.87,145.14,123.69,0.997,3.69,,
 LIN,LIN,System1(단기),확정,True,True,False,False,519.07,517.7,496.68,1.007,7.84,,519.4
 LIN,LIN,System2(중장기),확정,True,True,False,False,519.07,517.7,476.58,1.007,7.84,,519.4
 L,L,System1(단기),관심,False,False,False,True,110.86,113.8,109.53,0.993,1.86,,
