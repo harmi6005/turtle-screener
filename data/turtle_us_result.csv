@@ -134,7 +134,7 @@ HPQ,HPQ,System1(단기),청산,False,False,True,False,29.05,34.27,29.84,0.864,1.
 HPQ,HPQ,System2(중장기),청산,False,False,True,False,29.05,36.23,29.18,0.818,1.43,,
 HUBB,HUBB,System1(단기),청산,False,False,True,False,426.26,492.63,426.91,0.885,14.76,,
 HUBB,HUBB,System2(중장기),청산,False,False,True,False,426.26,511.46,426.91,0.852,14.76,,
-HBAN,HBAN,System1(단기),관심,False,False,False,True,15.77,16.08,15.2,0.997,0.3,,
+HBAN,HBAN,System1(단기),확정,False,False,False,True,15.77,16.08,15.2,0.997,0.3,,16.08
 IEX,IEX,System1(단기),탈락,False,False,False,True,236.53,241.3,223.06,0.994,5.54,,
 IEX,IEX,System2(중장기),탈락,False,False,False,True,236.53,241.96,223.06,0.991,5.54,,
 ILMN,ILMN,System1(단기),청산,False,False,True,False,238.77,309.35,257.31,0.828,17.41,,
