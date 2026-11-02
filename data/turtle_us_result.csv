@@ -170,7 +170,7 @@ PTC,PTC,System2(중장기),관심,False,False,False,True,195.2,196.05,191.92,0.9
 PEG,PEG,System1(단기),관심,False,False,False,True,73.36,74.42,69.79,0.994,1.39,,
 RL,RL,System1(단기),관심,False,False,False,True,400.54,403.96,370.69,0.996,9.85,,
 RL,RL,System2(중장기),관심,False,False,False,True,400.54,403.96,356.28,0.996,9.85,,
-RJF,RJF,System1(단기),관심,False,False,False,True,161.17,162.17,152.93,0.997,3.38,,
+RJF,RJF,System1(단기),탈락,False,False,False,True,161.17,162.17,152.93,0.997,3.38,,
 O,O,System1(단기),확정,False,False,False,True,57.15,57.65,55.02,0.993,0.92,,57.67
 REG,REG,System1(단기),관심,False,False,False,True,75.18,75.83,72.12,0.992,1.2,,
 RF,RF,System1(단기),관심,False,False,False,True,28.93,29.04,27.15,0.999,0.55,,
@@ -319,7 +319,7 @@ ALLE,ALLE,System1(단기),확정,False,False,False,True,180.35,181.24,150.7,0.99
 ALLE,ALLE,System2(중장기),확정,False,False,False,True,180.35,181.24,142.0,0.997,4.31,,181.28
 ADI,ADI,System1(단기),확정,False,False,False,True,420.76,427.27,382.0,0.993,13.58,,427.55
 ADI,ADI,System2(중장기),확정,False,False,False,True,420.76,427.27,382.0,0.993,13.58,,427.55
-RVTY,RVTY,System1(단기),확정,False,False,False,True,165.8,166.18,148.76,0.999,6.14,,166.55
+RVTY,RVTY,System1(단기),확정이탈,False,False,False,True,165.8,166.18,148.76,0.999,6.14,,166.55
 RVTY,RVTY,System2(중장기),확정,False,False,False,True,165.8,166.18,146.63,0.999,6.14,,166.55
 SBUX,SBUX,System1(단기),확정,False,False,False,True,102.93,103.4,91.31,0.997,2.32,,103.44
 VTRS,VTRS,System1(단기),확정,False,False,False,True,18.72,18.83,17.24,0.994,0.47,,18.85
