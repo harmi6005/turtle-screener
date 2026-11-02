@@ -90,8 +90,8 @@ ETR,ETR,System1(단기),관심,False,False,False,True,109.48,111.18,103.23,0.998
 ETR,ETR,System2(중장기),관심,False,False,False,True,109.48,111.18,99.83,0.998,1.72,,
 ERIE,ERIE,System1(단기),확정,True,True,False,False,270.93,270.53,238.56,1.005,8.22,,270.58
 ERIE,ERIE,System2(중장기),확정,True,True,False,False,270.93,270.53,217.2,1.005,8.22,,270.58
-EVRG,EVRG,System1(단기),관심,False,False,False,True,86.11,86.55,81.38,0.997,1.31,,
-EVRG,EVRG,System2(중장기),관심,False,False,False,True,86.11,86.55,78.54,0.997,1.31,,
+EVRG,EVRG,System1(단기),탈락,False,False,False,True,86.11,86.55,81.38,0.997,1.31,,
+EVRG,EVRG,System2(중장기),탈락,False,False,False,True,86.11,86.55,78.54,0.997,1.31,,
 P,P,System1(단기),청산,False,False,True,False,116.72,157.57,119.15,0.819,8.82,,
 P,P,System2(중장기),청산,False,False,True,False,116.72,157.57,119.15,0.819,8.82,,
 EXE,EXE,System1(단기),청산,False,False,True,False,89.57,94.92,89.8,0.959,2.34,,
