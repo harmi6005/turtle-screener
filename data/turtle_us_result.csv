@@ -201,7 +201,7 @@ PPG,PPG,System2(중장기),관심,False,False,False,True,122.61,125.44,102.75,0.
 PPL,PPL,System1(단기),관심,False,False,False,True,36.01,36.21,33.91,0.995,0.55,,
 PPL,PPL,System2(중장기),관심,False,False,False,True,36.01,36.3,33.1,0.992,0.55,,
 PFG,PFG,System1(단기),관심,False,False,False,True,112.76,114.0,106.27,0.991,2.36,,
-PRU,PRU,System1(단기),관심,False,False,False,True,118.11,118.77,114.12,0.998,2.35,,
+PRU,PRU,System1(단기),확정,False,False,False,True,118.11,118.77,114.12,0.998,2.35,,118.81
 PTC,PTC,System1(단기),관심,False,False,False,True,194.38,195.71,192.85,0.995,0.96,,
 PTC,PTC,System2(중장기),관심,False,False,False,True,194.38,196.05,192.58,0.994,0.96,,
 PEG,PEG,System1(단기),관심,False,False,False,True,73.61,74.51,70.51,0.991,1.3,,
