@@ -104,8 +104,8 @@ EVRG,EVRG,System2(중장기),관심,False,False,False,True,85.79,86.73,79.21,0.9
 ES,ES,System1(단기),관심,False,False,False,True,69.18,69.66,64.69,0.993,1.21,,
 EXE,EXE,System1(단기),청산,False,False,True,False,90.79,94.92,89.27,0.957,2.33,,
 EXPE,EXPE,System1(단기),관심,False,False,False,True,288.39,301.81,273.95,0.991,11.54,,
-EXPD,EXPD,System1(단기),관심,False,False,False,True,200.8,203.13,193.69,0.995,3.99,,
-EXPD,EXPD,System2(중장기),관심,False,False,False,True,200.8,203.13,190.39,0.995,3.99,,
+EXPD,EXPD,System1(단기),탈락,False,False,False,True,200.8,203.13,193.69,0.995,3.99,,
+EXPD,EXPD,System2(중장기),탈락,False,False,False,True,200.8,203.13,190.39,0.995,3.99,,
 EXR,EXR,System1(단기),관심,False,False,False,True,155.54,156.74,138.99,0.992,3.09,,
 EXR,EXR,System2(중장기),관심,False,False,False,True,155.54,156.74,130.54,0.992,3.09,,
 FDX,FDX,System1(단기),확정,False,False,False,True,319.27,321.78,293.5,0.998,6.75,,322.01
