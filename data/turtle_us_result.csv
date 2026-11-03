@@ -189,7 +189,7 @@ PKG,PKG,System1(단기),관심,False,False,False,True,256.0,260.13,235.7,0.995,5
 PKG,PKG,System2(중장기),관심,False,False,False,True,256.0,260.13,225.12,0.995,5.06,,
 PLTR,PLTR,System1(단기),청산,False,False,True,False,169.59,212.94,178.13,0.811,9.22,,
 PLTR,PLTR,System2(중장기),청산,False,False,True,False,169.59,212.94,178.13,0.811,9.22,,
-PYPL,PYPL,System1(단기),관심,False,False,False,True,58.77,59.03,54.34,0.996,1.27,,
+PYPL,PYPL,System1(단기),확정,False,False,False,True,58.77,59.03,54.34,0.996,1.27,,59.03
 PNR,PNR,System1(단기),관심,False,False,False,True,69.69,70.87,52.11,0.992,1.96,,
 PNR,PNR,System2(중장기),관심,False,False,False,True,69.69,70.87,50.88,0.992,1.96,,
 PEP,PEP,System1(단기),관심,False,False,False,True,138.52,140.66,131.85,0.994,3.16,,
