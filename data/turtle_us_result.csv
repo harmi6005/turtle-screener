@@ -85,7 +85,7 @@ FANG,FANG,System1(단기),청산,False,False,True,False,196.92,212.54,194.85,0.9
 DLTR,DLTR,System1(단기),관심,False,False,False,True,135.85,139.39,122.52,0.992,4.13,,
 DLTR,DLTR,System2(중장기),관심,False,False,False,True,135.85,139.39,113.56,0.992,4.13,,
 D,D,System1(단기),관심,False,False,False,True,67.35,68.04,62.25,0.996,1.26,,
-DPZ,DPZ,System1(단기),관심,False,False,False,True,322.74,323.5,305.0,0.998,9.26,,
+DPZ,DPZ,System1(단기),확정,False,False,False,True,322.74,323.5,305.0,0.998,9.26,,323.88
 DOV,DOV,System1(단기),탈락,True,True,False,False,216.85,216.12,191.56,1.007,4.1,,
 DOV,DOV,System2(중장기),탈락,True,True,False,False,216.85,216.12,186.65,1.007,4.1,,
 DTE,DTE,System1(단기),관심,False,False,False,True,135.23,136.42,127.27,0.993,1.97,,
