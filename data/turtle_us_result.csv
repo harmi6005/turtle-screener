@@ -16,7 +16,7 @@ AIG,AIG,System1(단기),탈락,False,False,False,True,82.51,83.07,79.35,0.995,1.
 AIG,AIG,System2(중장기),탈락,False,False,False,True,82.51,83.07,74.53,0.995,1.38,,
 AWK,AWK,System1(단기),탈락,False,False,False,True,145.14,146.62,132.74,0.992,2.92,,
 AWK,AWK,System2(중장기),탈락,False,False,False,True,145.14,146.62,126.34,0.992,2.92,,
-AMP,AMP,System1(단기),관심,False,False,False,True,501.46,509.51,478.81,0.991,11.57,,
+AMP,AMP,System1(단기),탈락,False,False,False,True,501.46,509.51,478.81,0.991,11.57,,
 ADM,ADM,System1(단기),청산,False,False,True,False,75.87,84.28,75.86,0.911,1.9,,
 ADM,ADM,System2(중장기),청산,False,False,True,False,75.87,88.75,75.86,0.865,1.9,,
 ANET,ANET,System1(단기),청산,False,False,True,False,165.95,217.41,166.86,0.787,9.36,,
@@ -139,8 +139,8 @@ KR,KR,System2(중장기),확정,False,False,False,True,67.97,68.56,57.75,0.992,1
 LDOS,LDOS,System1(단기),탈락,False,False,False,True,143.87,145.14,123.69,0.997,3.69,,
 LIN,LIN,System1(단기),확정,True,True,False,False,519.07,517.7,496.68,1.007,7.84,,519.4
 LIN,LIN,System2(중장기),확정,True,True,False,False,519.07,517.7,476.58,1.007,7.84,,519.4
-L,L,System1(단기),관심,False,False,False,True,110.86,113.8,109.53,0.993,1.86,,
-L,L,System2(중장기),관심,False,False,False,True,110.86,114.05,104.88,0.991,1.86,,
+L,L,System1(단기),탈락,False,False,False,True,110.86,113.8,109.53,0.993,1.86,,
+L,L,System2(중장기),탈락,False,False,False,True,110.86,114.05,104.88,0.991,1.86,,
 LITE,LITE,System1(단기),청산,False,False,True,False,718.76,1143.0,736.01,0.7,76.69,,
 LITE,LITE,System2(중장기),청산,False,False,True,False,718.76,1143.0,736.01,0.7,76.69,,
 MTB,MTB,System1(단기),확정,False,False,False,True,224.44,225.02,212.28,0.999,4.34,,225.08
@@ -189,7 +189,7 @@ LUV,LUV,System2(중장기),관심,False,False,False,True,43.94,44.93,38.5,0.996,
 STLD,STLD,System1(단기),확정,True,True,False,False,255.31,254.13,231.06,1.02,8.18,,254.85
 STE,STE,System1(단기),관심,False,False,False,True,232.68,234.34,219.8,0.993,5.37,,
 SYF,SYF,System1(단기),관심,False,False,False,True,76.81,77.76,72.25,0.992,1.91,,
-SYY,SYY,System2(중장기),관심,False,False,False,True,82.4,84.65,76.09,0.992,1.55,,
+SYY,SYY,System2(중장기),탈락,False,False,False,True,82.4,84.65,76.09,0.992,1.55,,
 TROW,TROW,System1(단기),탈락,False,False,False,True,106.79,107.37,99.79,0.995,2.41,,
 TER,TER,System1(단기),청산,False,False,True,False,265.58,448.0,266.36,0.62,21.99,,
 TER,TER,System2(중장기),청산,False,False,True,False,265.58,451.86,266.36,0.615,21.99,,
