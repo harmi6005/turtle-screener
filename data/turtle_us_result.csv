@@ -108,7 +108,7 @@ EXPD,EXPD,System1(단기),관심,False,False,False,True,200.8,203.13,193.69,0.99
 EXPD,EXPD,System2(중장기),관심,False,False,False,True,200.8,203.13,190.39,0.995,3.99,,
 EXR,EXR,System1(단기),관심,False,False,False,True,155.54,156.74,138.99,0.992,3.09,,
 EXR,EXR,System2(중장기),관심,False,False,False,True,155.54,156.74,130.54,0.992,3.09,,
-FDX,FDX,System1(단기),관심,False,False,False,True,319.27,321.78,293.5,0.998,6.75,,
+FDX,FDX,System1(단기),확정,False,False,False,True,319.27,321.78,293.5,0.998,6.75,,322.01
 FITB,FITB,System1(단기),관심,False,False,False,True,54.83,55.01,50.44,0.999,1.09,,
 FSLR,FSLR,System1(단기),관심,False,False,False,True,186.62,187.85,165.86,0.994,7.07,,
 FE,FE,System1(단기),관심,False,False,False,True,47.35,47.71,45.31,0.997,0.72,,
