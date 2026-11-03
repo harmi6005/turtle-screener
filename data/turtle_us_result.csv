@@ -176,7 +176,7 @@ REG,REG,System1(단기),관심,False,False,False,True,75.18,75.83,72.12,0.992,1.
 RF,RF,System1(단기),관심,False,False,False,True,28.93,29.04,27.15,0.999,0.55,,
 RMD,RMD,System1(단기),청산,False,False,True,False,229.34,255.57,228.33,0.913,6.54,,
 ROST,ROST,System1(단기),청산,False,False,True,False,228.93,241.49,226.69,0.954,5.68,,
-RTX,RTX,System1(단기),관심,False,False,False,True,202.15,204.21,188.08,0.992,4.88,,
+RTX,RTX,System1(단기),확정,False,False,False,True,202.15,204.21,188.08,0.992,4.88,,204.46
 SPGI,SPGI,System1(단기),확정,True,True,False,False,475.73,474.61,422.43,1.004,10.28,,475.88
 SPGI,SPGI,System2(중장기),확정,True,True,False,False,475.73,474.61,384.0,1.004,10.28,,475.88
 STX,STX,System1(단기),청산,False,False,True,False,606.85,903.0,621.0,0.716,48.48,,
