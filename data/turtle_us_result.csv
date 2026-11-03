@@ -8,8 +8,8 @@ AKAM,AKAM,System1(단기),청산,False,False,True,False,85.66,111.6,86.06,0.787,
 AKAM,AKAM,System2(중장기),청산,False,False,True,False,85.66,128.46,86.06,0.684,5.29,,
 ALLE,ALLE,System1(단기),관심,False,False,False,True,190.34,192.48,155.15,0.992,4.82,,
 ALLE,ALLE,System2(중장기),관심,False,False,False,True,190.34,192.48,142.0,0.992,4.82,,
-LNT,LNT,System1(단기),관심,False,False,False,True,72.93,73.25,66.63,0.996,1.2,,
-LNT,LNT,System2(중장기),관심,False,False,False,True,72.93,73.25,63.95,0.996,1.2,,
+LNT,LNT,System1(단기),확정,False,False,False,True,72.93,73.25,66.63,0.996,1.2,,73.26
+LNT,LNT,System2(중장기),확정,False,False,False,True,72.93,73.25,63.95,0.996,1.2,,73.26
 ALL,ALL,System1(단기),관심,False,False,False,True,262.05,264.81,247.67,0.993,5.62,,
 AEE,AEE,System1(단기),관심,False,False,False,True,110.84,111.88,104.68,0.991,1.72,,
 AEE,AEE,System2(중장기),관심,False,False,False,True,110.84,111.88,99.5,0.991,1.72,,
