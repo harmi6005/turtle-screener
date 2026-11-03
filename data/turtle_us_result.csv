@@ -230,7 +230,7 @@ AFL,AFL,System2(중장기),확정,True,True,False,False,124.8,124.28,110.0,1.011
 AEP,AEP,System1(단기),확정,True,True,False,False,131.51,131.04,124.33,1.009,2.35,,131.39
 AEP,AEP,System2(중장기),확정,True,True,False,False,131.51,131.04,118.63,1.009,2.35,,131.39
 AXP,AXP,System1(단기),확정,False,False,False,True,319.62,326.49,311.23,0.995,6.34,,327.23
-APA,APA,System1(단기),확정,True,True,False,False,52.49,52.39,47.23,1.002,1.55,,52.5
+APA,APA,System1(단기),확정이탈,True,True,False,False,52.49,52.39,47.23,1.002,1.55,,52.5
 APA,APA,System2(중장기),확정,True,True,False,False,52.49,52.39,42.09,1.002,1.55,,52.5
 ARES,ARES,System1(단기),확정,False,False,False,True,127.3,128.96,111.32,0.992,3.58,,129.07
 AVY,AVY,System1(단기),확정,False,False,False,True,181.18,185.75,173.82,0.993,3.83,,185.83
