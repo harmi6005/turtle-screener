@@ -74,7 +74,7 @@ CTAS,CTAS,System1(단기),탈락,False,False,False,True,223.74,226.69,209.0,0.99
 CTAS,CTAS,System2(중장기),탈락,False,False,False,True,223.74,226.69,194.22,0.995,4.85,,
 CME,CME,System1(단기),탈락,False,False,False,True,304.06,309.4,290.19,0.991,6.65,,
 CME,CME,System2(중장기),탈락,False,False,False,True,304.06,309.4,266.81,0.991,6.65,,
-CMS,CMS,System1(단기),관심,False,False,False,True,70.0,70.99,67.7,0.995,1.24,,
+CMS,CMS,System1(단기),확정,False,False,False,True,70.0,70.99,67.7,0.995,1.24,,71.1
 KO,KO,System1(단기),탈락,False,False,False,True,94.8,96.26,90.58,0.992,1.74,,
 KO,KO,System2(중장기),탈락,False,False,False,True,94.8,96.26,85.67,0.992,1.74,,
 ED,ED,System1(단기),탈락,False,False,False,True,116.81,118.79,110.27,0.992,2.15,,
