@@ -75,7 +75,7 @@ DVN,DVN,System2(중장기),청산,False,False,True,False,44.67,52.28,47.4,0.898,
 FANG,FANG,System1(단기),청산,False,False,True,False,184.37,212.54,192.23,0.899,6.31,,
 DOV,DOV,System1(단기),관심,False,False,False,True,214.15,217.74,191.56,1.0,4.35,,
 DOV,DOV,System2(중장기),관심,False,False,False,True,214.15,217.74,186.65,1.0,4.35,,
-DTE,DTE,System1(단기),관심,False,False,False,True,135.78,136.42,129.26,0.999,2.03,,
+DTE,DTE,System1(단기),확정,False,False,False,True,135.78,136.42,129.26,0.999,2.03,,136.46
 ETN,ETN,System1(단기),청산,False,False,True,False,352.99,439.51,358.51,0.861,18.28,,
 ETN,ETN,System2(중장기),청산,False,False,True,False,352.99,452.0,358.51,0.837,18.28,,
 ECHO,ECHO,System1(단기),관심,False,False,False,True,98.65,102.46,85.21,0.991,4.49,,
