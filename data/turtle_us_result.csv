@@ -2,8 +2,8 @@ code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal
 AOS,AOS,System1(단기),확정,False,False,False,True,63.84,65.65,58.14,0.993,1.73,,65.67
 AOS,AOS,System2(중장기),확정,False,False,False,True,63.84,65.65,54.22,0.993,1.73,,65.67
 ADBE,ADBE,System1(단기),청산,False,False,True,False,246.14,272.1,241.5,0.913,9.1,,
-AES,AES,System1(단기),진입,True,True,False,False,14.92,14.91,14.76,1.001,0.05,,
-AES,AES,System2(중장기),진입,True,True,False,False,14.92,14.91,14.71,1.001,0.05,,
+AES,AES,System1(단기),탈락,True,True,False,False,14.92,14.91,14.76,1.001,0.05,,
+AES,AES,System2(중장기),탈락,True,True,False,False,14.92,14.91,14.71,1.001,0.05,,
 AFL,AFL,System1(단기),관심,False,False,False,True,124.04,125.69,116.76,0.997,2.15,,
 AFL,AFL,System2(중장기),관심,False,False,False,True,124.04,125.69,112.02,0.997,2.15,,
 AKAM,AKAM,System1(단기),청산,False,False,True,False,86.53,111.6,86.06,0.787,5.29,,
@@ -162,8 +162,8 @@ MRVL,MRVL,System2(중장기),청산,False,False,True,False,171.97,301.2,168.52,0
 MAS,MAS,System1(단기),탈락,False,False,False,True,82.18,83.85,73.0,0.995,2.44,,
 MAS,MAS,System2(중장기),탈락,False,False,False,True,82.18,83.85,67.71,0.995,2.44,,
 MCD,MCD,System1(단기),탈락,False,False,False,True,263.04,265.67,243.33,0.994,4.86,,
-MTD,MTD,System1(단기),관심,False,False,False,True,1698.04,1728.66,1606.0,0.994,38.57,,
-MTD,MTD,System2(중장기),관심,False,False,False,True,1698.04,1728.66,1500.9,0.994,38.57,,
+MTD,MTD,System1(단기),확정,False,False,False,True,1698.04,1728.66,1606.0,0.994,38.57,,1730.33
+MTD,MTD,System2(중장기),확정,False,False,False,True,1698.04,1728.66,1500.9,0.994,38.57,,1730.33
 MDLZ,MDLZ,System1(단기),탈락,False,False,False,True,65.12,66.49,61.51,0.992,1.39,,
 MDLZ,MDLZ,System2(중장기),탈락,False,False,False,True,65.12,66.49,58.25,0.992,1.39,,
 MCO,MCO,System1(단기),탈락,False,False,False,True,503.69,509.27,455.65,0.995,12.78,,
