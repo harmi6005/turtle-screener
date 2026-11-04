@@ -245,8 +245,8 @@ WDC,WDC,System1(단기),청산,False,False,True,False,327.22,409.39,335.75,0.854
 WDC,WDC,System2(중장기),청산,False,False,True,False,327.22,519.83,331.81,0.672,23.31,,
 WMB,WMB,System1(단기),청산,False,False,True,False,67.31,76.0,68.97,0.945,2.5,,
 WMB,WMB,System2(중장기),청산,False,False,True,False,67.31,76.31,68.5,0.941,2.5,,
-XEL,XEL,System1(단기),관심,False,False,False,True,80.24,80.53,76.52,0.998,1.46,,
-XEL,XEL,System2(중장기),관심,False,False,False,True,80.24,80.53,72.03,0.998,1.46,,
+XEL,XEL,System1(단기),탈락,False,False,False,True,80.24,80.53,76.52,0.998,1.46,,
+XEL,XEL,System2(중장기),탈락,False,False,False,True,80.24,80.53,72.03,0.998,1.46,,
 AOS,AOS,System1(단기),확정,False,False,False,True,63.84,65.65,58.14,0.993,1.73,,65.67
 AOS,AOS,System2(중장기),확정,False,False,False,True,63.84,65.65,54.22,0.993,1.73,,65.67
 ALL,ALL,System1(단기),확정,False,False,False,True,261.5,264.81,247.67,0.993,5.62,,264.98
