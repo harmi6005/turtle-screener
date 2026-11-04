@@ -29,7 +29,7 @@ BKR,BKR,System2(중장기),청산,False,False,True,False,49.44,66.09,52.59,0.802
 TECH,TECH,System1(단기),확정,True,True,False,False,72.79,72.75,72.5,1.001,0.12,,72.79
 TECH,TECH,System2(중장기),확정,True,True,False,False,72.79,72.75,72.43,1.001,0.12,,72.79
 BNY,BNY,System1(단기),확정,True,True,False,False,150.59,150.53,142.4,1.022,3.12,,150.57
-BMY,BMY,System1(단기),관심,False,False,False,True,63.16,64.05,60.0,0.995,1.87,,
+BMY,BMY,System1(단기),탈락,False,False,False,True,63.16,64.05,60.0,0.995,1.87,,
 CPT,CPT,System1(단기),탈락,True,True,False,False,103.53,103.48,99.03,1.002,1.87,,
 COF,COF,System1(단기),청산,False,False,True,False,203.78,212.29,199.28,1.013,5.84,,
 CAH,CAH,System1(단기),탈락,False,False,False,True,258.5,259.84,243.49,0.997,5.79,,
