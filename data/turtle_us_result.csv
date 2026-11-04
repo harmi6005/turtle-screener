@@ -82,8 +82,8 @@ ECHO,ECHO,System1(단기),관심,False,False,False,True,98.65,102.46,85.21,0.991
 ECHO,ECHO,System2(중장기),관심,False,False,False,True,98.65,102.46,82.73,0.991,4.49,,
 EME,EME,System1(단기),청산,False,False,True,False,633.2,806.14,631.7,0.839,30.17,,
 EME,EME,System2(중장기),청산,False,False,True,False,633.2,843.11,631.7,0.803,30.17,,
-EMR,EMR,System1(단기),관심,False,False,False,True,169.5,171.25,154.52,0.999,4.69,,
-EMR,EMR,System2(중장기),관심,False,False,False,True,169.5,171.25,154.52,0.999,4.69,,
+EMR,EMR,System1(단기),확정,False,False,False,True,169.5,171.25,154.52,0.999,4.69,,171.68
+EMR,EMR,System2(중장기),확정,False,False,False,True,169.5,171.25,154.52,0.999,4.69,,171.68
 EOG,EOG,System1(단기),청산,False,False,True,False,148.03,165.93,154.71,0.922,4.12,,
 EQT,EQT,System1(단기),청산,False,False,True,False,51.92,57.3,52.29,0.947,1.59,,
 EFX,EFX,System2(중장기),관심,False,False,False,True,196.12,197.33,140.84,0.997,6.7,,
