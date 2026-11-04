@@ -334,7 +334,7 @@ COP,COP,System2(중장기),확정,True,True,False,False,153.22,152.77,124.81,1.0
 DVN,DVN,System2(중장기),확정이탈,True,True,False,False,52.16,52.01,45.75,1.003,1.36,,52.17
 EOG,EOG,System1(단기),확정이탈,True,True,False,False,165.33,165.11,152.53,1.003,3.74,,165.37
 EOG,EOG,System2(중장기),확정,True,True,False,False,165.33,165.11,138.53,1.003,3.74,,165.37
-HAL,HAL,System1(단기),확정,True,True,False,False,36.31,36.19,32.35,1.01,0.98,,36.29
+HAL,HAL,System1(단기),확정이탈,True,True,False,False,36.31,36.19,32.35,1.01,0.98,,36.29
 KKR,KKR,System1(단기),확정,False,False,False,True,94.9,96.27,86.03,0.995,2.66,,96.35
 NXPI,NXPI,System1(단기),확정,False,False,False,True,259.0,266.98,226.3,0.994,9.88,,266.99
 NXPI,NXPI,System2(중장기),확정,False,False,False,True,259.0,266.98,218.64,0.994,9.88,,266.99
