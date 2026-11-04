@@ -143,8 +143,8 @@ LHX,LHX,System1(단기),탈락,False,False,False,True,277.67,283.71,243.6,0.99,6
 LDOS,LDOS,System1(단기),청산,False,False,True,False,134.72,145.27,126.24,0.967,4.49,,
 LLY,LLY,System1(단기),관심,False,False,False,True,1409.38,1449.68,1257.62,0.991,45.48,,
 LLY,LLY,System2(중장기),관심,False,False,False,True,1409.38,1449.68,1131.21,0.991,45.48,,
-LIN,LIN,System1(단기),관심,False,False,False,True,511.55,522.93,496.68,0.993,7.87,,
-LIN,LIN,System2(중장기),관심,False,False,False,True,511.55,522.93,479.0,0.993,7.87,,
+LIN,LIN,System1(단기),확정,False,False,False,True,511.55,522.93,496.68,0.993,7.87,,523.12
+LIN,LIN,System2(중장기),확정,False,False,False,True,511.55,522.93,479.0,0.993,7.87,,523.12
 LYV,LYV,System1(단기),확정,False,False,False,True,178.87,181.09,169.07,0.993,3.84,,181.93
 L,L,System1(단기),청산,False,False,True,False,109.97,113.8,109.69,0.98,1.85,,
 LOW,LOW,System1(단기),탈락,False,False,False,True,213.38,218.25,194.43,0.991,5.34,,
