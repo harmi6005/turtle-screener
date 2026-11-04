@@ -123,7 +123,7 @@ HPE,HPE,System2(중장기),청산,False,False,True,False,49.74,73.56,50.83,0.72,
 HON,HON,System2(중장기),확정,True,True,False,False,230.63,229.76,204.23,1.005,5.54,,230.78
 IBM,IBM,System1(단기),관심,False,False,False,True,256.67,259.87,240.0,0.995,7.58,,
 IBM,IBM,System2(중장기),관심,False,False,False,True,256.67,259.87,217.8,0.995,7.58,,
-INCY,INCY,System1(단기),관심,False,False,False,True,121.55,122.87,111.01,0.991,3.74,,
+INCY,INCY,System1(단기),탈락,False,False,False,True,121.55,122.87,111.01,0.991,3.74,,
 INTC,INTC,System1(단기),청산,False,False,True,False,57.86,115.3,59.4,0.522,6.26,,
 INTC,INTC,System2(중장기),청산,False,False,True,False,57.86,127.44,59.4,0.472,6.26,,
 IFF,IFF,System1(단기),청산,False,False,True,False,89.32,95.27,90.07,0.944,2.36,,
@@ -132,8 +132,8 @@ JBL,JBL,System1(단기),청산,False,False,True,False,256.27,319.6,259.44,0.848,
 JBL,JBL,System2(중장기),청산,False,False,True,False,256.27,362.14,259.44,0.748,13.56,,
 JCI,JCI,System1(단기),청산,False,False,True,False,139.14,160.05,140.66,0.928,5.78,,
 JCI,JCI,System2(중장기),청산,False,False,True,False,139.14,160.41,140.66,0.926,5.78,,
-KDP,KDP,System1(단기),관심,False,False,False,True,36.58,36.95,34.28,0.99,0.94,,
-KDP,KDP,System2(중장기),관심,False,False,False,True,36.58,36.95,30.5,0.99,0.94,,
+KDP,KDP,System1(단기),탈락,False,False,False,True,36.58,36.95,34.28,0.99,0.94,,
+KDP,KDP,System2(중장기),탈락,False,False,False,True,36.58,36.95,30.5,0.99,0.94,,
 KEYS,KEYS,System1(단기),청산,False,False,True,False,283.33,385.97,298.52,0.793,15.57,,
 KEYS,KEYS,System2(중장기),청산,False,False,True,False,283.33,389.93,298.52,0.785,15.57,,
 KMI,KMI,System1(단기),청산,False,False,True,False,31.19,34.44,32.17,0.961,0.9,,
@@ -166,8 +166,8 @@ MNST,MNST,System2(중장기),관심,False,False,False,True,48.76,49.24,42.56,0.9
 NDAQ,NDAQ,System1(단기),확정,True,True,False,False,108.93,108.69,94.03,1.007,2.24,,108.83
 NDAQ,NDAQ,System2(중장기),확정,True,True,False,False,108.93,108.69,90.41,1.007,2.24,,108.83
 NKE,NKE,System2(중장기),확정,True,True,False,False,40.94,40.91,33.81,1.001,1.11,,40.95
-NI,NI,System1(단기),관심,False,False,False,True,45.0,45.17,42.51,0.997,0.77,,
-NI,NI,System2(중장기),관심,False,False,False,True,45.0,45.17,39.86,0.997,0.77,,
+NI,NI,System1(단기),확정,False,False,False,True,45.0,45.17,42.51,0.997,0.77,,45.17
+NI,NI,System2(중장기),확정,False,False,False,True,45.0,45.17,39.86,0.997,0.77,,45.17
 NDSN,NDSN,System2(중장기),관심,False,False,False,True,326.14,338.18,311.55,0.993,7.76,,
 NTRS,NTRS,System1(단기),확정,True,True,False,False,174.5,174.1,163.24,1.019,4.02,,174.6
 NOC,NOC,System1(단기),청산,False,False,True,False,525.3,575.55,535.0,0.939,15.01,,
@@ -360,7 +360,7 @@ VTRS,VTRS,System2(중장기),확정,False,False,False,True,18.72,18.83,16.89,0.9
 WST,WST,System1(단기),확정,True,True,False,False,400.0,398.67,372.21,1.007,8.19,,400.0
 WST,WST,System2(중장기),확정,True,True,False,False,400.0,398.67,359.49,1.007,8.19,,400.0
 EQT,EQT,System2(중장기),확정이탈,False,False,False,True,56.27,56.52,48.17,0.998,1.49,,56.56
-LYB,LYB,System1(단기),확정,True,True,False,False,67.27,67.03,59.17,1.026,1.73,,67.34
+LYB,LYB,System1(단기),확정이탈,True,True,False,False,67.27,67.03,59.17,1.026,1.73,,67.34
 ADP,ADP,System1(단기),확정,True,True,False,False,294.5,294.27,262.16,1.006,5.52,,297.45
 ADP,ADP,System2(중장기),확정,True,True,False,False,294.5,294.27,255.96,1.006,5.52,,297.45
 BRO,BRO,System1(단기),확정,False,False,False,True,70.53,71.48,61.41,0.995,1.67,,71.73
