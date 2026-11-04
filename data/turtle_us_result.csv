@@ -206,7 +206,7 @@ SRE,SRE,System1(단기),청산,False,False,True,False,82.26,87.08,83.02,0.968,1.
 SWKS,SWKS,System1(단기),청산,False,False,True,False,82.47,90.5,79.97,0.913,3.87,,
 SWKS,SWKS,System2(중장기),청산,False,False,True,False,82.47,92.8,73.76,0.89,3.87,,
 SJM,SJM,System1(단기),관심,False,False,False,True,133.51,134.0,124.68,1.0,3.4,,
-SBUX,SBUX,System2(중장기),관심,False,False,False,True,108.81,109.23,87.35,0.997,2.69,,
+SBUX,SBUX,System2(중장기),탈락,False,False,False,True,108.81,109.23,87.35,0.997,2.69,,
 STLD,STLD,System1(단기),관심,False,False,False,True,241.66,259.24,231.06,0.995,9.16,,
 STLD,STLD,System2(중장기),관심,False,False,False,True,241.66,259.24,231.06,0.995,9.16,,
 SMCI,SMCI,System1(단기),청산,False,False,True,False,30.02,45.77,30.27,0.715,2.57,,
