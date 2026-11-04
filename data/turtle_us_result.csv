@@ -367,7 +367,7 @@ VTRS,VTRS,System1(단기),확정,False,False,False,True,18.72,18.83,17.24,0.994,
 VTRS,VTRS,System2(중장기),확정,False,False,False,True,18.72,18.83,16.89,0.994,0.47,,18.85
 WST,WST,System1(단기),확정,True,True,False,False,400.0,398.67,372.21,1.007,8.19,,400.0
 WST,WST,System2(중장기),확정,True,True,False,False,400.0,398.67,359.49,1.007,8.19,,400.0
-EQT,EQT,System1(단기),확정,True,True,False,False,56.27,56.07,51.73,1.006,1.49,,56.56
+EQT,EQT,System1(단기),확정이탈,True,True,False,False,56.27,56.07,51.73,1.006,1.49,,56.56
 EQT,EQT,System2(중장기),확정,False,False,False,True,56.27,56.52,48.17,0.998,1.49,,56.56
 LYB,LYB,System1(단기),확정,True,True,False,False,67.27,67.03,59.17,1.026,1.73,,67.34
 NOC,NOC,System1(단기),확정이탈,False,False,False,True,553.33,556.56,478.36,0.994,13.41,,559.08
