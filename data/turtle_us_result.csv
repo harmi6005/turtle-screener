@@ -4,7 +4,7 @@ AFL,AFL,System1(단기),관심,False,False,False,True,124.72,125.69,120.0,0.999,
 AFL,AFL,System2(중장기),관심,False,False,False,True,124.72,125.69,112.47,0.999,2.19,,
 APD,APD,System1(단기),관심,False,False,False,True,317.84,319.98,300.79,0.993,4.85,,
 APD,APD,System2(중장기),관심,False,False,False,True,317.84,319.98,274.82,0.993,4.85,,
-ABNB,ABNB,System1(단기),관심,False,False,False,True,178.6,179.13,164.1,0.998,4.81,,
+ABNB,ABNB,System1(단기),확정,False,False,False,True,178.6,179.13,164.1,0.998,4.81,,179.13
 AKAM,AKAM,System1(단기),청산,False,False,True,False,85.7,109.65,84.5,0.792,5.23,,
 AKAM,AKAM,System2(중장기),청산,False,False,True,False,85.7,128.46,84.5,0.676,5.23,,
 LNT,LNT,System1(단기),확정,True,True,False,False,73.64,73.38,67.82,1.006,1.33,,73.54
@@ -107,7 +107,7 @@ FERG,FERG,System2(중장기),관심,False,False,False,True,243.29,248.54,212.49,
 FIS,FIS,System1(단기),청산,False,False,True,False,29.57,40.79,35.33,0.794,1.69,,
 FIS,FIS,System2(중장기),청산,False,False,True,False,29.57,42.34,33.38,0.765,1.69,,
 FE,FE,System1(단기),관심,False,False,False,True,47.24,47.71,45.46,0.994,0.75,,
-F,F,System1(단기),관심,False,False,False,True,12.76,12.78,11.44,1.0,0.34,,
+F,F,System1(단기),탈락,False,False,False,True,12.76,12.78,11.44,1.0,0.34,,
 FTNT,FTNT,System1(단기),청산,False,False,True,False,128.12,197.13,125.8,0.665,9.1,,
 FTNT,FTNT,System2(중장기),청산,False,False,True,False,128.12,197.13,125.8,0.665,9.1,,
 FTV,FTV,System1(단기),확정,True,True,False,False,67.79,67.63,57.32,1.004,1.56,,67.76
@@ -359,7 +359,7 @@ VTRS,VTRS,System1(단기),확정,False,False,False,True,18.72,18.83,17.24,0.994,
 VTRS,VTRS,System2(중장기),확정,False,False,False,True,18.72,18.83,16.89,0.994,0.47,,18.85
 WST,WST,System1(단기),확정,True,True,False,False,400.0,398.67,372.21,1.007,8.19,,400.0
 WST,WST,System2(중장기),확정,True,True,False,False,400.0,398.67,359.49,1.007,8.19,,400.0
-EQT,EQT,System2(중장기),확정,False,False,False,True,56.27,56.52,48.17,0.998,1.49,,56.56
+EQT,EQT,System2(중장기),확정이탈,False,False,False,True,56.27,56.52,48.17,0.998,1.49,,56.56
 LYB,LYB,System1(단기),확정,True,True,False,False,67.27,67.03,59.17,1.026,1.73,,67.34
 ADP,ADP,System1(단기),확정,True,True,False,False,294.5,294.27,262.16,1.006,5.52,,297.45
 ADP,ADP,System2(중장기),확정,True,True,False,False,294.5,294.27,255.96,1.006,5.52,,297.45
