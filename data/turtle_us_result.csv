@@ -21,8 +21,8 @@ AAPL,AAPL,System1(단기),확정,True,True,False,False,352.51,351.73,325.33,1.00
 AAPL,AAPL,System2(중장기),확정,True,True,False,False,352.51,351.73,325.33,1.007,7.97,,352.97
 AMAT,AMAT,System1(단기),청산,False,False,True,False,367.64,524.93,372.8,0.731,21.26,,
 AMAT,AMAT,System2(중장기),청산,False,False,True,False,367.64,547.25,372.8,0.701,21.26,,
-ACGL,ACGL,System1(단기),관심,False,False,False,True,109.63,110.26,98.78,0.997,2.32,,
-ACGL,ACGL,System2(중장기),관심,False,False,False,True,109.63,110.26,94.2,0.997,2.32,,
+ACGL,ACGL,System1(단기),확정,False,False,False,True,109.63,110.26,98.78,0.997,2.32,,110.29
+ACGL,ACGL,System2(중장기),확정,False,False,False,True,109.63,110.26,94.2,0.997,2.32,,110.29
 ADSK,ADSK,System2(중장기),탈락,True,True,False,False,272.64,271.72,228.59,1.004,8.65,,
 BKR,BKR,System1(단기),청산,False,False,True,False,49.44,59.09,52.59,0.897,1.91,,
 BKR,BKR,System2(중장기),청산,False,False,True,False,49.44,66.09,52.59,0.802,1.91,,
@@ -191,8 +191,8 @@ PM,PM,System2(중장기),관심,False,False,False,True,211.43,214.35,184.0,1.0,5
 PSX,PSX,System1(단기),청산,False,False,True,False,255.04,299.39,267.05,0.902,10.43,,
 PSX,PSX,System2(중장기),청산,False,False,True,False,255.04,299.39,267.05,0.902,10.43,,
 PPL,PPL,System1(단기),관심,False,False,False,True,35.8,36.21,34.52,0.991,0.58,,
-PGR,PGR,System1(단기),관심,False,False,False,True,234.53,235.36,219.59,0.999,5.62,,
-PGR,PGR,System2(중장기),관심,False,False,False,True,234.53,235.36,201.02,0.999,5.62,,
+PGR,PGR,System1(단기),확정,False,False,False,True,234.53,235.36,219.59,0.999,5.62,,235.4
+PGR,PGR,System2(중장기),확정,False,False,False,True,234.53,235.36,201.02,0.999,5.62,,235.4
 PTC,PTC,System1(단기),관심,False,False,False,True,195.35,195.71,193.1,0.998,0.97,,
 PTC,PTC,System2(중장기),관심,False,False,False,True,195.35,196.05,192.76,0.997,0.97,,
 RL,RL,System1(단기),확정,True,True,False,False,404.0,403.96,370.97,1.008,9.93,,404.63
@@ -236,7 +236,7 @@ VRSK,VRSK,System1(단기),관심,False,False,False,True,203.19,204.19,185.75,0.9
 VRSK,VRSK,System2(중장기),관심,False,False,False,True,203.19,204.19,165.0,0.999,6.76,,
 VST,VST,System1(단기),청산,False,False,True,False,120.57,168.75,134.21,0.759,8.45,,
 VST,VST,System2(중장기),청산,False,False,True,False,120.57,168.75,134.21,0.759,8.45,,
-VMRK,VMRK,System1(단기),관심,False,False,False,True,63.45,64.08,60.65,0.993,1.16,,
+VMRK,VMRK,System1(단기),확정,False,False,False,True,63.45,64.08,60.65,0.993,1.16,,64.08
 WM,WM,System1(단기),관심,False,False,False,True,238.5,241.47,224.64,0.991,5.3,,
 WM,WM,System2(중장기),관심,False,False,False,True,238.5,241.47,207.3,0.991,5.3,,
 WEC,WEC,System1(단기),확정,True,True,False,False,117.8,117.34,108.39,1.006,2.16,,117.66
