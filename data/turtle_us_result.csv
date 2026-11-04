@@ -34,8 +34,8 @@ ADM,ADM,System1(단기),청산,False,False,True,False,70.6,84.28,75.31,0.89,2.15
 ADM,ADM,System2(중장기),청산,False,False,True,False,70.6,88.75,75.31,0.845,2.15,,
 AJG,AJG,System1(단기),탈락,False,False,False,True,273.45,281.53,255.75,0.99,7.27,,
 AJG,AJG,System2(중장기),탈락,False,False,False,True,273.45,281.53,225.08,0.99,7.27,,
-ATO,ATO,System1(단기),관심,False,False,False,True,173.77,174.88,164.94,1.0,2.79,,
-ATO,ATO,System2(중장기),관심,False,False,False,True,173.77,174.88,157.84,1.0,2.79,,
+ATO,ATO,System1(단기),확정,False,False,False,True,173.77,174.88,164.94,1.0,2.79,,174.99
+ATO,ATO,System2(중장기),확정,False,False,False,True,173.77,174.88,157.84,1.0,2.79,,174.99
 AZO,AZO,System1(단기),탈락,False,False,False,True,3200.0,3277.41,3084.65,0.992,79.82,,
 AZO,AZO,System2(중장기),탈락,False,False,False,True,3200.0,3277.41,2821.33,0.992,79.82,,
 BALL,BALL,System1(단기),탈락,False,False,False,True,63.21,68.11,61.89,0.991,1.69,,
