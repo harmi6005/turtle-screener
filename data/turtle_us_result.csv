@@ -32,8 +32,8 @@ BNY,BNY,System1(단기),확정,True,True,False,False,150.59,150.53,142.4,1.022,3
 BMY,BMY,System1(단기),관심,False,False,False,True,63.16,64.05,60.0,0.995,1.87,,
 CPT,CPT,System1(단기),탈락,True,True,False,False,103.53,103.48,99.03,1.002,1.87,,
 COF,COF,System1(단기),청산,False,False,True,False,203.78,212.29,199.28,1.013,5.84,,
-CAH,CAH,System1(단기),관심,False,False,False,True,258.5,259.84,243.49,0.997,5.79,,
-CAH,CAH,System2(중장기),관심,False,False,False,True,258.5,259.84,230.61,0.997,5.79,,
+CAH,CAH,System1(단기),탈락,False,False,False,True,258.5,259.84,243.49,0.997,5.79,,
+CAH,CAH,System2(중장기),탈락,False,False,False,True,258.5,259.84,230.61,0.997,5.79,,
 CCL,CCL,System1(단기),확정,True,True,False,False,30.56,30.52,25.86,1.004,0.99,,30.62
 CCL,CCL,System2(중장기),확정,True,True,False,False,30.56,30.52,25.51,1.004,0.99,,30.62
 CAT,CAT,System1(단기),청산,False,False,True,False,585.12,843.99,609.89,0.722,29.37,,
