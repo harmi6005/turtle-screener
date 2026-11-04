@@ -202,8 +202,8 @@ O,O,System1(단기),탈락,False,False,False,True,57.5,57.72,55.02,0.999,0.97,,
 REG,REG,System1(단기),확정,False,False,False,True,75.17,75.83,72.12,0.996,1.23,,75.86
 RF,RF,System1(단기),탈락,False,False,False,True,28.6,29.04,27.2,0.997,0.55,,
 RMD,RMD,System1(단기),청산,False,False,True,False,227.08,255.57,227.73,0.902,6.87,,
-RCL,RCL,System1(단기),관심,False,False,False,True,313.17,324.55,274.2,0.99,10.55,,
-RCL,RCL,System2(중장기),관심,False,False,False,True,313.17,324.55,272.5,0.99,10.55,,
+RCL,RCL,System1(단기),탈락,False,False,False,True,313.17,324.55,274.2,0.99,10.55,,
+RCL,RCL,System2(중장기),탈락,False,False,False,True,313.17,324.55,272.5,0.99,10.55,,
 SPGI,SPGI,System1(단기),확정,False,False,False,True,466.03,477.32,429.88,0.991,10.45,,478.11
 SPGI,SPGI,System2(중장기),확정,False,False,False,True,466.03,477.32,389.28,0.991,10.45,,478.11
 CRM,CRM,System1(단기),청산,False,False,True,False,222.2,252.42,225.04,0.885,8.91,,
@@ -257,7 +257,7 @@ WEC,WEC,System2(중장기),탈락,False,False,False,True,115.4,117.34,101.7,0.99
 WFC,WFC,System1(단기),탈락,False,False,False,True,85.53,86.03,81.02,0.999,2.01,,
 WELL,WELL,System1(단기),확정,True,True,False,False,241.17,240.94,217.72,1.007,6.0,,243.01
 WELL,WELL,System2(중장기),탈락,False,False,False,True,241.17,243.04,217.72,0.998,6.0,,
-WY,WY,System1(단기),관심,False,False,False,True,20.59,21.42,18.89,0.992,0.58,,
+WY,WY,System1(단기),확정,False,False,False,True,20.59,21.42,18.89,0.992,0.58,,21.44
 WDAY,WDAY,System1(단기),청산,False,False,True,False,197.94,212.91,190.72,0.937,7.1,,
 WYNN,WYNN,System1(단기),탈락,False,False,False,True,77.68,79.11,70.79,0.992,2.41,,
 ZBRA,ZBRA,System1(단기),청산,False,False,True,False,329.5,392.78,340.31,0.866,13.89,,
