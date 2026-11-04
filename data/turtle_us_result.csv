@@ -103,7 +103,7 @@ FDS,FDS,System2(중장기),관심,False,False,False,True,344.03,345.66,271.38,0.
 FAST,FAST,System1(단기),확정,True,True,False,False,53.4,53.3,50.69,1.01,1.45,,53.56
 FAST,FAST,System2(중장기),확정,True,True,False,False,53.4,53.3,47.06,1.01,1.45,,53.56
 FDX,FDX,System1(단기),확정,True,True,False,False,323.32,323.0,295.73,1.009,7.07,,323.16
-FERG,FERG,System2(중장기),관심,False,False,False,True,243.29,248.54,212.49,0.997,6.02,,
+FERG,FERG,System2(중장기),탈락,False,False,False,True,243.29,248.54,212.49,0.997,6.02,,
 FIS,FIS,System1(단기),청산,False,False,True,False,29.57,40.79,35.33,0.794,1.69,,
 FIS,FIS,System2(중장기),청산,False,False,True,False,29.57,42.34,33.38,0.765,1.69,,
 FE,FE,System1(단기),관심,False,False,False,True,47.24,47.71,45.46,0.994,0.75,,
@@ -160,8 +160,8 @@ MCHP,MCHP,System1(단기),청산,False,False,True,False,75.94,81.22,73.61,0.976,
 MU,MU,System1(단기),청산,False,False,True,False,805.93,1089.05,829.24,0.784,51.13,,
 MU,MU,System2(중장기),청산,False,False,True,False,805.93,1108.55,829.24,0.77,51.13,,
 MAA,MAA,System1(단기),탈락,False,False,False,True,121.45,122.01,115.9,0.998,2.27,,
-MRNA,MRNA,System1(단기),관심,False,False,False,True,247.9,254.48,179.53,0.997,21.48,,
-MRNA,MRNA,System2(중장기),관심,False,False,False,True,247.9,254.48,179.53,0.997,21.48,,
+MRNA,MRNA,System1(단기),확정,False,False,False,True,247.9,254.48,179.53,0.997,21.48,,254.79
+MRNA,MRNA,System2(중장기),확정,False,False,False,True,247.9,254.48,179.53,0.997,21.48,,254.79
 MNST,MNST,System2(중장기),관심,False,False,False,True,48.76,49.24,42.56,0.992,1.08,,
 NDAQ,NDAQ,System1(단기),확정,True,True,False,False,108.93,108.69,94.03,1.007,2.24,,108.83
 NDAQ,NDAQ,System2(중장기),확정,True,True,False,False,108.93,108.69,90.41,1.007,2.24,,108.83
