@@ -1,5 +1,5 @@
 code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-ABT,ABT,System2(중장기),관심,False,False,False,True,114.82,116.62,96.61,0.992,3.06,,
+ABT,ABT,System2(중장기),탈락,False,False,False,True,114.82,116.62,96.61,0.992,3.06,,
 AFL,AFL,System1(단기),확정,False,False,False,True,124.72,125.69,120.0,0.999,2.19,,125.69
 AFL,AFL,System2(중장기),확정,False,False,False,True,124.72,125.69,112.47,0.999,2.19,,125.69
 APD,APD,System1(단기),확정,False,False,False,True,317.84,319.98,300.79,0.993,4.85,,321.07
@@ -168,12 +168,12 @@ NDAQ,NDAQ,System2(중장기),확정,True,True,False,False,108.93,108.69,90.41,1.
 NKE,NKE,System2(중장기),확정,True,True,False,False,40.94,40.91,33.81,1.001,1.11,,40.95
 NI,NI,System1(단기),확정,False,False,False,True,45.0,45.17,42.51,0.997,0.77,,45.17
 NI,NI,System2(중장기),확정,False,False,False,True,45.0,45.17,39.86,0.997,0.77,,45.17
-NDSN,NDSN,System2(중장기),관심,False,False,False,True,326.14,338.18,311.55,0.993,7.76,,
+NDSN,NDSN,System2(중장기),탈락,False,False,False,True,326.14,338.18,311.55,0.993,7.76,,
 NTRS,NTRS,System1(단기),확정,True,True,False,False,174.5,174.1,163.24,1.019,4.02,,174.6
 NOC,NOC,System1(단기),청산,False,False,True,False,525.3,575.55,535.0,0.939,15.01,,
 NRG,NRG,System1(단기),청산,False,False,True,False,83.35,109.83,90.35,0.838,4.6,,
 NRG,NRG,System2(중장기),청산,False,False,True,False,83.35,121.91,90.35,0.755,4.6,,
-NVR,NVR,System2(중장기),관심,False,False,False,True,6500.0,6526.86,5550.0,0.996,230.89,,
+NVR,NVR,System2(중장기),확정,False,False,False,True,6500.0,6526.86,5550.0,0.996,230.89,,6552.38
 ORLY,ORLY,System1(단기),확정,True,True,False,False,92.84,92.59,86.7,1.005,2.14,,92.68
 ORLY,ORLY,System2(중장기),탈락,True,True,False,False,92.84,92.77,84.47,1.003,2.14,,
 OXY,OXY,System1(단기),청산,False,False,True,False,57.22,64.96,59.69,0.913,1.68,,
@@ -259,7 +259,7 @@ COST,COST,System1(단기),확정,False,False,False,True,1019.26,1042.57,978.87,0
 COST,COST,System2(중장기),확정,False,False,False,True,1019.26,1042.57,917.64,0.993,17.37,,1043.04
 ECL,ECL,System1(단기),확정,False,False,False,True,304.68,310.0,283.74,0.993,5.88,,311.31
 ECL,ECL,System2(중장기),확정,False,False,False,True,304.68,310.0,275.8,0.993,5.88,,311.31
-EXPE,EXPE,System1(단기),확정,False,False,False,True,285.77,301.81,273.95,0.991,11.74,,302.48
+EXPE,EXPE,System1(단기),확정이탈,False,False,False,True,285.77,301.81,273.95,0.991,11.74,,302.48
 EXR,EXR,System1(단기),확정,False,False,False,True,156.23,156.74,138.99,0.997,3.11,,157.36
 EXR,EXR,System2(중장기),확정,False,False,False,True,156.23,156.74,130.54,0.997,3.11,,157.36
 FRT,FRT,System1(단기),확정,False,False,False,True,111.64,112.4,105.35,0.993,1.8,,112.68
@@ -340,7 +340,7 @@ TYL,TYL,System2(중장기),확정,False,False,False,True,392.6,394.91,322.25,0.9
 TSN,TSN,System1(단기),확정,True,True,False,False,57.35,57.18,53.76,1.008,0.97,,57.33
 MMM,MMM,System1(단기),확정,True,True,False,False,176.62,176.18,161.95,1.005,3.88,,176.61
 AMCR,AMCR,System1(단기),확정이탈,True,True,False,False,46.7,46.57,43.13,1.009,0.9,,46.71
-CRL,CRL,System1(단기),확정,True,True,False,False,379.22,378.23,295.4,1.004,14.32,,379.22
+CRL,CRL,System1(단기),확정이탈,True,True,False,False,379.22,378.23,295.4,1.004,14.32,,379.22
 CRL,CRL,System2(중장기),확정,True,True,False,False,379.22,378.23,284.61,1.004,14.32,,379.22
 EIX,EIX,System1(단기),확정,True,True,False,False,59.31,59.19,54.93,1.009,1.4,,59.29
 EQIX,EQIX,System1(단기),확정,True,True,False,False,1055.39,1052.32,931.2,1.015,30.29,,1055.36
