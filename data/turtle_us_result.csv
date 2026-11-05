@@ -411,7 +411,7 @@ FERG,FERG,System1(단기),확정,True,True,False,False,242.77,242.7,220.44,1.013
 IT,IT,System2(중장기),확정,True,True,False,False,235.03,234.87,184.45,1.007,8.06,,234.88
 VRTX,VRTX,System1(단기),확정,True,True,False,False,565.53,563.8,499.5,1.009,14.93,,564.42
 VRTX,VRTX,System2(중장기),확정,True,True,False,False,565.53,563.8,484.08,1.009,14.93,,564.42
-APA,APA,System2(중장기),확정,True,True,False,False,52.49,52.39,42.09,1.002,1.55,,52.5
+APA,APA,System2(중장기),확정이탈,True,True,False,False,52.49,52.39,42.09,1.002,1.55,,52.5
 ARES,ARES,System1(단기),확정,False,False,False,True,127.3,128.96,111.32,0.992,3.58,,129.07
 CVX,CVX,System2(중장기),확정,True,True,False,False,234.74,234.08,201.96,1.01,4.78,,235.15
 COP,COP,System2(중장기),확정,True,True,False,False,153.22,152.77,124.81,1.003,3.48,,153.27
