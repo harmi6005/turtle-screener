@@ -415,7 +415,7 @@ APA,APA,System2(중장기),확정,True,True,False,False,52.49,52.39,42.09,1.002,
 ARES,ARES,System1(단기),확정,False,False,False,True,127.3,128.96,111.32,0.992,3.58,,129.07
 CVX,CVX,System2(중장기),확정,True,True,False,False,234.74,234.08,201.96,1.01,4.78,,235.15
 COP,COP,System2(중장기),확정,True,True,False,False,153.22,152.77,124.81,1.003,3.48,,153.27
-EOG,EOG,System2(중장기),확정,True,True,False,False,165.33,165.11,138.53,1.003,3.74,,165.37
+EOG,EOG,System2(중장기),확정이탈,True,True,False,False,165.33,165.11,138.53,1.003,3.74,,165.37
 KKR,KKR,System1(단기),확정,False,False,False,True,94.9,96.27,86.03,0.995,2.66,,96.35
 NXPI,NXPI,System1(단기),확정,False,False,False,True,259.0,266.98,226.3,0.994,9.88,,266.99
 NXPI,NXPI,System2(중장기),확정,False,False,False,True,259.0,266.98,218.64,0.994,9.88,,266.99
