@@ -57,3 +57,4 @@ code,system,direction,last_result,skip_active,skip_price
 291810,System1(단기),long,loss,False,
 018670,System2(중장기),long,loss,False,
 068270,System1(단기),long,loss,False,
+037950,System1(단기),long,loss,False,
