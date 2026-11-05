@@ -183,14 +183,14 @@ ON,ON,System2(중장기),청산,False,False,True,False,70.42,86.92,69.64,0.853,3
 OKE,OKE,System1(단기),청산,False,False,True,False,88.26,96.57,90.1,0.94,2.42,,
 PLTR,PLTR,System1(단기),청산,False,False,True,False,170.42,212.94,165.25,0.833,9.63,,
 PLTR,PLTR,System2(중장기),청산,False,False,True,False,170.42,212.94,165.25,0.833,9.63,,
-PEP,PEP,System2(중장기),관심,False,False,False,True,143.9,144.36,123.47,0.997,3.37,,
+PEP,PEP,System2(중장기),탈락,False,False,False,True,143.9,144.36,123.47,0.997,3.37,,
 PFE,PFE,System1(단기),확정,False,False,False,True,30.53,31.06,29.22,0.995,0.64,,31.16
 PFE,PFE,System2(중장기),확정,False,False,False,True,30.53,31.06,27.48,0.995,0.64,,31.16
 PM,PM,System1(단기),탈락,False,False,False,True,211.43,214.35,184.0,1.0,5.56,,
 PM,PM,System2(중장기),탈락,False,False,False,True,211.43,214.35,184.0,1.0,5.56,,
 PSX,PSX,System1(단기),청산,False,False,True,False,255.04,299.39,267.05,0.902,10.43,,
 PSX,PSX,System2(중장기),청산,False,False,True,False,255.04,299.39,267.05,0.902,10.43,,
-PPL,PPL,System1(단기),관심,False,False,False,True,35.8,36.21,34.52,0.991,0.58,,
+PPL,PPL,System1(단기),탈락,False,False,False,True,35.8,36.21,34.52,0.991,0.58,,
 PGR,PGR,System1(단기),확정,False,False,False,True,234.53,235.36,219.59,0.999,5.62,,235.4
 PGR,PGR,System2(중장기),확정,False,False,False,True,234.53,235.36,201.02,0.999,5.62,,235.4
 PTC,PTC,System1(단기),관심,False,False,False,True,195.35,195.71,193.1,0.998,0.97,,
