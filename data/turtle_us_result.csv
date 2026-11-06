@@ -408,7 +408,7 @@ BF-B,BF-B,System1(단기),확정,False,False,False,True,29.82,30.2,27.51,0.993,0
 BF-B,BF-B,System2(중장기),확정,False,False,False,True,29.82,30.2,25.69,0.993,0.79,,30.22
 BXP,BXP,System1(단기),확정,True,True,False,False,63.62,63.55,57.59,1.014,1.6,,63.62
 FERG,FERG,System1(단기),확정,True,True,False,False,242.77,242.7,220.44,1.013,6.02,,242.77
-IT,IT,System2(중장기),확정,True,True,False,False,235.03,234.87,184.45,1.007,8.06,,234.88
+IT,IT,System2(중장기),확정이탈,True,True,False,False,235.03,234.87,184.45,1.007,8.06,,234.88
 VRTX,VRTX,System1(단기),확정,True,True,False,False,565.53,563.8,499.5,1.009,14.93,,564.42
 VRTX,VRTX,System2(중장기),확정,True,True,False,False,565.53,563.8,484.08,1.009,14.93,,564.42
 APA,APA,System2(중장기),확정이탈,True,True,False,False,52.49,52.39,42.09,1.002,1.55,,52.5
