@@ -388,7 +388,7 @@ FSLR,FSLR,System1(단기),확정,False,False,False,True,186.62,187.85,165.86,0.9
 DOC,DOC,System1(단기),확정,True,True,False,False,19.62,19.61,18.34,1.002,0.46,,19.64
 IDXX,IDXX,System1(단기),확정,False,False,False,True,669.17,673.19,540.61,0.999,19.97,,674.05
 IDXX,IDXX,System2(중장기),확정,False,False,False,True,669.17,673.19,501.17,0.999,19.97,,674.05
-PODD,PODD,System1(단기),확정,True,True,False,False,155.1,154.95,140.81,1.001,4.42,,155.4
+PODD,PODD,System1(단기),확정이탈,True,True,False,False,155.1,154.95,140.81,1.001,4.42,,155.4
 PODD,PODD,System2(중장기),확정,False,False,False,True,155.1,155.17,132.86,1.0,4.42,,155.4
 J,J,System1(단기),확정,False,False,False,True,159.88,160.39,137.6,0.998,3.74,,161.01
 J,J,System2(중장기),확정,False,False,False,True,159.88,160.39,134.64,0.998,3.74,,161.01
