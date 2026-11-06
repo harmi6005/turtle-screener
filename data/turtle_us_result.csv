@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 ABBV,ABBV,System1(단기),청산,False,False,True,False,290.37,302.93,281.23,0.963,7.81,,
 ADBE,ADBE,System1(단기),청산,False,False,True,False,240.15,272.1,241.01,0.894,9.23,,
 AES,AES,System1(단기),관심,False,False,False,True,14.9,14.94,14.77,0.999,0.05,,
@@ -94,7 +94,7 @@ MPC,MPC,System2(중장기),청산,False,False,True,False,371.09,493.98,376.47,0.
 MCHP,MCHP,System1(단기),청산,False,False,True,False,58.26,81.22,64.04,0.804,4.31,,
 MCHP,MCHP,System2(중장기),청산,False,False,True,False,58.26,83.4,64.04,0.783,4.31,,
 MNST,MNST,System1(단기),청산,False,False,True,False,46.12,49.5,44.92,0.946,1.29,,
-MOS,MOS,System1(단기),진입,True,True,False,False,22.5,22.5,17.1,1.013,0.83,,
+MOS,MOS,System1(단기),확정,True,True,False,False,22.5,22.5,17.1,1.013,0.83,,22.59
 NWSA,NWSA,System1(단기),청산,False,False,True,False,26.42,31.13,26.47,0.858,0.85,,
 NWSA,NWSA,System2(중장기),청산,False,False,True,False,26.42,31.55,26.47,0.846,0.85,,
 NWS,NWS,System1(단기),청산,False,False,True,False,29.14,34.18,28.93,0.86,0.92,,
