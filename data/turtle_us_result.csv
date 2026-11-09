@@ -30,11 +30,11 @@ CARR,CARR,System2(중장기),청산,False,False,True,False,52.67,60.98,52.74,0.8
 CNP,CNP,System1(단기),청산,False,False,True,False,40.35,42.76,39.64,0.948,0.9,,
 CVX,CVX,System1(단기),청산,False,False,True,False,213.21,236.48,212.61,0.91,5.38,,
 CVX,CVX,System2(중장기),청산,False,False,True,False,213.21,236.48,210.71,0.91,5.38,,
-CMG,CMG,System1(단기),관심,False,False,False,True,34.59,35.47,27.31,0.99,1.17,,
+CMG,CMG,System1(단기),탈락,False,False,False,True,34.59,35.47,27.31,0.99,1.17,,
 CSCO,CSCO,System1(단기),청산,False,False,True,False,94.18,118.65,95.43,0.822,3.53,,
 CSCO,CSCO,System2(중장기),청산,False,False,True,False,94.18,118.65,95.43,0.822,3.53,,
 CFG,CFG,System1(단기),청산,False,False,True,False,63.59,67.6,63.25,0.951,1.55,,
-CLX,CLX,System1(단기),관심,False,False,False,True,100.16,101.09,84.61,0.995,2.87,,
+CLX,CLX,System1(단기),확정,False,False,False,True,100.16,101.09,84.61,0.995,2.87,,101.52
 COIN,COIN,System1(단기),청산,False,False,True,False,133.62,185.49,133.5,0.751,10.51,,
 COIN,COIN,System2(중장기),청산,False,False,True,False,133.62,208.33,133.5,0.669,10.51,,
 COP,COP,System1(단기),청산,False,False,True,False,136.62,154.28,134.72,0.897,4.17,,
