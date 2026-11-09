@@ -139,7 +139,7 @@ NOW,NOW,System2(중장기),청산,False,False,True,False,101.94,159.5,101.8,0.65
 SPG,SPG,System1(단기),관심,False,False,False,True,228.89,231.66,210.48,0.992,4.21,,
 SPG,SPG,System2(중장기),관심,False,False,False,True,228.89,231.66,197.86,0.992,4.21,,
 STT,STT,System1(단기),청산,False,False,True,False,167.17,176.47,165.08,0.953,4.81,,
-TMUS,TMUS,System1(단기),관심,False,False,False,True,163.15,163.35,143.75,0.999,5.97,,
+TMUS,TMUS,System1(단기),탈락,False,False,False,True,163.15,163.35,143.75,0.999,5.97,,
 TTWO,TTWO,System1(단기),관심,False,False,False,True,216.43,218.78,183.86,0.995,7.26,,
 TRGP,TRGP,System1(단기),청산,False,False,True,False,266.23,316.6,271.29,0.867,9.96,,
 TRGP,TRGP,System2(중장기),청산,False,False,True,False,266.23,316.6,271.29,0.867,9.96,,
