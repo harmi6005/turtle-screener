@@ -136,8 +136,8 @@ SRE,SRE,System1(단기),청산,False,False,True,False,78.64,87.08,79.06,0.911,1.
 SRE,SRE,System2(중장기),청산,False,False,True,False,78.64,87.41,79.06,0.908,1.67,,
 NOW,NOW,System1(단기),청산,False,False,True,False,101.94,159.5,101.8,0.651,7.92,,
 NOW,NOW,System2(중장기),청산,False,False,True,False,101.94,159.5,101.8,0.651,7.92,,
-SPG,SPG,System1(단기),관심,False,False,False,True,228.89,231.66,210.48,0.992,4.21,,
-SPG,SPG,System2(중장기),관심,False,False,False,True,228.89,231.66,197.86,0.992,4.21,,
+SPG,SPG,System1(단기),확정,False,False,False,True,228.89,231.66,210.48,0.992,4.21,,231.76
+SPG,SPG,System2(중장기),확정,False,False,False,True,228.89,231.66,197.86,0.992,4.21,,231.76
 STT,STT,System1(단기),청산,False,False,True,False,167.17,176.47,165.08,0.953,4.81,,
 TMUS,TMUS,System1(단기),탈락,False,False,False,True,163.15,163.35,143.75,0.999,5.97,,
 TTWO,TTWO,System1(단기),관심,False,False,False,True,216.43,218.78,183.86,0.995,7.26,,
