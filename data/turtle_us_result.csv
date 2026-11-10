@@ -95,8 +95,8 @@ NVDA,NVDA,System1(단기),청산,False,False,True,False,167.7,228.64,170.24,0.76
 NVDA,NVDA,System2(중장기),청산,False,False,True,False,167.7,243.37,170.24,0.718,8.46,,
 OXY,OXY,System1(단기),청산,False,False,True,False,56.65,64.96,54.97,0.879,1.85,,
 OXY,OXY,System2(중장기),청산,False,False,True,False,56.65,64.96,54.97,0.879,1.85,,
-OMC,OMC,System1(단기),관심,False,False,False,True,88.86,89.15,76.47,0.997,2.75,,
-OMC,OMC,System2(중장기),관심,False,False,False,True,88.86,89.15,76.47,0.997,2.75,,
+OMC,OMC,System1(단기),확정,False,False,False,True,88.86,89.15,76.47,0.997,2.75,,89.16
+OMC,OMC,System2(중장기),확정,False,False,False,True,88.86,89.15,76.47,0.997,2.75,,89.16
 OKE,OKE,System1(단기),청산,False,False,True,False,87.17,96.57,84.38,0.904,2.56,,
 OKE,OKE,System2(중장기),청산,False,False,True,False,87.17,98.75,84.38,0.885,2.56,,
 PG,PG,System1(단기),관심,False,False,False,True,169.22,170.52,157.4,0.996,3.52,,
