@@ -51,8 +51,8 @@ FANG,FANG,System2(중장기),청산,False,False,True,False,178.79,213.31,173.75,
 DOW,DOW,System1(단기),청산,False,False,True,False,31.04,34.85,30.65,0.897,1.12,,
 DTE,DTE,System1(단기),관심,False,False,False,True,139.3,139.89,130.64,1.0,2.63,,
 DTE,DTE,System2(중장기),관심,False,False,False,True,139.3,139.89,126.08,1.0,2.63,,
-DD,DD,System1(단기),관심,False,False,False,True,155.41,155.96,135.67,0.998,4.08,,
-DD,DD,System2(중장기),관심,False,False,False,True,155.41,155.96,127.55,0.998,4.08,,
+DD,DD,System1(단기),확정,False,False,False,True,155.41,155.96,135.67,0.998,4.08,,156.09
+DD,DD,System2(중장기),확정,False,False,False,True,155.41,155.96,127.55,0.998,4.08,,156.09
 EW,EW,System1(단기),관심,False,False,False,True,103.53,105.37,87.9,0.993,2.92,,
 EW,EW,System2(중장기),관심,False,False,False,True,103.53,105.37,84.83,0.993,2.92,,
 EQIX,EQIX,System1(단기),관심,False,False,False,True,1050.89,1069.24,976.89,0.996,37.85,,
