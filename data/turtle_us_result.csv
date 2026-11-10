@@ -104,7 +104,7 @@ PSX,PSX,System1(단기),청산,False,False,True,False,253.01,299.39,243.02,0.847
 PSX,PSX,System2(중장기),청산,False,False,True,False,253.01,299.39,243.02,0.847,11.03,,
 PPL,PPL,System1(단기),탈락,False,False,False,True,35.72,36.51,34.83,0.991,0.63,,
 PPL,PPL,System2(중장기),탈락,False,False,False,True,35.72,36.51,33.9,0.991,0.63,,
-PTC,PTC,System1(단기),진입,True,True,False,False,195.87,195.71,193.79,1.002,0.99,,
+PTC,PTC,System1(단기),탈락,True,True,False,False,195.87,195.71,193.79,1.002,0.99,,
 PSA,PSA,System1(단기),탈락,False,False,False,True,338.36,345.89,303.09,0.993,7.5,,
 PSA,PSA,System2(중장기),탈락,False,False,False,True,338.36,345.89,285.85,0.993,7.5,,
 DGX,DGX,System1(단기),확정,True,True,False,False,259.68,259.0,239.59,1.003,6.91,,259.67
