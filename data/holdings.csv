@@ -17,3 +17,4 @@ trade_id,market,code,buy_price,atr_entry,highest_price,stop_price,last_milestone
 3029,KR,067900,6320.0,237.25,6320.0,5845.5,0.0,closed_manual,6300.0,False,False,0.0,1.0,6320.0,2026-11-02,
 6767,KR,067900,6220.0,252.75,6470.0,5964.5,0.0,closed_manual,5960.0,False,False,0.0,2.0,6346.375,2026-11-04,
 6358,KR,000080,16370.0,390.5,16750.0,15969.0,0.0,closed_manual,16100.0,False,False,0.0,2.0,16565.25,2026-11-05,
+7258,US,OMC,89.15,2.773,89.15,83.604,0.0,active,89.15,False,False,0.0,1.0,89.15,2026-11-10,
