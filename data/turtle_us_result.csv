@@ -39,8 +39,8 @@ EW,EW,System1(단기),관심,False,False,False,True,104.64,105.37,87.9,0.994,2.9
 EW,EW,System2(중장기),관심,False,False,False,True,104.64,105.37,84.83,0.994,2.93,,
 EL,EL,System1(단기),관심,False,False,False,True,112.79,115.29,103.09,0.999,4.48,,
 EL,EL,System2(중장기),관심,False,False,False,True,112.79,115.29,98.72,0.999,4.48,,
-FERG,FERG,System1(단기),관심,False,False,False,True,261.28,265.29,227.21,0.994,7.98,,
-FERG,FERG,System2(중장기),관심,False,False,False,True,261.28,265.29,217.87,0.994,7.98,,
+FERG,FERG,System1(단기),확정,False,False,False,True,261.28,265.29,227.21,0.994,7.98,,265.66
+FERG,FERG,System2(중장기),확정,False,False,False,True,261.28,265.29,217.87,0.994,7.98,,265.66
 FIS,FIS,System1(단기),청산,False,False,True,False,29.57,40.79,27.93,0.726,1.74,,
 FIS,FIS,System2(중장기),청산,False,False,True,False,29.57,42.34,27.93,0.699,1.74,,
 FISV,FISV,System1(단기),관심,False,False,False,True,63.5,64.06,47.0,0.998,2.0,,
