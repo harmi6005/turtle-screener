@@ -7,8 +7,8 @@ ALGN,ALGN,System1(단기),탈락,False,False,False,True,175.34,177.04,147.52,0.9
 ALGN,ALGN,System2(중장기),탈락,False,False,False,True,175.34,177.04,139.81,0.991,6.01,,
 AMZN,AMZN,System1(단기),관심,False,False,False,True,270.48,275.34,229.36,0.991,9.7,,
 AMZN,AMZN,System2(중장기),관심,False,False,False,True,270.48,275.34,229.36,0.991,9.7,,
-AEE,AEE,System1(단기),관심,False,False,False,True,113.84,115.31,107.52,0.99,2.03,,
-AEE,AEE,System2(중장기),관심,False,False,False,True,113.84,115.31,102.2,0.99,2.03,,
+AEE,AEE,System1(단기),탈락,False,False,False,True,113.84,115.31,107.52,0.99,2.03,,
+AEE,AEE,System2(중장기),탈락,False,False,False,True,113.84,115.31,102.2,0.99,2.03,,
 AIG,AIG,System1(단기),탈락,False,False,False,True,82.39,83.07,77.73,0.992,1.86,,
 AIG,AIG,System2(중장기),탈락,False,False,False,True,82.39,83.07,76.49,0.992,1.86,,
 AMP,AMP,System1(단기),탈락,False,False,False,True,523.12,537.95,477.19,0.993,14.28,,
@@ -99,8 +99,8 @@ OMC,OMC,System1(단기),확정,False,False,False,True,88.86,89.15,76.47,0.997,2.
 OMC,OMC,System2(중장기),확정,False,False,False,True,88.86,89.15,76.47,0.997,2.75,,89.16
 OKE,OKE,System1(단기),청산,False,False,True,False,87.17,96.57,84.38,0.904,2.56,,
 OKE,OKE,System2(중장기),청산,False,False,True,False,87.17,98.75,84.38,0.885,2.56,,
-PG,PG,System1(단기),관심,False,False,False,True,169.22,170.52,157.4,0.996,3.52,,
-PG,PG,System2(중장기),관심,False,False,False,True,169.22,170.52,151.22,0.996,3.52,,
+PG,PG,System1(단기),탈락,False,False,False,True,169.22,170.52,157.4,0.996,3.52,,
+PG,PG,System2(중장기),탈락,False,False,False,True,169.22,170.52,151.22,0.996,3.52,,
 PTC,PTC,System1(단기),확정,True,True,False,False,196.35,196.05,193.8,1.002,0.97,,196.35
 PTC,PTC,System2(중장기),확정,True,True,False,False,196.35,196.05,192.76,1.002,0.97,,196.35
 PEG,PEG,System1(단기),관심,False,False,False,True,74.77,75.42,71.69,0.998,1.4,,
@@ -125,8 +125,8 @@ LUV,LUV,System1(단기),탈락,False,False,False,True,45.78,47.01,42.0,0.997,1.8
 LUV,LUV,System2(중장기),탈락,False,False,False,True,45.78,47.01,38.5,0.997,1.88,,
 STE,STE,System1(단기),탈락,False,False,False,True,257.12,259.25,225.01,0.996,6.75,,
 STE,STE,System2(중장기),탈락,False,False,False,True,257.12,259.25,215.7,0.996,6.75,,
-TMO,TMO,System1(단기),관심,False,False,False,True,717.57,723.08,661.6,0.998,23.02,,
-TMO,TMO,System2(중장기),관심,False,False,False,True,717.57,723.08,655.73,0.998,23.02,,
+TMO,TMO,System1(단기),탈락,False,False,False,True,717.57,723.08,661.6,0.998,23.02,,
+TMO,TMO,System2(중장기),탈락,False,False,False,True,717.57,723.08,655.73,0.998,23.02,,
 TKO,TKO,System1(단기),관심,False,False,False,True,196.73,199.98,170.14,0.992,5.6,,
 TKO,TKO,System2(중장기),관심,False,False,False,True,196.73,199.98,170.14,0.992,5.6,,
 TSCO,TSCO,System1(단기),탈락,False,False,False,True,37.44,37.72,31.36,1.0,1.53,,
