@@ -48,8 +48,8 @@ FISV,FISV,System2(중장기),관심,False,False,False,True,63.5,64.06,45.54,0.99
 BEN,BEN,System1(단기),관심,False,False,False,True,36.26,36.79,31.08,0.992,1.08,,
 BEN,BEN,System2(중장기),관심,False,False,False,True,36.26,36.79,30.09,0.992,1.08,,
 GE,GE,System1(단기),확정,True,True,False,False,341.04,340.53,295.97,1.002,11.45,,341.07
-HAS,HAS,System1(단기),관심,False,False,False,True,122.62,124.0,117.13,0.991,3.63,,
-HAS,HAS,System2(중장기),관심,False,False,False,True,122.62,124.0,93.2,0.991,3.63,,
+HAS,HAS,System1(단기),확정,False,False,False,True,122.62,124.0,117.13,0.991,3.63,,124.04
+HAS,HAS,System2(중장기),확정,False,False,False,True,122.62,124.0,93.2,0.991,3.63,,124.04
 HSIC,HSIC,System1(단기),관심,False,False,False,True,87.34,89.68,81.03,0.99,2.61,,
 HLT,HLT,System1(단기),관심,False,False,False,True,375.66,381.34,341.45,0.996,9.73,,
 HLT,HLT,System2(중장기),관심,False,False,False,True,375.66,381.34,325.41,0.996,9.73,,
