@@ -56,7 +56,7 @@ HLT,HLT,System2(중장기),관심,False,False,False,True,375.66,381.34,325.41,0.
 HST,HST,System1(단기),관심,False,False,False,True,25.76,26.19,24.33,0.993,0.66,,
 HST,HST,System2(중장기),관심,False,False,False,True,25.76,26.19,22.86,0.993,0.66,,
 HWM,HWM,System1(단기),탈락,False,False,False,True,223.32,225.55,192.55,0.992,10.14,,
-HUM,HUM,System1(단기),관심,False,False,False,True,442.85,448.44,399.35,0.997,15.73,,
+HUM,HUM,System1(단기),탈락,False,False,False,True,442.85,448.44,399.35,0.997,15.73,,
 IFF,IFF,System1(단기),청산,False,False,True,False,81.8,95.27,82.3,0.873,2.56,,
 IFF,IFF,System2(중장기),청산,False,False,True,False,81.8,95.27,82.3,0.873,2.56,,
 LH,LH,System1(단기),관심,False,False,False,True,370.09,373.76,341.4,0.997,11.13,,
