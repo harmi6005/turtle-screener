@@ -81,8 +81,8 @@
 024070,WISCOM,System1(단기),관심,False,False,False,True,1883.0,1890.0,1605.0,0.996,137.45,,
 028050,삼성E&A,System1(단기),관심,False,False,False,True,66600.0,67700.0,58300.0,0.997,4175.0,,
 028050,삼성E&A,System2(중장기),관심,False,False,False,True,66600.0,67700.0,41500.0,0.997,4175.0,,
-033250,체시스,System1(단기),관심,False,False,False,True,4940.0,5100.0,0.0,0.99,620.0,,
-033250,체시스,System2(중장기),관심,False,False,False,True,4940.0,5100.0,0.0,0.99,620.0,,
+033250,체시스,System1(단기),확정,False,False,False,True,4940.0,5100.0,0.0,0.99,620.0,,5110.0
+033250,체시스,System2(중장기),확정,False,False,False,True,4940.0,5100.0,0.0,0.99,620.0,,5110.0
 033780,KT&G,System1(단기),청산,False,False,True,False,173100.0,201000.0,174000.0,0.896,6420.0,,
 033780,KT&G,System2(중장기),청산,False,False,True,False,173100.0,201000.0,174000.0,0.896,6420.0,,
 035250,강원랜드,System1(단기),관심,False,False,False,True,13920.0,14600.0,13500.0,0.99,316.0,,
