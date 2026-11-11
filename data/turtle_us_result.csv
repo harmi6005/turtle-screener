@@ -127,8 +127,8 @@ STE,STE,System1(단기),탈락,False,False,False,True,257.12,259.25,225.01,0.996
 STE,STE,System2(중장기),탈락,False,False,False,True,257.12,259.25,215.7,0.996,6.75,,
 TMO,TMO,System1(단기),탈락,False,False,False,True,717.57,723.08,661.6,0.998,23.02,,
 TMO,TMO,System2(중장기),탈락,False,False,False,True,717.57,723.08,655.73,0.998,23.02,,
-TKO,TKO,System1(단기),관심,False,False,False,True,196.73,199.98,170.14,0.992,5.6,,
-TKO,TKO,System2(중장기),관심,False,False,False,True,196.73,199.98,170.14,0.992,5.6,,
+TKO,TKO,System1(단기),확정,False,False,False,True,196.73,199.98,170.14,0.992,5.6,,200.0
+TKO,TKO,System2(중장기),확정,False,False,False,True,196.73,199.98,170.14,0.992,5.6,,200.0
 TSCO,TSCO,System1(단기),탈락,False,False,False,True,37.44,37.72,31.36,1.0,1.53,,
 TSCO,TSCO,System2(중장기),탈락,False,False,False,True,37.44,37.72,29.9,1.0,1.53,,
 ULTA,ULTA,System1(단기),탈락,False,False,False,True,663.39,674.04,610.82,0.992,19.14,,
