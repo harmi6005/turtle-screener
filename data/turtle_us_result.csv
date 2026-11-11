@@ -73,8 +73,8 @@ HAL,HAL,System2(중장기),청산,False,False,True,False,31.86,38.06,31.14,0.842
 HSIC,HSIC,System1(단기),탈락,False,False,False,True,89.53,89.68,81.03,0.998,2.61,,
 HLT,HLT,System1(단기),탈락,False,False,False,True,377.5,381.34,335.23,0.99,9.56,,
 HLT,HLT,System2(중장기),탈락,False,False,False,True,377.5,381.34,324.1,0.99,9.56,,
-ICE,ICE,System1(단기),관심,False,False,False,True,176.08,177.94,153.9,0.991,4.3,,
-ICE,ICE,System2(중장기),관심,False,False,False,True,176.08,177.94,153.9,0.991,4.3,,
+ICE,ICE,System1(단기),확정,False,False,False,True,176.08,177.94,153.9,0.991,4.3,,178.12
+ICE,ICE,System2(중장기),확정,False,False,False,True,176.08,177.94,153.9,0.991,4.3,,178.12
 IFF,IFF,System1(단기),청산,False,False,True,False,83.63,95.27,82.35,0.882,2.6,,
 IFF,IFF,System2(중장기),청산,False,False,True,False,83.63,95.27,82.35,0.882,2.6,,
 KDP,KDP,System1(단기),탈락,False,False,False,True,37.65,37.89,34.28,0.994,1.01,,
