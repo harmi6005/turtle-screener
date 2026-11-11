@@ -35,8 +35,8 @@ DTE,DTE,System1(단기),관심,False,False,False,True,138.29,139.89,130.64,0.993
 DTE,DTE,System2(중장기),관심,False,False,False,True,138.29,139.89,126.51,0.993,2.59,,
 DD,DD,System1(단기),확정,True,True,False,False,157.76,157.05,136.66,1.015,4.16,,157.74
 DD,DD,System2(중장기),확정,True,True,False,False,157.76,157.05,127.55,1.015,4.16,,157.74
-EW,EW,System1(단기),관심,False,False,False,True,104.64,105.37,87.9,0.994,2.93,,
-EW,EW,System2(중장기),관심,False,False,False,True,104.64,105.37,84.83,0.994,2.93,,
+EW,EW,System1(단기),탈락,False,False,False,True,104.64,105.37,87.9,0.994,2.93,,
+EW,EW,System2(중장기),탈락,False,False,False,True,104.64,105.37,84.83,0.994,2.93,,
 EL,EL,System1(단기),관심,False,False,False,True,112.79,115.29,103.09,0.999,4.48,,
 EL,EL,System2(중장기),관심,False,False,False,True,112.79,115.29,98.72,0.999,4.48,,
 FERG,FERG,System1(단기),확정,False,False,False,True,261.28,265.29,227.21,0.994,7.98,,265.66
