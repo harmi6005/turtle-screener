@@ -224,7 +224,7 @@ WY,WY,System1(단기),확정,False,False,False,True,20.59,21.42,18.89,0.992,0.58
 AVY,AVY,System1(단기),확정,False,False,False,True,185.48,187.43,175.52,0.996,3.84,,187.48
 AVY,AVY,System2(중장기),확정,False,False,False,True,185.48,187.43,164.1,0.996,3.84,,187.48
 DPZ,DPZ,System1(단기),확정,False,False,False,True,322.74,323.5,305.0,0.998,9.26,,323.88
-FSLR,FSLR,System1(단기),확정,False,False,False,True,186.62,187.85,165.86,0.994,7.07,,188.25
+FSLR,FSLR,System1(단기),확정이탈,False,False,False,True,186.62,187.85,165.86,0.994,7.07,,188.25
 PODD,PODD,System2(중장기),확정,False,False,False,True,155.1,155.17,132.86,1.0,4.42,,155.4
 MDT,MDT,System1(단기),확정,False,False,False,True,99.2,99.48,92.71,0.998,2.39,,99.81
 MDT,MDT,System2(중장기),확정,False,False,False,True,99.2,99.48,85.43,0.998,2.39,,99.81
