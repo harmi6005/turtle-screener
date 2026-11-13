@@ -74,8 +74,8 @@ MAR,MAR,System1(단기),관심,False,False,False,True,424.14,433.3,398.99,0.991,
 MAR,MAR,System2(중장기),관심,False,False,False,True,424.14,433.3,381.04,0.991,10.47,,
 MLM,MLM,System1(단기),청산,False,False,True,False,515.81,571.63,515.01,0.908,16.14,,
 MGM,MGM,System1(단기),관심,False,False,False,True,33.37,33.67,28.38,0.996,1.15,,
-NI,NI,System1(단기),관심,False,False,False,True,46.01,46.15,43.66,0.999,0.83,,
-NI,NI,System2(중장기),관심,False,False,False,True,46.01,46.15,41.39,0.999,0.83,,
+NI,NI,System1(단기),확정,False,False,False,True,46.01,46.15,43.66,0.999,0.83,,46.15
+NI,NI,System2(중장기),확정,False,False,False,True,46.01,46.15,41.39,0.999,0.83,,46.15
 OMC,OMC,System1(단기),관심,False,False,False,True,88.33,89.43,80.14,0.99,2.79,,
 OMC,OMC,System2(중장기),관심,False,False,False,True,88.33,89.43,76.47,0.99,2.79,,
 PH,PH,System1(단기),관심,False,False,False,True,948.97,980.1,886.83,0.99,33.44,,
