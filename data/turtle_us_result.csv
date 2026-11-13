@@ -22,8 +22,8 @@ CBOE,CBOE,System1(단기),탈락,True,True,False,False,371.56,371.21,309.72,1.01
 CBOE,CBOE,System2(중장기),탈락,True,True,False,False,371.56,371.21,301.0,1.019,12.66,,
 CDW,CDW,System1(단기),탈락,False,False,False,True,172.89,175.19,144.34,0.996,8.04,,
 CDW,CDW,System2(중장기),탈락,False,False,False,True,172.89,175.19,144.34,0.996,8.04,,
-CLX,CLX,System1(단기),관심,False,False,False,True,107.94,109.83,87.44,0.996,3.65,,
-CLX,CLX,System2(중장기),관심,False,False,False,True,107.94,109.83,83.22,0.996,3.65,,
+CLX,CLX,System1(단기),확정,False,False,False,True,107.94,109.83,87.44,0.996,3.65,,109.84
+CLX,CLX,System2(중장기),확정,False,False,False,True,107.94,109.83,83.22,0.996,3.65,,109.84
 CME,CME,System1(단기),확정,True,True,False,False,316.95,316.27,292.37,1.016,7.04,,316.69
 CME,CME,System2(중장기),확정,True,True,False,False,316.95,316.27,285.95,1.016,7.04,,316.69
 COST,COST,System1(단기),확정,True,True,False,False,1093.13,1091.92,983.1,1.01,19.64,,1092.73
