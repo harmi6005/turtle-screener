@@ -13,8 +13,8 @@ ADP,ADP,System1(단기),탈락,False,False,False,True,308.82,311.89,292.0,0.997,
 ADP,ADP,System2(중장기),탈락,False,False,False,True,308.82,311.89,282.73,0.997,7.75,,
 BRK-B,BRK-B,System1(단기),관심,False,False,False,True,593.71,596.92,542.32,0.997,10.09,,
 BRK-B,BRK-B,System2(중장기),관심,False,False,False,True,593.71,596.92,528.0,0.997,10.09,,
-TECH,TECH,System1(단기),관심,False,False,False,True,72.79,72.88,72.63,0.999,0.12,,
-TECH,TECH,System2(중장기),관심,False,False,False,True,72.79,72.88,72.45,0.999,0.12,,
+TECH,TECH,System1(단기),탈락,False,False,False,True,72.79,72.88,72.63,0.999,0.12,,
+TECH,TECH,System2(중장기),탈락,False,False,False,True,72.79,72.88,72.45,0.999,0.12,,
 BLK,BLK,System1(단기),탈락,False,False,False,True,1217.88,1242.12,1136.9,0.992,30.79,,
 BLK,BLK,System2(중장기),탈락,False,False,False,True,1217.88,1242.12,1105.47,0.992,30.79,,
 BNY,BNY,System1(단기),탈락,False,False,False,True,151.5,155.05,145.75,0.993,3.1,,
@@ -24,8 +24,8 @@ CDW,CDW,System1(단기),탈락,False,False,False,True,172.41,175.19,144.34,0.992
 CDW,CDW,System2(중장기),탈락,False,False,False,True,172.41,175.19,144.34,0.992,7.83,,
 CLX,CLX,System1(단기),확정,True,True,False,False,109.9,109.83,87.44,1.004,3.67,,109.9
 CLX,CLX,System2(중장기),확정,True,True,False,False,109.9,109.83,83.22,1.004,3.67,,109.9
-CME,CME,System1(단기),관심,False,False,False,True,317.94,321.34,300.29,0.997,7.06,,
-CME,CME,System2(중장기),관심,False,False,False,True,317.94,321.34,289.5,0.997,7.06,,
+CME,CME,System1(단기),탈락,False,False,False,True,317.94,321.34,300.29,0.997,7.06,,
+CME,CME,System2(중장기),탈락,False,False,False,True,317.94,321.34,289.5,0.997,7.06,,
 COIN,COIN,System1(단기),청산,False,False,True,False,127.26,183.4,129.41,0.712,9.35,,
 COIN,COIN,System2(중장기),청산,False,False,True,False,127.26,208.33,129.41,0.627,9.35,,
 COST,COST,System1(단기),확정,True,True,False,False,1104.38,1102.84,1006.56,1.006,19.74,,1105.14
