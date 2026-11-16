@@ -175,7 +175,7 @@ STE,STE,System2(중장기),확정,False,False,False,True,253.62,259.25,219.0,0.9
 AAPL,AAPL,System1(단기),확정,False,False,False,True,353.82,355.38,325.33,0.997,8.45,,355.88
 AAPL,AAPL,System2(중장기),확정,False,False,False,True,353.82,355.38,325.33,0.997,8.45,,355.88
 CF,CF,System1(단기),확정,False,False,False,True,122.9,123.8,110.61,0.997,4.54,,123.9
-DE,DE,System1(단기),확정,False,False,False,True,688.44,697.0,625.24,0.994,18.82,,697.92
+DE,DE,System1(단기),확정이탈,False,False,False,True,688.44,697.0,625.24,0.994,18.82,,697.92
 DD,DD,System1(단기),확정,True,True,False,False,157.76,157.05,136.66,1.015,4.16,,157.74
 DD,DD,System2(중장기),확정,True,True,False,False,157.76,157.05,127.55,1.015,4.16,,157.74
 FERG,FERG,System1(단기),확정,False,False,False,True,261.28,265.29,227.21,0.994,7.98,,265.66
