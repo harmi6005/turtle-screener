@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 AOS,AOS,System1(단기),청산,False,False,True,False,64.19,68.12,63.14,0.951,1.94,,
 ABT,ABT,System1(단기),청산,False,False,True,False,105.35,117.07,106.89,0.924,3.25,,
 ACN,ACN,System1(단기),청산,False,False,True,False,241.55,271.76,246.86,0.914,10.68,,
@@ -38,7 +38,7 @@ CASY,CASY,System1(단기),관심,False,False,False,True,710.7,722.96,658.95,0.99
 CBOE,CBOE,System1(단기),관심,False,False,False,True,374.11,379.76,335.0,0.993,12.36,,
 CBOE,CBOE,System2(중장기),관심,False,False,False,True,374.11,379.76,306.47,0.993,12.36,,
 CBRE,CBRE,System1(단기),청산,False,False,True,False,131.48,144.5,131.85,0.924,4.47,,
-CHTR,CHTR,System1(단기),진입,True,True,False,False,140.23,139.77,110.58,1.02,6.82,,
+CHTR,CHTR,System1(단기),확정,True,True,False,False,140.23,139.77,110.58,1.02,6.82,,139.81
 CMG,CMG,System1(단기),관심,False,False,False,True,36.13,36.69,32.41,0.991,1.21,,
 CHD,CHD,System1(단기),관심,False,False,False,True,112.89,115.46,106.1,0.992,2.62,,
 CHD,CHD,System2(중장기),관심,False,False,False,True,112.89,115.46,103.52,0.992,2.62,,
@@ -67,8 +67,8 @@ DASH,DASH,System2(중장기),청산,False,False,True,False,165.04,238.31,163.68,
 DUK,DUK,System1(단기),관심,False,False,False,True,130.49,131.87,125.2,0.995,2.25,,
 DUK,DUK,System2(중장기),관심,False,False,False,True,130.49,131.87,118.69,0.995,2.25,,
 EBAY,EBAY,System1(단기),청산,False,False,True,False,117.83,127.74,117.93,0.943,3.64,,
-EIX,EIX,System1(단기),진입,True,True,False,False,62.6,62.42,58.47,1.011,1.36,,
-EIX,EIX,System2(중장기),진입,True,True,False,False,62.6,62.42,55.85,1.011,1.36,,
+EIX,EIX,System1(단기),확정,True,True,False,False,62.6,62.42,58.47,1.011,1.36,,62.53
+EIX,EIX,System2(중장기),확정,True,True,False,False,62.6,62.42,55.85,1.011,1.36,,62.53
 EW,EW,System1(단기),관심,False,False,False,True,106.35,108.0,93.27,0.999,3.05,,
 EW,EW,System2(중장기),관심,False,False,False,True,106.35,108.0,87.06,0.999,3.05,,
 EMR,EMR,System1(단기),청산,False,False,True,False,159.47,171.39,159.78,0.95,5.42,,
