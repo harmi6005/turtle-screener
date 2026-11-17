@@ -262,4 +262,4 @@ BRO,BRO,System1(단기),확정,False,False,False,True,70.53,71.48,61.41,0.995,1.
 HIG,HIG,System1(단기),확정,False,False,False,True,135.82,137.06,126.21,1.0,2.34,,137.11
 WTW,WTW,System1(단기),확정,False,False,False,True,317.62,322.44,289.59,0.994,6.71,,322.84
 GDDY,GDDY,System2(중장기),확정,False,False,False,True,109.46,110.35,91.84,0.994,3.95,,110.41
-CTSH,CTSH,System2(중장기),확정,False,False,False,True,66.79,67.43,54.7,0.991,2.44,,67.62
+CTSH,CTSH,System2(중장기),확정이탈,False,False,False,True,66.79,67.43,54.7,0.991,2.44,,67.62
