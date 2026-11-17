@@ -2,8 +2,8 @@ code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal
 AOS,AOS,System1(단기),청산,False,False,True,False,64.19,68.12,63.14,0.951,1.94,,
 ABT,ABT,System1(단기),청산,False,False,True,False,105.35,117.07,106.89,0.924,3.25,,
 ACN,ACN,System1(단기),청산,False,False,True,False,241.55,271.76,246.86,0.914,10.68,,
-AES,AES,System1(단기),관심,False,False,False,True,14.93,14.95,14.86,1.0,0.05,,
-AES,AES,System2(중장기),관심,False,False,False,True,14.93,14.95,14.76,1.0,0.05,,
+AES,AES,System1(단기),확정,False,False,False,True,14.93,14.95,14.86,1.0,0.05,,14.97
+AES,AES,System2(중장기),확정,False,False,False,True,14.93,14.95,14.76,1.0,0.05,,14.97
 AMCR,AMCR,System1(단기),청산,False,False,True,False,43.84,49.71,43.57,0.889,1.32,,
 AMCR,AMCR,System2(중장기),청산,False,False,True,False,43.84,49.71,43.57,0.889,1.32,,
 AXP,AXP,System1(단기),청산,False,False,True,False,315.05,343.89,316.57,0.929,7.74,,
