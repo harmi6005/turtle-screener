@@ -99,3 +99,4 @@ REG,System1(단기),long,loss,False,
 VICI,System1(단기),long,loss,False,
 AVY,System1(단기),long,loss,False,
 MMM,System1(단기),long,win,True,179.18
+MSCI,System1(단기),long,loss,False,

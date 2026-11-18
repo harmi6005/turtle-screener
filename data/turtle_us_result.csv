@@ -12,14 +12,14 @@ AWK,AWK,System2(중장기),탈락,False,False,False,True,150.07,152.77,133.19,0.
 APTV,APTV,System1(단기),청산,False,False,True,False,38.09,45.88,37.61,0.838,1.54,,
 APTV,APTV,System2(중장기),청산,False,False,True,False,38.09,48.24,37.61,0.797,1.54,,
 ARES,ARES,System1(단기),청산,False,False,True,False,128.35,141.91,128.65,0.926,4.93,,
-AIZ,AIZ,System1(단기),관심,False,False,False,True,324.02,326.99,293.53,0.994,6.61,,
-AIZ,AIZ,System2(중장기),관심,False,False,False,True,324.02,326.99,282.3,0.994,6.61,,
+AIZ,AIZ,System1(단기),탈락,False,False,False,True,324.02,326.99,293.53,0.994,6.61,,
+AIZ,AIZ,System2(중장기),탈락,False,False,False,True,324.02,326.99,282.3,0.994,6.61,,
 AXON,AXON,System1(단기),청산,False,False,True,False,302.58,439.76,291.45,0.7,21.54,,
 AXON,AXON,System2(중장기),청산,False,False,True,False,302.58,597.49,291.45,0.515,21.54,,
 BAC,BAC,System1(단기),청산,False,False,True,False,49.18,53.03,49.17,0.946,1.12,,
 BAC,BAC,System2(중장기),청산,False,False,True,False,49.18,63.83,49.17,0.786,1.12,,
-BRK-B,BRK-B,System1(단기),관심,False,False,False,True,590.87,596.92,551.81,0.992,10.06,,
-BRK-B,BRK-B,System2(중장기),관심,False,False,False,True,590.87,596.92,533.5,0.992,10.06,,
+BRK-B,BRK-B,System1(단기),탈락,False,False,False,True,590.87,596.92,551.81,0.992,10.06,,
+BRK-B,BRK-B,System2(중장기),탈락,False,False,False,True,590.87,596.92,533.5,0.992,10.06,,
 BX,BX,System1(단기),청산,False,False,True,False,116.41,127.67,116.06,0.924,4.35,,
 BA,BA,System1(단기),청산,False,False,True,False,163.85,193.28,164.71,0.87,5.87,,
 BA,BA,System2(중장기),청산,False,False,True,False,163.85,215.29,164.71,0.781,5.87,,
@@ -277,7 +277,7 @@ DPZ,DPZ,System1(단기),확정,False,False,False,True,322.74,323.5,305.0,0.998,9
 PODD,PODD,System2(중장기),확정,False,False,False,True,155.1,155.17,132.86,1.0,4.42,,155.4
 MDT,MDT,System1(단기),확정,False,False,False,True,99.2,99.48,92.71,0.998,2.39,,99.81
 MDT,MDT,System2(중장기),확정,False,False,False,True,99.2,99.48,85.43,0.998,2.39,,99.81
-MSCI,MSCI,System1(단기),확정,False,False,False,True,637.53,640.55,574.55,0.995,13.58,,641.89
+MSCI,MSCI,System1(단기),확정이탈,False,False,False,True,637.53,640.55,574.55,0.995,13.58,,641.89
 MSCI,MSCI,System2(중장기),확정,False,False,False,True,637.53,640.55,549.18,0.995,13.58,,641.89
 YUM,YUM,System1(단기),확정,True,True,False,False,158.72,158.25,146.14,1.03,3.44,,158.9
 YUM,YUM,System2(중장기),확정,True,True,False,False,158.72,158.25,136.75,1.03,3.44,,158.9
