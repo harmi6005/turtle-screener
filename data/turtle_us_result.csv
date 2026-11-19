@@ -255,7 +255,7 @@ AEE,AEE,System2(중장기),확정,False,False,False,True,114.54,115.31,103.7,0.9
 NI,NI,System1(단기),확정,False,False,False,True,46.01,46.15,43.66,0.999,0.83,,46.15
 NI,NI,System2(중장기),확정,False,False,False,True,46.01,46.15,41.39,0.999,0.83,,46.15
 AMD,AMD,System1(단기),확정,True,True,False,False,581.28,579.18,402.1,1.026,39.86,,581.85
-JNJ,JNJ,System1(단기),확정,True,True,False,False,284.64,283.25,265.28,1.01,6.96,,284.22
+JNJ,JNJ,System1(단기),확정이탈,True,True,False,False,284.64,283.25,265.28,1.01,6.96,,284.22
 JNJ,JNJ,System2(중장기),확정,True,True,False,False,284.64,283.25,251.5,1.01,6.96,,284.22
 STE,STE,System1(단기),확정,False,False,False,True,253.62,259.25,225.65,0.995,6.69,,259.6
 STE,STE,System2(중장기),확정,False,False,False,True,253.62,259.25,219.0,0.995,6.69,,259.6
