@@ -250,7 +250,7 @@ EG,EG,System1(단기),확정,True,True,False,False,432.42,431.19,407.18,1.015,10
 EG,EG,System2(중장기),확정,True,True,False,False,432.42,431.19,385.51,1.015,10.76,,432.42
 TSCO,TSCO,System1(단기),확정,True,True,False,False,37.85,37.72,33.64,1.023,1.56,,37.87
 TSCO,TSCO,System2(중장기),확정,True,True,False,False,37.85,37.72,29.9,1.023,1.56,,37.87
-AEE,AEE,System1(단기),확정,False,False,False,True,114.54,115.31,109.88,0.995,1.86,,115.38
+AEE,AEE,System1(단기),확정이탈,False,False,False,True,114.54,115.31,109.88,0.995,1.86,,115.38
 AEE,AEE,System2(중장기),확정,False,False,False,True,114.54,115.31,103.7,0.995,1.86,,115.38
 NI,NI,System1(단기),확정,False,False,False,True,46.01,46.15,43.66,0.999,0.83,,46.15
 NI,NI,System2(중장기),확정,False,False,False,True,46.01,46.15,41.39,0.999,0.83,,46.15
