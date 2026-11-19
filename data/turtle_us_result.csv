@@ -308,7 +308,7 @@ MDT,MDT,System2(중장기),확정,False,False,False,True,99.2,99.48,85.43,0.998,
 MSCI,MSCI,System2(중장기),확정,False,False,False,True,637.53,640.55,549.18,0.995,13.58,,641.89
 YUM,YUM,System1(단기),확정,True,True,False,False,158.72,158.25,146.14,1.03,3.44,,158.9
 YUM,YUM,System2(중장기),확정,True,True,False,False,158.72,158.25,136.75,1.03,3.44,,158.9
-BF-B,BF-B,System1(단기),확정,False,False,False,True,29.82,30.2,27.51,0.993,0.79,,30.22
+BF-B,BF-B,System1(단기),확정이탈,False,False,False,True,29.82,30.2,27.51,0.993,0.79,,30.22
 BF-B,BF-B,System2(중장기),확정,False,False,False,True,29.82,30.2,25.69,0.993,0.79,,30.22
 VRTX,VRTX,System1(단기),확정이탈,True,True,False,False,565.53,563.8,499.5,1.009,14.93,,564.42
 VRTX,VRTX,System2(중장기),확정,True,True,False,False,565.53,563.8,484.08,1.009,14.93,,564.42
