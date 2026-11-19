@@ -283,7 +283,7 @@ ABNB,ABNB,System1(단기),확정,False,False,False,True,178.6,179.13,164.1,0.998
 LNT,LNT,System2(중장기),확정,True,True,False,False,73.64,73.38,64.37,1.006,1.33,,73.54
 ACGL,ACGL,System1(단기),확정,False,False,False,True,109.63,110.26,98.78,0.997,2.32,,110.29
 ACGL,ACGL,System2(중장기),확정,False,False,False,True,109.63,110.26,94.2,0.997,2.32,,110.29
-CNC,CNC,System2(중장기),확정,True,True,False,False,72.75,72.5,63.35,1.009,2.87,,72.83
+CNC,CNC,System2(중장기),확정이탈,True,True,False,False,72.75,72.5,63.35,1.009,2.87,,72.83
 ERIE,ERIE,System1(단기),확정,True,True,False,False,277.83,277.54,242.16,1.002,8.5,,277.83
 ERIE,ERIE,System2(중장기),확정,True,True,False,False,277.83,277.54,217.67,1.002,8.5,,277.83
 FDS,FDS,System2(중장기),확정,False,False,False,True,344.03,345.66,271.38,0.999,12.25,,346.2
