@@ -1,4 +1,4 @@
-﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
+code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
 MMM,MMM,System1(단기),청산,False,False,True,False,178.95,196.08,178.1,0.921,4.85,,
 ABBV,ABBV,System1(단기),청산,False,False,True,False,282.92,302.93,281.07,0.944,6.88,,
 ACN,ACN,System1(단기),청산,False,False,True,False,218.61,271.76,227.34,0.846,10.54,,
