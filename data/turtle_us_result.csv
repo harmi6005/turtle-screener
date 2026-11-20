@@ -354,7 +354,7 @@ VRSK,VRSK,System1(단기),확정,True,True,False,False,205.18,204.19,185.75,1.06
 VRSK,VRSK,System2(중장기),확정,True,True,False,False,205.18,204.19,169.39,1.06,7.51,,204.96
 AFL,AFL,System1(단기),확정,False,False,False,True,124.72,125.69,120.0,0.999,2.19,,125.69
 AFL,AFL,System2(중장기),확정,False,False,False,True,124.72,125.69,112.47,0.999,2.19,,125.69
-APD,APD,System2(중장기),확정,False,False,False,True,317.84,319.98,274.82,0.993,4.85,,321.07
+APD,APD,System2(중장기),확정이탈,False,False,False,True,317.84,319.98,274.82,0.993,4.85,,321.07
 ABNB,ABNB,System1(단기),확정이탈,False,False,False,True,178.6,179.13,164.1,0.998,4.81,,179.13
 LNT,LNT,System2(중장기),확정,True,True,False,False,73.64,73.38,64.37,1.006,1.33,,73.54
 ACGL,ACGL,System1(단기),확정,False,False,False,True,109.63,110.26,98.78,0.997,2.32,,110.29
