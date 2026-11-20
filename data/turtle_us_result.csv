@@ -325,7 +325,7 @@ REG,REG,System2(중장기),확정,True,True,False,False,76.75,76.41,70.38,1.006,
 AOS,AOS,System2(중장기),확정,False,False,False,True,63.84,65.65,54.22,0.993,1.73,,65.67
 ECL,ECL,System2(중장기),확정,False,False,False,True,304.68,310.0,275.8,0.993,5.88,,311.31
 LYV,LYV,System1(단기),확정,False,False,False,True,178.87,181.09,169.07,0.993,3.84,,181.93
-MTD,MTD,System1(단기),확정,False,False,False,True,1698.04,1728.66,1606.0,0.994,38.57,,1730.33
+MTD,MTD,System1(단기),확정이탈,False,False,False,True,1698.04,1728.66,1606.0,0.994,38.57,,1730.33
 MTD,MTD,System2(중장기),확정,False,False,False,True,1698.04,1728.66,1500.9,0.994,38.57,,1730.33
 PNR,PNR,System2(중장기),확정,False,False,False,True,69.73,70.87,50.88,0.992,1.99,,71.19
 AVY,AVY,System2(중장기),확정,False,False,False,True,185.48,187.43,164.1,0.996,3.84,,187.48
