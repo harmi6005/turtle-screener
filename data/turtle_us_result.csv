@@ -285,7 +285,7 @@ HRL,HRL,System2(중장기),확정,False,False,False,True,22.94,23.22,20.46,0.991
 FE,FE,System1(단기),확정,True,True,False,False,47.81,47.71,45.74,1.003,0.75,,47.81
 FE,FE,System2(중장기),확정,True,True,False,False,47.81,47.71,45.01,1.003,0.75,,47.81
 CHTR,CHTR,System1(단기),확정,True,True,False,False,140.23,139.77,110.58,1.02,6.82,,139.81
-APP,APP,System1(단기),확정,True,True,False,False,415.79,413.88,227.4,1.012,21.14,,415.33
+APP,APP,System1(단기),확정이탈,True,True,False,False,415.79,413.88,227.4,1.012,21.14,,415.33
 APP,APP,System2(중장기),확정,True,True,False,False,415.79,413.88,225.19,1.012,21.14,,415.33
 DRI,DRI,System1(단기),확정,False,False,False,True,232.18,233.98,218.16,0.995,5.58,,234.12
 DRI,DRI,System2(중장기),확정,False,False,False,True,232.18,233.98,210.96,0.995,5.58,,234.12
@@ -335,7 +335,7 @@ YUM,YUM,System1(단기),확정,True,True,False,False,158.72,158.25,146.14,1.03,3
 YUM,YUM,System2(중장기),확정,True,True,False,False,158.72,158.25,136.75,1.03,3.44,,158.9
 BF-B,BF-B,System2(중장기),확정,False,False,False,True,29.82,30.2,25.69,0.993,0.79,,30.22
 VRTX,VRTX,System2(중장기),확정,True,True,False,False,565.53,563.8,484.08,1.009,14.93,,564.42
-CRL,CRL,System2(중장기),확정,True,True,False,False,379.22,378.23,284.61,1.004,14.32,,379.22
+CRL,CRL,System2(중장기),확정이탈,True,True,False,False,379.22,378.23,284.61,1.004,14.32,,379.22
 GILD,GILD,System1(단기),확정,True,True,False,False,161.07,160.83,151.71,1.02,4.04,,161.09
 GILD,GILD,System2(중장기),확정,True,True,False,False,161.07,160.83,142.6,1.02,4.04,,161.09
 WST,WST,System2(중장기),확정,True,True,False,False,400.0,398.67,359.49,1.007,8.19,,400.0
