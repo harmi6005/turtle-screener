@@ -363,7 +363,7 @@ ERIE,ERIE,System1(단기),확정,True,True,False,False,277.83,277.54,242.16,1.00
 ERIE,ERIE,System2(중장기),확정,True,True,False,False,277.83,277.54,217.67,1.002,8.5,,277.83
 FDS,FDS,System2(중장기),확정,False,False,False,True,344.03,345.66,271.38,0.999,12.25,,346.2
 MRNA,MRNA,System2(중장기),확정,False,False,False,True,247.9,254.48,179.53,0.997,21.48,,254.79
-RL,RL,System1(단기),확정,True,True,False,False,404.0,403.96,370.97,1.008,9.93,,404.63
+RL,RL,System1(단기),확정이탈,True,True,False,False,404.0,403.96,370.97,1.008,9.93,,404.63
 RL,RL,System2(중장기),확정,True,True,False,False,404.0,403.96,356.28,1.008,9.93,,404.63
 REG,REG,System2(중장기),확정,True,True,False,False,76.75,76.41,70.38,1.006,1.27,,76.71
 AOS,AOS,System2(중장기),확정,False,False,False,True,63.84,65.65,54.22,0.993,1.73,,65.67
