@@ -343,7 +343,7 @@ DD,DD,System1(단기),확정,True,True,False,False,157.76,157.05,136.66,1.015,4.
 DD,DD,System2(중장기),확정,True,True,False,False,157.76,157.05,127.55,1.015,4.16,,157.74
 FERG,FERG,System1(단기),확정,False,False,False,True,261.28,265.29,227.21,0.994,7.98,,265.66
 FERG,FERG,System2(중장기),확정,False,False,False,True,261.28,265.29,217.87,0.994,7.98,,265.66
-GE,GE,System1(단기),확정,True,True,False,False,341.04,340.53,295.97,1.002,11.45,,341.07
+GE,GE,System1(단기),확정이탈,True,True,False,False,341.04,340.53,295.97,1.002,11.45,,341.07
 VTRS,VTRS,System1(단기),확정,False,False,False,True,19.7,19.96,17.86,0.992,0.54,,19.96
 VTRS,VTRS,System2(중장기),확정,False,False,False,True,19.7,19.96,17.19,0.992,0.54,,19.96
 ALL,ALL,System1(단기),확정,True,True,False,False,271.56,270.69,249.21,1.038,6.19,,271.89
