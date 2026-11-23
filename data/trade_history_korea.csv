@@ -70,3 +70,7 @@ code,system,direction,last_result,skip_active,skip_price
 175330,System1(단기),long,loss,False,
 009470,System2(중장기),long,loss,False,
 475400,System1(단기),long,loss,False,
+00806K,System1(단기),long,loss,False,
+033250,System1(단기),long,loss,False,
+009620,System1(단기),long,loss,False,
+009620,System2(중장기),long,loss,False,
