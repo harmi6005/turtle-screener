@@ -11,8 +11,8 @@ ADI,ADI,System1(단기),청산,False,False,True,False,314.74,433.72,343.94,0.778
 ADI,ADI,System2(중장기),청산,False,False,True,False,314.74,433.72,343.94,0.778,25.08,,
 ANET,ANET,System1(단기),청산,False,False,True,False,167.57,212.15,165.41,0.827,13.76,,
 T,T,System1(단기),확정,True,True,False,False,22.82,22.75,21.52,1.009,0.52,,22.8
-AZO,AZO,System1(단기),관심,False,False,False,True,3337.85,3359.0,3175.0,0.996,78.5,,
-AZO,AZO,System2(중장기),관심,False,False,False,True,3337.85,3359.0,3084.65,0.996,78.5,,
+AZO,AZO,System1(단기),탈락,False,False,False,True,3337.85,3359.0,3175.0,0.996,78.5,,
+AZO,AZO,System2(중장기),탈락,False,False,False,True,3337.85,3359.0,3084.65,0.996,78.5,,
 BAX,BAX,System1(단기),확정,True,True,False,False,27.19,27.09,24.85,1.007,1.16,,27.2
 BAX,BAX,System2(중장기),확정,True,True,False,False,27.19,27.09,22.5,1.007,1.16,,27.2
 BDX,BDX,System1(단기),확정,True,True,False,False,220.79,220.36,209.0,1.006,4.94,,220.56
