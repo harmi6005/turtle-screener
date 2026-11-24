@@ -18,8 +18,8 @@ BAX,BAX,System2(중장기),확정,True,True,False,False,27.19,27.09,22.5,1.007,1
 BDX,BDX,System1(단기),확정,True,True,False,False,220.79,220.36,209.0,1.006,4.94,,220.56
 BDX,BDX,System2(중장기),확정,True,True,False,False,220.79,220.36,193.8,1.006,4.94,,220.56
 BBY,BBY,System1(단기),청산,False,False,True,False,101.18,106.83,96.05,0.953,4.19,,
-TECH,TECH,System1(단기),관심,False,False,False,True,72.85,72.89,72.59,1.0,0.13,,
-TECH,TECH,System2(중장기),관심,False,False,False,True,72.85,72.89,72.52,1.0,0.13,,
+TECH,TECH,System1(단기),탈락,False,False,False,True,72.85,72.89,72.59,1.0,0.13,,
+TECH,TECH,System2(중장기),탈락,False,False,False,True,72.85,72.89,72.52,1.0,0.13,,
 BKNG,BKNG,System1(단기),청산,False,False,True,False,146.62,174.3,144.1,0.856,6.41,,
 BKNG,BKNG,System2(중장기),청산,False,False,True,False,146.62,191.54,144.1,0.779,6.41,,
 BSX,BSX,System1(단기),청산,False,False,True,False,44.03,46.97,41.92,0.951,1.92,,
