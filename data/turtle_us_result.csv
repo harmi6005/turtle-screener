@@ -103,7 +103,7 @@ PG,PG,System1(단기),탈락,False,False,False,True,172.26,173.59,165.88,0.998,3
 PG,PG,System2(중장기),탈락,False,False,False,True,172.26,173.59,157.4,0.998,3.34,,
 PTC,PTC,System1(단기),관심,False,False,False,True,196.18,196.79,194.76,0.998,1.03,,
 PTC,PTC,System2(중장기),관심,False,False,False,True,196.18,196.79,193.8,0.998,1.03,,
-O,O,System1(단기),관심,False,False,False,True,59.51,60.08,57.23,0.992,1.02,,
+O,O,System1(단기),확정,False,False,False,True,59.51,60.08,57.23,0.992,1.02,,60.08
 REGN,REGN,System1(단기),탈락,False,False,False,True,976.02,990.72,897.38,0.994,36.34,,
 REGN,REGN,System2(중장기),탈락,False,False,False,True,976.02,990.72,801.38,0.994,36.34,,
 SNDK,SNDK,System1(단기),청산,False,False,True,False,77.79,176.06,93.67,0.476,13.26,,
