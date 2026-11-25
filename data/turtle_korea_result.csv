@@ -1,5 +1,5 @@
 ﻿code,name,system,signal,entry_signal,fresh_entry_signal,exit_signal,watch_signal,close,n_high,n_low,n_high_ratio,atr,high,entry_price
-000325,노루홀딩스우,System1(단기),관심,False,False,False,True,27700.0,27950.0,25000.0,0.993,397.5,,
+000325,노루홀딩스우,System1(단기),탈락,False,False,False,True,27700.0,27950.0,25000.0,0.993,397.5,,
 000390,SP삼화,System1(단기),청산,False,False,True,False,5490.0,6650.0,5440.0,0.856,276.0,,
 000390,SP삼화,System2(중장기),청산,False,False,True,False,5490.0,7310.0,5440.0,0.778,276.0,,
 000640,동아제약,System1(단기),청산,False,False,True,False,89400.0,113200.0,86700.0,0.812,5415.0,,
