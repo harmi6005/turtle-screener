@@ -77,3 +77,4 @@ code,system,direction,last_result,skip_active,skip_price
 259960,System1(단기),long,loss,False,
 033920,System1(단기),long,loss,False,
 419540,System1(단기),long,loss,False,
+053350,System2(중장기),long,loss,False,
