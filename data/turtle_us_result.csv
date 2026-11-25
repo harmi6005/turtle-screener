@@ -68,8 +68,8 @@ HAL,HAL,System1(단기),청산,False,False,True,False,31.06,36.54,30.37,0.851,1.
 HAL,HAL,System2(중장기),청산,False,False,True,False,31.06,37.8,30.37,0.823,1.1,,
 HAS,HAS,System1(단기),청산,False,False,True,False,112.9,123.88,112.09,0.915,3.14,,
 HAS,HAS,System2(중장기),청산,False,False,True,False,112.9,123.88,112.09,0.915,3.14,,
-HSY,HSY,System1(단기),관심,False,False,False,True,178.38,180.19,169.43,0.994,5.47,,
-HSY,HSY,System2(중장기),관심,False,False,False,True,178.38,180.19,158.55,0.994,5.47,,
+HSY,HSY,System1(단기),확정,False,False,False,True,178.38,180.19,169.43,0.994,5.47,,180.29
+HSY,HSY,System2(중장기),확정,False,False,False,True,178.38,180.19,158.55,0.994,5.47,,180.29
 HPE,HPE,System1(단기),청산,False,False,True,False,40.35,62.2,40.48,0.68,4.17,,
 HPE,HPE,System2(중장기),청산,False,False,True,False,40.35,73.56,40.48,0.575,4.17,,
 HWM,HWM,System1(단기),청산,False,False,True,False,209.74,226.05,208.15,0.955,9.9,,
