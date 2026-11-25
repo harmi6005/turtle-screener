@@ -128,8 +128,8 @@ VTR,VTR,System1(단기),청산,False,False,True,False,87.19,91.34,86.34,0.96,2.1
 VLTO,VLTO,System1(단기),탈락,False,False,False,True,119.58,120.35,115.75,0.997,3.0,,
 VLTO,VLTO,System2(중장기),탈락,False,False,False,True,119.58,120.35,102.02,0.997,3.0,,
 VZ,VZ,System1(단기),확정,True,True,False,False,47.19,47.15,45.08,1.006,1.04,,47.17
-VRTX,VRTX,System1(단기),관심,False,False,False,True,560.65,568.67,513.8,0.99,17.95,,
-VRTX,VRTX,System2(중장기),관심,False,False,False,True,560.65,568.67,509.21,0.99,17.95,,
+VRTX,VRTX,System1(단기),확정,False,False,False,True,560.65,568.67,513.8,0.99,17.95,,570.16
+VRTX,VRTX,System2(중장기),확정,False,False,False,True,560.65,568.67,509.21,0.99,17.95,,570.16
 WRB,WRB,System1(단기),탈락,False,False,False,True,78.48,79.7,75.33,0.995,1.61,,
 WRB,WRB,System2(중장기),탈락,False,False,False,True,78.48,79.7,71.36,0.995,1.61,,
 WMT,WMT,System1(단기),확정,True,True,False,False,131.99,131.82,123.27,1.005,3.15,,131.91
