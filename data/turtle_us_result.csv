@@ -51,7 +51,7 @@ EIX,EIX,System1(단기),관심,False,False,False,True,63.41,63.78,59.73,0.998,1.
 EIX,EIX,System2(중장기),관심,False,False,False,True,63.41,63.78,58.04,0.998,1.46,,
 EW,EW,System1(단기),관심,False,False,False,True,106.5,108.0,101.65,0.995,3.26,,
 EW,EW,System2(중장기),관심,False,False,False,True,106.5,108.0,87.9,0.995,3.26,,
-ESS,ESS,System1(단기),관심,False,False,False,True,279.69,281.31,267.93,1.0,5.49,,
+ESS,ESS,System1(단기),확정,False,False,False,True,279.69,281.31,267.93,1.0,5.49,,281.32
 EG,EG,System1(단기),관심,False,False,False,True,436.19,437.77,414.6,0.997,9.55,,
 EG,EG,System2(중장기),관심,False,False,False,True,436.19,437.77,391.26,0.997,9.55,,
 ES,ES,System1(단기),관심,False,False,False,True,72.98,73.39,70.21,0.994,1.43,,
