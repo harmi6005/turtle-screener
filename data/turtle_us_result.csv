@@ -14,8 +14,8 @@ AJG,AJG,System2(중장기),관심,False,False,False,True,292.15,294.62,262.53,1.
 AIZ,AIZ,System1(단기),탈락,True,True,False,False,329.0,327.74,313.74,1.004,6.7,,
 AIZ,AIZ,System2(중장기),탈락,True,True,False,False,329.0,327.74,288.23,1.004,6.7,,
 T,T,System1(단기),관심,False,False,False,True,23.14,23.36,21.52,0.991,0.49,,
-ADP,ADP,System1(단기),관심,False,False,False,True,317.29,319.58,298.62,0.996,6.88,,
-ADP,ADP,System2(중장기),관심,False,False,False,True,317.29,319.58,283.58,0.996,6.88,,
+ADP,ADP,System1(단기),확정,False,False,False,True,317.29,319.58,298.62,0.996,6.88,,319.9
+ADP,ADP,System2(중장기),확정,False,False,False,True,317.29,319.58,283.58,0.996,6.88,,319.9
 AZO,AZO,System1(단기),관심,False,False,False,True,3405.68,3426.13,3230.67,0.995,76.79,,
 AZO,AZO,System2(중장기),관심,False,False,False,True,3405.68,3426.13,3084.65,0.995,76.79,,
 BAX,BAX,System1(단기),관심,False,False,False,True,27.28,27.59,24.85,0.993,1.02,,
