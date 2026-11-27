@@ -43,8 +43,8 @@ CMCSA,CMCSA,System2(중장기),탈락,False,False,False,True,25.92,26.04,21.8,0.
 CPRT,CPRT,System1(단기),탈락,True,True,False,False,33.37,33.32,30.73,1.003,1.04,,
 CPRT,CPRT,System2(중장기),탈락,True,True,False,False,33.37,33.32,29.16,1.003,1.04,,
 CSGP,CSGP,System1(단기),탈락,True,True,False,False,34.36,34.32,28.58,1.005,1.48,,
-COST,COST,System1(단기),관심,False,False,False,True,1091.31,1098.0,1053.55,0.996,20.11,,
-COST,COST,System2(중장기),관심,False,False,False,True,1091.31,1098.0,956.23,0.996,20.11,,
+COST,COST,System1(단기),확정,False,False,False,True,1091.31,1098.0,1053.55,0.996,20.11,,1098.43
+COST,COST,System2(중장기),확정,False,False,False,True,1091.31,1098.0,956.23,0.996,20.11,,1098.43
 DUK,DUK,System1(단기),관심,False,False,False,True,131.75,132.87,127.31,0.992,2.28,,
 DUK,DUK,System2(중장기),관심,False,False,False,True,131.75,132.87,123.53,0.992,2.28,,
 EIX,EIX,System1(단기),관심,False,False,False,True,63.41,63.78,59.73,0.998,1.46,,
